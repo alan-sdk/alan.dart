@@ -7,7 +7,7 @@ import 'package:flutter/foundation.dart';
 import 'package:hex/hex.dart';
 import 'package:pointycastle/export.dart';
 import 'package:sacco/models/export.dart';
-import 'package:sacco/utils/bech32_encoder.dart';
+import 'package:sacco/utils/internal/bech32_encoder.dart';
 
 import 'transaction_signer.dart';
 

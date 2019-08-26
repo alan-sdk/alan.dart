@@ -2,9 +2,9 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:sacco/models/export.dart';
-import 'package:sacco/utils/account_data_retriever.dart';
+import 'package:sacco/utils/internal/account_data_retriever.dart';
 
-import 'map_sorter.dart';
+import 'internal/map_sorter.dart';
 
 /// Allows to easily build and sign a [StdTx] that can later be sent over
 /// the network.
