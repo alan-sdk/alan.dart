@@ -1,9 +1,10 @@
 import 'package:flutter/foundation.dart';
 
+/// Contains the information of a generic Cosmos-based network.
 class NetworkInfo {
-  final String id;
-  final String bech32Hrp;
-  final String lcdUrl;
+  final String id; // chain-id
+  final String bech32Hrp; // Bech32 human readable part
+  final String lcdUrl; // Url to call when accessing the LCD
 
   NetworkInfo({
     @required this.id,

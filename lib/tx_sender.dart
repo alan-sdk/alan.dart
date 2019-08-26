@@ -13,7 +13,7 @@ class TxSender {
   /// exception if an error is risen during the sending.
   static Future<String> broadcastStdTx(HexWallet wallet, StdTx stdTx) async {
     // Get the endpoint
-    final apiUrl = "${wallet.chainInfo.lcdUrl}/txs";
+    final apiUrl = "${wallet.networkInfo.lcdUrl}/txs";
 
     // Build the request body
     final requestBody = {"tx": stdTx.toJson(), "mode": "sync"};

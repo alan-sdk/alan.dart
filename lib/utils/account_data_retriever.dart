@@ -13,7 +13,7 @@ class AccountDataRetrieval {
 
     // Build the models.wallet api url
     final endpoint =
-        "${wallet.chainInfo.lcdUrl}/auth/accounts/${wallet.bech32Address}";
+        "${wallet.networkInfo.lcdUrl}/auth/accounts/${wallet.bech32Address}";
 
     // Get the server response
     final response = await http.Client().get(endpoint);

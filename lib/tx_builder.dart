@@ -2,9 +2,9 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:sacco/models/export.dart';
-import 'package:sacco/utils/internal/account_data_retriever.dart';
+import 'package:sacco/utils/account_data_retriever.dart';
 
-import 'internal/map_sorter.dart';
+import 'utils/map_sorter.dart';
 
 /// Allows to easily build and sign a [StdTx] that can later be sent over
 /// the network.
@@ -25,7 +25,7 @@ class TxBuilder {
     final signature = StdSignatureMessage(
       sequence: accountData.sequence,
       accountNumber: accountData.accountNumber,
-      chainId: wallet.chainInfo.id,
+      chainId: wallet.networkInfo.id,
       fee: fee.toJson(),
       memo: memo,
       msgs: [stdMessage.toJson()],
