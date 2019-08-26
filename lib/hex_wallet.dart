@@ -20,9 +20,9 @@ import 'utils/tx_signer.dart';
 class HexWallet {
   final NetworkInfo networkInfo;
 
-  final String address; // Hex address
-  final String privateKey; // Hex private key
-  final String publicKey; // Hex public key
+  final Uint8List address; // Hex address
+  final Uint8List privateKey; // Hex private key
+  final Uint8List publicKey; // Hex public key
 
   HexWallet({
     @required this.networkInfo,
@@ -49,15 +49,12 @@ class HexWallet {
     // Get the node from the derivation path
     final derivedNode = mainNode.derivePath(derivationPath);
 
-    // Read the node as the private key
-    final privateKeyBytes = HEX.decode(derivedNode.privKey);
-
     // Get the curve data
     final secp256k1 = ECCurve_secp256k1();
     final point = secp256k1.G;
 
     // Compute the curve point associated to the private key
-    final bigInt = BigInt.parse(HEX.encode(privateKeyBytes), radix: 16);
+    final bigInt = BigInt.parse(derivedNode.privKey, radix: 16);
     final curvePoint = point * bigInt;
 
     // Get the public key
@@ -69,20 +66,20 @@ class HexWallet {
 
     // Return the key bytes
     return HexWallet(
-      address: HEX.encode(address),
-      publicKey: HEX.encode(publicKeyBytes),
-      privateKey: HEX.encode(privateKeyBytes),
+      address: address,
+      publicKey: publicKeyBytes,
+      privateKey: HEX.decode(derivedNode.privKey),
       networkInfo: networkInfo,
     );
   }
 
   /// Returns the associated [address] as a Bech32 string.
   String get bech32Address =>
-      Bech32Encoder.encode(networkInfo.bech32Hrp, HEX.decode(address));
+      Bech32Encoder.encode(networkInfo.bech32Hrp, address);
 
   /// Returns the associated [privateKey] as an [ECPrivateKey] instance.
   ECPrivateKey get ecPrivateKey {
-    final privateKeyInt = BigInt.parse(privateKey, radix: 16);
+    final privateKeyInt = BigInt.parse(HEX.encode(privateKey), radix: 16);
     return ECPrivateKey(privateKeyInt, ECCurve_secp256k1());
   }
 

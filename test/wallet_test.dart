@@ -32,15 +32,12 @@ void main() {
     mnemonic.add("sponsor");
 
     final derivationPath = "m/44'/118'/0'/0/0";
-
-    final networkInfo = NetworkInfo(
-      id: "",
-      bech32Hrp: "cosmos",
-      lcdUrl: "http://localhost:1317",
-    );
-
+    final networkInfo = NetworkInfo(id: "", bech32Hrp: "cosmos", lcdUrl: "");
     final wallet = HexWallet.derive(mnemonic, derivationPath, networkInfo);
 
-    expect(wallet.bech32Address, "cosmos1ehkajh8alnmaer3csd7n8cy4zm8fd9693d3hk6");
+    expect(
+      wallet.bech32Address,
+      "cosmos1ehkajh8alnmaer3csd7n8cy4zm8fd9693d3hk6",
+    );
   });
 }
