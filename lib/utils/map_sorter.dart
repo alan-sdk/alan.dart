@@ -32,8 +32,6 @@ class MapSorter {
     final sortedKeys = map.keys.toList();
     sortedKeys.sort();
 
-    print(sortedKeys);
-
     // Sort each value
     final result = SplayTreeMap<String, dynamic>();
     sortedKeys.forEach((key) {

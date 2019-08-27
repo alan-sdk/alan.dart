@@ -1,4 +1,6 @@
-import 'package:flutter/foundation.dart';
+import 'dart:convert';
+
+import 'package:meta/meta.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:sacco/models/transactions/export.dart';
 
@@ -18,13 +20,20 @@ class StdTx {
     @required this.fee,
     @required this.memo,
   })  : assert(messages != null),
-        assert(signatures != null),
+        assert(signatures == null || signatures.isNotEmpty),
         assert(fee != null);
 
   Map<String, dynamic> toJson() => {
         'msg': this.messages.map((message) => message.toJson()).toList(),
-        'signatures': this.signatures.map((signature) => signature.toJson()).toList(),
         'fee': this.fee.toJson(),
+        'signatures':
+            this.signatures?.map((signature) => signature.toJson())?.toList(),
         'memo': this.memo,
       };
+
+  @override
+  String toString() {
+    final tx = {"type": "cosmos-sdk/StdTx", "value": toJson()};
+    return jsonEncode(tx);
+  }
 }

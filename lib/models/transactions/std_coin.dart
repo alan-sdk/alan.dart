@@ -1,4 +1,4 @@
-import 'package:flutter/foundation.dart';
+import 'package:meta/meta.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 /// Contains the data of a specific coin

@@ -1,4 +1,4 @@
-import 'package:flutter/foundation.dart';
+import 'package:meta/meta.dart';
 
 /// Contains the information of a generic Cosmos-based network.
 class NetworkInfo {

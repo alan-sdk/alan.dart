@@ -1,4 +1,4 @@
-import 'package:flutter/foundation.dart';
+import 'package:meta/meta.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:sacco/models/transactions/std_coin.dart';
 
@@ -9,13 +9,13 @@ class StdFee {
   @JsonKey(includeIfNull: true)
   final List<StdCoin> amount;
 
-  StdFee({
+  const StdFee({
     @required this.amount,
     @required this.gas,
   }) : assert(gas != null);
 
   Map<String, dynamic> toJson() => {
-    'gas': this.gas,
     'amount': this.amount.map((coin) => coin.toJson()).toList(),
+    'gas': this.gas,
   };
 }

@@ -7,16 +7,16 @@ import 'package:sacco/models/transactions/export.dart';
 /// Allows to easily retrieve the data of an account based on the information
 /// contained inside a given [HexWallet].
 class AccountDataRetrieval {
+  static var client = http.Client();
+
   /// Reads the account endpoint and retrieves data from it.
   static Future<AccountData> getAccountData(HexWallet wallet) async {
-    print("Getting account data");
-
     // Build the models.wallet api url
     final endpoint =
         "${wallet.networkInfo.lcdUrl}/auth/accounts/${wallet.bech32Address}";
 
     // Get the server response
-    final response = await http.Client().get(endpoint);
+    final response = await client.get(endpoint);
     if (response.statusCode != 200) {
       throw Exception(
         "Excpected status code 200 but got ${response.statusCode} - ${response.body}",
@@ -24,7 +24,11 @@ class AccountDataRetrieval {
     }
 
     // Parse the data
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
+    var json = jsonDecode(response.body) as Map<String, dynamic>;
+    if (json.containsKey("result")) {
+      json = json["result"];
+    }
+
     final value = json["value"] as Map<String, dynamic>;
 
     // Get the coins

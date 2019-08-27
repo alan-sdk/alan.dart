@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:bitcoin_flutter/bitcoin_flutter.dart';
+import 'package:bip32/bip32.dart' as bip32;
 import 'package:bip39/bip39.dart' as bip39;
-import 'package:flutter/foundation.dart';
+import 'package:meta/meta.dart';
 import 'package:hex/hex.dart';
 import 'package:pointycastle/export.dart';
 import 'package:sacco/models/export.dart';
@@ -40,21 +40,25 @@ class HexWallet {
     String derivationPath,
     NetworkInfo networkInfo,
   ) {
-    // Get the seed as a string
-    final seed = bip39.mnemonicToSeed(mnemonic.join(' '));
+    // Get the mnemonic as a string
+    final mnemonicString = mnemonic.join(' ');
+    if (!bip39.validateMnemonic(mnemonicString)) {
+      throw Exception("Invalid mnemonic " + mnemonicString);
+    }
 
-    // Get the HD models.wallet from the seed
-    final mainNode = HDWallet.fromSeed(seed);
+    // Convert the mnemonic to a BIP32 instance
+    final seed = bip39.mnemonicToSeed(mnemonicString);
+    final root = bip32.BIP32.fromSeed(seed);
 
     // Get the node from the derivation path
-    final derivedNode = mainNode.derivePath(derivationPath);
+    final derivedNode = root.derivePath(derivationPath);
 
     // Get the curve data
     final secp256k1 = ECCurve_secp256k1();
     final point = secp256k1.G;
 
     // Compute the curve point associated to the private key
-    final bigInt = BigInt.parse(derivedNode.privKey, radix: 16);
+    final bigInt = BigInt.parse(HEX.encode(derivedNode.privateKey), radix: 16);
     final curvePoint = point * bigInt;
 
     // Get the public key
@@ -68,7 +72,7 @@ class HexWallet {
     return HexWallet(
       address: address,
       publicKey: publicKeyBytes,
-      privateKey: HEX.decode(derivedNode.privKey),
+      privateKey: derivedNode.privateKey,
       networkInfo: networkInfo,
     );
   }
