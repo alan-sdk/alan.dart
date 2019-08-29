@@ -11,48 +11,33 @@ import 'package:sacco/models/export.dart';
 
 void main() {
   final derivationPath = "m/44'/118'/0'/0/0";
-  final networkInfo = NetworkInfo(
-    id: "test-chain-AMbAZr",
-    bech32Hrp: "cosmos",
-    lcdUrl: "http://localhost:1317",
-  );
-  final mnemonic = List<String>();
-  mnemonic.add("final");
-  mnemonic.add("random");
-  mnemonic.add("flame");
-  mnemonic.add("cinnamon");
-  mnemonic.add("grunt");
-  mnemonic.add("hazard");
-  mnemonic.add("easily");
-  mnemonic.add("mutual");
-  mnemonic.add("resist");
-  mnemonic.add("pond");
-  mnemonic.add("solution");
-  mnemonic.add("define");
-  mnemonic.add("knife");
-  mnemonic.add("female");
-  mnemonic.add("tongue");
-  mnemonic.add("crime");
-  mnemonic.add("atom");
-  mnemonic.add("jaguar");
-  mnemonic.add("alert");
-  mnemonic.add("library");
-  mnemonic.add("best");
-  mnemonic.add("forum");
-  mnemonic.add("lesson");
-  mnemonic.add("rigid");
+  final mnemonic =
+      "sibling auction sibling flavor judge foil tube dust work mixed crush action menu property project ride crouch hat mom scale start ill spare panther"
+          .split(" ");
 
-  test('StdTx is signed correctly', () async {
+  test('StdTx with fee is signed correctly', () async {
+    // Create the network info
+    final networkInfo = NetworkInfo(
+      id: "cosmos-hub2",
+      bech32Hrp: "cosmos",
+      lcdUrl: "http://localhost:1317",
+    );
+
     // Build a transaction
     final msg = MsgSend(
-      fromAddress: "cosmos1huydeevpz37sd9snkgul6070mstupukw00xkw9",
+      fromAddress: "cosmos1hafptm4zxy5nw8rd2pxyg83c5ls2v62tstzuv2",
       toAddress: "cosmos12lla7fg3hjd2zj6uvf4pqj7atx273klc487c5k",
       amount: [StdCoin(amount: "100", denom: "uatom")],
     );
-    final tx = TxBuilder.buildStdTx(stdMsgs: [msg]);
+    final fee = StdFee(
+      gas: "200000",
+      amount: [StdCoin(amount: "250", denom: "uatom")],
+    );
+    final tx = TxBuilder.buildStdTx(stdMsgs: [msg], fee: fee);
 
     // Create a wallet
     final wallet = HexWallet.derive(mnemonic, derivationPath, networkInfo);
+    expect(wallet.networkInfo.id, networkInfo.id);
 
     // Create a mock client
     final client = MockClient((request) async {
@@ -66,13 +51,13 @@ void main() {
 
     // Sign the transaction
     final signedTx = await TxSigner.signStdTx(wallet: wallet, stdTx: tx);
-    print(signedTx.toString());
+    expect(signedTx.signatures.length, 1);
 
     final signature = signedTx.signatures[0];
     expect(signature.publicKey.type, "tendermint/PubKeySecp256k1");
     expect(signature.publicKey.value,
-        "A2s4H8iNW3F3sJZ4R3FKIoiN4I+frf1SRdAogSVm0LKV");
-    expect(signature.signature,
-        "XHGnRMY/EKqD+N7HjrbsdHDCBBdvpNkjB+4lMrnsT1JxKVvKK5TNmgVV/866rXJTTwsoFURLGsljfxqIz0z/HQ==");
+        "ArMO2T5FNKkeF2aAZY012p/cpa9+PqKqw2GcQRPhAn3w");
+    expect(signature.value,
+        "m2op4CCBa39fRZD91WiqtBLKbUQI+1OWsc1tJkpDg+8FYB4y51KahGn26MskVMpTJl5gToIC1pX26hLbW1Kxrg==");
   });
 }

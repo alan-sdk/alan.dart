@@ -53,7 +53,6 @@ class TxSigner {
     // Convert the signature to a JSON and sort it
     final jsonSignature = signature.toJson();
     final sortedJson = MapSorter.sort(jsonSignature);
-    print(jsonEncode(sortedJson));
 
     // Encode the sorted JSON to a string
     final jsonSignData = json.encode(sortedJson);
@@ -66,7 +65,7 @@ class TxSigner {
 
     // Build the StdSignature
     return StdSignature(
-      signature: base64Encode(signatureData),
+      value: base64Encode(signatureData),
       publicKey: StdPublicKey(
         type: "tendermint/PubKeySecp256k1",
         value: base64Encode(pubKeyCompressed),

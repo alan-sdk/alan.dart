@@ -5,13 +5,14 @@ part 'std_signature.g.dart';
 
 @JsonSerializable()
 class StdSignature {
-  final String signature;
-
   @JsonKey(name: 'pub_key')
   final StdPublicKey publicKey;
 
-  StdSignature({this.signature, this.publicKey})
-      : assert(signature != null),
+  @JsonKey(name: 'signature')
+  final String value;
+
+  StdSignature({this.value, this.publicKey})
+      : assert(value != null),
         assert(publicKey != null);
 
   factory StdSignature.fromJson(Map<String, dynamic> json) =>
