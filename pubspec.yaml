@@ -1,6 +1,6 @@
 name: sacco
-description: What composes a Borsellino.
-version: 0.0.1
+description: Pure Dart library allowing you to easily create an HD Wallet and create, sign and send Cosmos-SDK transactions.
+version: 0.0.3
 author: Riccardo Montagnin <riccardo.montagnin@gmail.com>
 homepage: https://github.com/commercionetwork/sacco
 
@@ -13,15 +13,11 @@ dependencies:
   http: ^0.12.0
 
   # Crypto utils
+  bip32: ^1.0.5
   bip39: ^1.0.3
   bitcoin_flutter: ^1.0.7
   pointycastle: ^1.0.1
   bip_bech32: ^0.1.3
 
-  # Serialization
-  json_annotation: ^2.4.0
-
 dev_dependencies:
   test: ^1.6.8
-  build_runner: ^1.0.0
-  json_serializable: ^3.0.0

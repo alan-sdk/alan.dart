@@ -34,15 +34,20 @@ final message = StdMsg(
 final stdTx = TxBuilder.buildStdTx(stdMsgs: [message]);
 ``` 
 
-
-## Development
-In order to speed up the development process, we used [build_runner](https://dart.dev/tools/build_runner) and 
-[json_serializable](https://pub.dev/packages/json_serializable) to easily generate JSON representations of some data.  
-While this is extremely useful and helps us reduce the development times, it also means that if you want to start 
-playing with this code base you need to perform the following command: 
-
-```shell
-flutter pub run build_runner build
+### Signing a transaction
+```dart
+final signedStdTx = TxSigner.signStdTx(wallet: wallet, stdTx: stdTx);
 ```
 
-Once the command has successfully run, you will be able to do whatever you prefer.
+### Sending a transaction
+```dart
+try {
+  final hash = await TxSender.broadcastStdTx(
+    wallet: wallet,
+    stdTx: signedStdTx,
+  );
+  print("Tx send successfully. Hash: $hash");
+} catch (error) {
+  print("Error while sending the tx: $error");
+}
+```

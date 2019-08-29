@@ -1,5 +1,4 @@
 import 'package:meta/meta.dart';
-import 'package:json_annotation/json_annotation.dart';
 import 'package:sacco/models/transactions/export.dart';
 
 /// [MsgSend] extends [StdMsg] and represents the message that should be
@@ -7,14 +6,11 @@ import 'package:sacco/models/transactions/export.dart';
 /// It requires to specify the address from which to send the tokens,
 /// the one that should receive the tokens and the amount of tokens
 /// to send.
-@JsonSerializable()
 class MsgSend extends StdMsg {
   /// Bech32 address of the sender.
-  @JsonKey(name: "from_address")
   final String fromAddress;
 
   /// Bech32 address of the recipient.
-  @JsonKey(name: "to_address")
   final String toAddress;
 
   /// Coins that will be sent.

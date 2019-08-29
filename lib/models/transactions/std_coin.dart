@@ -1,8 +1,6 @@
 import 'package:meta/meta.dart';
-import 'package:json_annotation/json_annotation.dart';
 
 /// Contains the data of a specific coin
-@JsonSerializable()
 class StdCoin {
   final String denom;
   final String amount;

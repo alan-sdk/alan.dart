@@ -1,16 +1,11 @@
 import 'dart:convert';
 
 import 'package:meta/meta.dart';
-import 'package:json_annotation/json_annotation.dart';
 import 'package:sacco/models/transactions/export.dart';
 
-@JsonSerializable()
 class StdTx {
-  @JsonKey(name: "msg")
   final List<StdMsg> messages;
-
   final List<StdSignature> signatures;
-
   final StdFee fee;
   final String memo;
 
