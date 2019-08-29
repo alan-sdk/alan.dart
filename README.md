@@ -1,11 +1,14 @@
-# Sacco
-Sacco, what composes a [Borsellino](https://github.com/commercionetwork/borsellino), is a Dart package that allows
-to easily perform some operations related to the Cosmos ecosystem. This includes: 
+# Sacco.dart
+Sacco is a pure Dart package that allows you to easily perform some operations related to the 
+[Cosmos.network](https://cosmos.network) ecosystem. This includes: 
 
 1. Creating an HD Wallet. 
 2. Creating a transaction. 
 3. Signing a transaction. 
-4. Broadcasting a transaction.  
+4. Broadcasting a transaction.
+
+Being it in pure Dart this means that you can use it inside your [Dart Web](https://dart.dev/web) projects 
+as well as [Flutter](https://flutter.dev) ones.  
 
 ## Usage 
 ### Creating a wallet
