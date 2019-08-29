@@ -9,7 +9,7 @@ void main() async {
   final networkInfo = NetworkInfo(
     id: "cosmos-hub2",
     bech32Hrp: "cosmos",
-    lcdUrl: "http://cosmos-lcd.commercio.network:1317",
+    lcdUrl: "http://lcd-cosmos.commercio.network",
   );
 
   final mnemonicString =
