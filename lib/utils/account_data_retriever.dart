@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:sacco/models/export.dart';
 import 'package:http/http.dart' as http;
+import 'package:sacco/models/transactions/export.dart';
 
 /// Allows to easily retrieve the data of an account based on the information
 /// contained inside a given [HexWallet].
@@ -30,9 +31,15 @@ class AccountDataRetrieval {
 
     final value = json["value"] as Map<String, dynamic>;
 
+    // Get the coins
+    final coins = ((value["coins"] as List) ?? List())
+        .map((coinMap) => StdCoin.fromJson(coinMap))
+        .toList();
+
     return AccountData(
       accountNumber: value["account_number"],
       sequence: value["sequence"],
+      coins: coins,
     );
   }
 }
