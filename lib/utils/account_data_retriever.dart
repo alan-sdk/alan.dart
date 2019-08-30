@@ -2,15 +2,15 @@ import 'dart:convert';
 
 import 'package:sacco/models/export.dart';
 import 'package:http/http.dart' as http;
-import 'package:sacco/models/transactions/export.dart';
+import 'package:sacco/sacco.dart';
 
 /// Allows to easily retrieve the data of an account based on the information
-/// contained inside a given [HexWallet].
+/// contained inside a given [Wallet].
 class AccountDataRetrieval {
   static var client = http.Client();
 
   /// Reads the account endpoint and retrieves data from it.
-  static Future<AccountData> getAccountData(HexWallet wallet) async {
+  static Future<AccountData> getAccountData(Wallet wallet) async {
     // Build the models.wallet api url
     final endpoint =
         "${wallet.networkInfo.lcdUrl}/auth/accounts/${wallet.bech32Address}";

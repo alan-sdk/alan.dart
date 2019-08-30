@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:meta/meta.dart';
 import 'package:sacco/models/export.dart';
 import 'package:sacco/utils/account_data_retriever.dart';
+import 'package:sacco/sacco.dart';
 
 import 'utils/map_sorter.dart';
 
@@ -12,7 +13,7 @@ class TxSigner {
   /// given [wallet] and returns a new [StdTx] containing the signatures
   /// inside it.
   static Future<StdTx> signStdTx({
-    @required HexWallet wallet,
+    @required Wallet wallet,
     @required StdTx stdTx,
   }) async {
     // Get the account data from the network
@@ -34,7 +35,7 @@ class TxSigner {
   }
 
   static StdSignature _getStdSignature(
-    HexWallet wallet,
+    Wallet wallet,
     AccountData accountData,
     StdMsg message,
     StdFee fee,

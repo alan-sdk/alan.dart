@@ -2,12 +2,9 @@ import 'dart:io';
 
 import 'package:http/http.dart';
 import 'package:http/testing.dart';
-import 'package:sacco/tx_builder.dart';
-import 'package:sacco/tx_signer.dart';
+import 'package:sacco/sacco.dart';
 import 'package:sacco/utils/account_data_retriever.dart';
 import 'package:test/test.dart';
-
-import 'package:sacco/models/export.dart';
 
 void main() {
   final derivationPath = "m/44'/118'/0'/0/0";
@@ -36,7 +33,7 @@ void main() {
     final tx = TxBuilder.buildStdTx(stdMsgs: [msg], fee: fee);
 
     // Create a wallet
-    final wallet = HexWallet.derive(mnemonic, derivationPath, networkInfo);
+    final wallet = Wallet.derive(mnemonic, derivationPath, networkInfo);
     expect(wallet.networkInfo.id, networkInfo.id);
 
     // Create a mock client

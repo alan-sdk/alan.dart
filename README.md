@@ -23,7 +23,7 @@ final networkInfo = NetworkInfo(id: "", bech32Hrp: "cosmos", lcdUrl: "");
 
 final mnemonicString = "final random flame cinnamon grunt hazard easily mutual resist pond solution define knife female tongue crime atom jaguar alert library best forum lesson rigid";
 final mnemonic = mnemonicString.split(" ");
-final wallet = HexWallet.derive(mnemonic, derivationPath, networkInfo);
+final wallet = Wallet.derive(mnemonic, derivationPath, networkInfo);
 ```
 
 ### Creating a transaction

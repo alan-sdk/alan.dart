@@ -2,18 +2,19 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:meta/meta.dart';
+import 'package:sacco/sacco.dart';
 
 import 'package:sacco/models/export.dart';
 
 /// Allows to easily send a [StdTx] using the data contained inside the
-/// specified [HexWallet].
+/// specified [Wallet].
 class TxSender {
   /// Broadcasts the given [stdTx] using the info contained
   /// inside the given [wallet].
   /// Returns the hash of the transaction once it has been send, or throws an
   /// exception if an error is risen during the sending.
   static Future<String> broadcastStdTx({
-    @required HexWallet wallet,
+    @required Wallet wallet,
     @required StdTx stdTx,
   }) async {
     // Get the endpoint

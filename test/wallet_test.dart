@@ -1,6 +1,6 @@
 import 'package:test/test.dart';
 
-import 'package:sacco/models/export.dart';
+import 'package:sacco/sacco.dart';
 
 void main() {
   final derivationPath = "m/44'/118'/0'/0/0";
@@ -32,8 +32,22 @@ void main() {
   test('Wallets are generated correctly', () {
     testVectors.forEach((address, mnemonicString) {
       final mnemonic = mnemonicString.split(" ");
-      final wallet = HexWallet.derive(mnemonic, derivationPath, networkInfo);
+      final wallet = Wallet.derive(mnemonic, derivationPath, networkInfo);
       expect(wallet.bech32Address, address);
     });
+  });
+
+  test('toJson and fromJson work properly', () {
+    final mnemonic =
+        "final random flame cinnamon grunt hazard easily mutual resist pond solution define knife female tongue crime atom jaguar alert library best forum lesson rigid"
+            .split(" ");
+    final wallet = Wallet.derive(mnemonic, derivationPath, networkInfo);
+
+    final jsonWallet = wallet.toJson();
+
+    final privateKey = wallet.privateKey;
+    final retrievedWallet = Wallet.fromJson(jsonWallet, privateKey);
+
+    expect(wallet, retrievedWallet);
   });
 }
