@@ -1,6 +1,5 @@
-import 'package:test/test.dart';
-
 import 'package:sacco/sacco.dart';
+import 'package:test/test.dart';
 
 void main() {
   test('toJson and fromJson work properly with optional fields', () {
