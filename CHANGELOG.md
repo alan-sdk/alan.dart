@@ -1,3 +1,6 @@
+## Version 0.0.7 - 2019-08-30
+* Added the `defaultTokenDenom` field inside `NetworkInfo`
+
 ## Version 0.0.6 - 2019-08-30
 * Added the serialization of the Bech32 address inside `Wallet` 
 

@@ -10,17 +10,19 @@ class NetworkInfo extends Equatable {
   // Optional fields
   final String name; // Human readable chain name
   final String iconUrl; // Chain icon url
+  final String defaultTokenDenom;
 
-  NetworkInfo(
-      {@required this.id,
-      @required this.bech32Hrp,
-      @required this.lcdUrl,
-      this.name = "",
-      this.iconUrl = ""})
-      : assert(id != null),
+  NetworkInfo({
+    @required this.id,
+    @required this.bech32Hrp,
+    @required this.lcdUrl,
+    this.name = "",
+    this.iconUrl = "",
+    this.defaultTokenDenom,
+  })  : assert(id != null),
         assert(bech32Hrp != null),
         assert(lcdUrl != null),
-        super([id, bech32Hrp, lcdUrl]);
+        super([id, bech32Hrp, lcdUrl, name, iconUrl, defaultTokenDenom]);
 
   factory NetworkInfo.fromJson(Map<String, dynamic> json) {
     return NetworkInfo(
@@ -29,6 +31,7 @@ class NetworkInfo extends Equatable {
       lcdUrl: json['lcd_url'] as String,
       name: json['name'] as String,
       iconUrl: json['icon_url'] as String,
+      defaultTokenDenom: json['default_token_denom'] as String,
     );
   }
 
@@ -38,5 +41,6 @@ class NetworkInfo extends Equatable {
         'lcd_url': this.lcdUrl,
         'name': this.name,
         'icon_url': this.iconUrl,
+        'default_token_denom': this.defaultTokenDenom,
       };
 }
