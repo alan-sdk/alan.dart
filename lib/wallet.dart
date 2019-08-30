@@ -121,7 +121,7 @@ class Wallet extends Equatable {
   /// Creates a new [Wallet] instance from the given [json] and [privateKey].
   factory Wallet.fromJson(Map<String, dynamic> json, Uint8List privateKey) {
     return Wallet(
-      address: HEX.decode(json["address"] as String),
+      address: HEX.decode(json["hex_address"] as String),
       publicKey: HEX.decode(json['public_key'] as String),
       privateKey: privateKey,
       networkInfo: NetworkInfo.fromJson(json['network_info']),
@@ -131,7 +131,8 @@ class Wallet extends Equatable {
   /// Converts the current [Wallet] instance into a JSON object.
   /// Note that the private key is not serialized for safety reasons.
   Map<String, dynamic> toJson() => <String, dynamic>{
-        'address': HEX.encode(this.address),
+        'hex_address': HEX.encode(this.address),
+        'bech32_address': this.bech32Address,
         'public_key': HEX.encode(this.publicKey),
         'network_info': this.networkInfo.toJson(),
       };

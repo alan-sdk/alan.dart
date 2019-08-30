@@ -1,3 +1,6 @@
+## Version 0.0.6 - 2019-08-30
+* Added the serialization of the Bech32 address inside `Wallet` 
+
 ## Version 0.0.5 - 2019-08-30
 * Renamed `HexWallet` to `Wallet` 
 * Added the `Wallet.convert` factory method
