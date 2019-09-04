@@ -1,10 +1,11 @@
-# Sacco.dart
+![](.img/logo.png)
+
 ![Pub](https://img.shields.io/pub/v/sacco)
 ![Travis (.org)](https://img.shields.io/travis/commercionetwork/sacco.dart)
 ![](https://img.shields.io/badge/compatible-flutter-blue)
 
 
-Sacco is a pure Dart package that allows you to easily perform some operations related to the 
+Sacco.dart is a pure Dart package that allows you to easily perform some operations related to the 
 [Cosmos.network](https://cosmos.network) ecosystem. This includes: 
 
 1. Creating an HD Wallet. 
