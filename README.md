@@ -1,4 +1,4 @@
-![](.img/logo.png)
+![](.img/logo.jpg)
 
 ![Pub](https://img.shields.io/pub/v/sacco)
 ![Travis (.org)](https://img.shields.io/travis/commercionetwork/sacco.dart)
@@ -13,7 +13,7 @@ Sacco.dart is a pure Dart package that allows you to easily perform some operati
 3. Signing a transaction. 
 4. Broadcasting a transaction.
 
-Being it in pure Dart this means that you can use it inside your [Dart Web](https://dart.dev/web) projects 
+Being it in pure Dart means that you can use it inside your [Dart Web](https://dart.dev/web) projects 
 as well as [Flutter](https://flutter.dev) ones.  
 
 ## Usage 
@@ -51,10 +51,7 @@ final signedStdTx = TxSigner.signStdTx(wallet: wallet, stdTx: stdTx);
 ### Sending a transaction
 ```dart
 try {
-  final hash = await TxSender.broadcastStdTx(
-    wallet: wallet,
-    stdTx: signedStdTx,
-  );
+  final hash = await TxSender.broadcastStdTx(wallet: wallet, stdTx: signedStdTx);
   print("Tx send successfully. Hash: $hash");
 } catch (error) {
   print("Error while sending the tx: $error");
