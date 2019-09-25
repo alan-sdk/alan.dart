@@ -17,8 +17,7 @@ class NetworkInfo extends Equatable {
     this.name = "",
     this.iconUrl = "",
     this.defaultTokenDenom,
-  })
-      : assert(bech32Hrp != null),
+  })  : assert(bech32Hrp != null),
         assert(lcdUrl != null),
         super([bech32Hrp, lcdUrl, name, iconUrl, defaultTokenDenom]);
 

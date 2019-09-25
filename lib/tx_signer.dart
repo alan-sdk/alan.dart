@@ -21,15 +21,14 @@ class TxSigner {
 
     // Sign each message
     final signatures = stdTx.messages
-        .map((msg) =>
-        _getStdSignature(
-          wallet,
-          account,
-          nodeInfo,
-          msg,
-          stdTx.fee,
-          stdTx.memo,
-        ))
+        .map((msg) => _getStdSignature(
+              wallet,
+              account,
+              nodeInfo,
+              msg,
+              stdTx.fee,
+              stdTx.memo,
+            ))
         .toList();
 
     // Assemble the transaction
@@ -44,7 +43,7 @@ class TxSigner {
   static StdSignature _getStdSignature(
     Wallet wallet,
     AccountData accountData,
-      NodeInfo nodeInfo,
+    NodeInfo nodeInfo,
     StdMsg message,
     StdFee fee,
     String memo,

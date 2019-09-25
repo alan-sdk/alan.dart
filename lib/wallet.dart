@@ -39,8 +39,10 @@ class Wallet extends Equatable {
 
   /// Derives the private key from the given [mnemonic] using the specified
   /// [networkInfo].
-  factory Wallet.derive(List<String> mnemonic,
-      NetworkInfo networkInfo,) {
+  factory Wallet.derive(
+    List<String> mnemonic,
+    NetworkInfo networkInfo,
+  ) {
     // Get the mnemonic as a string
     final mnemonicString = mnemonic.join(' ');
     if (!bip39.validateMnemonic(mnemonicString)) {
@@ -130,9 +132,9 @@ class Wallet extends Equatable {
   /// Converts the current [Wallet] instance into a JSON object.
   /// Note that the private key is not serialized for safety reasons.
   Map<String, dynamic> toJson() => <String, dynamic>{
-    'hex_address': HEX.encode(this.address),
-    'bech32_address': this.bech32Address,
-    'public_key': HEX.encode(this.publicKey),
-    'network_info': this.networkInfo.toJson(),
-  };
+        'hex_address': HEX.encode(this.address),
+        'bech32_address': this.bech32Address,
+        'public_key': HEX.encode(this.publicKey),
+        'network_info': this.networkInfo.toJson(),
+      };
 }

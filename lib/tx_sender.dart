@@ -26,8 +26,7 @@ class TxSender {
     final response = await http.Client().post(apiUrl, body: requestBodyJson);
     if (response.statusCode != 200) {
       throw Exception(
-        "Expected status code 200 but got ${response.statusCode} - ${response
-            .body}",
+        "Expected status code 200 but got ${response.statusCode} - ${response.body}",
       );
     }
 
