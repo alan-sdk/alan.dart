@@ -4,8 +4,6 @@ import 'package:http/http.dart' as http;
 import 'package:meta/meta.dart';
 import 'package:sacco/sacco.dart';
 
-import 'package:sacco/models/export.dart';
-
 /// Allows to easily send a [StdTx] using the data contained inside the
 /// specified [Wallet].
 class TxSender {
@@ -13,7 +11,7 @@ class TxSender {
   /// inside the given [wallet].
   /// Returns the hash of the transaction once it has been send, or throws an
   /// exception if an error is risen during the sending.
-  static Future<String> broadcastStdTx({
+  static Future<TransactionResult> broadcastStdTx({
     @required Wallet wallet,
     @required StdTx stdTx,
   }) async {
@@ -28,16 +26,30 @@ class TxSender {
     final response = await http.Client().post(apiUrl, body: requestBodyJson);
     if (response.statusCode != 200) {
       throw Exception(
-        "Excpected status code 200 but got ${response.statusCode} - ${response.body}",
+        "Expected status code 200 but got ${response.statusCode} - ${response
+            .body}",
       );
     }
 
-    // Get the Tx hash
+    // Convert the response
     final json = jsonDecode(response.body) as Map<String, dynamic>;
-    if (!json.containsKey("txhash")) {
-      throw Exception("No hash inside response: $json");
-    } else {
-      return json["txhash"];
+    return _convertJson(json);
+  }
+
+  /// Converts the given [json] to a [TransactionResult] object.
+  static TransactionResult _convertJson(Map<String, dynamic> json) {
+    final rawLog = jsonDecode(json["raw_log"] as String) as dynamic;
+    if (rawLog is Map<String, dynamic>) {
+      return TransactionResult(
+        hash: json["txhash"],
+        success: false,
+        error: TransactionError(
+          errorCode: rawLog["code"] as int,
+          errorMessage: rawLog["message"] as String,
+        ),
+      );
     }
+
+    return TransactionResult(hash: json["txhash"], success: true, error: null);
   }
 }

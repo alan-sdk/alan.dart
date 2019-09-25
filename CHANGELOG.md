@@ -1,3 +1,11 @@
+## Version 0.0.8 - 2019-09-25
+* Removed the `id` field from the `NetworkInfo` object
+* Removed the `derivationPath` field from the `Wallet.derive` method
+* Changed the return type of the `TxSender.broadcastTx` method.  
+   Now it returns a `TransactionResponse` that include a `success` field and any error 
+   that might have occurred during the broadcast.
+* Fixed some typos inside the exceptions messages
+
 ## Version 0.0.7 - 2019-08-30
 * Added the `defaultTokenDenom` field inside `NetworkInfo`
 

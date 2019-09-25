@@ -6,12 +6,12 @@ void main() async {
   // -----------------------------------
 
   final networkInfo = NetworkInfo(
-    bech32Hrp: "cosmos",
-    lcdUrl: "http://lcd-cosmos.commercio.network",
+    bech32Hrp: "did:com:",
+    lcdUrl: "http://localhost:1317",
   );
 
   final mnemonicString =
-      "final random flame cinnamon grunt hazard easily mutual resist pond solution define knife female tongue crime atom jaguar alert library best forum lesson rigid";
+      "vivid favorite regular curve check word bubble echo disorder cute parade neck rib evidence option glimpse couple force angry section dizzy puppy express cream";
   final mnemonic = mnemonicString.split(" ");
   final wallet = Wallet.derive(mnemonic, networkInfo);
 
@@ -22,8 +22,8 @@ void main() async {
   final message = StdMsg(
     type: "cosmos-sdk/MsgSend",
     value: {
-      "from_address": "cosmos1huydeevpz37sd9snkgul6070mstupukw00xkw9",
-      "to_address": "cosmos12lla7fg3hjd2zj6uvf4pqj7atx273klc487c5k",
+      "from_address": wallet.bech32Address,
+      "to_address": "did:com:1lys5uu683wrmupn4zguz7f2gqw45qae98pzn3d",
       "amount": [
         {"denom": "uatom", "amount": "100"}
       ]
@@ -42,13 +42,15 @@ void main() async {
   // --- Sending a transaction
   // -----------------------------------
 
-  try {
-    final hash = await TxSender.broadcastStdTx(
-      wallet: wallet,
-      stdTx: signedStdTx,
-    );
-    print("Tx send successfully. Hash: $hash");
-  } catch (error) {
-    print("Error while sending the tx: $error");
+  final result = await TxSender.broadcastStdTx(
+    wallet: wallet,
+    stdTx: signedStdTx,
+  );
+
+  // Check the result
+  if (result.success) {
+    print("Tx send successfully. Hash: ${result.hash}");
+  } else {
+    print("Tx send error: ${result.error.errorMessage}");
   }
 }

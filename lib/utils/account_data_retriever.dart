@@ -18,7 +18,8 @@ class AccountDataRetrieval {
     final response = await client.get(endpoint);
     if (response.statusCode != 200) {
       throw Exception(
-        "Excpected status code 200 but got ${response.statusCode} - ${response.body}",
+        "Expected status code 200 but got ${response.statusCode} - ${response
+            .body}",
       );
     }
 
