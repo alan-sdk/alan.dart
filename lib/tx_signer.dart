@@ -1,9 +1,8 @@
 import 'dart:convert';
 
 import 'package:meta/meta.dart';
-import 'package:sacco/models/export.dart';
-import 'package:sacco/utils/account_data_retriever.dart';
 import 'package:sacco/sacco.dart';
+import 'package:sacco/utils/export.dart';
 
 import 'utils/map_sorter.dart';
 
@@ -16,13 +15,21 @@ class TxSigner {
     @required Wallet wallet,
     @required StdTx stdTx,
   }) async {
-    // Get the account data from the network
+    // Get the account data and node info from the network
     final account = await AccountDataRetrieval.getAccountData(wallet);
+    final nodeInfo = await NodeInfoRetrieval.getNodeInfo(wallet);
 
     // Sign each message
     final signatures = stdTx.messages
         .map((msg) =>
-            _getStdSignature(wallet, account, msg, stdTx.fee, stdTx.memo))
+        _getStdSignature(
+          wallet,
+          account,
+          nodeInfo,
+          msg,
+          stdTx.fee,
+          stdTx.memo,
+        ))
         .toList();
 
     // Assemble the transaction
@@ -37,6 +44,7 @@ class TxSigner {
   static StdSignature _getStdSignature(
     Wallet wallet,
     AccountData accountData,
+      NodeInfo nodeInfo,
     StdMsg message,
     StdFee fee,
     String memo,
@@ -45,7 +53,7 @@ class TxSigner {
     final signature = StdSignatureMessage(
       sequence: accountData.sequence,
       accountNumber: accountData.accountNumber,
-      chainId: wallet.networkInfo.id,
+      chainId: nodeInfo.network,
       fee: fee.toJson(),
       memo: memo,
       msgs: [message.toJson()],

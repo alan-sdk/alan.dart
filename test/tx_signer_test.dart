@@ -4,10 +4,10 @@ import 'package:http/http.dart';
 import 'package:http/testing.dart';
 import 'package:sacco/sacco.dart';
 import 'package:sacco/utils/account_data_retriever.dart';
+import 'package:sacco/utils/export.dart';
 import 'package:test/test.dart';
 
 void main() {
-  final derivationPath = "m/44'/118'/0'/0/0";
   final mnemonic =
       "sibling auction sibling flavor judge foil tube dust work mixed crush action menu property project ride crouch hat mom scale start ill spare panther"
           .split(" ");
@@ -15,7 +15,6 @@ void main() {
   test('StdTx with fee is signed correctly', () async {
     // Create the network info
     final networkInfo = NetworkInfo(
-      id: "cosmos-hub2",
       bech32Hrp: "cosmos",
       lcdUrl: "http://localhost:1317",
     );
@@ -33,18 +32,26 @@ void main() {
     final tx = TxBuilder.buildStdTx(stdMsgs: [msg], fee: fee);
 
     // Create a wallet
-    final wallet = Wallet.derive(mnemonic, derivationPath, networkInfo);
-    expect(wallet.networkInfo.id, networkInfo.id);
+    final wallet = Wallet.derive(mnemonic, networkInfo);
+    expect(wallet.networkInfo, networkInfo);
 
     // Create a mock client
     final client = MockClient((request) async {
-      final responseFile = File('test_resources/AccountDataResponse.json');
+      final url = request.url.toString();
+      var responseFile;
+      if (url.contains("account")) {
+        responseFile = File('test_resources/AccountDataResponse.json');
+      } else if (url.contains("node_info")) {
+        responseFile = File('test_resources/NodeInfoResponse.json');
+      }
+
       final responseBody = await responseFile.readAsString();
       return Response(responseBody, 200);
     });
 
     // Setup the client
     AccountDataRetrieval.client = client;
+    NodeInfoRetrieval.client = client;
 
     // Sign the transaction
     final signedTx = await TxSigner.signStdTx(wallet: wallet, stdTx: tx);

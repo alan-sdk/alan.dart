@@ -5,9 +5,7 @@ void main() async {
   // --- Creating a wallet
   // -----------------------------------
 
-  final derivationPath = "m/44'/118'/0'/0/0";
   final networkInfo = NetworkInfo(
-    id: "cosmos-hub2",
     bech32Hrp: "cosmos",
     lcdUrl: "http://lcd-cosmos.commercio.network",
   );
@@ -15,7 +13,11 @@ void main() async {
   final mnemonicString =
       "final random flame cinnamon grunt hazard easily mutual resist pond solution define knife female tongue crime atom jaguar alert library best forum lesson rigid";
   final mnemonic = mnemonicString.split(" ");
-  final wallet = Wallet.derive(mnemonic, derivationPath, networkInfo);
+  final wallet = Wallet.derive(mnemonic, networkInfo);
+
+  // -----------------------------------
+  // --- Creating a transaction
+  // -----------------------------------
 
   final message = StdMsg(
     type: "cosmos-sdk/MsgSend",
@@ -28,14 +30,10 @@ void main() async {
     },
   );
 
-  // -----------------------------------
-  // --- Creating a transaction
-  // -----------------------------------
-
   final stdTx = TxBuilder.buildStdTx(stdMsgs: [message]);
 
   // -----------------------------------
-  // --- Creating a transaction
+  // Signing a transaction
   // -----------------------------------
 
   final signedStdTx = await TxSigner.signStdTx(wallet: wallet, stdTx: stdTx);
