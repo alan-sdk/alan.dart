@@ -5,7 +5,7 @@ class StdCoin {
   final String denom;
   final String amount;
 
-  StdCoin({
+  const StdCoin({
     @required this.denom,
     @required this.amount,
   })  : assert(denom != null),

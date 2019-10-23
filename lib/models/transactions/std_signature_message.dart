@@ -8,7 +8,7 @@ class StdSignatureMessage {
   final Map<String, dynamic> fee;
   final List<Map<String, dynamic>> msgs;
 
-  StdSignatureMessage({
+  const StdSignatureMessage({
     @required this.chainId,
     @required this.accountNumber,
     @required this.sequence,

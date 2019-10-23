@@ -1,3 +1,6 @@
+## Version 0.0.10 - 2019-10-23
+* Added missing `const` constructors
+
 ## Version 0.0.9 - 2019-10-23
 * Renamed `Wallet.signTxData` to `Wallet.sign`
 * Changed `Wallet.sign` to accept any `Map<String, dynamic>` and not just a `String`
