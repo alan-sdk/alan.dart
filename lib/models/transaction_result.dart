@@ -12,6 +12,9 @@ class TransactionResult extends Equatable {
   final bool success;
 
   /// Tells which error has verified if the sending was not successful.
+  /// Please note that this field is going to be:
+  /// - `null` if [success] is `true`.
+  /// - a valid [TransactionError] if [success] is `false`
   final TransactionError error;
 
   TransactionResult({
