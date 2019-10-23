@@ -110,9 +110,12 @@ class Wallet extends Equatable {
   }
 
   /// Signs the given [data] using the associated [privateKey].
-  Uint8List signTxData(String data) {
+  Uint8List signData(Map<String, dynamic> data) {
+    // Encode the sorted JSON to a string
+    var jsonData = json.encode(data);
+
     // Create a Sha256 of the message
-    final bytes = utf8.encode(data);
+    final bytes = utf8.encode(jsonData);
     final hash = SHA256Digest().process(bytes);
 
     // Compute the signature

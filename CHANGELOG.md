@@ -1,3 +1,8 @@
+## Version 0.0.9 - 2019-10-23
+* Renamed `Wallet.signTxData` to `Wallet.sign`
+* Changed `Wallet.sign` to accept any `Map<String, dynamic>` and not just a `String`
+* Added the `MapSorter` to the exported types
+
 ## Version 0.0.8 - 2019-09-25
 * Removed the `id` field from the `NetworkInfo` object
 * Removed the `derivationPath` field from the `Wallet.derive` method
