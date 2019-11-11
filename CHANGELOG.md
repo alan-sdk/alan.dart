@@ -1,3 +1,11 @@
+## Version 0.0.12 - 2012-11-11
+* Renamed `signData` to `sign` 
+* Changed how the signatures are created inside `sign`, now they are non-deterministic 
+
+## Version 0.0.11 - 2019-11-11
+* Renamed `signData` to `signTxData` 
+* Added `signData` that signs the data and returns the ASN.1 DER encoded signature
+
 ## Version 0.0.10 - 2019-10-23
 * Added missing `const` constructors
 

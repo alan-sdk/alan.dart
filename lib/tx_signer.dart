@@ -62,8 +62,12 @@ class TxSigner {
     final jsonSignature = signature.toJson();
     final sortedJson = MapSorter.sort(jsonSignature);
 
-    // Sign the message
-    final signatureData = wallet.signData(sortedJson);
+    // Encode the sorted JSON to a string and get the bytes
+    var jsonData = json.encode(sortedJson);
+    final bytes = utf8.encode(jsonData);
+
+    // Sign the data
+    final signatureData = wallet.signTxData(bytes);
 
     // Get the compressed Base64 public key
     final pubKeyCompressed = wallet.ecPublicKey.Q.getEncoded(true);

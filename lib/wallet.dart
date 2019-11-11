@@ -1,6 +1,7 @@
-import 'dart:convert';
+import 'dart:math';
 import 'dart:typed_data';
 
+import 'package:asn1lib/asn1lib.dart';
 import 'package:bip32/bip32.dart' as bip32;
 import 'package:bip39/bip39.dart' as bip39;
 import 'package:equatable/equatable.dart';
@@ -96,7 +97,7 @@ class Wallet extends Equatable {
       Bech32Encoder.encode(networkInfo.bech32Hrp, address);
 
   /// Returns the associated [privateKey] as an [ECPrivateKey] instance.
-  ECPrivateKey get ecPrivateKey {
+  ECPrivateKey get _ecPrivateKey {
     final privateKeyInt = BigInt.parse(HEX.encode(privateKey), radix: 16);
     return ECPrivateKey(privateKeyInt, ECCurve_secp256k1());
   }
@@ -105,21 +106,41 @@ class Wallet extends Equatable {
   ECPublicKey get ecPublicKey {
     final secp256k1 = ECCurve_secp256k1();
     final point = secp256k1.G;
-    final curvePoint = point * ecPrivateKey.d;
+    final curvePoint = point * _ecPrivateKey.d;
     return ECPublicKey(curvePoint, ECCurve_secp256k1());
   }
 
-  /// Signs the given [data] using the associated [privateKey].
-  Uint8List signData(Map<String, dynamic> data) {
-    // Encode the sorted JSON to a string
-    var jsonData = json.encode(data);
+  /// Signs the given [data] using the associated [privateKey] and encodes
+  /// the signature bytes to be included inside a transaction.
+  Uint8List signTxData(Uint8List data) {
+    final hash = SHA256Digest().process(data);
+    return TransactionSigner.deriveFrom(hash, _ecPrivateKey, ecPublicKey);
+  }
 
-    // Create a Sha256 of the message
-    final bytes = utf8.encode(jsonData);
-    final hash = SHA256Digest().process(bytes);
+  /// Generates a SecureRandom
+  static SecureRandom _getSecureRandom() {
+    final secureRandom = FortunaRandom();
+    final random = Random.secure();
+    final seed = List<int>.generate(32, (_) => random.nextInt(256));
+    secureRandom.seed(new KeyParameter(new Uint8List.fromList(seed)));
+    return secureRandom;
+  }
 
-    // Compute the signature
-    return TransactionSigner.deriveFrom(hash, ecPrivateKey, ecPublicKey);
+  /// Signs the given [data] using the private key associated with this wallet,
+  /// returning the signature bytes ASN.1 DER encoded.
+  Uint8List sign(Uint8List data) {
+    final ecdsaSigner = Signer("SHA-256/ECDSA")
+      ..init(
+          true,
+          ParametersWithRandom(
+            PrivateKeyParameter(_ecPrivateKey),
+            _getSecureRandom(),
+          ));
+    ECSignature ecSignature = ecdsaSigner.generateSignature(data);
+    final sequence = ASN1Sequence();
+    sequence.add(ASN1Integer(ecSignature.r));
+    sequence.add(ASN1Integer(ecSignature.s));
+    return sequence.encodedBytes;
   }
 
   /// Creates a new [Wallet] instance from the given [json] and [privateKey].
