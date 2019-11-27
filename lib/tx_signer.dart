@@ -21,13 +21,7 @@ class TxSigner {
 
     // Sign all messages
     final signatures = _getStdSignature(
-        wallet,
-        account,
-        nodeInfo,
-        stdTx.messages,
-        stdTx.fee,
-        stdTx.memo
-    );
+        wallet, account, nodeInfo, stdTx.messages, stdTx.fee, stdTx.memo);
 
     // Assemble the transaction
     return StdTx(
@@ -39,14 +33,13 @@ class TxSigner {
   }
 
   static StdSignature _getStdSignature(
-      Wallet wallet,
-      AccountData accountData,
-      NodeInfo nodeInfo,
-      List<StdMsg> messages,
-      StdFee fee,
-      String memo,
-      ) {
-
+    Wallet wallet,
+    AccountData accountData,
+    NodeInfo nodeInfo,
+    List<StdMsg> messages,
+    StdFee fee,
+    String memo,
+  ) {
     // Create the signature object
     final signature = StdSignatureMessage(
       sequence: accountData.sequence,
