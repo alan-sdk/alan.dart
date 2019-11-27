@@ -19,24 +19,22 @@ class TxSigner {
     final account = await AccountDataRetrieval.getAccountData(wallet);
     final nodeInfo = await NodeInfoRetrieval.getNodeInfo(wallet);
 
-    // Sign each message
-    final signatures = stdTx.messages
-        .map((msg) => _getStdSignature(
-              wallet,
-              account,
-              nodeInfo,
-              msg,
-              stdTx.fee,
-              stdTx.memo,
-            ))
-        .toList();
-
+    // Sign all messages
+    final signatures = _getStdSignature(
+        wallet, 
+        account, 
+        nodeInfo, 
+        stdTx.messages, 
+        stdTx.fee, 
+        stdTx.memo
+    );
+    
     // Assemble the transaction
     return StdTx(
       fee: stdTx.fee,
       memo: stdTx.memo,
       messages: stdTx.messages,
-      signatures: signatures,
+      signatures: [signatures],
     );
   }
 
@@ -44,10 +42,11 @@ class TxSigner {
     Wallet wallet,
     AccountData accountData,
     NodeInfo nodeInfo,
-    StdMsg message,
+    List<StdMsg> messages,
     StdFee fee,
     String memo,
   ) {
+
     // Create the signature object
     final signature = StdSignatureMessage(
       sequence: accountData.sequence,
@@ -55,7 +54,7 @@ class TxSigner {
       chainId: nodeInfo.network,
       fee: fee.toJson(),
       memo: memo,
-      msgs: [message.toJson()],
+      msgs: messages.map((msg) => msg.toJson()).toList(),
     );
 
     // Convert the signature to a JSON and sort it
