@@ -1,4 +1,7 @@
-## Version 0.0.12 - 2012-11-11
+## Version 0.0.13 - 2019-28-11
+* Fixed the wrong implementation of `TxSigner` which led to an 
+  error in the chain when multiple messages were sent into a single transaction.
+## Version 0.0.12 - 2019-11-11
 * Renamed `signData` to `sign` 
 * Changed how the signatures are created inside `sign`, now they are non-deterministic 
 
