@@ -14,7 +14,9 @@ Sacco.dart is a pure Dart package that allows you to easily perform some operati
 4. Broadcasting a transaction.
 
 Being it in pure Dart means that you can use it inside your [Dart Web](https://dart.dev/web) projects 
-as well as [Flutter](https://flutter.dev) ones.  
+as well as [Flutter](https://flutter.dev) ones.
+
+You can find the latest release of sacco.dart on [pub](https://pub.dev/packages/sacco#-readme-tab-).
 
 ## Usage 
 ### Creating a wallet
