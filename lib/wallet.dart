@@ -35,8 +35,7 @@ class Wallet extends Equatable {
     @required this.publicKey,
   })  : assert(networkInfo != null),
         assert(privateKey != null),
-        assert(publicKey != null),
-        super([networkInfo, address, privateKey, publicKey]);
+        assert(publicKey != null);
 
   /// Derives the private key from the given [mnemonic] using the specified
   /// [networkInfo].
@@ -143,6 +142,14 @@ class Wallet extends Equatable {
     sequence.add(ASN1Integer(ecSignature.s));
     return sequence.encodedBytes;
   }
+
+  @override
+  List<Object> get props => [
+        networkInfo,
+        address,
+        privateKey,
+        publicKey,
+      ];
 
   /// Creates a new [Wallet] instance from the given [json] and [privateKey].
   factory Wallet.fromJson(Map<String, dynamic> json, Uint8List privateKey) {

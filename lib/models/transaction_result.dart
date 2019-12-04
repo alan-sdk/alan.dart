@@ -22,8 +22,10 @@ class TransactionResult extends Equatable {
     @required this.success,
     this.error,
   })  : assert(hash != null),
-        assert(success || error != null),
-        super([hash, success, error]);
+        assert(success || error != null);
+
+  @override
+  List<Object> get props => [hash, success, error];
 }
 
 /// Contains the data related to an error that has occurred when
@@ -35,5 +37,9 @@ class TransactionError extends Equatable {
   TransactionError({
     @required this.errorCode,
     @required this.errorMessage,
-  }) : super([errorCode, errorMessage]);
+  })  : assert(errorCode != null),
+        assert(errorMessage != null);
+
+  @override
+  List<Object> get props => [errorCode, errorMessage];
 }

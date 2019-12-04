@@ -6,6 +6,8 @@ class NodeInfo extends Equatable {
 
   NodeInfo({
     @required this.network,
-  })  : assert(network != null),
-        super([network]);
+  })  : assert(network != null);
+
+  @override
+  List<Object> get props => [network];
 }

@@ -18,8 +18,16 @@ class NetworkInfo extends Equatable {
     this.iconUrl = "",
     this.defaultTokenDenom,
   })  : assert(bech32Hrp != null),
-        assert(lcdUrl != null),
-        super([bech32Hrp, lcdUrl, name, iconUrl, defaultTokenDenom]);
+        assert(lcdUrl != null);
+
+  @override
+  List<Object> get props => [
+        bech32Hrp,
+        lcdUrl,
+        name,
+        iconUrl,
+        defaultTokenDenom,
+      ];
 
   factory NetworkInfo.fromJson(Map<String, dynamic> json) {
     return NetworkInfo(
