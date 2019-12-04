@@ -14,12 +14,13 @@ class TxSender {
   static Future<TransactionResult> broadcastStdTx({
     @required Wallet wallet,
     @required StdTx stdTx,
+    String mode = "block",
   }) async {
     // Get the endpoint
     final apiUrl = "${wallet.networkInfo.lcdUrl}/txs";
 
     // Build the request body
-    final requestBody = {"tx": stdTx.toJson(), "mode": "sync"};
+    final requestBody = {"tx": stdTx.toJson(), "mode": mode};
     final requestBodyJson = jsonEncode(requestBody);
 
     // Get the response

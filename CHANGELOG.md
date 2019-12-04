@@ -1,3 +1,7 @@
+##Version 0.0.14 - 2019-4-12
+* Added the possibility to chose the `mode` (`sync`, `block`, `async`) 
+  when you are broadcasting a transaction.
+
 ## Version 0.0.13 - 2019-28-11
 * Fixed the wrong implementation of `TxSigner` which led to an 
   error in the chain when multiple messages were sent into a single transaction.
