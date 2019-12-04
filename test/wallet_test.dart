@@ -87,4 +87,36 @@ void main() {
     final sig2 = HEX.encode(wallet.sign(utf8.encode(data)));
     expect(sig1 == sig2, false);
   });
+
+  test('derive with different derivation path works properly', () {
+    final info = NetworkInfo(bech32Hrp: "desmos", lcdUrl: "");
+    final mnemonic = [
+      "roast",
+      "stomach",
+      "welcome",
+      "please",
+      "gauge",
+      "funny",
+      "coconut",
+      "baby",
+      "bird",
+      "announce",
+      "bind",
+      "jacket",
+      "title",
+      "vibrant",
+      "tomorrow",
+      "indoor",
+      "bitter",
+      "initial",
+      "ill",
+      "analyst",
+      "thought",
+      "strike",
+      "answer",
+      "cotton",
+    ];
+    final wallet = Wallet.derive(mnemonic, info, derivationPath: "m/44'/852'/0'/0/0");
+    expect(wallet.bech32Address, "desmos1pcvzsr8kfe4lcpm5n60rjrgq0s5qtjh3stjj6p");
+  });
 }
