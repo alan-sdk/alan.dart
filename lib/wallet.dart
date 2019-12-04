@@ -42,8 +42,9 @@ class Wallet extends Equatable {
   /// [networkInfo].
   factory Wallet.derive(
     List<String> mnemonic,
-    NetworkInfo networkInfo,
-  ) {
+    NetworkInfo networkInfo, {
+    String derivationPath = DERIVATION_PATH,
+  }) {
     // Get the mnemonic as a string
     final mnemonicString = mnemonic.join(' ');
     if (!bip39.validateMnemonic(mnemonicString)) {
@@ -55,7 +56,7 @@ class Wallet extends Equatable {
     final root = bip32.BIP32.fromSeed(seed);
 
     // Get the node from the derivation path
-    final derivedNode = root.derivePath(DERIVATION_PATH);
+    final derivedNode = root.derivePath(derivationPath);
 
     // Get the curve data
     final secp256k1 = ECCurve_secp256k1();
