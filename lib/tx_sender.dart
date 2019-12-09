@@ -51,6 +51,11 @@ class TxSender {
       );
     }
 
-    return TransactionResult(hash: json["txhash"], success: true, error: null);
+    return TransactionResult(
+      raw: json,
+      hash: json["txhash"],
+      success: true,
+      error: null,
+    );
   }
 }
