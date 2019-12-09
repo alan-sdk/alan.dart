@@ -41,6 +41,7 @@ class TxSender {
     final rawLog = jsonDecode(json["raw_log"] as String) as dynamic;
     if (rawLog is Map<String, dynamic>) {
       return TransactionResult(
+        raw: json,
         hash: json["txhash"],
         success: false,
         error: TransactionError(

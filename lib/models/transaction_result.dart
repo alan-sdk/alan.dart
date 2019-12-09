@@ -17,15 +17,19 @@ class TransactionResult extends Equatable {
   /// - a valid [TransactionError] if [success] is `false`
   final TransactionError error;
 
+  final Map<String, dynamic> raw;
+
   TransactionResult({
     @required this.hash,
     @required this.success,
+    @required this.raw,
     this.error,
   })  : assert(hash != null),
-        assert(success || error != null);
+        assert(success || error != null),
+        assert(raw != null);
 
   @override
-  List<Object> get props => [hash, success, error];
+  List<Object> get props => [hash, success, error, raw];
 }
 
 /// Contains the data related to an error that has occurred when
