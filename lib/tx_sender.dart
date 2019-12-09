@@ -14,7 +14,7 @@ class TxSender {
   static Future<TransactionResult> broadcastStdTx({
     @required Wallet wallet,
     @required StdTx stdTx,
-    String mode = "block",
+    String mode = "sync",
   }) async {
     // Get the endpoint
     final apiUrl = "${wallet.networkInfo.lcdUrl}/txs";
