@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:sacco/sacco.dart';
+import 'package:alan/alan.dart';
 
 /// Allows to easily retrieve the data of an account based on the information
 /// contained inside a given [Wallet].

@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:meta/meta.dart';
-import 'package:sacco/sacco.dart';
+import 'package:alan/alan.dart';
 
 /// Allows to easily send a [StdTx] using the data contained inside the
 /// specified [Wallet].

@@ -8,8 +8,8 @@ import 'package:equatable/equatable.dart';
 import 'package:hex/hex.dart';
 import 'package:meta/meta.dart';
 import 'package:pointycastle/export.dart';
-import 'package:sacco/sacco.dart';
-import 'package:sacco/utils/bech32_encoder.dart';
+import 'package:alan/alan.dart';
+import 'package:alan/utils/bech32_encoder.dart';
 
 import '../utils/msg_signer.dart';
 

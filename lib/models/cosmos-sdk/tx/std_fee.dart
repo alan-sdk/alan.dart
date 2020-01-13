@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:meta/meta.dart';
-import 'package:sacco/models/export.dart';
+import 'package:alan/models/export.dart';
 
 part 'std_fee.g.dart';
 

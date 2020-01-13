@@ -2,9 +2,9 @@ import 'dart:io';
 
 import 'package:http/http.dart';
 import 'package:http/testing.dart';
-import 'package:sacco/sacco.dart';
-import 'package:sacco/utils/network/account_data_retriever.dart';
-import 'package:sacco/utils/export.dart';
+import 'package:alan/alan.dart';
+import 'package:alan/utils/network/account_data_retriever.dart';
+import 'package:alan/utils/export.dart';
 import 'package:test/test.dart';
 
 void main() {

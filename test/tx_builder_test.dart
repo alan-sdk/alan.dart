@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:sacco/helpers/tx_builder.dart';
-import 'package:sacco/models/export.dart';
+import 'package:alan/helpers/tx_builder.dart';
+import 'package:alan/models/export.dart';
 import 'package:test/test.dart';
 
 void main() {

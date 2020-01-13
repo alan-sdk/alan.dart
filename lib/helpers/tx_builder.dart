@@ -1,5 +1,5 @@
 import 'package:meta/meta.dart';
-import 'package:sacco/sacco.dart';
+import 'package:alan/alan.dart';
 
 /// Allows to easily build and sign a [StdTx] that can later be sent over
 /// the network.

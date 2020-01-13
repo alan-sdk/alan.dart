@@ -1,7 +1,7 @@
-import 'package:sacco/sacco.dart';
+import 'package:alan/alan.dart';
 import 'package:test/test.dart';
 
-import 'package:sacco/models/export.dart';
+import 'package:alan/models/export.dart';
 
 void main() {
   test('MsgSend is built correctly', () {

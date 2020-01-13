@@ -1,4 +1,4 @@
-import 'package:sacco/sacco.dart';
+import 'package:alan/alan.dart';
 
 /// Represents the codec that is used to serialize [StdMsg] instances
 /// properly during transactions signature processes.
