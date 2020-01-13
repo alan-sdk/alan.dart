@@ -1,12 +1,12 @@
 ![](.img/logo.jpg)
 
-![Pub](https://img.shields.io/pub/v/sacco)
-![Travis (.org)](https://img.shields.io/travis/commercionetwork/sacco.dart)
+![Travis (.org)](https://img.shields.io/travis/alan-sdk/alan.dart)
 ![](https://img.shields.io/badge/compatible-flutter-blue)
 
+> Alan.dart is an evolution of [Sacco.dart](https://github.com/commercionetwork/sacco.dart) on which I personally worked. Due to the fact that Sacco.dart is no longer maintained by Commercio.network and I no longer work there, I decided to start this new project to support future mobile apps development for Cosmos-based chains. 
 
-Sacco.dart is a pure Dart package that allows you to easily perform some operations related to the 
-[Cosmos.network](https://cosmos.network) ecosystem. This includes: 
+Alan.dart is a pure Dart package that allows you to easily deal with [Cosmos](https://cosmos.network)-based HD wallets 
+and transactions. This includes: 
 
 1. Creating an HD Wallet. 
 2. Creating a transaction. 
@@ -15,8 +15,6 @@ Sacco.dart is a pure Dart package that allows you to easily perform some operati
 
 Being it in pure Dart means that you can use it inside your [Dart Web](https://dart.dev/web) projects 
 as well as [Flutter](https://flutter.dev) ones.
-
-You can find the latest release of sacco.dart on [pub](https://pub.dev/packages/sacco#-readme-tab-).
 
 ## Usage 
 ### Creating a wallet
@@ -31,15 +29,10 @@ final wallet = Wallet.derive(mnemonic, derivationPath, networkInfo);
 
 ### Creating a transaction
 ```dart
-final message = StdMsg(
-  type: "cosmos-sdk/MsgSend",
-  value: {
-    "from_address": "cosmos1huydeevpz37sd9snkgul6070mstupukw00xkw9",
-    "to_address": "cosmos12lla7fg3hjd2zj6uvf4pqj7atx273klc487c5k",
-    "amount": [
-      {"denom": "uatom", "amount": "100"}
-    ]
-  },
+final message = MsgSend(
+  fromAddress: "cosmos1huydeevpz37sd9snkgul6070mstupukw00xkw9",
+  toAddress: "cosmos12lla7fg3hjd2zj6uvf4pqj7atx273klc487c5k",
+  amount: [StdCoin(denom: "uatom", amount: "100")],
 );
 
 final stdTx = TxBuilder.buildStdTx(stdMsgs: [message]);
