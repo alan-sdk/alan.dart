@@ -23,10 +23,6 @@ class NodeInfoRetrieval {
 
     // Parse the data
     var json = jsonDecode(response.body) as Map<String, dynamic>;
-    final nodeInfo = json["node_info"] as Map<String, dynamic>;
-
-    return NodeInfo(
-      network: nodeInfo["network"] as String,
-    );
+    return NodeInfoResponse.fromJson(json).nodeInfo;
   }
 }

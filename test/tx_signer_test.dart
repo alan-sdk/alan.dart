@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:http/http.dart';
 import 'package:http/testing.dart';
 import 'package:sacco/sacco.dart';
-import 'package:sacco/utils/account_data_retriever.dart';
+import 'package:sacco/utils/network/account_data_retriever.dart';
 import 'package:sacco/utils/export.dart';
 import 'package:test/test.dart';
 

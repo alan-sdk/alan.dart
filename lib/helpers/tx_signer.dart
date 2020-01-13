@@ -4,7 +4,7 @@ import 'package:meta/meta.dart';
 import 'package:sacco/sacco.dart';
 import 'package:sacco/utils/export.dart';
 
-import 'utils/map_sorter.dart';
+import '../utils/map_sorter.dart';
 
 /// Allows to easily sign a [StdTx] object that already contains a message.
 class TxSigner {
@@ -36,7 +36,7 @@ class TxSigner {
     Wallet wallet,
     AccountData accountData,
     NodeInfo nodeInfo,
-    List<StdMsg> messages,
+    List<Map<String, dynamic>> messages,
     StdFee fee,
     String memo,
   ) {
@@ -47,7 +47,7 @@ class TxSigner {
       chainId: nodeInfo.network,
       fee: fee.toJson(),
       memo: memo,
-      msgs: messages.map((msg) => msg.toJson()).toList(),
+      msgs: messages,
     );
 
     // Convert the signature to a JSON and sort it

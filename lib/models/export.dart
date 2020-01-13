@@ -1,4 +1,4 @@
-export 'account_data.dart';
-export 'node_info.dart';
+export 'cosmos-sdk/export.dart';
+export 'messages/export.dart';
+export 'cosmos-sdk/query/node_info_response.dart';
 export 'transaction_result.dart';
-export 'transactions/export.dart';

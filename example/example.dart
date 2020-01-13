@@ -2,6 +2,13 @@ import 'package:sacco/sacco.dart';
 
 void main() async {
   // -----------------------------------
+  // --- Registering new msg types
+  // -----------------------------------
+
+  // MsgType needs to implement StdMsg
+  // Codec.registerMsgType("my/MsgType", MyMsgType);
+
+  // -----------------------------------
   // --- Creating a wallet
   // -----------------------------------
 
@@ -19,21 +26,16 @@ void main() async {
   // --- Creating a transaction
   // -----------------------------------
 
-  final message = StdMsg(
-    type: "cosmos-sdk/MsgSend",
-    value: {
-      "from_address": wallet.bech32Address,
-      "to_address": "did:com:1lys5uu683wrmupn4zguz7f2gqw45qae98pzn3d",
-      "amount": [
-        {"denom": "uatom", "amount": "100"}
-      ]
-    },
+  final message = MsgSend(
+    fromAddress: wallet.bech32Address,
+    toAddress: "did:com:1lys5uu683wrmupn4zguz7f2gqw45qae98pzn3d",
+    amount: [StdCoin(denom: "uatom", amount: "100")],
   );
 
   final stdTx = TxBuilder.buildStdTx(stdMsgs: [message]);
 
   // -----------------------------------
-  // Signing a transaction
+  // --- Signing a transaction
   // -----------------------------------
 
   final signedStdTx = await TxSigner.signStdTx(wallet: wallet, stdTx: stdTx);

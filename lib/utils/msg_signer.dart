@@ -7,8 +7,8 @@ import 'package:pointycastle/macs/hmac.dart';
 import 'package:pointycastle/digests/sha256.dart';
 import 'package:pointycastle/api.dart';
 
-/// Helper class used to sign a transaction.
-class TransactionSigner {
+/// Helper class used to sign a transaction message.
+class MessageSigner {
   // Constants
   static final BigInt _byteMask = BigInt.from(0xff);
   static final BigInt _prime = BigInt.parse(

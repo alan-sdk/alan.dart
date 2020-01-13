@@ -11,7 +11,7 @@ import 'package:pointycastle/export.dart';
 import 'package:sacco/sacco.dart';
 import 'package:sacco/utils/bech32_encoder.dart';
 
-import 'utils/tx_signer.dart';
+import '../utils/msg_signer.dart';
 
 /// Represents a wallet which contains the hex private key, the hex public key
 /// and the hex address.
@@ -114,7 +114,7 @@ class Wallet extends Equatable {
   /// the signature bytes to be included inside a transaction.
   Uint8List signTxData(Uint8List data) {
     final hash = SHA256Digest().process(data);
-    return TransactionSigner.deriveFrom(hash, _ecPrivateKey, ecPublicKey);
+    return MessageSigner.deriveFrom(hash, _ecPrivateKey, ecPublicKey);
   }
 
   /// Generates a SecureRandom
@@ -150,6 +150,13 @@ class Wallet extends Equatable {
         privateKey,
         publicKey,
       ];
+
+  @override
+  String toString() => '{'
+      'networkInfo: $networkInfo,'
+      'address: $address,'
+      'publicKey: $publicKey'
+      '}';
 
   /// Creates a new [Wallet] instance from the given [json] and [privateKey].
   factory Wallet.fromJson(Map<String, dynamic> json, Uint8List privateKey) {

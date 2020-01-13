@@ -22,6 +22,3 @@
 .pub-cache/
 .pub/
 /build/
-
-# Flutter JSON
-*.g.dart
