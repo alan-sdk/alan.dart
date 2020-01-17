@@ -28,17 +28,7 @@ class AccountDataRetrieval {
       json = json["result"];
     }
 
-    final value = json["value"] as Map<String, dynamic>;
-
     // Get the coins
-    final coins = ((value["coins"] as List) ?? List())
-        .map((coinMap) => StdCoin.fromJson(coinMap))
-        .toList();
-
-    return AccountData(
-      accountNumber: value["account_number"],
-      sequence: value["sequence"],
-      coins: coins,
-    );
+    return AccountData.fromJson(json);
   }
 }
