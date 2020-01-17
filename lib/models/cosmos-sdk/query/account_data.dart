@@ -9,6 +9,9 @@ part 'account_data.g.dart';
 /// for the /auth/accounts/{address} REST API endpoint.
 @JsonSerializable(explicitToJson: true)
 class AccountData extends Equatable {
+  @JsonKey(name: "address")
+  final String address;
+
   @JsonKey(name: "account_number")
   final String accountNumber;
 
@@ -19,21 +22,25 @@ class AccountData extends Equatable {
   final List<StdCoin> coins;
 
   AccountData({
+    @required this.address,
     @required this.accountNumber,
     @required this.sequence,
     @required this.coins,
-  })  : assert(accountNumber != null),
+  })  : assert(address != null),
+        assert(accountNumber != null),
         assert(sequence != null),
         assert(coins != null);
 
   @override
-  String toString() {
-    return "number: $accountNumber, sequence: $sequence, coins: $coins";
-  }
-
+  String toString() => 'AccountData { '
+      'address: $address, '
+      'accountNumber: $accountNumber, '
+      'sequence: $sequence, '
+      'coins: $coins '
+      '}';
 
   @override
-  List<Object> get props => [accountNumber, sequence, coins];
+  List<Object> get props => [address, accountNumber, sequence, coins];
 
   factory AccountData.fromJson(Map<String, dynamic> json) =>
       _$AccountDataFromJson(json);
