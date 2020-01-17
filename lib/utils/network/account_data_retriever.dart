@@ -29,6 +29,6 @@ class AccountDataRetrieval {
     }
 
     // Get the coins
-    return AccountData.fromJson(json);
+    return AccountDataResponse.fromJson(json).accountData;
   }
 }
