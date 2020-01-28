@@ -33,6 +33,9 @@ class MsgSend implements StdMsg {
         assert(amount != null);
 
   @override
+  List<Object> get props => [fromAddress, toAddress, amount];
+
+  @override
   Map<String, dynamic> toJson() => _$MsgSendToJson(this);
 
   @override

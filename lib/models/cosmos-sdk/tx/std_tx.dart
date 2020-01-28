@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:meta/meta.dart';
 import 'package:alan/models/export.dart';
@@ -9,7 +10,7 @@ part 'std_tx.g.dart';
 /// Contains the information about a standard transaction that can be
 /// sent to the chain using a full node.
 @JsonSerializable(explicitToJson: true)
-class StdTx {
+class StdTx extends Equatable {
   @JsonKey(name: "msg")
   final List<Map<String, dynamic>> messages;
 
@@ -31,6 +32,9 @@ class StdTx {
         assert(signatures == null || signatures.isNotEmpty),
         assert(fee != null),
         assert(memo != null);
+
+  @override
+  List<Object> get props => [memo, fee, signatures, memo];
 
   factory StdTx.fromJson(Map<String, dynamic> json) => _$StdTxFromJson(json);
 

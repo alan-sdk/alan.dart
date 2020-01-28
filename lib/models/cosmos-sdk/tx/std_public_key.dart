@@ -1,3 +1,4 @@
+import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:meta/meta.dart';
 
@@ -6,7 +7,7 @@ part 'std_public_key.g.dart';
 /// Contains the data of a public key that has been used to sign a transaction
 /// and is included inside it to prove authenticity.
 @JsonSerializable(explicitToJson: true)
-class StdPublicKey {
+class StdPublicKey extends Equatable {
   @JsonKey(name: "type")
   final String type;
 
@@ -18,6 +19,9 @@ class StdPublicKey {
     @required this.value,
   })  : assert(type != null),
         assert(value != null);
+
+  @override
+  List<Object> get props => [type, value];
 
   factory StdPublicKey.fromJson(Map<String, dynamic> json) =>
       _$StdPublicKeyFromJson(json);
