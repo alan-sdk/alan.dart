@@ -42,8 +42,8 @@ class TxSigner {
   ) {
     // Create the signature object
     final signature = StdSignatureMessage(
-      sequence: accountData.sequence,
-      accountNumber: accountData.accountNumber,
+      sequence: accountData.sequence.toString(),
+      accountNumber: accountData.accountNumber.toString(),
       chainId: nodeInfo.network,
       fee: fee.toJson(),
       memo: memo,

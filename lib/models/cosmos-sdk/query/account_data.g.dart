@@ -9,8 +9,8 @@ part of 'account_data.dart';
 AccountData _$AccountDataFromJson(Map<String, dynamic> json) {
   return AccountData(
     address: json['address'] as String,
-    accountNumber: json['account_number'] as String,
-    sequence: json['sequence'] as String,
+    accountNumber: json['account_number'] as int,
+    sequence: json['sequence'] as int,
     coins: (json['coins'] as List)
         ?.map((e) =>
             e == null ? null : StdCoin.fromJson(e as Map<String, dynamic>))

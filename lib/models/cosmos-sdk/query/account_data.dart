@@ -13,10 +13,10 @@ class AccountData extends Equatable {
   final String address;
 
   @JsonKey(name: "account_number")
-  final String accountNumber;
+  final int accountNumber;
 
   @JsonKey(name: "sequence")
-  final String sequence;
+  final int sequence;
 
   @JsonKey(name: "coins")
   final List<StdCoin> coins;
