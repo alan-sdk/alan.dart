@@ -11,6 +11,14 @@ class TxBuilder {
     String memo = "",
     StdFee fee = const StdFee(gas: "200000", amount: []),
   }) {
+    // Validate the messages
+    stdMsgs.forEach((msg) {
+      final error = msg.validate();
+      if (error != null) {
+        throw error;
+      }
+    });
+
     return StdTx(
       messages: stdMsgs.map((msg) => Codec.serializeMsg(msg)).toList(),
       memo: memo,

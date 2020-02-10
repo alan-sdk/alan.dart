@@ -39,5 +39,18 @@ class MsgSend implements StdMsg {
   Map<String, dynamic> toJson() => _$MsgSendToJson(this);
 
   @override
+  Exception validate() {
+    if (fromAddress.isEmpty || toAddress.isEmpty) {
+      return Exception("from_address and to_address cannot be empty");
+    }
+
+    if (amount.isEmpty) {
+      return Exception("amount cannot be empty");
+    }
+
+    return null;
+  }
+
+  @override
   factory MsgSend.fromJson(Map<String, dynamic> json) => _$MsgSendFromJson(json);
 }

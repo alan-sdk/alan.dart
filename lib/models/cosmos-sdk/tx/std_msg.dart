@@ -6,4 +6,8 @@ abstract class StdMsg extends Equatable {
 
   /// Allows to serialize this object into a JSON map.
   Map<String, dynamic> toJson();
+
+  /// Validates this message. If something is wrong within it, returns
+  /// the exception to be thrown.
+  Exception validate();
 }
