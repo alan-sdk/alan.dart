@@ -1,10 +1,9 @@
 import 'package:alan/alan.dart';
 import 'package:equatable/equatable.dart';
-import 'package:json_annotation/json_annotation.dart';
 import 'package:reflectable/reflectable.dart';
 
 class Reflector extends Reflectable {
-  const Reflector() : super(newInstanceCapability);
+  const Reflector() : super(newInstanceCapability, subtypeQuantifyCapability);
 }
 
 const reflector = Reflector();
