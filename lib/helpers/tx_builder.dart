@@ -20,7 +20,7 @@ class TxBuilder {
     });
 
     return StdTx(
-      messages: stdMsgs.map((msg) => Codec.serializeMsg(msg)).toList(),
+      messages: stdMsgs,
       memo: memo,
       fee: fee,
       signatures: null,

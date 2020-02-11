@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:alan/helpers/tx_builder.dart';
@@ -12,9 +13,10 @@ void main() {
       amount: [StdCoin(denom: "uatom", amount: "100")],
     );
 
-    final file = File('test_resources/SendStdTx.json');
-
     final stdTx = TxBuilder.buildStdTx(stdMsgs: [message]);
-    expect(stdTx.toString(), file.readAsStringSync());
+
+    final file = File('test_resources/SendStdTx.json');
+    final expectedStd = StdTx.fromJson(jsonDecode(file.readAsStringSync()));
+    expect(stdTx, expectedStd);
   });
 }

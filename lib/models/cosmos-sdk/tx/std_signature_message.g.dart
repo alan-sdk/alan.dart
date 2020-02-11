@@ -13,8 +13,10 @@ StdSignatureMessage _$StdSignatureMessageFromJson(Map<String, dynamic> json) {
     sequence: json['sequence'] as String,
     memo: json['memo'] as String,
     fee: json['fee'] as Map<String, dynamic>,
-    msgs:
-        (json['msgs'] as List)?.map((e) => e as Map<String, dynamic>)?.toList(),
+    msgs: (json['msgs'] as List)
+        ?.map((e) =>
+            e == null ? null : StdMsg.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
   );
 }
 
@@ -26,5 +28,5 @@ Map<String, dynamic> _$StdSignatureMessageToJson(
       'sequence': instance.sequence,
       'memo': instance.memo,
       'fee': instance.fee,
-      'msgs': instance.msgs,
+      'msgs': instance.msgs?.map((e) => e?.toJson())?.toList(),
     };

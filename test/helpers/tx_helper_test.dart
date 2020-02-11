@@ -25,30 +25,6 @@ void main() {
     server.dispatcher = null;
   });
 
-  group('queryChainBackground', () {
-    test('returns an error if an exception is thrown', () async {
-      server.enqueue(httpCode: 500, body: null);
-      final url = server.url;
-      try {
-        await ChainHelper.queryChain(url);
-        fail('No exception thrown');
-      } catch (error) {
-        expect(
-          error.toString(),
-          Exception("Call to $url returned status code 500").toString(),
-        );
-      }
-    });
-
-    test('returns proper value if no exception is thrown', () async {
-      final data = {"key": "value"};
-      server.enqueue(httpCode: 200, body: jsonEncode(data));
-
-      final result = await ChainHelper.queryChain(server.url);
-      expect(result, data);
-    });
-  });
-
   group('sendTx', () {
     Wallet wallet;
 
@@ -91,7 +67,7 @@ void main() {
       // Enqueue an exception cause it shouldn't be called
       server.enqueue(httpCode: 500, body: null);
 
-      final result = await ChainHelper.sendTx([], wallet);
+      final result = await TxHelper.sendTx([], wallet);
       expect(result, isNull);
     });
 
@@ -105,17 +81,17 @@ void main() {
           amount: [],
         ),
       ];
-      expect(ChainHelper.sendTx(msgs, wallet), throwsException);
+      expect(TxHelper.sendTx(msgs, wallet), throwsException);
     });
 
     test('throws exception when tx sending is not successful', () async {
-      final accountFile = File("test_resources/AccountDataResponse.json");
+      final accountFile = File("test_resources/queries/account.json");
       final accountContents = accountFile.readAsStringSync();
 
-      final txsFile = File("test_resources/TxsResponsesSuccess.json");
+      final txsFile = File("test_resources/queries/txs.json");
       final txsContents = txsFile.readAsStringSync();
 
-      final nodeInfoFile = File("test_resources/NodeInfoResponse.json");
+      final nodeInfoFile = File("test_resources/queries/node_info.json");
       final nodeInfoContents = nodeInfoFile.readAsStringSync();
 
       // ignore: missing_return
@@ -148,7 +124,7 @@ void main() {
           ],
         ),
       ];
-      final result = await ChainHelper.sendTx(msgs, wallet);
+      final result = await TxHelper.sendTx(msgs, wallet);
       expect(result.success, isTrue);
     });
   });

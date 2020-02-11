@@ -1,23 +1,70 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:http/http.dart';
 import 'package:http/testing.dart';
 import 'package:alan/alan.dart';
-import 'package:alan/utils/network/account_data_retriever.dart';
-import 'package:alan/utils/export.dart';
+import 'package:mock_web_server/mock_web_server.dart';
 import 'package:test/test.dart';
 
 void main() {
-  final mnemonic =
-      "sibling auction sibling flavor judge foil tube dust work mixed crush action menu property project ride crouch hat mom scale start ill spare panther"
-          .split(" ");
+  MockWebServer server;
+
+  setUpAll(() {
+    server = MockWebServer();
+    server.start();
+  });
+
+  setUp(() {
+    // Clean the dispatcher to avoid cross-testing conflicts
+    server.dispatcher = null;
+  });
+
+  final mnemonic = [
+    "sibling",
+    "auction",
+    "sibling",
+    "flavor",
+    "judge",
+    "foil",
+    "tube",
+    "dust",
+    "work",
+    "mixed",
+    "crush",
+    "action",
+    "menu",
+    "property",
+    "project",
+    "ride",
+    "crouch",
+    "hat",
+    "mom",
+    "scale",
+    "start",
+    "ill",
+    "spare",
+    "panther",
+  ];
 
   test('StdTx with fee is signed correctly', () async {
+    server.dispatcher = (HttpRequest request) async {
+      final url = request.uri.toString();
+      var responseFile;
+      if (url.contains("account")) {
+        responseFile = File('test_resources/helpers/account.json');
+      } else if (url.contains("node_info")) {
+        responseFile = File('test_resources/queries/node_info.json');
+      }
+
+      final responseBody = await responseFile.readAsString();
+      return MockResponse()
+        ..body = responseBody
+        ..httpCode = 200;
+    };
+
     // Create the network info
-    final networkInfo = NetworkInfo(
-      bech32Hrp: "cosmos",
-      lcdUrl: "http://localhost:1317",
-    );
+    final networkInfo = NetworkInfo(bech32Hrp: "cosmos", lcdUrl: server.url);
 
     // Build a transaction
     final msg = MsgSend(
@@ -25,6 +72,7 @@ void main() {
       toAddress: "cosmos12lla7fg3hjd2zj6uvf4pqj7atx273klc487c5k",
       amount: [StdCoin(amount: "100", denom: "uatom")],
     );
+
     final fee = StdFee(
       gas: "200000",
       amount: [StdCoin(amount: "250", denom: "uatom")],
@@ -34,24 +82,6 @@ void main() {
     // Create a wallet
     final wallet = Wallet.derive(mnemonic, networkInfo);
     expect(wallet.networkInfo, networkInfo);
-
-    // Create a mock client
-    final client = MockClient((request) async {
-      final url = request.url.toString();
-      var responseFile;
-      if (url.contains("account")) {
-        responseFile = File('test_resources/AccountDataResponse.json');
-      } else if (url.contains("node_info")) {
-        responseFile = File('test_resources/NodeInfoResponse.json');
-      }
-
-      final responseBody = await responseFile.readAsString();
-      return Response(responseBody, 200);
-    });
-
-    // Setup the client
-    AccountDataRetrieval.client = client;
-    NodeInfoRetrieval.client = client;
 
     // Sign the transaction
     final signedTx = await TxSigner.signStdTx(wallet: wallet, stdTx: tx);

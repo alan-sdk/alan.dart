@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:meta/meta.dart';
-import 'package:alan/models/export.dart';
+import 'package:alan/alan.dart';
 
 part 'std_tx.g.dart';
 
@@ -12,7 +12,7 @@ part 'std_tx.g.dart';
 @JsonSerializable(explicitToJson: true)
 class StdTx extends Equatable {
   @JsonKey(name: "msg")
-  final List<Map<String, dynamic>> messages;
+  final List<StdMsg> messages;
 
   @JsonKey(name: "fee")
   final StdFee fee;
@@ -39,10 +39,4 @@ class StdTx extends Equatable {
   factory StdTx.fromJson(Map<String, dynamic> json) => _$StdTxFromJson(json);
 
   Map<String, dynamic> toJson() => _$StdTxToJson(this);
-
-  @override
-  String toString() {
-    final tx = {"type": "cosmos-sdk/StdTx", "value": toJson()};
-    return jsonEncode(tx);
-  }
 }

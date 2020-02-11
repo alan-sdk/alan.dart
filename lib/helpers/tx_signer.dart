@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:alan/helpers/query_helper.dart';
 import 'package:meta/meta.dart';
 import 'package:alan/alan.dart';
 import 'package:alan/utils/export.dart';
@@ -16,8 +17,11 @@ class TxSigner {
     @required StdTx stdTx,
   }) async {
     // Get the account data and node info from the network
-    final account = await AccountDataRetrieval.getAccountData(wallet);
-    final nodeInfo = await NodeInfoRetrieval.getNodeInfo(wallet);
+    final account = await QueryHelper.getAccountData(
+      wallet.networkInfo.lcdUrl,
+      wallet.bech32Address,
+    );
+    final nodeInfo = await QueryHelper.getNodeInfo(wallet.networkInfo.lcdUrl);
 
     // Sign all messages
     final signatures = _getStdSignature(
@@ -36,7 +40,7 @@ class TxSigner {
     Wallet wallet,
     AccountData accountData,
     NodeInfo nodeInfo,
-    List<Map<String, dynamic>> messages,
+    List<StdMsg> msgs,
     StdFee fee,
     String memo,
   ) {
@@ -47,7 +51,7 @@ class TxSigner {
       chainId: nodeInfo.network,
       fee: fee.toJson(),
       memo: memo,
-      msgs: messages,
+      msgs: msgs,
     );
 
     // Convert the signature to a JSON and sort it

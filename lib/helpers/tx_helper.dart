@@ -1,23 +1,10 @@
 import 'dart:convert';
 
 import 'package:alan/alan.dart';
-import 'package:http/http.dart' as http;
-import 'package:meta/meta.dart';
 
 /// Allows to easily perform chain-related actions such as querying the
 /// chain state or sending transactions to it.
-class ChainHelper {
-  /// Queries the chain at the given [url].
-  static Future<Map<String, dynamic>> queryChain(String url) async {
-    final httpClient = http.Client();
-    final data = await httpClient.get(url);
-    if (data.statusCode != 200) {
-      throw Exception("Call to $url returned status code ${data.statusCode}");
-    }
-
-    return json.decode(utf8.decode(data.bodyBytes));
-  }
-
+class TxHelper {
   /// Creates, signs and sends a transaction containing the given
   /// [messages] using the info contained inside the given [wallet].
   static Future<TransactionResult> sendTx(
