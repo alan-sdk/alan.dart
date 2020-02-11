@@ -5,7 +5,13 @@ import 'package:alan/helpers/tx_builder.dart';
 import 'package:alan/models/export.dart';
 import 'package:test/test.dart';
 
+import 'tx_builder_test.reflectable.dart';
+
 void main() {
+  setUpAll(() {
+    initializeReflectable();
+  });
+
   test('StdTx is built correctly', () {
     final message = MsgSend(
       fromAddress: "cosmos1huydeevpz37sd9snkgul6070mstupukw00xkw9",

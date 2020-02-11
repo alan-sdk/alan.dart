@@ -21,6 +21,7 @@ dependencies:
   json_serializable:
   meta:
   pointycastle:
+  reflectable:
 
 dev_dependencies:
   build_runner:

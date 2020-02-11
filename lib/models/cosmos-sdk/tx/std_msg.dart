@@ -1,6 +1,13 @@
 import 'package:alan/alan.dart';
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:reflectable/reflectable.dart';
+
+class Reflector extends Reflectable {
+  const Reflector() : super(newInstanceCapability);
+}
+
+const reflector = Reflector();
 
 /// Represents a standard message that can be included inside
 /// a transaction.
@@ -17,7 +24,6 @@ import 'package:json_annotation/json_annotation.dart';
 ///
 /// Not implementing one of the two methods above will result in an error
 /// during either the serialization or deserialization.
-@JsonSerializable()
 abstract class StdMsg extends Equatable {
   /// Default empty constructor to allow the existance of the factory method.
   StdMsg();

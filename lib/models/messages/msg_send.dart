@@ -9,6 +9,7 @@ part 'msg_send.g.dart';
 /// It requires to specify the address from which to send the tokens,
 /// the one that should receive the tokens and the amount of tokens
 /// to send.
+@reflector
 @JsonSerializable(explicitToJson: true)
 class MsgSend extends StdMsg {
   /// Bech32 address of the sender.

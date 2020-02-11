@@ -1,7 +1,5 @@
-import 'dart:mirrors';
-
 import 'package:alan/alan.dart';
-import 'package:meta/meta.dart';
+import 'package:reflectable/mirrors.dart';
 
 /// Represents the codec that is used to serialize [StdMsg] instances
 /// properly during transactions signature processes.
@@ -57,7 +55,7 @@ class Codec {
       throw new Exception("$typeKey is not registered");
     }
 
-    return reflectClass(type)
-        .newInstance(Symbol("fromJson"), [json[_VALUE_KEY]]).reflectee;
+    final ClassMirror classMirror = reflector.reflectType(type);
+    return classMirror.newInstance("fromJson", [json[_VALUE_KEY]]);
   }
 }
