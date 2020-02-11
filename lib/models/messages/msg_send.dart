@@ -52,5 +52,6 @@ class MsgSend implements StdMsg {
   }
 
   @override
-  factory MsgSend.fromJson(Map<String, dynamic> json) => _$MsgSendFromJson(json);
+  factory MsgSend.fromJson(Map<String, dynamic> json) =>
+      _$MsgSendFromJson(json);
 }

@@ -116,7 +116,9 @@ void main() {
       "answer",
       "cotton",
     ];
-    final wallet = Wallet.derive(mnemonic, info, derivationPath: "m/44'/852'/0'/0/0");
-    expect(wallet.bech32Address, "desmos1pcvzsr8kfe4lcpm5n60rjrgq0s5qtjh3stjj6p");
+    final wallet =
+        Wallet.derive(mnemonic, info, derivationPath: "m/44'/852'/0'/0/0");
+    expect(
+        wallet.bech32Address, "desmos1pcvzsr8kfe4lcpm5n60rjrgq0s5qtjh3stjj6p");
   });
 }

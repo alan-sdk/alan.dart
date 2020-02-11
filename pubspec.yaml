@@ -8,7 +8,7 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
-  analyzer: ^0.39.2+1
+  analyzer:
   asn1lib:
   bip32:
   bip39:
