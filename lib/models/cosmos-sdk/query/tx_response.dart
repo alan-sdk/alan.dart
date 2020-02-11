@@ -7,7 +7,7 @@ part 'tx_response.g.dart';
 /// Represents the response that is returned upon querying the chain
 /// for a specific transaction.
 @JsonSerializable(explicitToJson: true)
-class TxResponse implements Equatable {
+class TxResponse extends Equatable {
   @JsonKey(name: "txs")
   final List<Tx> txs;
 
@@ -27,7 +27,7 @@ class TxResponse implements Equatable {
 
 /// Contains the content of a single transaction.
 @JsonSerializable(explicitToJson: true)
-class Tx implements Equatable {
+class Tx extends Equatable {
   @JsonKey(name: "events")
   final List<MsgEvent> events;
 
@@ -49,7 +49,7 @@ class Tx implements Equatable {
 /// Contains the data of a single message that was emitted during the
 /// handling of a transaction's messages.
 @JsonSerializable(explicitToJson: true)
-class MsgEvent implements Equatable {
+class MsgEvent extends Equatable {
   @JsonKey(name: "type")
   final String type;
 

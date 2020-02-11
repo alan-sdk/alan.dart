@@ -7,7 +7,7 @@ part 'block_response.g.dart';
 /// Represents the response that is returned when querying a block
 /// details from the chain.
 @JsonSerializable(explicitToJson: true)
-class BlockResponse implements Equatable {
+class BlockResponse extends Equatable {
   @JsonKey(name: "block_meta")
   final BlockMeta blockMeta;
 
@@ -29,7 +29,7 @@ class BlockResponse implements Equatable {
 
 /// Contains the metadata of a block queried from the chain.
 @JsonSerializable(explicitToJson: true)
-class BlockMeta implements Equatable {
+class BlockMeta extends Equatable {
   @JsonKey(name: "header")
   final BlockHeader header;
 
@@ -52,7 +52,7 @@ class BlockMeta implements Equatable {
 /// Contains the details of the header of a block metadata queried from
 /// the chain.
 @JsonSerializable(explicitToJson: true)
-class BlockHeader implements Equatable {
+class BlockHeader extends Equatable {
   @JsonKey(name: "height")
   final String height;
 

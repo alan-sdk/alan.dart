@@ -10,7 +10,7 @@ part 'msg_send.g.dart';
 /// the one that should receive the tokens and the amount of tokens
 /// to send.
 @JsonSerializable(explicitToJson: true)
-class MsgSend implements StdMsg {
+class MsgSend extends StdMsg {
   /// Bech32 address of the sender.
   @JsonKey(name: "from_address")
   final String fromAddress;

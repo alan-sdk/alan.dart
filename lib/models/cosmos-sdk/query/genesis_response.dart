@@ -7,7 +7,7 @@ part 'genesis_response.g.dart';
 /// Represents the contents of the response that is returned from the RPC
 /// upon querying the /genesis endpoint.
 @JsonSerializable(explicitToJson: true)
-class GenesisResponse implements Equatable {
+class GenesisResponse extends Equatable {
   @JsonKey(name: "result")
   final Result result;
 
@@ -25,7 +25,7 @@ class GenesisResponse implements Equatable {
 }
 
 @JsonSerializable(explicitToJson: true)
-class Result implements Equatable {
+class Result extends Equatable {
   @JsonKey(name: "genesis")
   final Genesis genesis;
 
@@ -42,7 +42,7 @@ class Result implements Equatable {
 }
 
 @JsonSerializable(explicitToJson: true)
-class Genesis implements Equatable {
+class Genesis extends Equatable {
   @JsonKey(name: "genesis_time")
   final String genesisTime;
 
