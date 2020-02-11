@@ -1,4 +1,5 @@
-export 'tx_helper.dart';
+export 'query_helper.dart';
 export 'tx_builder.dart';
+export 'tx_helper.dart';
 export 'tx_sender.dart';
 export 'tx_signer.dart';
