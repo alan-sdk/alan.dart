@@ -1,0 +1,9 @@
+targets:
+  $default:
+    builders:
+      reflectable:
+        generate_for:
+          # Generate the reflectable initializer only for the tests we need
+          - test/helpers/tx_builder_test.dart
+        options:
+          formatted: true
