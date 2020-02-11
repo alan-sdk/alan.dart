@@ -20,7 +20,6 @@ class ChainHelper {
 
   /// Creates, signs and sends a transaction containing the given
   /// [messages] using the info contained inside the given [wallet].
-  @visibleForTesting
   static Future<TransactionResult> sendTx(
     List<StdMsg> messages,
     Wallet wallet, {
