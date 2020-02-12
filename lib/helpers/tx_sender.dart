@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:alan/alan.dart';
-import 'package:alan/models/cosmos-sdk/posts/send_tx_response.dart';
 import 'package:http/http.dart' as http;
 import 'package:meta/meta.dart';
 
