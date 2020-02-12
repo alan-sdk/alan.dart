@@ -1,9 +1,8 @@
-import 'dart:convert';
 import 'dart:io';
 
+import 'package:alan/alan.dart';
 import 'package:mock_web_server/mock_web_server.dart';
 import 'package:mockito/mockito.dart';
-import 'package:alan/alan.dart';
 import 'package:test/test.dart';
 
 class MockTxBuilder extends Mock implements TxBuilder {}
@@ -85,14 +84,14 @@ void main() {
     });
 
     test('throws exception when tx sending is not successful', () async {
+      final nodeInfoFile = File("test_resources/queries/node_info.json");
+      final nodeInfoContents = nodeInfoFile.readAsStringSync();
+
       final accountFile = File("test_resources/queries/account.json");
       final accountContents = accountFile.readAsStringSync();
 
-      final txsFile = File("test_resources/queries/txs.json");
-      final txsContents = txsFile.readAsStringSync();
-
-      final nodeInfoFile = File("test_resources/queries/node_info.json");
-      final nodeInfoContents = nodeInfoFile.readAsStringSync();
+      final sendTxFile = File("test_resources/transactions/send_tx.json");
+      final sendTxContents = sendTxFile.readAsStringSync();
 
       // ignore: missing_return
       server.dispatcher = (HttpRequest request) async {
@@ -101,10 +100,10 @@ void main() {
           return MockResponse()
             ..httpCode = 200
             ..body = accountContents;
-        } else if (url.contains("/txs")) {
+        } else if (url.contains("/txs") && request.method == "POST") {
           return MockResponse()
             ..httpCode = 200
-            ..body = txsContents;
+            ..body = sendTxContents;
         } else if (url.contains("/node_info")) {
           return MockResponse()
             ..httpCode = 200

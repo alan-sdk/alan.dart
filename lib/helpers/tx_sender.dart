@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:alan/alan.dart';
+import 'package:alan/models/cosmos-sdk/posts/send_tx_response.dart';
 import 'package:http/http.dart' as http;
 import 'package:meta/meta.dart';
 
@@ -32,28 +33,29 @@ class TxSender {
     }
 
     // Convert the response
-    final json = jsonDecode(response.body) as Map<String, dynamic>;
-    return _convertJson(json);
+    final json = SendTxResponse.fromJson(jsonDecode(response.body));
+    return _convertResponse(json);
   }
 
-  /// Converts the given [json] to a [TransactionResult] object.
-  static TransactionResult _convertJson(Map<String, dynamic> json) {
-    final rawLog = jsonDecode(json["raw_log"] as String) as dynamic;
+  /// Converts the given [response] to a [TransactionResult] object.
+  static TransactionResult _convertResponse(SendTxResponse response) {
+    final rawLog = jsonDecode(response.rawLog) as dynamic;
     if (rawLog is Map<String, dynamic>) {
+      final log = SendTxLog.fromJson(rawLog);
       return TransactionResult(
-        raw: json,
-        hash: json["txhash"],
+        raw: response.toJson(),
+        hash: response.txHash,
         success: false,
         error: TransactionError(
-          errorCode: rawLog["code"] as int,
-          errorMessage: rawLog["message"] as String,
+          errorCode: log.code,
+          errorMessage: log.message,
         ),
       );
     }
 
     return TransactionResult(
-      raw: json,
-      hash: json["txhash"],
+      raw: response.toJson(),
+      hash: response.txHash,
       success: true,
       error: null,
     );

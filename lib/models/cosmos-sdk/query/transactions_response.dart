@@ -40,7 +40,8 @@ class Transaction extends Equatable {
   @JsonKey(name: "raw_log")
   final String rawLog;
 
-  // TODO: Add logs
+  @JsonKey(name: "logs")
+  final List<TransactionLog> logs;
 
   @JsonKey(name: "gas_wanted")
   final String gasWanted;
@@ -54,20 +55,17 @@ class Transaction extends Equatable {
   @JsonKey(name: "timestamp")
   final String timeStamp;
 
-  @JsonKey(name: "events")
-  final List<MsgEvent> events;
-
   Transaction({
     @required this.height,
     @required this.hash,
     @required this.data,
     @required this.rawLog,
+    @required this.logs,
     @required this.gasWanted,
     @required this.gasUsed,
     @required this.tx,
     @required this.timeStamp,
-    @required this.events,
-  }) : assert(events != null);
+  });
 
   @override
   List<Object> get props => [
@@ -75,17 +73,95 @@ class Transaction extends Equatable {
         hash,
         data,
         rawLog,
+        logs,
         gasUsed,
         gasUsed,
         tx,
         timeStamp,
-        events,
       ];
 
   factory Transaction.fromJson(Map<String, dynamic> json) =>
       _$TransactionFromJson(json);
 
   Map<String, dynamic> toJson() => _$TransactionToJson(this);
+}
+
+@immutable
+@JsonSerializable(explicitToJson: true)
+class TransactionLog extends Equatable {
+  @JsonKey(name: "msg_index")
+  final int messageIndex;
+
+  @JsonKey(name: "log")
+  final String log;
+
+  @JsonKey(name: "events")
+  final List<LogEvent> events;
+
+  TransactionLog({
+    this.messageIndex,
+    this.log,
+    @required this.events,
+  }) : assert(events != null);
+
+  @override
+  List<Object> get props => [messageIndex, log, events];
+
+  factory TransactionLog.fromJson(Map<String, dynamic> json) =>
+      _$TransactionLogFromJson(json);
+
+  Map<String, dynamic> toJson() => _$TransactionLogToJson(this);
+}
+
+/// Represents an event that is emitted while handling a message and is placed
+/// inside the logs.
+@immutable
+@JsonSerializable(explicitToJson: true)
+class LogEvent extends Equatable {
+  @JsonKey(name: "type")
+  final String type;
+
+  @JsonKey(name: "attributes")
+  final List<LogEventAttribute> attributes;
+
+  LogEvent({
+    @required this.type,
+    @required this.attributes,
+  })  : assert(type != null),
+        assert(attributes != null);
+
+  @override
+  List<Object> get props => [type, attributes];
+
+  factory LogEvent.fromJson(Map<String, dynamic> json) =>
+      _$LogEventFromJson(json);
+
+  Map<String, dynamic> toJson() => _$LogEventToJson(this);
+}
+
+/// Represents a single log event attribute.
+@immutable
+@JsonSerializable(explicitToJson: true)
+class LogEventAttribute extends Equatable {
+  @JsonKey(name: "ley")
+  final String key;
+
+  @JsonKey(name: "value")
+  final String value;
+
+  LogEventAttribute({
+    @required this.key,
+    @required this.value,
+  })  : assert(key != null),
+        assert(value != null);
+
+  @override
+  List<Object> get props => [key, value];
+
+  factory LogEventAttribute.fromJson(Map<String, dynamic> json) =>
+      _$LogEventAttributeFromJson(json);
+
+  Map<String, dynamic> toJson() => _$LogEventAttributeToJson(this);
 }
 
 /// Wraps a [StdTx] adding the type to its external.
