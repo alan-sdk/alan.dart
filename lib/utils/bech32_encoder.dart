@@ -1,4 +1,5 @@
 import 'dart:typed_data';
+
 import 'package:bip_bech32/bip_bech32.dart';
 
 /// Allows to easily encode into Bech32 some data using a
