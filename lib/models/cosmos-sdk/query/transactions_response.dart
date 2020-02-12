@@ -143,7 +143,7 @@ class LogEvent extends Equatable {
 @immutable
 @JsonSerializable(explicitToJson: true)
 class LogEventAttribute extends Equatable {
-  @JsonKey(name: "ley")
+  @JsonKey(name: "key")
   final String key;
 
   @JsonKey(name: "value")

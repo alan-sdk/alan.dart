@@ -90,14 +90,14 @@ Map<String, dynamic> _$LogEventToJson(LogEvent instance) => <String, dynamic>{
 
 LogEventAttribute _$LogEventAttributeFromJson(Map<String, dynamic> json) {
   return LogEventAttribute(
-    key: json['ley'] as String,
+    key: json['key'] as String,
     value: json['value'] as String,
   );
 }
 
 Map<String, dynamic> _$LogEventAttributeToJson(LogEventAttribute instance) =>
     <String, dynamic>{
-      'ley': instance.key,
+      'key': instance.key,
       'value': instance.value,
     };
 
