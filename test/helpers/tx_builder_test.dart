@@ -1,10 +1,17 @@
+import 'dart:convert';
 import 'dart:io';
 
 import 'package:alan/helpers/tx_builder.dart';
 import 'package:alan/models/export.dart';
 import 'package:test/test.dart';
 
+import 'tx_builder_test.reflectable.dart';
+
 void main() {
+  setUpAll(() {
+    initializeReflectable();
+  });
+
   test('StdTx is built correctly', () {
     final message = MsgSend(
       fromAddress: "cosmos1huydeevpz37sd9snkgul6070mstupukw00xkw9",
@@ -12,9 +19,10 @@ void main() {
       amount: [StdCoin(denom: "uatom", amount: "100")],
     );
 
-    final file = File('test_resources/SendStdTx.json');
-
     final stdTx = TxBuilder.buildStdTx(stdMsgs: [message]);
-    expect(stdTx.toString(), file.readAsStringSync());
+
+    final file = File('test_resources/SendStdTx.json');
+    final expectedStd = StdTx.fromJson(jsonDecode(file.readAsStringSync()));
+    expect(stdTx, expectedStd);
   });
 }

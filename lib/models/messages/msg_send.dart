@@ -9,8 +9,9 @@ part 'msg_send.g.dart';
 /// It requires to specify the address from which to send the tokens,
 /// the one that should receive the tokens and the amount of tokens
 /// to send.
+@reflector
 @JsonSerializable(explicitToJson: true)
-class MsgSend implements StdMsg {
+class MsgSend extends StdMsg {
   /// Bech32 address of the sender.
   @JsonKey(name: "from_address")
   final String fromAddress;
@@ -36,7 +37,7 @@ class MsgSend implements StdMsg {
   List<Object> get props => [fromAddress, toAddress, amount];
 
   @override
-  Map<String, dynamic> toJson() => _$MsgSendToJson(this);
+  Map<String, dynamic> asJson() => _$MsgSendToJson(this);
 
   @override
   Exception validate() {
@@ -51,6 +52,6 @@ class MsgSend implements StdMsg {
     return null;
   }
 
-  @override
-  factory MsgSend.fromJson(Map<String, dynamic> json) => _$MsgSendFromJson(json);
+  factory MsgSend.fromJson(Map<String, dynamic> json) =>
+      _$MsgSendFromJson(json);
 }

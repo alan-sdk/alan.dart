@@ -8,8 +8,10 @@ part of 'std_tx.dart';
 
 StdTx _$StdTxFromJson(Map<String, dynamic> json) {
   return StdTx(
-    messages:
-        (json['msg'] as List)?.map((e) => e as Map<String, dynamic>)?.toList(),
+    messages: (json['msg'] as List)
+        ?.map((e) =>
+            e == null ? null : StdMsg.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
     signatures: (json['signatures'] as List)
         ?.map((e) =>
             e == null ? null : StdSignature.fromJson(e as Map<String, dynamic>))
@@ -22,7 +24,7 @@ StdTx _$StdTxFromJson(Map<String, dynamic> json) {
 }
 
 Map<String, dynamic> _$StdTxToJson(StdTx instance) => <String, dynamic>{
-      'msg': instance.messages,
+      'msg': instance.messages?.map((e) => e?.toJson())?.toList(),
       'fee': instance.fee?.toJson(),
       'signatures': instance.signatures?.map((e) => e?.toJson())?.toList(),
       'memo': instance.memo,

@@ -8,22 +8,23 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
-  analyzer: ^0.39.2+1
-  meta:
-  hex:
-  http:
-  equatable:
-  json_annotation:
-  json_serializable:
-
-  # Crypto utils
+  analyzer:
   asn1lib:
   bip32:
   bip39:
-  bitcoin_flutter:
-  pointycastle:
   bip_bech32:
+  bitcoin_flutter:
+  equatable:
+  hex:
+  http:
+  json_annotation:
+  json_serializable:
+  meta:
+  pointycastle:
+  reflectable:
 
 dev_dependencies:
-  test:
   build_runner:
+  mockito:
+  mock_web_server:
+  test:

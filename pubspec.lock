@@ -323,6 +323,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.9.6+3"
+  mock_web_server:
+    dependency: "direct dev"
+    description:
+      name: mock_web_server
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.1.1"
+  mockito:
+    dependency: "direct dev"
+    description:
+      name: mockito
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.1.1"
   multi_server_socket:
     dependency: transitive
     description:
@@ -414,6 +428,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.2+1"
+  reflectable:
+    dependency: "direct main"
+    description:
+      name: reflectable
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.2.1+2"
   shelf:
     dependency: transitive
     description:

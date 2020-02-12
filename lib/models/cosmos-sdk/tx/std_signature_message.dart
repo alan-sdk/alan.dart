@@ -1,3 +1,4 @@
+import 'package:alan/alan.dart';
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:meta/meta.dart';
@@ -23,7 +24,7 @@ class StdSignatureMessage extends Equatable {
   final Map<String, dynamic> fee;
 
   @JsonKey(name: "msgs")
-  final List<Map<String, dynamic>> msgs;
+  final List<StdMsg> msgs;
 
   const StdSignatureMessage({
     @required this.chainId,
