@@ -37,6 +37,20 @@ class Wallet extends Equatable {
         assert(privateKey != null),
         assert(publicKey != null);
 
+  /// Generated a new random [Wallet] using the specified [networkInfo]
+  /// and the optional [derivationPath].
+  factory Wallet.random(
+      NetworkInfo networkInfo, {
+        String derivationPath = DERIVATION_PATH,
+      }) {
+    final mnemonic = bip39.generateMnemonic(strength: 256);
+    return Wallet.derive(
+      mnemonic.split(" "),
+      networkInfo,
+      derivationPath: derivationPath,
+    );
+  }
+
   /// Derives the private key from the given [mnemonic] using the specified
   /// [networkInfo].
   factory Wallet.derive(
