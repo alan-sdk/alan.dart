@@ -1,6 +1,8 @@
 import 'dart:math';
 import 'dart:typed_data';
 
+import 'package:alan/alan.dart';
+import 'package:alan/utils/bech32_encoder.dart';
 import 'package:asn1lib/asn1lib.dart';
 import 'package:bip32/bip32.dart' as bip32;
 import 'package:bip39/bip39.dart' as bip39;
@@ -8,8 +10,6 @@ import 'package:equatable/equatable.dart';
 import 'package:hex/hex.dart';
 import 'package:meta/meta.dart';
 import 'package:pointycastle/export.dart';
-import 'package:alan/alan.dart';
-import 'package:alan/utils/bech32_encoder.dart';
 
 import '../utils/msg_signer.dart';
 
@@ -36,6 +36,20 @@ class Wallet extends Equatable {
   })  : assert(networkInfo != null),
         assert(privateKey != null),
         assert(publicKey != null);
+
+  /// Generated a new random [Wallet] using the specified [networkInfo]
+  /// and the optional [derivationPath].
+  factory Wallet.random(
+      NetworkInfo networkInfo, {
+        String derivationPath = DERIVATION_PATH,
+      }) {
+    final mnemonic = bip39.generateMnemonic(strength: 256);
+    return Wallet.derive(
+      mnemonic.split(" "),
+      networkInfo,
+      derivationPath: derivationPath,
+    );
+  }
 
   /// Derives the private key from the given [mnemonic] using the specified
   /// [networkInfo].
