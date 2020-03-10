@@ -31,6 +31,16 @@ class AccountData extends Equatable {
         assert(sequence != null),
         assert(coins != null);
 
+  factory AccountData.offline(String address) => AccountData(
+        address: address,
+        accountNumber: 0,
+        sequence: 0,
+        coins: [],
+      );
+
+  factory AccountData.fromJson(Map<String, dynamic> json) =>
+      _$AccountDataFromJson(json);
+
   @override
   String toString() => 'AccountData { '
       'address: $address, '
@@ -41,9 +51,6 @@ class AccountData extends Equatable {
 
   @override
   List<Object> get props => [address, accountNumber, sequence, coins];
-
-  factory AccountData.fromJson(Map<String, dynamic> json) =>
-      _$AccountDataFromJson(json);
 
   Map<String, dynamic> toJson() => _$AccountDataToJson(this);
 }
