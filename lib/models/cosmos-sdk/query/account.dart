@@ -31,15 +31,12 @@ class CosmosAccount extends Equatable {
         assert(sequence != null),
         assert(coins != null);
 
-  factory AccountData.offline(String address) => AccountData(
+  factory CosmosAccount.offline(String address) => CosmosAccount(
         address: address,
         accountNumber: 0,
         sequence: 0,
         coins: [],
       );
-
-  factory AccountData.fromJson(Map<String, dynamic> json) =>
-      _$AccountDataFromJson(json);
 
   @override
   String toString() => 'AccountData { '
