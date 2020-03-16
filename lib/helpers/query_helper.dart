@@ -59,7 +59,7 @@ class QueryHelper {
   }
 
   /// Reads the account endpoint and retrieves data from it.
-  static Future<AccountData> getAccountData(
+  static Future<CosmosAccount> getAccountData(
     String lcdEndpoint,
     String address,
   ) async {
@@ -70,6 +70,6 @@ class QueryHelper {
     }
 
     final lcdResponse = LcdResponse.fromJson(result.value);
-    return AccountDataResponse.fromJson(lcdResponse.result).accountData;
+    return AccountResponse.fromJson(lcdResponse.result).accountData;
   }
 }

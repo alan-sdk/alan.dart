@@ -3,12 +3,12 @@ import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:meta/meta.dart';
 
-part 'account_data.g.dart';
+part 'account.g.dart';
 
 /// Contains the data that is returned from a full node when querying
 /// for the /auth/accounts/{address} REST API endpoint.
 @JsonSerializable(explicitToJson: true)
-class AccountData extends Equatable {
+class CosmosAccount extends Equatable {
   @JsonKey(name: "address")
   final String address;
 
@@ -21,7 +21,7 @@ class AccountData extends Equatable {
   @JsonKey(name: "coins")
   final List<StdCoin> coins;
 
-  AccountData({
+  CosmosAccount({
     @required this.address,
     @required this.accountNumber,
     @required this.sequence,
@@ -52,5 +52,8 @@ class AccountData extends Equatable {
   @override
   List<Object> get props => [address, accountNumber, sequence, coins];
 
-  Map<String, dynamic> toJson() => _$AccountDataToJson(this);
+  factory CosmosAccount.fromJson(Map<String, dynamic> json) =>
+      _$CosmosAccountFromJson(json);
+
+  Map<String, dynamic> toJson() => _$CosmosAccountToJson(this);
 }

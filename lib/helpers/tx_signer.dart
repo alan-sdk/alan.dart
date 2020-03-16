@@ -38,7 +38,7 @@ class TxSigner {
 
   static StdSignature _getStdSignature(
     Wallet wallet,
-    AccountData accountData,
+    CosmosAccount accountData,
     NodeInfo nodeInfo,
     List<StdMsg> msgs,
     StdFee fee,

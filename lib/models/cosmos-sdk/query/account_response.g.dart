@@ -1,22 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'account_data_response.dart';
+part of 'account_response.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-AccountDataResponse _$AccountDataResponseFromJson(Map<String, dynamic> json) {
-  return AccountDataResponse(
+AccountResponse _$AccountResponseFromJson(Map<String, dynamic> json) {
+  return AccountResponse(
     type: json['type'] as String,
     accountData: json['value'] == null
         ? null
-        : AccountData.fromJson(json['value'] as Map<String, dynamic>),
+        : CosmosAccount.fromJson(json['value'] as Map<String, dynamic>),
   );
 }
 
-Map<String, dynamic> _$AccountDataResponseToJson(
-        AccountDataResponse instance) =>
+Map<String, dynamic> _$AccountResponseToJson(AccountResponse instance) =>
     <String, dynamic>{
       'type': instance.type,
       'value': instance.accountData?.toJson(),

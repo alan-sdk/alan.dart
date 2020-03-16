@@ -2,21 +2,21 @@ import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:meta/meta.dart';
 
-import 'account_data.dart';
+import 'account.dart';
 
-part 'account_data_response.g.dart';
+part 'account_response.g.dart';
 
 /// Represents the response that is returned from the LCD upon
 /// querying the /auth/accounts/{address} endpoint.
 @JsonSerializable(explicitToJson: true)
-class AccountDataResponse extends Equatable {
+class AccountResponse extends Equatable {
   @JsonKey(name: "type")
   final String type;
 
   @JsonKey(name: "value")
-  final AccountData accountData;
+  final CosmosAccount accountData;
 
-  AccountDataResponse({
+  AccountResponse({
     @required this.type,
     @required this.accountData,
   })  : assert(type != null),
@@ -25,8 +25,8 @@ class AccountDataResponse extends Equatable {
   @override
   List<Object> get props => [type, accountData];
 
-  factory AccountDataResponse.fromJson(Map<String, dynamic> json) =>
-      _$AccountDataResponseFromJson(json);
+  factory AccountResponse.fromJson(Map<String, dynamic> json) =>
+      _$AccountResponseFromJson(json);
 
-  Map<String, dynamic> toJson() => _$AccountDataResponseToJson(this);
+  Map<String, dynamic> toJson() => _$AccountResponseToJson(this);
 }
