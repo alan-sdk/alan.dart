@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'account_data.dart';
+part of 'account.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-AccountData _$AccountDataFromJson(Map<String, dynamic> json) {
-  return AccountData(
+CosmosAccount _$CosmosAccountFromJson(Map<String, dynamic> json) {
+  return CosmosAccount(
     address: json['address'] as String,
     accountNumber: json['account_number'] as String,
     sequence: json['sequence'] as String,
@@ -18,7 +18,7 @@ AccountData _$AccountDataFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$AccountDataToJson(AccountData instance) =>
+Map<String, dynamic> _$CosmosAccountToJson(CosmosAccount instance) =>
     <String, dynamic>{
       'address': instance.address,
       'account_number': instance.accountNumber,
