@@ -70,6 +70,10 @@ class QueryHelper {
     }
 
     final lcdResponse = LcdResponse.fromJson(result.value);
-    return AccountResponse.fromJson(lcdResponse.result).accountData;
+    final account = AccountResponse.fromJson(lcdResponse.result).accountData;
+
+    // If the account does not exist on chain, then an empty account data
+    // object might be returned instead
+    return account?.address == address ? account : null;
   }
 }
