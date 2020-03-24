@@ -21,6 +21,12 @@ class TxSigner {
       wallet.networkInfo.lcdUrl,
       wallet.bech32Address,
     );
+    if (account == null) {
+      throw Exception(
+        "Account ${wallet.bech32Address} does not exist on chain",
+      );
+    }
+
     final nodeInfo = await QueryHelper.getNodeInfo(wallet.networkInfo.lcdUrl);
 
     // Sign all messages
