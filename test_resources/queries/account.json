@@ -3,7 +3,7 @@
   "result": {
     "type": "cosmos-sdk/Account",
     "value": {
-      "address": "desmos16f9wz7yg44pjfhxyn22kycs0qjy778ng877usl",
+      "address": "desmos1ywphunh6kg5d33xs07ufjr9mxxcza6rjq4wrzy",
       "coins": [
         {
           "denom": "udaric",
