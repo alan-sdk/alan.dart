@@ -7,6 +7,7 @@ part 'account.g.dart';
 
 /// Contains the data that is returned from a full node when querying
 /// for the /auth/accounts/{address} REST API endpoint.
+@immutable
 @JsonSerializable(explicitToJson: true)
 class CosmosAccount extends Equatable {
   @JsonKey(name: "address")
@@ -21,7 +22,7 @@ class CosmosAccount extends Equatable {
   @JsonKey(name: "coins")
   final List<StdCoin> coins;
 
-  CosmosAccount({
+  const CosmosAccount({
     @required this.address,
     @required this.accountNumber,
     @required this.sequence,
@@ -31,26 +32,35 @@ class CosmosAccount extends Equatable {
         assert(sequence != null),
         assert(coins != null);
 
-  factory CosmosAccount.offline(String address) => CosmosAccount(
-        address: address,
-        accountNumber: 0,
-        sequence: 0,
-        coins: [],
-      );
+  factory CosmosAccount.offline(String address) {
+    return CosmosAccount(
+      address: address,
+      accountNumber: 0,
+      sequence: 0,
+      coins: [],
+    );
+  }
+
+  factory CosmosAccount.fromJson(Map<String, dynamic> json) {
+    return _$CosmosAccountFromJson(json);
+  }
+
+  Map<String, dynamic> toJson() {
+    return _$CosmosAccountToJson(this);
+  }
 
   @override
-  String toString() => 'AccountData { '
-      'address: $address, '
-      'accountNumber: $accountNumber, '
-      'sequence: $sequence, '
-      'coins: $coins '
-      '}';
+  String toString() {
+    return 'AccountData { '
+        'address: $address, '
+        'accountNumber: $accountNumber, '
+        'sequence: $sequence, '
+        'coins: $coins '
+        '}';
+  }
 
   @override
-  List<Object> get props => [address, accountNumber, sequence, coins];
-
-  factory CosmosAccount.fromJson(Map<String, dynamic> json) =>
-      _$CosmosAccountFromJson(json);
-
-  Map<String, dynamic> toJson() => _$CosmosAccountToJson(this);
+  List<Object> get props {
+    return [address, accountNumber, sequence, coins];
+  }
 }
