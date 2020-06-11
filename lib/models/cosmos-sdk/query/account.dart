@@ -12,22 +12,22 @@ part 'account.g.dart';
 class CosmosAccount extends Equatable {
   /// Address associated to the the account, is Bech32 format.
   /// If the user does not exist on-chain, this will be an empty string.
-  @JsonKey(name: "address", nullable: false, defaultValue: "")
+  @JsonKey(name: "address", defaultValue: "")
   final String address;
 
   /// Account number on-chain.
   /// If the account does not exist on-chain this will be -1.
-  @JsonKey(name: "account_number", nullable: false, defaultValue: -1)
+  @JsonKey(name: "account_number", defaultValue: -1)
   final int accountNumber;
 
   /// Account sequence on-chain.
   /// If the account does not exist on-chain this will be -1.
-  @JsonKey(name: "sequence", nullable: false, defaultValue: -1)
+  @JsonKey(name: "sequence", defaultValue: -1)
   final int sequence;
 
   /// Coins associated to this account.
   /// If the account does not exist on-chain, this will be an empty array.
-  @JsonKey(name: "coins", nullable: false, defaultValue: [])
+  @JsonKey(name: "coins", defaultValue: [])
   final List<StdCoin> coins;
 
   const CosmosAccount({
