@@ -22,9 +22,6 @@ dependencies:
   meta:
   pointycastle:
   reflectable:
-    git:
-      url: https://github.com/dart-lang/reflectable
-      ref: use_newer_analyzer_jun20
 
 dev_dependencies:
   build_runner:
