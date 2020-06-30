@@ -80,7 +80,9 @@ void main() {
           amount: [],
         ),
       ];
-      expect(TxHelper.sendTx(msgs, wallet), throwsException);
+
+      final result = await TxHelper.sendTx(msgs, wallet);
+      expect(result.success, isFalse);
     });
 
     test('throws exception when tx sending is not successful', () async {

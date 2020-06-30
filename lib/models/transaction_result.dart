@@ -28,6 +28,18 @@ class TransactionResult extends Equatable {
         assert(success || error != null),
         assert(raw != null);
 
+  factory TransactionResult.fromException(Exception exception) {
+    return TransactionResult(
+      success: false,
+      hash: "",
+      raw: {},
+      error: TransactionError(
+        errorCode: -1,
+        errorMessage: exception.toString(),
+      ),
+    );
+  }
+
   @override
   List<Object> get props => [hash, success, error, raw];
 }

@@ -17,32 +17,19 @@ class TxHelper {
       return null;
     }
 
-    // Build the tx
-    final tx = TxBuilder.buildStdTx(
-      stdMsgs: messages,
-      fee: fee,
-    );
+    try {
+      // Build the tx
+      final tx = TxBuilder.buildStdTx(stdMsgs: messages, fee: fee);
 
-    // Sign the tx
-    final signTx = await TxSigner.signStdTx(
-      wallet: wallet,
-      stdTx: tx,
-    );
+      // Sign the tx
+      final signTx = await TxSigner.signStdTx(wallet: wallet, stdTx: tx);
 
-    print('Sending a new tx to the chain: \n ${jsonEncode(signTx)}');
+      print('Sending a new tx to the chain: \n ${jsonEncode(signTx)}');
 
-    // Send the tx to the chain
-    final result = await TxSender.broadcastStdTx(
-      wallet: wallet,
-      stdTx: signTx,
-    );
-
-    if (!result.success) {
-      final jsonTx = jsonEncode(signTx);
-      final error = result.error.errorMessage;
-      throw Exception("Error while sending transaction $jsonTx: $error");
+      // Send the tx to the chain
+      return await TxSender.broadcastStdTx(wallet: wallet, stdTx: signTx);
+    } catch (exception) {
+      return TransactionResult.fromException(exception);
     }
-
-    return result;
   }
 }
