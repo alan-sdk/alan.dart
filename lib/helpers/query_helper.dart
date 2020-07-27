@@ -20,11 +20,12 @@ class RequestResult<T> extends Equatable {
 
 /// Allows to easily query the current chain state.
 class QueryHelper {
+  static final httpClient = http.Client();
+
   /// Queries the chain at the given [url].
   static Future<RequestResult<Map<String, dynamic>>> queryChain(
     String url,
   ) async {
-    final httpClient = http.Client();
     final data = await httpClient.get(url);
     if (data.statusCode != 200) {
       return RequestResult(

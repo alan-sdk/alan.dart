@@ -40,9 +40,9 @@ class Wallet extends Equatable {
   /// Generated a new random [Wallet] using the specified [networkInfo]
   /// and the optional [derivationPath].
   factory Wallet.random(
-      NetworkInfo networkInfo, {
-        String derivationPath = DERIVATION_PATH,
-      }) {
+    NetworkInfo networkInfo, {
+    String derivationPath = DERIVATION_PATH,
+  }) {
     final mnemonic = bip39.generateMnemonic(strength: 256);
     return Wallet.derive(
       mnemonic.split(" "),
