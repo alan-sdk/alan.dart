@@ -18,12 +18,12 @@ class CosmosAccount extends Equatable {
   /// Account number on-chain.
   /// If the account does not exist on-chain this will be -1.
   @JsonKey(name: "account_number", defaultValue: -1)
-  final int accountNumber;
+  final String accountNumber;
 
   /// Account sequence on-chain.
   /// If the account does not exist on-chain this will be -1.
   @JsonKey(name: "sequence", defaultValue: -1)
-  final int sequence;
+  final String sequence;
 
   /// Coins associated to this account.
   /// If the account does not exist on-chain, this will be an empty array.
@@ -45,8 +45,8 @@ class CosmosAccount extends Equatable {
   factory CosmosAccount.offline(String address) {
     return CosmosAccount(
       address: address,
-      accountNumber: -1,
-      sequence: -1,
+      accountNumber: "",
+      sequence: "",
       coins: [],
     );
   }

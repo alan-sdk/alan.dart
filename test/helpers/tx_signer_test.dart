@@ -1,8 +1,5 @@
-import 'dart:convert';
 import 'dart:io';
 
-import 'package:http/http.dart';
-import 'package:http/testing.dart';
 import 'package:alan/alan.dart';
 import 'package:mock_web_server/mock_web_server.dart';
 import 'package:test/test.dart';
@@ -52,9 +49,9 @@ void main() {
       final url = request.uri.toString();
       var responseFile;
       if (url.contains("account")) {
-        responseFile = File('test_resources/helpers/account.json');
+        responseFile = File('test_resources/rest/account.json');
       } else if (url.contains("node_info")) {
-        responseFile = File('test_resources/queries/node_info.json');
+        responseFile = File('test_resources/rest/node_info.json');
       }
 
       final responseBody = await responseFile.readAsString();

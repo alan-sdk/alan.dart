@@ -28,38 +28,34 @@ void main() {
     Wallet wallet;
 
     setUpAll(() {
-      final networkInfo = NetworkInfo(bech32Hrp: "desmos", lcdUrl: server.url);
+      final networkInfo = NetworkInfo(bech32Hrp: "cosmos", lcdUrl: server.url);
       final mnemonic = [
-        "music",
-        "swap",
-        "repair",
-        "fiber",
-        "space",
-        "cactus",
-        "fold",
-        "various",
-        "identify",
-        "ice",
-        "grape",
-        "negative",
-        "category",
-        "cupboard",
-        "box",
-        "village",
-        "gallery",
-        "letter",
-        "electric",
-        "vote",
-        "praise",
-        "sustain",
-        "system",
-        "soon",
+        "sibling",
+        "auction",
+        "sibling",
+        "flavor",
+        "judge",
+        "foil",
+        "tube",
+        "dust",
+        "work",
+        "mixed",
+        "crush",
+        "action",
+        "menu",
+        "property",
+        "project",
+        "ride",
+        "crouch",
+        "hat",
+        "mom",
+        "scale",
+        "start",
+        "ill",
+        "spare",
+        "panther",
       ];
-      wallet = Wallet.derive(
-        mnemonic,
-        networkInfo,
-        derivationPath: "m/44'/852'/0'/0/0",
-      );
+      wallet = Wallet.derive(mnemonic, networkInfo);
     });
 
     test('returns null with empty list of messages', () async {
@@ -86,10 +82,10 @@ void main() {
     });
 
     test('throws exception when tx sending is not successful', () async {
-      final nodeInfoFile = File("test_resources/queries/node_info.json");
+      final nodeInfoFile = File("test_resources/rest/node_info.json");
       final nodeInfoContents = nodeInfoFile.readAsStringSync();
 
-      final accountFile = File("test_resources/queries/account.json");
+      final accountFile = File("test_resources/rest/account.json");
       final accountContents = accountFile.readAsStringSync();
 
       final sendTxFile = File("test_resources/transactions/send_tx.json");

@@ -28,7 +28,7 @@ class TransactionResult extends Equatable {
         assert(success || error != null),
         assert(raw != null);
 
-  factory TransactionResult.fromException(Exception exception) {
+  factory TransactionResult.fromException(dynamic exception) {
     return TransactionResult(
       success: false,
       hash: "",
