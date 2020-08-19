@@ -16,13 +16,13 @@ class CosmosAccount extends Equatable {
   final String address;
 
   /// Account number on-chain.
-  /// If the account does not exist on-chain this will be -1.
-  @JsonKey(name: "account_number", defaultValue: -1)
+  /// If the account does not exist on-chain this will be "".
+  @JsonKey(name: "account_number", defaultValue: "")
   final String accountNumber;
 
   /// Account sequence on-chain.
-  /// If the account does not exist on-chain this will be -1.
-  @JsonKey(name: "sequence", defaultValue: -1)
+  /// If the account does not exist on-chain this will be "".
+  @JsonKey(name: "sequence", defaultValue: "")
   final String sequence;
 
   /// Coins associated to this account.
