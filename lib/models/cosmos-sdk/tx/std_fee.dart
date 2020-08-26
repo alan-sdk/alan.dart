@@ -10,10 +10,10 @@ part 'std_fee.g.dart';
 /// More details on https://docs.cosmos.network/master/basics/gas-fees.html#introduction-to-gas-and-fees
 @JsonSerializable(explicitToJson: true)
 class StdFee extends Equatable {
-  @JsonKey(name: "amount")
+  @JsonKey(name: 'amount')
   final List<StdCoin> amount;
 
-  @JsonKey(name: "gas")
+  @JsonKey(name: 'gas')
   final String gas;
 
   const StdFee({

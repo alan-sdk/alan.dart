@@ -9,10 +9,10 @@ part 'std_signature.g.dart';
 /// and is included inside the transaction itself.
 @JsonSerializable(ignoreUnannotated: true)
 class StdSignature extends Equatable {
-  @JsonKey(name: "pub_key")
+  @JsonKey(name: 'pub_key')
   final StdPublicKey publicKey;
 
-  @JsonKey(name: "signature")
+  @JsonKey(name: 'signature')
   final String value;
 
   const StdSignature({

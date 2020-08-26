@@ -8,22 +8,22 @@ part 'std_signature_message.g.dart';
 /// Represents the object that needs to be signed when performing a transaction.
 @JsonSerializable(explicitToJson: true)
 class StdSignatureMessage extends Equatable {
-  @JsonKey(name: "chain_id")
+  @JsonKey(name: 'chain_id')
   final String chainId;
 
-  @JsonKey(name: "account_number")
+  @JsonKey(name: 'account_number')
   final String accountNumber;
 
-  @JsonKey(name: "sequence")
+  @JsonKey(name: 'sequence')
   final String sequence;
 
-  @JsonKey(name: "memo")
+  @JsonKey(name: 'memo')
   final String memo;
 
-  @JsonKey(name: "fee")
+  @JsonKey(name: 'fee')
   final Map<String, dynamic> fee;
 
-  @JsonKey(name: "msgs")
+  @JsonKey(name: 'msgs')
   final List<StdMsg> msgs;
 
   const StdSignatureMessage({

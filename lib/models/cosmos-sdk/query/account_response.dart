@@ -10,10 +10,10 @@ part 'account_response.g.dart';
 /// querying the /auth/accounts/{address} endpoint.
 @JsonSerializable(explicitToJson: true)
 class AccountResponse extends Equatable {
-  @JsonKey(name: "type")
+  @JsonKey(name: 'type')
   final String type;
 
-  @JsonKey(name: "value")
+  @JsonKey(name: 'value')
   final CosmosAccount accountData;
 
   AccountResponse({

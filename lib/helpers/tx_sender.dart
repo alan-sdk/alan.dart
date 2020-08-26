@@ -14,26 +14,28 @@ class TxSender {
   static Future<TransactionResult> broadcastStdTx({
     @required Wallet wallet,
     @required StdTx stdTx,
-    String mode = "sync",
+    String mode = 'sync',
   }) async {
     try {
       // Get the endpoint
-      final apiUrl = "${wallet.networkInfo.lcdUrl}/txs";
+      final apiUrl = '${wallet.networkInfo.lcdUrl}/txs';
 
       // Build the request body
-      final requestBody = {"tx": stdTx.toJson(), "mode": mode};
+      final requestBody = {'tx': stdTx.toJson(), 'mode': mode};
       final requestBodyJson = jsonEncode(requestBody);
 
       // Get the response
       final response = await http.Client().post(apiUrl, body: requestBodyJson);
       if (response.statusCode != 200) {
         return TransactionResult.fromException(
-          "Expected status code 200 but got ${response.statusCode} - ${response.body}",
+          'Expected status code 200 but got ${response.statusCode} - ${response.body}',
         );
       }
 
       // Convert the response
-      final json = SendTxResponse.fromJson(jsonDecode(response.body));
+      final json = SendTxResponse.fromJson(
+        jsonDecode(response.body) as Map<String, dynamic>,
+      );
       return _convertResponse(json);
     } catch (exception) {
       return TransactionResult.fromException(exception);

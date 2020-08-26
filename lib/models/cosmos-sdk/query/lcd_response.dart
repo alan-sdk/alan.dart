@@ -8,10 +8,10 @@ part 'lcd_response.g.dart';
 /// the LCD upon querying any endpoint.
 @JsonSerializable()
 class LcdResponse extends Equatable {
-  @JsonKey(name: "height")
+  @JsonKey(name: 'height')
   final String height;
 
-  @JsonKey(name: "result")
+  @JsonKey(name: 'result')
   final Map<String, dynamic> result;
 
   LcdResponse({

@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:typed_data';
 
 import 'package:alan/alan.dart';
 import 'package:alan/helpers/query_helper.dart';
@@ -23,7 +24,7 @@ class TxSigner {
     );
     if (account == null) {
       throw Exception(
-        "Account ${wallet.bech32Address} does not exist on chain",
+        'Account ${wallet.bech32Address} does not exist on chain',
       );
     }
 
@@ -69,7 +70,7 @@ class TxSigner {
     final bytes = utf8.encode(jsonData);
 
     // Sign the data
-    final signatureData = wallet.signTxData(bytes);
+    final signatureData = wallet.signTxData(Uint8List.fromList(bytes));
 
     // Get the compressed Base64 public key
     final pubKeyCompressed = wallet.ecPublicKey.Q.getEncoded(true);
@@ -78,7 +79,7 @@ class TxSigner {
     return StdSignature(
       value: base64Encode(signatureData),
       publicKey: StdPublicKey(
-        type: "tendermint/PubKeySecp256k1",
+        type: 'tendermint/PubKeySecp256k1',
         value: base64Encode(pubKeyCompressed),
       ),
     );

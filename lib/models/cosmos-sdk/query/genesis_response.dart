@@ -8,7 +8,7 @@ part 'genesis_response.g.dart';
 /// upon querying the /genesis endpoint.
 @JsonSerializable(explicitToJson: true)
 class GenesisResponse extends Equatable {
-  @JsonKey(name: "result")
+  @JsonKey(name: 'result')
   final Result result;
 
   GenesisResponse({
@@ -26,7 +26,7 @@ class GenesisResponse extends Equatable {
 
 @JsonSerializable(explicitToJson: true)
 class Result extends Equatable {
-  @JsonKey(name: "genesis")
+  @JsonKey(name: 'genesis')
   final Genesis genesis;
 
   Result({
@@ -43,10 +43,10 @@ class Result extends Equatable {
 
 @JsonSerializable(explicitToJson: true)
 class Genesis extends Equatable {
-  @JsonKey(name: "genesis_time")
+  @JsonKey(name: 'genesis_time')
   final String genesisTime;
 
-  @JsonKey(name: "app_state")
+  @JsonKey(name: 'app_state')
   final Map<String, dynamic> appState;
 
   Genesis({

@@ -9,16 +9,16 @@ part 'std_tx.g.dart';
 /// sent to the chain using a full node.
 @JsonSerializable(explicitToJson: true)
 class StdTx extends Equatable {
-  @JsonKey(name: "msg")
+  @JsonKey(name: 'msg')
   final List<StdMsg> messages;
 
-  @JsonKey(name: "fee")
+  @JsonKey(name: 'fee')
   final StdFee fee;
 
-  @JsonKey(name: "signatures")
+  @JsonKey(name: 'signatures')
   final List<StdSignature> signatures;
 
-  @JsonKey(name: "memo")
+  @JsonKey(name: 'memo')
   final String memo;
 
   StdTx({

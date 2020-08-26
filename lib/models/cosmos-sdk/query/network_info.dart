@@ -8,11 +8,11 @@ part 'network_info.g.dart';
 @JsonSerializable(explicitToJson: true)
 class NetworkInfo extends Equatable {
   /// Bech32 human readable part of the addresses related to this network
-  @JsonKey(name: "bech32_hrp")
+  @JsonKey(name: 'bech32_hrp')
   final String bech32Hrp;
 
   /// URL of the LCD to call when wanting to query data for this network
-  @JsonKey(name: "lcd_url")
+  @JsonKey(name: 'lcd_url')
   final String lcdUrl;
 
   NetworkInfo({

@@ -51,7 +51,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
         const [
           0,
           0,
-          const [#fromAddress, #toAddress, #amount]
+          [#fromAddress, #toAddress, #amount]
         ],
         const [1, 0, null]
       ])

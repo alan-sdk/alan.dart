@@ -9,13 +9,13 @@ part 'send_tx_response.g.dart';
 @immutable
 @JsonSerializable(explicitToJson: true)
 class SendTxResponse extends Equatable {
-  @JsonKey(name: "height")
+  @JsonKey(name: 'height')
   final String height;
 
-  @JsonKey(name: "raw_log")
+  @JsonKey(name: 'raw_log')
   final String rawLog;
 
-  @JsonKey(name: "txhash")
+  @JsonKey(name: 'txhash')
   final String txHash;
 
   SendTxResponse({
@@ -39,10 +39,10 @@ class SendTxResponse extends Equatable {
 @immutable
 @JsonSerializable(explicitToJson: true)
 class SendTxLog extends Equatable {
-  @JsonKey(name: "code")
+  @JsonKey(name: 'code')
   final int code;
 
-  @JsonKey(name: "message")
+  @JsonKey(name: 'message')
   final String message;
 
   SendTxLog({

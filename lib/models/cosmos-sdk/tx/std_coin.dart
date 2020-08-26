@@ -7,10 +7,10 @@ part 'std_coin.g.dart';
 /// Contains the data of a specific coin amount.
 @JsonSerializable(explicitToJson: true)
 class StdCoin extends Equatable {
-  @JsonKey(name: "denom")
+  @JsonKey(name: 'denom')
   final String denom;
 
-  @JsonKey(name: "amount")
+  @JsonKey(name: 'amount')
   final String amount;
 
   const StdCoin({

@@ -8,7 +8,7 @@ part 'node_info_response.g.dart';
 /// when querying the /node_info REST API endpoint.
 @JsonSerializable(explicitToJson: true)
 class NodeInfoResponse extends Equatable {
-  @JsonKey(name: "node_info")
+  @JsonKey(name: 'node_info')
   final NodeInfo nodeInfo;
 
   NodeInfoResponse({@required this.nodeInfo}) : assert(nodeInfo != null);
@@ -26,7 +26,7 @@ class NodeInfoResponse extends Equatable {
 /// inside a /node_info REST API response.
 @JsonSerializable(explicitToJson: true)
 class NodeInfo extends Equatable {
-  @JsonKey(name: "network")
+  @JsonKey(name: 'network')
   final String network;
 
   NodeInfo({@required this.network}) : assert(network != null);

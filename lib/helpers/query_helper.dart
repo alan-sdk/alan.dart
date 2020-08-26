@@ -29,11 +29,13 @@ class QueryHelper {
     final data = await httpClient.get(url);
     if (data.statusCode != 200) {
       return RequestResult(
-        error: "Call to $url returned status code ${data.statusCode}",
+        error: 'Call to $url returned status code ${data.statusCode}',
       );
     }
 
-    return RequestResult(value: json.decode(utf8.decode(data.bodyBytes)));
+    return RequestResult(
+      value: json.decode(utf8.decode(data.bodyBytes)) as Map<String, dynamic>,
+    );
   }
 
   /// Queries the chain by getting the transactions at the specified [height].
@@ -41,9 +43,9 @@ class QueryHelper {
     String lcdEndpoint,
     String height,
   ) async {
-    final result = await queryChain("$lcdEndpoint/txs?tx.height=$height");
+    final result = await queryChain('$lcdEndpoint/txs?tx.height=$height');
     if (!result.isSuccessful) {
-      throw Exception("Transaction at height $height not found");
+      throw Exception('Transaction at height $height not found');
     }
 
     return TransactionsResponse.fromJson(result.value).txs;
@@ -51,7 +53,7 @@ class QueryHelper {
 
   /// Queries the node info of the chain based on the given [lcdEndpoint].
   static Future<NodeInfo> getNodeInfo(String lcdEndpoint) async {
-    final result = await queryChain("$lcdEndpoint/node_info");
+    final result = await queryChain('$lcdEndpoint/node_info');
     if (!result.isSuccessful) {
       throw Exception(result.error);
     }
@@ -64,7 +66,7 @@ class QueryHelper {
     String lcdEndpoint,
     String address,
   ) async {
-    final endpoint = "${lcdEndpoint}/auth/accounts/${address}";
+    final endpoint = '${lcdEndpoint}/auth/accounts/${address}';
     final result = await queryChain(endpoint);
     if (!result.isSuccessful) {
       throw Exception(result.error);

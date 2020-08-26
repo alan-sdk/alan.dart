@@ -10,7 +10,7 @@ class Bech32Encoder {
   static String encode(String humanReadablePart, Uint8List data) {
     final List<int> converted = _convertBits(data, 8, 5);
     final bech32Codec = Bech32Codec();
-    final bech32Data = Bech32(humanReadablePart, converted);
+    final bech32Data = Bech32(humanReadablePart, Uint8List.fromList(converted));
     return bech32Codec.encode(bech32Data);
   }
 

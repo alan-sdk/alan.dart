@@ -8,10 +8,10 @@ part 'std_public_key.g.dart';
 /// and is included inside it to prove authenticity.
 @JsonSerializable(explicitToJson: true)
 class StdPublicKey extends Equatable {
-  @JsonKey(name: "type")
+  @JsonKey(name: 'type')
   final String type;
 
-  @JsonKey(name: "value")
+  @JsonKey(name: 'value')
   final String value;
 
   const StdPublicKey({

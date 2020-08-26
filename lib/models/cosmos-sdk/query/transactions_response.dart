@@ -10,7 +10,7 @@ part 'transactions_response.g.dart';
 @immutable
 @JsonSerializable(explicitToJson: true)
 class TransactionsResponse extends Equatable {
-  @JsonKey(name: "txs")
+  @JsonKey(name: 'txs')
   final List<Transaction> txs;
 
   TransactionsResponse({@required this.txs}) : assert(txs != null);
@@ -28,31 +28,31 @@ class TransactionsResponse extends Equatable {
 @immutable
 @JsonSerializable(explicitToJson: true)
 class Transaction extends Equatable {
-  @JsonKey(name: "height")
+  @JsonKey(name: 'height')
   final String height;
 
-  @JsonKey(name: "txhash")
+  @JsonKey(name: 'txhash')
   final String hash;
 
-  @JsonKey(name: "data")
+  @JsonKey(name: 'data')
   final String data;
 
-  @JsonKey(name: "raw_log")
+  @JsonKey(name: 'raw_log')
   final String rawLog;
 
-  @JsonKey(name: "logs")
+  @JsonKey(name: 'logs')
   final List<TransactionLog> logs;
 
-  @JsonKey(name: "gas_wanted")
+  @JsonKey(name: 'gas_wanted')
   final String gasWanted;
 
-  @JsonKey(name: "gas_used")
+  @JsonKey(name: 'gas_used')
   final String gasUsed;
 
-  @JsonKey(name: "tx")
+  @JsonKey(name: 'tx')
   final StdTxWrapper tx;
 
-  @JsonKey(name: "timestamp")
+  @JsonKey(name: 'timestamp')
   final String timeStamp;
 
   Transaction({
@@ -89,13 +89,13 @@ class Transaction extends Equatable {
 @immutable
 @JsonSerializable(explicitToJson: true)
 class TransactionLog extends Equatable {
-  @JsonKey(name: "msg_index")
+  @JsonKey(name: 'msg_index')
   final int messageIndex;
 
-  @JsonKey(name: "log")
+  @JsonKey(name: 'log')
   final String log;
 
-  @JsonKey(name: "events")
+  @JsonKey(name: 'events')
   final List<LogEvent> events;
 
   TransactionLog({
@@ -118,10 +118,10 @@ class TransactionLog extends Equatable {
 @immutable
 @JsonSerializable(explicitToJson: true)
 class LogEvent extends Equatable {
-  @JsonKey(name: "type")
+  @JsonKey(name: 'type')
   final String type;
 
-  @JsonKey(name: "attributes")
+  @JsonKey(name: 'attributes')
   final List<LogEventAttribute> attributes;
 
   LogEvent({
@@ -143,10 +143,10 @@ class LogEvent extends Equatable {
 @immutable
 @JsonSerializable(explicitToJson: true)
 class LogEventAttribute extends Equatable {
-  @JsonKey(name: "key")
+  @JsonKey(name: 'key')
   final String key;
 
-  @JsonKey(name: "value")
+  @JsonKey(name: 'value')
   final String value;
 
   LogEventAttribute({
@@ -168,10 +168,10 @@ class LogEventAttribute extends Equatable {
 @immutable
 @JsonSerializable(explicitToJson: true)
 class StdTxWrapper extends Equatable {
-  @JsonKey(name: "type")
+  @JsonKey(name: 'type')
   final String type;
 
-  @JsonKey(name: "value")
+  @JsonKey(name: 'value')
   final StdTx value;
 
   StdTxWrapper({
@@ -194,13 +194,13 @@ class StdTxWrapper extends Equatable {
 @immutable
 @JsonSerializable(explicitToJson: true)
 class MsgEvent extends Equatable {
-  @JsonKey(name: "type")
+  @JsonKey(name: 'type')
   final String type;
 
-  @JsonKey(name: "attributes")
+  @JsonKey(name: 'attributes')
   final List<Map<String, String>> attributes;
 
-  MsgEvent({this.type, this.attributes})
+  MsgEvent({@required this.type, @required this.attributes})
       : assert(type != null),
         assert(attributes != null);
 

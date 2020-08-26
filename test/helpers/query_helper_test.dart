@@ -25,13 +25,13 @@ void main() {
 
       final result = await QueryHelper.queryChain(url);
       final expected = RequestResult<Map<String, dynamic>>(
-        error: "Call to $url returned status code 500",
+        error: 'Call to $url returned status code 500',
       );
       expect(result, expected);
     });
 
     test('returns proper value if no exception is thrown', () async {
-      final data = {"key": "value"};
+      final data = {'key': 'value'};
       server.enqueue(httpCode: 200, body: jsonEncode(data));
 
       final result = await QueryHelper.queryChain(server.url);

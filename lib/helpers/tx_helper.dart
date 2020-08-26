@@ -8,7 +8,7 @@ class TxHelper {
   static Future<TransactionResult> sendTx(
     List<StdMsg> messages,
     Wallet wallet, {
-    StdFee fee = const StdFee(gas: "200000", amount: []),
+    StdFee fee = const StdFee(gas: '200000', amount: []),
   }) async {
     if (messages.isEmpty) {
       // No messages to send, simply return

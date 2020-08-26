@@ -17,7 +17,7 @@ class MapSorter {
   /// * If it is a list, [_encodeList] is called.
   /// * Otherwise, the same value is returned.
   static dynamic _encodeValue(dynamic value) {
-    if (value is Map) {
+    if (value is Map<String, dynamic>) {
       return sort(value);
     } else if (value is List) {
       return _encodeList(value);

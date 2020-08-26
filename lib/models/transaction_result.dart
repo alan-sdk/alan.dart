@@ -31,7 +31,7 @@ class TransactionResult extends Equatable {
   factory TransactionResult.fromException(dynamic exception) {
     return TransactionResult(
       success: false,
-      hash: "",
+      hash: '',
       raw: {},
       error: TransactionError(
         errorCode: -1,

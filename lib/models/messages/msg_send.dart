@@ -13,15 +13,15 @@ part 'msg_send.g.dart';
 @JsonSerializable(explicitToJson: true)
 class MsgSend extends StdMsg {
   /// Bech32 address of the sender.
-  @JsonKey(name: "from_address")
+  @JsonKey(name: 'from_address')
   final String fromAddress;
 
   /// Bech32 address of the recipient.
-  @JsonKey(name: "to_address")
+  @JsonKey(name: 'to_address')
   final String toAddress;
 
   /// Coins that will be sent.
-  @JsonKey(name: "amount")
+  @JsonKey(name: 'amount')
   final List<StdCoin> amount;
 
   /// Public constructor.
@@ -42,11 +42,11 @@ class MsgSend extends StdMsg {
   @override
   Exception validate() {
     if (fromAddress.isEmpty || toAddress.isEmpty) {
-      return Exception("from_address and to_address cannot be empty");
+      return Exception('from_address and to_address cannot be empty');
     }
 
     if (amount.isEmpty) {
-      return Exception("amount cannot be empty");
+      return Exception('amount cannot be empty');
     }
 
     return null;

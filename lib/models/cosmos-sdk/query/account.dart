@@ -12,22 +12,22 @@ part 'account.g.dart';
 class CosmosAccount extends Equatable {
   /// Address associated to the the account, is Bech32 format.
   /// If the user does not exist on-chain, this will be an empty string.
-  @JsonKey(name: "address", defaultValue: "")
+  @JsonKey(name: 'address', defaultValue: '')
   final String address;
 
   /// Account number on-chain.
-  /// If the account does not exist on-chain this will be "".
-  @JsonKey(name: "account_number", defaultValue: "")
+  /// If the account does not exist on-chain this will be ''.
+  @JsonKey(name: 'account_number', defaultValue: '')
   final String accountNumber;
 
   /// Account sequence on-chain.
-  /// If the account does not exist on-chain this will be "".
-  @JsonKey(name: "sequence", defaultValue: "")
+  /// If the account does not exist on-chain this will be ''.
+  @JsonKey(name: 'sequence', defaultValue: '')
   final String sequence;
 
   /// Coins associated to this account.
   /// If the account does not exist on-chain, this will be an empty array.
-  @JsonKey(name: "coins", defaultValue: [])
+  @JsonKey(name: 'coins', defaultValue: [])
   final List<StdCoin> coins;
 
   const CosmosAccount({
@@ -45,8 +45,8 @@ class CosmosAccount extends Equatable {
   factory CosmosAccount.offline(String address) {
     return CosmosAccount(
       address: address,
-      accountNumber: "",
-      sequence: "",
+      accountNumber: '',
+      sequence: '',
       coins: [],
     );
   }
@@ -65,8 +65,8 @@ class CosmosAccount extends Equatable {
   /// same exact data, with the ones given replaced.
   CosmosAccount copyWith({
     String address,
-    int accountNumber,
-    int sequence,
+    String accountNumber,
+    String sequence,
     List<StdCoin> coins,
   }) {
     return CosmosAccount(

@@ -7,6 +7,23 @@ on:
       - '!gh-pages'
 
 jobs:
+  Analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+
+      - name: Setup 🔨
+        uses: subosito/flutter-action@v1
+        with:
+          flutter-version: '1.20.0'
+          channel: 'stable'
+
+      - name: Analyze 🔍
+        run: |
+          pub get
+          dartanalyzer lib
+          dartfmt --dry-run .
 
   Unit-tests:
     runs-on: ubuntu-latest

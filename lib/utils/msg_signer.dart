@@ -16,9 +16,13 @@ class MessageSigner {
     radix: 16,
   );
 
-  static BigInt _bytesToInt(List<int> bytes) => _decodeBigInt(bytes);
+  static BigInt _bytesToInt(List<int> bytes) {
+    return _decodeBigInt(Uint8List.fromList(bytes));
+  }
 
-  static Uint8List _intToBytes(BigInt number) => _encodeBigInt(number);
+  static Uint8List _intToBytes(BigInt number) {
+    return _encodeBigInt(number);
+  }
 
   static Uint8List _encodeBigInt(BigInt number) {
     final size = (number.bitLength + 7) >> 3;
@@ -103,7 +107,7 @@ class MessageSigner {
     final ecdsaSigner = ECDSASigner(null, HMac(SHA256Digest(), 64))
       ..init(true, PrivateKeyParameter(privateKey));
 
-    ECSignature ecSignature = ecdsaSigner.generateSignature(message);
+    var ecSignature = ecdsaSigner.generateSignature(message) as ECSignature;
 
     if (ecSignature.s.compareTo(_halfCurveOrder) > 0) {
       final canonicalS = _params.n - ecSignature.s;
