@@ -9,7 +9,7 @@
 .history
 .svn/
 node_modules/
-docs/build/
+doc/build/
 
 # IDEs
 *.iml

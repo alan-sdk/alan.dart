@@ -4,8 +4,8 @@
   "description": "Alan.dart SDK documentation",
   "main": "index.js",
   "scripts": {
-    "docs:serve": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:serve": "vuepress dev doc",
+    "docs:build": "vuepress build doc"
   },
   "author": "",
   "license": "MIT",
