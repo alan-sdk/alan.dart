@@ -50,7 +50,7 @@ module.exports = {
         ],
         sidebarDepth: 2,
         sidebar: [
-            ["Getting started", "README.md"],
+            // ["Getting started", "README.md"],
         ],
     }
 };
