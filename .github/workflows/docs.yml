@@ -19,7 +19,7 @@ jobs:
           npm install
           npm ci
           npm run docs:build
-          echo 'alan-sdk.dev' > docs/.vuepress/dist/CNAME
+          echo 'docs.dart.alan-sdk.dev' > docs/.vuepress/dist/CNAME
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
