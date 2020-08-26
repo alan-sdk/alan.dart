@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:alan/alan.dart';
 
 /// Allows to easily perform chain-related actions such as querying the
@@ -18,15 +16,8 @@ class TxHelper {
     }
 
     try {
-      // Build the tx
       final tx = TxBuilder.buildStdTx(stdMsgs: messages, fee: fee);
-
-      // Sign the tx
       final signTx = await TxSigner.signStdTx(wallet: wallet, stdTx: tx);
-
-      print('Sending a new tx to the chain: \n ${jsonEncode(signTx)}');
-
-      // Send the tx to the chain
       return await TxSender.broadcastStdTx(wallet: wallet, stdTx: signTx);
     } catch (exception) {
       return TransactionResult.fromException(exception);

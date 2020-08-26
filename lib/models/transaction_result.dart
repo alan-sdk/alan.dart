@@ -41,7 +41,18 @@ class TransactionResult extends Equatable {
   }
 
   @override
-  List<Object> get props => [hash, success, error, raw];
+  List<Object> get props {
+    return [hash, success, error, raw];
+  }
+
+  @override
+  String toString() {
+    return 'TransactionResult {'
+        'success: $success, '
+        'hash: $hash, '
+        'error: $error '
+        '}';
+  }
 }
 
 /// Contains the data related to an error that has occurred when
@@ -57,5 +68,15 @@ class TransactionError extends Equatable {
         assert(errorMessage != null);
 
   @override
-  List<Object> get props => [errorCode, errorMessage];
+  List<Object> get props {
+    return [errorCode, errorMessage];
+  }
+
+  @override
+  String toString() {
+    return 'TransactionError {'
+        'errorCode: $errorCode, '
+        'errorMessage: $errorMessage '
+        '}';
+  }
 }

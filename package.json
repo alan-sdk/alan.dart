@@ -1,0 +1,24 @@
+{
+  "name": "alan-sdk-docs",
+  "version": "0.1.0",
+  "description": "Alan.dart SDK documentation",
+  "main": "index.js",
+  "scripts": {
+    "docs:serve": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@vuepress/plugin-google-analytics": "^1.5.2",
+    "lodash": "^4.17.19",
+    "markdown-it": "^8.4.2",
+    "markdown-it-meta": "0.0.1",
+    "vuepress": "^1.5.2",
+    "vuepress-plugin-element-tabs": "^0.2.8"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "vuepress-plugin-latex": "^0.1.3"
+  }
+}

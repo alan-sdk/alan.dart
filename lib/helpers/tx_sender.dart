@@ -16,24 +16,28 @@ class TxSender {
     @required StdTx stdTx,
     String mode = "sync",
   }) async {
-    // Get the endpoint
-    final apiUrl = "${wallet.networkInfo.lcdUrl}/txs";
+    try {
+      // Get the endpoint
+      final apiUrl = "${wallet.networkInfo.lcdUrl}/txs";
 
-    // Build the request body
-    final requestBody = {"tx": stdTx.toJson(), "mode": mode};
-    final requestBodyJson = jsonEncode(requestBody);
+      // Build the request body
+      final requestBody = {"tx": stdTx.toJson(), "mode": mode};
+      final requestBodyJson = jsonEncode(requestBody);
 
-    // Get the response
-    final response = await http.Client().post(apiUrl, body: requestBodyJson);
-    if (response.statusCode != 200) {
-      throw Exception(
-        "Expected status code 200 but got ${response.statusCode} - ${response.body}",
-      );
+      // Get the response
+      final response = await http.Client().post(apiUrl, body: requestBodyJson);
+      if (response.statusCode != 200) {
+        return TransactionResult.fromException(
+          "Expected status code 200 but got ${response.statusCode} - ${response.body}",
+        );
+      }
+
+      // Convert the response
+      final json = SendTxResponse.fromJson(jsonDecode(response.body));
+      return _convertResponse(json);
+    } catch (exception) {
+      return TransactionResult.fromException(exception);
     }
-
-    // Convert the response
-    final json = SendTxResponse.fromJson(jsonDecode(response.body));
-    return _convertResponse(json);
   }
 
   /// Converts the given [response] to a [TransactionResult] object.

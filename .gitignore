@@ -8,6 +8,8 @@
 .buildlog/
 .history
 .svn/
+node_modules/
+docs/build/
 
 # IDEs
 *.iml

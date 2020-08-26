@@ -1,54 +1,40 @@
 ![](.img/logo.jpg)
 
-![Travis (.org)](https://img.shields.io/travis/alan-sdk/alan.dart)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/alan-sdk/alan.dart/Test)
 ![](https://img.shields.io/badge/compatible-flutter-blue)
 
-> Alan.dart is an evolution of [Sacco.dart](https://github.com/commercionetwork/sacco.dart) on which I personally worked. Due to the fact that Sacco.dart is no longer maintained by Commercio.network and I no longer work there, I decided to start this new project to support future mobile apps development for Cosmos-based chains. 
+Alan.dart is a pure Dart package allowing you to easily integrate your Dart-based project with any [Cosmos](https://cosmos.network)-based blockchain.  
 
-Alan.dart is a pure Dart package that allows you to easily deal with [Cosmos](https://cosmos.network)-based HD wallets 
-and transactions. This includes: 
+All the documentation is present inside the [official doc website](). 
 
-1. Creating an HD Wallet. 
-2. Creating a transaction. 
-3. Signing a transaction. 
-4. Broadcasting a transaction.
+## Cosmos-SDK compatibility table
+Over time the Cosmos SDK has changed a lot, and many versions of it have been released. Since the development of this library started, we had to adapt to the `0.37.x` and `0.38.x` versions. 
 
-Being it in pure Dart means that you can use it inside your [Dart Web](https://dart.dev/web) projects 
-as well as [Flutter](https://flutter.dev) ones.
+Recently, however, the Cosmos team decided that they would focus on building a LTS (_Long Term Support_) version of the SDK. This will be the `0.39.x` version series. 
 
-## Usage 
-### Creating a wallet
-```dart
-final derivationPath = "m/44'/118'/0'/0/0";
-final networkInfo = NetworkInfo(id: "", bech32Hrp: "cosmos", lcdUrl: "");
+For this reason, we decided that we will focus on building this SDK based on such version of the Cosmos SDK. However, we also released two versions of this library to be compatible with older Cosmos SDK versions: 
 
-final mnemonicString = "final random flame cinnamon grunt hazard easily mutual resist pond solution define knife female tongue crime atom jaguar alert library best forum lesson rigid";
-final mnemonic = mnemonicString.split(" ");
-final wallet = Wallet.derive(mnemonic, derivationPath, networkInfo);
+- [Version 0.37.x](https://github.com/alan-sdk/alan.dart/releases/tag/v0.37.x) compatible with all the Cosmos SDK 0.37.x release series
+- [Version 0.38.x](https://github.com/alan-sdk/alan.dart/releases/tag/v0.38.x) compatible with all the Cosmos SDK 0.38.x release series 
+
+Please note that those versions of the Alan.dart library will most probably not contain all the features of recent versions. We highly suggest you to update your Cosmos SDK version to 0.39.x and use the latest version of the Alan.dart library with it.  
+
+## Getting started
+To start using this library inside your project, just edit your `pubspec.yml` file adding the following lines: 
+
+```yml
+dependencies:
+  alan:
+    git:
+      url: git://github.com/alan-sdk/alan.dart.git
 ```
 
-### Creating a transaction
-```dart
-final message = MsgSend(
-  fromAddress: "cosmos1huydeevpz37sd9snkgul6070mstupukw00xkw9",
-  toAddress: "cosmos12lla7fg3hjd2zj6uvf4pqj7atx273klc487c5k",
-  amount: [StdCoin(denom: "uatom", amount: "100")],
-);
+You can even use a specific tag if you want: 
 
-final stdTx = TxBuilder.buildStdTx(stdMsgs: [message]);
-``` 
-
-### Signing a transaction
-```dart
-final signedStdTx = TxSigner.signStdTx(wallet: wallet, stdTx: stdTx);
-```
-
-### Sending a transaction
-```dart
-try {
-  final hash = await TxSender.broadcastStdTx(wallet: wallet, stdTx: signedStdTx);
-  print("Tx send successfully. Hash: $hash");
-} catch (error) {
-  print("Error while sending the tx: $error");
-}
+```yml
+dependencies:
+  alan:
+    git:
+      url: git://github.com/alan-sdk/alan.dart.git
+      ref: tags/v0.38.x
 ```
