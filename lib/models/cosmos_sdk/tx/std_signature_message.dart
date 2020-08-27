@@ -21,7 +21,7 @@ class StdSignatureMessage extends Equatable {
   final String memo;
 
   @JsonKey(name: 'fee')
-  final Map<String, dynamic> fee;
+  final StdFee fee;
 
   @JsonKey(name: 'msgs')
   final List<StdMsg> msgs;

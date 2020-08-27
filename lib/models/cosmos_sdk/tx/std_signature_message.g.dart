@@ -12,7 +12,9 @@ StdSignatureMessage _$StdSignatureMessageFromJson(Map<String, dynamic> json) {
     accountNumber: json['account_number'] as String,
     sequence: json['sequence'] as String,
     memo: json['memo'] as String,
-    fee: json['fee'] as Map<String, dynamic>,
+    fee: json['fee'] == null
+        ? null
+        : StdFee.fromJson(json['fee'] as Map<String, dynamic>),
     msgs: (json['msgs'] as List)
         ?.map((e) =>
             e == null ? null : StdMsg.fromJson(e as Map<String, dynamic>))
@@ -27,6 +29,6 @@ Map<String, dynamic> _$StdSignatureMessageToJson(
       'account_number': instance.accountNumber,
       'sequence': instance.sequence,
       'memo': instance.memo,
-      'fee': instance.fee,
+      'fee': instance.fee?.toJson(),
       'msgs': instance.msgs?.map((e) => e?.toJson())?.toList(),
     };
