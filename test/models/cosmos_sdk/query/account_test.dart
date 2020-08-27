@@ -19,10 +19,15 @@ void main() {
     final file = File('test_resources/models/account.json');
     final json = jsonDecode(file.readAsStringSync()) as Map<String, dynamic>;
     final account = CosmosAccount.fromJson(json);
-    expect(account.address, 'cosmos1hafptm4zxy5nw8rd2pxyg83c5ls2v62tstzuv2');
-    expect(account.coins, [StdCoin(denom: 'uatom', amount: '1000')]);
-    expect(account.accountNumber, '10');
-    expect(account.sequence, '3');
+    expect(
+      account,
+      CosmosAccount(
+        address: 'cosmos1hafptm4zxy5nw8rd2pxyg83c5ls2v62tstzuv2',
+        coins: [StdCoin(denom: 'uatom', amount: '1000')],
+        accountNumber: '10',
+        sequence: '3',
+      ),
+    );
   });
 
   test('toJson works properly', () {
