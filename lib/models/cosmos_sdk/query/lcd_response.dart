@@ -12,7 +12,7 @@ class LcdResponse extends Equatable {
   final String height;
 
   @JsonKey(name: 'result')
-  final Map<String, dynamic> result;
+  final dynamic result;
 
   LcdResponse({
     @required this.height,
@@ -20,17 +20,16 @@ class LcdResponse extends Equatable {
   })  : assert(height != null),
         assert(result != null);
 
-  @override
-  List<Object> get props => [height, result];
+  factory LcdResponse.fromJson(Map<String, dynamic> json) {
+    return _$LcdResponseFromJson(json);
+  }
+
+  Map<String, dynamic> toJson() {
+    return _$LcdResponseToJson(this);
+  }
 
   @override
-  String toString() => 'LcdResponse {'
-      'height: $height, '
-      'result: $result '
-      '}';
-
-  factory LcdResponse.fromJson(Map<String, dynamic> json) =>
-      _$LcdResponseFromJson(json);
-
-  Map<String, dynamic> toJson() => _$LcdResponseToJson(this);
+  List<Object> get props {
+    return [height, result];
+  }
 }

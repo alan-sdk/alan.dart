@@ -21,17 +21,19 @@ class NetworkInfo extends Equatable {
   })  : assert(bech32Hrp != null),
         assert(lcdUrl != null);
 
+  factory NetworkInfo.fromJson(Map<String, dynamic> json) {
+    return _$NetworkInfoFromJson(json);
+  }
+
+  Map<String, dynamic> toJson() {
+    return _$NetworkInfoToJson(this);
+  }
+
   @override
   List<Object> get props => [bech32Hrp, lcdUrl];
 
   @override
-  String toString() => '{'
-      'bech32Hrp: $bech32Hrp,'
-      'lcdUrl: $lcdUrl'
-      '}';
-
-  factory NetworkInfo.fromJson(Map<String, dynamic> json) =>
-      _$NetworkInfoFromJson(json);
-
-  Map<String, dynamic> toJson() => _$NetworkInfoToJson(this);
+  String toString() {
+    return '{ bech32Hrp: $bech32Hrp, lcdUrl: $lcdUrl }';
+  }
 }
