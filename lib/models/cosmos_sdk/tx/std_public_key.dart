@@ -20,11 +20,16 @@ class StdPublicKey extends Equatable {
   })  : assert(type != null),
         assert(value != null);
 
+  factory StdPublicKey.fromJson(Map<String, dynamic> json) {
+    return _$StdPublicKeyFromJson(json);
+  }
+
+  Map<String, dynamic> toJson() {
+    return _$StdPublicKeyToJson(this);
+  }
+
   @override
-  List<Object> get props => [type, value];
-
-  factory StdPublicKey.fromJson(Map<String, dynamic> json) =>
-      _$StdPublicKeyFromJson(json);
-
-  Map<String, dynamic> toJson() => _$StdPublicKeyToJson(this);
+  List<Object> get props {
+    return [type, value];
+  }
 }

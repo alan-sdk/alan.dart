@@ -17,6 +17,6 @@ StdSignature _$StdSignatureFromJson(Map<String, dynamic> json) {
 
 Map<String, dynamic> _$StdSignatureToJson(StdSignature instance) =>
     <String, dynamic>{
-      'pub_key': instance.publicKey,
+      'pub_key': instance.publicKey?.toJson(),
       'signature': instance.value,
     };
