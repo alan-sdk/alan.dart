@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - master
-  pull_requests:
+  pull_request:
 
 jobs:
   Markdown-Link-Check:
