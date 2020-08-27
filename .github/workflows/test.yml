@@ -1,4 +1,4 @@
-name:  Test
+name: Test
 
 on:
   push:
@@ -37,5 +37,24 @@ jobs:
       - name: Test 🔧
         run: |
           pub get
-          pub run build_runner build --delete-conflicting-outputs
-          pub run test test
+          pub global activate coverage
+
+          dart scripts/collect_tests.dart
+          pub run test --coverage=coverage test/.test_coverage.dart
+          pub global run coverage:format_coverage --packages=.packages -i coverage/test/.test_coverage.dart.vm.json --lcov > coverage/lcov.info
+
+      - name: Clean coverage 🧹
+        run: |
+          pub global activate remove_from_coverage
+
+          # Exclude all g.dart files
+          pub global run remove_from_coverage:remove_from_coverage -f coverage/lcov.info -r '.g.dart$'
+
+          # Exclude the test folder
+          pub global run remove_from_coverage:remove_from_coverage -f coverage/lcov.info -r '/test/'
+
+      - name: Upload coverage 📤
+        uses: codecov/codecov-action@v1
+        with:
+          file: coverage/lcov.info
+          fail_ci_if_error: true

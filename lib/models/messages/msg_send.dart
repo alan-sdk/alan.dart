@@ -33,11 +33,19 @@ class MsgSend extends StdMsg {
         assert(toAddress != null),
         assert(amount != null);
 
-  @override
-  List<Object> get props => [fromAddress, toAddress, amount];
+  factory MsgSend.fromJson(Map<String, dynamic> json) {
+    return _$MsgSendFromJson(json);
+  }
 
   @override
-  Map<String, dynamic> asJson() => _$MsgSendToJson(this);
+  List<Object> get props {
+    return [fromAddress, toAddress, amount];
+  }
+
+  @override
+  Map<String, dynamic> asJson() {
+    return _$MsgSendToJson(this);
+  }
 
   @override
   Exception validate() {
@@ -51,7 +59,4 @@ class MsgSend extends StdMsg {
 
     return null;
   }
-
-  factory MsgSend.fromJson(Map<String, dynamic> json) =>
-      _$MsgSendFromJson(json);
 }

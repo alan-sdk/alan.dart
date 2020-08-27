@@ -3,10 +3,18 @@ on:
   push:
     branches:
       - master
+  pull_requests:
 
 jobs:
+  Markdown-Link-Check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: gaurav-nelson/github-action-markdown-link-check@0.6.0
+        with:
+          folder-path: "doc"
 
-  build-and-deploy:
+  Build-and-Deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
@@ -22,6 +30,7 @@ jobs:
           echo 'alan-sdk.dev' > doc/.vuepress/dist/CNAME
 
       - name: Deploy 🚀
+        if: github.ref == 'refs/heads/master'
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
