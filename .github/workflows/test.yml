@@ -50,6 +50,9 @@ jobs:
           # Exclude all g.dart files
           pub global run remove_from_coverage:remove_from_coverage -f coverage/lcov.info -r '.g.dart$'
 
+          # Exclude the test folder
+          pub global run remove_from_coverage:remove_from_coverage -f coverage/lcov.info -r '/test/'
+
       - name: Upload coverage 📤
         uses: codecov/codecov-action@v1
         with:
