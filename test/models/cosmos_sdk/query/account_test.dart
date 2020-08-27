@@ -65,4 +65,29 @@ void main() {
       expect(string, contains(element));
     });
   });
+
+  test('copyWith works properly', () {
+    final account = CosmosAccount(
+      address: 'my-address',
+      accountNumber: '10',
+      sequence: '3',
+      coins: [StdCoin(denom: 'uatom', amount: '100')],
+    );
+
+    final copied = account.copyWith(
+      address: 'test-addres',
+      accountNumber: '1',
+      sequence: '30',
+      coins: [StdCoin(denom: 'uatom', amount: '10')],
+    );
+    expect(
+      copied,
+      CosmosAccount(
+        address: 'test-addres',
+        accountNumber: '1',
+        sequence: '30',
+        coins: [StdCoin(denom: 'uatom', amount: '10')],
+      ),
+    );
+  });
 }

@@ -15,13 +15,18 @@ class GenesisResponse extends Equatable {
     @required this.result,
   }) : assert(result != null);
 
+  factory GenesisResponse.fromJson(Map<String, dynamic> json) {
+    return _$GenesisResponseFromJson(json);
+  }
+
+  Map<String, dynamic> toJson() {
+    return _$GenesisResponseToJson(this);
+  }
+
   @override
-  List<Object> get props => [result];
-
-  factory GenesisResponse.fromJson(Map<String, dynamic> json) =>
-      _$GenesisResponseFromJson(json);
-
-  Map<String, dynamic> toJson() => _$GenesisResponseToJson(this);
+  List<Object> get props {
+    return [result];
+  }
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -33,12 +38,18 @@ class Result extends Equatable {
     @required this.genesis,
   }) : assert(genesis != null);
 
+  factory Result.fromJson(Map<String, dynamic> json) {
+    return _$ResultFromJson(json);
+  }
+
+  Map<String, dynamic> toJson() {
+    return _$ResultToJson(this);
+  }
+
   @override
-  List<Object> get props => [genesis];
-
-  factory Result.fromJson(Map<String, dynamic> json) => _$ResultFromJson(json);
-
-  Map<String, dynamic> toJson() => _$ResultToJson(this);
+  List<Object> get props {
+    return [genesis];
+  }
 }
 
 @JsonSerializable(explicitToJson: true)
@@ -55,11 +66,16 @@ class Genesis extends Equatable {
   })  : assert(genesisTime != null),
         assert(appState != null);
 
+  factory Genesis.fromJson(Map<String, dynamic> json) {
+    return _$GenesisFromJson(json);
+  }
+
+  Map<String, dynamic> toJson() {
+    return _$GenesisToJson(this);
+  }
+
   @override
-  List<Object> get props => [genesisTime, appState];
-
-  factory Genesis.fromJson(Map<String, dynamic> json) =>
-      _$GenesisFromJson(json);
-
-  Map<String, dynamic> toJson() => _$GenesisToJson(this);
+  List<Object> get props {
+    return [genesisTime, appState];
+  }
 }
