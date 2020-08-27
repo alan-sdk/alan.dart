@@ -5,11 +5,17 @@
 *.swp
 .DS_Store
 .atom/
-.buildlog/
+.buildlog/tx_signer_helper_test
 .history
 .svn/
+
+# Documentation
 node_modules/
 doc/build/
+
+# Codecov
+coverage/
+test/.test_coverage.dart
 
 # IDEs
 *.iml

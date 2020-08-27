@@ -38,7 +38,7 @@ void main() {
   test('Multiple sign test', () async {
     // DO NOT execute this on CIs as we do not have a running node
     final envVars = Platform.environment;
-    if (envVars['CI'] == 'true') {
+    if (envVars['RUN_SIM_TESTS'] != 'true') {
       return;
     }
 

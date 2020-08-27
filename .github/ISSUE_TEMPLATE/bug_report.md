@@ -13,15 +13,11 @@ v    Please also ensure that this is not a duplicate issue :)
 ☺ > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > > >  --> 
 
 ## Generic information
-- OS name and version: 
-- Application build code:
-- Network type (mobile/Wi-Fi):  
+- Alan.dart version: 
+- Application type (web/Flutter): 
 
 ## Bug description
 <!-- A clear and concise description of what the bug is. -->
 
 ## Steps to reproduce
 <!-- Steps to reproduce the bug --> 
-
-## Expected behavior
-<!-- A clear and concise description of what you expected to happen. -->

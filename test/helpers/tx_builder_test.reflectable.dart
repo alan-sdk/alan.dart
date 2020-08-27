@@ -3,7 +3,7 @@
 
 import 'dart:core';
 
-import 'package:alan/models/cosmos-sdk/tx/std_msg.dart' as prefix0;
+import 'package:alan/models/cosmos_sdk/tx/std_msg.dart' as prefix0;
 import 'package:alan/models/messages/msg_send.dart' as prefix1;
 import 'package:reflectable/mirrors.dart' as m;
 import 'package:reflectable/reflectable.dart' as r show Reflectable;
