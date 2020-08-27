@@ -84,7 +84,7 @@ class CosmosAccount extends Equatable {
 
   @override
   String toString() {
-    return 'AccountData { '
+    return 'CosmosAccount { '
         'address: $address, '
         'accountNumber: $accountNumber, '
         'sequence: $sequence, '

@@ -22,11 +22,16 @@ class AccountResponse extends Equatable {
   })  : assert(type != null),
         assert(accountData != null);
 
+  factory AccountResponse.fromJson(Map<String, dynamic> json) {
+    return _$AccountResponseFromJson(json);
+  }
+
+  Map<String, dynamic> toJson() {
+    return _$AccountResponseToJson(this);
+  }
+
   @override
-  List<Object> get props => [type, accountData];
-
-  factory AccountResponse.fromJson(Map<String, dynamic> json) =>
-      _$AccountResponseFromJson(json);
-
-  Map<String, dynamic> toJson() => _$AccountResponseToJson(this);
+  List<Object> get props {
+    return [type, accountData];
+  }
 }
