@@ -10,14 +10,16 @@ void main() {
     final file = File('test_resources/models/account_response.json');
     final json = jsonDecode(file.readAsStringSync()) as Map<String, dynamic>;
     final response = AccountResponse.fromJson(json);
-    expect(response.type, 'cosmos-sdk/Account');
     expect(
-      response.accountData,
-      CosmosAccount(
-        address: 'cosmos1hafptm4zxy5nw8rd2pxyg83c5ls2v62tstzuv2',
-        coins: [StdCoin(denom: 'uatom', amount: '1000')],
-        accountNumber: '10',
-        sequence: '3',
+      response,
+      AccountResponse(
+        type: 'cosmos-sdk/Account',
+        accountData: CosmosAccount(
+          address: 'cosmos1hafptm4zxy5nw8rd2pxyg83c5ls2v62tstzuv2',
+          coins: [StdCoin(denom: 'uatom', amount: '1000')],
+          accountNumber: '10',
+          sequence: '3',
+        ),
       ),
     );
   });
