@@ -24,13 +24,18 @@ class SendTxResponse extends Equatable {
     @required this.txHash,
   });
 
+  factory SendTxResponse.fromJson(Map<String, dynamic> json) {
+    return _$SendTxResponseFromJson(json);
+  }
+
+  Map<String, dynamic> toJson() {
+    return _$SendTxResponseToJson(this);
+  }
+
   @override
-  List<Object> get props => [height, rawLog, txHash];
-
-  factory SendTxResponse.fromJson(Map<String, dynamic> json) =>
-      _$SendTxResponseFromJson(json);
-
-  Map<String, dynamic> toJson() => _$SendTxResponseToJson(this);
+  List<Object> get props {
+    return [height, rawLog, txHash];
+  }
 }
 
 /// Represents the object that is put inside the `raw_log` field of a

@@ -3,7 +3,6 @@ import 'dart:io';
 
 import 'package:args/args.dart';
 import 'package:glob/glob.dart';
-import 'package:path/path.dart' as path;
 import 'package:test_coverage/test_coverage.dart';
 
 Future main(List<String> arguments) async {
@@ -27,7 +26,7 @@ Future main(List<String> arguments) async {
 
   Glob excludeGlob;
   if (options['exclude'] is String) {
-    excludeGlob = Glob(options['exclude']);
+    excludeGlob = Glob(options['exclude'] as String);
   }
 
   final testFiles = findTestFiles(packageRoot, excludeGlob: excludeGlob);

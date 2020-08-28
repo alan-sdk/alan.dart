@@ -56,7 +56,7 @@ class TxSigner {
       sequence: accountData.sequence.toString(),
       accountNumber: accountData.accountNumber.toString(),
       chainId: nodeInfo.network,
-      fee: fee.toJson(),
+      fee: fee,
       memo: memo,
       msgs: msgs,
     );

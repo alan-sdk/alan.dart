@@ -11,20 +11,20 @@ class BlockResponse extends Equatable {
   @JsonKey(name: 'block_meta')
   final BlockMeta blockMeta;
 
-  BlockResponse({@required this.blockMeta}) : assert(blockMeta != null);
+  BlockResponse({
+    @required this.blockMeta,
+  }) : assert(blockMeta != null);
+
+  factory BlockResponse.fromJson(Map<String, dynamic> json) {
+    return _$BlockResponseFromJson(json);
+  }
+
+  Map<String, dynamic> toJson() {
+    return _$BlockResponseToJson(this);
+  }
 
   @override
   List<Object> get props => [blockMeta];
-
-  @override
-  String toString() => 'BlockResponse { '
-      'blockMeta: $blockMeta '
-      '}';
-
-  factory BlockResponse.fromJson(Map<String, dynamic> json) =>
-      _$BlockResponseFromJson(json);
-
-  Map<String, dynamic> toJson() => _$BlockResponseToJson(this);
 }
 
 /// Contains the metadata of a block queried from the chain.
@@ -33,20 +33,20 @@ class BlockMeta extends Equatable {
   @JsonKey(name: 'header')
   final BlockHeader header;
 
-  BlockMeta({@required this.header}) : assert(header != null);
+  BlockMeta({
+    @required this.header,
+  }) : assert(header != null);
+
+  factory BlockMeta.fromJson(Map<String, dynamic> json) {
+    return _$BlockMetaFromJson(json);
+  }
+
+  Map<String, dynamic> toJson() {
+    return _$BlockMetaToJson(this);
+  }
 
   @override
   List<Object> get props => [header];
-
-  @override
-  String toString() => 'BlockMeta { '
-      'header: $header '
-      '}';
-
-  factory BlockMeta.fromJson(Map<String, dynamic> json) =>
-      _$BlockMetaFromJson(json);
-
-  Map<String, dynamic> toJson() => _$BlockMetaToJson(this);
 }
 
 /// Contains the details of the header of a block metadata queried from
@@ -56,18 +56,18 @@ class BlockHeader extends Equatable {
   @JsonKey(name: 'height')
   final String height;
 
-  BlockHeader({@required this.height}) : assert(height != null);
+  BlockHeader({
+    @required this.height,
+  }) : assert(height != null);
+
+  factory BlockHeader.fromJson(Map<String, dynamic> json) {
+    return _$BlockHeaderFromJson(json);
+  }
+
+  Map<String, dynamic> toJson() {
+    return _$BlockHeaderToJson(this);
+  }
 
   @override
   List<Object> get props => [height];
-
-  @override
-  String toString() => 'BlockHeader { '
-      'height: $height '
-      '}';
-
-  factory BlockHeader.fromJson(Map<String, dynamic> json) =>
-      _$BlockHeaderFromJson(json);
-
-  Map<String, dynamic> toJson() => _$BlockHeaderToJson(this);
 }

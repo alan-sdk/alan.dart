@@ -1,0 +1,93 @@
+{
+  "txs": [
+    {
+      "height": "52144",
+      "txhash": "99F05F038083751060401BCE4B5C29541CF6D026FBE16B0885791AFBF62D23B3",
+      "raw_log": "[{\"msg_index\":0,\"log\":\"\",\"events\":[{\"type\":\"message\",\"attributes\":[{\"key\":\"action\",\"value\":\"send\"},{\"key\":\"sender\",\"value\":\"desmos1dzn2s7l0wm9kekyazcnhapu8j95n90efmcmrad\"},{\"key\":\"module\",\"value\":\"bank\"}]},{\"type\":\"transfer\",\"attributes\":[{\"key\":\"recipient\",\"value\":\"desmos17yw9l5d6p749v5rkrxvhpe5m4a8tdhwegfwsd5\"},{\"key\":\"sender\",\"value\":\"desmos1dzn2s7l0wm9kekyazcnhapu8j95n90efmcmrad\"},{\"key\":\"amount\",\"value\":\"1100000udaric\"}]}]}]",
+      "logs": [
+        {
+          "msg_index": 0,
+          "log": "",
+          "events": [
+            {
+              "type": "message",
+              "attributes": [
+                {
+                  "key": "action",
+                  "value": "send"
+                },
+                {
+                  "key": "sender",
+                  "value": "desmos1dzn2s7l0wm9kekyazcnhapu8j95n90efmcmrad"
+                },
+                {
+                  "key": "module",
+                  "value": "bank"
+                }
+              ]
+            },
+            {
+              "type": "transfer",
+              "attributes": [
+                {
+                  "key": "recipient",
+                  "value": "desmos17yw9l5d6p749v5rkrxvhpe5m4a8tdhwegfwsd5"
+                },
+                {
+                  "key": "sender",
+                  "value": "desmos1dzn2s7l0wm9kekyazcnhapu8j95n90efmcmrad"
+                },
+                {
+                  "key": "amount",
+                  "value": "1100000udaric"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "gas_wanted": "200000",
+      "gas_used": "69776",
+      "tx": {
+        "type": "cosmos-sdk/StdTx",
+        "value": {
+          "msg": [
+            {
+              "type": "cosmos-sdk/MsgSend",
+              "value": {
+                "from_address": "desmos1dzn2s7l0wm9kekyazcnhapu8j95n90efmcmrad",
+                "to_address": "desmos17yw9l5d6p749v5rkrxvhpe5m4a8tdhwegfwsd5",
+                "amount": [
+                  {
+                    "denom": "udaric",
+                    "amount": "1100000"
+                  }
+                ]
+              }
+            }
+          ],
+          "fee": {
+            "amount": [
+              {
+                "denom": "udaric",
+                "amount": "10000"
+              }
+            ],
+            "gas": "200000"
+          },
+          "signatures": [
+            {
+              "pub_key": {
+                "type": "tendermint/PubKeySecp256k1",
+                "value": "AyuCxtOEVmjhgI/M3N8qSSAP6gf3+iZ4Da/VxZV1YFHd"
+              },
+              "signature": "6Ev3GqcKiU7OOxtE3klLGD/KJXHrWk3gky/sEBkDB7gkT73fBc0Og9XQmQIheC73bc865FY0KkrLmkQeslGh0A=="
+            }
+          ],
+          "memo": "Welcome, to the real world...😎"
+        }
+      },
+      "timestamp": "2020-08-28T06:53:00Z"
+    }
+  ]
+}

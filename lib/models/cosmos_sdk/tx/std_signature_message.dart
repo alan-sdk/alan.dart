@@ -21,7 +21,7 @@ class StdSignatureMessage extends Equatable {
   final String memo;
 
   @JsonKey(name: 'fee')
-  final Map<String, dynamic> fee;
+  final StdFee fee;
 
   @JsonKey(name: 'msgs')
   final List<StdMsg> msgs;
@@ -40,11 +40,16 @@ class StdSignatureMessage extends Equatable {
         assert(fee != null),
         assert(msgs != null);
 
+  factory StdSignatureMessage.fromJson(Map<String, dynamic> json) {
+    return _$StdSignatureMessageFromJson(json);
+  }
+
+  Map<String, dynamic> toJson() {
+    return _$StdSignatureMessageToJson(this);
+  }
+
   @override
-  List<Object> get props => [chainId, accountNumber, sequence, memo, fee, msgs];
-
-  factory StdSignatureMessage.fromJson(Map<String, dynamic> json) =>
-      _$StdSignatureMessageFromJson(json);
-
-  Map<String, dynamic> toJson() => _$StdSignatureMessageToJson(this);
+  List<Object> get props {
+    return [chainId, accountNumber, sequence, memo, fee, msgs];
+  }
 }

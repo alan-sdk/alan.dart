@@ -9,7 +9,7 @@ part of 'lcd_response.dart';
 LcdResponse _$LcdResponseFromJson(Map<String, dynamic> json) {
   return LcdResponse(
     height: json['height'] as String,
-    result: json['result'] as Map<String, dynamic>,
+    result: json['result'],
   );
 }
 

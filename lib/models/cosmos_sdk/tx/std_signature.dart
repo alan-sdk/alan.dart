@@ -7,7 +7,7 @@ part 'std_signature.g.dart';
 
 /// Contains the data about a transaction signature that has been generated
 /// and is included inside the transaction itself.
-@JsonSerializable(ignoreUnannotated: true)
+@JsonSerializable(explicitToJson: true)
 class StdSignature extends Equatable {
   @JsonKey(name: 'pub_key')
   final StdPublicKey publicKey;
@@ -21,11 +21,16 @@ class StdSignature extends Equatable {
   })  : assert(value != null),
         assert(publicKey != null);
 
+  factory StdSignature.fromJson(Map<String, dynamic> json) {
+    return _$StdSignatureFromJson(json);
+  }
+
+  Map<String, dynamic> toJson() {
+    return _$StdSignatureToJson(this);
+  }
+
   @override
-  List<Object> get props => [publicKey, value];
-
-  factory StdSignature.fromJson(Map<String, dynamic> json) =>
-      _$StdSignatureFromJson(json);
-
-  Map<String, dynamic> toJson() => _$StdSignatureToJson(this);
+  List<Object> get props {
+    return [publicKey, value];
+  }
 }

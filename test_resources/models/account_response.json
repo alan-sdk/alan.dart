@@ -1,0 +1,15 @@
+{
+  "type": "cosmos-sdk/Account",
+  "value": {
+    "address": "cosmos1hafptm4zxy5nw8rd2pxyg83c5ls2v62tstzuv2",
+    "coins": [
+      {
+        "denom": "uatom",
+        "amount": "1000"
+      }
+    ],
+    "public_key": null,
+    "account_number": "10",
+    "sequence": "3"
+  }
+}
