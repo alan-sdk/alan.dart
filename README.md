@@ -1,10 +1,10 @@
 ![](.img/logo.jpg)
 
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/alan-sdk/alan.dart/Test)
-![Codecov branch](https://img.shields.io/codecov/c/github/alan-sdk/alan.dart/master)
-![Pub Version](https://img.shields.io/pub/v/alan)
-![](https://img.shields.io/badge/compatible-flutter-blue)
-![GitHub](https://img.shields.io/github/license/alan-sdk/alan.dart)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/alan-sdk/alan.dart/Test)](https://github.com/alan-sdk/alan.dart/actions)
+[![Codecov branch](https://img.shields.io/codecov/c/github/alan-sdk/alan.dart/master)](https://codecov.io/gh/alan-sdk/alan.dart/branch/master)
+[![Pub Version](https://img.shields.io/pub/v/alan)](https://pub.dev/packages/alan)
+[![](https://img.shields.io/badge/compatible-flutter-blue)](https://flutter.dev)
+[![GitHub](https://img.shields.io/github/license/alan-sdk/alan.dart)](https://github.com/alan-sdk/alan.dart/blob/master/LICENSE)
 
 Alan.dart is a pure Dart package allowing you to easily integrate your Dart-based project with any [Cosmos](https://cosmos.network)-based blockchain.  
 
