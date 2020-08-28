@@ -25,7 +25,6 @@ Transaction _$TransactionFromJson(Map<String, dynamic> json) {
   return Transaction(
     height: json['height'] as String,
     hash: json['txhash'] as String,
-    data: json['data'] as String,
     rawLog: json['raw_log'] as String,
     logs: (json['logs'] as List)
         ?.map((e) => e == null
@@ -45,7 +44,6 @@ Map<String, dynamic> _$TransactionToJson(Transaction instance) =>
     <String, dynamic>{
       'height': instance.height,
       'txhash': instance.hash,
-      'data': instance.data,
       'raw_log': instance.rawLog,
       'logs': instance.logs?.map((e) => e?.toJson())?.toList(),
       'gas_wanted': instance.gasWanted,

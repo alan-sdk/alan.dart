@@ -13,15 +13,22 @@ class TransactionsResponse extends Equatable {
   @JsonKey(name: 'txs')
   final List<Transaction> txs;
 
-  TransactionsResponse({@required this.txs}) : assert(txs != null);
+  TransactionsResponse({
+    @required this.txs,
+  }) : assert(txs != null);
+
+  factory TransactionsResponse.fromJson(Map<String, dynamic> json) {
+    return _$TransactionsResponseFromJson(json);
+  }
+
+  Map<String, dynamic> toJson() {
+    return _$TransactionsResponseToJson(this);
+  }
 
   @override
-  List<Object> get props => [txs];
-
-  factory TransactionsResponse.fromJson(Map<String, dynamic> json) =>
-      _$TransactionsResponseFromJson(json);
-
-  Map<String, dynamic> toJson() => _$TransactionsResponseToJson(this);
+  List<Object> get props {
+    return [txs];
+  }
 }
 
 /// Contains the content of a single transaction.
@@ -33,9 +40,6 @@ class Transaction extends Equatable {
 
   @JsonKey(name: 'txhash')
   final String hash;
-
-  @JsonKey(name: 'data')
-  final String data;
 
   @JsonKey(name: 'raw_log')
   final String rawLog;
@@ -58,7 +62,6 @@ class Transaction extends Equatable {
   Transaction({
     @required this.height,
     @required this.hash,
-    @required this.data,
     @required this.rawLog,
     @required this.logs,
     @required this.gasWanted,
@@ -67,23 +70,27 @@ class Transaction extends Equatable {
     @required this.timeStamp,
   });
 
+  factory Transaction.fromJson(Map<String, dynamic> json) {
+    return _$TransactionFromJson(json);
+  }
+
+  Map<String, dynamic> toJson() {
+    return _$TransactionToJson(this);
+  }
+
   @override
-  List<Object> get props => [
-        height,
-        hash,
-        data,
-        rawLog,
-        logs,
-        gasUsed,
-        gasUsed,
-        tx,
-        timeStamp,
-      ];
-
-  factory Transaction.fromJson(Map<String, dynamic> json) =>
-      _$TransactionFromJson(json);
-
-  Map<String, dynamic> toJson() => _$TransactionToJson(this);
+  List<Object> get props {
+    return [
+      height,
+      hash,
+      rawLog,
+      logs,
+      gasUsed,
+      gasUsed,
+      tx,
+      timeStamp,
+    ];
+  }
 }
 
 @immutable
@@ -104,13 +111,18 @@ class TransactionLog extends Equatable {
     @required this.events,
   }) : assert(events != null);
 
+  factory TransactionLog.fromJson(Map<String, dynamic> json) {
+    return _$TransactionLogFromJson(json);
+  }
+
+  Map<String, dynamic> toJson() {
+    return _$TransactionLogToJson(this);
+  }
+
   @override
-  List<Object> get props => [messageIndex, log, events];
-
-  factory TransactionLog.fromJson(Map<String, dynamic> json) =>
-      _$TransactionLogFromJson(json);
-
-  Map<String, dynamic> toJson() => _$TransactionLogToJson(this);
+  List<Object> get props {
+    return [messageIndex, log, events];
+  }
 }
 
 /// Represents an event that is emitted while handling a message and is placed
@@ -130,13 +142,18 @@ class LogEvent extends Equatable {
   })  : assert(type != null),
         assert(attributes != null);
 
+  factory LogEvent.fromJson(Map<String, dynamic> json) {
+    return _$LogEventFromJson(json);
+  }
+
+  Map<String, dynamic> toJson() {
+    return _$LogEventToJson(this);
+  }
+
   @override
-  List<Object> get props => [type, attributes];
-
-  factory LogEvent.fromJson(Map<String, dynamic> json) =>
-      _$LogEventFromJson(json);
-
-  Map<String, dynamic> toJson() => _$LogEventToJson(this);
+  List<Object> get props {
+    return [type, attributes];
+  }
 }
 
 /// Represents a single log event attribute.
@@ -155,13 +172,18 @@ class LogEventAttribute extends Equatable {
   })  : assert(key != null),
         assert(value != null);
 
+  factory LogEventAttribute.fromJson(Map<String, dynamic> json) {
+    return _$LogEventAttributeFromJson(json);
+  }
+
+  Map<String, dynamic> toJson() {
+    return _$LogEventAttributeToJson(this);
+  }
+
   @override
-  List<Object> get props => [key, value];
-
-  factory LogEventAttribute.fromJson(Map<String, dynamic> json) =>
-      _$LogEventAttributeFromJson(json);
-
-  Map<String, dynamic> toJson() => _$LogEventAttributeToJson(this);
+  List<Object> get props {
+    return [key, value];
+  }
 }
 
 /// Wraps a [StdTx] adding the type to its external.
@@ -180,13 +202,18 @@ class StdTxWrapper extends Equatable {
   })  : assert(type != null),
         assert(value != null);
 
+  factory StdTxWrapper.fromJson(Map<String, dynamic> json) {
+    return _$StdTxWrapperFromJson(json);
+  }
+
+  Map<String, dynamic> toJson() {
+    return _$StdTxWrapperToJson(this);
+  }
+
   @override
-  List<Object> get props => [type, value];
-
-  factory StdTxWrapper.fromJson(Map<String, dynamic> json) =>
-      _$StdTxWrapperFromJson(json);
-
-  Map<String, dynamic> toJson() => _$StdTxWrapperToJson(this);
+  List<Object> get props {
+    return [type, value];
+  }
 }
 
 /// Contains the data of a single message that was emitted during the
@@ -204,11 +231,16 @@ class MsgEvent extends Equatable {
       : assert(type != null),
         assert(attributes != null);
 
+  factory MsgEvent.fromJson(Map<String, dynamic> json) {
+    return _$MsgEventFromJson(json);
+  }
+
+  Map<String, dynamic> toJson() {
+    return _$MsgEventToJson(this);
+  }
+
   @override
-  List<Object> get props => [type, attributes];
-
-  factory MsgEvent.fromJson(Map<String, dynamic> json) =>
-      _$MsgEventFromJson(json);
-
-  Map<String, dynamic> toJson() => _$MsgEventToJson(this);
+  List<Object> get props {
+    return [type, attributes];
+  }
 }
