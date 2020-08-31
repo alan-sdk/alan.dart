@@ -1,3 +1,4 @@
+import 'dart:collection';
 import 'dart:convert';
 import 'dart:typed_data';
 
@@ -31,12 +32,24 @@ void main() {
         'solve retire concert illegal garage recall skill power lyrics bunker vintage silver situate gadget talent settle left snow fire bubble bar robot swing senior'
   };
 
-  test('Wallets are generated correctly', () {
+  test('derive works properly', () {
     testVectors.forEach((address, mnemonicString) {
       final mnemonic = mnemonicString.split(' ');
       final wallet = Wallet.derive(mnemonic, networkInfo);
       expect(wallet.bech32Address, address);
     });
+  });
+
+  test('random generates different wallets', () {
+    final info = NetworkInfo(bech32Hrp: 'cosmos', lcdUrl: 'example.com');
+    final wallets = List.generate(20, (index) => Wallet.random(info));
+
+    final map = HashMap.fromIterable(
+      wallets,
+      key: (entry) => (entry as Wallet).bech32Address,
+      value: (entry) => entry,
+    );
+    expect(map.entries, hasLength(wallets.length));
   });
 
   test('toJson and fromJson work properly', () {
