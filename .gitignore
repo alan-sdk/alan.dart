@@ -11,7 +11,7 @@
 
 # Documentation
 node_modules/
-doc/build/
+doc/.vuepress/dist
 
 # Codecov
 coverage/
