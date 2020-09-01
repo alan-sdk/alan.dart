@@ -18,8 +18,7 @@ class StdSignature extends Equatable {
   const StdSignature({
     @required this.value,
     @required this.publicKey,
-  })  : assert(value != null),
-        assert(publicKey != null);
+  });
 
   factory StdSignature.fromJson(Map<String, dynamic> json) {
     return _$StdSignatureFromJson(json);

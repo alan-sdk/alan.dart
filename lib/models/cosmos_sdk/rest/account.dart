@@ -35,10 +35,7 @@ class CosmosAccount extends Equatable {
     @required this.accountNumber,
     @required this.sequence,
     @required this.coins,
-  })  : assert(address != null),
-        assert(accountNumber != null),
-        assert(sequence != null),
-        assert(coins != null);
+  });
 
   /// Allows to easily create a local account having everything set as
   /// the default not on-chain values a part from the given [address].

@@ -33,12 +33,7 @@ class StdSignatureMessage extends Equatable {
     @required this.memo,
     @required this.fee,
     @required this.msgs,
-  })  : assert(chainId != null),
-        assert(accountNumber != null),
-        assert(sequence != null),
-        assert(memo != null),
-        assert(fee != null),
-        assert(msgs != null);
+  });
 
   factory StdSignatureMessage.fromJson(Map<String, dynamic> json) {
     return _$StdSignatureMessageFromJson(json);

@@ -15,7 +15,7 @@ class TransactionsResponse extends Equatable {
 
   TransactionsResponse({
     @required this.txs,
-  }) : assert(txs != null);
+  });
 
   factory TransactionsResponse.fromJson(Map<String, dynamic> json) {
     return _$TransactionsResponseFromJson(json);
@@ -109,7 +109,7 @@ class TransactionLog extends Equatable {
     this.messageIndex,
     this.log,
     @required this.events,
-  }) : assert(events != null);
+  });
 
   factory TransactionLog.fromJson(Map<String, dynamic> json) {
     return _$TransactionLogFromJson(json);
@@ -139,8 +139,7 @@ class LogEvent extends Equatable {
   LogEvent({
     @required this.type,
     @required this.attributes,
-  })  : assert(type != null),
-        assert(attributes != null);
+  });
 
   factory LogEvent.fromJson(Map<String, dynamic> json) {
     return _$LogEventFromJson(json);
@@ -169,8 +168,7 @@ class LogEventAttribute extends Equatable {
   LogEventAttribute({
     @required this.key,
     @required this.value,
-  })  : assert(key != null),
-        assert(value != null);
+  });
 
   factory LogEventAttribute.fromJson(Map<String, dynamic> json) {
     return _$LogEventAttributeFromJson(json);
@@ -199,8 +197,7 @@ class StdTxWrapper extends Equatable {
   StdTxWrapper({
     @required this.type,
     @required this.value,
-  })  : assert(type != null),
-        assert(value != null);
+  });
 
   factory StdTxWrapper.fromJson(Map<String, dynamic> json) {
     return _$StdTxWrapperFromJson(json);
@@ -227,9 +224,10 @@ class MsgEvent extends Equatable {
   @JsonKey(name: 'attributes')
   final List<Map<String, String>> attributes;
 
-  MsgEvent({@required this.type, @required this.attributes})
-      : assert(type != null),
-        assert(attributes != null);
+  MsgEvent({
+    @required this.type,
+    @required this.attributes,
+  });
 
   factory MsgEvent.fromJson(Map<String, dynamic> json) {
     return _$MsgEventFromJson(json);

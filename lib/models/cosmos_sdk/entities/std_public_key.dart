@@ -17,8 +17,7 @@ class StdPublicKey extends Equatable {
   const StdPublicKey({
     @required this.type,
     @required this.value,
-  })  : assert(type != null),
-        assert(value != null);
+  });
 
   factory StdPublicKey.fromJson(Map<String, dynamic> json) {
     return _$StdPublicKeyFromJson(json);

@@ -11,9 +11,7 @@ class NodeInfoResponse extends Equatable {
   @JsonKey(name: 'node_info')
   final NodeInfo nodeInfo;
 
-  NodeInfoResponse({
-    @required this.nodeInfo,
-  }) : assert(nodeInfo != null);
+  NodeInfoResponse({@required this.nodeInfo});
 
   factory NodeInfoResponse.fromJson(Map<String, dynamic> json) {
     return _$NodeInfoResponseFromJson(json);
@@ -36,9 +34,7 @@ class NodeInfo extends Equatable {
   @JsonKey(name: 'network')
   final String network;
 
-  NodeInfo({
-    @required this.network,
-  }) : assert(network != null);
+  NodeInfo({@required this.network});
 
   factory NodeInfo.fromJson(Map<String, dynamic> json) {
     return _$NodeInfoFromJson(json);

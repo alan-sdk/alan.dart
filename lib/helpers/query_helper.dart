@@ -11,8 +11,7 @@ class RequestResult<T> extends Equatable {
 
   bool get isSuccessful => error == null;
 
-  RequestResult({this.value, this.error})
-      : assert(value != null || error != null);
+  RequestResult({this.value, this.error});
 
   @override
   List<Object> get props => [value, error];

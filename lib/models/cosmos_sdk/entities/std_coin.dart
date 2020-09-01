@@ -16,8 +16,7 @@ class StdCoin extends Equatable {
   const StdCoin({
     @required this.denom,
     @required this.amount,
-  })  : assert(denom != null),
-        assert(amount != null);
+  });
 
   @override
   List<Object> get props => [denom, amount];

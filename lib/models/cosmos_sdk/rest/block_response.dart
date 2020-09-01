@@ -11,9 +11,7 @@ class BlockResponse extends Equatable {
   @JsonKey(name: 'block_meta')
   final BlockMeta blockMeta;
 
-  BlockResponse({
-    @required this.blockMeta,
-  }) : assert(blockMeta != null);
+  BlockResponse({@required this.blockMeta});
 
   factory BlockResponse.fromJson(Map<String, dynamic> json) {
     return _$BlockResponseFromJson(json);
@@ -33,9 +31,7 @@ class BlockMeta extends Equatable {
   @JsonKey(name: 'header')
   final BlockHeader header;
 
-  BlockMeta({
-    @required this.header,
-  }) : assert(header != null);
+  BlockMeta({@required this.header});
 
   factory BlockMeta.fromJson(Map<String, dynamic> json) {
     return _$BlockMetaFromJson(json);
@@ -56,9 +52,7 @@ class BlockHeader extends Equatable {
   @JsonKey(name: 'height')
   final String height;
 
-  BlockHeader({
-    @required this.height,
-  }) : assert(height != null);
+  BlockHeader({@required this.height});
 
   factory BlockHeader.fromJson(Map<String, dynamic> json) {
     return _$BlockHeaderFromJson(json);

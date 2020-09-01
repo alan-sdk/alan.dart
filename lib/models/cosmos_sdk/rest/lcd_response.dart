@@ -17,8 +17,7 @@ class LcdResponse extends Equatable {
   LcdResponse({
     @required this.height,
     @required this.result,
-  })  : assert(height != null),
-        assert(result != null);
+  });
 
   factory LcdResponse.fromJson(Map<String, dynamic> json) {
     return _$LcdResponseFromJson(json);

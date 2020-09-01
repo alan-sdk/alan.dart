@@ -40,7 +40,7 @@ jobs:
           pub global activate coverage
 
           dart scripts/collect_tests.dart
-          pub run --enable-asserts test --coverage=coverage test/.test_coverage.dart
+          pub run test --coverage=coverage test/.test_coverage.dart
           pub global run coverage:format_coverage --packages=.packages -i coverage/test/.test_coverage.dart.vm.json --lcov > coverage/lcov.info
 
       - name: Clean coverage 🧹

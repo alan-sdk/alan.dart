@@ -24,9 +24,7 @@ class TransactionResult extends Equatable {
     @required this.success,
     @required this.raw,
     this.error,
-  })  : assert(hash != null),
-        assert(success || error != null),
-        assert(raw != null);
+  });
 
   factory TransactionResult.fromException(dynamic exception) {
     return TransactionResult(
@@ -64,8 +62,7 @@ class TransactionError extends Equatable {
   TransactionError({
     @required this.errorCode,
     @required this.errorMessage,
-  })  : assert(errorCode != null),
-        assert(errorMessage != null);
+  });
 
   @override
   List<Object> get props {

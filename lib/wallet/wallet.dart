@@ -33,9 +33,7 @@ class Wallet extends Equatable {
     @required this.address,
     @required this.privateKey,
     @required this.publicKey,
-  })  : assert(networkInfo != null),
-        assert(privateKey != null),
-        assert(publicKey != null);
+  });
 
   /// Derives the private key from the given [mnemonic] using the specified
   /// [networkInfo].

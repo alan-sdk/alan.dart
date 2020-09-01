@@ -19,7 +19,7 @@ class StdFee extends Equatable {
   const StdFee({
     @required this.amount,
     @required this.gas,
-  }) : assert(gas != null);
+  });
 
   @override
   List<Object> get props => [amount, gas];

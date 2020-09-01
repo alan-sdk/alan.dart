@@ -26,10 +26,7 @@ class StdTx extends Equatable {
     @required this.signatures,
     @required this.fee,
     @required this.memo,
-  })  : assert(messages != null),
-        assert(signatures == null || signatures.isNotEmpty),
-        assert(fee != null),
-        assert(memo != null);
+  }) : assert(signatures == null || signatures.isNotEmpty);
 
   @override
   List<Object> get props => [memo, fee, signatures, memo];

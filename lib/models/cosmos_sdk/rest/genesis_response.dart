@@ -11,9 +11,7 @@ class GenesisResponse extends Equatable {
   @JsonKey(name: 'result')
   final Result result;
 
-  GenesisResponse({
-    @required this.result,
-  }) : assert(result != null);
+  GenesisResponse({@required this.result});
 
   factory GenesisResponse.fromJson(Map<String, dynamic> json) {
     return _$GenesisResponseFromJson(json);
@@ -34,9 +32,7 @@ class Result extends Equatable {
   @JsonKey(name: 'genesis')
   final Genesis genesis;
 
-  Result({
-    @required this.genesis,
-  }) : assert(genesis != null);
+  Result({@required this.genesis});
 
   factory Result.fromJson(Map<String, dynamic> json) {
     return _$ResultFromJson(json);
@@ -63,8 +59,7 @@ class Genesis extends Equatable {
   Genesis({
     @required this.genesisTime,
     @required this.appState,
-  })  : assert(genesisTime != null),
-        assert(appState != null);
+  });
 
   factory Genesis.fromJson(Map<String, dynamic> json) {
     return _$GenesisFromJson(json);

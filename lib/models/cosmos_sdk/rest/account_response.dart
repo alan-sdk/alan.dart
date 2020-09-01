@@ -19,8 +19,7 @@ class AccountResponse extends Equatable {
   AccountResponse({
     @required this.type,
     @required this.accountData,
-  })  : assert(type != null),
-        assert(accountData != null);
+  });
 
   factory AccountResponse.fromJson(Map<String, dynamic> json) {
     return _$AccountResponseFromJson(json);

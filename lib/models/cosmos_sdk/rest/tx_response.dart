@@ -22,8 +22,7 @@ abstract class TxResponse extends Equatable {
   TxResponse({
     @required this.height,
     @required this.hash,
-  })  : assert(height != null),
-        assert(hash != null);
+  });
 
   factory TxResponse.fromJson(Map<String, dynamic> json, String mode) {
     switch (mode) {
@@ -67,9 +66,7 @@ class AsyncTxResponse extends TxResponse {
   AsyncTxResponse({
     @required this.height,
     @required this.hash,
-  })  : assert(height != null),
-        assert(hash != null),
-        super(height: height, hash: hash);
+  }) : super(height: height, hash: hash);
 
   factory AsyncTxResponse.fromJson(Map<String, dynamic> json) {
     return _$AsyncTxResponseFromJson(json);
@@ -103,9 +100,7 @@ class SyncTxResponse extends TxResponse {
     @required String hash,
     this.rawLog,
     this.error,
-  })  : assert(height != null),
-        assert(hash != null),
-        super(height: height, hash: hash);
+  }) : super(height: height, hash: hash);
 
   factory SyncTxResponse.fromJson(Map<String, dynamic> json) {
     return SyncTxResponse(
@@ -161,11 +156,7 @@ class BlockTxResponse extends TxResponse {
     this.rawLog,
     this.logs,
     this.error,
-  })  : assert(height != null),
-        assert(hash != null),
-        assert(gasWanted != null),
-        assert(gasUsed != null),
-        super(height: height, hash: hash);
+  }) : super(height: height, hash: hash);
 
   factory BlockTxResponse.fromJson(Map<String, dynamic> json) {
     List<TransactionLog> logs;
@@ -231,8 +222,7 @@ class TxResponseError extends Equatable {
     @required this.code,
     @required this.message,
     this.codeSpace,
-  })  : assert(code != null),
-        assert(message != null);
+  });
 
   factory TxResponseError.fromJson(Map<String, dynamic> json) {
     if (!json.containsKey(_CODE_KEY)) {

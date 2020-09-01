@@ -18,8 +18,7 @@ class NetworkInfo extends Equatable {
   NetworkInfo({
     @required this.bech32Hrp,
     @required this.lcdUrl,
-  })  : assert(bech32Hrp != null),
-        assert(lcdUrl != null);
+  });
 
   factory NetworkInfo.fromJson(Map<String, dynamic> json) {
     return _$NetworkInfoFromJson(json);
