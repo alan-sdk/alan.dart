@@ -32,22 +32,18 @@ void main() async {
     amount: [StdCoin(denom: "uatom", amount: "100")],
   );
 
-  final stdTx = TxBuilder.buildStdTx(stdMsgs: [message]);
+  final stdTx = TxBuilder.buildStdTx([message]);
 
   // -----------------------------------
   // --- Signing a transaction
   // -----------------------------------
 
-  final signedStdTx = await TxSigner.signStdTx(wallet: wallet, stdTx: stdTx);
+  final signedStdTx = await TxSigner.signStdTx(stdTx, wallet);
 
   // -----------------------------------
   // --- Sending a transaction
   // -----------------------------------
-
-  final result = await TxSender.broadcastStdTx(
-    wallet: wallet,
-    stdTx: signedStdTx,
-  );
+  final result = await TxSender.broadcastStdTx(signedStdTx, wallet);
 
   // Check the result
   if (result.success) {

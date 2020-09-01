@@ -1,3 +1,2 @@
-export 'query/export.dart';
-export 'transactions/export.dart';
-export 'tx/export.dart';
+export 'entities/export.dart';
+export 'rest/export.dart';

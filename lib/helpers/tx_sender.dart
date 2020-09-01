@@ -2,19 +2,22 @@ import 'dart:convert';
 
 import 'package:alan/alan.dart';
 import 'package:http/http.dart' as http;
-import 'package:meta/meta.dart';
 
 /// Allows to easily send a [StdTx] using the data contained inside the
 /// specified [Wallet].
 class TxSender {
+  static const MODE_SYNC = 'sync';
+  static const MODE_ASYNC = 'async';
+  static const MODE_BLOCK = 'block';
+
   /// Broadcasts the given [stdTx] using the info contained
   /// inside the given [wallet].
   /// Returns the hash of the transaction once it has been send, or throws an
   /// exception if an error is risen during the sending.
-  static Future<TransactionResult> broadcastStdTx({
-    @required Wallet wallet,
-    @required StdTx stdTx,
-    String mode = 'sync',
+  static Future<TransactionResult> broadcastStdTx(
+    StdTx stdTx,
+    Wallet wallet, {
+    String mode = MODE_SYNC,
   }) async {
     try {
       // Get the endpoint
@@ -33,9 +36,17 @@ class TxSender {
       }
 
       // Convert the response
-      final json = SendTxResponse.fromJson(
-        jsonDecode(response.body) as Map<String, dynamic>,
-      );
+      final responseBody = jsonDecode(response.body) as Map<String, dynamic>;
+      var responseMode = '';
+      if (mode == MODE_SYNC) {
+        responseMode = TxResponse.MODE_SYNC;
+      } else if (mode == MODE_ASYNC) {
+        responseMode = TxResponse.MODE_ASYNC;
+      } else if (mode == MODE_BLOCK) {
+        responseMode = TxResponse.MODE_BLOCK;
+      }
+
+      final json = TxResponse.fromJson(responseBody, responseMode);
       return _convertResponse(json);
     } catch (exception) {
       return TransactionResult.fromException(exception);
@@ -43,24 +54,24 @@ class TxSender {
   }
 
   /// Converts the given [response] to a [TransactionResult] object.
-  static TransactionResult _convertResponse(SendTxResponse response) {
-    final rawLog = jsonDecode(response.rawLog) as dynamic;
-    if (rawLog is Map<String, dynamic>) {
-      final log = SendTxLog.fromJson(rawLog);
-      return TransactionResult(
-        raw: response.toJson(),
-        hash: response.txHash,
-        success: false,
-        error: TransactionError(
-          errorCode: log.code,
-          errorMessage: log.message,
-        ),
-      );
-    }
+  static TransactionResult _convertResponse(TxResponse response) {
+    // final rawLog = jsonDecode(response.rawLog) as dynamic;
+    // if (rawLog is Map<String, dynamic>) {
+    //   final log = SendTxLog.fromJson(rawLog);
+    //   return TransactionResult(
+    //     raw: response.toJson(),
+    //     hash: response.hash,
+    //     success: false,
+    //     error: TransactionError(
+    //       errorCode: log.code,
+    //       errorMessage: log.message,
+    //     ),
+    //   );
+    // }
 
     return TransactionResult(
       raw: response.toJson(),
-      hash: response.txHash,
+      hash: response.hash,
       success: true,
       error: null,
     );

@@ -1,8 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:alan/alan.dart';
-import 'package:alan/models/cosmos_sdk/query/account.dart';
+import 'package:alan/models/export.dart';
 import 'package:test/test.dart';
 
 void main() {

@@ -4,7 +4,6 @@ import 'dart:typed_data';
 import 'package:alan/alan.dart';
 import 'package:alan/helpers/query_helper.dart';
 import 'package:alan/utils/export.dart';
-import 'package:meta/meta.dart';
 
 import '../utils/map_sorter.dart';
 
@@ -13,10 +12,7 @@ class TxSigner {
   /// Signs the given [stdTx] using the info contained inside the
   /// given [wallet] and returns a new [StdTx] containing the signatures
   /// inside it.
-  static Future<StdTx> signStdTx({
-    @required Wallet wallet,
-    @required StdTx stdTx,
-  }) async {
+  static Future<StdTx> signStdTx(StdTx stdTx, Wallet wallet) async {
     // Get the account data and node info from the network
     final account = await QueryHelper.getAccountData(
       wallet.networkInfo.lcdUrl,

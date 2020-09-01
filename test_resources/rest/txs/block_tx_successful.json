@@ -1,0 +1,49 @@
+{
+  "height": "124",
+  "txhash": "531DCC5FF47A8B8350458D2DA4600D076FB52B67F079EF4B6F0B1DD7DC0B161B",
+  "raw_log": "[{\"msg_index\":0,\"log\":\"\",\"events\":[{\"type\":\"message\",\"attributes\":[{\"key\":\"action\",\"value\":\"send\"},{\"key\":\"sender\",\"value\":\"desmos16f9wz7yg44pjfhxyn22kycs0qjy778ng877usl\"},{\"key\":\"module\",\"value\":\"bank\"}]},{\"type\":\"transfer\",\"attributes\":[{\"key\":\"recipient\",\"value\":\"desmos1tvuu7rf0zakjw79hfnhvd73v5fvznrr8szfcan\"},{\"key\":\"sender\",\"value\":\"desmos16f9wz7yg44pjfhxyn22kycs0qjy778ng877usl\"},{\"key\":\"amount\",\"value\":\"10udaric\"}]}]}]",
+  "logs": [
+    {
+      "msg_index": 0,
+      "log": "",
+      "events": [
+        {
+          "type": "message",
+          "attributes": [
+            {
+              "key": "action",
+              "value": "send"
+            },
+            {
+              "key": "sender",
+              "value": "desmos16f9wz7yg44pjfhxyn22kycs0qjy778ng877usl"
+            },
+            {
+              "key": "module",
+              "value": "bank"
+            }
+          ]
+        },
+        {
+          "type": "transfer",
+          "attributes": [
+            {
+              "key": "recipient",
+              "value": "desmos1tvuu7rf0zakjw79hfnhvd73v5fvznrr8szfcan"
+            },
+            {
+              "key": "sender",
+              "value": "desmos16f9wz7yg44pjfhxyn22kycs0qjy778ng877usl"
+            },
+            {
+              "key": "amount",
+              "value": "10udaric"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "gas_wanted": "200000",
+  "gas_used": "47849"
+}

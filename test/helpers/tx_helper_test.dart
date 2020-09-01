@@ -177,7 +177,11 @@ void main() {
         amount: [StdCoin(denom: 'udaric', amount: amount.toString())],
       );
 
-      final result = await TxHelper.sendTx([message], wallet);
+      final result = await TxHelper.sendTx(
+        [message],
+        wallet,
+        mode: TxSender.MODE_ASYNC,
+      );
       expect(result.success, isTrue);
       expect(result?.error?.errorMessage, isNull);
 

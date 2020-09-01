@@ -6,8 +6,8 @@ targets:
           # Generate the reflectable initializer only for the tests we need
           - test/helpers/query_helper_test.dart
           - test/helpers/tx_builder_test.dart
-          - test/models/cosmos_sdk/query/transactions_response_test.dart
-          - test/models/cosmos_sdk/tx/std_signature_message_test.dart
+          - test/models/cosmos_sdk/entities/std_signature_message_test.dart
+          - test/models/cosmos_sdk/rest/transactions_response_test.dart
           - test/models/messages/msg_send_test.dart
         options:
           formatted: true
