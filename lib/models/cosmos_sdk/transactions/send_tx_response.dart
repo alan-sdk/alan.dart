@@ -56,11 +56,16 @@ class SendTxLog extends Equatable {
   })  : assert(code != null),
         assert(message != null);
 
+  factory SendTxLog.fromJson(Map<String, dynamic> json) {
+    return _$SendTxLogFromJson(json);
+  }
+
+  Map<String, dynamic> toJson() {
+    return _$SendTxLogToJson(this);
+  }
+
   @override
-  List<Object> get props => [code, message];
-
-  factory SendTxLog.fromJson(Map<String, dynamic> json) =>
-      _$SendTxLogFromJson(json);
-
-  Map<String, dynamic> toJson() => _$SendTxLogToJson(this);
+  List<Object> get props {
+    return [code, message];
+  }
 }

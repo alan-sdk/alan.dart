@@ -37,20 +37,6 @@ class Wallet extends Equatable {
         assert(privateKey != null),
         assert(publicKey != null);
 
-  /// Generated a new random [Wallet] using the specified [networkInfo]
-  /// and the optional [derivationPath].
-  factory Wallet.random(
-    NetworkInfo networkInfo, {
-    String derivationPath = DERIVATION_PATH,
-  }) {
-    final mnemonic = bip39.generateMnemonic(strength: 256);
-    return Wallet.derive(
-      mnemonic.split(' '),
-      networkInfo,
-      derivationPath: derivationPath,
-    );
-  }
-
   /// Derives the private key from the given [mnemonic] using the specified
   /// [networkInfo].
   factory Wallet.derive(
@@ -95,9 +81,26 @@ class Wallet extends Equatable {
     );
   }
 
+  /// Generated a new random [Wallet] using the specified [networkInfo]
+  /// and the optional [derivationPath].
+  factory Wallet.random(
+    NetworkInfo networkInfo, {
+    String derivationPath = DERIVATION_PATH,
+  }) {
+    final mnemonic = bip39.generateMnemonic(strength: 256);
+    return Wallet.derive(
+      mnemonic.split(' '),
+      networkInfo,
+      derivationPath: derivationPath,
+    );
+  }
+
   /// Creates a new [Wallet] instance based on the existent [wallet] for
   /// the given [networkInfo].
-  factory Wallet.convert(Wallet wallet, NetworkInfo networkInfo) {
+  factory Wallet.convert(
+    Wallet wallet,
+    NetworkInfo networkInfo,
+  ) {
     return Wallet(
       networkInfo: networkInfo,
       address: wallet.address,
@@ -106,9 +109,25 @@ class Wallet extends Equatable {
     );
   }
 
+  /// Creates a new [Wallet] instance from the given [json] and [privateKey].
+  factory Wallet.fromJson(
+    Map<String, dynamic> json,
+    Uint8List privateKey,
+  ) {
+    return Wallet(
+      address: Uint8List.fromList(HEX.decode(json['hex_address'] as String)),
+      publicKey: Uint8List.fromList(HEX.decode(json['public_key'] as String)),
+      privateKey: privateKey,
+      networkInfo: NetworkInfo.fromJson(
+        json['network_info'] as Map<String, dynamic>,
+      ),
+    );
+  }
+
   /// Returns the associated [address] as a Bech32 string.
-  String get bech32Address =>
-      Bech32Encoder.encode(networkInfo.bech32Hrp, address);
+  String get bech32Address {
+    return Bech32Encoder.encode(networkInfo.bech32Hrp, address);
+  }
 
   /// Returns the associated [privateKey] as an [ECPrivateKey] instance.
   ECPrivateKey get _ecPrivateKey {
@@ -157,39 +176,33 @@ class Wallet extends Equatable {
     return sequence.encodedBytes;
   }
 
-  @override
-  List<Object> get props => [
-        networkInfo,
-        address,
-        privateKey,
-        publicKey,
-      ];
-
-  @override
-  String toString() => '{'
-      'networkInfo: $networkInfo,'
-      'address: $address,'
-      'publicKey: $publicKey'
-      '}';
-
-  /// Creates a new [Wallet] instance from the given [json] and [privateKey].
-  factory Wallet.fromJson(Map<String, dynamic> json, Uint8List privateKey) {
-    return Wallet(
-      address: Uint8List.fromList(HEX.decode(json['hex_address'] as String)),
-      publicKey: Uint8List.fromList(HEX.decode(json['public_key'] as String)),
-      privateKey: privateKey,
-      networkInfo: NetworkInfo.fromJson(
-        json['network_info'] as Map<String, dynamic>,
-      ),
-    );
-  }
-
   /// Converts the current [Wallet] instance into a JSON object.
   /// Note that the private key is not serialized for safety reasons.
-  Map<String, dynamic> toJson() => <String, dynamic>{
-        'hex_address': HEX.encode(address),
-        'bech32_address': bech32Address,
-        'public_key': HEX.encode(publicKey),
-        'network_info': networkInfo.toJson(),
-      };
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'hex_address': HEX.encode(address),
+      'bech32_address': bech32Address,
+      'public_key': HEX.encode(publicKey),
+      'network_info': networkInfo.toJson(),
+    };
+  }
+
+  @override
+  List<Object> get props {
+    return [
+      networkInfo,
+      address,
+      privateKey,
+      publicKey,
+    ];
+  }
+
+  @override
+  String toString() {
+    return '{ '
+        'networkInfo: $networkInfo, '
+        'address: $address, '
+        'publicKey: $publicKey '
+        '}';
+  }
 }

@@ -47,7 +47,7 @@ class TransactionResult extends Equatable {
 
   @override
   String toString() {
-    return 'TransactionResult {'
+    return 'TransactionResult { '
         'success: $success, '
         'hash: $hash, '
         'error: $error '
@@ -74,7 +74,7 @@ class TransactionError extends Equatable {
 
   @override
   String toString() {
-    return 'TransactionError {'
+    return 'TransactionError { '
         'errorCode: $errorCode, '
         'errorMessage: $errorMessage '
         '}';

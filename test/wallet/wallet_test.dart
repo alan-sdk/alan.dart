@@ -1,3 +1,4 @@
+import 'dart:collection';
 import 'dart:convert';
 import 'dart:typed_data';
 
@@ -31,12 +32,70 @@ void main() {
         'solve retire concert illegal garage recall skill power lyrics bunker vintage silver situate gadget talent settle left snow fire bubble bar robot swing senior'
   };
 
-  test('Wallets are generated correctly', () {
-    testVectors.forEach((address, mnemonicString) {
-      final mnemonic = mnemonicString.split(' ');
-      final wallet = Wallet.derive(mnemonic, networkInfo);
-      expect(wallet.bech32Address, address);
+  group('derive', () {
+    test('throws exception with invalid mnemonic', () {
+      expect(() => Wallet.derive([], networkInfo), throwsException);
     });
+
+    test('works properly with valid mnemonic', () {
+      testVectors.forEach((address, mnemonicString) {
+        final mnemonic = mnemonicString.split(' ');
+        final wallet = Wallet.derive(mnemonic, networkInfo);
+        expect(wallet.bech32Address, address);
+      });
+    });
+  });
+
+  test('random generates different wallets', () {
+    final info = NetworkInfo(bech32Hrp: 'cosmos', lcdUrl: 'example.com');
+    final wallets = List.generate(20, (index) => Wallet.random(info));
+
+    final map = HashMap.fromIterable(
+      wallets,
+      key: (entry) => (entry as Wallet).bech32Address,
+      value: (entry) => entry,
+    );
+    expect(map.entries, hasLength(wallets.length));
+  });
+
+  test('convert works properly', () {
+    final mnemonic = [
+      'update',
+      'ghost',
+      'please',
+      'quote',
+      'buyer',
+      'pelican',
+      'olive',
+      'avocado',
+      'play',
+      'shadow',
+      'ignore',
+      'math',
+      'bread',
+      'tumble',
+      'coast',
+      'number',
+      'void',
+      'often',
+      'craft',
+      'buyer',
+      'hybrid',
+      'vicious',
+      'symptom',
+      'rocket',
+    ];
+    final cosmosAddr = 'cosmos19c506umkrd4ptva9r3gjy7afmjnr4mlgalfmu0';
+    final cosmosInfo = NetworkInfo(bech32Hrp: 'cosmos', lcdUrl: 'example.com');
+
+    final wallet = Wallet.derive(mnemonic, cosmosInfo);
+    expect(wallet.bech32Address, cosmosAddr);
+
+    final desmosAddr = 'desmos19c506umkrd4ptva9r3gjy7afmjnr4mlgf8ytth';
+    final desmosInfo = NetworkInfo(bech32Hrp: 'desmos', lcdUrl: 'example.com');
+
+    final converted = Wallet.convert(wallet, desmosInfo);
+    expect(converted.bech32Address, desmosAddr);
   });
 
   test('toJson and fromJson work properly', () {

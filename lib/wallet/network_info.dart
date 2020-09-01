@@ -30,7 +30,9 @@ class NetworkInfo extends Equatable {
   }
 
   @override
-  List<Object> get props => [bech32Hrp, lcdUrl];
+  List<Object> get props {
+    return [bech32Hrp, lcdUrl];
+  }
 
   @override
   String toString() {

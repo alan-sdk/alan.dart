@@ -45,7 +45,7 @@ class QueryHelper {
   ) async {
     final result = await queryChain('$lcdEndpoint/txs?tx.height=$height');
     if (!result.isSuccessful) {
-      throw Exception('Transaction at height $height not found');
+      return [];
     }
 
     return TransactionsResponse.fromJson(result.value).txs;
@@ -61,7 +61,10 @@ class QueryHelper {
     return NodeInfoResponse.fromJson(result.value).nodeInfo;
   }
 
-  /// Reads the account endpoint and retrieves data from it.
+  /// Reads the account endpoint and retrieves the details of the account
+  /// having the given [address] from it.
+  /// If no account with the specified [address] is found, returns `null`
+  /// instead.
   static Future<CosmosAccount> getAccountData(
     String lcdEndpoint,
     String address,
@@ -69,7 +72,7 @@ class QueryHelper {
     final endpoint = '${lcdEndpoint}/auth/accounts/${address}';
     final result = await queryChain(endpoint);
     if (!result.isSuccessful) {
-      throw Exception(result.error);
+      return null;
     }
 
     final lcdResponse = LcdResponse.fromJson(result.value);
