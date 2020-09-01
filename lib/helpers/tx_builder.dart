@@ -1,13 +1,12 @@
 import 'package:alan/alan.dart';
-import 'package:meta/meta.dart';
 
 /// Allows to easily build and sign a [StdTx] that can later be sent over
 /// the network.
 class TxBuilder {
   /// Builds a [StdTx] object containing the given [stdMsgs] and having the
   /// optional [memo] and [fee] specified.
-  static StdTx buildStdTx({
-    @required List<StdMsg> stdMsgs,
+  static StdTx buildStdTx(
+    List<StdMsg> stdMsgs, {
     String memo = '',
     StdFee fee = const StdFee(gas: '200000', amount: []),
   }) {

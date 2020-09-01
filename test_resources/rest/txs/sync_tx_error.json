@@ -1,0 +1,6 @@
+{
+  "height": "0",
+  "txhash": "CDB9B177570D017E386393C062F87ED238D10880AD76C5DCA1DEC5A57718F080",
+  "code": 8,
+  "raw_log": "invalid pubkey: pubKey does not match signer address desmos1tvuu7rf0zakjw79hfnhvd73v5fvznrr8szfcan with signer index: 0"
+}

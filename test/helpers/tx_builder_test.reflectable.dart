@@ -2,7 +2,7 @@
 // https://github.com/dart-lang/reflectable.
 
 import 'dart:core';
-import 'package:alan/models/cosmos_sdk/tx/std_msg.dart' as prefix0;
+import 'package:alan/models/cosmos_sdk/entities/std_msg.dart' as prefix0;
 import 'package:alan/models/messages/msg_send.dart' as prefix1;
 
 // ignore_for_file: prefer_adjacent_string_concatenation

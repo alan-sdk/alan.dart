@@ -19,7 +19,7 @@ void main() {
       amount: [StdCoin(denom: 'uatom', amount: '100')],
     );
 
-    final stdTx = TxBuilder.buildStdTx(stdMsgs: [message]);
+    final stdTx = TxBuilder.buildStdTx([message]);
 
     final file = File('test_resources/SendStdTx.json');
     final expectedStd = StdTx.fromJson(

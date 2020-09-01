@@ -29,9 +29,7 @@ class MsgSend extends StdMsg {
     @required this.fromAddress,
     @required this.toAddress,
     @required this.amount,
-  })  : assert(fromAddress != null),
-        assert(toAddress != null),
-        assert(amount != null);
+  });
 
   factory MsgSend.fromJson(Map<String, dynamic> json) {
     return _$MsgSendFromJson(json);

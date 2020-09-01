@@ -74,14 +74,14 @@ void main() {
       gas: '200000',
       amount: [StdCoin(amount: '250', denom: 'uatom')],
     );
-    final tx = TxBuilder.buildStdTx(stdMsgs: [msg], fee: fee);
+    final tx = TxBuilder.buildStdTx([msg], fee: fee);
 
     // Create a wallet
     final wallet = Wallet.derive(mnemonic, networkInfo);
     expect(wallet.networkInfo, networkInfo);
 
     // Sign the transaction
-    final signedTx = await TxSigner.signStdTx(wallet: wallet, stdTx: tx);
+    final signedTx = await TxSigner.signStdTx(tx, wallet);
     expect(signedTx.signatures.length, 1);
 
     final signature = signedTx.signatures[0];
