@@ -3,11 +3,13 @@
 
 import 'dart:core';
 
-import 'package:alan/models/cosmos_sdk/entities/std_msg.dart' as prefix0;
-import 'package:alan/x/bank/msg/msg_send.dart' as prefix1;
+import 'package:alan/types/std_msg.dart' as prefix0;
+import 'package:alan/x/bank/types/msg_send.dart' as prefix1;
 import 'package:reflectable/mirrors.dart' as m;
 import 'package:reflectable/reflectable.dart' as r show Reflectable;
-import 'package:reflectable/src/reflectable_builder_based.dart' as r.Reflectable, r.ReflectorData>{
+import 'package:reflectable/src/reflectable_builder_based.dart' as r;
+
+final _data = <r.Reflectable, r.ReflectorData>{
   const prefix0.Reflector(): r.ReflectorData(
       <m.TypeMirror>[
         r.NonGenericClassMirrorImpl(

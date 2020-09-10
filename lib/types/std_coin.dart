@@ -18,11 +18,38 @@ class StdCoin extends Equatable {
     @required this.amount,
   });
 
+  bool get isPositive {
+    return double.parse(amount) > 0;
+  }
+
+  bool get isValid {
+    return validate() == null;
+  }
+
+  factory StdCoin.fromJson(Map<String, dynamic> json) {
+    return _$StdCoinFromJson(json);
+  }
+
+  Map<String, dynamic> toJson() {
+    return _$StdCoinToJson(this);
+  }
+
   @override
-  List<Object> get props => [denom, amount];
+  List<Object> get props {
+    return [denom, amount];
+  }
 
-  factory StdCoin.fromJson(Map<String, dynamic> json) =>
-      _$StdCoinFromJson(json);
+  Exception validate() {
+    final regEx = RegExp(r'^%s$');
 
-  Map<String, dynamic> toJson() => _$StdCoinToJson(this);
+    if (!regEx.hasMatch(denom)) {
+      return Exception('invalid denom: $denom');
+    }
+
+    if (!isPositive) {
+      return Exception('negative coin amount: $amount');
+    }
+
+    return null;
+  }
 }
