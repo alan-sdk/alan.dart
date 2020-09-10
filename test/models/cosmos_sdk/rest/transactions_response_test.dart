@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:alan/models/export.dart';
+import 'package:alan/alan.dart';
 import 'package:test/test.dart';
 
 import 'transactions_response_test.reflectable.dart';

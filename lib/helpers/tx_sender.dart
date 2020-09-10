@@ -55,20 +55,6 @@ class TxSender {
 
   /// Converts the given [response] to a [TransactionResult] object.
   static TransactionResult _convertResponse(TxResponse response) {
-    // final rawLog = jsonDecode(response.rawLog) as dynamic;
-    // if (rawLog is Map<String, dynamic>) {
-    //   final log = SendTxLog.fromJson(rawLog);
-    //   return TransactionResult(
-    //     raw: response.toJson(),
-    //     hash: response.hash,
-    //     success: false,
-    //     error: TransactionError(
-    //       errorCode: log.code,
-    //       errorMessage: log.message,
-    //     ),
-    //   );
-    // }
-
     return TransactionResult(
       raw: response.toJson(),
       hash: response.hash,
