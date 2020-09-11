@@ -1,11 +1,11 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'description.g.dart';
+part 'validator_description.g.dart';
 
 /// Description defines a validator description.
 @JsonSerializable(explicitToJson: true)
-class Description extends Equatable {
+class ValidatorDescription extends Equatable {
   @JsonKey(name: 'moniker', includeIfNull: false)
   final String moniker;
 
@@ -21,7 +21,7 @@ class Description extends Equatable {
   @JsonKey(name: 'details', includeIfNull: false)
   final String details;
 
-  Description({
+  ValidatorDescription({
     this.moniker,
     this.identity,
     this.website,
@@ -29,12 +29,12 @@ class Description extends Equatable {
     this.details,
   });
 
-  factory Description.fromJson(Map<String, dynamic> json) {
-    return _$DescriptionFromJson(json);
+  factory ValidatorDescription.fromJson(Map<String, dynamic> json) {
+    return _$ValidatorDescriptionFromJson(json);
   }
 
   Map<String, dynamic> toJson() {
-    return _$DescriptionToJson(this);
+    return _$ValidatorDescriptionToJson(this);
   }
 
   @override

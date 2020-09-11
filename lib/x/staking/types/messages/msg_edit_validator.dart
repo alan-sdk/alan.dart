@@ -9,21 +9,21 @@ part 'msg_edit_validator.g.dart';
 @JsonSerializable(explicitToJson: true)
 class MsgEditValidator extends StdMsg {
   @JsonKey(name: 'description')
-  final Description description;
+  final ValidatorDescription description;
 
-  @JsonKey(name: 'validator_address', includeIfNull: false)
+  @JsonKey(name: 'address', includeIfNull: false)
   final String validatorAddress;
 
-  @JsonKey(name: 'commission', includeIfNull: false)
-  final CommissionRates commission;
+  @JsonKey(name: 'commission_rate')
+  final String commissionRate;
 
-  @JsonKey(name: 'min_self_delegation', includeIfNull: false)
+  @JsonKey(name: 'min_self_delegation')
   final String minSelfDelegation;
 
   MsgEditValidator({
     @required this.description,
     @required this.validatorAddress,
-    this.commission,
+    this.commissionRate,
     this.minSelfDelegation,
   });
 
@@ -33,7 +33,7 @@ class MsgEditValidator extends StdMsg {
 
   @override
   Map<String, dynamic> asJson() {
-    return _$MsgEditValidatorToJson(json);
+    return _$MsgEditValidatorToJson(this);
   }
 
   @override
@@ -41,7 +41,7 @@ class MsgEditValidator extends StdMsg {
     return [
       description,
       validatorAddress,
-      commission,
+      commissionRate,
       minSelfDelegation,
     ];
   }
@@ -52,7 +52,7 @@ class MsgEditValidator extends StdMsg {
       return Exception('Validator address cannot be empty');
     }
 
-    if (description == null || description == Description()) {
+    if (description == null || description == ValidatorDescription()) {
       return Exception('Empty description');
     }
 
@@ -60,8 +60,8 @@ class MsgEditValidator extends StdMsg {
       return Exception('Invalid min self delegation amount');
     }
 
-    if (commission != null) {
-      final rate = double.parse(commission.rate);
+    if (commissionRate != null) {
+      final rate = double.parse(commissionRate);
       if (rate > 1 || rate < 0) {
         return Exception('Commission rate must be between 0 and 1');
       }

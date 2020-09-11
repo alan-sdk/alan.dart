@@ -28,7 +28,7 @@ class CommissionRates extends Equatable {
   }
 
   Map<String, dynamic> toJson() {
-    return {};
+    return _$CommissionRatesToJson(this);
   }
 
   @override

@@ -9,7 +9,7 @@ part 'msg_create_validator.g.dart';
 @JsonSerializable(explicitToJson: true)
 class MsgCreateValidator extends StdMsg {
   @JsonKey(name: 'description')
-  final Description description;
+  final ValidatorDescription description;
 
   @JsonKey(name: 'commission')
   final CommissionRates commission;
@@ -23,7 +23,7 @@ class MsgCreateValidator extends StdMsg {
   @JsonKey(name: 'validator_address')
   final String validatorAddress;
 
-  @JsonKey(name: 'pub_key', includeIfNull: false)
+  @JsonKey(name: 'pubkey', includeIfNull: false)
   final String publicKey;
 
   @JsonKey(name: 'value')
@@ -79,7 +79,7 @@ class MsgCreateValidator extends StdMsg {
       return Exception('Bad delegation amount');
     }
 
-    if (description == Description()) {
+    if (description == ValidatorDescription()) {
       return Exception('empty description');
     }
 

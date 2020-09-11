@@ -12,7 +12,13 @@ class Codec {
 
   /// Registers the defaults message types.
   static void _init() {
+    // x/bank
     registerMsgType('cosmos-sdk/MsgSend', MsgSend);
+
+    // x/staking
+    registerMsgType('cosmos-sdk/MsgCreateValidator', MsgCreateValidator);
+    registerMsgType('cosmos-sdk/MsgEditValidator', MsgEditValidator);
+
     _defaultInitialized = true;
   }
 
