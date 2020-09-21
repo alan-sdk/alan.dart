@@ -1,4 +1,4 @@
-![](.img/logo.jpg)
+![](.img/cover.png)
 
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/alan-sdk/alan.dart/Test)](https://github.com/alan-sdk/alan.dart/actions)
 [![Codecov branch](https://img.shields.io/codecov/c/github/alan-sdk/alan.dart/master)](https://codecov.io/gh/alan-sdk/alan.dart/branch/master)
