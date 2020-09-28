@@ -9,7 +9,7 @@
 
 Alan.dart is a pure Dart package allowing you to easily integrate your Dart-based project with any [Cosmos](https://cosmos.network)-based blockchain.  
 
-You can see an example of how this works inside the [`example/example.dart` file](example/example.dart). 
+You can find the documentation inside the [`doc` folder](doc). 
 
 ## Cosmos-SDK compatibility table
 Over time the Cosmos SDK has changed a lot, and many versions of it have been released. Since the development of this library started, we had to adapt to the `0.37.x` and `0.38.x` versions. 
