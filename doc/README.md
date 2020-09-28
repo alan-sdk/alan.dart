@@ -36,8 +36,11 @@ final message = MsgSend(
 
 final stdTx = TxBuilder.buildStdTx(
   [message], 
-  memo: 'Optional memo', 
-  fee: StdFee(amount: '1000', denom: 'uatom'),
+  memo: 'Optional memo', // Optional
+  fee: StdFee(           // Optional, default = 200000 gas and empty fee
+    gas: '200000', 
+    amount: [StdCoin(amount: '1000', denom: 'uatom')],
+  ),  
 );
 ``` 
 
@@ -51,7 +54,7 @@ final signedStdTx = TxSigner.signStdTx(stdTx, wallet);
 final result = await TxSender.broadcastStdTx(
   signedTx, 
   wallet,
-  mode: TxSender.MODE_BLOCK,
+  mode: TxSender.MODE_BLOCK, // Optional, default = sync
 );
 print("Tx send result: $result");
 ```
