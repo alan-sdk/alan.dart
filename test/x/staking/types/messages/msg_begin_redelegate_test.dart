@@ -33,6 +33,10 @@ void main() {
   testMsgJson<MsgBeginRedelegate>(message, json);
 
   group('validate works properly', () {
+    test('if message is valid', () {
+      expect(message.validate(), isNot(isException));
+    });
+
     test('when delegator address is null or empty', () {
       final emptyAddrMsg = MsgBeginRedelegate(
         delegatorAddress: '',
@@ -93,7 +97,7 @@ void main() {
         validatorSourceAddress: 'validator_addr',
         validatorDestinationAddress: 'validator_dest_addr',
         amount: StdCoin(denom: 'uatom', amount: '-1'),
-      ) ;
+      );
       expect(negativeAmountMsg.validate(), isException);
 
       final nullAmountMsg = MsgBeginRedelegate(
@@ -101,7 +105,7 @@ void main() {
         validatorSourceAddress: 'validator_addr',
         validatorDestinationAddress: 'validator_dest_addr',
         amount: StdCoin(denom: 'uatom', amount: null),
-      ) ;
+      );
       expect(nullAmountMsg.validate(), isException);
     });
   });

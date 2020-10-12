@@ -59,4 +59,217 @@ void main() {
   };
 
   testMsgJson<MsgCreateValidator>(message, json);
+
+  group('validator works properly', () {
+    test('when the message is valid', () {
+      expect(message.validate(), isNot(isException));
+    });
+
+    test('when delegator address is empty or null', () {
+      final msgWithEmptyAddr = MsgCreateValidator(
+        description: ValidatorDescription(
+          moniker: 'retz80',
+          identity: '',
+          website: '',
+          securityContact: '',
+          details: '',
+        ),
+        commission: CommissionRates(
+          rate: '0.100000000000000000',
+          maxRate: '0.200000000000000000',
+          maxChangeRate: '0.010000000000000000',
+        ),
+        minSelfDelegation: '1',
+        delegatorAddress: '',
+        validatorAddress: 'validator_addr',
+        publicKey: 'public_key',
+        value: StdCoin(
+          denom: 'udaric',
+          amount: '1000000',
+        ),
+      );
+      expect(msgWithEmptyAddr.validate(), isException);
+
+      final msgWithNullAddr = MsgCreateValidator(
+        description: ValidatorDescription(
+          moniker: 'retz80',
+          identity: '',
+          website: '',
+          securityContact: '',
+          details: '',
+        ),
+        commission: CommissionRates(
+          rate: '0.100000000000000000',
+          maxRate: '0.200000000000000000',
+          maxChangeRate: '0.010000000000000000',
+        ),
+        minSelfDelegation: '1',
+        delegatorAddress: null,
+        validatorAddress: 'validator_addr',
+        publicKey: 'public_key',
+        value: StdCoin(
+          denom: 'udaric',
+          amount: '1000000',
+        ),
+      );
+      expect(msgWithNullAddr.validate(), isException);
+    });
+
+    test('when validator address is empty or null', () {
+      final msgWithEmptyAddr = MsgCreateValidator(
+        description: ValidatorDescription(
+          moniker: 'retz80',
+          identity: '',
+          website: '',
+          securityContact: '',
+          details: '',
+        ),
+        commission: CommissionRates(
+          rate: '0.100000000000000000',
+          maxRate: '0.200000000000000000',
+          maxChangeRate: '0.010000000000000000',
+        ),
+        minSelfDelegation: '1',
+        delegatorAddress: 'delegator_addr',
+        validatorAddress: '',
+        publicKey: 'public_key',
+        value: StdCoin(
+          denom: 'udaric',
+          amount: '1000000',
+        ),
+      );
+      expect(msgWithEmptyAddr.validate(), isException);
+
+      final msgWithNullAddr = MsgCreateValidator(
+        description: ValidatorDescription(
+          moniker: 'retz80',
+          identity: '',
+          website: '',
+          securityContact: '',
+          details: '',
+        ),
+        commission: CommissionRates(
+          rate: '0.100000000000000000',
+          maxRate: '0.200000000000000000',
+          maxChangeRate: '0.010000000000000000',
+        ),
+        minSelfDelegation: '1',
+        delegatorAddress: 'delegator_addr',
+        validatorAddress: null,
+        publicKey: 'public_key',
+        value: StdCoin(
+          denom: 'udaric',
+          amount: '1000000',
+        ),
+      );
+      expect(msgWithNullAddr.validate(), isException);
+    });
+
+    test('when public key is empty or null', () {
+      final msgWithEmptyAddr = MsgCreateValidator(
+        description: ValidatorDescription(
+          moniker: 'retz80',
+          identity: '',
+          website: '',
+          securityContact: '',
+          details: '',
+        ),
+        commission: CommissionRates(
+          rate: '0.100000000000000000',
+          maxRate: '0.200000000000000000',
+          maxChangeRate: '0.010000000000000000',
+        ),
+        minSelfDelegation: '1',
+        delegatorAddress: 'delegator_addr',
+        validatorAddress: 'validator_addr',
+        publicKey: '',
+        value: StdCoin(
+          denom: 'udaric',
+          amount: '1000000',
+        ),
+      );
+      expect(msgWithEmptyAddr.validate(), isException);
+
+      final msgWithNullAddr = MsgCreateValidator(
+        description: ValidatorDescription(
+          moniker: 'retz80',
+          identity: '',
+          website: '',
+          securityContact: '',
+          details: '',
+        ),
+        commission: CommissionRates(
+          rate: '0.100000000000000000',
+          maxRate: '0.200000000000000000',
+          maxChangeRate: '0.010000000000000000',
+        ),
+        minSelfDelegation: '1',
+        delegatorAddress: 'delegator_addr',
+        validatorAddress: 'validator_addr',
+        publicKey: null,
+        value: StdCoin(
+          denom: 'udaric',
+          amount: '1000000',
+        ),
+      );
+      expect(msgWithNullAddr.validate(), isException);
+    });
+
+    test('when description is empty', () {
+      final invalidMsg = MsgCreateValidator(
+        description: ValidatorDescription(),
+        commission: CommissionRates(
+          rate: '0.100000000000000000',
+          maxRate: '0.200000000000000000',
+          maxChangeRate: '0.010000000000000000',
+        ),
+        minSelfDelegation: '1',
+        delegatorAddress: 'delegator_addr',
+        validatorAddress: 'validator_addr',
+        publicKey: 'public_key',
+        value: StdCoin(
+          denom: 'udaric',
+          amount: '1000000',
+        ),
+      );
+      expect(invalidMsg.validate(), isException);
+    });
+
+    test('when min self delegation is less than zero', () {
+      final invalidMsg = MsgCreateValidator(
+        description: ValidatorDescription(moniker: 'moniker'),
+        commission: CommissionRates(
+          rate: '0.100000000000000000',
+          maxRate: '0.200000000000000000',
+          maxChangeRate: '0.010000000000000000',
+        ),
+        minSelfDelegation: '-1',
+        delegatorAddress: 'delegator_addr',
+        validatorAddress: 'validator_addr',
+        publicKey: 'public_key',
+        value: StdCoin(
+          denom: 'udaric',
+          amount: '1000000',
+        ),
+      );
+      expect(invalidMsg.validate(), isException);
+    });
+
+    test('when amount is less than self delefation', () {
+      final invalidMsg = MsgCreateValidator(
+        description: ValidatorDescription(moniker: 'moniker'),
+        commission: CommissionRates(
+          rate: '0.100000000000000000',
+          maxRate: '0.200000000000000000',
+          maxChangeRate: '0.010000000000000000',
+        ),
+        minSelfDelegation: '1',
+        delegatorAddress: 'delegator_addr',
+        validatorAddress: 'validator_addr',
+        publicKey: 'public_key',
+        value: StdCoin(denom: 'udaric', amount: '0'),
+      );
+      expect(invalidMsg.validate(), isException);
+    });
+  });
 }

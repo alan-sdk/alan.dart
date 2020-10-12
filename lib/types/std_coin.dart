@@ -19,7 +19,7 @@ class StdCoin extends Equatable {
   });
 
   bool get isPositive {
-    return double.parse(amount) > 0;
+    return double.parse(amount ?? '0') > 0;
   }
 
   bool get isValid {

@@ -49,19 +49,19 @@ class MsgBeginRedelegate extends StdMsg {
 
   @override
   Exception validate() {
-    if (delegatorAddress?.isNotEmpty != false) {
+    if (delegatorAddress?.isNotEmpty != true) {
       return Exception('Delegator address cannot be empty');
     }
 
-    if (validatorSourceAddress?.isNotEmpty != false) {
+    if (validatorSourceAddress?.isNotEmpty != true) {
       return Exception('Validator source address cannot be empty');
     }
 
-    if (validatorDestinationAddress?.isNotEmpty != false) {
+    if (validatorDestinationAddress?.isNotEmpty != true) {
       return Exception('Validator destination address cannot be empty');
     }
 
-    if (amount?.isPositive != false) {
+    if (amount?.isPositive != true) {
       return Exception('Amount needs to be positive');
     }
 

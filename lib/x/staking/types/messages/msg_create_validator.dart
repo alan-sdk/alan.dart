@@ -63,19 +63,19 @@ class MsgCreateValidator extends StdMsg {
 
   @override
   Exception validate() {
-    if (delegatorAddress?.isNotEmpty != false) {
+    if (delegatorAddress?.isNotEmpty != true) {
       return Exception('Empty delegator address');
     }
 
-    if (validatorAddress?.isNotEmpty != false) {
+    if (validatorAddress?.isNotEmpty != true) {
       return Exception('Empty validator address');
     }
 
-    if (publicKey?.isNotEmpty != false) {
+    if (publicKey?.isNotEmpty != true) {
       return Exception('Empty public key');
     }
 
-    if (value?.isValid != true || value?.isPositive != true) {
+    if (value?.isPositive != true) {
       return Exception('Bad delegation amount');
     }
 
@@ -87,7 +87,7 @@ class MsgCreateValidator extends StdMsg {
       return Exception('Invalid min self delegation');
     }
 
-    if (double.parse(value.amount) < double.parse(minSelfDelegation)) {
+    if (double.parse(value.amount) < (double.parse(minSelfDelegation))) {
       return Exception('Amount is lower than min self delegation');
     }
 
