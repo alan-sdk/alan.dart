@@ -72,16 +72,16 @@ void main() {
     test('when validator destination address is null or empty', () {
       final emptyAddrMsg = MsgBeginRedelegate(
         delegatorAddress: 'delegator_addr',
-        validatorSourceAddress: null,
-        validatorDestinationAddress: 'validator_dest_addr',
+        validatorSourceAddress: 'validator_source_addr',
+        validatorDestinationAddress: '',
         amount: StdCoin(denom: 'uatom', amount: '100000'),
       );
       expect(emptyAddrMsg.validate(), isException);
 
       final nullAddrMsg = MsgBeginRedelegate(
         delegatorAddress: 'delegator_addr',
-        validatorSourceAddress: '',
-        validatorDestinationAddress: 'validator_dest_addr',
+        validatorSourceAddress: 'validator_source_addr',
+        validatorDestinationAddress: null,
         amount: StdCoin(denom: 'uatom', amount: '100000'),
       );
       expect(nullAddrMsg.validate(), isException);
