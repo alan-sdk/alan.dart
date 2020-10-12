@@ -14,10 +14,10 @@ Validator _$ValidatorFromJson(Map<String, dynamic> json) {
     status: json['status'] as int,
     tokens: json['tokens'] as String,
     delegatorShares: json['delegator_shares'] as String,
-    description: json['descriptions'] == null
+    description: json['description'] == null
         ? null
         : ValidatorDescription.fromJson(
-            json['descriptions'] as Map<String, dynamic>),
+            json['description'] as Map<String, dynamic>),
     unbondingHeight: json['unbonding_height'] as String,
     unbondingTime: json['unbonding_time'] as String,
     commission: json['commission'] == null
@@ -34,7 +34,7 @@ Map<String, dynamic> _$ValidatorToJson(Validator instance) => <String, dynamic>{
       'status': instance.status,
       'tokens': instance.tokens,
       'delegator_shares': instance.delegatorShares,
-      'descriptions': instance.description?.toJson(),
+      'description': instance.description?.toJson(),
       'unbonding_height': instance.unbondingHeight,
       'unbonding_time': instance.unbondingTime,
       'commission': instance.commission?.toJson(),

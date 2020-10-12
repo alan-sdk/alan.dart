@@ -32,7 +32,7 @@ class Validator extends Equatable {
   @JsonKey(name: 'delegator_shares')
   final String delegatorShares;
 
-  @JsonKey(name: 'descriptions')
+  @JsonKey(name: 'description')
   final ValidatorDescription description;
 
   @JsonKey(name: 'unbonding_height')

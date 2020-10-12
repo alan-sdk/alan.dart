@@ -18,6 +18,9 @@ class Codec {
     // x/staking
     registerMsgType('cosmos-sdk/MsgCreateValidator', MsgCreateValidator);
     registerMsgType('cosmos-sdk/MsgEditValidator', MsgEditValidator);
+    registerMsgType('cosmos-sdk/MsgDelegate', MsgDelegate);
+    registerMsgType('cosmos-sdk/MsgUndelegate', MsgUndelegate);
+    registerMsgType('cosmos-sdk/MsgBeginRedelegate', MsgBeginRedelegate);
 
     _defaultInitialized = true;
   }

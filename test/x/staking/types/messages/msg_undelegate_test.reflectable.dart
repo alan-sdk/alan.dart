@@ -2,6 +2,7 @@
 // https://github.com/dart-lang/reflectable.
 
 import 'dart:core';
+
 import 'package:alan/types/std_msg.dart' as prefix0;
 import 'package:alan/x/bank/types/messages/msg_send.dart' as prefix6;
 import 'package:alan/x/staking/types/messages/msg_begin_redelegate.dart'
@@ -12,18 +13,9 @@ import 'package:alan/x/staking/types/messages/msg_delegate.dart' as prefix1;
 import 'package:alan/x/staking/types/messages/msg_edit_validator.dart'
     as prefix4;
 import 'package:alan/x/staking/types/messages/msg_undelegate.dart' as prefix2;
-
-// ignore_for_file: prefer_adjacent_string_concatenation
-// ignore_for_file: prefer_collection_literals
-// ignore_for_file: unnecessary_const
-// ignore_for_file: implementation_imports
-
-// ignore:unused_import
 import 'package:reflectable/mirrors.dart' as m;
-// ignore:unused_import
-import 'package:reflectable/src/reflectable_builder_based.dart' as r;
-// ignore:unused_import
 import 'package:reflectable/reflectable.dart' as r show Reflectable;
+import 'package:reflectable/src/reflectable_builder_based.dart' as r;
 
 final _data = <r.Reflectable, r.ReflectorData>{
   const prefix0.Reflector(): r.ReflectorData(

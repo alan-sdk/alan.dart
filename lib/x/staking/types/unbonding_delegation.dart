@@ -44,7 +44,7 @@ class UnbondingDelegation extends Equatable {
 @JsonSerializable(explicitToJson: true)
 class UnbondingDelegationEntry extends Equatable {
   @JsonKey(name: 'creation_height')
-  final int creationHeight;
+  final String creationHeight;
 
   @JsonKey(name: 'completion_time')
   final String completionTime;

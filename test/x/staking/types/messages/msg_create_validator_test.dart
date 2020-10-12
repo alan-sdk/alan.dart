@@ -1,6 +1,3 @@
-import 'dart:convert';
-import 'dart:io';
-
 import 'package:alan/alan.dart';
 import 'package:test/test.dart';
 
@@ -30,8 +27,12 @@ void main() {
     validatorAddress: 'desmosvaloper1jwrsx60nuuzw642u7uuhceuhnxgrrl892wc8rx',
     publicKey:
         'desmosvalconspub1zcjduepqgztfagxazg9p2kz3sshmc4f909pd66cwuhmyhuw6un70hsvmw98sz6yucv',
-    value: StdCoin(denom: 'udaric', amount: '1000000'),
+    value: StdCoin(
+      denom: 'udaric',
+      amount: '1000000',
+    ),
   );
+
   final json = {
     'type': 'cosmos-sdk/MsgCreateValidator',
     'value': {

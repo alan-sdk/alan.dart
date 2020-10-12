@@ -29,7 +29,7 @@ Map<String, dynamic> _$UnbondingDelegationToJson(
 UnbondingDelegationEntry _$UnbondingDelegationEntryFromJson(
     Map<String, dynamic> json) {
   return UnbondingDelegationEntry(
-    creationHeight: json['creation_height'] as int,
+    creationHeight: json['creation_height'] as String,
     completionTime: json['completion_time'] as String,
     initialBalance: json['initial_balance'] as String,
     balance: json['balance'] as String,
