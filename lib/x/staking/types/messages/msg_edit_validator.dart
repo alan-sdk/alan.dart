@@ -48,7 +48,7 @@ class MsgEditValidator extends StdMsg {
 
   @override
   Exception validate() {
-    if (validatorAddress?.isNotEmpty != false) {
+    if (validatorAddress?.isNotEmpty != true) {
       return Exception('Validator address cannot be empty');
     }
 

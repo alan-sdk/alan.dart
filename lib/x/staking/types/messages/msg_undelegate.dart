@@ -43,15 +43,15 @@ class MsgUndelegate extends StdMsg {
 
   @override
   Exception validate() {
-    if (delegatorAddress?.isNotEmpty != false) {
+    if (delegatorAddress?.isNotEmpty != true) {
       return Exception('Delegator address cannot be empty');
     }
 
-    if (validatorAddress?.isNotEmpty != false) {
+    if (validatorAddress?.isNotEmpty != true) {
       return Exception('Validator address cannot be empty');
     }
 
-    if (amount?.isPositive != false) {
+    if (amount?.isPositive != true) {
       return Exception('Amount needs to be positive');
     }
 
