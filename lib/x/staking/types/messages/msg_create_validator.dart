@@ -4,7 +4,7 @@ import 'package:meta/meta.dart';
 
 part 'msg_create_validator.g.dart';
 
-/// MsgCreateValidator defines an SDK message for creating a new validator.
+/// Defines an SDK message for creating a new validator.
 @reflector
 @JsonSerializable(explicitToJson: true)
 class MsgCreateValidator extends StdMsg {

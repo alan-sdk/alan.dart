@@ -4,7 +4,7 @@ import 'package:meta/meta.dart';
 
 part 'msg_edit_validator.g.dart';
 
-// MsgEditValidator defines an SDK message for editing an existing validator.
+/// Defines an SDK message for editing an existing validator.
 @reflector
 @JsonSerializable(explicitToJson: true)
 class MsgEditValidator extends StdMsg {

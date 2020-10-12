@@ -2,19 +2,36 @@ import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:alan/alan.dart';
-import 'package:alan/helpers/query_helper.dart';
-import 'package:alan/utils/export.dart';
+import 'package:http/http.dart' as http;
+import 'package:meta/meta.dart';
 
-import '../utils/map_sorter.dart';
+import 'map_sorter.dart';
 
 /// Allows to easily sign a [StdTx] object that already contains a message.
 class TxSigner {
+  final AuthQuerier _authQuerier;
+  final NodeQuerier _nodeQuerier;
+
+  TxSigner({
+    @required AuthQuerier authQuerier,
+    @required NodeQuerier nodeQuerier,
+  })  : _authQuerier = authQuerier,
+        _nodeQuerier = nodeQuerier;
+
+  /// Builds a new TxSigner from a given http client.
+  factory TxSigner.build(http.Client httpClient) {
+    return TxSigner(
+      authQuerier: AuthQuerier(httpClient: httpClient),
+      nodeQuerier: NodeQuerier(httpClient: httpClient),
+    );
+  }
+
   /// Signs the given [stdTx] using the info contained inside the
   /// given [wallet] and returns a new [StdTx] containing the signatures
   /// inside it.
-  static Future<StdTx> signStdTx(StdTx stdTx, Wallet wallet) async {
+  Future<StdTx> signStdTx(StdTx stdTx, Wallet wallet) async {
     // Get the account data and node info from the network
-    final account = await QueryHelper.getAccountData(
+    final account = await _authQuerier.getAccountData(
       wallet.networkInfo.lcdUrl,
       wallet.bech32Address,
     );
@@ -24,11 +41,17 @@ class TxSigner {
       );
     }
 
-    final nodeInfo = await QueryHelper.getNodeInfo(wallet.networkInfo.lcdUrl);
+    final nodeInfo = await _nodeQuerier.getNodeInfo(wallet.networkInfo.lcdUrl);
 
     // Sign all messages
     final signatures = _getStdSignature(
-        wallet, account, nodeInfo, stdTx.messages, stdTx.fee, stdTx.memo);
+      wallet,
+      account,
+      nodeInfo,
+      stdTx.messages,
+      stdTx.fee,
+      stdTx.memo,
+    );
 
     // Assemble the transaction
     return StdTx(
@@ -39,7 +62,8 @@ class TxSigner {
     );
   }
 
-  static StdSignature _getStdSignature(
+  /// Converts the given data into an [StdSignature] object.
+  StdSignature _getStdSignature(
     Wallet wallet,
     CosmosAccount accountData,
     NodeInfo nodeInfo,

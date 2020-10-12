@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:alan/alan.dart';
-import 'package:alan/helpers/tx_builder.dart';
 import 'package:test/test.dart';
 
 import 'tx_builder_test.reflectable.dart';

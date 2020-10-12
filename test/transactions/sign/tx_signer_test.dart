@@ -1,11 +1,13 @@
 import 'dart:io';
 
 import 'package:alan/alan.dart';
+import 'package:http/http.dart' as http;
 import 'package:mock_web_server/mock_web_server.dart';
 import 'package:test/test.dart';
 
 void main() {
   MockWebServer server;
+  TxSigner signer;
 
   setUpAll(() {
     server = MockWebServer();
@@ -15,6 +17,7 @@ void main() {
   setUp(() {
     // Clean the dispatcher to avoid cross-testing conflicts
     server.dispatcher = null;
+    signer = TxSigner.build(http.Client());
   });
 
   final mnemonic = [
@@ -81,7 +84,7 @@ void main() {
     expect(wallet.networkInfo, networkInfo);
 
     // Sign the transaction
-    final signedTx = await TxSigner.signStdTx(tx, wallet);
+    final signedTx = await signer.signStdTx(tx, wallet);
     expect(signedTx.signatures.length, 1);
 
     final signature = signedTx.signatures[0];

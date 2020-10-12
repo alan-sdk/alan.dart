@@ -1,3 +1,9 @@
-export 'commission_rates.dart';
+export 'commission.dart';
+export 'delegation.dart';
 export 'messages/export.dart';
+export 'params.dart';
+export 'pool.dart';
+export 'redelegation.dart';
+export 'unbonding_delegation.dart';
+export 'validator.dart';
 export 'validator_description.dart';
