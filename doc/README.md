@@ -34,16 +34,27 @@ final message = MsgSend(
   amount: [StdCoin(denom: "uatom", amount: "100")],
 );
 
-final stdTx = TxBuilder.buildStdTx(stdMsgs: [message]);
+final stdTx = TxBuilder.buildStdTx(
+  [message], 
+  memo: 'Optional memo', // Optional
+  fee: StdFee(           // Optional, default = 200000 gas and empty fee
+    gas: '200000', 
+    amount: [StdCoin(amount: '1000', denom: 'uatom')],
+  ),  
+);
 ``` 
 
 ### Signing a transaction
 ```dart
-final signedStdTx = TxSigner.signStdTx(wallet: wallet, stdTx: stdTx);
+final signedStdTx = TxSigner.signStdTx(stdTx, wallet);
 ```
 
 ### Broadcasting a transaction
 ```dart
-final result = await TxSender.broadcastStdTx(wallet: wallet, stdTx: signedStdTx);
+final result = await TxSender.broadcastStdTx(
+  signedTx, 
+  wallet,
+  mode: TxSender.MODE_BLOCK, // Optional, default = sync
+);
 print("Tx send result: $result");
 ```
