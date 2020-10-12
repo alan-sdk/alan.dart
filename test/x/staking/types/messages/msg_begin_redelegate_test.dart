@@ -31,4 +31,78 @@ void main() {
   );
 
   testMsgJson<MsgBeginRedelegate>(message, json);
+
+  group('validate works properly', () {
+    test('when delegator address is null or empty', () {
+      final emptyAddrMsg = MsgBeginRedelegate(
+        delegatorAddress: '',
+        validatorSourceAddress: 'validator_addr',
+        validatorDestinationAddress: 'validator_dest_addr',
+        amount: StdCoin(denom: 'uatom', amount: '100000'),
+      );
+      expect(emptyAddrMsg.validate(), isException);
+
+      final nullAddrMsg = MsgBeginRedelegate(
+        delegatorAddress: null,
+        validatorSourceAddress: 'validator_addr',
+        validatorDestinationAddress: 'validator_dest_addr',
+        amount: StdCoin(denom: 'uatom', amount: '100000'),
+      );
+      expect(nullAddrMsg.validate(), isException);
+    });
+
+    test('when validator source address is null or empty', () {
+      final emptyAddrMsg = MsgBeginRedelegate(
+        delegatorAddress: 'delegator_addr',
+        validatorSourceAddress: '',
+        validatorDestinationAddress: 'validator_dest_addr',
+        amount: StdCoin(denom: 'uatom', amount: '100000'),
+      );
+      expect(emptyAddrMsg.validate(), isException);
+
+      final nullAddrMsg = MsgBeginRedelegate(
+        delegatorAddress: 'delegator_addr',
+        validatorSourceAddress: null,
+        validatorDestinationAddress: 'validator_dest_addr',
+        amount: StdCoin(denom: 'uatom', amount: '100000'),
+      );
+      expect(nullAddrMsg.validate(), isException);
+    });
+
+    test('when validator destination address is null or empty', () {
+      final emptyAddrMsg = MsgBeginRedelegate(
+        delegatorAddress: 'delegator_addr',
+        validatorSourceAddress: null,
+        validatorDestinationAddress: 'validator_dest_addr',
+        amount: StdCoin(denom: 'uatom', amount: '100000'),
+      );
+      expect(emptyAddrMsg.validate(), isException);
+
+      final nullAddrMsg = MsgBeginRedelegate(
+        delegatorAddress: 'delegator_addr',
+        validatorSourceAddress: '',
+        validatorDestinationAddress: 'validator_dest_addr',
+        amount: StdCoin(denom: 'uatom', amount: '100000'),
+      );
+      expect(nullAddrMsg.validate(), isException);
+    });
+
+    test('when amount is null or negative', () {
+      final negativeAmountMsg = MsgBeginRedelegate(
+        delegatorAddress: 'delegator_addr',
+        validatorSourceAddress: 'validator_addr',
+        validatorDestinationAddress: 'validator_dest_addr',
+        amount: StdCoin(denom: 'uatom', amount: '-1'),
+      ) ;
+      expect(negativeAmountMsg.validate(), isException);
+
+      final nullAmountMsg = MsgBeginRedelegate(
+        delegatorAddress: 'delegator_addr',
+        validatorSourceAddress: 'validator_addr',
+        validatorDestinationAddress: 'validator_dest_addr',
+        amount: StdCoin(denom: 'uatom', amount: null),
+      ) ;
+      expect(nullAmountMsg.validate(), isException);
+    });
+  });
 }
