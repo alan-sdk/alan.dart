@@ -13,7 +13,7 @@ Future main(List<String> arguments) async {
   parser.addOption(
     'exclude',
     help:
-    'Exclude specific files or directories using glob pattern (relative to package root), '
+        'Exclude specific files or directories using glob pattern (relative to package root), '
         'e.g. "subdir/*", "**_vm_test.dart".',
   );
 

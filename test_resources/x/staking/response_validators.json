@@ -1,0 +1,2293 @@
+{
+  "height": "106430",
+  "result": [
+    {
+      "operator_address": "desmosvaloper1qzun7c5ns06q9dj4tf936scxycg4t4rx7zeuws",
+      "consensus_pubkey": "desmosvalconspub1zcjduepq0zzuxvllsmqu2x4tfsgc4zntw3gz6h86fvkappqxxf2w8ykdvudqjt42xn",
+      "jailed": false,
+      "status": 2,
+      "tokens": "1000000",
+      "delegator_shares": "1000000.000000000000000000",
+      "description": {
+        "moniker": "Ægypti",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-12T16:40:58.780234955Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1qd2e9dv52hn7kde8s92ls9xk0vtcgwut2sc0g8",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqspr68c436jys6q90sq5lgep42z073vlaflwhj4sw2vr8zd3nmvsst895vp",
+      "jailed": false,
+      "status": 2,
+      "tokens": "399709110",
+      "delegator_shares": "403746575.757575757575757536",
+      "description": {
+        "moniker": "desmval",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "33315",
+      "unbonding_time": "2020-10-29T06:50:15.901736Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-08T02:12:14.371495019Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1qut52dv5ugr5m2sehpxqyv9x0st4lt42jjfr59",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqtg2saaz6sn6arnm74fc03jtdxtv2fg9808qdw03sp83qdxqghw4qjw9gcz",
+      "jailed": false,
+      "status": 2,
+      "tokens": "1000000",
+      "delegator_shares": "1000000.000000000000000000",
+      "description": {
+        "moniker": "Bit Cat",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-10T06:45:46.786621598Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1zq9jw06nlz8vst2txxcu8w3ezwhnlv2tdjzce2",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqm6x8p6d3a8z5lmy7pnr30efqsvh3jn97qyx5frw0hsu5f4vm3eysqy2qvk",
+      "jailed": false,
+      "status": 2,
+      "tokens": "1000000",
+      "delegator_shares": "1000000.000000000000000000",
+      "description": {
+        "moniker": "kareston",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-08T10:26:29.37517202Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1z3mv8l62peu0gs366q4muvfvpnzpj3pgru46ea",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqh8ccq6xwsqrsdweyg5gh6gd3n524jm6dfpgdgwqnw48m9hk93jrqu29um9",
+      "jailed": false,
+      "status": 2,
+      "tokens": "40000000",
+      "delegator_shares": "40000000.000000000000000000",
+      "description": {
+        "moniker": "JohnDoe",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-06T17:28:13.923471593Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1rqk3htx020j5g8sgql5clg8kdamrv7jd6lp28j",
+      "consensus_pubkey": "desmosvalconspub1zcjduepq9ggp8246369r4w6wefc52ckcqf5qfdwmht0kpsx80r46azrak2rqevzxlm",
+      "jailed": false,
+      "status": 2,
+      "tokens": "1000000",
+      "delegator_shares": "1000000.000000000000000000",
+      "description": {
+        "moniker": "binelo",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-08T11:09:21.182965761Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1rpurg200edtv6rgvfjuf7j6s8mghnsljg0ygf6",
+      "consensus_pubkey": "desmosvalconspub1zcjduepq7nue6rj264w94rj3vcfws274tf9jfhkcgm7zkzley2n8qh26ay5q4prehn",
+      "jailed": false,
+      "status": 2,
+      "tokens": "35790000",
+      "delegator_shares": "36869572.536022626454781660",
+      "description": {
+        "moniker": "Mike Snowman Validator",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "2020-09-15T06:39:44.781318316Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.250000000000000000",
+          "max_change_rate": "0.050000000000000000"
+        },
+        "update_time": "2020-02-12T20:25:32.998149832Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1rf2ulzvdwhftllarec6vu66xc6lz2k7c3lwzk2",
+      "consensus_pubkey": "desmosvalconspub1zcjduepql2fu96nun82fxc4ck7m2q5xlr5rdxee6mulvrhdrs563fl5xky0spsf4hu",
+      "jailed": false,
+      "status": 2,
+      "tokens": "1000000",
+      "delegator_shares": "1000000.000000000000000000",
+      "description": {
+        "moniker": "epicrisetwins",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-10T15:52:44.952579294Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1r7p3c6rnqdw69np77kj5k22zffyauq7ly2l5dj",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqahr99vwqs7e2ny0vj5n7c3jskfvcexdjresqv7jv6z0suwsvqw5qsjngx3",
+      "jailed": false,
+      "status": 2,
+      "tokens": "8830000",
+      "delegator_shares": "9000000.000000000000000000",
+      "description": {
+        "moniker": "Nodeasy2",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "2020-09-15T06:39:44.781318316Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "1.000000000000000000",
+          "max_change_rate": "0.200000000000000000"
+        },
+        "update_time": "2020-05-11T02:22:09.055388742Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1y6chjqz3qsljmsu59l7u4saa622eqgldh44dzr",
+      "consensus_pubkey": "desmosvalconspub1zcjduepq0pg8nfzr7dastycvnxaaszxgs9wc3yglhyg6uxqved8x7mfzpeaq80kpph",
+      "jailed": false,
+      "status": 2,
+      "tokens": "1000000",
+      "delegator_shares": "1000000.000000000000000000",
+      "description": {
+        "moniker": "pluviam",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-08T18:42:51.282979758Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper198n5lhqxyhgc28aprrkw85hsk87pzeszkpf5cd",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqlhkpvsp6rg2huj6lmpxkm4j3rexxrrl4lz0hdg79k7lz032rnefqtp9c7z",
+      "jailed": false,
+      "status": 2,
+      "tokens": "55000030",
+      "delegator_shares": "55000030.000000000000000000",
+      "description": {
+        "moniker": "mixnetnode",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-06T09:49:55.947849501Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper19dr5rawhhqxrx99lgv87fdc5hrqrx69wy32kss",
+      "consensus_pubkey": "desmosvalconspub1zcjduepq5y2eff5lluvfhceq493xzavx6wgpr25uehckdhnzcgs0gzsezuyqa0tq0k",
+      "jailed": false,
+      "status": 2,
+      "tokens": "5001000000",
+      "delegator_shares": "5001000000.000000000000000000",
+      "description": {
+        "moniker": "FreeFlix Media",
+        "identity": "535BF8D68742ACED",
+        "website": "https://freeflix.media",
+        "security_contact": "",
+        "details": "FreeFlix Media is a network for creators, studios & brands to create, manage, distribute and monetize digital media assets. Developed Cosmic Compass, winner in Best Custom Zone category of Cosmos Game of Zones (GOZ) and run nodes on blockchain networks that share our vision."
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-06T06:45:51.20788078Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper19c6nnp6afxj82ehxtlejyvg6zh58050jcgpdj6",
+      "consensus_pubkey": "desmosvalconspub1zcjduepq48jjh0rskrua4x5sv3u5xcm2rqg4njrgx4n8qzjqq2vf846nq4pqv0ngya",
+      "jailed": false,
+      "status": 2,
+      "tokens": "9000000",
+      "delegator_shares": "9000000.000000000000000000",
+      "description": {
+        "moniker": "staking.blue",
+        "identity": "2C12B61930DF3586",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "1.000000000000000000",
+          "max_change_rate": "1.000000000000000000"
+        },
+        "update_time": "2020-10-06T10:09:48.343979412Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1xzph9c9a6ywz2370fu35xem2a2y5qwpztv2vxe",
+      "consensus_pubkey": "desmosvalconspub1zcjduepq2yrs20mu7tctvu26djhxtfvz9jsv26djzaqzh7jp2aaehmgpcv6q50wecf",
+      "jailed": false,
+      "status": 2,
+      "tokens": "40000000",
+      "delegator_shares": "40000000.000000000000000000",
+      "description": {
+        "moniker": "lorriz1242",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.500000000000000000",
+          "max_change_rate": "0.100000000000000000"
+        },
+        "update_time": "2020-10-06T06:43:59.861409318Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper18qu3zck8866dsdd87w03la3w4anej2e2l73hca",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqadk480emwx7kejhrv3jaa32zt2kgckzd6w5q2570qy8nnqtgl9cs6js6k5",
+      "jailed": false,
+      "status": 2,
+      "tokens": "2650000",
+      "delegator_shares": "3140921.409214092140921407",
+      "description": {
+        "moniker": "CNazar",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "27610",
+      "unbonding_time": "2020-10-28T22:04:33.631130565Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-01-30T12:41:28.075489117Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper18xe54fyz20nh8r3c3fa54szm6ye3nfx8t789sw",
+      "consensus_pubkey": "desmosvalconspub1zcjduepq0hfqen5rvu4a4kttwg8knhx6uu9t9uswj5c346l5yvqr9le239gst3ujz9",
+      "jailed": false,
+      "status": 2,
+      "tokens": "1000000",
+      "delegator_shares": "1000000.000000000000000000",
+      "description": {
+        "moniker": "scraido",
+        "identity": "nevimco",
+        "website": "https://desmos.network",
+        "security_contact": "",
+        "details": "To infinity and beyond!"
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.050000000000000000"
+        },
+        "update_time": "2020-10-06T18:44:51.948296827Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper18jva73gur5nuyzaansgkcy30h204shxpgxs2fz",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqnxa5uxfpuu5tzw5d4uy7xzxtntzyj8nk69m3t92kzmjfpqln5evqysqgyj",
+      "jailed": false,
+      "status": 2,
+      "tokens": "1000000",
+      "delegator_shares": "1000000.000000000000000000",
+      "description": {
+        "moniker": "keeper",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-09T20:16:24.069373748Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1g8jkj6gf2gc9dsdxx8t2vv48t87v4r92wtg4vv",
+      "consensus_pubkey": "desmosvalconspub1zcjduepq8y8zpmej7k82mysrvxr6mx9d5006pymhffqzh8uqxw6xyy86ld0qj7elfq",
+      "jailed": false,
+      "status": 2,
+      "tokens": "9720000",
+      "delegator_shares": "9900000.000000000000000000",
+      "description": {
+        "moniker": "djpcclubb",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "53105",
+      "unbonding_time": "2020-10-30T19:16:19.762976304Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-07T20:46:33.558684426Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1gg62nzuu4396eyk7rchw2tu9qz74vdx6s44pl2",
+      "consensus_pubkey": "desmosvalconspub1zcjduepq68ncsavpwnr32t8qam75g94m57aa2e8zrv8ta0p8uy6un4sgnw0q4d0tzt",
+      "jailed": false,
+      "status": 2,
+      "tokens": "29000000",
+      "delegator_shares": "29000000.000000000000000000",
+      "description": {
+        "moniker": "cows",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-07T13:24:23.200098227Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1fheslw3fpu86ra800g4xys5ql9j402p80ne69j",
+      "consensus_pubkey": "desmosvalconspub1zcjduepq35qplplzxuq4kurmns5eyh75jsmm9up7q22ewvh8w2yt3he72wgscxuhu9",
+      "jailed": false,
+      "status": 2,
+      "tokens": "1101111",
+      "delegator_shares": "1111111.000000000000000000",
+      "description": {
+        "moniker": "stivelix",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "53105",
+      "unbonding_time": "2020-10-30T19:16:19.762976304Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-08T16:45:07.70944371Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1fauvweyt86v8wqnsxpesn6jgzy75k838tuysts",
+      "consensus_pubkey": "desmosvalconspub1zcjduepq7aqqy8vmnjcmf0etp48vv7g7cv7tavcxjrlfjud4270pyx3ntw6s9evf29",
+      "jailed": false,
+      "status": 2,
+      "tokens": "8000000",
+      "delegator_shares": "8000000.000000000000000000",
+      "description": {
+        "moniker": "drummetic",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-08T11:52:23.499493405Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1f7frfxl70lx4f8hjfwm5hreqr04tq0r3wr276d",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqqda8nr6s727a28hnftehz8fwu4nxjcc20qpageg38c4clyssca7s02cj8x",
+      "jailed": false,
+      "status": 2,
+      "tokens": "3270000",
+      "delegator_shares": "3330000.000000000000000000",
+      "description": {
+        "moniker": "hitexmax",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "53105",
+      "unbonding_time": "2020-10-30T19:16:19.762976304Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-07T19:00:42.387744518Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper12lr9zqmk8ucvgjpdphwmth9gnc03zk2fgagsf0",
+      "consensus_pubkey": "desmosvalconspub1zcjduepq3ma6g02tgr2n4xh422zpxc29d0dzdrck5th244dtrlu7548eru6qa8tgtm",
+      "jailed": false,
+      "status": 2,
+      "tokens": "1000000",
+      "delegator_shares": "1000000.000000000000000000",
+      "description": {
+        "moniker": "legion",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-07T17:34:28.234014023Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1txdthvutrrfzzf9htelcnfz655afu4yh0zhrr2",
+      "consensus_pubkey": "desmosvalconspub1zcjduepq4hpam02khlenma5qpdrwnhhtt4m4lqmffka94ates0mw8v20wfaqz9jac0",
+      "jailed": false,
+      "status": 2,
+      "tokens": "5039264988",
+      "delegator_shares": "5243129619.525276478822170349",
+      "description": {
+        "moniker": "KalpaTech",
+        "identity": "B4AD06F0EB355573",
+        "website": "https://kalpatech.co",
+        "security_contact": "",
+        "details": "..."
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "2020-09-20T11:01:40.950105594Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-01-30T22:18:47.920881373Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1vfm94838yltnjn2gpfs68peky6suprqq56wp6x",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqlm7l9254f7erf5mmve9xdswk6n5ug9nsfsa75qmn464sfwvval0q02rv76",
+      "jailed": false,
+      "status": 2,
+      "tokens": "209778087",
+      "delegator_shares": "211897057.575757575757575756",
+      "description": {
+        "moniker": "keyone",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "33315",
+      "unbonding_time": "2020-10-29T06:50:15.901736Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-08T02:14:23.124532935Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1dqcs9cgw2mv696je4579w7ulexyges73rneysl",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqt5pylvv2szsxm5pnycey0pqx57p2tageyac8ks2ndpth5sm5kcaqrf6n82",
+      "jailed": false,
+      "status": 2,
+      "tokens": "5063802845",
+      "delegator_shares": "5114952368.686868686868687330",
+      "description": {
+        "moniker": "blockscape",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "2020-02-06T12:58:41.09453021Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.099900000000000000",
+          "max_rate": "0.399900000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-01-16T10:23:18.881881105Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1dr7e0muwkgyveq6mkq5n9seghzl566x9vwu6e9",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqefrvxpmgpuw2vnh0fld2cfhhmvfxemq3jrzpk52a8u6cmgm0hnqq3qxcq7",
+      "jailed": false,
+      "status": 2,
+      "tokens": "5000000",
+      "delegator_shares": "5000000.000000000000000000",
+      "description": {
+        "moniker": "catgromon",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-07T20:35:14.095366318Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1dfd9jma5r3v44eljuj558g4fhdlqwl65kcz0xe",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqjw3etd9tzv2pyzpxwrz2j07ztlj2955f090mqysz863uc054e78qklwv0h",
+      "jailed": false,
+      "status": 2,
+      "tokens": "250019196",
+      "delegator_shares": "250019196.000000000000000000",
+      "description": {
+        "moniker": "ndsms-vldtr2184-wallet",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-06T22:28:00.218184238Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1w8tud7cefenfgfechut0q3lgeazdwxrmptyhvj",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqq7me0a634zk5e7wdgvch8ycc8sa7fm4haxu3jl0pyrnqm5rmx32swwn2h6",
+      "jailed": false,
+      "status": 2,
+      "tokens": "1000000",
+      "delegator_shares": "1000000.000000000000000000",
+      "description": {
+        "moniker": "outerspace",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-12T17:36:58.648671318Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1wgkeswy784ecs9k6hsm2snzrjrthrn5p3e8e5q",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqnq53sl76qc3vmveuwrn8au80lj657jzxe9e8l0wxaedgkmz0haaqcxm8hr",
+      "jailed": false,
+      "status": 2,
+      "tokens": "11985635",
+      "delegator_shares": "12106702.020202020202020202",
+      "description": {
+        "moniker": "ArmyIDs",
+        "identity": "ABE093F03831CBBA",
+        "website": "armyids.com",
+        "security_contact": "armyids@gmail.com",
+        "details": "ArmyIDs protect the civilization from The Aliens! Support The Armies and secure your assets by staking with ArmyIDs right now!"
+      },
+      "unbonding_height": "721",
+      "unbonding_time": "2020-10-27T07:00:48.234396059Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.099000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-09-23T23:50:34.219815111Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1w592hau25nszfaakhdc8s9qte73ylnpa6n6rqr",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqmt7weeq2e6vkt964eml0m4xwucram6666yuj2hnzwsetq097tsssfwzydc",
+      "jailed": false,
+      "status": 2,
+      "tokens": "209750122",
+      "delegator_shares": "211868810.101010101010101009",
+      "description": {
+        "moniker": "holofun",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "33315",
+      "unbonding_time": "2020-10-29T06:50:15.901736Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-08T02:30:43.295579479Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1wky6jhylrvk34xh7jxuw4h37awzdcltaede0mv",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqq3dg96kw6uvdwc9u0a9gsmhtr2uy8yx0fe3wt6sy47eepuq2f53stxdwgz",
+      "jailed": false,
+      "status": 2,
+      "tokens": "1000000",
+      "delegator_shares": "1000000.000000000000000000",
+      "description": {
+        "moniker": "tormentorum",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-12T16:11:07.188980589Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper108yuzlspx695qqlntk4zvjjm2dvsqhmjjwsj9y",
+      "consensus_pubkey": "desmosvalconspub1zcjduepq6p6n54ds7x74qq0cpl0rt4anpr0ghxvrmr3ykfmnlycc28k40guqffzasm",
+      "jailed": false,
+      "status": 2,
+      "tokens": "209730143",
+      "delegator_shares": "211848629.292929292929292928",
+      "description": {
+        "moniker": "smith",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "33315",
+      "unbonding_time": "2020-10-29T06:50:15.901736Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-08T02:33:33.179750541Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper10wwgne4msvvjdjy5usglzkw6lxlrg886uvh6pq",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqg3487hpmrtwjwnfmf6uyq2r88v55clkxs2n385twslq48djz4ttsuuzvpm",
+      "jailed": false,
+      "status": 2,
+      "tokens": "1000000",
+      "delegator_shares": "1000000.000000000000000000",
+      "description": {
+        "moniker": "latenthero",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-07T12:12:06.057748396Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1sfatga7vxmavqpvzukr9gd8ameshd4jze48k2m",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqfrcs55v7tgpelgnrh3zhwhup46ejd8et8avagj4yndk4yqy46fps22umcd",
+      "jailed": false,
+      "status": 2,
+      "tokens": "209740090",
+      "delegator_shares": "211858676.767676767676767675",
+      "description": {
+        "moniker": "fedorov",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "33315",
+      "unbonding_time": "2020-10-29T06:50:15.901736Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-08T03:13:12.457634328Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1s05pp00ecv44zxey656x89jdjh3p8j2u3zksmv",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqas8l8t4rkv3ud2e9s4j6fujsec9h3q00nec6vv2hjay2nf54usqsvedtyr",
+      "jailed": false,
+      "status": 2,
+      "tokens": "5006930000",
+      "delegator_shares": "5057505050.505050505050505050",
+      "description": {
+        "moniker": "DelegaNetworks",
+        "identity": "1BED7C08416A619F",
+        "website": "https://delega.io",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "2020-09-15T06:39:44.781318316Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.200000000000000000",
+          "max_rate": "0.800000000000000000",
+          "max_change_rate": "0.100000000000000000"
+        },
+        "update_time": "2020-07-14T17:30:09.341635863Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1sscdc90dgwnk456kenk4jst5f5r25dgcg65tc5",
+      "consensus_pubkey": "desmosvalconspub1zcjduepq5aqny0hy59s2e5fnz33hen70apvahqhl4upr0zycr2hygw8xf9hskgjz7x",
+      "jailed": false,
+      "status": 2,
+      "tokens": "19330008",
+      "delegator_shares": "20101018.181818181818181818",
+      "description": {
+        "moniker": "WeStaking",
+        "identity": "DA9C5AD3E308E426",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "2020-06-13T07:33:34.725612851Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "1.000000000000000000",
+          "max_change_rate": "0.100000000000000000"
+        },
+        "update_time": "2020-01-17T07:55:03.22515349Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1sudvw8w25g6r3kqsnscv2vru4c5zn3vuec2nxq",
+      "consensus_pubkey": "desmosvalconspub1zcjduepquv7qnederjpfq4xlxv933t4drm77qtaqkw75ftk0q5rhq4lg2r6qzjrtzu",
+      "jailed": false,
+      "status": 2,
+      "tokens": "1000000",
+      "delegator_shares": "1000000.000000000000000000",
+      "description": {
+        "moniker": "actionkaalib",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-07T19:00:42.387744518Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper13ps23ca526dnwjashmyuw44hd46fznfzudp3h5",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqq4m0fnqknnl3xav8z4r020m2gvx7ht2f9qgn33m4q8t2dytjhx7qygd8zs",
+      "jailed": false,
+      "status": 2,
+      "tokens": "9500000",
+      "delegator_shares": "9500000.000000000000000000",
+      "description": {
+        "moniker": "kerinovabit",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-08T17:11:12.709390292Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper13vsa23jykr659jaupntmgrr602cq98dpqhzw0g",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqv2hdx69xf7j7tz4ymzagkwpew55s5wy322x7j8mpsyr5z3lh6z9qcn3kjv",
+      "jailed": false,
+      "status": 2,
+      "tokens": "447028726",
+      "delegator_shares": "451543976.366781022333037476",
+      "description": {
+        "moniker": "svendvl",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "51188",
+      "unbonding_time": "2020-10-30T15:34:19.580726095Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-08T00:16:58.535604999Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1jwrsx60nuuzw642u7uuhceuhnxgrrl892wc8rx",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqgztfagxazg9p2kz3sshmc4f909pd66cwuhmyhuw6un70hsvmw98sz6yucv",
+      "jailed": false,
+      "status": 2,
+      "tokens": "10070000",
+      "delegator_shares": "10164112.149532710280373831",
+      "description": {
+        "moniker": "retz80",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "721",
+      "unbonding_time": "2020-10-27T07:00:48.234396059Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-08-25T15:38:18.215282189Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1jserun6ma00g9zjyxfekws4ryackqtwsd3vrhm",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqc4922emkpr8l2xtzcmuelw7pr2t5x2m59qa8nnjervsmw3k58lmsgc9fww",
+      "jailed": false,
+      "status": 2,
+      "tokens": "1900000",
+      "delegator_shares": "1900000.000000000000000000",
+      "description": {
+        "moniker": "icohigh[net]",
+        "identity": "D55266E648F3F70B",
+        "website": "https://icohigh.net",
+        "security_contact": "Ducca, Founder @ICOHIGH",
+        "details": "Tracking platform for the highest rate ICOs & IEOs."
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.150000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-07T17:33:41.566770563Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1jh3ywh5kvt2493gc6vek5jgks0505utjdtrr7c",
+      "consensus_pubkey": "desmosvalconspub1zcjduepq4qcm4e9h9fcgdw2yhsyml50j93vdvx09fgrz08v6alcjf8lz2scqrck5nj",
+      "jailed": false,
+      "status": 2,
+      "tokens": "1980000",
+      "delegator_shares": "2000000.000000000000000000",
+      "description": {
+        "moniker": "flukad0s",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "33315",
+      "unbonding_time": "2020-10-29T06:50:15.901736Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-07T16:05:24.176099481Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1nqj3de2rxg385ddfa0jg05ktha4gwkrc83uf4n",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqvzzzuu40sttujj4njpukp7c5790mzq7ck2hqxzv0yqq3jtmavfes5n05ty",
+      "jailed": false,
+      "status": 2,
+      "tokens": "19996047",
+      "delegator_shares": "19996047.000000000000000000",
+      "description": {
+        "moniker": "rewse",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-07T12:44:38.897310075Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1nzns4wgk70rd408ugrnwj6gua4dfjf9vjnwzvz",
+      "consensus_pubkey": "desmosvalconspub1zcjduepq4ecyapv5uc2yxassrvdqhg0hwruxxvw697kp3c7gagcu655wthsspf5nq8",
+      "jailed": false,
+      "status": 2,
+      "tokens": "1000000",
+      "delegator_shares": "1000000.000000000000000000",
+      "description": {
+        "moniker": "nurian",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-08T09:24:09.996615046Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1ny5u0kdycpkx7x4zhdyc0m3n0n795uaaesthuy",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqyuy0pdlkmswrngrrx0tz7t24ktpqe0t64skk2s0q9ymywf44mp8sh0ewjz",
+      "jailed": false,
+      "status": 2,
+      "tokens": "61000000",
+      "delegator_shares": "61000000.000000000000000000",
+      "description": {
+        "moniker": "radiyx",
+        "identity": "D04E43B41846EF79",
+        "website": "-",
+        "security_contact": "",
+        "details": "!"
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-10T10:48:40.803433814Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1nwq3luj3enyydwgxrp6ghpyqsmva0wyjdtlzr8",
+      "consensus_pubkey": "desmosvalconspub1zcjduepq0tryd4lycvc80g4gzf0pshq8y59e53g3s8f9dvwgxl7a7knyprws3v72h2",
+      "jailed": false,
+      "status": 2,
+      "tokens": "9410000",
+      "delegator_shares": "9500000.000000000000000000",
+      "description": {
+        "moniker": "validatorBob",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "33315",
+      "unbonding_time": "2020-10-29T06:50:15.901736Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-07T17:40:00.538758488Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1n0ehss9euptqtuu3nyrvn45ydfy2n2m0h57cwu",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqm3ts6jmrulrv337cqhjtq3k559ze3hs424fglq5rgy5sfxggae8qy2f5ga",
+      "jailed": false,
+      "status": 2,
+      "tokens": "437037133",
+      "delegator_shares": "441451540.281595885522910669",
+      "description": {
+        "moniker": "set31",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "51178",
+      "unbonding_time": "2020-10-30T15:33:14.216598963Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-08T01:07:01.841066465Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1n46ae6mdwjj25zt5wmhuurpf7z6dwmqaej33nt",
+      "consensus_pubkey": "desmosvalconspub1zcjduepq4s56l8ua7zfansd8yl0x9d2hflpzue77swesxadj57s774war3rs69mquv",
+      "jailed": false,
+      "status": 2,
+      "tokens": "209778091",
+      "delegator_shares": "211897061.616161616161616160",
+      "description": {
+        "moniker": "devsdc",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "33315",
+      "unbonding_time": "2020-10-29T06:50:15.901736Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-08T02:10:31.1700068Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper15z3eteqasjn3259t9cu557uvrm9nhlwmkhp97u",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqe2zhhc504jpz53flpda2rnzl22a4at836pf5akdpy5qaxjshhwzsw9865v",
+      "jailed": false,
+      "status": 2,
+      "tokens": "1000000",
+      "delegator_shares": "1000000.000000000000000000",
+      "description": {
+        "moniker": "wlanwerner",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-10T11:16:10.957164901Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper152dp990japftfdvply2pspeg6dxqaj4s4qyqhc",
+      "consensus_pubkey": "desmosvalconspub1zcjduepq9923az5444srax742atav6pchyg6lk2qd0uklm0k5s6xf0hu2s7sawaaut",
+      "jailed": false,
+      "status": 2,
+      "tokens": "5139363933",
+      "delegator_shares": "5296356031.389162584708115589",
+      "description": {
+        "moniker": "Simply Staking",
+        "identity": "F74595D6D5D568A2",
+        "website": "https://simply-vc.com.mt/",
+        "security_contact": "",
+        "details": "Simply Staking runs highly reliable and secure infrastructure in our own datacentre in Malta, built with the aim of supporting the growth of the blockchain ecosystem."
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "2020-09-15T06:39:44.781318316Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-04-30T10:07:27.502991586Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper14q09ww3ue47k7wjc0jynlsq085f7vg5cfqzz5g",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqf6wd4yr206vm0spaats4mj4ux9ggek0anhl0h8gcmjjmww0uxs5qglkfa6",
+      "jailed": false,
+      "status": 2,
+      "tokens": "447111255",
+      "delegator_shares": "451610687.412493612959199162",
+      "description": {
+        "moniker": "zeroblk",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "51246",
+      "unbonding_time": "2020-10-30T15:41:09.19569069Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-08T01:10:12.352785138Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper14dm0zdemeymhayucp7gchuus3k5m344f0p084p",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqx3pvcyvs97a9zaxmq7d3p93c5d77teecrt07kvl8vejsne3pt6fscg3j32",
+      "jailed": false,
+      "status": 2,
+      "tokens": "5001980000",
+      "delegator_shares": "5078022752.780328537904295454",
+      "description": {
+        "moniker": "Minutemen",
+        "identity": "72FA05B22F47EB17",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "721",
+      "unbonding_time": "2020-10-27T07:00:48.234396059Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-04-23T13:33:14.753100008Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper145sw5px7mlp89dqkj6k9lw45xtuv7vclwtfdxa",
+      "consensus_pubkey": "desmosvalconspub1zcjduepq8lxf2s8lxkxxpat2xhvrj8gh5vmvykg3dgt7xp3206k0r6w7ezxsv3sf8u",
+      "jailed": false,
+      "status": 2,
+      "tokens": "1000000",
+      "delegator_shares": "1000000.000000000000000000",
+      "description": {
+        "moniker": "KatrinNode",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-07T00:10:27.415675704Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper14apnwrh2um60dg9z5wq6fvhy38z8hfa3kr4yfm",
+      "consensus_pubkey": "desmosvalconspub1zcjduepq2gmywm9km42n5h3f3fgu6wjpe09jrm6lxdpdqhqsya30t9lxpvjq5yqz0w",
+      "jailed": false,
+      "status": 2,
+      "tokens": "1000000",
+      "delegator_shares": "1000000.000000000000000000",
+      "description": {
+        "moniker": "gp36",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-06T07:29:55.410635636Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper14ljlul9x6wuqd7xh70h03n2d87d7zsxn03yvxk",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqv3kschrx2nslxyyte0mygcmmwdfgcndj0z6tzsqgql78ru3thxjs6vnz3r",
+      "jailed": false,
+      "status": 2,
+      "tokens": "9990000",
+      "delegator_shares": "10090909.090909090909090909",
+      "description": {
+        "moniker": "Stakin",
+        "identity": "83D300CB42D06962",
+        "website": "http://stakin.com/",
+        "security_contact": "",
+        "details": "Your Trusted Crypto Rewards"
+      },
+      "unbonding_height": "721",
+      "unbonding_time": "2020-10-27T07:00:48.234396059Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "1.000000000000000000",
+          "max_change_rate": "1.000000000000000000"
+        },
+        "update_time": "2020-07-10T17:48:34.758812409Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1hfvcp5zw34f8qkqy7plah3ysstee7f7fcm4mry",
+      "consensus_pubkey": "desmosvalconspub1zcjduepq8vlkaas0rx8mtk3av76dah0gg3krwnlysg4sw5csa4p08mn47thqypwt5j",
+      "jailed": false,
+      "status": 2,
+      "tokens": "1000000",
+      "delegator_shares": "1000000.000000000000000000",
+      "description": {
+        "moniker": "pofintof",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-07T23:22:23.341340515Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1h5f3dywec65v9qulxkmcv3e6yujyh3zm0ghhl3",
+      "consensus_pubkey": "desmosvalconspub1zcjduepq5hr305vg72ugg80ss7839ngdxz0wxyas4unte2rvqw0ujsrskfnse7gr6g",
+      "jailed": false,
+      "status": 2,
+      "tokens": "5009630000",
+      "delegator_shares": "5202107995.846313603322949117",
+      "description": {
+        "moniker": "Masternode24",
+        "identity": "7EBA7730A85C865C",
+        "website": "https://masternode24.de",
+        "security_contact": "",
+        "details": "Investieren Sie mit uns in die besten Blockchain Projekte"
+      },
+      "unbonding_height": "50932",
+      "unbonding_time": "2020-10-30T15:04:17.807800813Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "1.000000000000000000",
+          "max_rate": "1.000000000000000000",
+          "max_change_rate": "1.000000000000000000"
+        },
+        "update_time": "2020-01-19T15:30:05.575762778Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1cgzcj0jwja032zx7hgjuxruqdvppex3nnh90mt",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqxc4hw8lq7789dzdvd8g7c9jxn0xsrklxsk80plzmu58dwtcqgzmqzj9jzx",
+      "jailed": false,
+      "status": 2,
+      "tokens": "3900000",
+      "delegator_shares": "4030303.030303030303030303",
+      "description": {
+        "moniker": "ChainodeTech",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "2020-09-15T06:39:44.781318316Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-02-08T21:37:07.16971769Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1c3y623kpys5cw6tuustkca7k89kwy95dmkx4g0",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqpeqmhj9cm2gwg9x8ue9pwseq43qcn9melkrh4etjnzvtpgeftt0q00xhlv",
+      "jailed": false,
+      "status": 2,
+      "tokens": "5008747521",
+      "delegator_shares": "5198150751.196598580571708478",
+      "description": {
+        "moniker": "Virgo Staking",
+        "identity": "72FA05B22F47EB17",
+        "website": "",
+        "security_contact": "",
+        "details": "Virgos are perfectionist at heart and aren’t afraid to improve skills through diligent and consistent practice. We are Virgo"
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "2020-06-29T09:09:58.538009782Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-01-17T09:53:24.606476179Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1c5xxd50l5ckemmd2mxxdkmfyc8lxs0v67y2ut4",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqx4yxs0qh94529ym4n6mx86muqrre7ag9ey2nswsmejznrguaq0qsu8a50c",
+      "jailed": false,
+      "status": 2,
+      "tokens": "209776081",
+      "delegator_shares": "211895031.313131313131313130",
+      "description": {
+        "moniker": "stateb",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "33315",
+      "unbonding_time": "2020-10-29T06:50:15.901736Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-08T02:13:20.896960425Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1c6x3ngzedvqva67nx6ay7vsuw8u79ck07yrejh",
+      "consensus_pubkey": "desmosvalconspub1zcjduepq7hk77mvfczstc4ycee5pgvy76u482jelpwvz0c0qeqa3mecwma7szq4ax0",
+      "jailed": false,
+      "status": 2,
+      "tokens": "19834937",
+      "delegator_shares": "20219147.620860501378280268",
+      "description": {
+        "moniker": "Witval",
+        "identity": "51468B615127273A",
+        "website": "https://www.vitwit.com/",
+        "security_contact": "",
+        "details": "A technology company helping businesses to transform, automate and scale with AI, Blockchain and Cloud Solutions."
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "2020-07-30T11:05:40.970447395Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-01-18T05:19:45.19846513Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper16x3rpt72czpwqedyls4c5yxzps8wgz3u9ta0yt",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqmlme0c7kcwq4tvuu34y2gv03j7qkyhn3qsq8xaxq5pk57996pglq2kdlsk",
+      "jailed": false,
+      "status": 2,
+      "tokens": "1000000",
+      "delegator_shares": "1000000.000000000000000000",
+      "description": {
+        "moniker": "vitaly-stake",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.120000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-07T18:47:43.647978525Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper168yfpd2t8lvfxwu8lcu0ppuh3kl598g50tg2ay",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqtnvuechcxsjtqr3lldl4txvk70cwe78gme3cvw6j2wzsc488vrpsee5pqy",
+      "jailed": false,
+      "status": 2,
+      "tokens": "5013610000",
+      "delegator_shares": "5525653930.933137398971344599",
+      "description": {
+        "moniker": "novy",
+        "identity": "5422BE13389B2B4D",
+        "website": "https://stake.novy.pw",
+        "security_contact": "",
+        "details": "Let's validate this network!"
+      },
+      "unbonding_height": "721",
+      "unbonding_time": "2020-10-27T07:00:48.234396059Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.500000000000000000",
+          "max_rate": "0.900000000000000000",
+          "max_change_rate": "0.100000000000000000"
+        },
+        "update_time": "2020-01-15T16:27:02.66053567Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper168wz6xz6tnzvl2qwee264x0x9sr8yz0v4mf7jq",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqccgymye06prme6umppwazcuuqq32880ndcjfk9qrxk0f9tsxlxyqt03pwy",
+      "jailed": false,
+      "status": 2,
+      "tokens": "119000000",
+      "delegator_shares": "119000000.000000000000000000",
+      "description": {
+        "moniker": "Noderunners",
+        "identity": "593D35D55C525A9E",
+        "website": "http://noderunners.biz",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-07T13:31:01.619566049Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper16fy9dt99s7qpaxdkulqwpu5ky0e23hqn297640",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqlk6ygv7a6r9ar32q7ex3xe6w4ae7k7q7kauq8mus0dwfnc6ea7fsmtte90",
+      "jailed": false,
+      "status": 2,
+      "tokens": "8660000",
+      "delegator_shares": "8900000.000000000000000000",
+      "description": {
+        "moniker": "yun2",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "2020-09-15T06:39:44.781318316Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-05-11T02:30:54.20124801Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper16laaqyrpjacwqkse24m5ndele7ey8ujg0h9h90",
+      "consensus_pubkey": "desmosvalconspub1zcjduepql4tdxy34rsdhcy7yuj2zlnvmu22h73p96k4sl9kewsu3pal59u3s9cft0k",
+      "jailed": false,
+      "status": 2,
+      "tokens": "209730131",
+      "delegator_shares": "211848617.171717171717171716",
+      "description": {
+        "moniker": "ruval",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "33315",
+      "unbonding_time": "2020-10-29T06:50:15.901736Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-08T03:08:48.182726139Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1mdkunkv9nnpkq8s87uzxmrm43zm8azagg96u2f",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqugsx5gppp8fl0735mucy392rjv5ltmzyl3pvvafy2gx8m3xkveaq2nqwhz",
+      "jailed": false,
+      "status": 2,
+      "tokens": "209730124",
+      "delegator_shares": "211848610.101010101010101009",
+      "description": {
+        "moniker": "Vit_2115",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "33315",
+      "unbonding_time": "2020-10-29T06:50:15.901736Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-08T02:34:03.664765293Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1m3cd7hfatvj0ge92yruc5ulwmuapxx5clslp00",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqrdylz0sqs68ymxsu3n7a5aer93rsaflxcw09dkvvthtvt0kp283q2my4yt",
+      "jailed": false,
+      "status": 2,
+      "tokens": "1000000",
+      "delegator_shares": "1000000.000000000000000000",
+      "description": {
+        "moniker": "tokenom",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-07T14:01:33.156453206Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1mjfuwlq8hllvdgtw9gqekfsadpstuk8yznkxd4",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqp07x7drucdp3fkfqk4m0j6y20pxte537nqjjztf8jdl0r9a9c6vsukxqkk",
+      "jailed": false,
+      "status": 2,
+      "tokens": "1000000",
+      "delegator_shares": "1000000.000000000000000000",
+      "description": {
+        "moniker": "Minato Fund",
+        "identity": "D451DD9F8948A133",
+        "website": "https://minatofund.com",
+        "security_contact": "",
+        "details": "Minato Fund - Explore the Potential of Blockchain."
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-07T15:22:57.380841879Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1u0xqasxgl6qkkckd860pt4xjqryxek4y05jwy6",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqwp7r7hk7uwwh2n6pncay3e8d5qs6e4ma45jk5t05k7wx943qa8ksry9sqj",
+      "jailed": false,
+      "status": 2,
+      "tokens": "5038450961",
+      "delegator_shares": "5293409332.004390908188873809",
+      "description": {
+        "moniker": "ITAstakers",
+        "identity": "06E7A073C20F48EA",
+        "website": "https://www.itastakers.com",
+        "security_contact": "",
+        "details": "Italian Community DPos Stakers"
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "2020-10-15T04:33:52.345429564Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-04-29T08:11:27.525628921Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1uj9c9929scde78wu3u5r99wcavf2fzl7aq3y39",
+      "consensus_pubkey": "desmosvalconspub1zcjduepq3sq9937a42k30cs7mxzv4u6l8x97kl0qv4ng4hjjcwanjrvtcf2snjnyhf",
+      "jailed": false,
+      "status": 2,
+      "tokens": "22501000028",
+      "delegator_shares": "22501000028.000000000000000000",
+      "description": {
+        "moniker": "Poseidon",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2019-12-11T04:42:14.03384Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1uj0jfawnrsdwelq5dx2uh3x4tetca3pdask5gg",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqhpu6fgjjpc0da52d874l0x4t50ej59qdyuxvw9k6et48yngy4rnqe4ufxd",
+      "jailed": false,
+      "status": 2,
+      "tokens": "5640000",
+      "delegator_shares": "6000000.000000000000000000",
+      "description": {
+        "moniker": "Cyberili",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "2020-09-17T04:48:12.016761517Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-02-09T09:51:06.952076756Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1u533s9gjw5hm3ngv6k7e2ett554kd7vmkxfxrs",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqfj5jhfxkyn6yzhl3sffhxm7njjx0g2ckena0qtrqzz5ewj06x97smzhs7t",
+      "jailed": false,
+      "status": 2,
+      "tokens": "1000000",
+      "delegator_shares": "1000000.000000000000000000",
+      "description": {
+        "moniker": "boroda",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-07T13:57:42.366666169Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1u7rcahyhsxcaqfggn8ph23sse6gkdhyms9zj4u",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqpresvs97d5f8993v2a6hvkzdc88nyq940q4lhkvrjpnav92naqes6xeyd4",
+      "jailed": false,
+      "status": 2,
+      "tokens": "1000000",
+      "delegator_shares": "1000000.000000000000000000",
+      "description": {
+        "moniker": "negotium",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-12T04:00:45.488927177Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1uls6erjdhmlhlu5xnxnt2gsx4ahayuehafy978",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqzllyn3zpql2h5jklxuvjw5572fqsxkhq0f6ay0cztzm8r9p6mgnqsm08ev",
+      "jailed": false,
+      "status": 2,
+      "tokens": "1000000",
+      "delegator_shares": "1000000.000000000000000000",
+      "description": {
+        "moniker": "Xanax",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-07T20:32:29.508029631Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1agrl3n86m0vt3tglr5r5kx5n42xrd2jpmshelm",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqaxgvxyyf6hnjygks86ddt4na63ut55z4gqsqs2xsjre4umpk0pqq58sczr",
+      "jailed": false,
+      "status": 2,
+      "tokens": "1000000",
+      "delegator_shares": "1000000.000000000000000000",
+      "description": {
+        "moniker": "aynelis",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-07T21:34:00.936334011Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1aj6st5yl6mxz27g7093dk340dl5pv2n43hwv9f",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqwngqhcmcvltndzfagu99twssrrzaxfmpr7kfgtwgjdalncguqveqfe8uf2",
+      "jailed": false,
+      "status": 2,
+      "tokens": "246010040",
+      "delegator_shares": "251000040.000000000000000000",
+      "description": {
+        "moniker": "AlphaStake",
+        "identity": "84ED5D8CE917EC20",
+        "website": "",
+        "security_contact": "",
+        "details": "Simplicity is the key to perfection."
+      },
+      "unbonding_height": "46109",
+      "unbonding_time": "2020-10-30T05:31:45.395445191Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-06T06:53:06.994323907Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1an7n8vdr35d3e4mt8y6rx2r5pez0vm3lmp60hk",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqkklkc7wz20xt6f3saqyd4nx7wvelfs342k8r7t5rzsfdnannhz4splyunl",
+      "jailed": false,
+      "status": 2,
+      "tokens": "10000000",
+      "delegator_shares": "10000000.000000000000000000",
+      "description": {
+        "moniker": "mihbergen",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-06T19:55:53.361669102Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1ammjrjlq662m7a47yu7m77e4a024dv029j0y2s",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqwrm4cavevjv6vd4ej58wu9h5vdza6njfhnjznr8lqjn6lmgjaepqdxg0zl",
+      "jailed": false,
+      "status": 2,
+      "tokens": "209740106",
+      "delegator_shares": "211858692.929292929292929292",
+      "description": {
+        "moniker": "btcmoon",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "33315",
+      "unbonding_time": "2020-10-29T06:50:15.901736Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-08T03:09:19.105028301Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1aa9w8v7txm4d2c8fzjxfd0rdpz3gdv7lmfw2gr",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqgp66v7trnz6xsnmxwtv7vyvku2nwuhj5lk6jyjqrd2rsvrrhfdvqsl5cx0",
+      "jailed": false,
+      "status": 2,
+      "tokens": "209778084",
+      "delegator_shares": "211897054.545454545454545453",
+      "description": {
+        "moniker": "maksd",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "33315",
+      "unbonding_time": "2020-10-29T06:50:15.901736Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-08T02:15:09.899527773Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1aa5atf0mem08fgefhcsu6rc0qd6as2yyn6adlf",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqvmc5r8pdgjscjgndy4gngcxafpfdpwhfaaykqr7z8xnpyt8q0qqsnmrqlx",
+      "jailed": false,
+      "status": 2,
+      "tokens": "1000000",
+      "delegator_shares": "1000000.000000000000000000",
+      "description": {
+        "moniker": "hammerfest",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-06T20:10:44.572634841Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper175magldrmgf4qjnz77vc5xgpd765fsz553l20v",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqve8njzsx4d0kyf2s3c0gyhw6z5pwx0pvcrxvt64xkptr647rlmjqga9kmn",
+      "jailed": false,
+      "status": 2,
+      "tokens": "476931892",
+      "delegator_shares": "481749052.195227639061995526",
+      "description": {
+        "moniker": "comdel",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "51047",
+      "unbonding_time": "2020-10-30T15:17:51.087078625Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-07T22:53:25.173893711Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper17cq432ncs5ym0eedma82y5tkq9lvvqst0tvjl6",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqsmqpsj8t2egd4j3czl32uqvdmfcm65w6g09zw9z6qcgf6klg34fqjf83t4",
+      "jailed": false,
+      "status": 2,
+      "tokens": "1000000",
+      "delegator_shares": "1000000.000000000000000000",
+      "description": {
+        "moniker": "deridar",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-07T23:31:50.673181445Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper17u58ktykjktjm63s80zj0ptygvvxdsysp2x9l4",
+      "consensus_pubkey": "desmosvalconspub1zcjduepq7ypf5p095nn97gkr08fcv5d5vuxlgfyru4xtsq07nqnvqxhl737q7dcv4a",
+      "jailed": false,
+      "status": 2,
+      "tokens": "50000000",
+      "delegator_shares": "50000000.000000000000000000",
+      "description": {
+        "moniker": "Orangeclub",
+        "identity": "10F80CDB310C19FD",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "1970-01-01T00:00:00Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-09-23T13:44:45.932741289Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1lzynvemltcx4kr6m6fc7w4ag8suulntgdl667z",
+      "consensus_pubkey": "desmosvalconspub1zcjduepq095f2ccsuxe0n5cpc370yws6pvafetqlzuqwunemzg302vt6undqjfytpd",
+      "jailed": false,
+      "status": 2,
+      "tokens": "10989990",
+      "delegator_shares": "11101000.000000000000000001",
+      "description": {
+        "moniker": "gabira",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "0",
+      "unbonding_time": "2020-10-14T16:43:38.6236598Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-09-13T15:45:15.081895442Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1l2qlpufjvf8pj0lctazsxx437uq9dy0mrw0gqu",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqecmwvhqnxw4kh7yr808mf57e5csn54pcg36s5kpzksj4auslmdxsxnphq8",
+      "jailed": false,
+      "status": 2,
+      "tokens": "209782059",
+      "delegator_shares": "211901069.696969696969696969",
+      "description": {
+        "moniker": "solstats",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "33315",
+      "unbonding_time": "2020-10-29T06:50:15.901736Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-08T02:03:07.643538531Z"
+      },
+      "min_self_delegation": "1"
+    },
+    {
+      "operator_address": "desmosvaloper1lslgfya9dckc79p7hfllx0xjgq89yn4sjc8map",
+      "consensus_pubkey": "desmosvalconspub1zcjduepqmhvfuuyewvy68map7l3neyzsdjzeh9pmwth0z9huspmgj9ujgjvs40xa4s",
+      "jailed": false,
+      "status": 2,
+      "tokens": "209778077",
+      "delegator_shares": "211897047.474747474747474746",
+      "description": {
+        "moniker": "sadstory",
+        "identity": "",
+        "website": "",
+        "security_contact": "",
+        "details": ""
+      },
+      "unbonding_height": "33315",
+      "unbonding_time": "2020-10-29T06:50:15.901736Z",
+      "commission": {
+        "commission_rates": {
+          "rate": "0.100000000000000000",
+          "max_rate": "0.200000000000000000",
+          "max_change_rate": "0.010000000000000000"
+        },
+        "update_time": "2020-10-08T02:14:44.062289345Z"
+      },
+      "min_self_delegation": "1"
+    }
+  ]
+}

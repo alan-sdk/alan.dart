@@ -1,5 +1,6 @@
 module.exports = {
-    title: "Alan.dart documentation",
+    base: "/alan.dart/",
+    title: "Alan.dart",
     description: "Documentation for the Alan.dart SDK",
     head: [
         ['link', {rel: 'icon', href: '/assets/logo.png'}],
@@ -21,9 +22,7 @@ module.exports = {
         ['meta', {name: "msapplication-TileImage", content: "/ms-icon-144x144.png"}],
         ['meta', {name: "theme-color", content: "#ffffff"}],
         ['meta', {property: "og:title", content: "Alan.dart documentation"}],
-        // ['meta', {property: "og:url", content: "https://docs.desmos.network/"}],
         ['meta', {property: "og:description", content: "Learn how to use the Alan.dart SDK"}],
-        // ['meta', {property: "og:image", content: "https://docs.desmos.network/assets/logo.png"}],
         ['meta', {roperty: "og:type", content: "website"}],
         ['meta', {property: "og:locale", content: "en_US"}],
     ],
@@ -32,10 +31,6 @@ module.exports = {
     },
     plugins: [
         'vuepress-plugin-element-tabs',
-        '@vuepress/google-analytics',
-        // {
-        // 'ga': 'UA-108489905-8' // UA-00000000-0
-        // }
     ],
     themeConfig: {
         repo: "alan-sdk/alan.dart",
@@ -46,11 +41,20 @@ module.exports = {
         lastUpdated: true,
         logo: "/assets/logo.png",
         nav: [
-            // {text: "Website", link: "https://desmos.network", target: "_blank"},
         ],
         sidebarDepth: 2,
         sidebar: [
-            // ["Getting started", "README.md"],
+            ["queries/overview", "Querying the chain"],
+            ["wallet/overview", "Creating a wallet"],
+            ["transactions/overview", "Performing a transaction"],
+            {
+                title:"Supported modules",
+                children: [
+                    ["x/auth", "Auth"],
+                    ["x/bank", "Bank"],
+                    ["x/staking", "Staking"],
+                ]
+            }
         ],
     }
 };

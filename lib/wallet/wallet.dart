@@ -2,7 +2,7 @@ import 'dart:math';
 import 'dart:typed_data';
 
 import 'package:alan/alan.dart';
-import 'package:alan/utils/bech32_encoder.dart';
+import 'package:alan/wallet/bech32_encoder.dart';
 import 'package:asn1lib/asn1lib.dart';
 import 'package:bip32/bip32.dart' as bip32;
 import 'package:bip39/bip39.dart' as bip39;
@@ -11,7 +11,7 @@ import 'package:hex/hex.dart';
 import 'package:meta/meta.dart';
 import 'package:pointycastle/export.dart';
 
-import '../utils/msg_signer.dart';
+import 'msg_signer.dart';
 
 /// Represents a wallet which contains the hex private key, the hex public key
 /// and the hex address.

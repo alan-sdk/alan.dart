@@ -27,10 +27,9 @@ jobs:
           npm install
           npm ci
           npm run docs:build
-          echo 'alan-sdk.dev' > doc/.vuepress/dist/CNAME
 
       - name: Deploy 🚀
-        if: github.ref == 'refs/heads/master'
+        # if: github.ref == 'refs/heads/master'
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
