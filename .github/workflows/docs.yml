@@ -27,7 +27,6 @@ jobs:
           npm install
           npm ci
           npm run docs:build
-          echo 'alan-sdk.dev' > doc/.vuepress/dist/CNAME
 
       - name: Deploy 🚀
         # if: github.ref == 'refs/heads/master'

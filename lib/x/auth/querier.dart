@@ -8,6 +8,10 @@ class AuthQuerier extends QueryHelper {
     @required http.Client httpClient,
   }) : super(httpClient: httpClient);
 
+  factory AuthQuerier.build(http.Client httpClient) {
+    return AuthQuerier(httpClient: httpClient);
+  }
+
   /// Reads the account endpoint and retrieves the details of the account
   /// having the given [address] from it.
   /// If no account with the specified [address] is found, returns `null`

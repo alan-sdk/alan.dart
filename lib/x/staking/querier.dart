@@ -10,6 +10,10 @@ class StakingQuerier extends QueryHelper {
     @required http.Client httpClient,
   }) : super(httpClient: httpClient);
 
+  factory StakingQuerier.build(http.Client httpClient) {
+    return StakingQuerier(httpClient: httpClient);
+  }
+
   /// Returns all validators.
   Future<List<Validator>> getValidators(
     String lcdEndpoint, {
@@ -139,15 +143,15 @@ class StakingQuerier extends QueryHelper {
         .toList();
   }
 
-  /// Returns the validator having the given [validatorOperatorAddress]
+  /// Returns the validator having the given [validatorAddress]
   /// that the delegator having the given [delegatorAddress] is bonded to.
   Future<Validator> getDelegatorValidator(
     String lcdEndpoint,
     String delegatorAddress,
-    String validatorOperatorAddress,
+    String validatorAddress,
   ) async {
     final url =
-        '/staking/delegators/${delegatorAddress}/validators/${validatorOperatorAddress}';
+        '/staking/delegators/${delegatorAddress}/validators/${validatorAddress}';
     final result = await queryChain(lcdEndpoint + url);
     if (!result.isSuccessful) {
       return null;
@@ -159,15 +163,15 @@ class StakingQuerier extends QueryHelper {
 
   /// Returns the delegation between the delegator having the
   /// given [delegatorAddress] and the validator having
-  /// the given [validatorOperatorAddress].
+  /// the given [validatorAddress].
   /// Returns `null` if no delegation could be found.
   Future<Delegation> getDelegationBetweenDelegatorAndValidator(
     String lcdEndpoint,
     String delegatorAddress,
-    String validatorOperatorAddress,
+    String validatorAddress,
   ) async {
     final url =
-        '/staking/delegators/${delegatorAddress}/delegations/${validatorOperatorAddress}';
+        '/staking/delegators/${delegatorAddress}/delegations/${validatorAddress}';
     final result = await queryChain(lcdEndpoint + url);
     if (!result.isSuccessful) {
       return null;
@@ -179,15 +183,15 @@ class StakingQuerier extends QueryHelper {
 
   /// Returns all unbonding delegations between the delegator having
   /// the given [delegatorAddress] and the validator having the
-  /// given [validatorOperatorAddress].
+  /// given [validatorAddress].
   Future<List<UnbondingDelegation>>
       getUnbondingDelegationsBetweenDelegatorAndValidator(
     String lcdEndpoint,
     String delegatorAddress,
-    String validatorOperatorAddress,
+    String validatorAddress,
   ) async {
     final url =
-        '/staking/delegators/${delegatorAddress}/unbonding_delegations/${validatorOperatorAddress}';
+        '/staking/delegators/${delegatorAddress}/unbonding_delegations/${validatorAddress}';
     final result = await queryChain(lcdEndpoint + url);
     if (!result.isSuccessful) {
       return [];
@@ -200,16 +204,16 @@ class StakingQuerier extends QueryHelper {
   }
 
   /// Returns the redelegations based on the given
-  /// [delegatorAddress], [sourceValidatorOperatorAddress] and
-  /// [destinationValidatorOperatorAddress] given.
+  /// [delegatorAddress], [sourceValidatorAddress] and
+  /// [destinationValidatorAddress] given.
   Future<List<Redelegation>> getRedelegations(
     String lcdEndpoint, {
     String delegatorAddress = '',
-    String sourceValidatorOperatorAddress = '',
-    String destinationValidatorOperatorAddress = '',
+    String sourceValidatorAddress = '',
+    String destinationValidatorAddress = '',
   }) async {
     final url =
-        '/staking/redelegations?delegator=${delegatorAddress}&validator_from=${sourceValidatorOperatorAddress}&validator_to=${destinationValidatorOperatorAddress}';
+        '/staking/redelegations?delegator=${delegatorAddress}&validator_from=${sourceValidatorAddress}&validator_to=${destinationValidatorAddress}';
     final result = await queryChain(lcdEndpoint + url);
     if (!result.isSuccessful) {
       return [];
