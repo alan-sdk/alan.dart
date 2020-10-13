@@ -42,7 +42,7 @@ void main() {
 
   group('validate works properly', () {
     test('when everything is valid', () {
-      expect(message.validate(), isException);
+      expect(message.validate(), isNot(isException));
     });
 
     test('when validator address is empty or null', () {

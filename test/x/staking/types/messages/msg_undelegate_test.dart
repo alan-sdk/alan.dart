@@ -26,4 +26,58 @@ void main() {
   );
 
   testMsgJson<MsgUndelegate>(message, json);
+
+  group('validate works properly', () {
+    test('when message is valid', () {
+      expect(message.validate(), isNot(isException));
+    });
+
+    test('when delegator address is empty or null', () {
+      final emptyAddrMsg = MsgUndelegate(
+        delegatorAddress: '',
+        validatorAddress: 'val_addr',
+        amount: StdCoin(denom: 'uatom', amount: '1001059'),
+      );
+      expect(emptyAddrMsg.validate(), isException);
+
+      final nullAddrMsg = MsgUndelegate(
+        delegatorAddress: null,
+        validatorAddress: 'val_addr',
+        amount: StdCoin(denom: 'uatom', amount: '1001059'),
+      );
+      expect(nullAddrMsg.validate(), isException);
+    });
+
+    test('when validator address is empty or null', () {
+      final emptyAddrMsg = MsgUndelegate(
+        delegatorAddress: 'delegator_addr',
+        validatorAddress: '',
+        amount: StdCoin(denom: 'uatom', amount: '1001059'),
+      );
+      expect(emptyAddrMsg.validate(), isException);
+
+      final nullAddrMsg = MsgUndelegate(
+        delegatorAddress: 'delegator_addr',
+        validatorAddress: null,
+        amount: StdCoin(denom: 'uatom', amount: '1001059'),
+      );
+      expect(nullAddrMsg.validate(), isException);
+    });
+
+    test('when amount is negative or null', () {
+      final negativeAmtMsg = MsgUndelegate(
+        delegatorAddress: 'delegator_addr',
+        validatorAddress: 'validator_addr',
+        amount: StdCoin(denom: 'uatom', amount: '-1'),
+      );
+      expect(negativeAmtMsg.validate(), isException);
+
+      final nullAmtMsg = MsgUndelegate(
+        delegatorAddress: 'delegator_addr',
+        validatorAddress: 'validator_addr',
+        amount: StdCoin(denom: 'uatom', amount: null),
+      );
+      expect(nullAmtMsg.validate(), isException);
+    });
+  });
 }
