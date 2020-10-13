@@ -29,4 +29,4 @@ if (result.isSuccessful) {
 ## Modules
 Usually, each module present inside the `lib/x` folder implements its own instance of `QueryHelper` allowing you to easily query the data regarding that module.  
 
-To know more about module-based query helpers, read the [modules documentation](doc/x/overview.md).
+To know more about module-based query helpers, read the single modules documentation.
