@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Auth module | Alan.dart</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    <link rel="icon" href="/alan.dart/assets/logo.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/alan.dart/assets/pwa/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/alan.dart/assets/pwa/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/alan.dart/assets/pwa/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/alan.dart/assets/pwa/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/alan.dart/assets/pwa/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/alan.dart/assets/pwa/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/alan.dart/assets/pwa/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/alan.dart/assets/pwa/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/alan.dart/assets/pwa/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/alan.dart/assets/pwa/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/alan.dart/assets/pwa/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/alan.dart/assets/pwa/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/alan.dart/assets/pwa/favicon-16x16.png">
+    <link rel="manifest" href="/alan.dart/assets/pwa/manifest.json">
+    <meta name="description" content="Documentation for the Alan.dart SDK">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:title" content="Alan.dart documentation">
+    <meta property="og:description" content="Learn how to use the Alan.dart SDK">
+    <meta roperty="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <link rel="preload" href="/alan.dart/assets/css/0.styles.31e143d7.css" as="style"><link rel="preload" href="/alan.dart/assets/js/app.bdf6ca5c.js" as="script"><link rel="preload" href="/alan.dart/assets/js/2.498da0e4.js" as="script"><link rel="preload" href="/alan.dart/assets/js/9.13df27e7.js" as="script"><link rel="prefetch" href="/alan.dart/assets/js/10.5737a3fb.js"><link rel="prefetch" href="/alan.dart/assets/js/11.23ff0aa5.js"><link rel="prefetch" href="/alan.dart/assets/js/3.8a821a56.js"><link rel="prefetch" href="/alan.dart/assets/js/4.5d6834bd.js"><link rel="prefetch" href="/alan.dart/assets/js/5.20309dff.js"><link rel="prefetch" href="/alan.dart/assets/js/6.527e1db6.js"><link rel="prefetch" href="/alan.dart/assets/js/7.bb6cc9e7.js"><link rel="prefetch" href="/alan.dart/assets/js/8.6d655319.js">
+    <link rel="stylesheet" href="/alan.dart/assets/css/0.styles.31e143d7.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/alan.dart/" class="home-link router-link-active"><img src="/alan.dart/assets/logo.png" alt="Alan.dart" class="logo"> <span class="site-name can-hide">Alan.dart</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"> <a href="https://github.com/alan-sdk/alan.dart" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"> <a href="https://github.com/alan-sdk/alan.dart" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><a href="/alan.dart/queries/overview.html" class="sidebar-link">Querying the chain</a></li><li><a href="/alan.dart/wallet/overview.html" class="sidebar-link">Creating a wallet</a></li><li><a href="/alan.dart/transactions/overview.html" class="sidebar-link">Performing a transaction</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Supported modules</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/alan.dart/x/auth.html" aria-current="page" class="active sidebar-link">Auth</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/alan.dart/x/auth.html#supported-queries" class="sidebar-link">Supported queries</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/alan.dart/x/auth.html#account-information" class="sidebar-link">Account information</a></li></ul></li></ul></li><li><a href="/alan.dart/x/bank.html" class="sidebar-link">Bank</a></li><li><a href="/alan.dart/x/staking.html" class="sidebar-link">Staking</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="auth-module"><a href="#auth-module" class="header-anchor">#</a> Auth module</h1> <blockquote><p>The auth module is responsible for specifying the base transaction and account types for an application, since the SDK itself is agnostic to these particulars. It contains the ante handler, where all basic transaction validity checks (signatures, nonces, auxiliary fields) are performed, and exposes the account keeper, which allows other modules to read, write, and modify accounts.</p> <p><a href="https://docs.cosmos.network/v0.40/modules/auth/" target="_blank" rel="noopener noreferrer">Source<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></blockquote> <h2 id="supported-queries"><a href="#supported-queries" class="header-anchor">#</a> Supported queries</h2> <h3 id="account-information"><a href="#account-information" class="header-anchor">#</a> Account information</h3> <div class="language-dart line-numbers-mode"><pre class="language-dart"><code><span class="token keyword">import</span> <span class="token string">&quot;package:http/http.dart&quot;</span> <span class="token operator">as</span> http<span class="token punctuation">;</span> 
+<span class="token keyword">import</span> <span class="token string">&quot;package:alan/alan.dart&quot;</span><span class="token punctuation">;</span> 
+
+<span class="token keyword">final</span> querier <span class="token operator">=</span> AuthQuerier<span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span>http<span class="token punctuation">.</span><span class="token function">Client</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">final</span> account <span class="token operator">=</span> querier<span class="token punctuation">.</span><span class="token function">getAccountData</span><span class="token punctuation">(</span>
+  <span class="token string">&quot;http://localhost:1317&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;cosmos1vv6hruquzpty4xpks9znkw8gys5x4nsnqw9f4k&quot;</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/alan-sdk/alan.dart/edit/master/docs/x/auth.md" target="_blank" rel="noopener noreferrer">Edit this page on Github</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">10/13/2020, 9:00:26 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/alan.dart/transactions/overview.html" class="prev">
+        Performing a transaction
+      </a></span> <span class="next"><a href="/alan.dart/x/bank.html">
+        Bank
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/alan.dart/assets/js/app.bdf6ca5c.js" defer></script><script src="/alan.dart/assets/js/2.498da0e4.js" defer></script><script src="/alan.dart/assets/js/9.13df27e7.js" defer></script>
+  </body>
+</html>
