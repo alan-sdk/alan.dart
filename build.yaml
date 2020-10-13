@@ -18,6 +18,7 @@ targets:
           - test/x/staking/types/messages/msg_delegate_test.dart
           - test/x/staking/types/messages/msg_edit_validator_test.dart
           - test/x/staking/types/messages/msg_undelegate_test.dart
+          - test/x/staking/querier_test.dart
 
           # Txs tests
           - test/x/txs/querier_test.dart

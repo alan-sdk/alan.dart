@@ -24,9 +24,9 @@ class StakingQuerier extends QueryHelper {
       return [];
     }
 
-    final lcdResponse = LcdResponse.fromJson(result.value);
-    return (lcdResponse as List<Map<String, dynamic>>)
-        .map((e) => Validator.fromJson(e))
+    final response = LcdResponse.fromJson(result.value);
+    return (response.result as List)
+        .map((e) => Validator.fromJson(e as Map<String, dynamic>))
         .toList();
   }
 
@@ -58,8 +58,8 @@ class StakingQuerier extends QueryHelper {
     }
 
     final response = LcdResponse.fromJson(result.value);
-    return (response.result as List<Map<String, dynamic>>)
-        .map((e) => Delegation.fromJson(e))
+    return (response.result as List)
+        .map((e) => Delegation.fromJson(e as Map<String, dynamic>))
         .toList();
   }
 
@@ -76,8 +76,8 @@ class StakingQuerier extends QueryHelper {
     }
 
     final response = LcdResponse.fromJson(result.value);
-    return (response.result as List<Map<String, dynamic>>)
-        .map((e) => UnbondingDelegation.fromJson(e))
+    return (response.result as List)
+        .map((e) => UnbondingDelegation.fromJson(e as Map<String, dynamic>))
         .toList();
   }
 
@@ -98,8 +98,8 @@ class StakingQuerier extends QueryHelper {
     }
 
     final lcdResponse = LcdResponse.fromJson(result.value);
-    return (lcdResponse.result as List<Map<String, dynamic>>)
-        .map((e) => Delegation.fromJson(e))
+    return (lcdResponse.result as List)
+        .map((e) => Delegation.fromJson(e as Map<String, dynamic>))
         .toList();
   }
 
@@ -116,8 +116,8 @@ class StakingQuerier extends QueryHelper {
     }
 
     final lcdResponse = LcdResponse.fromJson(result.value);
-    return (lcdResponse.result as List<Map<String, dynamic>>)
-        .map((e) => UnbondingDelegation.fromJson(e))
+    return (lcdResponse.result as List)
+        .map((e) => UnbondingDelegation.fromJson(e as Map<String, dynamic>))
         .toList();
   }
 
@@ -134,8 +134,8 @@ class StakingQuerier extends QueryHelper {
     }
 
     final response = LcdResponse.fromJson(result.value);
-    return (response.result as List<Map<String, dynamic>>)
-        .map((e) => Validator.fromJson(e))
+    return (response.result as List)
+        .map((e) => Validator.fromJson(e as Map<String, dynamic>))
         .toList();
   }
 
@@ -154,14 +154,14 @@ class StakingQuerier extends QueryHelper {
     }
 
     final response = LcdResponse.fromJson(result.value);
-    return Validator.fromJson(response as Map<String, dynamic>);
+    return Validator.fromJson(response.result as Map<String, dynamic>);
   }
 
   /// Returns the delegation between the delegator having the
   /// given [delegatorAddress] and the validator having
   /// the given [validatorOperatorAddress].
   /// Returns `null` if no delegation could be found.
-  Future<Delegation> getDelegationsBetweenDelegatorAndValidator(
+  Future<Delegation> getDelegationBetweenDelegatorAndValidator(
     String lcdEndpoint,
     String delegatorAddress,
     String validatorOperatorAddress,
@@ -194,8 +194,8 @@ class StakingQuerier extends QueryHelper {
     }
 
     final response = LcdResponse.fromJson(result.value);
-    return (response.result as List<Map<String, dynamic>>)
-        .map((e) => UnbondingDelegation.fromJson(e))
+    return (response.result as List)
+        .map((e) => UnbondingDelegation.fromJson(e as Map<String, dynamic>))
         .toList();
   }
 
@@ -216,8 +216,8 @@ class StakingQuerier extends QueryHelper {
     }
 
     final response = LcdResponse.fromJson(result.value);
-    return (response.result as List<Map<String, dynamic>>)
-        .map((e) => Redelegation.fromJson(e))
+    return (response.result as List)
+        .map((e) => Redelegation.fromJson(e as Map<String, dynamic>))
         .toList();
   }
 
