@@ -1,4 +1,5 @@
 module.exports = {
+    base: "/alan.dart/",
     title: "Alan.dart documentation",
     description: "Documentation for the Alan.dart SDK",
     head: [
