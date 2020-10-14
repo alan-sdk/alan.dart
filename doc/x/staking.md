@@ -1,4 +1,4 @@
-# Bank module
+# Staking module
 > The staking module enables Cosmos-SDK based blockchain to support an advanced Proof-of-Stake system. In this system, holders of the native staking token of the chain can become validators and can delegate tokens to validators, ultimately determining the effective validator set for the system.
 > 
 > [Source](https://docs.cosmos.network/v0.40/modules/staking/)
