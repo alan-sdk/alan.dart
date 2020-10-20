@@ -31,7 +31,7 @@ class TxSender {
       final apiUrl = '${wallet.networkInfo.lcdUrl}/txs';
 
       // Build the request body
-      final requestBody = {'tx': stdTx.toJson(), 'mode': mode};
+      final requestBody = {'tx': stdTx.toJson(), 'mode': mode.toJson()};
       final requestBodyJson = jsonEncode(requestBody);
 
       // Get the response
@@ -44,29 +44,13 @@ class TxSender {
 
       // Convert the response
       final responseBody = jsonDecode(response.body) as Map<String, dynamic>;
-      var responseMode = '';
-      if (mode == SendMode.MODE_SYNC) {
-        responseMode = TxResponse.MODE_SYNC;
-      } else if (mode == SendMode.MODE_ASYNC) {
-        responseMode = TxResponse.MODE_ASYNC;
-      } else if (mode == SendMode.MODE_BLOCK) {
-        responseMode = TxResponse.MODE_BLOCK;
-      }
-
-      final json = TxResponse.fromJson(responseBody, responseMode);
-      return _convertResponse(json);
+      final txResponse = TxResponse.fromJson(responseBody, mode);
+      return TransactionResult(
+        response: txResponse,
+        error: null,
+      );
     } catch (exception) {
       return TransactionResult.fromException(exception);
     }
-  }
-
-  /// Converts the given [response] to a [TransactionResult] object.
-  TransactionResult _convertResponse(TxResponse response) {
-    return TransactionResult(
-      raw: response.toJson(),
-      hash: response.hash,
-      success: true,
-      error: null,
-    );
   }
 }

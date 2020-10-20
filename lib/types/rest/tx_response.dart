@@ -12,10 +12,6 @@ part 'tx_response.g.dart';
 @immutable
 @JsonSerializable(explicitToJson: true, createFactory: false)
 abstract class TxResponse extends Equatable {
-  static const MODE_SYNC = 'sync';
-  static const MODE_ASYNC = 'async';
-  static const MODE_BLOCK = 'block';
-
   final String height;
   final String hash;
 
@@ -24,15 +20,15 @@ abstract class TxResponse extends Equatable {
     @required this.hash,
   });
 
-  factory TxResponse.fromJson(Map<String, dynamic> json, String mode) {
+  factory TxResponse.fromJson(Map<String, dynamic> json, SendMode mode) {
     switch (mode) {
-      case TxResponse.MODE_ASYNC:
+      case SendMode.MODE_ASYNC:
         return AsyncTxResponse.fromJson(json);
         break;
-      case TxResponse.MODE_SYNC:
+      case SendMode.MODE_SYNC:
         return SyncTxResponse.fromJson(json);
         break;
-      case TxResponse.MODE_BLOCK:
+      case SendMode.MODE_BLOCK:
         return BlockTxResponse.fromJson(json);
         break;
       default:
@@ -47,6 +43,11 @@ abstract class TxResponse extends Equatable {
   @override
   List<Object> get props {
     return [height, hash];
+  }
+
+  @override
+  String toString() {
+    return jsonEncode(toJson());
   }
 }
 

@@ -10,7 +10,7 @@ void main() {
       final file = File('test_resources/rest/txs/async_tx_successful.json');
       final json = jsonDecode(file.readAsStringSync()) as Map<String, dynamic>;
 
-      final response = TxResponse.fromJson(json, TxResponse.MODE_ASYNC);
+      final response = TxResponse.fromJson(json, SendMode.MODE_ASYNC);
       final expected = AsyncTxResponse(
         height: '0',
         hash:
@@ -24,7 +24,7 @@ void main() {
       final file = File('test_resources/rest/txs/async_tx_error.json');
       final json = jsonDecode(file.readAsStringSync()) as Map<String, dynamic>;
 
-      final response = TxResponse.fromJson(json, TxResponse.MODE_ASYNC);
+      final response = TxResponse.fromJson(json, SendMode.MODE_ASYNC);
       final expected = AsyncTxResponse(
         height: '0',
         hash:
@@ -40,7 +40,7 @@ void main() {
       final file = File('test_resources/rest/txs/sync_tx_successful.json');
       final json = jsonDecode(file.readAsStringSync()) as Map<String, dynamic>;
 
-      final response = TxResponse.fromJson(json, TxResponse.MODE_SYNC);
+      final response = TxResponse.fromJson(json, SendMode.MODE_SYNC);
       final expected = SyncTxResponse(
         height: '0',
         hash:
@@ -55,7 +55,7 @@ void main() {
       final file = File('test_resources/rest/txs/sync_tx_error.json');
       final json = jsonDecode(file.readAsStringSync()) as Map<String, dynamic>;
 
-      final response = TxResponse.fromJson(json, TxResponse.MODE_SYNC);
+      final response = TxResponse.fromJson(json, SendMode.MODE_SYNC);
       final expected = SyncTxResponse(
         height: '0',
         hash:
@@ -76,7 +76,7 @@ void main() {
       final file = File('test_resources/rest/txs/block_tx_successful.json');
       final json = jsonDecode(file.readAsStringSync()) as Map<String, dynamic>;
 
-      final response = TxResponse.fromJson(json, TxResponse.MODE_BLOCK);
+      final response = TxResponse.fromJson(json, SendMode.MODE_BLOCK);
       final expected = BlockTxResponse(
         gasWanted: '200000',
         gasUsed: '47849',
@@ -135,7 +135,7 @@ void main() {
       final file = File('test_resources/rest/txs/block_tx_error.json');
       final json = jsonDecode(file.readAsStringSync()) as Map<String, dynamic>;
 
-      final response = TxResponse.fromJson(json, TxResponse.MODE_BLOCK);
+      final response = TxResponse.fromJson(json, SendMode.MODE_BLOCK);
       final expected = BlockTxResponse(
         gasWanted: '200000',
         gasUsed: '47849',

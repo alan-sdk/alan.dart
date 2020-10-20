@@ -5,6 +5,7 @@ targets:
         generate_for:
           # Generate the reflectable initializer only for the tests we need
           - test/transactions/create/tx_builder_test.dart
+          - test/transactions/send/tx_sender_test.dart
 
           - test/types/rest/transactions_response_test.dart
           - test/types/tx/std_signature_message_test.dart

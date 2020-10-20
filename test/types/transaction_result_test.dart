@@ -8,9 +8,7 @@ void main() {
     );
 
     final expected = TransactionResult(
-      hash: '',
-      success: false,
-      raw: {},
+      response: null,
       error: TransactionError(
         errorCode: -1,
         errorMessage: Exception('This is an exception').toString(),
@@ -20,16 +18,16 @@ void main() {
   });
 
   test('toString works properly', () {
-    final successful = TransactionResult(hash: 'test', success: true, raw: {});
+    final successful = TransactionResult(
+      response: null,
+    );
     expect(
       successful.toString(),
       'TransactionResult { success: true, hash: test, error: null }',
     );
 
     final error = TransactionResult(
-      hash: '',
-      success: false,
-      raw: {},
+      response: null,
       error: TransactionError(
         errorCode: -1,
         errorMessage: Exception('This is an exception').toString(),

@@ -50,8 +50,8 @@ void main() async {
 
   // Check the result
   if (result.success) {
-    print('Tx send successfully. Hash: ${result.hash}');
+    print('Tx send successfully. Response: ${result.response}');
   } else {
-    print('Tx send error: ${result.error.errorMessage}');
+    print('Tx send error: ${result.error}');
   }
 }
