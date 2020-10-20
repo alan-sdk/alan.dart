@@ -21,7 +21,7 @@ class TxSender {
   /// inside the given [wallet].
   /// Returns the hash of the transaction once it has been send, or throws an
   /// exception if an error is risen during the sending.
-  Future<TransactionResult> broadcastStdTx(
+  Future<TxResponse> broadcastStdTx(
     StdTx stdTx,
     Wallet wallet, {
     SendMode mode = SendMode.MODE_SYNC,
@@ -37,20 +37,16 @@ class TxSender {
       // Get the response
       final response = await _httpClient.post(apiUrl, body: requestBodyJson);
       if (response.statusCode != 200) {
-        return TransactionResult.fromException(
+        return ErrorTxResponse(
           'Expected status code 200 but got ${response.statusCode} - ${response.body}',
         );
       }
 
       // Convert the response
       final responseBody = jsonDecode(response.body) as Map<String, dynamic>;
-      final txResponse = TxResponse.fromJson(responseBody, mode);
-      return TransactionResult(
-        response: txResponse,
-        error: null,
-      );
+      return TxResponse.fromJson(responseBody, mode);
     } catch (exception) {
-      return TransactionResult.fromException(exception);
+      return ErrorTxResponse(exception.toString());
     }
   }
 }

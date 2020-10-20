@@ -12,6 +12,7 @@ Map<String, dynamic> _$TxResponseToJson(TxResponse instance) =>
       'hashCode': instance.hashCode,
       'height': instance.height,
       'hash': instance.hash,
+      'isSuccessful': instance.isSuccessful,
       'props': instance.props,
     };
 

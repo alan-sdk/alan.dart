@@ -5,11 +5,14 @@ import 'package:http/http.dart' as http;
 import 'package:mock_web_server/mock_web_server.dart';
 import 'package:test/test.dart';
 
+import 'tx_sender_test.reflectable.dart';
+
 void main() {
   MockWebServer server;
   TxSender sender;
 
   setUpAll(() {
+    initializeReflectable();
     server = MockWebServer();
     server.start();
   });
@@ -48,7 +51,7 @@ void main() {
   ];
 
   test('Signed StdTx is sent properly', () async {
-    final file = File('test_resources/rest/txs/sync_tx_successful.json');
+    final file = File('test_resources/transactions/sync_tx_successful.json');
     server.enqueue(httpCode: 200, body: file.readAsStringSync());
 
     final wallet = Wallet.derive(
@@ -64,6 +67,6 @@ void main() {
     ]);
 
     final result = await sender.broadcastStdTx(stdTx, wallet);
-    expect(result.response, isA<SyncTxResponse>());
+    expect(result, isA<SyncTxResponse>());
   });
 }

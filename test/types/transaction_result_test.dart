@@ -23,7 +23,7 @@ void main() {
     );
     expect(
       successful.toString(),
-      'TransactionResult { success: true, hash: test, error: null }',
+      'TransactionResult { response: null, error: null }',
     );
 
     final error = TransactionResult(
@@ -35,7 +35,7 @@ void main() {
     );
     expect(
       error.toString(),
-      'TransactionResult { success: false, hash: , error: TransactionError { errorCode: -1, errorMessage: Exception: This is an exception } }',
+      'TransactionResult { response: null, error: TransactionError { errorCode: -1, errorMessage: Exception: This is an exception } }',
     );
   });
 }

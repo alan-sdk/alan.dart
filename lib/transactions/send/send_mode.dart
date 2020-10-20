@@ -7,7 +7,7 @@ enum SendMode {
 
 extension SendModeEtx on SendMode {
   String toJson() {
-    switch(this) {
+    switch (this) {
       case SendMode.MODE_SYNC:
         return 'sync';
       case SendMode.MODE_ASYNC:

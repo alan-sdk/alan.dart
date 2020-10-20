@@ -46,12 +46,12 @@ void main() async {
   // --- Sending a transaction
   // -----------------------------------
   final txSender = TxSender.build(httpClient);
-  final result = await txSender.broadcastStdTx(signedStdTx, wallet);
+  final response = await txSender.broadcastStdTx(signedStdTx, wallet);
 
   // Check the result
-  if (result.success) {
-    print('Tx send successfully. Response: ${result.response}');
+  if (response.isSuccessful) {
+    print('Tx sent successfully. Response: ${response}');
   } else {
-    print('Tx send error: ${result.error}');
+    print('Tx errored: ${response}');
   }
 }

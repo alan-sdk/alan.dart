@@ -7,7 +7,7 @@ import 'package:test/test.dart';
 void main() {
   group('Async tx response', () {
     test('successful', () {
-      final file = File('test_resources/rest/txs/async_tx_successful.json');
+      final file = File('test_resources/transactions/async_tx_successful.json');
       final json = jsonDecode(file.readAsStringSync()) as Map<String, dynamic>;
 
       final response = TxResponse.fromJson(json, SendMode.MODE_ASYNC);
@@ -21,7 +21,7 @@ void main() {
     });
 
     test('error', () {
-      final file = File('test_resources/rest/txs/async_tx_error.json');
+      final file = File('test_resources/transactions/async_tx_error.json');
       final json = jsonDecode(file.readAsStringSync()) as Map<String, dynamic>;
 
       final response = TxResponse.fromJson(json, SendMode.MODE_ASYNC);
@@ -30,6 +30,7 @@ void main() {
         hash:
             'CDB9B177570D017E386393C062F87ED238D10880AD76C5DCA1DEC5A57718F080',
       );
+      expect(response.isSuccessful, isTrue);
       expect(response, expected);
       expect(response.toJson(), json);
     });
@@ -37,7 +38,7 @@ void main() {
 
   group('Sync tx response', () {
     test('successful', () {
-      final file = File('test_resources/rest/txs/sync_tx_successful.json');
+      final file = File('test_resources/transactions/sync_tx_successful.json');
       final json = jsonDecode(file.readAsStringSync()) as Map<String, dynamic>;
 
       final response = TxResponse.fromJson(json, SendMode.MODE_SYNC);
@@ -52,7 +53,7 @@ void main() {
     });
 
     test('error', () {
-      final file = File('test_resources/rest/txs/sync_tx_error.json');
+      final file = File('test_resources/transactions/sync_tx_error.json');
       final json = jsonDecode(file.readAsStringSync()) as Map<String, dynamic>;
 
       final response = TxResponse.fromJson(json, SendMode.MODE_SYNC);
@@ -66,6 +67,7 @@ void main() {
               'invalid pubkey: pubKey does not match signer address desmos1tvuu7rf0zakjw79hfnhvd73v5fvznrr8szfcan with signer index: 0',
         ),
       );
+      expect(response.isSuccessful, isFalse);
       expect(response, expected);
       expect(response.toJson(), json);
     });
@@ -73,7 +75,7 @@ void main() {
 
   group('Block tx response', () {
     test('successful', () {
-      final file = File('test_resources/rest/txs/block_tx_successful.json');
+      final file = File('test_resources/transactions/block_tx_successful.json');
       final json = jsonDecode(file.readAsStringSync()) as Map<String, dynamic>;
 
       final response = TxResponse.fromJson(json, SendMode.MODE_BLOCK);
@@ -132,7 +134,7 @@ void main() {
     });
 
     test('error', () {
-      final file = File('test_resources/rest/txs/block_tx_error.json');
+      final file = File('test_resources/transactions/block_tx_error.json');
       final json = jsonDecode(file.readAsStringSync()) as Map<String, dynamic>;
 
       final response = TxResponse.fromJson(json, SendMode.MODE_BLOCK);
@@ -151,6 +153,7 @@ void main() {
               'invalid pubkey: pubKey does not match signer address desmos1tvuu7rf0zakjw79hfnhvd73v5fvznrr8szfcan with signer index: 0',
         ),
       );
+      expect(response.isSuccessful, isFalse);
       expect(response, expected);
       expect(response.toJson(), json);
     });

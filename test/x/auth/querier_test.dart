@@ -22,7 +22,7 @@ void main() {
 
   group('getAccountData', () {
     test('returns correct data properly', () async {
-      final file = File('test_resources/rest/account.json');
+      final file = File('test_resources/x/auth/response_account.json');
       server.enqueue(httpCode: 200, body: file.readAsStringSync());
 
       final result = await helper.getAccountData(
@@ -33,7 +33,7 @@ void main() {
     });
 
     test('returns null with wrong address', () async {
-      final file = File('test_resources/rest/account.json');
+      final file = File('test_resources/x/auth/response_account.json');
       server.enqueue(httpCode: 200, body: file.readAsStringSync());
 
       final result = await helper.getAccountData(server.url, 'address');

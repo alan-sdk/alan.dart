@@ -36,6 +36,9 @@ abstract class TxResponse extends Equatable {
     }
   }
 
+  /// Tells if the request was successful or not
+  bool get isSuccessful;
+
   Map<String, dynamic> toJson() {
     return _$TxResponseToJson(this);
   }
@@ -48,6 +51,19 @@ abstract class TxResponse extends Equatable {
   @override
   String toString() {
     return jsonEncode(toJson());
+  }
+}
+
+/// Represents the response that should be used when something fails due
+/// to an exception.
+class ErrorTxResponse extends TxResponse {
+  final String error;
+
+  ErrorTxResponse(this.error);
+
+  @override
+  bool get isSuccessful {
+    return false;
   }
 }
 
@@ -71,6 +87,12 @@ class AsyncTxResponse extends TxResponse {
 
   factory AsyncTxResponse.fromJson(Map<String, dynamic> json) {
     return _$AsyncTxResponseFromJson(json);
+  }
+
+  /// Async calls are always successful
+  @override
+  bool get isSuccessful {
+    return true;
   }
 
   @override
@@ -110,6 +132,11 @@ class SyncTxResponse extends TxResponse {
       rawLog: json[_RAW_LOG_KEY] as String,
       error: TxResponseError.fromJson(json),
     );
+  }
+
+  @override
+  bool get isSuccessful {
+    return error == null;
   }
 
   @override
@@ -177,6 +204,11 @@ class BlockTxResponse extends TxResponse {
       logs: logs,
       error: TxResponseError.fromJson(json),
     );
+  }
+
+  @override
+  bool get isSuccessful {
+    return error == null;
   }
 
   @override
