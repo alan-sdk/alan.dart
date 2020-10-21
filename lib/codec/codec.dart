@@ -25,6 +25,8 @@ class Codec {
 
     // x/gov
     registerType('cosmos-sdk/MsgSubmitProposal', MsgSubmitProposal);
+    registerType('cosmos-sdk/MsgDeposit', MsgDeposit);
+    registerType('cosmos-sdk/MsgVote', MsgVote);
 
     registerType('cosmos-sdk/TextProposal', TextProposal);
 

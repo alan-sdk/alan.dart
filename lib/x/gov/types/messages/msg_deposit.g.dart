@@ -8,7 +8,7 @@ part of 'msg_deposit.dart';
 
 MsgDeposit _$MsgDepositFromJson(Map<String, dynamic> json) {
   return MsgDeposit(
-    proposalId: json['proposal_id'] as int,
+    proposalId: json['proposal_id'] as String,
     depositor: json['depositor'] as String,
     amount: (json['amount'] as List)
         ?.map((e) =>

@@ -9,7 +9,7 @@ part 'msg_deposit.g.dart';
 @JsonSerializable(explicitToJson: true)
 class MsgDeposit extends StdMsg {
   @JsonKey(name: 'proposal_id')
-  final int proposalId;
+  final String proposalId;
 
   @JsonKey(name: 'depositor')
   final String depositor;
@@ -23,6 +23,10 @@ class MsgDeposit extends StdMsg {
     @required this.amount,
   });
 
+  factory MsgDeposit.fromJson(Map<String, dynamic> json) {
+    return _$MsgDepositFromJson(json);
+  }
+
   @override
   Map<String, dynamic> asJson() {
     return _$MsgDepositToJson(this);
@@ -35,7 +39,11 @@ class MsgDeposit extends StdMsg {
 
   @override
   Exception validate() {
-    if (depositor?.isEmpty != false) {
+    if (proposalId?.isNotEmpty != true) {
+      return Exception('Invalid proposal id');
+    }
+
+    if (depositor?.isNotEmpty != true) {
       return Exception('Depositor address cannot be null of empty');
     }
 

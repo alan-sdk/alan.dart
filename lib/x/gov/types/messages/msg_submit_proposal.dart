@@ -23,6 +23,10 @@ class MsgSubmitProposal extends StdMsg {
     this.proposer,
   });
 
+  factory MsgSubmitProposal.fromJson(Map<String, dynamic> json) {
+    return _$MsgSubmitProposalFromJson(json);
+  }
+
   @override
   Map<String, dynamic> asJson() {
     return _$MsgSubmitProposalToJson(this);
@@ -39,15 +43,15 @@ class MsgSubmitProposal extends StdMsg {
       return Exception('Content cannot be null');
     }
 
-    if (proposer?.isEmpty != false) {
+    if (proposer?.isNotEmpty != true) {
       return Exception('Proposer address cannot be empty');
     }
 
-    if (initialDeposit?.isValid != false) {
+    if (initialDeposit?.isValid != true) {
       return Exception('Initial deposit cannot be empty');
     }
 
-    if (initialDeposit?.isPositive != false) {
+    if (initialDeposit?.isPositive != true) {
       return Exception('Initial deposit cannot be negative');
     }
 

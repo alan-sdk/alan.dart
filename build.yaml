@@ -15,6 +15,11 @@ targets:
           # Bank tests
           - test/x/bank/types/messages/msg_send_test.dart
 
+          # Gov tests
+          - test/x/gov/types/messages/msg_submit_proposal_test.dart
+          - test/x/gov/types/messages/msg_deposit_test.dart
+          - test/x/gov/types/messages/msg_vote_test.dart
+
           # Staking tests
           - test/x/staking/types/messages/msg_begin_redelegate_test.dart
           - test/x/staking/types/messages/msg_create_validator_test.dart

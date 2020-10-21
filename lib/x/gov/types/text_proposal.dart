@@ -6,6 +6,7 @@ part 'text_proposal.g.dart';
 
 /// Defines a standard text proposal whose changes need to be manually
 /// updated in case of approval.
+@reflector
 @JsonSerializable(explicitToJson: true)
 class TextProposal extends ProposalContent {
   @JsonKey(name: 'title')
