@@ -1,3 +1,7 @@
+## Version 0.39.2
+### Changes
+- Implemented the `x/staking` queries and messages support
+
 ## Version 0.39.1
 ### Changes
 - Bug fixes
