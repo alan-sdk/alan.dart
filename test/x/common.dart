@@ -5,11 +5,11 @@ import 'package:test/test.dart';
 void testMsgJson<T>(StdMsg message, Map<String, dynamic> json) =>
     group('Serialization', () {
       test('toJson works properly', () {
-        expect(Codec.serializeMsg(message), json);
+        expect(Codec.serialize(message), json);
       });
 
       test('fromJson works properly', () {
-        final msg = Codec.deserializeMsg(json);
+        final msg = Codec.deserialize(json);
         expect(msg, isA<T>());
 
         final castedMsg = msg as T;

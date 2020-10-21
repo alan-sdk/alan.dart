@@ -41,7 +41,7 @@ class StdCoin extends Equatable {
   }
 
   Exception validate() {
-    final regEx = RegExp(r'^%s$');
+    final regEx = RegExp(r'^[a-z][a-z0-9]{2,15}$');
 
     if (!regEx.hasMatch(denom)) {
       return Exception('invalid denom: $denom');
@@ -52,5 +52,20 @@ class StdCoin extends Equatable {
     }
 
     return null;
+  }
+}
+
+/// Useful method on list of coins.
+extension StdCoinsExt on List<StdCoin> {
+  bool get isValid {
+    return isNotEmpty && !any((element) => !element.isValid);
+  }
+
+  bool get isPositive {
+    if (isEmpty) {
+      return false;
+    }
+
+    return !any((element) => !element.isPositive);
   }
 }
