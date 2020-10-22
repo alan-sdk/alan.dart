@@ -1,0 +1,30 @@
+{
+  "height": "3788753",
+  "result": {
+    "content": {
+      "type": "cosmos-sdk/TextProposal",
+      "value": {
+        "title": "Don't Burn Deposits for Rejected Governance Proposals Unless Vetoed",
+        "description": "Read here, or on https://ipfs.ink/e/QmRtR7qkeaZCpCzHDwHgJeJAZdTrbmHLxFDYXhw7RoF1pp\n\nThe Cosmos Hub's state machine handles spam prevention of governance proposals by means of a deposit system. A governance proposal is only considered eligible for voting by the whole validator set if a certain amount of staking token is deposited on the proposal. The intention is that the deposit will be burned if a proposal is spam or has caused a negative externality to the Cosmos community (such as wasting stakeholders’ time having to review the proposal).\n\nIn the current implementation of the governance module used in the Cosmos Hub, the deposit is burned if a proposal does not pass, regardless of how close the final tally result may have been. For example, if 49% of stake votes in favor of a proposal while 51% votes against it, the deposit will still be burned. This seems to be an undesirable behavior as it disincentivizes anyone from creating or depositing on a proposal that might be slightly contentious but not spam, due to fear of losing the deposit minimum (currently 512 atoms). This will especially be the case as TextProposals will be used for signaling purposes, to gauge the sentiment of staked Atom holders. Disincentivizing proposals for which the outcome is uncertain would undermine that effort.\n\nWe instead propose that the deposit be returned on failed votes, and that the deposit only be burned on vetoed votes. If a proposal seems to be spam or is deemed to have caused a negative externality to Cosmos communninty, voters should vote NoWithVeto on the proposal. If >33% of the stake chooses to Veto a proposal, the deposits will then be burned. However, if a proposal gets rejected without being vetoed, the deposits should be returned to the depositors.  This proposal does not make any change to the current behavior for proposals that fail to meet quorum; if a proposal fails to meet quorum its deposit will be burned."
+      }
+    },
+    "id": "6",
+    "proposal_status": "Passed",
+    "final_tally_result": {
+      "yes": "110522077231139",
+      "abstain": "11773440000",
+      "no": "4000000",
+      "no_with_veto": "0"
+    },
+    "submit_time": "2019-05-03T18:14:33.209053883Z",
+    "deposit_end_time": "2019-05-17T18:14:33.209053883Z",
+    "total_deposit": [
+      {
+        "denom": "uatom",
+        "amount": "516000000"
+      }
+    ],
+    "voting_start_time": "2019-05-03T19:50:58.076569857Z",
+    "voting_end_time": "2019-05-17T19:50:58.076569857Z"
+  }
+}

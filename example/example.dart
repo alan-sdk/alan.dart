@@ -7,7 +7,7 @@ void main() async {
   // -----------------------------------
 
   // MsgType needs to implement StdMsg
-  // Codec.registerMsgType('my/MsgType', MyMsgType);
+  // Codec.registerType('my/MsgType', MyMsgType);
 
   // -----------------------------------
   // --- Creating a wallet
