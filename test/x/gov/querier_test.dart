@@ -169,7 +169,7 @@ void main() {
 
   group('getProposalTallyResult', () {
     test('returns data properly', () async {
-      final file = File('test_resources/x/gov/response_proposal_tallying.json');
+      final file = File('test_resources/x/gov/response_proposal_tally.json');
       server.enqueue(httpCode: 200, body: file.readAsStringSync());
 
       final result = await querier.getProposalTallyResult(server.url, '1');
