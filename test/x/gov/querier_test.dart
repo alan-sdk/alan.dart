@@ -226,7 +226,7 @@ void main() {
       final file = File('test_resources/x/gov/response_params_tallying.json');
       server.enqueue(httpCode: 200, body: file.readAsStringSync());
 
-      final result = await querier.getDepositParams(server.url);
+      final result = await querier.getTallyingParams(server.url);
       expect(
         result,
         equals(TallyingParams(
@@ -240,7 +240,7 @@ void main() {
     test('returns null with failed request', () async {
       server.enqueue(httpCode: 401);
 
-      final result = await querier.getDepositParams(server.url);
+      final result = await querier.getTallyingParams(server.url);
       expect(result, isNull);
     });
   });
