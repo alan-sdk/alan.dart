@@ -25,7 +25,7 @@ class Proposal extends Equatable {
   final ProposalContent content;
 
   @JsonKey(name: 'id')
-  final int proposalId;
+  final String proposalId;
 
   @JsonKey(name: 'proposal_status')
   final ProposalStatus status;

@@ -11,7 +11,7 @@ Proposal _$ProposalFromJson(Map<String, dynamic> json) {
     content: json['content'] == null
         ? null
         : ProposalContent.fromJson(json['content'] as Map<String, dynamic>),
-    proposalId: json['id'] as int,
+    proposalId: json['id'] as String,
     status:
         _$enumDecodeNullable(_$ProposalStatusEnumMap, json['proposal_status']),
     finalTallyResult: json['final_tally_result'] == null

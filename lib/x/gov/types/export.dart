@@ -1,5 +1,6 @@
 export 'deposit.dart';
 export 'messages/export.dart';
+export 'params.dart';
 export 'proposal.dart';
 export 'proposal_content.dart';
 export 'proposer.dart';
