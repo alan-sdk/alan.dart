@@ -41,12 +41,12 @@ void main() {
     });
   });
 
-  group('getProposalById', () {
+  group('getProposal', () {
     test('returns data properly', () async {
       final file = File('test_resources/x/gov/response_proposal.json');
       server.enqueue(httpCode: 200, body: file.readAsStringSync());
 
-      final result = await querier.getProposalById(server.url, '1');
+      final result = await querier.getProposal(server.url, '1');
       expect(result.proposalId, '6');
       expect(result.content, isA<TextProposal>());
     });
@@ -54,7 +54,7 @@ void main() {
     test('returns null with failed request', () async {
       server.enqueue(httpCode: 401);
 
-      final result = await querier.getProposalById(server.url, '2');
+      final result = await querier.getProposal(server.url, '2');
       expect(result, isNull);
     });
   });

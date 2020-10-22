@@ -28,7 +28,7 @@ class GovQuerier extends QueryHelper {
   }
 
   /// Returns the proposal having the given [id], or `null` if nothing is found.
-  Future<Proposal> getProposalById(String lcdEndpoint, String id) async {
+  Future<Proposal> getProposal(String lcdEndpoint, String id) async {
     final url = '/gov/proposals/${id}';
     final result = await queryChain(lcdEndpoint + url);
     if (!result.isSuccessful) {
