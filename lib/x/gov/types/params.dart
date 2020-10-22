@@ -80,7 +80,7 @@ class VotingParams extends Equatable {
   }
 
   Map<String, dynamic> toJson() {
-    return _$TallyingParamsToJson(this);
+    return _$VotingParamsToJson(this);
   }
 
   @override

@@ -6,6 +6,7 @@ import 'package:meta/meta.dart';
 part 'deposit.g.dart';
 
 /// Defines an amount deposited by an account address to an active proposal
+@JsonSerializable(explicitToJson: true)
 class Deposit extends Equatable {
   @JsonKey(name: 'proposal_id')
   final String proposalId;

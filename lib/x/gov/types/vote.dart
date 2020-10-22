@@ -3,7 +3,10 @@ import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:meta/meta.dart';
 
+part 'vote.g.dart';
+
 /// Represents the vote for a proposal
+@JsonSerializable(explicitToJson: true)
 class Vote extends Equatable {
   @JsonKey(name: 'proposal_id')
   final String proposalId;
