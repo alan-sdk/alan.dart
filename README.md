@@ -27,19 +27,20 @@ Please note that those versions of the Alan.dart library will most probably not 
 ## Getting started
 To start using this library inside your project, just edit your `pubspec.yml` file adding the following lines: 
 
-```yml
+```yaml
 dependencies:
-  alan:
-    git:
-      url: git://github.com/alan-sdk/alan.dart.git
+  alan: <version>
 ```
 
-You can even use a specific tag if you want: 
+The latest available version is:  
+![Pub Version](https://img.shields.io/pub/v/alan)
 
-```yml
+You can even use a specific GitHub tag or branch if you want: 
+
+```yaml
 dependencies:
   alan:
     git:
       url: git://github.com/alan-sdk/alan.dart.git
-      ref: tags/v0.38.x
+      ref: <branch or tag>
 ```
