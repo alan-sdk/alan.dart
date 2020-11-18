@@ -40,15 +40,15 @@ module.exports = {
         editLinkText: 'Edit this page on Github',
         lastUpdated: true,
         logo: "/assets/logo.png",
-        nav: [
-        ],
+        nav: [],
         sidebarDepth: 2,
         sidebar: [
-            ["queries/overview", "Querying the chain"],
+            ["setup/overview", "Setting up Alan.dart"],
             ["wallet/overview", "Creating a wallet"],
             ["transactions/overview", "Performing a transaction"],
+            ["queries/overview", "Querying the chain"],
             {
-                title:"Supported modules",
+                title: "Supported modules",
                 children: [
                     ["x/auth", "Auth"],
                     ["x/bank", "Bank"],

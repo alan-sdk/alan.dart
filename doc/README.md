@@ -16,3 +16,9 @@ as well as [Flutter](https://flutter.dev) ones.
 :::tip Note  
 Alan.dart is an evolution of [Sacco.dart](https://github.com/commercionetwork/sacco.dart) which I personally worked on. Due to the fact that Sacco.dart is no longer maintained by Commercio.network and I no longer work there, I decided to start this new project to support future mobile apps development for Cosmos-based chains.  
 :::
+
+## Getting started
+1. [Setup](setup/overview.md)
+2. [Managing a wallet](wallet/overview.md)
+3. [Performing transactions](transactions/overview.md)
+4. [Querying the chain](queries/overview.md)
