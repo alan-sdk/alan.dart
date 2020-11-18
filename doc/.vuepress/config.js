@@ -52,6 +52,7 @@ module.exports = {
                 children: [
                     ["x/auth", "Auth"],
                     ["x/bank", "Bank"],
+                    ["x/gov", "Gov"],
                     ["x/staking", "Staking"],
                 ]
             }

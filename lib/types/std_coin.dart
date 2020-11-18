@@ -54,3 +54,18 @@ class StdCoin extends Equatable {
     return null;
   }
 }
+
+/// Useful method on list of coins.
+extension StdCoinsExt on List<StdCoin> {
+  bool get isValid {
+    return isNotEmpty && !any((element) => !element.isValid);
+  }
+
+  bool get isPositive {
+    if (isEmpty) {
+      return false;
+    }
+
+    return !any((element) => !element.isPositive);
+  }
+}

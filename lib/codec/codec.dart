@@ -1,4 +1,5 @@
 import 'package:alan/alan.dart';
+import 'package:alan/x/gov/types/messages/export.dart';
 import 'package:reflectable/mirrors.dart';
 
 /// Represents the codec that is used to serialize [StdMsg] instances
@@ -13,14 +14,20 @@ class Codec {
   /// Registers the defaults message types.
   static void _init() {
     // x/bank
-    registerMsgType('cosmos-sdk/MsgSend', MsgSend);
+    registerType('cosmos-sdk/MsgSend', MsgSend);
 
     // x/staking
-    registerMsgType('cosmos-sdk/MsgCreateValidator', MsgCreateValidator);
-    registerMsgType('cosmos-sdk/MsgEditValidator', MsgEditValidator);
-    registerMsgType('cosmos-sdk/MsgDelegate', MsgDelegate);
-    registerMsgType('cosmos-sdk/MsgUndelegate', MsgUndelegate);
-    registerMsgType('cosmos-sdk/MsgBeginRedelegate', MsgBeginRedelegate);
+    registerType('cosmos-sdk/MsgCreateValidator', MsgCreateValidator);
+    registerType('cosmos-sdk/MsgEditValidator', MsgEditValidator);
+    registerType('cosmos-sdk/MsgDelegate', MsgDelegate);
+    registerType('cosmos-sdk/MsgUndelegate', MsgUndelegate);
+    registerType('cosmos-sdk/MsgBeginRedelegate', MsgBeginRedelegate);
+
+    // x/gov
+    registerType('cosmos-sdk/MsgSubmitProposal', MsgSubmitProposal);
+    registerType('cosmos-sdk/MsgDeposit', MsgDeposit);
+    registerType('cosmos-sdk/MsgVote', MsgVote);
+    registerType('cosmos-sdk/TextProposal', TextProposal);
 
     _defaultInitialized = true;
   }
@@ -35,23 +42,23 @@ class Codec {
 
   /// Registers the given [msgType] associating it to the specified
   /// [typeString].
-  static void registerMsgType(String typeString, Type msgType) {
+  static void registerType(String typeString, Type msgType) {
     _msgTypes[msgType] = typeString;
   }
 
-  /// Serializes the given [msg] into a [Map].
-  static Map<String, dynamic> serializeMsg(StdMsg msg) {
+  /// Serializes the given [value] into a [Map].
+  static Map<String, dynamic> serialize(Serializable value) {
     _checkInit();
 
-    final type = _msgTypes[msg.runtimeType];
+    final type = _msgTypes[value.runtimeType];
     if (type == null) {
-      throw Exception('{msg.runtimeType} is not registered');
+      throw Exception('${value.runtimeType} is not registered');
     }
 
-    return {_TYPE_KEY: type, _VALUE_KEY: msg.asJson()};
+    return {_TYPE_KEY: type, _VALUE_KEY: value.asJson()};
   }
 
-  static StdMsg deserializeMsg(Map<String, dynamic> json) {
+  static Serializable deserialize(Map<String, dynamic> json) {
     _checkInit();
 
     final typeKey = json[_TYPE_KEY];
@@ -65,6 +72,7 @@ class Codec {
     }
 
     final classMirror = reflector.reflectType(type) as ClassMirror;
-    return classMirror.newInstance('fromJson', [json[_VALUE_KEY]]) as StdMsg;
+    return classMirror.newInstance('fromJson', [json[_VALUE_KEY]])
+        as Serializable;
   }
 }
