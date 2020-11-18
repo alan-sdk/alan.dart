@@ -39,8 +39,8 @@ void main() async {
   // --- Signing a transaction
   // -----------------------------------
   final httpClient = http.Client();
-  final txSigner = TxSigner.build(httpClient);
-  final signedStdTx = await txSigner.signStdTx(stdTx, wallet);
+  final txSigner = TxCreator.build(httpClient);
+  final signedStdTx = await txSigner.generate(stdTx, wallet);
 
   // -----------------------------------
   // --- Sending a transaction

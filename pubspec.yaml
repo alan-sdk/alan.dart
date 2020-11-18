@@ -20,6 +20,7 @@ dependencies:
   json_serializable: ^3.3.0
   meta: ^1.1.8
   pointycastle: ^1.0.2
+  protobuf: ^1.1.0
   reflectable: ^2.2.5
 
 dev_dependencies:
@@ -27,5 +28,6 @@ dev_dependencies:
   mockito: ^4.1.1
   mock_web_server: ^4.1.1
   pedantic: ^1.9.0
+  protobuf: ^1.1.0
   test: ^1.14.7
   test_coverage: ^0.4.2

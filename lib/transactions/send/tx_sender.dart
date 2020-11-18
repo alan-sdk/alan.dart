@@ -22,7 +22,7 @@ class TxSender {
   /// Returns the hash of the transaction once it has been send, or throws an
   /// exception if an error is risen during the sending.
   Future<TxResponse> broadcastStdTx(
-    StdTx stdTx,
+    Tx stdTx,
     Wallet wallet, {
     SendMode mode = SendMode.MODE_SYNC,
   }) async {
@@ -31,7 +31,7 @@ class TxSender {
       final apiUrl = '${wallet.networkInfo.lcdUrl}/txs';
 
       // Build the request body
-      final requestBody = {'tx': stdTx.toJson(), 'mode': mode.toJson()};
+      final requestBody = {'tx': stdTx.writeToJson(), 'mode': mode.toJson()};
       final requestBodyJson = jsonEncode(requestBody);
 
       // Get the response

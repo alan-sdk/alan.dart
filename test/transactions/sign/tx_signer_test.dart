@@ -7,7 +7,7 @@ import 'package:test/test.dart';
 
 void main() {
   MockWebServer server;
-  TxSigner signer;
+  TxCreator signer;
 
   setUpAll(() {
     server = MockWebServer();
@@ -17,7 +17,7 @@ void main() {
   setUp(() {
     // Clean the dispatcher to avoid cross-testing conflicts
     server.dispatcher = null;
-    signer = TxSigner.build(http.Client());
+    signer = TxCreator.build(http.Client());
   });
 
   final mnemonic = [
@@ -84,7 +84,7 @@ void main() {
     expect(wallet.networkInfo, networkInfo);
 
     // Sign the transaction
-    final signedTx = await signer.signStdTx(tx, wallet);
+    final signedTx = await signer.generate(tx, wallet);
     expect(signedTx.signatures.length, 1);
 
     final signature = signedTx.signatures[0];

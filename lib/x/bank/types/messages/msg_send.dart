@@ -22,7 +22,7 @@ class MsgSend extends StdMsg {
 
   /// Coins that will be sent.
   @JsonKey(name: 'amount')
-  final List<StdCoin> amount;
+  final List<Coin> amount;
 
   /// Public constructor.
   MsgSend({
