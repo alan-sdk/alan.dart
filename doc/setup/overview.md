@@ -27,17 +27,14 @@ dependencies:
 In order to be compatible with [Flutter](https://flutter.dev), Alan.dart uses a library called [reflectable](https://pub.dev/packages/reflectable) in order to generate some files. This is due to the fact that Flutter does not support reflection, which needed in some part of the Alan.dart codebase. 
 
 ### 1. Getting `build_runner`
-The first thing that you need to do is to include [build_runner](https://pub.dev/packages/build_runner) inside the `dev_dependencies` section of our `pubspec.yml` file: 
+The first thing that you need to do is to include [build_runner](https://pub.dev/packages/build_runner) inside the `dev_dependencies` section of our `pubspec.yaml` file: 
 
 ```yaml
 dev_dependencies:
-  build_runner: <version>
+  build_runner: ^1.10.0
 ``` 
 
-The last version of `build_runner` currently is  
-![Pub Version](https://img.shields.io/pub/v/build_runner)
-
-Once you added that library to your dependencies, you need to run `pub update` (or `flutter pub update` if you're using Flutter).
+Once you added that library to your dependencies, you need to run `pub get` (or `flutter pub get` if you're using Flutter).
 
 ### 2. Specify the build targets
 The second step to follow is to specify for which file `build_runner` should build the needed `reflectable` implementations.
@@ -46,7 +43,7 @@ Usually, the targets should be:
 - your `main.dart` file
 - all the test files in which you need to use Alan.dart
 
-To specify the files you need to first create a `build.yml` file inside the root folder of your project.
+To specify the files you need to first create a `build.yaml` file inside the root folder of your project.
 
 Then, inside that file you need to add the following: 
 
@@ -74,7 +71,7 @@ pub run build_runner build
 # flutter pub run build_runner build
 ``` 
 
-This will generate a series of `.reflectable.dart` files in the same folders of the targets specified inside the `build.yml` file.
+This will generate a series of `.reflectable.dart` files in the same folders of the targets specified inside the `build.yaml` file.
 
 ### 4. Initialize `reflectable`
 Finally, you need to properly initialize `reflectable` inside the target files. This can be done by: 
@@ -88,11 +85,11 @@ Finally, you need to properly initialize `reflectable` inside the target files. 
 root
   |- lib
   |   |- main.dart   
-  |- pubspec.yml
-  |- build.yml 
+  |- pubspec.yaml
+  |- build.yaml 
 ``` 
 
-### `pubspec.yml`
+### `pubspec.yaml`
 ```yaml
 name: test
 description: Test project
@@ -108,7 +105,7 @@ dev_dependencies:
   build_runner: ^1.10.0
 ```
 
-### `build.yml`
+### `build.yaml`
 ```yaml
 targets:
   $default:
