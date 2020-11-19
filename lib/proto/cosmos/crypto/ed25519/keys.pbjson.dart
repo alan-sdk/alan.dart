@@ -8,14 +8,15 @@
 const PubKey$json = const {
   '1': 'PubKey',
   '2': const [
-    const {'1': 'key', '3': 1, '4': 1, '5': 12, '10': 'key'},
+    const {'1': 'key', '3': 1, '4': 1, '5': 12, '8': const {}, '10': 'key'},
   ],
+  '7': const {},
 };
 
 const PrivKey$json = const {
   '1': 'PrivKey',
   '2': const [
-    const {'1': 'key', '3': 1, '4': 1, '5': 12, '10': 'key'},
+    const {'1': 'key', '3': 1, '4': 1, '5': 12, '8': const {}, '10': 'key'},
   ],
 };
 

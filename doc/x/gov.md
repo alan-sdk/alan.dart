@@ -15,7 +15,7 @@ import "package:alan/alan.dart";
 final message = MsgDeposit(
   proposalId: '20',
   depositor: 'cosmos1wtv0kp6ydt03edd8kyr5arr4f3yc52vp5g7na0',
-  amount: [StdCoin(denom: 'uatom', amount: '1')],
+  amount: [Coin(denom: 'uatom', amount: '1')],
 );
 ```
 
@@ -29,7 +29,7 @@ final message = MsgSubmitProposal(
     description: 'Proposal description',
   ),
   initialDeposit: [
-    StdCoin(denom: 'uatom', amount: '512000000'),
+    Coin(denom: 'uatom', amount: '512000000'),
   ],
   proposer: 'cosmos1grgelyng2v6v3t8z87wu3sxgt9m5s03xvslewd',
 );

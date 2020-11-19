@@ -6,7 +6,7 @@ targets:
           # Generate the reflectable initializer only for the tests we need
           - test/codec/codec_test.dart
 
-          - test/transactions/create/tx_builder_test.dart
+          - test/transactions/builder/tx_builder_test.dart
           - test/transactions/send/tx_sender_test.dart
 
           - test/types/rest/transactions_response_test.dart

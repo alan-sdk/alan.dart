@@ -15,7 +15,7 @@ void main() {
         type: 'cosmos-sdk/Account',
         accountData: CosmosAccount(
           address: 'cosmos1hafptm4zxy5nw8rd2pxyg83c5ls2v62tstzuv2',
-          coins: [StdCoin(denom: 'uatom', amount: '1000')],
+          coins: [Coin(denom: 'uatom', amount: '1000')],
           accountNumber: '10',
           sequence: '3',
         ),
@@ -28,7 +28,7 @@ void main() {
       type: 'cosmos-sdk/Account',
       accountData: CosmosAccount(
         address: 'cosmos1hafptm4zxy5nw8rd2pxyg83c5ls2v62tstzuv2',
-        coins: [StdCoin(denom: 'uatom', amount: '1000')],
+        coins: [Coin(denom: 'uatom', amount: '1000')],
         accountNumber: '10',
         sequence: '3',
       ),

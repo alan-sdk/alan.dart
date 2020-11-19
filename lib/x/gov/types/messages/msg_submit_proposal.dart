@@ -12,7 +12,7 @@ class MsgSubmitProposal extends StdMsg {
   final ProposalContent content;
 
   @JsonKey(name: 'initial_deposit')
-  final List<StdCoin> initialDeposit;
+  final List<Coin> initialDeposit;
 
   @JsonKey(name: 'proposer')
   final String proposer;

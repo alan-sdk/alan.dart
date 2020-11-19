@@ -12,7 +12,7 @@ MsgDeposit _$MsgDepositFromJson(Map<String, dynamic> json) {
     depositor: json['depositor'] as String,
     amount: (json['amount'] as List)
         ?.map((e) =>
-            e == null ? null : StdCoin.fromJson(e as Map<String, dynamic>))
+            e == null ? null : Coin.fromJson(e as Map<String, dynamic>))
         ?.toList(),
   );
 }

@@ -10,7 +10,7 @@ DepositParams _$DepositParamsFromJson(Map<String, dynamic> json) {
   return DepositParams(
     minDeposit: (json['min_deposit'] as List)
         ?.map((e) =>
-            e == null ? null : StdCoin.fromJson(e as Map<String, dynamic>))
+            e == null ? null : Coin.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     maxDepositPeriod: json['max_deposit_period'] as String,
   );

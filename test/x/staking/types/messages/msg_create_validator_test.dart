@@ -27,7 +27,7 @@ void main() {
     validatorAddress: 'desmosvaloper1jwrsx60nuuzw642u7uuhceuhnxgrrl892wc8rx',
     publicKey:
         'desmosvalconspub1zcjduepqgztfagxazg9p2kz3sshmc4f909pd66cwuhmyhuw6un70hsvmw98sz6yucv',
-    value: StdCoin(
+    value: Coin(
       denom: 'udaric',
       amount: '1000000',
     ),
@@ -83,7 +83,7 @@ void main() {
         delegatorAddress: '',
         validatorAddress: 'validator_addr',
         publicKey: 'public_key',
-        value: StdCoin(
+        value: Coin(
           denom: 'udaric',
           amount: '1000000',
         ),
@@ -107,7 +107,7 @@ void main() {
         delegatorAddress: null,
         validatorAddress: 'validator_addr',
         publicKey: 'public_key',
-        value: StdCoin(
+        value: Coin(
           denom: 'udaric',
           amount: '1000000',
         ),
@@ -133,7 +133,7 @@ void main() {
         delegatorAddress: 'delegator_addr',
         validatorAddress: '',
         publicKey: 'public_key',
-        value: StdCoin(
+        value: Coin(
           denom: 'udaric',
           amount: '1000000',
         ),
@@ -157,7 +157,7 @@ void main() {
         delegatorAddress: 'delegator_addr',
         validatorAddress: null,
         publicKey: 'public_key',
-        value: StdCoin(
+        value: Coin(
           denom: 'udaric',
           amount: '1000000',
         ),
@@ -183,7 +183,7 @@ void main() {
         delegatorAddress: 'delegator_addr',
         validatorAddress: 'validator_addr',
         publicKey: '',
-        value: StdCoin(
+        value: Coin(
           denom: 'udaric',
           amount: '1000000',
         ),
@@ -207,7 +207,7 @@ void main() {
         delegatorAddress: 'delegator_addr',
         validatorAddress: 'validator_addr',
         publicKey: null,
-        value: StdCoin(
+        value: Coin(
           denom: 'udaric',
           amount: '1000000',
         ),
@@ -227,7 +227,7 @@ void main() {
         delegatorAddress: 'delegator_addr',
         validatorAddress: 'validator_addr',
         publicKey: 'public_key',
-        value: StdCoin(
+        value: Coin(
           denom: 'udaric',
           amount: '1000000',
         ),
@@ -247,7 +247,7 @@ void main() {
         delegatorAddress: 'delegator_addr',
         validatorAddress: 'validator_addr',
         publicKey: 'public_key',
-        value: StdCoin(
+        value: Coin(
           denom: 'udaric',
           amount: '1000000',
         ),
@@ -267,7 +267,7 @@ void main() {
         delegatorAddress: 'delegator_addr',
         validatorAddress: 'validator_addr',
         publicKey: 'public_key',
-        value: StdCoin(denom: 'udaric', amount: '0'),
+        value: Coin(denom: 'udaric', amount: '0'),
       );
       expect(invalidMsg.validate(), isException);
     });

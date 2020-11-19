@@ -23,14 +23,14 @@ void main() {
         sequence: '3',
         memo: 'This is my chain memo',
         fee: StdFee(
-          amount: [StdCoin(denom: 'uatom', amount: '100')],
+          amount: [Coin(denom: 'uatom', amount: '100')],
           gas: '200000',
         ),
         msgs: [
           MsgSend(
             fromAddress: 'cosmos1dm68mx9jcsyqkyzp3up7gmnu3ku84v8gf6v75u',
             toAddress: 'cosmos1tmm4hujud7frppx23yeky889hka0gn9n689mr9',
-            amount: [StdCoin(denom: 'uatom', amount: '999905338')],
+            amount: [Coin(denom: 'uatom', amount: '999905338')],
           ),
         ],
       ),
@@ -44,14 +44,14 @@ void main() {
       sequence: '3',
       memo: 'This is my chain memo',
       fee: StdFee(
-        amount: [StdCoin(denom: 'uatom', amount: '100')],
+        amount: [Coin(denom: 'uatom', amount: '100')],
         gas: '200000',
       ),
       msgs: [
         MsgSend(
           fromAddress: 'cosmos1dm68mx9jcsyqkyzp3up7gmnu3ku84v8gf6v75u',
           toAddress: 'cosmos1tmm4hujud7frppx23yeky889hka0gn9n689mr9',
-          amount: [StdCoin(denom: 'uatom', amount: '999905338')],
+          amount: [Coin(denom: 'uatom', amount: '999905338')],
         ),
       ],
     );

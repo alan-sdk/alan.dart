@@ -8,6 +8,7 @@
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
+
 import 'package:protobuf/src/protobuf/mixins/well_known.dart' as $mixin;
 
 class Any extends $pb.GeneratedMessage with $mixin.AnyMixin {

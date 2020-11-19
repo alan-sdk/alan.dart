@@ -22,7 +22,7 @@ void main() {
   final message = MsgDelegate(
     delegatorAddress: 'desmos1lzynvemltcx4kr6m6fc7w4ag8suulntgnjjw5s',
     validatorAddress: 'desmosvaloper1lzynvemltcx4kr6m6fc7w4ag8suulntgdl667z',
-    amount: StdCoin(denom: 'udaric', amount: '10000000'),
+    amount: Coin(denom: 'udaric', amount: '10000000'),
   );
 
   testMsgJson<MsgDelegate>(message, json);
@@ -36,14 +36,14 @@ void main() {
       final emptyAddrMsg = MsgDelegate(
         delegatorAddress: '',
         validatorAddress: 'validator_addr',
-        amount: StdCoin(denom: 'udaric', amount: '10000000'),
+        amount: Coin(denom: 'udaric', amount: '10000000'),
       );
       expect(emptyAddrMsg.validate(), isException);
 
       final nullAddrMsg = MsgDelegate(
         delegatorAddress: null,
         validatorAddress: 'validator_addr',
-        amount: StdCoin(denom: 'udaric', amount: '10000000'),
+        amount: Coin(denom: 'udaric', amount: '10000000'),
       );
       expect(nullAddrMsg.validate(), isException);
     });
@@ -52,14 +52,14 @@ void main() {
       final emptyAddrMsg = MsgDelegate(
         delegatorAddress: 'delegator_addr',
         validatorAddress: '',
-        amount: StdCoin(denom: 'udaric', amount: '10000000'),
+        amount: Coin(denom: 'udaric', amount: '10000000'),
       );
       expect(emptyAddrMsg.validate(), isException);
 
       final nullAddrMsg = MsgDelegate(
         delegatorAddress: 'delegator_addr',
         validatorAddress: null,
-        amount: StdCoin(denom: 'udaric', amount: '10000000'),
+        amount: Coin(denom: 'udaric', amount: '10000000'),
       );
       expect(nullAddrMsg.validate(), isException);
     });
@@ -68,14 +68,14 @@ void main() {
       final emptyAmountMsg = MsgDelegate(
         delegatorAddress: 'delegator_addr',
         validatorAddress: 'validator_addr',
-        amount: StdCoin(denom: 'udaric', amount: ''),
+        amount: Coin(denom: 'udaric', amount: ''),
       );
       expect(emptyAmountMsg.validate(), isException);
 
       final nullAmountMsg = MsgDelegate(
         delegatorAddress: 'delegator_addr',
         validatorAddress: 'validator_addr',
-        amount: StdCoin(denom: 'udaric', amount: null),
+        amount: Coin(denom: 'udaric', amount: null),
       );
       expect(nullAmountMsg.validate(), isException);
     });

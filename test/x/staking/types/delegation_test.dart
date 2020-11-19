@@ -12,7 +12,7 @@ void main() {
     delegatorAddress: 'desmos1cgzcj0jwja032zx7hgjuxruqdvppex3nd6dm3e',
     validatorAddress: 'desmosvaloper1cgzcj0jwja032zx7hgjuxruqdvppex3nnh90mt',
     shares: '4030303.030303030303030303',
-    balance: StdCoin(denom: 'udaric', amount: '3900000'),
+    balance: Coin(denom: 'udaric', amount: '3900000'),
   );
 
   test('fromJson works properly', () {

@@ -1,22 +1,25 @@
 import 'package:alan/alan.dart';
+import 'package:grpc/grpc.dart';
 import 'package:http/http.dart' as http;
 import 'package:meta/meta.dart';
 
 /// Allows to query the x/auth module endpoints easily.
-class AuthQuerier extends QueryHelper {
-  AuthQuerier({
-    @required http.Client httpClient,
-  }) : super(httpClient: httpClient);
+class AuthQuerier {
+  final ClientChannel _channel;
 
-  factory AuthQuerier.build(http.Client httpClient) {
-    return AuthQuerier(httpClient: httpClient);
+  AuthQuerier({
+    @required ClientChannel clientChannel,
+  }) : _channel = clientChannel;
+
+  factory AuthQuerier.build(ClientChannel channel) {
+    return AuthQuerier(clientChannel: channel);
   }
 
   /// Reads the account endpoint and retrieves the details of the account
   /// having the given [address] from it.
   /// If no account with the specified [address] is found, returns `null`
   /// instead.
-  Future<CosmosAccount> getAccountData(
+  Future<BaseAccount> getAccountData(
     String lcdEndpoint,
     String address,
   ) async {

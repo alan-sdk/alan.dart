@@ -13,7 +13,7 @@ void main() {
     proposalId: '27',
     depositor: 'cosmos130mdu9a0etmeuw52qfxk73pn0ga6gawkryh2z6',
     amount: [
-      StdCoin(denom: 'uatom', amount: '256000000'),
+      Coin(denom: 'uatom', amount: '256000000'),
     ],
   );
 

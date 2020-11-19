@@ -91,7 +91,7 @@ const ModeInfo_Multi$json = const {
 const Fee$json = const {
   '1': 'Fee',
   '2': const [
-    const {'1': 'amount', '3': 1, '4': 3, '5': 11, '6': '.cosmos.base.v1beta1.Coin', '10': 'amount'},
+    const {'1': 'amount', '3': 1, '4': 3, '5': 11, '6': '.cosmos.base.v1beta1.Coin', '8': const {}, '10': 'amount'},
     const {'1': 'gas_limit', '3': 2, '4': 1, '5': 4, '10': 'gasLimit'},
     const {'1': 'payer', '3': 3, '4': 1, '5': 9, '10': 'payer'},
     const {'1': 'granter', '3': 4, '4': 1, '5': 9, '10': 'granter'},

@@ -22,7 +22,7 @@ Proposal _$ProposalFromJson(Map<String, dynamic> json) {
     depositEndTime: json['deposit_end_time'] as String,
     totalDeposit: (json['total_deposit'] as List)
         ?.map((e) =>
-            e == null ? null : StdCoin.fromJson(e as Map<String, dynamic>))
+            e == null ? null : Coin.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     votingStartTime: json['voting_start_time'] as String,
     votingEndTime: json['voting_end_time'] as String,

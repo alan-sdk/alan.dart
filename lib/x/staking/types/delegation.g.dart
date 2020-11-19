@@ -13,7 +13,7 @@ Delegation _$DelegationFromJson(Map<String, dynamic> json) {
     shares: json['shares'] as String,
     balance: json['balance'] == null
         ? null
-        : StdCoin.fromJson(json['balance'] as Map<String, dynamic>),
+        : Coin.fromJson(json['balance'] as Map<String, dynamic>),
   );
 }
 

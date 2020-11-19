@@ -12,31 +12,27 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../google/protobuf/timestamp.pb.dart' as $0;
-import '../types/types.pb.dart' as $1;
+import '../crypto/keys.pb.dart' as $4;
 import '../crypto/proof.pb.dart' as $2;
 import '../types/params.pb.dart' as $3;
-import '../crypto/keys.pb.dart' as $4;
-
-import 'types.pbenum.dart';
-
-export 'types.pbenum.dart';
+import '../types/types.pb.dart' as $1;xport 'types.pbenum.dart';
 
 enum Request_Value {
-  echo, 
-  flush, 
-  info, 
-  setOption, 
-  initChain, 
-  query, 
-  beginBlock, 
-  checkTx, 
-  deliverTx, 
-  endBlock, 
-  commit, 
-  listSnapshots, 
-  offerSnapshot, 
-  loadSnapshotChunk, 
-  applySnapshotChunk, 
+  echo,
+  flush,
+  info,
+  setOption,
+  initChain,
+  query,
+  beginBlock,
+  checkTx,
+  deliverTx,
+  endBlock,
+  commit,
+  listSnapshots,
+  offerSnapshot,
+  loadSnapshotChunk,
+  applySnapshotChunk,
   notSet
 }
 
@@ -449,7 +445,7 @@ class RequestSetOption extends $pb.GeneratedMessage {
 
 class RequestInitChain extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'RequestInitChain', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'tendermint.abci'), createEmptyInstance: create)
-    ..aOM<$0.Timestamp>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'time', subBuilder: $0.Timestamp.create)
+    ..aOM<$1.Timestamp>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'time', subBuilder: $1.Timestamp.create)
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'chainId')
     ..aOM<ConsensusParams>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'consensusParams', subBuilder: ConsensusParams.create)
     ..pc<ValidatorUpdate>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'validators', $pb.PbFieldType.PM, subBuilder: ValidatorUpdate.create)
@@ -482,15 +478,15 @@ class RequestInitChain extends $pb.GeneratedMessage {
   static RequestInitChain _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.Timestamp get time => $_getN(0);
+  $1.Timestamp get time => $_getN(0);
   @$pb.TagNumber(1)
-  set time($0.Timestamp v) { setField(1, v); }
+  set time($1.Timestamp v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasTime() => $_has(0);
   @$pb.TagNumber(1)
   void clearTime() => clearField(1);
   @$pb.TagNumber(1)
-  $0.Timestamp ensureTime() => $_ensure(0);
+  $1.Timestamp ensureTime() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.String get chainId => $_getSZ(1);
@@ -606,7 +602,7 @@ class RequestQuery extends $pb.GeneratedMessage {
 class RequestBeginBlock extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'RequestBeginBlock', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'tendermint.abci'), createEmptyInstance: create)
     ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'hash', $pb.PbFieldType.OY)
-    ..aOM<$1.Header>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'header', subBuilder: $1.Header.create)
+    ..aOM<$2.Header>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'header', subBuilder: $2.Header.create)
     ..aOM<LastCommitInfo>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'lastCommitInfo', subBuilder: LastCommitInfo.create)
     ..pc<Evidence>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'byzantineValidators', $pb.PbFieldType.PM, subBuilder: Evidence.create)
     ..hasRequiredFields = false
@@ -645,15 +641,15 @@ class RequestBeginBlock extends $pb.GeneratedMessage {
   void clearHash() => clearField(1);
 
   @$pb.TagNumber(2)
-  $1.Header get header => $_getN(1);
+  $2.Header get header => $_getN(1);
   @$pb.TagNumber(2)
-  set header($1.Header v) { setField(2, v); }
+  set header($2.Header v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasHeader() => $_has(1);
   @$pb.TagNumber(2)
   void clearHeader() => clearField(2);
   @$pb.TagNumber(2)
-  $1.Header ensureHeader() => $_ensure(1);
+  $2.Header ensureHeader() => $_ensure(1);
 
   @$pb.TagNumber(3)
   LastCommitInfo get lastCommitInfo => $_getN(2);
@@ -1025,22 +1021,22 @@ class RequestApplySnapshotChunk extends $pb.GeneratedMessage {
 }
 
 enum Response_Value {
-  exception, 
-  echo, 
-  flush, 
-  info, 
-  setOption, 
-  initChain, 
-  query, 
-  beginBlock, 
-  checkTx, 
-  deliverTx, 
-  endBlock, 
-  commit, 
-  listSnapshots, 
-  offerSnapshot, 
-  loadSnapshotChunk, 
-  applySnapshotChunk, 
+  exception,
+  echo,
+  flush,
+  info,
+  setOption,
+  initChain,
+  query,
+  beginBlock,
+  checkTx,
+  deliverTx,
+  endBlock,
+  commit,
+  listSnapshots,
+  offerSnapshot,
+  loadSnapshotChunk,
+  applySnapshotChunk,
   notSet
 }
 
@@ -1596,7 +1592,7 @@ class ResponseQuery extends $pb.GeneratedMessage {
     ..aInt64(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'index')
     ..a<$core.List<$core.int>>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'key', $pb.PbFieldType.OY)
     ..a<$core.List<$core.int>>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'value', $pb.PbFieldType.OY)
-    ..aOM<$2.ProofOps>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'proofOps', subBuilder: $2.ProofOps.create)
+    ..aOM<$3.ProofOps>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'proofOps', subBuilder: $3.ProofOps.create)
     ..aInt64(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'height')
     ..aOS(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'codespace')
     ..hasRequiredFields = false
@@ -1680,15 +1676,15 @@ class ResponseQuery extends $pb.GeneratedMessage {
   void clearValue() => clearField(7);
 
   @$pb.TagNumber(8)
-  $2.ProofOps get proofOps => $_getN(6);
+  $3.ProofOps get proofOps => $_getN(6);
   @$pb.TagNumber(8)
-  set proofOps($2.ProofOps v) { setField(8, v); }
+  set proofOps($3.ProofOps v) { setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasProofOps() => $_has(6);
   @$pb.TagNumber(8)
   void clearProofOps() => clearField(8);
   @$pb.TagNumber(8)
-  $2.ProofOps ensureProofOps() => $_ensure(6);
+  $3.ProofOps ensureProofOps() => $_ensure(6);
 
   @$pb.TagNumber(9)
   $fixnum.Int64 get height => $_getI64(7);
@@ -2207,9 +2203,9 @@ class ResponseApplySnapshotChunk extends $pb.GeneratedMessage {
 class ConsensusParams extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ConsensusParams', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'tendermint.abci'), createEmptyInstance: create)
     ..aOM<BlockParams>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'block', subBuilder: BlockParams.create)
-    ..aOM<$3.EvidenceParams>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'evidence', subBuilder: $3.EvidenceParams.create)
-    ..aOM<$3.ValidatorParams>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'validator', subBuilder: $3.ValidatorParams.create)
-    ..aOM<$3.VersionParams>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'version', subBuilder: $3.VersionParams.create)
+    ..aOM<$4.EvidenceParams>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'evidence', subBuilder: $4.EvidenceParams.create)
+    ..aOM<$4.ValidatorParams>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'validator', subBuilder: $4.ValidatorParams.create)
+    ..aOM<$4.VersionParams>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'version', subBuilder: $4.VersionParams.create)
     ..hasRequiredFields = false
   ;
 
@@ -2248,37 +2244,37 @@ class ConsensusParams extends $pb.GeneratedMessage {
   BlockParams ensureBlock() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $3.EvidenceParams get evidence => $_getN(1);
+  $4.EvidenceParams get evidence => $_getN(1);
   @$pb.TagNumber(2)
-  set evidence($3.EvidenceParams v) { setField(2, v); }
+  set evidence($4.EvidenceParams v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasEvidence() => $_has(1);
   @$pb.TagNumber(2)
   void clearEvidence() => clearField(2);
   @$pb.TagNumber(2)
-  $3.EvidenceParams ensureEvidence() => $_ensure(1);
+  $4.EvidenceParams ensureEvidence() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $3.ValidatorParams get validator => $_getN(2);
+  $4.ValidatorParams get validator => $_getN(2);
   @$pb.TagNumber(3)
-  set validator($3.ValidatorParams v) { setField(3, v); }
+  set validator($4.ValidatorParams v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasValidator() => $_has(2);
   @$pb.TagNumber(3)
   void clearValidator() => clearField(3);
   @$pb.TagNumber(3)
-  $3.ValidatorParams ensureValidator() => $_ensure(2);
+  $4.ValidatorParams ensureValidator() => $_ensure(2);
 
   @$pb.TagNumber(4)
-  $3.VersionParams get version => $_getN(3);
+  $4.VersionParams get version => $_getN(3);
   @$pb.TagNumber(4)
-  set version($3.VersionParams v) { setField(4, v); }
+  set version($4.VersionParams v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasVersion() => $_has(3);
   @$pb.TagNumber(4)
   void clearVersion() => clearField(4);
   @$pb.TagNumber(4)
-  $3.VersionParams ensureVersion() => $_ensure(3);
+  $4.VersionParams ensureVersion() => $_ensure(3);
 }
 
 class BlockParams extends $pb.GeneratedMessage {
@@ -2597,7 +2593,7 @@ class Validator extends $pb.GeneratedMessage {
 
 class ValidatorUpdate extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ValidatorUpdate', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'tendermint.abci'), createEmptyInstance: create)
-    ..aOM<$4.PublicKey>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pubKey', subBuilder: $4.PublicKey.create)
+    ..aOM<$5.PublicKey>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pubKey', subBuilder: $5.PublicKey.create)
     ..aInt64(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'power')
     ..hasRequiredFields = false
   ;
@@ -2626,15 +2622,15 @@ class ValidatorUpdate extends $pb.GeneratedMessage {
   static ValidatorUpdate _defaultInstance;
 
   @$pb.TagNumber(1)
-  $4.PublicKey get pubKey => $_getN(0);
+  $5.PublicKey get pubKey => $_getN(0);
   @$pb.TagNumber(1)
-  set pubKey($4.PublicKey v) { setField(1, v); }
+  set pubKey($5.PublicKey v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPubKey() => $_has(0);
   @$pb.TagNumber(1)
   void clearPubKey() => clearField(1);
   @$pb.TagNumber(1)
-  $4.PublicKey ensurePubKey() => $_ensure(0);
+  $5.PublicKey ensurePubKey() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get power => $_getI64(1);
@@ -2702,7 +2698,7 @@ class Evidence extends $pb.GeneratedMessage {
     ..e<EvidenceType>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type', $pb.PbFieldType.OE, defaultOrMaker: EvidenceType.UNKNOWN, valueOf: EvidenceType.valueOf, enumValues: EvidenceType.values)
     ..aOM<Validator>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'validator', subBuilder: Validator.create)
     ..aInt64(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'height')
-    ..aOM<$0.Timestamp>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'time', subBuilder: $0.Timestamp.create)
+    ..aOM<$1.Timestamp>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'time', subBuilder: $1.Timestamp.create)
     ..aInt64(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'totalVotingPower')
     ..hasRequiredFields = false
   ;
@@ -2760,15 +2756,15 @@ class Evidence extends $pb.GeneratedMessage {
   void clearHeight() => clearField(3);
 
   @$pb.TagNumber(4)
-  $0.Timestamp get time => $_getN(3);
+  $1.Timestamp get time => $_getN(3);
   @$pb.TagNumber(4)
-  set time($0.Timestamp v) { setField(4, v); }
+  set time($1.Timestamp v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasTime() => $_has(3);
   @$pb.TagNumber(4)
   void clearTime() => clearField(4);
   @$pb.TagNumber(4)
-  $0.Timestamp ensureTime() => $_ensure(3);
+  $1.Timestamp ensureTime() => $_ensure(3);
 
   @$pb.TagNumber(5)
   $fixnum.Int64 get totalVotingPower => $_getI64(4);
@@ -2857,71 +2853,5 @@ class Snapshot extends $pb.GeneratedMessage {
   $core.bool hasMetadata() => $_has(4);
   @$pb.TagNumber(5)
   void clearMetadata() => clearField(5);
-}
-
-class ABCIApplicationApi {
-  $pb.RpcClient _client;
-  ABCIApplicationApi(this._client);
-
-  $async.Future<ResponseEcho> echo($pb.ClientContext ctx, RequestEcho request) {
-    var emptyResponse = ResponseEcho();
-    return _client.invoke<ResponseEcho>(ctx, 'ABCIApplication', 'Echo', request, emptyResponse);
-  }
-  $async.Future<ResponseFlush> flush($pb.ClientContext ctx, RequestFlush request) {
-    var emptyResponse = ResponseFlush();
-    return _client.invoke<ResponseFlush>(ctx, 'ABCIApplication', 'Flush', request, emptyResponse);
-  }
-  $async.Future<ResponseInfo> info($pb.ClientContext ctx, RequestInfo request) {
-    var emptyResponse = ResponseInfo();
-    return _client.invoke<ResponseInfo>(ctx, 'ABCIApplication', 'Info', request, emptyResponse);
-  }
-  $async.Future<ResponseSetOption> setOption($pb.ClientContext ctx, RequestSetOption request) {
-    var emptyResponse = ResponseSetOption();
-    return _client.invoke<ResponseSetOption>(ctx, 'ABCIApplication', 'SetOption', request, emptyResponse);
-  }
-  $async.Future<ResponseDeliverTx> deliverTx($pb.ClientContext ctx, RequestDeliverTx request) {
-    var emptyResponse = ResponseDeliverTx();
-    return _client.invoke<ResponseDeliverTx>(ctx, 'ABCIApplication', 'DeliverTx', request, emptyResponse);
-  }
-  $async.Future<ResponseCheckTx> checkTx($pb.ClientContext ctx, RequestCheckTx request) {
-    var emptyResponse = ResponseCheckTx();
-    return _client.invoke<ResponseCheckTx>(ctx, 'ABCIApplication', 'CheckTx', request, emptyResponse);
-  }
-  $async.Future<ResponseQuery> query($pb.ClientContext ctx, RequestQuery request) {
-    var emptyResponse = ResponseQuery();
-    return _client.invoke<ResponseQuery>(ctx, 'ABCIApplication', 'Query', request, emptyResponse);
-  }
-  $async.Future<ResponseCommit> commit($pb.ClientContext ctx, RequestCommit request) {
-    var emptyResponse = ResponseCommit();
-    return _client.invoke<ResponseCommit>(ctx, 'ABCIApplication', 'Commit', request, emptyResponse);
-  }
-  $async.Future<ResponseInitChain> initChain($pb.ClientContext ctx, RequestInitChain request) {
-    var emptyResponse = ResponseInitChain();
-    return _client.invoke<ResponseInitChain>(ctx, 'ABCIApplication', 'InitChain', request, emptyResponse);
-  }
-  $async.Future<ResponseBeginBlock> beginBlock($pb.ClientContext ctx, RequestBeginBlock request) {
-    var emptyResponse = ResponseBeginBlock();
-    return _client.invoke<ResponseBeginBlock>(ctx, 'ABCIApplication', 'BeginBlock', request, emptyResponse);
-  }
-  $async.Future<ResponseEndBlock> endBlock($pb.ClientContext ctx, RequestEndBlock request) {
-    var emptyResponse = ResponseEndBlock();
-    return _client.invoke<ResponseEndBlock>(ctx, 'ABCIApplication', 'EndBlock', request, emptyResponse);
-  }
-  $async.Future<ResponseListSnapshots> listSnapshots($pb.ClientContext ctx, RequestListSnapshots request) {
-    var emptyResponse = ResponseListSnapshots();
-    return _client.invoke<ResponseListSnapshots>(ctx, 'ABCIApplication', 'ListSnapshots', request, emptyResponse);
-  }
-  $async.Future<ResponseOfferSnapshot> offerSnapshot($pb.ClientContext ctx, RequestOfferSnapshot request) {
-    var emptyResponse = ResponseOfferSnapshot();
-    return _client.invoke<ResponseOfferSnapshot>(ctx, 'ABCIApplication', 'OfferSnapshot', request, emptyResponse);
-  }
-  $async.Future<ResponseLoadSnapshotChunk> loadSnapshotChunk($pb.ClientContext ctx, RequestLoadSnapshotChunk request) {
-    var emptyResponse = ResponseLoadSnapshotChunk();
-    return _client.invoke<ResponseLoadSnapshotChunk>(ctx, 'ABCIApplication', 'LoadSnapshotChunk', request, emptyResponse);
-  }
-  $async.Future<ResponseApplySnapshotChunk> applySnapshotChunk($pb.ClientContext ctx, RequestApplySnapshotChunk request) {
-    var emptyResponse = ResponseApplySnapshotChunk();
-    return _client.invoke<ResponseApplySnapshotChunk>(ctx, 'ABCIApplication', 'ApplySnapshotChunk', request, emptyResponse);
-  }
 }
 

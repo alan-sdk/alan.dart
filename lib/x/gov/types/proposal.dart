@@ -40,7 +40,7 @@ class Proposal extends Equatable {
   final String depositEndTime;
 
   @JsonKey(name: 'total_deposit')
-  final List<StdCoin> totalDeposit;
+  final List<Coin> totalDeposit;
 
   @JsonKey(name: 'voting_start_time')
   final String votingStartTime;

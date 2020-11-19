@@ -27,7 +27,7 @@ class MsgCreateValidator extends StdMsg {
   final String publicKey;
 
   @JsonKey(name: 'value')
-  final StdCoin value;
+  final Coin value;
 
   MsgCreateValidator({
     @required this.description,

@@ -11,8 +11,6 @@ import 'package:hex/hex.dart';
 import 'package:meta/meta.dart';
 import 'package:pointycastle/export.dart';
 
-import 'msg_signer.dart';
-
 /// Represents a wallet which contains the hex private key, the hex public key
 /// and the hex address.
 /// In order to create one properly, the [Wallet.derive] method should always
@@ -141,31 +139,20 @@ class Wallet extends Equatable {
     return ECPublicKey(curvePoint, ECCurve_secp256k1());
   }
 
-  /// Signs the given [data] using the associated [privateKey] and encodes
-  /// the signature bytes to be included inside a transaction.
-  Uint8List signTxData(Uint8List data) {
-    final hash = SHA256Digest().process(data);
-    return MessageSigner.deriveFrom(hash, _ecPrivateKey, ecPublicKey);
-  }
-
-  /// Generates a SecureRandom
-  static SecureRandom _getSecureRandom() {
+  /// Signs the given [data] using the private key associated with this wallet,
+  /// returning the signature bytes ASN.1 DER encoded.
+  Uint8List sign(Uint8List data) {
     final secureRandom = FortunaRandom();
     final random = Random.secure();
     final seed = List<int>.generate(32, (_) => random.nextInt(256));
     secureRandom.seed(KeyParameter(Uint8List.fromList(seed)));
-    return secureRandom;
-  }
 
-  /// Signs the given [data] using the private key associated with this wallet,
-  /// returning the signature bytes ASN.1 DER encoded.
-  Uint8List sign(Uint8List data) {
     final ecdsaSigner = Signer('SHA-256/ECDSA')
       ..init(
           true,
           ParametersWithRandom(
             PrivateKeyParameter(_ecPrivateKey),
-            _getSecureRandom(),
+            secureRandom,
           ));
     var ecSignature = ecdsaSigner.generateSignature(data) as ECSignature;
     final sequence = ASN1Sequence();

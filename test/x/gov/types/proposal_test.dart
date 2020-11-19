@@ -47,7 +47,7 @@ void main() {
     ),
     submitTime: '2019-05-03T18:14:33.209053883Z',
     depositEndTime: '2019-05-17T18:14:33.209053883Z',
-    totalDeposit: [StdCoin(denom: 'uatom', amount: '516000000')],
+    totalDeposit: [Coin(denom: 'uatom', amount: '516000000')],
     votingStartTime: '2019-05-03T19:50:58.076569857Z',
     votingEndTime: '2019-05-17T19:50:58.076569857Z',
   );

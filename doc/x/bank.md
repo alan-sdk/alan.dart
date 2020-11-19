@@ -11,6 +11,6 @@ import "package:alan/alan.dart";
 final message = MsgSend(
   fromAddress: "cosmos1huydeevpz37sd9snkgul6070mstupukw00xkw9",
   toAddress: "cosmos12lla7fg3hjd2zj6uvf4pqj7atx273klc487c5k",
-  amount: [StdCoin(denom: "uatom", amount: "100")],
+  amount: [Coin(denom: "uatom", amount: "100")],
 );
 ```

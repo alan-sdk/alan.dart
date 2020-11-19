@@ -15,7 +15,7 @@ class MsgDelegate extends StdMsg {
   final String validatorAddress;
 
   @JsonKey(name: 'amount')
-  final StdCoin amount;
+  final Coin amount;
 
   MsgDelegate({
     @required this.delegatorAddress,

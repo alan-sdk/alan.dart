@@ -15,7 +15,7 @@ void main() {
       description: 'Proposal description',
     ),
     initialDeposit: [
-      StdCoin(denom: 'uatom', amount: '512000000'),
+      Coin(denom: 'uatom', amount: '512000000'),
     ],
     proposer: 'cosmos1grgelyng2v6v3t8z87wu3sxgt9m5s03xvslewd',
   );
@@ -47,7 +47,7 @@ void main() {
     test('when content is null', () {
       final msg = MsgSubmitProposal(
         content: null,
-        initialDeposit: [StdCoin(denom: 'uatom', amount: '100')],
+        initialDeposit: [Coin(denom: 'uatom', amount: '100')],
         proposer: 'proposer_address',
       );
       expect(msg.validate(), isException);
@@ -56,14 +56,14 @@ void main() {
     test('when proposer is empty', () {
       final nullMsg = MsgSubmitProposal(
         content: TextProposal(title: 'title', description: 'description'),
-        initialDeposit: [StdCoin(denom: 'uatom', amount: '100')],
+        initialDeposit: [Coin(denom: 'uatom', amount: '100')],
         proposer: null,
       );
       expect(nullMsg.validate(), isException);
 
       final emptyMsg = MsgSubmitProposal(
         content: TextProposal(title: 'title', description: 'description'),
-        initialDeposit: [StdCoin(denom: 'uatom', amount: '100')],
+        initialDeposit: [Coin(denom: 'uatom', amount: '100')],
         proposer: '',
       );
       expect(emptyMsg.validate(), isException);
@@ -79,14 +79,14 @@ void main() {
 
       final invalidMsg = MsgSubmitProposal(
         content: TextProposal(title: 'title', description: 'description'),
-        initialDeposit: [StdCoin(denom: '', amount: '100')],
+        initialDeposit: [Coin(denom: '', amount: '100')],
         proposer: 'proposer_address',
       );
       expect(invalidMsg.validate(), isException);
 
       final negativeMsg = MsgSubmitProposal(
         content: TextProposal(title: 'title', description: 'description'),
-        initialDeposit: [StdCoin(denom: 'uatom', amount: '-100')],
+        initialDeposit: [Coin(denom: 'uatom', amount: '-100')],
         proposer: 'proposer_address',
       );
       expect(negativeMsg.validate(), isException);
@@ -95,7 +95,7 @@ void main() {
     test('when content is invalid', () {
       final msg = MsgSubmitProposal(
         content: TextProposal(title: '', description: ''),
-        initialDeposit: [StdCoin(denom: 'uatom', amount: '100')],
+        initialDeposit: [Coin(denom: 'uatom', amount: '100')],
         proposer: 'proposer_address',
       );
       expect(msg.validate(), isException);

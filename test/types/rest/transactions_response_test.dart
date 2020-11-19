@@ -71,7 +71,7 @@ void main() {
                 fromAddress: 'desmos1dzn2s7l0wm9kekyazcnhapu8j95n90efmcmrad',
                 toAddress: 'desmos17yw9l5d6p749v5rkrxvhpe5m4a8tdhwegfwsd5',
                 amount: [
-                  StdCoin(
+                  Coin(
                     denom: 'udaric',
                     amount: '1100000',
                   ),
@@ -89,7 +89,7 @@ void main() {
               ),
             ],
             fee: StdFee(
-              amount: [StdCoin(denom: 'udaric', amount: '10000')],
+              amount: [Coin(denom: 'udaric', amount: '10000')],
               gas: '200000',
             ),
             memo: 'Welcome, to the real world...😎',

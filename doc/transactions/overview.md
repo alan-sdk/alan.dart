@@ -20,7 +20,7 @@ final stdTx = TxBuilder.buildStdTx(
   memo: 'Optional memo', // Optional
   fee: StdFee(           // Optional, default = 200000 gas and empty fee
     gas: '200000', 
-    amount: [StdCoin(amount: '1000', denom: 'uatom')],
+    amount: [Coin(amount: '1000', denom: 'uatom')],
   ),  
 );
 ```

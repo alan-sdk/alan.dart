@@ -18,7 +18,7 @@ class Delegation extends Equatable {
   final String shares;
 
   @JsonKey(name: 'balance')
-  final StdCoin balance;
+  final Coin balance;
 
   Delegation({
     @required this.delegatorAddress,

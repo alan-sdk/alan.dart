@@ -31,7 +31,7 @@ final message = MsgCreateValidator(
   delegatorAddress: 'desmos1jwrsx60nuuzw642u7uuhceuhnxgrrl895rsnf5',
   validatorAddress: 'desmosvaloper1jwrsx60nuuzw642u7uuhceuhnxgrrl892wc8rx',
   publicKey: 'desmosvalconspub1zcjduepqgztfagxazg9p2kz3sshmc4f909pd66cwuhmyhuw6un70hsvmw98sz6yucv',
-  value: StdCoin(
+  value: Coin(
     denom: 'udaric',
     amount: '1000000',
   ),
@@ -63,7 +63,7 @@ import "package:alan/alan.dart";
 final message = MsgDelegate(
   delegatorAddress: 'desmos1lzynvemltcx4kr6m6fc7w4ag8suulntgnjjw5s',
   validatorAddress: 'desmosvaloper1lzynvemltcx4kr6m6fc7w4ag8suulntgdl667z',
-  amount: StdCoin(denom: 'udaric', amount: '10000000'),
+  amount: Coin(denom: 'udaric', amount: '10000000'),
 );
 ```
 
@@ -75,7 +75,7 @@ final message = MsgBeginRedelegate(
   delegatorAddress: 'cosmos1vv6hruquzpty4xpks9znkw8gys5x4nsnqw9f4k',
   validatorSourceAddress: 'cosmosvaloper10e4vsut6suau8tk9m6dnrm0slgd6npe3jx5xpv',
   validatorDestinationAddress: 'cosmosvaloper1qaa9zej9a0ge3ugpx3pxyx602lxh3ztqgfnp42',
-  amount: StdCoin(denom: 'uatom', amount: '100000'),
+  amount: Coin(denom: 'uatom', amount: '100000'),
 );
 ```
 
@@ -86,7 +86,7 @@ import "package:alan/alan.dart";
 final message = MsgUndelegate(
   delegatorAddress: 'cosmos1tnc2aakfk2nn7y6k3nm5et885ca68mkm4nshhk',
   validatorAddress: 'cosmosvaloper14kn0kk33szpwus9nh8n87fjel8djx0y070ymmj',
-  amount: StdCoin(denom: 'uatom', amount: '1001059'),
+  amount: Coin(denom: 'uatom', amount: '1001059'),
 );
 ```
 

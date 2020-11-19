@@ -10,8 +10,8 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../../google/protobuf/any.pb.dart' as $0;
-import '../../../../tendermint/abci/types.pb.dart' as $1;
+import '../../../../google/protobuf/any.pb.dart' as $1;
+import '../../../../tendermint/abci/types.pb.dart' as $0;
 
 class TxResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TxResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.base.abci.v1beta1'), createEmptyInstance: create)
@@ -25,7 +25,7 @@ class TxResponse extends $pb.GeneratedMessage {
     ..aOS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'info')
     ..aInt64(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'gasWanted')
     ..aInt64(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'gasUsed')
-    ..aOM<$0.Any>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tx', subBuilder: $0.Any.create)
+    ..aOM<$1.Any>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tx', subBuilder: $1.Any.create)
     ..aOS(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'timestamp')
     ..hasRequiredFields = false
   ;
@@ -138,15 +138,15 @@ class TxResponse extends $pb.GeneratedMessage {
   void clearGasUsed() => clearField(10);
 
   @$pb.TagNumber(11)
-  $0.Any get tx => $_getN(10);
+  $1.Any get tx => $_getN(10);
   @$pb.TagNumber(11)
-  set tx($0.Any v) { setField(11, v); }
+  set tx($1.Any v) { setField(11, v); }
   @$pb.TagNumber(11)
   $core.bool hasTx() => $_has(10);
   @$pb.TagNumber(11)
   void clearTx() => clearField(11);
   @$pb.TagNumber(11)
-  $0.Any ensureTx() => $_ensure(10);
+  $1.Any ensureTx() => $_ensure(10);
 
   @$pb.TagNumber(12)
   $core.String get timestamp => $_getSZ(11);
@@ -356,7 +356,7 @@ class Result extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Result', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.base.abci.v1beta1'), createEmptyInstance: create)
     ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'data', $pb.PbFieldType.OY)
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'log')
-    ..pc<$1.Event>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'events', $pb.PbFieldType.PM, subBuilder: $1.Event.create)
+    ..pc<$0.Event>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'events', $pb.PbFieldType.PM, subBuilder: $0.Event.create)
     ..hasRequiredFields = false
   ;
 
@@ -402,7 +402,7 @@ class Result extends $pb.GeneratedMessage {
   void clearLog() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<$1.Event> get events => $_getList(2);
+  $core.List<$0.Event> get events => $_getList(2);
 }
 
 class SimulationResponse extends $pb.GeneratedMessage {

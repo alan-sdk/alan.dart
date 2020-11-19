@@ -13,7 +13,7 @@ MsgSubmitProposal _$MsgSubmitProposalFromJson(Map<String, dynamic> json) {
         : ProposalContent.fromJson(json['content'] as Map<String, dynamic>),
     initialDeposit: (json['initial_deposit'] as List)
         ?.map((e) =>
-            e == null ? null : StdCoin.fromJson(e as Map<String, dynamic>))
+            e == null ? null : Coin.fromJson(e as Map<String, dynamic>))
         ?.toList(),
     proposer: json['proposer'] as String,
   );

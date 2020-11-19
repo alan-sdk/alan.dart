@@ -13,7 +13,7 @@ MsgBeginRedelegate _$MsgBeginRedelegateFromJson(Map<String, dynamic> json) {
     validatorDestinationAddress: json['validator_dst_address'] as String,
     amount: json['amount'] == null
         ? null
-        : StdCoin.fromJson(json['amount'] as Map<String, dynamic>),
+        : Coin.fromJson(json['amount'] as Map<String, dynamic>),
   );
 }
 

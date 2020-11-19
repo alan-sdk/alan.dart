@@ -22,7 +22,7 @@ void main() {
       account,
       CosmosAccount(
         address: 'cosmos1hafptm4zxy5nw8rd2pxyg83c5ls2v62tstzuv2',
-        coins: [StdCoin(denom: 'uatom', amount: '1000')],
+        coins: [Coin(denom: 'uatom', amount: '1000')],
         accountNumber: '10',
         sequence: '3',
       ),
@@ -33,7 +33,7 @@ void main() {
     final account = CosmosAccount(
       address: 'cosmos1hafptm4zxy5nw8rd2pxyg83c5ls2v62tstzuv2',
       coins: [
-        StdCoin(
+        Coin(
           denom: 'uatom',
           amount: '1000',
         )
@@ -55,7 +55,7 @@ void main() {
     final account = CosmosAccount(
       address: 'cosmos1hafptm4zxy5nw8rd2pxyg83c5ls2v62tstzuv2',
       coins: [
-        StdCoin(
+        Coin(
           denom: 'uatom',
           amount: '1000',
         )
@@ -75,14 +75,14 @@ void main() {
       address: 'my-address',
       accountNumber: '10',
       sequence: '3',
-      coins: [StdCoin(denom: 'uatom', amount: '100')],
+      coins: [Coin(denom: 'uatom', amount: '100')],
     );
 
     final copied = account.copyWith(
       address: 'test-addres',
       accountNumber: '1',
       sequence: '30',
-      coins: [StdCoin(denom: 'uatom', amount: '10')],
+      coins: [Coin(denom: 'uatom', amount: '10')],
     );
     expect(
       copied,
@@ -90,7 +90,7 @@ void main() {
         address: 'test-addres',
         accountNumber: '1',
         sequence: '30',
-        coins: [StdCoin(denom: 'uatom', amount: '10')],
+        coins: [Coin(denom: 'uatom', amount: '10')],
       ),
     );
   });

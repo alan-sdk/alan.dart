@@ -15,7 +15,7 @@ class MsgUndelegate extends StdMsg {
   final String validatorAddress;
 
   @JsonKey(name: 'amount')
-  final StdCoin amount;
+  final Coin amount;
 
   MsgUndelegate({
     @required this.delegatorAddress,

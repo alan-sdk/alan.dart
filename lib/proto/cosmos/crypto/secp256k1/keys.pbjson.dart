@@ -10,6 +10,7 @@ const PubKey$json = const {
   '2': const [
     const {'1': 'key', '3': 1, '4': 1, '5': 12, '10': 'key'},
   ],
+  '7': const {},
 };
 
 const PrivKey$json = const {

@@ -192,7 +192,7 @@ class StdTxWrapper extends Equatable {
   final String type;
 
   @JsonKey(name: 'value')
-  final StdTx value;
+  final Tx value;
 
   StdTxWrapper({
     @required this.type,

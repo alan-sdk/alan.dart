@@ -70,12 +70,12 @@ void main() {
     final msg = MsgSend(
       fromAddress: 'cosmos1hafptm4zxy5nw8rd2pxyg83c5ls2v62tstzuv2',
       toAddress: 'cosmos12lla7fg3hjd2zj6uvf4pqj7atx273klc487c5k',
-      amount: [StdCoin(amount: '100', denom: 'uatom')],
+      amount: [Coin(amount: '100', denom: 'uatom')],
     );
 
     final fee = StdFee(
       gas: '200000',
-      amount: [StdCoin(amount: '250', denom: 'uatom')],
+      amount: [Coin(amount: '250', denom: 'uatom')],
     );
     final tx = TxBuilder.buildStdTx([msg], fee: fee);
 

@@ -21,7 +21,7 @@ MsgCreateValidator _$MsgCreateValidatorFromJson(Map<String, dynamic> json) {
     publicKey: json['pubkey'] as String,
     value: json['value'] == null
         ? null
-        : StdCoin.fromJson(json['value'] as Map<String, dynamic>),
+        : Coin.fromJson(json['value'] as Map<String, dynamic>),
   );
 }
 

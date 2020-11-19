@@ -10,6 +10,7 @@ const MultiSignature$json = const {
   '2': const [
     const {'1': 'signatures', '3': 1, '4': 3, '5': 12, '10': 'signatures'},
   ],
+  '7': const {},
 };
 
 const CompactBitArray$json = const {
@@ -18,5 +19,6 @@ const CompactBitArray$json = const {
     const {'1': 'extra_bits_stored', '3': 1, '4': 1, '5': 13, '10': 'extraBitsStored'},
     const {'1': 'elems', '3': 2, '4': 1, '5': 12, '10': 'elems'},
   ],
+  '7': const {},
 };
 

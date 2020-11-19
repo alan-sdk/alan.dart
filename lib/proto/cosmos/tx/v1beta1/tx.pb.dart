@@ -10,10 +10,11 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/any.pb.dart' as $0;
-import '../../base/v1beta1/coin.pb.dart' as $2;
-import '../../crypto/multisig/v1beta1/multisig.pb.dart' as $1;
-import '../signing/v1beta1/signing.pbenum.dart' as $3;
+import '../../../google/protobuf/any.pb.dart' as $2;
+import '../../crypto/multisig/v1beta1/multisig.pb.dart' as $3;
+import '../../base/v1beta1/coin.pb.dart' as $4;
+
+import '../signing/v1beta1/signing.pbenum.dart' as $5;
 
 class Tx extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Tx', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.tx.v1beta1'), createEmptyInstance: create)
@@ -196,11 +197,11 @@ class SignDoc extends $pb.GeneratedMessage {
 
 class TxBody extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TxBody', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.tx.v1beta1'), createEmptyInstance: create)
-    ..pc<$0.Any>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'messages', $pb.PbFieldType.PM, subBuilder: $0.Any.create)
+    ..pc<$2.Any>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'messages', $pb.PbFieldType.PM, subBuilder: $2.Any.create)
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'memo')
     ..a<$fixnum.Int64>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'timeoutHeight', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..pc<$0.Any>(1023, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'extensionOptions', $pb.PbFieldType.PM, subBuilder: $0.Any.create)
-    ..pc<$0.Any>(2047, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'nonCriticalExtensionOptions', $pb.PbFieldType.PM, subBuilder: $0.Any.create)
+    ..pc<$2.Any>(1023, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'extensionOptions', $pb.PbFieldType.PM, subBuilder: $2.Any.create)
+    ..pc<$2.Any>(2047, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'nonCriticalExtensionOptions', $pb.PbFieldType.PM, subBuilder: $2.Any.create)
     ..hasRequiredFields = false
   ;
 
@@ -228,7 +229,7 @@ class TxBody extends $pb.GeneratedMessage {
   static TxBody _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$0.Any> get messages => $_getList(0);
+  $core.List<$2.Any> get messages => $_getList(0);
 
   @$pb.TagNumber(2)
   $core.String get memo => $_getSZ(1);
@@ -249,10 +250,10 @@ class TxBody extends $pb.GeneratedMessage {
   void clearTimeoutHeight() => clearField(3);
 
   @$pb.TagNumber(1023)
-  $core.List<$0.Any> get extensionOptions => $_getList(3);
+  $core.List<$2.Any> get extensionOptions => $_getList(3);
 
   @$pb.TagNumber(2047)
-  $core.List<$0.Any> get nonCriticalExtensionOptions => $_getList(4);
+  $core.List<$2.Any> get nonCriticalExtensionOptions => $_getList(4);
 }
 
 class AuthInfo extends $pb.GeneratedMessage {
@@ -302,7 +303,7 @@ class AuthInfo extends $pb.GeneratedMessage {
 
 class SignerInfo extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SignerInfo', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.tx.v1beta1'), createEmptyInstance: create)
-    ..aOM<$0.Any>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publicKey', subBuilder: $0.Any.create)
+    ..aOM<$2.Any>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publicKey', subBuilder: $2.Any.create)
     ..aOM<ModeInfo>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'modeInfo', subBuilder: ModeInfo.create)
     ..a<$fixnum.Int64>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sequence', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..hasRequiredFields = false
@@ -332,15 +333,15 @@ class SignerInfo extends $pb.GeneratedMessage {
   static SignerInfo _defaultInstance;
 
   @$pb.TagNumber(1)
-  $0.Any get publicKey => $_getN(0);
+  $2.Any get publicKey => $_getN(0);
   @$pb.TagNumber(1)
-  set publicKey($0.Any v) { setField(1, v); }
+  set publicKey($2.Any v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPublicKey() => $_has(0);
   @$pb.TagNumber(1)
   void clearPublicKey() => clearField(1);
   @$pb.TagNumber(1)
-  $0.Any ensurePublicKey() => $_ensure(0);
+  $2.Any ensurePublicKey() => $_ensure(0);
 
   @$pb.TagNumber(2)
   ModeInfo get modeInfo => $_getN(1);
@@ -365,7 +366,7 @@ class SignerInfo extends $pb.GeneratedMessage {
 
 class ModeInfo_Single extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ModeInfo.Single', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.tx.v1beta1'), createEmptyInstance: create)
-    ..e<$3.SignMode>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'mode', $pb.PbFieldType.OE, defaultOrMaker: $3.SignMode.SIGN_MODE_UNSPECIFIED, valueOf: $3.SignMode.valueOf, enumValues: $3.SignMode.values)
+    ..e<$5.SignMode>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'mode', $pb.PbFieldType.OE, defaultOrMaker: $5.SignMode.SIGN_MODE_UNSPECIFIED, valueOf: $5.SignMode.valueOf, enumValues: $5.SignMode.values)
     ..hasRequiredFields = false
   ;
 
@@ -393,9 +394,9 @@ class ModeInfo_Single extends $pb.GeneratedMessage {
   static ModeInfo_Single _defaultInstance;
 
   @$pb.TagNumber(1)
-  $3.SignMode get mode => $_getN(0);
+  $5.SignMode get mode => $_getN(0);
   @$pb.TagNumber(1)
-  set mode($3.SignMode v) { setField(1, v); }
+  set mode($5.SignMode v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasMode() => $_has(0);
   @$pb.TagNumber(1)
@@ -404,7 +405,7 @@ class ModeInfo_Single extends $pb.GeneratedMessage {
 
 class ModeInfo_Multi extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ModeInfo.Multi', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.tx.v1beta1'), createEmptyInstance: create)
-    ..aOM<$1.CompactBitArray>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'bitarray', subBuilder: $1.CompactBitArray.create)
+    ..aOM<$3.CompactBitArray>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'bitarray', subBuilder: $3.CompactBitArray.create)
     ..pc<ModeInfo>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'modeInfos', $pb.PbFieldType.PM, subBuilder: ModeInfo.create)
     ..hasRequiredFields = false
   ;
@@ -433,23 +434,23 @@ class ModeInfo_Multi extends $pb.GeneratedMessage {
   static ModeInfo_Multi _defaultInstance;
 
   @$pb.TagNumber(1)
-  $1.CompactBitArray get bitarray => $_getN(0);
+  $3.CompactBitArray get bitarray => $_getN(0);
   @$pb.TagNumber(1)
-  set bitarray($1.CompactBitArray v) { setField(1, v); }
+  set bitarray($3.CompactBitArray v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasBitarray() => $_has(0);
   @$pb.TagNumber(1)
   void clearBitarray() => clearField(1);
   @$pb.TagNumber(1)
-  $1.CompactBitArray ensureBitarray() => $_ensure(0);
+  $3.CompactBitArray ensureBitarray() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.List<ModeInfo> get modeInfos => $_getList(1);
 }
 
 enum ModeInfo_Sum {
-  single,
-  multi,
+  single, 
+  multi, 
   notSet
 }
 
@@ -517,7 +518,7 @@ class ModeInfo extends $pb.GeneratedMessage {
 
 class Fee extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Fee', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.tx.v1beta1'), createEmptyInstance: create)
-    ..pc<$2.Coin>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'amount', $pb.PbFieldType.PM, subBuilder: $2.Coin.create)
+    ..pc<$4.Coin>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'amount', $pb.PbFieldType.PM, subBuilder: $4.Coin.create)
     ..a<$fixnum.Int64>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'gasLimit', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'payer')
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'granter')
@@ -548,7 +549,7 @@ class Fee extends $pb.GeneratedMessage {
   static Fee _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$2.Coin> get amount => $_getList(0);
+  $core.List<$4.Coin> get amount => $_getList(0);
 
   @$pb.TagNumber(2)
   $fixnum.Int64 get gasLimit => $_getI64(1);

@@ -9,7 +9,7 @@ part 'params.g.dart';
 @JsonSerializable(explicitToJson: true)
 class DepositParams extends Equatable {
   @JsonKey(name: 'min_deposit')
-  final List<StdCoin> minDeposit;
+  final List<Coin> minDeposit;
 
   @JsonKey(name: 'max_deposit_period')
   final String maxDepositPeriod;

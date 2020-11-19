@@ -12,7 +12,7 @@ MsgUndelegate _$MsgUndelegateFromJson(Map<String, dynamic> json) {
     validatorAddress: json['validator_address'] as String,
     amount: json['amount'] == null
         ? null
-        : StdCoin.fromJson(json['amount'] as Map<String, dynamic>),
+        : Coin.fromJson(json['amount'] as Map<String, dynamic>),
   );
 }
 

@@ -15,7 +15,7 @@ class Deposit extends Equatable {
   final String depositor;
 
   @JsonKey(name: 'amount')
-  final List<StdCoin> amount;
+  final List<Coin> amount;
 
   Deposit({
     @required this.proposalId,

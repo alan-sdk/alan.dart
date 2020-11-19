@@ -19,7 +19,7 @@ class MsgBeginRedelegate extends StdMsg {
   final String validatorDestinationAddress;
 
   @JsonKey(name: 'amount')
-  final StdCoin amount;
+  final Coin amount;
 
   MsgBeginRedelegate({
     @required this.delegatorAddress,

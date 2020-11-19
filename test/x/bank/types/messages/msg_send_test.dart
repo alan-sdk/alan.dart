@@ -12,7 +12,7 @@ void main() {
   final message = MsgSend(
     fromAddress: 'cosmos1dm68mx9jcsyqkyzp3up7gmnu3ku84v8gf6v75u',
     toAddress: 'cosmos1tmm4hujud7frppx23yeky889hka0gn9n689mr9',
-    amount: [StdCoin(denom: 'uatom', amount: '100')],
+    amount: [Coin(denom: 'uatom', amount: '100')],
   );
 
   final json = {
@@ -33,7 +33,7 @@ void main() {
       final msg = MsgSend(
         fromAddress: '',
         toAddress: 'cosmos1tmm4hujud7frppx23yeky889hka0gn9n689mr9',
-        amount: [StdCoin(denom: 'uatom', amount: '9000')],
+        amount: [Coin(denom: 'uatom', amount: '9000')],
       );
 
       final exception = msg.validate();
@@ -47,7 +47,7 @@ void main() {
       final msg = MsgSend(
         fromAddress: 'cosmos1tmm4hujud7frppx23yeky889hka0gn9n689mr9',
         toAddress: '',
-        amount: [StdCoin(denom: 'uatom', amount: '9000')],
+        amount: [Coin(denom: 'uatom', amount: '9000')],
       );
 
       final exception = msg.validate();

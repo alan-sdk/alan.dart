@@ -22,7 +22,7 @@ void main() {
   final message = MsgUndelegate(
     delegatorAddress: 'cosmos1tnc2aakfk2nn7y6k3nm5et885ca68mkm4nshhk',
     validatorAddress: 'cosmosvaloper14kn0kk33szpwus9nh8n87fjel8djx0y070ymmj',
-    amount: StdCoin(denom: 'uatom', amount: '1001059'),
+    amount: Coin(denom: 'uatom', amount: '1001059'),
   );
 
   testMsgJson<MsgUndelegate>(message, json);
@@ -36,14 +36,14 @@ void main() {
       final emptyAddrMsg = MsgUndelegate(
         delegatorAddress: '',
         validatorAddress: 'val_addr',
-        amount: StdCoin(denom: 'uatom', amount: '1001059'),
+        amount: Coin(denom: 'uatom', amount: '1001059'),
       );
       expect(emptyAddrMsg.validate(), isException);
 
       final nullAddrMsg = MsgUndelegate(
         delegatorAddress: null,
         validatorAddress: 'val_addr',
-        amount: StdCoin(denom: 'uatom', amount: '1001059'),
+        amount: Coin(denom: 'uatom', amount: '1001059'),
       );
       expect(nullAddrMsg.validate(), isException);
     });
@@ -52,14 +52,14 @@ void main() {
       final emptyAddrMsg = MsgUndelegate(
         delegatorAddress: 'delegator_addr',
         validatorAddress: '',
-        amount: StdCoin(denom: 'uatom', amount: '1001059'),
+        amount: Coin(denom: 'uatom', amount: '1001059'),
       );
       expect(emptyAddrMsg.validate(), isException);
 
       final nullAddrMsg = MsgUndelegate(
         delegatorAddress: 'delegator_addr',
         validatorAddress: null,
-        amount: StdCoin(denom: 'uatom', amount: '1001059'),
+        amount: Coin(denom: 'uatom', amount: '1001059'),
       );
       expect(nullAddrMsg.validate(), isException);
     });
@@ -68,14 +68,14 @@ void main() {
       final negativeAmtMsg = MsgUndelegate(
         delegatorAddress: 'delegator_addr',
         validatorAddress: 'validator_addr',
-        amount: StdCoin(denom: 'uatom', amount: '-1'),
+        amount: Coin(denom: 'uatom', amount: '-1'),
       );
       expect(negativeAmtMsg.validate(), isException);
 
       final nullAmtMsg = MsgUndelegate(
         delegatorAddress: 'delegator_addr',
         validatorAddress: 'validator_addr',
-        amount: StdCoin(denom: 'uatom', amount: null),
+        amount: Coin(denom: 'uatom', amount: null),
       );
       expect(nullAmtMsg.validate(), isException);
     });

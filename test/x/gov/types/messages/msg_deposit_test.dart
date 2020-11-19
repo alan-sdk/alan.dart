@@ -12,7 +12,7 @@ void main() {
   final message = MsgDeposit(
     proposalId: '20',
     depositor: 'cosmos1wtv0kp6ydt03edd8kyr5arr4f3yc52vp5g7na0',
-    amount: [StdCoin(denom: 'uatom', amount: '1')],
+    amount: [Coin(denom: 'uatom', amount: '1')],
   );
 
   final json = {
@@ -37,14 +37,14 @@ void main() {
       final nullMsg = MsgDeposit(
         proposalId: null,
         depositor: 'cosmos1wtv0kp6ydt03edd8kyr5arr4f3yc52vp5g7na0',
-        amount: [StdCoin(denom: 'uatom', amount: '1')],
+        amount: [Coin(denom: 'uatom', amount: '1')],
       );
       expect(nullMsg.validate(), isException);
 
       final emptyMsg = MsgDeposit(
         proposalId: '',
         depositor: 'cosmos1wtv0kp6ydt03edd8kyr5arr4f3yc52vp5g7na0',
-        amount: [StdCoin(denom: 'uatom', amount: '1')],
+        amount: [Coin(denom: 'uatom', amount: '1')],
       );
       expect(emptyMsg.validate(), isException);
     });
@@ -53,14 +53,14 @@ void main() {
       final nullMsg = MsgDeposit(
         proposalId: '1',
         depositor: null,
-        amount: [StdCoin(denom: 'uatom', amount: '1')],
+        amount: [Coin(denom: 'uatom', amount: '1')],
       );
       expect(nullMsg.validate(), isException);
 
       final emptyMsg = MsgDeposit(
         proposalId: '1',
         depositor: '',
-        amount: [StdCoin(denom: 'uatom', amount: '1')],
+        amount: [Coin(denom: 'uatom', amount: '1')],
       );
       expect(emptyMsg.validate(), isException);
     });
@@ -76,7 +76,7 @@ void main() {
       final invalidMsg = MsgDeposit(
         proposalId: '1',
         depositor: 'cosmos1wtv0kp6ydt03edd8kyr5arr4f3yc52vp5g7na0',
-        amount: [StdCoin(denom: '', amount: '1')],
+        amount: [Coin(denom: '', amount: '1')],
       );
       expect(invalidMsg.validate(), isException);
     });
@@ -85,7 +85,7 @@ void main() {
       final msg = MsgDeposit(
         proposalId: '1',
         depositor: 'cosmos1wtv0kp6ydt03edd8kyr5arr4f3yc52vp5g7na0',
-        amount: [StdCoin(denom: 'uatom', amount: '-1')],
+        amount: [Coin(denom: 'uatom', amount: '-1')],
       );
       expect(msg.validate(), isException);
     });

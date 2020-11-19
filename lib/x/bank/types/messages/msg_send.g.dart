@@ -12,7 +12,7 @@ MsgSend _$MsgSendFromJson(Map<String, dynamic> json) {
     toAddress: json['to_address'] as String,
     amount: (json['amount'] as List)
         ?.map((e) =>
-            e == null ? null : StdCoin.fromJson(e as Map<String, dynamic>))
+            e == null ? null : Coin.fromJson(e as Map<String, dynamic>))
         ?.toList(),
   );
 }

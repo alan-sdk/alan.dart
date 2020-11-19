@@ -10,7 +10,7 @@ void main() {
   };
   final value = DepositParams(
     minDeposit: [
-      StdCoin(denom: 'udaric', amount: '10000000'),
+      Coin(denom: 'udaric', amount: '10000000'),
     ],
     maxDepositPeriod: '172800000000000',
   );

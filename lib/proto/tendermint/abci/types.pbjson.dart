@@ -1,17 +1,9 @@
-import '../../google/protobuf/duration.pbjson.dart' as $5;
-import '../../google/protobuf/timestamp.pbjson.dart' as $0;
-import '../crypto/keys.pbjson.dart' as $4;
 ///
 //  Generated code. Do not modify.
 //  source: tendermint/abci/types.proto
 //
 // @dart = 2.3
 // ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
-import '../crypto/proof.pbjson.dart' as $2;
-import '../types/params.pbjson.dart' as $3;
-import '../types/types.pbjson.dart' as $1;
-import '../version/types.pbjson.dart' as $6;
 
 const CheckTxType$json = const {
   '1': 'CheckTxType',
@@ -462,81 +454,5 @@ const Snapshot$json = const {
     const {'1': 'hash', '3': 4, '4': 1, '5': 12, '10': 'hash'},
     const {'1': 'metadata', '3': 5, '4': 1, '5': 12, '10': 'metadata'},
   ],
-};
-
-const ABCIApplicationServiceBase$json = const {
-  '1': 'ABCIApplication',
-  '2': const [
-    const {'1': 'Echo', '2': '.tendermint.abci.RequestEcho', '3': '.tendermint.abci.ResponseEcho'},
-    const {'1': 'Flush', '2': '.tendermint.abci.RequestFlush', '3': '.tendermint.abci.ResponseFlush'},
-    const {'1': 'Info', '2': '.tendermint.abci.RequestInfo', '3': '.tendermint.abci.ResponseInfo'},
-    const {'1': 'SetOption', '2': '.tendermint.abci.RequestSetOption', '3': '.tendermint.abci.ResponseSetOption'},
-    const {'1': 'DeliverTx', '2': '.tendermint.abci.RequestDeliverTx', '3': '.tendermint.abci.ResponseDeliverTx'},
-    const {'1': 'CheckTx', '2': '.tendermint.abci.RequestCheckTx', '3': '.tendermint.abci.ResponseCheckTx'},
-    const {'1': 'Query', '2': '.tendermint.abci.RequestQuery', '3': '.tendermint.abci.ResponseQuery'},
-    const {'1': 'Commit', '2': '.tendermint.abci.RequestCommit', '3': '.tendermint.abci.ResponseCommit'},
-    const {'1': 'InitChain', '2': '.tendermint.abci.RequestInitChain', '3': '.tendermint.abci.ResponseInitChain'},
-    const {'1': 'BeginBlock', '2': '.tendermint.abci.RequestBeginBlock', '3': '.tendermint.abci.ResponseBeginBlock'},
-    const {'1': 'EndBlock', '2': '.tendermint.abci.RequestEndBlock', '3': '.tendermint.abci.ResponseEndBlock'},
-    const {'1': 'ListSnapshots', '2': '.tendermint.abci.RequestListSnapshots', '3': '.tendermint.abci.ResponseListSnapshots'},
-    const {'1': 'OfferSnapshot', '2': '.tendermint.abci.RequestOfferSnapshot', '3': '.tendermint.abci.ResponseOfferSnapshot'},
-    const {'1': 'LoadSnapshotChunk', '2': '.tendermint.abci.RequestLoadSnapshotChunk', '3': '.tendermint.abci.ResponseLoadSnapshotChunk'},
-    const {'1': 'ApplySnapshotChunk', '2': '.tendermint.abci.RequestApplySnapshotChunk', '3': '.tendermint.abci.ResponseApplySnapshotChunk'},
-  ],
-};
-
-const ABCIApplicationServiceBase$messageJson = const {
-  '.tendermint.abci.RequestEcho': RequestEcho$json,
-  '.tendermint.abci.ResponseEcho': ResponseEcho$json,
-  '.tendermint.abci.RequestFlush': RequestFlush$json,
-  '.tendermint.abci.ResponseFlush': ResponseFlush$json,
-  '.tendermint.abci.RequestInfo': RequestInfo$json,
-  '.tendermint.abci.ResponseInfo': ResponseInfo$json,
-  '.tendermint.abci.RequestSetOption': RequestSetOption$json,
-  '.tendermint.abci.ResponseSetOption': ResponseSetOption$json,
-  '.tendermint.abci.RequestDeliverTx': RequestDeliverTx$json,
-  '.tendermint.abci.ResponseDeliverTx': ResponseDeliverTx$json,
-  '.tendermint.abci.Event': Event$json,
-  '.tendermint.abci.EventAttribute': EventAttribute$json,
-  '.tendermint.abci.RequestCheckTx': RequestCheckTx$json,
-  '.tendermint.abci.ResponseCheckTx': ResponseCheckTx$json,
-  '.tendermint.abci.RequestQuery': RequestQuery$json,
-  '.tendermint.abci.ResponseQuery': ResponseQuery$json,
-  '.tendermint.crypto.ProofOps': $2.ProofOps$json,
-  '.tendermint.crypto.ProofOp': $2.ProofOp$json,
-  '.tendermint.abci.RequestCommit': RequestCommit$json,
-  '.tendermint.abci.ResponseCommit': ResponseCommit$json,
-  '.tendermint.abci.RequestInitChain': RequestInitChain$json,
-  '.google.protobuf.Timestamp': $0.Timestamp$json,
-  '.tendermint.abci.ConsensusParams': ConsensusParams$json,
-  '.tendermint.abci.BlockParams': BlockParams$json,
-  '.tendermint.types.EvidenceParams': $3.EvidenceParams$json,
-  '.google.protobuf.Duration': $5.Duration$json,
-  '.tendermint.types.ValidatorParams': $3.ValidatorParams$json,
-  '.tendermint.types.VersionParams': $3.VersionParams$json,
-  '.tendermint.abci.ValidatorUpdate': ValidatorUpdate$json,
-  '.tendermint.crypto.PublicKey': $4.PublicKey$json,
-  '.tendermint.abci.ResponseInitChain': ResponseInitChain$json,
-  '.tendermint.abci.RequestBeginBlock': RequestBeginBlock$json,
-  '.tendermint.types.Header': $1.Header$json,
-  '.tendermint.version.Consensus': $6.Consensus$json,
-  '.tendermint.types.BlockID': $1.BlockID$json,
-  '.tendermint.types.PartSetHeader': $1.PartSetHeader$json,
-  '.tendermint.abci.LastCommitInfo': LastCommitInfo$json,
-  '.tendermint.abci.VoteInfo': VoteInfo$json,
-  '.tendermint.abci.Validator': Validator$json,
-  '.tendermint.abci.Evidence': Evidence$json,
-  '.tendermint.abci.ResponseBeginBlock': ResponseBeginBlock$json,
-  '.tendermint.abci.RequestEndBlock': RequestEndBlock$json,
-  '.tendermint.abci.ResponseEndBlock': ResponseEndBlock$json,
-  '.tendermint.abci.RequestListSnapshots': RequestListSnapshots$json,
-  '.tendermint.abci.ResponseListSnapshots': ResponseListSnapshots$json,
-  '.tendermint.abci.Snapshot': Snapshot$json,
-  '.tendermint.abci.RequestOfferSnapshot': RequestOfferSnapshot$json,
-  '.tendermint.abci.ResponseOfferSnapshot': ResponseOfferSnapshot$json,
-  '.tendermint.abci.RequestLoadSnapshotChunk': RequestLoadSnapshotChunk$json,
-  '.tendermint.abci.ResponseLoadSnapshotChunk': ResponseLoadSnapshotChunk$json,
-  '.tendermint.abci.RequestApplySnapshotChunk': RequestApplySnapshotChunk$json,
-  '.tendermint.abci.ResponseApplySnapshotChunk': ResponseApplySnapshotChunk$json,
 };
 

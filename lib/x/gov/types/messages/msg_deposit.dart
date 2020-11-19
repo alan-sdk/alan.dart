@@ -15,7 +15,7 @@ class MsgDeposit extends StdMsg {
   final String depositor;
 
   @JsonKey(name: 'amount')
-  final List<StdCoin> amount;
+  final List<Coin> amount;
 
   MsgDeposit({
     @required this.proposalId,
