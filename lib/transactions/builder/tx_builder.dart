@@ -1,5 +1,6 @@
 import 'package:alan/alan.dart';
 import 'package:fixnum/fixnum.dart' as fixnum;
+import 'package:protobuf/protobuf.dart';
 
 /// Allows to easily build and sign a [StdTx] that can later be sent over
 /// the network.
@@ -11,15 +12,13 @@ class TxBuilder {
   factory TxBuilder.create() {
     return TxBuilder._(Tx.create());
   }
-  
+
   Tx getTx() {
     return _stdTx;
   }
 
-  void setMsgs(List<StdMsg> messages) {
-    final anys = messages.map((msg) {
-      return Any.pack(msg.message(), typeUrlPrefix: '/' + msg.typeUrl());
-    });
+  void setMsgs(List<GeneratedMessage> messages) {
+    final serialized = messages.map((msg) => Codec.serialize(msg)).toList();
 
     // Create the body if non existing
     if (!_stdTx.hasBody()) {
@@ -28,7 +27,7 @@ class TxBuilder {
 
     // Set the messages
     _stdTx.body.messages.clear();
-    _stdTx.body.messages.addAll(anys);
+    _stdTx.body.messages.addAll(serialized);
   }
 
   void setSignatures(List<SignatureV2> signatures) {

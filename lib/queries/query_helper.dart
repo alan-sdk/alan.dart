@@ -1,4 +1,8 @@
+import 'dart:convert';
+
 import 'package:equatable/equatable.dart';
+import 'package:http/http.dart' as http;
+import 'package:meta/meta.dart';
 
 /// Contains the data returned when performing a chain query.
 class RequestResult<T> extends Equatable {
@@ -11,4 +15,27 @@ class RequestResult<T> extends Equatable {
 
   @override
   List<Object> get props => [value, error];
+}
+
+/// Allows to easily query the current chain state.
+class QueryHelper {
+  final http.Client _httpClient;
+
+  QueryHelper({@required http.Client httpClient}) : _httpClient = httpClient;
+
+  /// Queries the chain at the given [url].
+  Future<RequestResult<Map<String, dynamic>>> queryChain(
+    String url,
+  ) async {
+    final data = await _httpClient.get(url);
+    if (data.statusCode != 200) {
+      return RequestResult(
+        error: 'Call to $url returned status code ${data.statusCode}',
+      );
+    }
+
+    return RequestResult(
+      value: json.decode(utf8.decode(data.bodyBytes)) as Map<String, dynamic>,
+    );
+  }
 }

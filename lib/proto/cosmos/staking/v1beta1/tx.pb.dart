@@ -5,15 +5,16 @@
 // @dart = 2.3
 // ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
-import 'dart:async' as $async;
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/any.pb.dart' as $2;
-import '../../../google/protobuf/timestamp.pb.dart' as $1;
-import '../../base/v1beta1/coin.pb.dart' as $4;
-import 'staking.pb.dart' as $5ends $pb.GeneratedMessage {
+import '../../../google/protobuf/any.pb.dart' as $4;
+import '../../../google/protobuf/timestamp.pb.dart' as $3;
+import '../../base/v1beta1/coin.pb.dart' as $6;
+import 'staking.pb.dart' as $7;
+
+class MsgCreateValidator extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MsgCreateValidator', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.staking.v1beta1'), createEmptyInstance: create)
     ..aOM<$7.Description>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'description', subBuilder: $7.Description.create)
     ..aOM<$7.CommissionRates>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'commission', subBuilder: $7.CommissionRates.create)

@@ -10,10 +10,10 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/any.pb.dart' as $1;
-import '../../../google/protobuf/duration.pb.dart' as $3;
-import '../../../google/protobuf/timestamp.pb.dart' as $2;
-import '../../base/v1beta1/coin.pb.dart' as $0;
+import '../../../google/protobuf/any.pb.dart' as $3;
+import '../../../google/protobuf/duration.pb.dart' as $5;
+import '../../../google/protobuf/timestamp.pb.dart' as $4;
+import '../../base/v1beta1/coin.pb.dart' as $2;
 import 'gov.pbenum.dart';
 
 export 'gov.pbenum.dart';

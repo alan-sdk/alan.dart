@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:alan/alan.dart';
-import 'package:http/http.dart' as http;
 import 'package:mock_web_server/mock_web_server.dart';
 import 'package:test/test.dart';
 
@@ -20,7 +19,7 @@ void main() {
   setUp(() {
     // Clean the dispatcher to avoid cross-testing conflicts
     server.dispatcher = null;
-    sender = TxSender.build(http.Client());
+    sender = TxSender.build();
   });
 
   final mnemonic = [
@@ -56,17 +55,20 @@ void main() {
 
     final wallet = Wallet.derive(
       mnemonic,
-      NetworkInfo(bech32Hrp: 'desmos', lcdUrl: server.url),
+      NetworkInfo(bech32Hrp: 'desmos', fullNodeHost: server.url),
     );
-    final stdTx = TxBuilder.buildStdTx([
-      MsgSend(
-        fromAddress: 'cosmos1huydeevpz37sd9snkgul6070mstupukw00xkw9',
-        toAddress: 'cosmos12lla7fg3hjd2zj6uvf4pqj7atx273klc487c5k',
-        amount: [Coin(denom: 'uatom', amount: '100')],
-      ),
-    ]);
 
-    final result = await sender.broadcastStdTx(stdTx, wallet);
+    final message = MsgSend.create();
+    message.fromAddress = 'cosmos1huydeevpz37sd9snkgul6070mstupukw00xkw9';
+    message.toAddress = 'cosmos12lla7fg3hjd2zj6uvf4pqj7atx273klc487c5k';
+    message.amount.add(Coin.create()
+      ..denom = 'uatom'
+      ..amount = '100');
+
+    final builder = TxBuilder.create();
+    builder.setMsgs([message]);
+
+    final result = await sender.broadcastStdTx(builder.getTx(), wallet);
     expect(result, isA<SyncTxResponse>());
   });
 }

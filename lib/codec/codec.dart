@@ -1,6 +1,16 @@
 import 'package:alan/alan.dart';
-import 'package:alan/x/gov/types/messages/export.dart';
+import 'package:alan/proto/cosmos/bank/v1beta1/export.dart' as bank;
+import 'package:alan/proto/cosmos/gov/v1beta1/export.dart' as gov;
+import 'package:alan/proto/cosmos/staking/v1beta1/export.dart' as staking;
+import 'package:protobuf/protobuf.dart';
 import 'package:reflectable/mirrors.dart';
+import 'package:reflectable/reflectable.dart';
+
+class Reflector extends Reflectable {
+  const Reflector() : super(newInstanceCapability, subtypeQuantifyCapability);
+}
+
+const reflector = Reflector();
 
 /// Represents the codec that is used to serialize [StdMsg] instances
 /// properly during transactions signature processes.
@@ -14,20 +24,20 @@ class Codec {
   /// Registers the defaults message types.
   static void _init() {
     // x/bank
-    registerType('cosmos-sdk/MsgSend', MsgSend);
+    registerType('cosmos-sdk/MsgSend', bank.MsgSend);
 
     // x/staking
-    registerType('cosmos-sdk/MsgCreateValidator', MsgCreateValidator);
-    registerType('cosmos-sdk/MsgEditValidator', MsgEditValidator);
-    registerType('cosmos-sdk/MsgDelegate', MsgDelegate);
-    registerType('cosmos-sdk/MsgUndelegate', MsgUndelegate);
-    registerType('cosmos-sdk/MsgBeginRedelegate', MsgBeginRedelegate);
+    registerType('cosmos-sdk/MsgCreateValidator', staking.MsgCreateValidator);
+    registerType('cosmos-sdk/MsgEditValidator', staking.MsgEditValidator);
+    registerType('cosmos-sdk/MsgDelegate', staking.MsgDelegate);
+    registerType('cosmos-sdk/MsgUndelegate', staking.MsgUndelegate);
+    registerType('cosmos-sdk/MsgBeginRedelegate', staking.MsgBeginRedelegate);
 
     // x/gov
-    registerType('cosmos-sdk/MsgSubmitProposal', MsgSubmitProposal);
-    registerType('cosmos-sdk/MsgDeposit', MsgDeposit);
-    registerType('cosmos-sdk/MsgVote', MsgVote);
-    registerType('cosmos-sdk/TextProposal', TextProposal);
+    registerType('cosmos-sdk/MsgSubmitProposal', gov.MsgSubmitProposal);
+    registerType('cosmos-sdk/MsgDeposit', gov.MsgDeposit);
+    registerType('cosmos-sdk/MsgVote', gov.MsgVote);
+    registerType('cosmos-sdk/TextProposal', gov.TextProposal);
 
     _defaultInitialized = true;
   }
@@ -47,7 +57,7 @@ class Codec {
   }
 
   /// Serializes the given [value] into a [Map].
-  static Map<String, dynamic> serialize(Serializable value) {
+  static Any serialize(GeneratedMessage value) {
     _checkInit();
 
     final type = _msgTypes[value.runtimeType];
@@ -55,13 +65,13 @@ class Codec {
       throw Exception('${value.runtimeType} is not registered');
     }
 
-    return {_TYPE_KEY: type, _VALUE_KEY: value.asJson()};
+    return Any.pack(value, typeUrlPrefix: '/${type}');
   }
 
-  static Serializable deserialize(Map<String, dynamic> json) {
+  static GeneratedMessage deserialize(Any value) {
     _checkInit();
 
-    final typeKey = json[_TYPE_KEY];
+    final typeKey = value.typeUrl;
     final type = _msgTypes.keys.firstWhere(
       (k) => _msgTypes[k] == typeKey,
       orElse: () => null,
@@ -72,7 +82,7 @@ class Codec {
     }
 
     final classMirror = reflector.reflectType(type) as ClassMirror;
-    return classMirror.newInstance('fromJson', [json[_VALUE_KEY]])
-        as Serializable;
+    return classMirror.newInstance('fromBuffer', [value.value])
+        as GeneratedMessage;
   }
 }

@@ -10,7 +10,7 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../client/v1/client.pb.dart' as $0;
+import '../../client/v1/client.pb.dart' as $2;
 import 'channel.pbenum.dart';
 
 export 'channel.pbenum.dart';

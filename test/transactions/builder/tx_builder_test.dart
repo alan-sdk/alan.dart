@@ -11,15 +11,12 @@ void main() {
   });
 
   test('StdTx is built correctly', () {
-    final message = MsgSend(
-      fromAddress: 'cosmos1huydeevpz37sd9snkgul6070mstupukw00xkw9',
-      toAddress: 'cosmos12lla7fg3hjd2zj6uvf4pqj7atx273klc487c5k',
-      amount: [
-        Coin.create()
-          ..denom = 'uatom'
-          ..amount = '100',
-      ],
-    );
+    final message = MsgSend.create()
+      ..fromAddress = 'cosmos1huydeevpz37sd9snkgul6070mstupukw00xkw9'
+      ..toAddress = 'cosmos12lla7fg3hjd2zj6uvf4pqj7atx273klc487c5k';
+    message.amount.add(Coin.create()
+      ..denom = 'uatom'
+      ..amount = '100');
 
     final tx = TxBuilder.create();
     tx.setMsgs([message]);

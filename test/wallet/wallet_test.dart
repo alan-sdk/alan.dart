@@ -7,7 +7,7 @@ import 'package:hex/hex.dart';
 import 'package:test/test.dart';
 
 void main() {
-  final networkInfo = NetworkInfo(bech32Hrp: 'cosmos', lcdUrl: '');
+  final networkInfo = NetworkInfo(bech32Hrp: 'cosmos', fullNodeHost: '');
 
   final testVectors = {
     'cosmos1huydeevpz37sd9snkgul6070mstupukw00xkw9':
@@ -47,7 +47,7 @@ void main() {
   });
 
   test('random generates different wallets', () {
-    final info = NetworkInfo(bech32Hrp: 'cosmos', lcdUrl: 'example.com');
+    final info = NetworkInfo(bech32Hrp: 'cosmos', fullNodeHost: 'example.com');
     final wallets = List.generate(20, (index) => Wallet.random(info));
 
     final map = HashMap.fromIterable(
@@ -86,13 +86,13 @@ void main() {
       'rocket',
     ];
     final cosmosAddr = 'cosmos19c506umkrd4ptva9r3gjy7afmjnr4mlgalfmu0';
-    final cosmosInfo = NetworkInfo(bech32Hrp: 'cosmos', lcdUrl: 'example.com');
+    final cosmosInfo = NetworkInfo(bech32Hrp: 'cosmos', fullNodeHost: 'example.com');
 
     final wallet = Wallet.derive(mnemonic, cosmosInfo);
     expect(wallet.bech32Address, cosmosAddr);
 
     final desmosAddr = 'desmos19c506umkrd4ptva9r3gjy7afmjnr4mlgf8ytth';
-    final desmosInfo = NetworkInfo(bech32Hrp: 'desmos', lcdUrl: 'example.com');
+    final desmosInfo = NetworkInfo(bech32Hrp: 'desmos', fullNodeHost: 'example.com');
 
     final converted = Wallet.convert(wallet, desmosInfo);
     expect(converted.bech32Address, desmosAddr);
@@ -113,7 +113,7 @@ void main() {
   });
 
   test('sign generates non deterministic signatures', () {
-    final info = NetworkInfo(bech32Hrp: 'did:com:', lcdUrl: '');
+    final info = NetworkInfo(bech32Hrp: 'did:com:', fullNodeHost: '');
     final mnemonic = [
       'will',
       'hard',
@@ -149,7 +149,7 @@ void main() {
   });
 
   test('derive with different derivation path works properly', () {
-    final info = NetworkInfo(bech32Hrp: 'desmos', lcdUrl: '');
+    final info = NetworkInfo(bech32Hrp: 'desmos', fullNodeHost: '');
     final mnemonic = [
       'roast',
       'stomach',

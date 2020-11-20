@@ -1,88 +1,82 @@
 import 'dart:async';
 
 import 'package:alan/alan.dart';
-import 'package:http/http.dart' as http;
+import 'package:alan/proto/cosmos/staking/v1beta1/export.dart' as staking;
+import 'package:fixnum/fixnum.dart' as fixnum;
+import 'package:grpc/grpc.dart';
 import 'package:meta/meta.dart';
 
 /// Allows to easily query the x/staking module of a chain.
 class StakingQuerier extends QueryHelper {
-  StakingQuerier({
-    @required http.Client httpClient,
-  }) : super(httpClient: httpClient);
+  final staking.QueryClient _client;
 
-  factory StakingQuerier.build(http.Client httpClient) {
-    return StakingQuerier(httpClient: httpClient);
+  StakingQuerier._({
+    @required ClientChannel channel,
+  }) : _client = staking.QueryClient(channel);
+
+  factory StakingQuerier.build(ClientChannel channel) {
+    return StakingQuerier._(channel: channel);
   }
 
   /// Returns all validators.
-  Future<List<Validator>> getValidators(
-    String lcdEndpoint, {
+  Future<List<staking.Validator>> getValidators({
     String status = '',
     int page = 1,
     int limit = 100,
   }) async {
-    final url =
-        '/staking/validators?status=${status}&page=${page}&limit=${limit}';
-    final result = await queryChain(lcdEndpoint + url);
-    if (!result.isSuccessful) {
-      return [];
-    }
-
-    final response = LcdResponse.fromJson(result.value);
-    return (response.result as List)
-        .map((e) => Validator.fromJson(e as Map<String, dynamic>))
-        .toList();
+    final pagination = PageRequest.create()
+      ..limit = fixnum.Int64(limit)
+      ..offset = fixnum.Int64((page - 1) * limit);
+    final response = await _client.validators(
+      staking.QueryValidatorsRequest.create()
+        ..status = status
+        ..pagination = pagination,
+    );
+    return response.validators;
   }
 
   /// Returns a single validator info based on its [operatorAddress].
   /// Returns `null` if such validator cannot be found.
-  Future<Validator> getValidator(
-    String lcdEndpoint,
-    String operatorAddress,
-  ) async {
-    final url = '/staking/validators/${operatorAddress}';
-    final result = await queryChain(lcdEndpoint + url);
-    if (!result.isSuccessful) {
-      return null;
-    }
-
-    final response = LcdResponse.fromJson(result.value);
-    return Validator.fromJson(response.result as Map<String, dynamic>);
+  Future<staking.Validator> getValidator(String operatorAddress) async {
+    final response = await _client.validator(
+      staking.QueryValidatorRequest.create()..validatorAddr = operatorAddress,
+    );
+    return response.hasValidator() ? response.validator : null;
   }
 
   /// Get all delegations to the validator having the given [operatorAddress].
-  Future<List<Delegation>> getValidatorDelegations(
-    String lcdEndpoint,
-    String operatorAddress,
-  ) async {
-    final url = '/staking/validators/${operatorAddress}/delegations';
-    final result = await queryChain(lcdEndpoint + url);
-    if (!result.isSuccessful) {
-      return [];
-    }
-
-    final response = LcdResponse.fromJson(result.value);
-    return (response.result as List)
-        .map((e) => Delegation.fromJson(e as Map<String, dynamic>))
-        .toList();
+  Future<List<staking.DelegationResponse>> getValidatorDelegations(
+    String operatorAddress, {
+    int page = 1,
+    int limit = 100,
+  }) async {
+    final pagination = PageRequest.create()
+      ..limit = fixnum.Int64(limit)
+      ..offset = fixnum.Int64((page - 1) * limit);
+    final response = await _client.validatorDelegations(
+      staking.QueryValidatorDelegationsRequest.create()
+        ..validatorAddr = operatorAddress
+        ..pagination = pagination,
+    );
+    return response.delegationResponses;
   }
 
   /// Returns all unbonding delegations from the validator
   /// having the given [operatorAddress].
-  Future<List<UnbondingDelegation>> getValidatorUnbondingDelegations(
-    String lcdEndpoint,
-    String operatorAddress,
-  ) async {
-    final url = '/staking/validators/${operatorAddress}/unbonding_delegations';
-    final result = await queryChain(lcdEndpoint + url);
-    if (!result.isSuccessful) {
-      return [];
-    }
-
-    final response = LcdResponse.fromJson(result.value);
-    return (response.result as List)
-        .map((e) => UnbondingDelegation.fromJson(e as Map<String, dynamic>))
-        .toList();
+  Future<List<staking.UnbondingDelegation>> getValidatorUnbondingDelegations(
+    String operatorAddress, {
+    int page = 1,
+    int limit = 100,
+  }) async {
+    final pagination = PageRequest.create()
+      ..limit = fixnum.Int64(limit)
+      ..offset = fixnum.Int64((page - 1) * limit);
+    final response = await _client.validatorUnbondingDelegations(
+      staking.QueryValidatorUnbondingDelegationsRequest.create()
+        ..validatorAddr = operatorAddress
+        ..pagination = pagination,
+    );
+    return response.unbondingResponses;
   }
 
   // ---------------------------------------------------------------------
@@ -91,165 +85,142 @@ class StakingQuerier extends QueryHelper {
 
   /// Returns the list of delegations made from the
   /// user having the given [delegatorAddress].
-  Future<List<Delegation>> getDelegatorDelegations(
-    String lcdEndpoint,
-    String delegatorAddress,
-  ) async {
-    final url = '/staking/delegators/${delegatorAddress}/delegations';
-    final result = await queryChain(lcdEndpoint + url);
-    if (!result.isSuccessful) {
-      return [];
-    }
-
-    final lcdResponse = LcdResponse.fromJson(result.value);
-    return (lcdResponse.result as List)
-        .map((e) => Delegation.fromJson(e as Map<String, dynamic>))
-        .toList();
+  Future<List<staking.DelegationResponse>> getDelegatorDelegations(
+    String delegatorAddress, {
+    int page = 1,
+    int limit = 100,
+  }) async {
+    final pagination = PageRequest.create()
+      ..limit = fixnum.Int64(limit)
+      ..offset = fixnum.Int64((page - 1) * limit);
+    final response = await _client.delegatorDelegations(
+      staking.QueryDelegatorDelegationsRequest.create()
+        ..delegatorAddr = delegatorAddress
+        ..pagination = pagination,
+    );
+    return response.delegationResponses;
   }
 
   /// Returns the list of unbonding delegations for the user
   /// having the given [delegatorAddress].
-  Future<List<UnbondingDelegation>> getDelegatorsUnbondingDelegations(
-    String lcdEndpoint,
-    String delegatorAddress,
-  ) async {
-    final url = '/staking/delegators/${delegatorAddress}/unbonding_delegations';
-    final result = await queryChain(lcdEndpoint + url);
-    if (!result.isSuccessful) {
-      return [];
-    }
-
-    final lcdResponse = LcdResponse.fromJson(result.value);
-    return (lcdResponse.result as List)
-        .map((e) => UnbondingDelegation.fromJson(e as Map<String, dynamic>))
-        .toList();
+  Future<List<staking.UnbondingDelegation>> getDelegatorsUnbondingDelegations(
+    String delegatorAddress, {
+    int page = 1,
+    int limit = 100,
+  }) async {
+    final pagination = PageRequest.create()
+      ..limit = fixnum.Int64(limit)
+      ..offset = fixnum.Int64((page - 1) * limit);
+    final response = await _client.delegatorUnbondingDelegations(
+      staking.QueryDelegatorUnbondingDelegationsRequest.create()
+        ..delegatorAddr = delegatorAddress
+        ..pagination = pagination,
+    );
+    return response.unbondingResponses;
   }
 
   /// Returns all validators that the delegator having the
   /// given [delegatorAddress] is bonded to.
-  Future<List<Validator>> getDelegatorValidators(
-    String lcdEndpoint,
-    String delegatorAddress,
-  ) async {
-    final url = '/staking/delegators/${delegatorAddress}/validators';
-    final result = await queryChain(lcdEndpoint + url);
-    if (!result.isSuccessful) {
-      return [];
-    }
-
-    final response = LcdResponse.fromJson(result.value);
-    return (response.result as List)
-        .map((e) => Validator.fromJson(e as Map<String, dynamic>))
-        .toList();
+  Future<List<staking.Validator>> getDelegatorValidators(
+    String delegatorAddress, {
+    int page = 1,
+    int limit = 100,
+  }) async {
+    final pagination = PageRequest.create()
+      ..limit = fixnum.Int64(limit)
+      ..offset = fixnum.Int64((page - 1) * limit);
+    final response = await _client.delegatorValidators(
+      staking.QueryDelegatorValidatorsRequest.create()
+        ..delegatorAddr = delegatorAddress
+        ..pagination = pagination,
+    );
+    return response.validators;
   }
 
   /// Returns the validator having the given [validatorAddress]
   /// that the delegator having the given [delegatorAddress] is bonded to.
-  Future<Validator> getDelegatorValidator(
-    String lcdEndpoint,
+  Future<staking.Validator> getDelegatorValidator(
     String delegatorAddress,
     String validatorAddress,
   ) async {
-    final url =
-        '/staking/delegators/${delegatorAddress}/validators/${validatorAddress}';
-    final result = await queryChain(lcdEndpoint + url);
-    if (!result.isSuccessful) {
-      return null;
-    }
-
-    final response = LcdResponse.fromJson(result.value);
-    return Validator.fromJson(response.result as Map<String, dynamic>);
+    final response = await _client.delegatorValidator(
+      staking.QueryDelegatorValidatorRequest.create()
+        ..delegatorAddr = delegatorAddress
+        ..validatorAddr = validatorAddress,
+    );
+    return response.hasValidator() ? response.validator : null;
   }
 
   /// Returns the delegation between the delegator having the
   /// given [delegatorAddress] and the validator having
   /// the given [validatorAddress].
   /// Returns `null` if no delegation could be found.
-  Future<Delegation> getDelegationBetweenDelegatorAndValidator(
-    String lcdEndpoint,
+  Future<staking.DelegationResponse> getDelegationBetweenDelegatorAndValidator(
     String delegatorAddress,
     String validatorAddress,
   ) async {
-    final url =
-        '/staking/delegators/${delegatorAddress}/delegations/${validatorAddress}';
-    final result = await queryChain(lcdEndpoint + url);
-    if (!result.isSuccessful) {
-      return null;
-    }
-
-    final response = LcdResponse.fromJson(result.value);
-    return Delegation.fromJson(response.result as Map<String, dynamic>);
+    final response = await _client.delegation(
+      staking.QueryDelegationRequest.create()
+        ..validatorAddr = validatorAddress
+        ..delegatorAddr = delegatorAddress,
+    );
+    return response.hasDelegationResponse()
+        ? response.delegationResponse
+        : null;
   }
 
-  /// Returns all unbonding delegations between the delegator having
+  /// Returns the unbonding delegation between the delegator having
   /// the given [delegatorAddress] and the validator having the
-  /// given [validatorAddress].
-  Future<List<UnbondingDelegation>>
-      getUnbondingDelegationsBetweenDelegatorAndValidator(
-    String lcdEndpoint,
+  /// given [validatorAddress], or `null` if not found.
+  Future<staking.UnbondingDelegation>
+      getUnbondingDelegationBetweenDelegatorAndValidator(
     String delegatorAddress,
     String validatorAddress,
   ) async {
-    final url =
-        '/staking/delegators/${delegatorAddress}/unbonding_delegations/${validatorAddress}';
-    final result = await queryChain(lcdEndpoint + url);
-    if (!result.isSuccessful) {
-      return [];
-    }
-
-    final response = LcdResponse.fromJson(result.value);
-    return (response.result as List)
-        .map((e) => UnbondingDelegation.fromJson(e as Map<String, dynamic>))
-        .toList();
+    final response = await _client.unbondingDelegation(
+      staking.QueryUnbondingDelegationRequest.create()
+        ..delegatorAddr = delegatorAddress
+        ..validatorAddr = validatorAddress,
+    );
+    return response.hasUnbond() ? response.unbond : null;
   }
 
   /// Returns the redelegations based on the given
   /// [delegatorAddress], [sourceValidatorAddress] and
   /// [destinationValidatorAddress] given.
-  Future<List<Redelegation>> getRedelegations(
-    String lcdEndpoint, {
+  Future<List<staking.RedelegationResponse>> getRedelegations({
     String delegatorAddress = '',
     String sourceValidatorAddress = '',
     String destinationValidatorAddress = '',
+    int page = 1,
+    int limit = 100,
   }) async {
-    final url =
-        '/staking/redelegations?delegator=${delegatorAddress}&validator_from=${sourceValidatorAddress}&validator_to=${destinationValidatorAddress}';
-    final result = await queryChain(lcdEndpoint + url);
-    if (!result.isSuccessful) {
-      return [];
-    }
-
-    final response = LcdResponse.fromJson(result.value);
-    return (response.result as List)
-        .map((e) => Redelegation.fromJson(e as Map<String, dynamic>))
-        .toList();
+    final pagination = PageRequest.create()
+      ..limit = fixnum.Int64(limit)
+      ..offset = fixnum.Int64((page - 1) * limit);
+    final response = await _client.redelegations(
+      staking.QueryRedelegationsRequest.create()
+        ..delegatorAddr = delegatorAddress
+        ..srcValidatorAddr = sourceValidatorAddress
+        ..dstValidatorAddr = destinationValidatorAddress
+        ..pagination = pagination,
+    );
+    return response.redelegationResponses;
   }
 
   // ---------------------------------------------------------------------
   // --------------------------- GENERIC ---------------------------------
   // ---------------------------------------------------------------------
 
-  /// Returns the current state of the staking pool.
-  Future<StakingPool> getPool(String lcdEndpoint) async {
-    final url = '/staking/pool';
-    final result = await queryChain(lcdEndpoint + url);
-    if (!result.isSuccessful) {
-      return null;
-    }
-
-    final response = LcdResponse.fromJson(result.value);
-    return StakingPool.fromJson(response.result as Map<String, dynamic>);
+  /// Returns the current state of the staking pool, or `null` if not found.
+  Future<staking.Pool> getPool(String lcdEndpoint) async {
+    final response = await _client.pool(staking.QueryPoolRequest.create());
+    return response.hasPool() ? response.pool : null;
   }
 
-  /// Returns the current staking parameter values.
-  Future<StakingParams> getParams(String lcdEndpoint) async {
-    final url = '/staking/parameters';
-    final result = await queryChain(lcdEndpoint + url);
-    if (!result.isSuccessful) {
-      return null;
-    }
-
-    final response = LcdResponse.fromJson(result.value);
-    return StakingParams.fromJson(response.result as Map<String, dynamic>);
+  /// Returns the current staking parameter values, or `null` if not found.
+  Future<staking.Params> getParams(String lcdEndpoint) async {
+    final response = await _client.params(staking.QueryParamsRequest.create());
+    return response.hasParams() ? response.params : null;
   }
 }

@@ -13,7 +13,8 @@ class TxSender {
     @required http.Client httpClient,
   }) : _httpClient = httpClient;
 
-  factory TxSender.build(http.Client httpClient) {
+  factory TxSender.build({http.Client httpClient}) {
+    httpClient ??= http.Client();
     return TxSender(httpClient: httpClient);
   }
 
@@ -28,7 +29,7 @@ class TxSender {
   }) async {
     try {
       // Get the endpoint
-      final apiUrl = '${wallet.networkInfo.lcdUrl}/txs';
+      final apiUrl = '${wallet.networkInfo.fullNodeHost}/txs';
 
       // Build the request body
       final requestBody = {'tx': stdTx.writeToJson(), 'mode': mode.toJson()};

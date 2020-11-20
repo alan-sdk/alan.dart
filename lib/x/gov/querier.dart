@@ -1,143 +1,93 @@
-import 'package:alan/alan.dart';
-import 'package:alan/x/gov/types/params.dart';
-import 'package:http/http.dart' as http;
+import 'package:alan/proto/cosmos/gov/v1beta1/export.dart' as gov;
+import 'package:fixnum/fixnum.dart' as fixnum;
+import 'package:grpc/grpc.dart';
 import 'package:meta/meta.dart';
 
 /// Allows to easily query the x/gov module of a chain.
-class GovQuerier extends QueryHelper {
-  GovQuerier({
-    @required http.Client httpClient,
-  }) : super(httpClient: httpClient);
+class GovQuerier {
+  final gov.QueryClient _client;
 
-  factory GovQuerier.build(http.Client httpClient) {
-    return GovQuerier(httpClient: httpClient);
+  GovQuerier._({
+    @required ClientChannel channel,
+  }) : _client = gov.QueryClient(channel);
+
+  factory GovQuerier.build(ClientChannel channel) {
+    return GovQuerier._(channel: channel);
   }
 
   /// Returns all the proposals stored on chain
-  Future<List<Proposal>> getProposals(String lcdEndpoint) async {
-    final url = '/gov/proposals';
-    final result = await queryChain(lcdEndpoint + url);
-    if (!result.isSuccessful) {
-      return [];
-    }
-
-    final response = LcdResponse.fromJson(result.value);
-    return (response.result as List)
-        .map((e) => Proposal.fromJson(e as Map<String, dynamic>))
-        .toList();
+  Future<List<gov.Proposal>> getProposals() async {
+    final response = await _client.proposals(
+      gov.QueryProposalsRequest.create(),
+    );
+    return response.proposals;
   }
 
   /// Returns the proposal having the given [id], or `null` if nothing is found.
-  Future<Proposal> getProposal(String lcdEndpoint, String id) async {
-    final url = '/gov/proposals/${id}';
-    final result = await queryChain(lcdEndpoint + url);
-    if (!result.isSuccessful) {
-      return null;
-    }
-
-    final response = LcdResponse.fromJson(result.value);
-    return Proposal.fromJson(response.result as Map<String, dynamic>);
+  Future<gov.Proposal> getProposal(int id) async {
+    final response = await _client.proposal(
+      gov.QueryProposalRequest.create()..proposalId = fixnum.Int64(id),
+    );
+    return response.hasProposal() ? response.proposal : null;
   }
 
   /// Returns the proposer of the proposal having the given [proposalId],
   /// or `null` if nothing was found.
-  Future<Proposer> getProposalProposer(
-    String lcdEndpoint,
-    String proposalId,
-  ) async {
-    final url = '/gov/proposals/${proposalId}/proposer';
-    final result = await queryChain(lcdEndpoint + url);
-    if (!result.isSuccessful) {
-      return null;
-    }
-
-    final response = LcdResponse.fromJson(result.value);
-    return Proposer.fromJson(response.result as Map<String, dynamic>);
+  Future<String> getProposalProposer(int proposalId) async {
+    // TODO: Must implement
+    throw Exception('Not implemented');
   }
 
   /// Returns all the deposits that have been made to the proposal having
   /// the given [proposalId].
-  Future<List<Deposit>> getProposalDeposits(
-    String lcdEndpoint,
-    String proposalId,
-  ) async {
-    final url = '/gov/proposals/${proposalId}/deposits';
-    final result = await queryChain(lcdEndpoint + url);
-    if (!result.isSuccessful) {
-      return [];
-    }
-
-    final response = LcdResponse.fromJson(result.value);
-    return (response.result as List)
-        .map((e) => Deposit.fromJson(e as Map<String, dynamic>))
-        .toList();
+  Future<List<gov.Deposit>> getProposalDeposits(int proposalId) async {
+    final response = await _client.deposits(
+      gov.QueryDepositsRequest.create()..proposalId = fixnum.Int64(proposalId),
+    );
+    return response.deposits;
   }
 
   /// Returns the deposit that the given [depositor] have made to the
   /// proposer having the given [proposalId], or `null` if not found.
-  Future<Deposit> getProposalDepositorDeposit(
-    String lcdEndpoint,
-    String proposalId,
+  Future<gov.Deposit> getProposalDepositorDeposit(
+    int proposalId,
     String depositor,
   ) async {
-    final url = '/gov/proposals/${proposalId}/depositors/${depositor}';
-    final result = await queryChain(lcdEndpoint + url);
-    if (!result.isSuccessful) {
-      return null;
-    }
-
-    final response = LcdResponse.fromJson(result.value);
-    return Deposit.fromJson(response.result as Map<String, dynamic>);
+    final response = await _client.deposit(
+      gov.QueryDepositRequest.create()
+        ..proposalId = fixnum.Int64(proposalId)
+        ..depositor = depositor,
+    );
+    return response.hasDeposit() ? response.deposit : null;
   }
 
   /// Returns the votes associated with the proposal having the
   /// given [proposalId].
-  Future<List<Vote>> getProposalVotes(
-    String lcdEndpoint,
-    String proposalId,
-  ) async {
-    final url = '/gov/proposals/${proposalId}/votes';
-    final result = await queryChain(lcdEndpoint + url);
-    if (!result.isSuccessful) {
-      return [];
-    }
-
-    final response = LcdResponse.fromJson(result.value);
-    return (response.result as List)
-        .map((e) => Vote.fromJson(e as Map<String, dynamic>))
-        .toList();
+  Future<List<gov.Vote>> getProposalVotes(int proposalId) async {
+    final response = await _client.votes(
+      gov.QueryVotesRequest.create()..proposalId = fixnum.Int64(proposalId),
+    );
+    return response.votes;
   }
 
   /// Returns the vote of the given [voter] to the proposal having the given
   /// [proposalId].
-  Future<Vote> getProposalVoteByVoter(
-    String lcdEndpoint,
-    String proposalId,
-    String voter,
-  ) async {
-    final url = '/gov/proposals/${proposalId}/votes/${voter}';
-    final result = await queryChain(lcdEndpoint + url);
-    if (!result.isSuccessful) {
-      return null;
-    }
-
-    final response = LcdResponse.fromJson(result.value);
-    return Vote.fromJson(response.result as Map<String, dynamic>);
+  Future<gov.Vote> getProposalVoteByVoter(int proposalId, String voter) async {
+    final response = await _client.vote(
+      gov.QueryVoteRequest.create()
+        ..proposalId = fixnum.Int64(proposalId)
+        ..voter = voter,
+    );
+    return response.hasVote() ? response.vote : null;
   }
 
   /// Returns the tally results for the proposal having the given [proposalId].
-  Future<TallyResult> getProposalTallyResult(
-    String lcdEndpoint,
-    String proposalId,
-  ) async {
-    final url = '/gov/proposals/${proposalId}/tally';
-    final result = await queryChain(lcdEndpoint + url);
-    if (!result.isSuccessful) {
-      return null;
-    }
-
-    final response = LcdResponse.fromJson(result.value);
-    return TallyResult.fromJson(response.result as Map<String, dynamic>);
+  Future<gov.TallyResult> getProposalTallyResult(int proposalId) async {
+    final response = await _client.tallyResult(
+      gov.QueryTallyResultRequest.create()
+        ..proposalId = fixnum.Int64(proposalId),
+    );
+    return response.hasTally() ? response.tally : null;
   }
 
   // ---------------------------------------------------------------------
@@ -145,38 +95,20 @@ class GovQuerier extends QueryHelper {
   // ---------------------------------------------------------------------
 
   /// Returns the current deposit params
-  Future<DepositParams> getDepositParams(String lcdEndpoint) async {
-    final url = '/gov/parameters/deposit';
-    final result = await queryChain(lcdEndpoint + url);
-    if (!result.isSuccessful) {
-      return null;
-    }
-
-    final response = LcdResponse.fromJson(result.value);
-    return DepositParams.fromJson(response.result as Map<String, dynamic>);
+  Future<gov.DepositParams> getDepositParams() async {
+    final response = await _client.params(gov.QueryParamsRequest.create());
+    return response.hasDepositParams() ? response.depositParams : null;
   }
 
   /// Returns the current tallying params
-  Future<TallyingParams> getTallyingParams(String lcdEndpoint) async {
-    final url = '/gov/parameters/tallying';
-    final result = await queryChain(lcdEndpoint + url);
-    if (!result.isSuccessful) {
-      return null;
-    }
-
-    final response = LcdResponse.fromJson(result.value);
-    return TallyingParams.fromJson(response.result as Map<String, dynamic>);
+  Future<gov.TallyParams> getTallyParams() async {
+    final response = await _client.params(gov.QueryParamsRequest.create());
+    return response.hasTallyParams() ? response.tallyParams : null;
   }
 
   /// Returns the current voting params
-  Future<VotingParams> getVotingParams(String lcdEndpoint) async {
-    final url = '/gov/parameters/voting';
-    final result = await queryChain(lcdEndpoint + url);
-    if (!result.isSuccessful) {
-      return null;
-    }
-
-    final response = LcdResponse.fromJson(result.value);
-    return VotingParams.fromJson(response.result as Map<String, dynamic>);
+  Future<gov.VotingParams> getVotingParams() async {
+    final response = await _client.params(gov.QueryParamsRequest.create());
+    return response.hasVotingParams() ? response.votingParams : null;
   }
 }

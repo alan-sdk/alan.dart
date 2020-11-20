@@ -9,7 +9,7 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../commitment/v1/commitment.pb.dart' as $0;
+import '../../commitment/v1/commitment.pb.dart' as $2;
 import 'connection.pbenum.dart';
 
 export 'connection.pbenum.dart';

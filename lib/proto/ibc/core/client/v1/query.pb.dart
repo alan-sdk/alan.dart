@@ -5,15 +5,16 @@
 // @dart = 2.3
 // ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
-import 'dart:async' as $async;
 import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../../cosmos/base/query/v1beta1/pagination.pb.dart' as $2;
-import '../../../../google/protobuf/any.pb.dart' as $0;
-import 'client.pb.dart' as $1t extends $pb.GeneratedMessage {
+import '../../../../cosmos/base/query/v1beta1/pagination.pb.dart' as $4;
+import '../../../../google/protobuf/any.pb.dart' as $2;
+import 'client.pb.dart' as $3;
+
+class QueryClientStateRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryClientStateRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ibc.core.client.v1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'clientId')
     ..hasRequiredFields = false

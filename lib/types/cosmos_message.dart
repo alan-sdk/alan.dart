@@ -1,4 +1,4 @@
-import 'package:alan/alan.dart';
+import 'package:protobuf/protobuf.dart' as pb;
 
 /// Represents a standard message that can be included inside
 /// a transaction.
@@ -15,21 +15,11 @@ import 'package:alan/alan.dart';
 ///
 /// Not implementing one of the two methods above will result in an error
 /// during either the serialization or deserialization.
-abstract class StdMsg extends Serializable {
-  /// Default empty constructor to allow the existance of the factory method.
+abstract class StdMsg implements pb.GeneratedMessage {
+  /// Default empty constructor to allow the existence of the factory method.
   StdMsg();
 
   /// Validates this message. If something is wrong within it, returns
   /// the exception to be thrown.
   Exception validate();
-
-  String typeUrl();
-
-  GeneratedMessage message();
-
-  /// Factory method that is defined in order to allow proper message
-  /// deserialization.
-  factory StdMsg.fromJson(Map<String, dynamic> json) {
-    return Codec.deserialize(json) as StdMsg;
-  }
 }
