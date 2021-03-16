@@ -16,7 +16,14 @@ const QueryParamsRequest$json = const {
 const QueryParamsResponse$json = const {
   '1': 'QueryParamsResponse',
   '2': const [
-    const {'1': 'param', '3': 1, '4': 1, '5': 11, '6': '.cosmos.params.v1beta1.ParamChange', '8': const {}, '10': 'param'},
+    const {
+      '1': 'param',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.cosmos.params.v1beta1.ParamChange',
+      '8': const {},
+      '10': 'param'
+    },
   ],
 };
-

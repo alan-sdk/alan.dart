@@ -1,4 +1,5 @@
 import 'package:alan/alan.dart';
+import 'package:convert/convert.dart';
 import 'package:fixnum/fixnum.dart' as fixnum;
 
 /// [DirectSignModeHandler] defines the [SIGN_MODE_DIRECT] [SignModeHandler].
@@ -24,10 +25,21 @@ class DirectSignModeHandler extends SignModeHandler {
     final authInfoBytes = tx.authInfo.writeToBuffer();
 
     final signDoc = SignDoc.create();
-    signDoc.bodyBytes = bodyBytes;
-    signDoc.authInfoBytes = authInfoBytes;
-    signDoc.chainId = data.chainId;
-    signDoc.accountNumber = fixnum.Int64(data.accountNumber);
+    if (bodyBytes.isNotEmpty) {
+      signDoc.bodyBytes = bodyBytes;
+    }
+
+    if (authInfoBytes.isNotEmpty) {
+      signDoc.authInfoBytes = authInfoBytes;
+    }
+
+    if (data.chainId != null && data.chainId.isNotEmpty) {
+      signDoc.chainId = data.chainId;
+    }
+
+    if (data.accountNumber != null && data.accountNumber > 0) {
+      signDoc.accountNumber = data.accountNumber;
+    }
 
     return signDoc.writeToBuffer();
   }

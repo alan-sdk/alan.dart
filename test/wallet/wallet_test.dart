@@ -86,13 +86,15 @@ void main() {
       'rocket',
     ];
     final cosmosAddr = 'cosmos19c506umkrd4ptva9r3gjy7afmjnr4mlgalfmu0';
-    final cosmosInfo = NetworkInfo(bech32Hrp: 'cosmos', fullNodeHost: 'example.com');
+    final cosmosInfo =
+        NetworkInfo(bech32Hrp: 'cosmos', fullNodeHost: 'example.com');
 
     final wallet = Wallet.derive(mnemonic, cosmosInfo);
     expect(wallet.bech32Address, cosmosAddr);
 
     final desmosAddr = 'desmos19c506umkrd4ptva9r3gjy7afmjnr4mlgf8ytth';
-    final desmosInfo = NetworkInfo(bech32Hrp: 'desmos', fullNodeHost: 'example.com');
+    final desmosInfo =
+        NetworkInfo(bech32Hrp: 'desmos', fullNodeHost: 'example.com');
 
     final converted = Wallet.convert(wallet, desmosInfo);
     expect(converted.bech32Address, desmosAddr);

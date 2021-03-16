@@ -8,8 +8,23 @@
 const GenesisState$json = const {
   '1': 'GenesisState',
   '2': const [
-    const {'1': 'connections', '3': 1, '4': 3, '5': 11, '6': '.ibc.core.connection.v1.IdentifiedConnection', '8': const {}, '10': 'connections'},
-    const {'1': 'client_connection_paths', '3': 2, '4': 3, '5': 11, '6': '.ibc.core.connection.v1.ConnectionPaths', '8': const {}, '10': 'clientConnectionPaths'},
+    const {
+      '1': 'connections',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.ibc.core.connection.v1.IdentifiedConnection',
+      '8': const {},
+      '10': 'connections'
+    },
+    const {
+      '1': 'client_connection_paths',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.ibc.core.connection.v1.ConnectionPaths',
+      '8': const {},
+      '10': 'clientConnectionPaths'
+    },
   ],
 };
-

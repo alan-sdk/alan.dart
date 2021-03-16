@@ -9,6 +9,11 @@ class DefaultTxConfig extends TxConfig {
   }
 
   @override
+  TxEncoder txEncoder() {
+    return DefaultEncoder();
+  }
+
+  @override
   SignMode defaultSignMode() {
     return SignMode.SIGN_MODE_DIRECT;
   }

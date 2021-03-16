@@ -8,9 +8,23 @@
 const ClientState$json = const {
   '1': 'ClientState',
   '2': const [
-    const {'1': 'chain_id', '3': 1, '4': 1, '5': 9, '8': const {}, '10': 'chainId'},
-    const {'1': 'height', '3': 2, '4': 1, '5': 11, '6': '.ibc.core.client.v1.Height', '8': const {}, '10': 'height'},
+    const {
+      '1': 'chain_id',
+      '3': 1,
+      '4': 1,
+      '5': 9,
+      '8': const {},
+      '10': 'chainId'
+    },
+    const {
+      '1': 'height',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.client.v1.Height',
+      '8': const {},
+      '10': 'height'
+    },
   ],
   '7': const {},
 };
-

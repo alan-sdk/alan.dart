@@ -12,7 +12,14 @@ const QueryCurrentPlanRequest$json = const {
 const QueryCurrentPlanResponse$json = const {
   '1': 'QueryCurrentPlanResponse',
   '2': const [
-    const {'1': 'plan', '3': 1, '4': 1, '5': 11, '6': '.cosmos.upgrade.v1beta1.Plan', '10': 'plan'},
+    const {
+      '1': 'plan',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.cosmos.upgrade.v1beta1.Plan',
+      '10': 'plan'
+    },
   ],
 };
 
@@ -30,3 +37,25 @@ const QueryAppliedPlanResponse$json = const {
   ],
 };
 
+const QueryUpgradedConsensusStateRequest$json = const {
+  '1': 'QueryUpgradedConsensusStateRequest',
+  '2': const [
+    const {'1': 'last_height', '3': 1, '4': 1, '5': 3, '10': 'lastHeight'},
+  ],
+};
+
+const QueryUpgradedConsensusStateResponse$json = const {
+  '1': 'QueryUpgradedConsensusStateResponse',
+  '2': const [
+    const {
+      '1': 'upgraded_consensus_state',
+      '3': 2,
+      '4': 1,
+      '5': 12,
+      '10': 'upgradedConsensusState'
+    },
+  ],
+  '9': const [
+    const {'1': 1, '2': 2},
+  ],
+};

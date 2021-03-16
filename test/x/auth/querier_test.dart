@@ -26,7 +26,6 @@ void main() {
       server.enqueue(httpCode: 200, body: file.readAsStringSync());
 
       final result = await helper.getAccountData(
-        server.url,
         'cosmos1hafptm4zxy5nw8rd2pxyg83c5ls2v62tstzuv2',
       );
       expect(result.address, 'cosmos1hafptm4zxy5nw8rd2pxyg83c5ls2v62tstzuv2');
@@ -36,14 +35,14 @@ void main() {
       final file = File('test_resources/x/auth/response_account.json');
       server.enqueue(httpCode: 200, body: file.readAsStringSync());
 
-      final result = await helper.getAccountData(server.url, 'address');
+      final result = await helper.getAccountData('address');
       expect(result, isNull);
     });
 
     test('returns null with wrong answer', () async {
       server.enqueue(httpCode: 400);
 
-      final result = await helper.getAccountData(server.url, 'address');
+      final result = await helper.getAccountData('address');
       expect(result, isNull);
     });
   });

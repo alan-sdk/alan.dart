@@ -1,4 +1,5 @@
 import 'package:alan/proto/cosmos/gov/v1beta1/export.dart' as gov;
+
 import 'package:fixnum/fixnum.dart' as fixnum;
 import 'package:grpc/grpc.dart';
 import 'package:meta/meta.dart';

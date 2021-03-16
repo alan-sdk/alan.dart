@@ -19,10 +19,39 @@ const State$json = const {
 const ConnectionEnd$json = const {
   '1': 'ConnectionEnd',
   '2': const [
-    const {'1': 'client_id', '3': 1, '4': 1, '5': 9, '8': const {}, '10': 'clientId'},
-    const {'1': 'versions', '3': 2, '4': 3, '5': 11, '6': '.ibc.core.connection.v1.Version', '10': 'versions'},
-    const {'1': 'state', '3': 3, '4': 1, '5': 14, '6': '.ibc.core.connection.v1.State', '10': 'state'},
-    const {'1': 'counterparty', '3': 4, '4': 1, '5': 11, '6': '.ibc.core.connection.v1.Counterparty', '8': const {}, '10': 'counterparty'},
+    const {
+      '1': 'client_id',
+      '3': 1,
+      '4': 1,
+      '5': 9,
+      '8': const {},
+      '10': 'clientId'
+    },
+    const {
+      '1': 'versions',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.ibc.core.connection.v1.Version',
+      '10': 'versions'
+    },
+    const {
+      '1': 'state',
+      '3': 3,
+      '4': 1,
+      '5': 14,
+      '6': '.ibc.core.connection.v1.State',
+      '10': 'state'
+    },
+    const {
+      '1': 'counterparty',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.connection.v1.Counterparty',
+      '8': const {},
+      '10': 'counterparty'
+    },
   ],
   '7': const {},
 };
@@ -31,10 +60,39 @@ const IdentifiedConnection$json = const {
   '1': 'IdentifiedConnection',
   '2': const [
     const {'1': 'id', '3': 1, '4': 1, '5': 9, '8': const {}, '10': 'id'},
-    const {'1': 'client_id', '3': 2, '4': 1, '5': 9, '8': const {}, '10': 'clientId'},
-    const {'1': 'versions', '3': 3, '4': 3, '5': 11, '6': '.ibc.core.connection.v1.Version', '10': 'versions'},
-    const {'1': 'state', '3': 4, '4': 1, '5': 14, '6': '.ibc.core.connection.v1.State', '10': 'state'},
-    const {'1': 'counterparty', '3': 5, '4': 1, '5': 11, '6': '.ibc.core.connection.v1.Counterparty', '8': const {}, '10': 'counterparty'},
+    const {
+      '1': 'client_id',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '8': const {},
+      '10': 'clientId'
+    },
+    const {
+      '1': 'versions',
+      '3': 3,
+      '4': 3,
+      '5': 11,
+      '6': '.ibc.core.connection.v1.Version',
+      '10': 'versions'
+    },
+    const {
+      '1': 'state',
+      '3': 4,
+      '4': 1,
+      '5': 14,
+      '6': '.ibc.core.connection.v1.State',
+      '10': 'state'
+    },
+    const {
+      '1': 'counterparty',
+      '3': 5,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.connection.v1.Counterparty',
+      '8': const {},
+      '10': 'counterparty'
+    },
   ],
   '7': const {},
 };
@@ -42,9 +100,31 @@ const IdentifiedConnection$json = const {
 const Counterparty$json = const {
   '1': 'Counterparty',
   '2': const [
-    const {'1': 'client_id', '3': 1, '4': 1, '5': 9, '8': const {}, '10': 'clientId'},
-    const {'1': 'connection_id', '3': 2, '4': 1, '5': 9, '8': const {}, '10': 'connectionId'},
-    const {'1': 'prefix', '3': 3, '4': 1, '5': 11, '6': '.ibc.core.commitment.v1.MerklePrefix', '8': const {}, '10': 'prefix'},
+    const {
+      '1': 'client_id',
+      '3': 1,
+      '4': 1,
+      '5': 9,
+      '8': const {},
+      '10': 'clientId'
+    },
+    const {
+      '1': 'connection_id',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '8': const {},
+      '10': 'connectionId'
+    },
+    const {
+      '1': 'prefix',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.commitment.v1.MerklePrefix',
+      '8': const {},
+      '10': 'prefix'
+    },
   ],
   '7': const {},
 };
@@ -59,7 +139,14 @@ const ClientPaths$json = const {
 const ConnectionPaths$json = const {
   '1': 'ConnectionPaths',
   '2': const [
-    const {'1': 'client_id', '3': 1, '4': 1, '5': 9, '8': const {}, '10': 'clientId'},
+    const {
+      '1': 'client_id',
+      '3': 1,
+      '4': 1,
+      '5': 9,
+      '8': const {},
+      '10': 'clientId'
+    },
     const {'1': 'paths', '3': 2, '4': 3, '5': 9, '10': 'paths'},
   ],
 };
@@ -72,4 +159,3 @@ const Version$json = const {
   ],
   '7': const {},
 };
-

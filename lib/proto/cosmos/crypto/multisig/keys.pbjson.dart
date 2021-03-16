@@ -8,9 +8,23 @@
 const LegacyAminoPubKey$json = const {
   '1': 'LegacyAminoPubKey',
   '2': const [
-    const {'1': 'threshold', '3': 1, '4': 1, '5': 13, '8': const {}, '10': 'threshold'},
-    const {'1': 'public_keys', '3': 2, '4': 3, '5': 11, '6': '.google.protobuf.Any', '8': const {}, '10': 'publicKeys'},
+    const {
+      '1': 'threshold',
+      '3': 1,
+      '4': 1,
+      '5': 13,
+      '8': const {},
+      '10': 'threshold'
+    },
+    const {
+      '1': 'public_keys',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.google.protobuf.Any',
+      '8': const {},
+      '10': 'publicKeys'
+    },
   ],
   '7': const {},
 };
-

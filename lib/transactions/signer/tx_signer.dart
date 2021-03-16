@@ -1,0 +1,113 @@
+import 'dart:typed_data';
+
+import 'package:alan/alan.dart';
+import 'package:grpc/grpc.dart';
+import 'package:http/http.dart' as http;
+import 'package:meta/meta.dart';
+import 'package:protobuf/protobuf.dart';
+
+/// Allows to create and sign a [Tx] object so that it can later
+/// be sent to the chain.
+class TxSigner {
+  final AuthQuerier _authQuerier;
+  final NodeQuerier _nodeQuerier;
+
+  TxSigner._({
+    @required AuthQuerier authQuerier,
+    @required NodeQuerier nodeQuerier,
+  })  : _authQuerier = authQuerier,
+        _nodeQuerier = nodeQuerier;
+
+  /// Builds a new [TxSigner] from a given gRPC client channel and HTTP client.
+  factory TxSigner.build(ClientChannel clientChannel, http.Client httpClient) {
+    return TxSigner._(
+      authQuerier: AuthQuerier.build(clientChannel),
+      nodeQuerier: NodeQuerier.build(httpClient),
+    );
+  }
+
+  /// Builds a new [TxSigner] from the given [NetworkInfo].
+  factory TxSigner.fromNetworkInfo(NetworkInfo info) {
+    final clientChannel = ClientChannel(info.fullNodeHost, port: info.gRPCPort);
+    final httpClient = http.Client();
+    return TxSigner.build(clientChannel, httpClient);
+  }
+
+  /// Creates a new [Tx] object containing the given [msgs] and signs it using
+  /// the provided [wallet].
+  /// Optional [TxConfig], memo, gas and fees can be supplied as well.
+  Future<Tx> createAndSign(
+    Wallet wallet,
+    List<GeneratedMessage> msgs, {
+    TxConfig config,
+    String memo,
+    int gas = 200000,
+    List<Coin> feeAmt = const [],
+  }) async {
+    // Set the config to the default value if not given
+    config ??= DefaultTxConfig.create();
+    final signMode = config.defaultSignMode();
+
+    // Get the account data and node info from the network
+    final account = await _authQuerier.getAccountData(wallet.bech32Address);
+    if (account == null) {
+      throw Exception(
+        'Account ${wallet.bech32Address} does not exist on chain',
+      );
+    }
+
+    // Get the node info data
+    final nodeInfo = await _nodeQuerier.getNodeInfo(
+      wallet.networkInfo.lcdEndpoint,
+    );
+
+    // For SIGN_MODE_DIRECT, calling SetSignatures calls setSignerInfos on
+    // TxBuilder under the hood, and SignerInfos is needed to generated the
+    // sign bytes. This is the reason for setting SetSignatures here, with a
+    // nil signature.
+    //
+    // Note: this line is not needed for SIGN_MODE_LEGACY_AMINO, but putting it
+    // also doesn't affect its generated sign bytes, so for code's simplicity
+    // sake, we put it here.
+    var sigData = SingleSignatureData(signMode: signMode, signature: null);
+
+    // Set SignatureV2 with empty signatures, to set correct signer infos.
+    var sig = SignatureV2(
+      pubKey: account.pubKey,
+      data: sigData,
+      sequence: account.sequence,
+    );
+
+    // Create the transaction builder
+    final tx = config.newTxBuilder()
+      ..setMsgs(msgs)
+      ..setSignatures([sig])
+      ..setMemo(memo)
+      ..setFeeAmount(feeAmt)
+      ..setGasLimit(gas);
+
+    // Generate the bytes to be signed.
+    final handler = config.signModeHandler();
+    final signerData = SignerData(
+      chainId: nodeInfo.network,
+      accountNumber: account.accountNumber,
+      sequence: account.sequence,
+    );
+    final bytesToSign = handler.getSignBytes(signMode, signerData, tx.getTx());
+
+    // Sign those bytes
+    final sigBytes = wallet.sign(Uint8List.fromList(bytesToSign));
+
+    // Construct the SignatureV2 struct
+    sigData = SingleSignatureData(signMode: signMode, signature: sigBytes);
+    sig = SignatureV2(
+      pubKey: account.pubKey,
+      data: sigData,
+      sequence: account.sequence,
+    );
+    tx.setSignatures([sig]);
+
+    // Return the signed transaction
+    return tx.getTx();
+  }
+}

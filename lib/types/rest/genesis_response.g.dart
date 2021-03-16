@@ -10,7 +10,7 @@ GenesisResponse _$GenesisResponseFromJson(Map<String, dynamic> json) {
   return GenesisResponse(
     result: json['result'] == null
         ? null
-        : Result.fromJson(json['result'] as Map<String, dynamic>),
+        : GenesisResult.fromJson(json['result'] as Map<String, dynamic>),
   );
 }
 
@@ -19,15 +19,16 @@ Map<String, dynamic> _$GenesisResponseToJson(GenesisResponse instance) =>
       'result': instance.result?.toJson(),
     };
 
-Result _$ResultFromJson(Map<String, dynamic> json) {
-  return Result(
+GenesisResult _$GenesisResultFromJson(Map<String, dynamic> json) {
+  return GenesisResult(
     genesis: json['genesis'] == null
         ? null
         : Genesis.fromJson(json['genesis'] as Map<String, dynamic>),
   );
 }
 
-Map<String, dynamic> _$ResultToJson(Result instance) => <String, dynamic>{
+Map<String, dynamic> _$GenesisResultToJson(GenesisResult instance) =>
+    <String, dynamic>{
       'genesis': instance.genesis?.toJson(),
     };
 

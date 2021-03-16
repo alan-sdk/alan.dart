@@ -3,6 +3,8 @@ import 'dart:io';
 
 import 'package:alan/alan.dart';
 import 'package:alan/proto/cosmos/auth/v1beta1/export.dart' as auth;
+import 'package:convert/convert.dart';
+import 'package:fixnum/fixnum.dart' as fixnum;
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
 
@@ -51,8 +53,16 @@ void main() {
 
   test('StdTx with fee is signed correctly', () async {
     when(authQuerier.getAccountData(any)).thenAnswer((_) {
-      final file = File('test_resources/x/auth/response_account.json');
-      final account = auth.BaseAccount.fromJson(file.readAsStringSync());
+      final pubKey = Any()
+        ..typeUrl = '/cosmos.crypto.secp256k1.PubKey'
+        ..value = hex.decode(
+            '0a2102b30ed93e4534a91e176680658d35da9fdca5af7e3ea2aac3619c4113e1027df0');
+
+      final account = auth.BaseAccount()
+        ..pubKey = pubKey
+        ..address = 'cosmos1hafptm4zxy5nw8rd2pxyg83c5ls2v62tstzuv2'
+        ..sequence = fixnum.Int64(0)
+        ..accountNumber = fixnum.Int64(0);
       return Future.value(account);
     });
 
@@ -85,7 +95,7 @@ void main() {
     expect(wallet.networkInfo, networkInfo);
 
     // Sign the transaction
-    final signedTx = await creator.generate(
+    final signedTx = await creator.createAndSign(
       wallet,
       [msg],
       gas: 200000,
@@ -96,7 +106,7 @@ void main() {
     expect(signedTx.signatures.length, 1);
     expect(
       base64.encode(signedTx.signatures[0]),
-      'm2op4CCBa39fRZD91WiqtBLKbUQI+1OWsc1tJkpDg+8FYB4y51KahGn26MskVMpTJl5gToIC1pX26hLbW1Kxrg==',
+      'YNKhO6RsyVu4+a1jr+I10G909a04IT/nlSswJ/HR9DoDiYmH1dACSP3k8xkHSvP18FMbi9edGoGKlt0tuyiZYQ==',
     );
   });
 }

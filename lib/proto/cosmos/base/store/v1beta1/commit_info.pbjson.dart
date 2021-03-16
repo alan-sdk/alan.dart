@@ -9,7 +9,15 @@ const CommitInfo$json = const {
   '1': 'CommitInfo',
   '2': const [
     const {'1': 'version', '3': 1, '4': 1, '5': 3, '10': 'version'},
-    const {'1': 'store_infos', '3': 2, '4': 3, '5': 11, '6': '.cosmos.base.store.v1beta1.StoreInfo', '8': const {}, '10': 'storeInfos'},
+    const {
+      '1': 'store_infos',
+      '3': 2,
+      '4': 3,
+      '5': 11,
+      '6': '.cosmos.base.store.v1beta1.StoreInfo',
+      '8': const {},
+      '10': 'storeInfos'
+    },
   ],
 };
 
@@ -17,7 +25,15 @@ const StoreInfo$json = const {
   '1': 'StoreInfo',
   '2': const [
     const {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
-    const {'1': 'commit_id', '3': 2, '4': 1, '5': 11, '6': '.cosmos.base.store.v1beta1.CommitID', '8': const {}, '10': 'commitId'},
+    const {
+      '1': 'commit_id',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.cosmos.base.store.v1beta1.CommitID',
+      '8': const {},
+      '10': 'commitId'
+    },
   ],
 };
 
@@ -29,4 +45,3 @@ const CommitID$json = const {
   ],
   '7': const {},
 };
-

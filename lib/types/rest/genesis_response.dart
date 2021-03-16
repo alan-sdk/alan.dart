@@ -9,7 +9,7 @@ part 'genesis_response.g.dart';
 @JsonSerializable(explicitToJson: true)
 class GenesisResponse extends Equatable {
   @JsonKey(name: 'result')
-  final Result result;
+  final GenesisResult result;
 
   GenesisResponse({@required this.result});
 
@@ -28,18 +28,18 @@ class GenesisResponse extends Equatable {
 }
 
 @JsonSerializable(explicitToJson: true)
-class Result extends Equatable {
+class GenesisResult extends Equatable {
   @JsonKey(name: 'genesis')
   final Genesis genesis;
 
-  Result({@required this.genesis});
+  GenesisResult({@required this.genesis});
 
-  factory Result.fromJson(Map<String, dynamic> json) {
-    return _$ResultFromJson(json);
+  factory GenesisResult.fromJson(Map<String, dynamic> json) {
+    return _$GenesisResultFromJson(json);
   }
 
   Map<String, dynamic> toJson() {
-    return _$ResultToJson(this);
+    return _$GenesisResultToJson(this);
   }
 
   @override

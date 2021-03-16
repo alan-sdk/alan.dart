@@ -30,10 +30,39 @@ const Order$json = const {
 const Channel$json = const {
   '1': 'Channel',
   '2': const [
-    const {'1': 'state', '3': 1, '4': 1, '5': 14, '6': '.ibc.core.channel.v1.State', '10': 'state'},
-    const {'1': 'ordering', '3': 2, '4': 1, '5': 14, '6': '.ibc.core.channel.v1.Order', '10': 'ordering'},
-    const {'1': 'counterparty', '3': 3, '4': 1, '5': 11, '6': '.ibc.core.channel.v1.Counterparty', '8': const {}, '10': 'counterparty'},
-    const {'1': 'connection_hops', '3': 4, '4': 3, '5': 9, '8': const {}, '10': 'connectionHops'},
+    const {
+      '1': 'state',
+      '3': 1,
+      '4': 1,
+      '5': 14,
+      '6': '.ibc.core.channel.v1.State',
+      '10': 'state'
+    },
+    const {
+      '1': 'ordering',
+      '3': 2,
+      '4': 1,
+      '5': 14,
+      '6': '.ibc.core.channel.v1.Order',
+      '10': 'ordering'
+    },
+    const {
+      '1': 'counterparty',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.channel.v1.Counterparty',
+      '8': const {},
+      '10': 'counterparty'
+    },
+    const {
+      '1': 'connection_hops',
+      '3': 4,
+      '4': 3,
+      '5': 9,
+      '8': const {},
+      '10': 'connectionHops'
+    },
     const {'1': 'version', '3': 5, '4': 1, '5': 9, '10': 'version'},
   ],
   '7': const {},
@@ -42,10 +71,39 @@ const Channel$json = const {
 const IdentifiedChannel$json = const {
   '1': 'IdentifiedChannel',
   '2': const [
-    const {'1': 'state', '3': 1, '4': 1, '5': 14, '6': '.ibc.core.channel.v1.State', '10': 'state'},
-    const {'1': 'ordering', '3': 2, '4': 1, '5': 14, '6': '.ibc.core.channel.v1.Order', '10': 'ordering'},
-    const {'1': 'counterparty', '3': 3, '4': 1, '5': 11, '6': '.ibc.core.channel.v1.Counterparty', '8': const {}, '10': 'counterparty'},
-    const {'1': 'connection_hops', '3': 4, '4': 3, '5': 9, '8': const {}, '10': 'connectionHops'},
+    const {
+      '1': 'state',
+      '3': 1,
+      '4': 1,
+      '5': 14,
+      '6': '.ibc.core.channel.v1.State',
+      '10': 'state'
+    },
+    const {
+      '1': 'ordering',
+      '3': 2,
+      '4': 1,
+      '5': 14,
+      '6': '.ibc.core.channel.v1.Order',
+      '10': 'ordering'
+    },
+    const {
+      '1': 'counterparty',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.channel.v1.Counterparty',
+      '8': const {},
+      '10': 'counterparty'
+    },
+    const {
+      '1': 'connection_hops',
+      '3': 4,
+      '4': 3,
+      '5': 9,
+      '8': const {},
+      '10': 'connectionHops'
+    },
     const {'1': 'version', '3': 5, '4': 1, '5': 9, '10': 'version'},
     const {'1': 'port_id', '3': 6, '4': 1, '5': 9, '10': 'portId'},
     const {'1': 'channel_id', '3': 7, '4': 1, '5': 9, '10': 'channelId'},
@@ -56,8 +114,22 @@ const IdentifiedChannel$json = const {
 const Counterparty$json = const {
   '1': 'Counterparty',
   '2': const [
-    const {'1': 'port_id', '3': 1, '4': 1, '5': 9, '8': const {}, '10': 'portId'},
-    const {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '8': const {}, '10': 'channelId'},
+    const {
+      '1': 'port_id',
+      '3': 1,
+      '4': 1,
+      '5': 9,
+      '8': const {},
+      '10': 'portId'
+    },
+    const {
+      '1': 'channel_id',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '8': const {},
+      '10': 'channelId'
+    },
   ],
   '7': const {},
 };
@@ -66,13 +138,56 @@ const Packet$json = const {
   '1': 'Packet',
   '2': const [
     const {'1': 'sequence', '3': 1, '4': 1, '5': 4, '10': 'sequence'},
-    const {'1': 'source_port', '3': 2, '4': 1, '5': 9, '8': const {}, '10': 'sourcePort'},
-    const {'1': 'source_channel', '3': 3, '4': 1, '5': 9, '8': const {}, '10': 'sourceChannel'},
-    const {'1': 'destination_port', '3': 4, '4': 1, '5': 9, '8': const {}, '10': 'destinationPort'},
-    const {'1': 'destination_channel', '3': 5, '4': 1, '5': 9, '8': const {}, '10': 'destinationChannel'},
+    const {
+      '1': 'source_port',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '8': const {},
+      '10': 'sourcePort'
+    },
+    const {
+      '1': 'source_channel',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '8': const {},
+      '10': 'sourceChannel'
+    },
+    const {
+      '1': 'destination_port',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '8': const {},
+      '10': 'destinationPort'
+    },
+    const {
+      '1': 'destination_channel',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '8': const {},
+      '10': 'destinationChannel'
+    },
     const {'1': 'data', '3': 6, '4': 1, '5': 12, '10': 'data'},
-    const {'1': 'timeout_height', '3': 7, '4': 1, '5': 11, '6': '.ibc.core.client.v1.Height', '8': const {}, '10': 'timeoutHeight'},
-    const {'1': 'timeout_timestamp', '3': 8, '4': 1, '5': 4, '8': const {}, '10': 'timeoutTimestamp'},
+    const {
+      '1': 'timeout_height',
+      '3': 7,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.client.v1.Height',
+      '8': const {},
+      '10': 'timeoutHeight'
+    },
+    const {
+      '1': 'timeout_timestamp',
+      '3': 8,
+      '4': 1,
+      '5': 4,
+      '8': const {},
+      '10': 'timeoutTimestamp'
+    },
   ],
   '7': const {},
 };
@@ -80,8 +195,22 @@ const Packet$json = const {
 const PacketState$json = const {
   '1': 'PacketState',
   '2': const [
-    const {'1': 'port_id', '3': 1, '4': 1, '5': 9, '8': const {}, '10': 'portId'},
-    const {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '8': const {}, '10': 'channelId'},
+    const {
+      '1': 'port_id',
+      '3': 1,
+      '4': 1,
+      '5': 9,
+      '8': const {},
+      '10': 'portId'
+    },
+    const {
+      '1': 'channel_id',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '8': const {},
+      '10': 'channelId'
+    },
     const {'1': 'sequence', '3': 3, '4': 1, '5': 4, '10': 'sequence'},
     const {'1': 'data', '3': 4, '4': 1, '5': 12, '10': 'data'},
   ],
@@ -98,4 +227,3 @@ const Acknowledgement$json = const {
     const {'1': 'response'},
   ],
 };
-

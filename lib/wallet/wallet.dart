@@ -3,7 +3,6 @@ import 'dart:typed_data';
 
 import 'package:alan/alan.dart';
 import 'package:alan/wallet/bech32_encoder.dart';
-import 'package:asn1lib/asn1lib.dart';
 import 'package:bip32/bip32.dart' as bip32;
 import 'package:bip39/bip39.dart' as bip39;
 import 'package:equatable/equatable.dart';
@@ -139,26 +138,22 @@ class Wallet extends Equatable {
     return ECPublicKey(curvePoint, ECCurve_secp256k1());
   }
 
-  /// Signs the given [data] using the private key associated with this wallet,
-  /// returning the signature bytes ASN.1 DER encoded.
+  /// Hashes the given [data] with SHA-256, and then sign the hash using the
+  /// private key associated with this wallet, returning the signature
+  /// encoded as a 64 bytes array.
   Uint8List sign(Uint8List data) {
-    final secureRandom = FortunaRandom();
-    final random = Random.secure();
-    final seed = List<int>.generate(32, (_) => random.nextInt(256));
-    secureRandom.seed(KeyParameter(Uint8List.fromList(seed)));
+    final hash = SHA256Digest().process(data);
+    final ecdsaSigner = ECDSASigner(null, HMac(SHA256Digest(), 64))
+      ..init(true, PrivateKeyParameter(_ecPrivateKey));
 
-    final ecdsaSigner = Signer('SHA-256/ECDSA')
-      ..init(
-          true,
-          ParametersWithRandom(
-            PrivateKeyParameter(_ecPrivateKey),
-            secureRandom,
-          ));
-    var ecSignature = ecdsaSigner.generateSignature(data) as ECSignature;
-    final sequence = ASN1Sequence();
-    sequence.add(ASN1Integer(ecSignature.r));
-    sequence.add(ASN1Integer(ecSignature.s));
-    return sequence.encodedBytes;
+    final ecSignature = ecdsaSigner.generateSignature(hash) as ECSignature;
+    final rBytes = ecSignature.r.toUin8List();
+    final sBytes = ecSignature.s.toUin8List();
+
+    var sigBytes = Uint8List(64);
+    copy(rBytes, 32 - rBytes.length, 32, sigBytes);
+    copy(sBytes, 64 - sBytes.length, 64, sigBytes);
+    return sigBytes;
   }
 
   /// Converts the current [Wallet] instance into a JSON object.

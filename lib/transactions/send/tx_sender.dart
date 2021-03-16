@@ -1,21 +1,19 @@
-import 'dart:convert';
-
 import 'package:alan/alan.dart';
-import 'package:http/http.dart' as http;
+import 'package:alan/proto/cosmos/tx/v1beta1/export.dart' as tx;
+import 'package:grpc/grpc.dart';
 import 'package:meta/meta.dart';
 
 /// Allows to easily send a [StdTx] using the data contained inside the
 /// specified [Wallet].
 class TxSender {
-  final http.Client _httpClient;
+  final tx.ServiceClient _client;
 
-  TxSender({
-    @required http.Client httpClient,
-  }) : _httpClient = httpClient;
+  TxSender._({
+    @required ClientChannel clientChannel,
+  }) : _client = tx.ServiceClient(clientChannel);
 
-  factory TxSender.build({http.Client httpClient}) {
-    httpClient ??= http.Client();
-    return TxSender(httpClient: httpClient);
+  factory TxSender.build(ClientChannel channel) {
+    return TxSender._(clientChannel: channel);
   }
 
   /// Broadcasts the given [stdTx] using the info contained
@@ -23,31 +21,18 @@ class TxSender {
   /// Returns the hash of the transaction once it has been send, or throws an
   /// exception if an error is risen during the sending.
   Future<TxResponse> broadcastStdTx(
-    Tx stdTx,
-    Wallet wallet, {
-    SendMode mode = SendMode.MODE_SYNC,
+    Tx stdTx, {
+    TxConfig config,
+    BroadcastMode mode = BroadcastMode.BROADCAST_MODE_ASYNC,
   }) async {
-    try {
-      // Get the endpoint
-      final apiUrl = '${wallet.networkInfo.fullNodeHost}/txs';
+    config ??= DefaultTxConfig.create();
+    final encoder = config.txEncoder();
 
-      // Build the request body
-      final requestBody = {'tx': stdTx.writeToJson(), 'mode': mode.toJson()};
-      final requestBodyJson = jsonEncode(requestBody);
+    final request = BroadcastTxRequest()
+      ..mode = mode
+      ..txBytes = encoder(stdTx);
 
-      // Get the response
-      final response = await _httpClient.post(apiUrl, body: requestBodyJson);
-      if (response.statusCode != 200) {
-        return ErrorTxResponse(
-          'Expected status code 200 but got ${response.statusCode} - ${response.body}',
-        );
-      }
-
-      // Convert the response
-      final responseBody = jsonDecode(response.body) as Map<String, dynamic>;
-      return TxResponse.fromJson(responseBody, mode);
-    } catch (exception) {
-      return ErrorTxResponse(exception.toString());
-    }
+    final response = await _client.broadcastTx(request);
+    return response.txResponse;
   }
 }

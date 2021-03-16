@@ -1,10 +1,4 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/bank/v1beta1/query.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
 import 'dart:async' as $async;
 import 'dart:core' as $core;
 
@@ -45,6 +39,18 @@ class QueryClient extends $grpc.Client {
           ($0.QueryParamsRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $0.QueryParamsResponse.fromBuffer(value));
+  static final _$denomMetadata = $grpc.ClientMethod<
+          $0.QueryDenomMetadataRequest, $0.QueryDenomMetadataResponse>(
+      '/cosmos.bank.v1beta1.Query/DenomMetadata',
+      ($0.QueryDenomMetadataRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.QueryDenomMetadataResponse.fromBuffer(value));
+  static final _$denomsMetadata = $grpc.ClientMethod<
+          $0.QueryDenomsMetadataRequest, $0.QueryDenomsMetadataResponse>(
+      '/cosmos.bank.v1beta1.Query/DenomsMetadata',
+      ($0.QueryDenomsMetadataRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.QueryDenomsMetadataResponse.fromBuffer(value));
 
   QueryClient($grpc.ClientChannel channel,
       {$grpc.CallOptions options,
@@ -79,6 +85,18 @@ class QueryClient extends $grpc.Client {
       $0.QueryParamsRequest request,
       {$grpc.CallOptions options}) {
     return $createUnaryCall(_$params, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.QueryDenomMetadataResponse> denomMetadata(
+      $0.QueryDenomMetadataRequest request,
+      {$grpc.CallOptions options}) {
+    return $createUnaryCall(_$denomMetadata, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.QueryDenomsMetadataResponse> denomsMetadata(
+      $0.QueryDenomsMetadataRequest request,
+      {$grpc.CallOptions options}) {
+    return $createUnaryCall(_$denomsMetadata, request, options: options);
   }
 }
 
@@ -131,6 +149,24 @@ abstract class QueryServiceBase extends $grpc.Service {
             ($core.List<$core.int> value) =>
                 $0.QueryParamsRequest.fromBuffer(value),
             ($0.QueryParamsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.QueryDenomMetadataRequest,
+            $0.QueryDenomMetadataResponse>(
+        'DenomMetadata',
+        denomMetadata_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.QueryDenomMetadataRequest.fromBuffer(value),
+        ($0.QueryDenomMetadataResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.QueryDenomsMetadataRequest,
+            $0.QueryDenomsMetadataResponse>(
+        'DenomsMetadata',
+        denomsMetadata_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.QueryDenomsMetadataRequest.fromBuffer(value),
+        ($0.QueryDenomsMetadataResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.QueryBalanceResponse> balance_Pre($grpc.ServiceCall call,
@@ -160,6 +196,18 @@ abstract class QueryServiceBase extends $grpc.Service {
     return params(call, await request);
   }
 
+  $async.Future<$0.QueryDenomMetadataResponse> denomMetadata_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.QueryDenomMetadataRequest> request) async {
+    return denomMetadata(call, await request);
+  }
+
+  $async.Future<$0.QueryDenomsMetadataResponse> denomsMetadata_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.QueryDenomsMetadataRequest> request) async {
+    return denomsMetadata(call, await request);
+  }
+
   $async.Future<$0.QueryBalanceResponse> balance(
       $grpc.ServiceCall call, $0.QueryBalanceRequest request);
   $async.Future<$0.QueryAllBalancesResponse> allBalances(
@@ -170,4 +218,8 @@ abstract class QueryServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $0.QuerySupplyOfRequest request);
   $async.Future<$0.QueryParamsResponse> params(
       $grpc.ServiceCall call, $0.QueryParamsRequest request);
+  $async.Future<$0.QueryDenomMetadataResponse> denomMetadata(
+      $grpc.ServiceCall call, $0.QueryDenomMetadataRequest request);
+  $async.Future<$0.QueryDenomsMetadataResponse> denomsMetadata(
+      $grpc.ServiceCall call, $0.QueryDenomsMetadataRequest request);
 }

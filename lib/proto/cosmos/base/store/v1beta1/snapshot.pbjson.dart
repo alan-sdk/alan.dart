@@ -8,8 +8,25 @@
 const SnapshotItem$json = const {
   '1': 'SnapshotItem',
   '2': const [
-    const {'1': 'store', '3': 1, '4': 1, '5': 11, '6': '.cosmos.base.store.v1beta1.SnapshotStoreItem', '9': 0, '10': 'store'},
-    const {'1': 'iavl', '3': 2, '4': 1, '5': 11, '6': '.cosmos.base.store.v1beta1.SnapshotIAVLItem', '8': const {}, '9': 0, '10': 'iavl'},
+    const {
+      '1': 'store',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.cosmos.base.store.v1beta1.SnapshotStoreItem',
+      '9': 0,
+      '10': 'store'
+    },
+    const {
+      '1': 'iavl',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.cosmos.base.store.v1beta1.SnapshotIAVLItem',
+      '8': const {},
+      '9': 0,
+      '10': 'iavl'
+    },
   ],
   '8': const [
     const {'1': 'item'},
@@ -32,4 +49,3 @@ const SnapshotIAVLItem$json = const {
     const {'1': 'height', '3': 4, '4': 1, '5': 5, '10': 'height'},
   ],
 };
-

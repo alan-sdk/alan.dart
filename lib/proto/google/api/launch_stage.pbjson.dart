@@ -18,4 +18,3 @@ const LaunchStage$json = const {
     const {'1': 'DEPRECATED', '2': 5},
   ],
 };
-

@@ -8,9 +8,31 @@
 const MsgChannelOpenInit$json = const {
   '1': 'MsgChannelOpenInit',
   '2': const [
-    const {'1': 'port_id', '3': 1, '4': 1, '5': 9, '8': const {}, '10': 'portId'},
-    const {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '8': const {}, '10': 'channelId'},
-    const {'1': 'channel', '3': 3, '4': 1, '5': 11, '6': '.ibc.core.channel.v1.Channel', '8': const {}, '10': 'channel'},
+    const {
+      '1': 'port_id',
+      '3': 1,
+      '4': 1,
+      '5': 9,
+      '8': const {},
+      '10': 'portId'
+    },
+    const {
+      '1': 'channel_id',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '8': const {},
+      '10': 'channelId'
+    },
+    const {
+      '1': 'channel',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.channel.v1.Channel',
+      '8': const {},
+      '10': 'channel'
+    },
     const {'1': 'signer', '3': 4, '4': 1, '5': 9, '10': 'signer'},
   ],
   '7': const {},
@@ -23,13 +45,64 @@ const MsgChannelOpenInitResponse$json = const {
 const MsgChannelOpenTry$json = const {
   '1': 'MsgChannelOpenTry',
   '2': const [
-    const {'1': 'port_id', '3': 1, '4': 1, '5': 9, '8': const {}, '10': 'portId'},
-    const {'1': 'desired_channel_id', '3': 2, '4': 1, '5': 9, '8': const {}, '10': 'desiredChannelId'},
-    const {'1': 'counterparty_chosen_channel_id', '3': 3, '4': 1, '5': 9, '8': const {}, '10': 'counterpartyChosenChannelId'},
-    const {'1': 'channel', '3': 4, '4': 1, '5': 11, '6': '.ibc.core.channel.v1.Channel', '8': const {}, '10': 'channel'},
-    const {'1': 'counterparty_version', '3': 5, '4': 1, '5': 9, '8': const {}, '10': 'counterpartyVersion'},
-    const {'1': 'proof_init', '3': 6, '4': 1, '5': 12, '8': const {}, '10': 'proofInit'},
-    const {'1': 'proof_height', '3': 7, '4': 1, '5': 11, '6': '.ibc.core.client.v1.Height', '8': const {}, '10': 'proofHeight'},
+    const {
+      '1': 'port_id',
+      '3': 1,
+      '4': 1,
+      '5': 9,
+      '8': const {},
+      '10': 'portId'
+    },
+    const {
+      '1': 'desired_channel_id',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '8': const {},
+      '10': 'desiredChannelId'
+    },
+    const {
+      '1': 'counterparty_chosen_channel_id',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '8': const {},
+      '10': 'counterpartyChosenChannelId'
+    },
+    const {
+      '1': 'channel',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.channel.v1.Channel',
+      '8': const {},
+      '10': 'channel'
+    },
+    const {
+      '1': 'counterparty_version',
+      '3': 5,
+      '4': 1,
+      '5': 9,
+      '8': const {},
+      '10': 'counterpartyVersion'
+    },
+    const {
+      '1': 'proof_init',
+      '3': 6,
+      '4': 1,
+      '5': 12,
+      '8': const {},
+      '10': 'proofInit'
+    },
+    const {
+      '1': 'proof_height',
+      '3': 7,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.client.v1.Height',
+      '8': const {},
+      '10': 'proofHeight'
+    },
     const {'1': 'signer', '3': 8, '4': 1, '5': 9, '10': 'signer'},
   ],
   '7': const {},
@@ -42,12 +115,55 @@ const MsgChannelOpenTryResponse$json = const {
 const MsgChannelOpenAck$json = const {
   '1': 'MsgChannelOpenAck',
   '2': const [
-    const {'1': 'port_id', '3': 1, '4': 1, '5': 9, '8': const {}, '10': 'portId'},
-    const {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '8': const {}, '10': 'channelId'},
-    const {'1': 'counterparty_channel_id', '3': 3, '4': 1, '5': 9, '8': const {}, '10': 'counterpartyChannelId'},
-    const {'1': 'counterparty_version', '3': 4, '4': 1, '5': 9, '8': const {}, '10': 'counterpartyVersion'},
-    const {'1': 'proof_try', '3': 5, '4': 1, '5': 12, '8': const {}, '10': 'proofTry'},
-    const {'1': 'proof_height', '3': 6, '4': 1, '5': 11, '6': '.ibc.core.client.v1.Height', '8': const {}, '10': 'proofHeight'},
+    const {
+      '1': 'port_id',
+      '3': 1,
+      '4': 1,
+      '5': 9,
+      '8': const {},
+      '10': 'portId'
+    },
+    const {
+      '1': 'channel_id',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '8': const {},
+      '10': 'channelId'
+    },
+    const {
+      '1': 'counterparty_channel_id',
+      '3': 3,
+      '4': 1,
+      '5': 9,
+      '8': const {},
+      '10': 'counterpartyChannelId'
+    },
+    const {
+      '1': 'counterparty_version',
+      '3': 4,
+      '4': 1,
+      '5': 9,
+      '8': const {},
+      '10': 'counterpartyVersion'
+    },
+    const {
+      '1': 'proof_try',
+      '3': 5,
+      '4': 1,
+      '5': 12,
+      '8': const {},
+      '10': 'proofTry'
+    },
+    const {
+      '1': 'proof_height',
+      '3': 6,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.client.v1.Height',
+      '8': const {},
+      '10': 'proofHeight'
+    },
     const {'1': 'signer', '3': 7, '4': 1, '5': 9, '10': 'signer'},
   ],
   '7': const {},
@@ -60,10 +176,39 @@ const MsgChannelOpenAckResponse$json = const {
 const MsgChannelOpenConfirm$json = const {
   '1': 'MsgChannelOpenConfirm',
   '2': const [
-    const {'1': 'port_id', '3': 1, '4': 1, '5': 9, '8': const {}, '10': 'portId'},
-    const {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '8': const {}, '10': 'channelId'},
-    const {'1': 'proof_ack', '3': 3, '4': 1, '5': 12, '8': const {}, '10': 'proofAck'},
-    const {'1': 'proof_height', '3': 4, '4': 1, '5': 11, '6': '.ibc.core.client.v1.Height', '8': const {}, '10': 'proofHeight'},
+    const {
+      '1': 'port_id',
+      '3': 1,
+      '4': 1,
+      '5': 9,
+      '8': const {},
+      '10': 'portId'
+    },
+    const {
+      '1': 'channel_id',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '8': const {},
+      '10': 'channelId'
+    },
+    const {
+      '1': 'proof_ack',
+      '3': 3,
+      '4': 1,
+      '5': 12,
+      '8': const {},
+      '10': 'proofAck'
+    },
+    const {
+      '1': 'proof_height',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.client.v1.Height',
+      '8': const {},
+      '10': 'proofHeight'
+    },
     const {'1': 'signer', '3': 5, '4': 1, '5': 9, '10': 'signer'},
   ],
   '7': const {},
@@ -76,8 +221,22 @@ const MsgChannelOpenConfirmResponse$json = const {
 const MsgChannelCloseInit$json = const {
   '1': 'MsgChannelCloseInit',
   '2': const [
-    const {'1': 'port_id', '3': 1, '4': 1, '5': 9, '8': const {}, '10': 'portId'},
-    const {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '8': const {}, '10': 'channelId'},
+    const {
+      '1': 'port_id',
+      '3': 1,
+      '4': 1,
+      '5': 9,
+      '8': const {},
+      '10': 'portId'
+    },
+    const {
+      '1': 'channel_id',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '8': const {},
+      '10': 'channelId'
+    },
     const {'1': 'signer', '3': 3, '4': 1, '5': 9, '10': 'signer'},
   ],
   '7': const {},
@@ -90,10 +249,39 @@ const MsgChannelCloseInitResponse$json = const {
 const MsgChannelCloseConfirm$json = const {
   '1': 'MsgChannelCloseConfirm',
   '2': const [
-    const {'1': 'port_id', '3': 1, '4': 1, '5': 9, '8': const {}, '10': 'portId'},
-    const {'1': 'channel_id', '3': 2, '4': 1, '5': 9, '8': const {}, '10': 'channelId'},
-    const {'1': 'proof_init', '3': 3, '4': 1, '5': 12, '8': const {}, '10': 'proofInit'},
-    const {'1': 'proof_height', '3': 4, '4': 1, '5': 11, '6': '.ibc.core.client.v1.Height', '8': const {}, '10': 'proofHeight'},
+    const {
+      '1': 'port_id',
+      '3': 1,
+      '4': 1,
+      '5': 9,
+      '8': const {},
+      '10': 'portId'
+    },
+    const {
+      '1': 'channel_id',
+      '3': 2,
+      '4': 1,
+      '5': 9,
+      '8': const {},
+      '10': 'channelId'
+    },
+    const {
+      '1': 'proof_init',
+      '3': 3,
+      '4': 1,
+      '5': 12,
+      '8': const {},
+      '10': 'proofInit'
+    },
+    const {
+      '1': 'proof_height',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.client.v1.Height',
+      '8': const {},
+      '10': 'proofHeight'
+    },
     const {'1': 'signer', '3': 5, '4': 1, '5': 9, '10': 'signer'},
   ],
   '7': const {},
@@ -106,9 +294,32 @@ const MsgChannelCloseConfirmResponse$json = const {
 const MsgRecvPacket$json = const {
   '1': 'MsgRecvPacket',
   '2': const [
-    const {'1': 'packet', '3': 1, '4': 1, '5': 11, '6': '.ibc.core.channel.v1.Packet', '8': const {}, '10': 'packet'},
-    const {'1': 'proof_commitment', '3': 2, '4': 1, '5': 12, '8': const {}, '10': 'proofCommitment'},
-    const {'1': 'proof_height', '3': 3, '4': 1, '5': 11, '6': '.ibc.core.client.v1.Height', '8': const {}, '10': 'proofHeight'},
+    const {
+      '1': 'packet',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.channel.v1.Packet',
+      '8': const {},
+      '10': 'packet'
+    },
+    const {
+      '1': 'proof_commitment',
+      '3': 2,
+      '4': 1,
+      '5': 12,
+      '8': const {},
+      '10': 'proofCommitment'
+    },
+    const {
+      '1': 'proof_height',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.client.v1.Height',
+      '8': const {},
+      '10': 'proofHeight'
+    },
     const {'1': 'signer', '3': 4, '4': 1, '5': 9, '10': 'signer'},
   ],
   '7': const {},
@@ -121,10 +332,40 @@ const MsgRecvPacketResponse$json = const {
 const MsgTimeout$json = const {
   '1': 'MsgTimeout',
   '2': const [
-    const {'1': 'packet', '3': 1, '4': 1, '5': 11, '6': '.ibc.core.channel.v1.Packet', '8': const {}, '10': 'packet'},
-    const {'1': 'proof_unreceived', '3': 2, '4': 1, '5': 12, '8': const {}, '10': 'proofUnreceived'},
-    const {'1': 'proof_height', '3': 3, '4': 1, '5': 11, '6': '.ibc.core.client.v1.Height', '8': const {}, '10': 'proofHeight'},
-    const {'1': 'next_sequence_recv', '3': 4, '4': 1, '5': 4, '8': const {}, '10': 'nextSequenceRecv'},
+    const {
+      '1': 'packet',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.channel.v1.Packet',
+      '8': const {},
+      '10': 'packet'
+    },
+    const {
+      '1': 'proof_unreceived',
+      '3': 2,
+      '4': 1,
+      '5': 12,
+      '8': const {},
+      '10': 'proofUnreceived'
+    },
+    const {
+      '1': 'proof_height',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.client.v1.Height',
+      '8': const {},
+      '10': 'proofHeight'
+    },
+    const {
+      '1': 'next_sequence_recv',
+      '3': 4,
+      '4': 1,
+      '5': 4,
+      '8': const {},
+      '10': 'nextSequenceRecv'
+    },
     const {'1': 'signer', '3': 5, '4': 1, '5': 9, '10': 'signer'},
   ],
   '7': const {},
@@ -137,11 +378,48 @@ const MsgTimeoutResponse$json = const {
 const MsgTimeoutOnClose$json = const {
   '1': 'MsgTimeoutOnClose',
   '2': const [
-    const {'1': 'packet', '3': 1, '4': 1, '5': 11, '6': '.ibc.core.channel.v1.Packet', '8': const {}, '10': 'packet'},
-    const {'1': 'proof_unreceived', '3': 2, '4': 1, '5': 12, '8': const {}, '10': 'proofUnreceived'},
-    const {'1': 'proof_close', '3': 3, '4': 1, '5': 12, '8': const {}, '10': 'proofClose'},
-    const {'1': 'proof_height', '3': 4, '4': 1, '5': 11, '6': '.ibc.core.client.v1.Height', '8': const {}, '10': 'proofHeight'},
-    const {'1': 'next_sequence_recv', '3': 5, '4': 1, '5': 4, '8': const {}, '10': 'nextSequenceRecv'},
+    const {
+      '1': 'packet',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.channel.v1.Packet',
+      '8': const {},
+      '10': 'packet'
+    },
+    const {
+      '1': 'proof_unreceived',
+      '3': 2,
+      '4': 1,
+      '5': 12,
+      '8': const {},
+      '10': 'proofUnreceived'
+    },
+    const {
+      '1': 'proof_close',
+      '3': 3,
+      '4': 1,
+      '5': 12,
+      '8': const {},
+      '10': 'proofClose'
+    },
+    const {
+      '1': 'proof_height',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.client.v1.Height',
+      '8': const {},
+      '10': 'proofHeight'
+    },
+    const {
+      '1': 'next_sequence_recv',
+      '3': 5,
+      '4': 1,
+      '5': 4,
+      '8': const {},
+      '10': 'nextSequenceRecv'
+    },
     const {'1': 'signer', '3': 6, '4': 1, '5': 9, '10': 'signer'},
   ],
   '7': const {},
@@ -154,10 +432,39 @@ const MsgTimeoutOnCloseResponse$json = const {
 const MsgAcknowledgement$json = const {
   '1': 'MsgAcknowledgement',
   '2': const [
-    const {'1': 'packet', '3': 1, '4': 1, '5': 11, '6': '.ibc.core.channel.v1.Packet', '8': const {}, '10': 'packet'},
-    const {'1': 'acknowledgement', '3': 2, '4': 1, '5': 12, '10': 'acknowledgement'},
-    const {'1': 'proof_acked', '3': 3, '4': 1, '5': 12, '8': const {}, '10': 'proofAcked'},
-    const {'1': 'proof_height', '3': 4, '4': 1, '5': 11, '6': '.ibc.core.client.v1.Height', '8': const {}, '10': 'proofHeight'},
+    const {
+      '1': 'packet',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.channel.v1.Packet',
+      '8': const {},
+      '10': 'packet'
+    },
+    const {
+      '1': 'acknowledgement',
+      '3': 2,
+      '4': 1,
+      '5': 12,
+      '10': 'acknowledgement'
+    },
+    const {
+      '1': 'proof_acked',
+      '3': 3,
+      '4': 1,
+      '5': 12,
+      '8': const {},
+      '10': 'proofAcked'
+    },
+    const {
+      '1': 'proof_height',
+      '3': 4,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.client.v1.Height',
+      '8': const {},
+      '10': 'proofHeight'
+    },
     const {'1': 'signer', '3': 5, '4': 1, '5': 9, '10': 'signer'},
   ],
   '7': const {},
@@ -166,4 +473,3 @@ const MsgAcknowledgement$json = const {
 const MsgAcknowledgementResponse$json = const {
   '1': 'MsgAcknowledgementResponse',
 };
-

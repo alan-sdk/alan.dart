@@ -8,9 +8,32 @@
 const GenesisState$json = const {
   '1': 'GenesisState',
   '2': const [
-    const {'1': 'client_genesis', '3': 1, '4': 1, '5': 11, '6': '.ibc.core.client.v1.GenesisState', '8': const {}, '10': 'clientGenesis'},
-    const {'1': 'connection_genesis', '3': 2, '4': 1, '5': 11, '6': '.ibc.core.connection.v1.GenesisState', '8': const {}, '10': 'connectionGenesis'},
-    const {'1': 'channel_genesis', '3': 3, '4': 1, '5': 11, '6': '.ibc.core.channel.v1.GenesisState', '8': const {}, '10': 'channelGenesis'},
+    const {
+      '1': 'client_genesis',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.client.v1.GenesisState',
+      '8': const {},
+      '10': 'clientGenesis'
+    },
+    const {
+      '1': 'connection_genesis',
+      '3': 2,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.connection.v1.GenesisState',
+      '8': const {},
+      '10': 'connectionGenesis'
+    },
+    const {
+      '1': 'channel_genesis',
+      '3': 3,
+      '4': 1,
+      '5': 11,
+      '6': '.ibc.core.channel.v1.GenesisState',
+      '8': const {},
+      '10': 'channelGenesis'
+    },
   ],
 };
-

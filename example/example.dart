@@ -26,7 +26,7 @@ void main() async {
     ..amount = '100');
 
   final txCreator = TxCreator.fromNetworkInfo(networkInfo);
-  final tx = await txCreator.generate(wallet, [message]);
+  final tx = await txCreator.createAndSign(wallet, [message]);
 
   // 4. Broadcast the transaction
   final txSender = TxSender.build();

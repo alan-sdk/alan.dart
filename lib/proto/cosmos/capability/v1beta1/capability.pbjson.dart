@@ -16,7 +16,14 @@ const Capability$json = const {
 const Owner$json = const {
   '1': 'Owner',
   '2': const [
-    const {'1': 'module', '3': 1, '4': 1, '5': 9, '8': const {}, '10': 'module'},
+    const {
+      '1': 'module',
+      '3': 1,
+      '4': 1,
+      '5': 9,
+      '8': const {},
+      '10': 'module'
+    },
     const {'1': 'name', '3': 2, '4': 1, '5': 9, '8': const {}, '10': 'name'},
   ],
   '7': const {},
@@ -25,7 +32,14 @@ const Owner$json = const {
 const CapabilityOwners$json = const {
   '1': 'CapabilityOwners',
   '2': const [
-    const {'1': 'owners', '3': 1, '4': 3, '5': 11, '6': '.cosmos.capability.v1beta1.Owner', '8': const {}, '10': 'owners'},
+    const {
+      '1': 'owners',
+      '3': 1,
+      '4': 3,
+      '5': 11,
+      '6': '.cosmos.capability.v1beta1.Owner',
+      '8': const {},
+      '10': 'owners'
+    },
   ],
 };
-

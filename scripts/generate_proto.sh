@@ -53,6 +53,7 @@ $PROTOC $TENDERMINT/version/types.proto
 $PROTOC $TENDERMINT/crypto/keys.proto
 $PROTOC $TENDERMINT/crypto/proof.proto
 $PROTOC $TENDERMINT/types/types.proto
+$PROTOC $TENDERMINT/types/validator.proto
 $PROTOC $TENDERMINT/types/params.proto
 
 # Generate Cosmos SDK Protobuf implementation

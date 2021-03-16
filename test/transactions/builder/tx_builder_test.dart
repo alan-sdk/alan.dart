@@ -3,13 +3,7 @@ import 'dart:io';
 import 'package:alan/alan.dart';
 import 'package:test/test.dart';
 
-import 'tx_builder_test.reflectable.dart';
-
 void main() {
-  setUpAll(() {
-    initializeReflectable();
-  });
-
   test('StdTx is built correctly', () {
     final message = MsgSend.create()
       ..fromAddress = 'cosmos1huydeevpz37sd9snkgul6070mstupukw00xkw9'
@@ -18,10 +12,12 @@ void main() {
       ..denom = 'uatom'
       ..amount = '100');
 
-    final tx = TxBuilder.create();
-    tx.setMsgs([message]);
+    final builder = TxBuilder.create();
+    builder.setMsgs([message]);
 
-    final file = File('test_resources/SendStdTx.json');
+    final tx = builder.getTx();
+
+    final file = File('test_resources/transactions/tx_generate.json');
     final expectedStd = Tx.fromJson(file.readAsStringSync());
     expect(tx, expectedStd);
   });

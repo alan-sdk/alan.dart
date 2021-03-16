@@ -1,23 +1,27 @@
 import 'package:alan/alan.dart';
-import 'package:http/http.dart' as http;
+import 'package:alan/proto/cosmos/tx/v1beta1/export.dart' as tx;
+import 'package:grpc/grpc.dart';
 import 'package:meta/meta.dart';
 
 /// Allows to query the on-chain transactions.
-class TxQuerier extends QueryHelper {
+class TxQuerier {
+  final tx.ServiceClient _client;
+
   TxQuerier({
-    @required http.Client httpClient,
-  }) : super(httpClient: httpClient);
+    @required ClientChannel clientChannel,
+  }) : _client = tx.ServiceClient(clientChannel);
 
   /// Queries the chain by getting the transactions at the specified [height].
-  Future<List<Transaction>> getTxsByHeight(
+  Future<List<Tx>> getTxsByHeight(
     String lcdEndpoint,
     String height,
   ) async {
-    final result = await queryChain('$lcdEndpoint/txs?tx.height=$height');
-    if (!result.isSuccessful) {
-      return [];
-    }
-
-    return TransactionsResponse.fromJson(result.value).txs;
+    throw Exception('TODO: Implement this');
+    // final result = await _client.getTxsEvent(request)
+    // if (!result.isSuccessful) {
+    //   return [];
+    // }
+    //
+    // return Tx.fromJson(result.value).txs;
   }
 }

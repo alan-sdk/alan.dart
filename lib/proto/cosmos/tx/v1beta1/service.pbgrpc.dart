@@ -1,10 +1,4 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/tx/v1beta1/service.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
 import 'dart:async' as $async;
 import 'dart:core' as $core;
 
@@ -25,6 +19,12 @@ class ServiceClient extends $grpc.Client {
       '/cosmos.tx.v1beta1.Service/GetTx',
       ($1.GetTxRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $1.GetTxResponse.fromBuffer(value));
+  static final _$broadcastTx =
+      $grpc.ClientMethod<$1.BroadcastTxRequest, $1.BroadcastTxResponse>(
+          '/cosmos.tx.v1beta1.Service/BroadcastTx',
+          ($1.BroadcastTxRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $1.BroadcastTxResponse.fromBuffer(value));
   static final _$getTxsEvent =
       $grpc.ClientMethod<$1.GetTxsEventRequest, $1.GetTxsEventResponse>(
           '/cosmos.tx.v1beta1.Service/GetTxsEvent',
@@ -45,6 +45,12 @@ class ServiceClient extends $grpc.Client {
   $grpc.ResponseFuture<$1.GetTxResponse> getTx($1.GetTxRequest request,
       {$grpc.CallOptions options}) {
     return $createUnaryCall(_$getTx, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$1.BroadcastTxResponse> broadcastTx(
+      $1.BroadcastTxRequest request,
+      {$grpc.CallOptions options}) {
+    return $createUnaryCall(_$broadcastTx, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.GetTxsEventResponse> getTxsEvent(
@@ -73,6 +79,15 @@ abstract class ServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) => $1.GetTxRequest.fromBuffer(value),
         ($1.GetTxResponse value) => value.writeToBuffer()));
     $addMethod(
+        $grpc.ServiceMethod<$1.BroadcastTxRequest, $1.BroadcastTxResponse>(
+            'BroadcastTx',
+            broadcastTx_Pre,
+            false,
+            false,
+            ($core.List<$core.int> value) =>
+                $1.BroadcastTxRequest.fromBuffer(value),
+            ($1.BroadcastTxResponse value) => value.writeToBuffer()));
+    $addMethod(
         $grpc.ServiceMethod<$1.GetTxsEventRequest, $1.GetTxsEventResponse>(
             'GetTxsEvent',
             getTxsEvent_Pre,
@@ -93,6 +108,11 @@ abstract class ServiceBase extends $grpc.Service {
     return getTx(call, await request);
   }
 
+  $async.Future<$1.BroadcastTxResponse> broadcastTx_Pre($grpc.ServiceCall call,
+      $async.Future<$1.BroadcastTxRequest> request) async {
+    return broadcastTx(call, await request);
+  }
+
   $async.Future<$1.GetTxsEventResponse> getTxsEvent_Pre($grpc.ServiceCall call,
       $async.Future<$1.GetTxsEventRequest> request) async {
     return getTxsEvent(call, await request);
@@ -102,6 +122,8 @@ abstract class ServiceBase extends $grpc.Service {
       $grpc.ServiceCall call, $1.SimulateRequest request);
   $async.Future<$1.GetTxResponse> getTx(
       $grpc.ServiceCall call, $1.GetTxRequest request);
+  $async.Future<$1.BroadcastTxResponse> broadcastTx(
+      $grpc.ServiceCall call, $1.BroadcastTxRequest request);
   $async.Future<$1.GetTxsEventResponse> getTxsEvent(
       $grpc.ServiceCall call, $1.GetTxsEventRequest request);
 }

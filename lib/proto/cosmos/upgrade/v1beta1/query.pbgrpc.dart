@@ -1,10 +1,4 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/upgrade/v1beta1/query.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
 import 'dart:async' as $async;
 import 'dart:core' as $core;
 
@@ -27,6 +21,13 @@ class QueryClient extends $grpc.Client {
       ($0.QueryAppliedPlanRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) =>
           $0.QueryAppliedPlanResponse.fromBuffer(value));
+  static final _$upgradedConsensusState = $grpc.ClientMethod<
+          $0.QueryUpgradedConsensusStateRequest,
+          $0.QueryUpgradedConsensusStateResponse>(
+      '/cosmos.upgrade.v1beta1.Query/UpgradedConsensusState',
+      ($0.QueryUpgradedConsensusStateRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.QueryUpgradedConsensusStateResponse.fromBuffer(value));
 
   QueryClient($grpc.ClientChannel channel,
       {$grpc.CallOptions options,
@@ -43,6 +44,13 @@ class QueryClient extends $grpc.Client {
       $0.QueryAppliedPlanRequest request,
       {$grpc.CallOptions options}) {
     return $createUnaryCall(_$appliedPlan, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.QueryUpgradedConsensusStateResponse>
+      upgradedConsensusState($0.QueryUpgradedConsensusStateRequest request,
+          {$grpc.CallOptions options}) {
+    return $createUnaryCall(_$upgradedConsensusState, request,
+        options: options);
   }
 }
 
@@ -68,6 +76,16 @@ abstract class QueryServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.QueryAppliedPlanRequest.fromBuffer(value),
         ($0.QueryAppliedPlanResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.QueryUpgradedConsensusStateRequest,
+            $0.QueryUpgradedConsensusStateResponse>(
+        'UpgradedConsensusState',
+        upgradedConsensusState_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.QueryUpgradedConsensusStateRequest.fromBuffer(value),
+        ($0.QueryUpgradedConsensusStateResponse value) =>
+            value.writeToBuffer()));
   }
 
   $async.Future<$0.QueryCurrentPlanResponse> currentPlan_Pre(
@@ -82,8 +100,16 @@ abstract class QueryServiceBase extends $grpc.Service {
     return appliedPlan(call, await request);
   }
 
+  $async.Future<$0.QueryUpgradedConsensusStateResponse>
+      upgradedConsensusState_Pre($grpc.ServiceCall call,
+          $async.Future<$0.QueryUpgradedConsensusStateRequest> request) async {
+    return upgradedConsensusState(call, await request);
+  }
+
   $async.Future<$0.QueryCurrentPlanResponse> currentPlan(
       $grpc.ServiceCall call, $0.QueryCurrentPlanRequest request);
   $async.Future<$0.QueryAppliedPlanResponse> appliedPlan(
       $grpc.ServiceCall call, $0.QueryAppliedPlanRequest request);
+  $async.Future<$0.QueryUpgradedConsensusStateResponse> upgradedConsensusState(
+      $grpc.ServiceCall call, $0.QueryUpgradedConsensusStateRequest request);
 }

@@ -4,6 +4,7 @@ import 'package:alan/alan.dart';
 /// application-defined concrete transaction type. The type returned must
 /// implement [TxBuilder].
 abstract class TxConfig {
+  TxEncoder txEncoder();
   SignMode defaultSignMode();
   TxBuilder newTxBuilder();
   SignModeHandler signModeHandler();
