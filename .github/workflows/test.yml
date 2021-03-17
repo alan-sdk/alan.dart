@@ -46,6 +46,9 @@ jobs:
         run: |
           pub global activate remove_from_coverage
 
+          # Exclude the .pub-cache
+          pub global run remove_from_coverage:remove_from_coverage -f coverage/lcov.info -r '/.pub-cache/'
+
           # Exclude all g.dart files
           pub global run remove_from_coverage:remove_from_coverage -f coverage/lcov.info -r '.g.dart$'
 
