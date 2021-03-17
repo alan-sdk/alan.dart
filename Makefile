@@ -2,7 +2,7 @@ FILES=-name '*.dart' ! -name '*.g.dart' ! -path './dart_tool' ! -path '*/generat
 
 lint:
 	find . $(FILES) | tr '\n' ' ' | xargs dartfmt --dry-run --set-exit-if-changed
-	dart analyze .
+	dart analyze
 
 format:
 	find . $(FILES) | tr '\n' ' ' | xargs dartfmt -w
