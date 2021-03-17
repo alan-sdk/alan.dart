@@ -12,6 +12,7 @@ jobs:
       - uses: actions/checkout@master
       - uses: gaurav-nelson/github-action-markdown-link-check@0.6.0
         with:
+          use-quit-mode: "yes"
           folder-path: "doc"
 
   Build-and-Deploy:
