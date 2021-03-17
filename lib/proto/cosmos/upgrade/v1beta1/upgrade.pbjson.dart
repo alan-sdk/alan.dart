@@ -9,15 +9,12 @@ const Plan$json = const {
   '1': 'Plan',
   '2': const [
     const {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    const {'1': 'time', '3': 2, '4': 1, '5': 11, '6': '.google.protobuf.Timestamp', '8': const {}, '10': 'time'},
     const {'1': 'height', '3': 3, '4': 1, '5': 3, '10': 'height'},
     const {'1': 'info', '3': 4, '4': 1, '5': 9, '10': 'info'},
+    const {'1': 'upgraded_client_state', '3': 5, '4': 1, '5': 11, '6': '.google.protobuf.Any', '8': const {}, '10': 'upgradedClientState'},
   ],
   '7': const {},
-  '9': const [
-    const {'1': 2, '2': 3},
-    const {'1': 5, '2': 6},
-  ],
-  '10': const ['time', 'option'],
 };
 
 const SoftwareUpgradeProposal$json = const {
@@ -25,15 +22,7 @@ const SoftwareUpgradeProposal$json = const {
   '2': const [
     const {'1': 'title', '3': 1, '4': 1, '5': 9, '10': 'title'},
     const {'1': 'description', '3': 2, '4': 1, '5': 9, '10': 'description'},
-    const {
-      '1': 'plan',
-      '3': 3,
-      '4': 1,
-      '5': 11,
-      '6': '.cosmos.upgrade.v1beta1.Plan',
-      '8': const {},
-      '10': 'plan'
-    },
+    const {'1': 'plan', '3': 3, '4': 1, '5': 11, '6': '.cosmos.upgrade.v1beta1.Plan', '8': const {}, '10': 'plan'},
   ],
   '7': const {},
 };
@@ -46,3 +35,4 @@ const CancelSoftwareUpgradeProposal$json = const {
   ],
   '7': const {},
 };
+

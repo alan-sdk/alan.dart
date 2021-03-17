@@ -5,43 +5,6 @@
 // @dart = 2.3
 // ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
-const QueryAccountsRequest$json = const {
-  '1': 'QueryAccountsRequest',
-  '2': const [
-    const {
-      '1': 'pagination',
-      '3': 1,
-      '4': 1,
-      '5': 11,
-      '6': '.cosmos.base.query.v1beta1.PageRequest',
-      '10': 'pagination'
-    },
-  ],
-};
-
-const QueryAccountsResponse$json = const {
-  '1': 'QueryAccountsResponse',
-  '2': const [
-    const {
-      '1': 'accounts',
-      '3': 1,
-      '4': 3,
-      '5': 11,
-      '6': '.google.protobuf.Any',
-      '8': const {},
-      '10': 'accounts'
-    },
-    const {
-      '1': 'pagination',
-      '3': 2,
-      '4': 1,
-      '5': 11,
-      '6': '.cosmos.base.query.v1beta1.PageResponse',
-      '10': 'pagination'
-    },
-  ],
-};
-
 const QueryAccountRequest$json = const {
   '1': 'QueryAccountRequest',
   '2': const [

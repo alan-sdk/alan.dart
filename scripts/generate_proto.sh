@@ -3,9 +3,11 @@
 set -eo pipefail
 
 BUILD=.build
+rm -r -f "$BUILD"
 mkdir -p "$BUILD"
 
 OUT=lib/proto
+rm -r -f "$OUT"
 mkdir -p "$OUT"
 
 # Download the Google APIs types
@@ -20,8 +22,7 @@ wget -O "$PROTOBUF_ZIP" https://github.com/protocolbuffers/protobuf/archive/mast
 unzip "$PROTOBUF_ZIP" -d "$BUILD/" && rm "$PROTOBUF_ZIP"
 PROTOBUF="$BUILD/protobuf-master"
 
-# Generate the needed filesfic
-mkdir -p "$OUT"
+# Generate the needed files
 PROTOC="protoc --dart_out=grpc:$OUT -I$PROTOBUF/src -I$GOOGLEAPIS"
 $PROTOC $GOOGLEAPIS/google/logging/v2/logging.proto
 $PROTOC $GOOGLEAPIS/google/logging/v2/log_entry.proto
@@ -37,11 +38,14 @@ $PROTOC $PROTOBUF/src/google/protobuf/empty.proto
 $PROTOC $PROTOBUF/src/google/protobuf/struct.proto
 $PROTOC $PROTOBUF/src/google/protobuf/timestamp.proto
 
+# Define the Cosmos SDK
+COSMOS_VERSION="0.42.1"
+
 # Download the Cosmos SDK
 COSMOS_ZIP="$BUILD/cosmos.zip"
-wget -O "$COSMOS_ZIP" https://github.com/cosmos/cosmos-sdk/archive/master.zip
+wget -O "$COSMOS_ZIP" "https://github.com/cosmos/cosmos-sdk/archive/v$COSMOS_VERSION.zip"
 unzip "$COSMOS_ZIP" -d "$BUILD/" && rm "$COSMOS_ZIP"
-COSMOS="$BUILD/cosmos-sdk-master"
+COSMOS="$BUILD/cosmos-sdk-$COSMOS_VERSION"
 
 # Update the protoc command
 PROTOC="$PROTOC -I$COSMOS/third_party/proto"

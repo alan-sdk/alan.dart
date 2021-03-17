@@ -1,43 +1,41 @@
 ///
+//  Generated code. Do not modify.
+//  source: google/logging/v2/log_entry.proto
+//
+// @dart = 2.3
+// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
+
 import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../api/monitored_resource.pb.dart' as $3;
 import '../../protobuf/any.pb.dart' as $0;
 import '../../protobuf/struct.pb.dart' as $1;
-import '../../protobuf/timestamp.pb.dart' as $4;
 import '../type/http_request.pb.dart' as $2;
+import '../../api/monitored_resource.pb.dart' as $3;
+import '../../protobuf/timestamp.pb.dart' as $4;
+
 import '../type/log_severity.pbenum.dart' as $5;
 
-enum LogEntry_Payload { protoPayload, textPayload, jsonPayload, notSet }
+enum LogEntry_Payload {
+  protoPayload, 
+  textPayload, 
+  jsonPayload, 
+  notSet
+}
 
 class LogEntry extends $pb.GeneratedMessage {
   static const $core.Map<$core.int, LogEntry_Payload> _LogEntry_PayloadByTag = {
-    2: LogEntry_Payload.protoPayload,
-    3: LogEntry_Payload.textPayload,
-    6: LogEntry_Payload.jsonPayload,
-    0: LogEntry_Payload.notSet
+    2 : LogEntry_Payload.protoPayload,
+    3 : LogEntry_Payload.textPayload,
+    6 : LogEntry_Payload.jsonPayload,
+    0 : LogEntry_Payload.notSet
   };
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      const $core.bool.fromEnvironment('protobuf.omit_message_names')
-          ? ''
-          : 'LogEntry',
-      package: const $pb.PackageName(
-          const $core.bool.fromEnvironment('protobuf.omit_message_names')
-              ? ''
-              : 'google.logging.v2'),
-      createEmptyInstance: create)
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'LogEntry', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.logging.v2'), createEmptyInstance: create)
     ..oo(0, [2, 3, 6])
-    ..aOM<$0.Any>(
-        2,
-        const $core.bool.fromEnvironment('protobuf.omit_field_names')
-            ? ''
-            : 'protoPayload',
-        subBuilder: $0.Any.create)
-    ..aOS(3,
-        const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'textPayload')
+    ..aOM<$0.Any>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'protoPayload', subBuilder: $0.Any.create)
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'textPayload')
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'insertId')
     ..aOM<$1.Struct>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'jsonPayload', subBuilder: $1.Struct.create)
     ..aOM<$2.HttpRequest>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'httpRequest', subBuilder: $2.HttpRequest.create)
@@ -52,34 +50,30 @@ class LogEntry extends $pb.GeneratedMessage {
     ..aOM<$4.Timestamp>(24, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'receiveTimestamp', subBuilder: $4.Timestamp.create)
     ..aOS(27, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'spanId')
     ..aOB(30, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'traceSampled')
-    ..hasRequiredFields = false;
+    ..hasRequiredFields = false
+  ;
 
   LogEntry._() : super();
   factory LogEntry() => create();
-  factory LogEntry.fromBuffer($core.List<$core.int> i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(i, r);
-  factory LogEntry.fromJson($core.String i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(i, r);
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-      'Will be removed in next major version')
+  factory LogEntry.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory LogEntry.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   LogEntry clone() => LogEntry()..mergeFromMessage(this);
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-      'Will be removed in next major version')
-  LogEntry copyWith(void Function(LogEntry) updates) =>
-      super.copyWith((message) =>
-          updates(message as LogEntry)); // ignore: deprecated_member_use
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  LogEntry copyWith(void Function(LogEntry) updates) => super.copyWith((message) => updates(message as LogEntry)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static LogEntry create() => LogEntry._();
   LogEntry createEmptyInstance() => create();
   static $pb.PbList<LogEntry> createRepeated() => $pb.PbList<LogEntry>();
   @$core.pragma('dart2js:noInline')
-  static LogEntry getDefault() =>
-      _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LogEntry>(create);
+  static LogEntry getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LogEntry>(create);
   static LogEntry _defaultInstance;
 
   LogEntry_Payload whichPayload() => _LogEntry_PayloadByTag[$_whichOneof(0)];
@@ -88,10 +82,7 @@ class LogEntry extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $0.Any get protoPayload => $_getN(0);
   @$pb.TagNumber(2)
-  set protoPayload($0.Any v) {
-    setField(2, v);
-  }
-
+  set protoPayload($0.Any v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasProtoPayload() => $_has(0);
   @$pb.TagNumber(2)
@@ -102,10 +93,7 @@ class LogEntry extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.String get textPayload => $_getSZ(1);
   @$pb.TagNumber(3)
-  set textPayload($core.String v) {
-    $_setString(1, v);
-  }
-
+  set textPayload($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(3)
   $core.bool hasTextPayload() => $_has(1);
   @$pb.TagNumber(3)
@@ -114,10 +102,7 @@ class LogEntry extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.String get insertId => $_getSZ(2);
   @$pb.TagNumber(4)
-  set insertId($core.String v) {
-    $_setString(2, v);
-  }
-
+  set insertId($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(4)
   $core.bool hasInsertId() => $_has(2);
   @$pb.TagNumber(4)
@@ -126,10 +111,7 @@ class LogEntry extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   $1.Struct get jsonPayload => $_getN(3);
   @$pb.TagNumber(6)
-  set jsonPayload($1.Struct v) {
-    setField(6, v);
-  }
-
+  set jsonPayload($1.Struct v) { setField(6, v); }
   @$pb.TagNumber(6)
   $core.bool hasJsonPayload() => $_has(3);
   @$pb.TagNumber(6)
@@ -140,10 +122,7 @@ class LogEntry extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   $2.HttpRequest get httpRequest => $_getN(4);
   @$pb.TagNumber(7)
-  set httpRequest($2.HttpRequest v) {
-    setField(7, v);
-  }
-
+  set httpRequest($2.HttpRequest v) { setField(7, v); }
   @$pb.TagNumber(7)
   $core.bool hasHttpRequest() => $_has(4);
   @$pb.TagNumber(7)
@@ -154,10 +133,7 @@ class LogEntry extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   $3.MonitoredResource get resource => $_getN(5);
   @$pb.TagNumber(8)
-  set resource($3.MonitoredResource v) {
-    setField(8, v);
-  }
-
+  set resource($3.MonitoredResource v) { setField(8, v); }
   @$pb.TagNumber(8)
   $core.bool hasResource() => $_has(5);
   @$pb.TagNumber(8)
@@ -168,10 +144,7 @@ class LogEntry extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   $4.Timestamp get timestamp => $_getN(6);
   @$pb.TagNumber(9)
-  set timestamp($4.Timestamp v) {
-    setField(9, v);
-  }
-
+  set timestamp($4.Timestamp v) { setField(9, v); }
   @$pb.TagNumber(9)
   $core.bool hasTimestamp() => $_has(6);
   @$pb.TagNumber(9)
@@ -182,10 +155,7 @@ class LogEntry extends $pb.GeneratedMessage {
   @$pb.TagNumber(10)
   $5.LogSeverity get severity => $_getN(7);
   @$pb.TagNumber(10)
-  set severity($5.LogSeverity v) {
-    setField(10, v);
-  }
-
+  set severity($5.LogSeverity v) { setField(10, v); }
   @$pb.TagNumber(10)
   $core.bool hasSeverity() => $_has(7);
   @$pb.TagNumber(10)
@@ -197,10 +167,7 @@ class LogEntry extends $pb.GeneratedMessage {
   @$pb.TagNumber(12)
   $core.String get logName => $_getSZ(9);
   @$pb.TagNumber(12)
-  set logName($core.String v) {
-    $_setString(9, v);
-  }
-
+  set logName($core.String v) { $_setString(9, v); }
   @$pb.TagNumber(12)
   $core.bool hasLogName() => $_has(9);
   @$pb.TagNumber(12)
@@ -209,10 +176,7 @@ class LogEntry extends $pb.GeneratedMessage {
   @$pb.TagNumber(15)
   LogEntryOperation get operation => $_getN(10);
   @$pb.TagNumber(15)
-  set operation(LogEntryOperation v) {
-    setField(15, v);
-  }
-
+  set operation(LogEntryOperation v) { setField(15, v); }
   @$pb.TagNumber(15)
   $core.bool hasOperation() => $_has(10);
   @$pb.TagNumber(15)
@@ -223,10 +187,7 @@ class LogEntry extends $pb.GeneratedMessage {
   @$pb.TagNumber(22)
   $core.String get trace => $_getSZ(11);
   @$pb.TagNumber(22)
-  set trace($core.String v) {
-    $_setString(11, v);
-  }
-
+  set trace($core.String v) { $_setString(11, v); }
   @$pb.TagNumber(22)
   $core.bool hasTrace() => $_has(11);
   @$pb.TagNumber(22)
@@ -235,10 +196,7 @@ class LogEntry extends $pb.GeneratedMessage {
   @$pb.TagNumber(23)
   LogEntrySourceLocation get sourceLocation => $_getN(12);
   @$pb.TagNumber(23)
-  set sourceLocation(LogEntrySourceLocation v) {
-    setField(23, v);
-  }
-
+  set sourceLocation(LogEntrySourceLocation v) { setField(23, v); }
   @$pb.TagNumber(23)
   $core.bool hasSourceLocation() => $_has(12);
   @$pb.TagNumber(23)
@@ -249,10 +207,7 @@ class LogEntry extends $pb.GeneratedMessage {
   @$pb.TagNumber(24)
   $4.Timestamp get receiveTimestamp => $_getN(13);
   @$pb.TagNumber(24)
-  set receiveTimestamp($4.Timestamp v) {
-    setField(24, v);
-  }
-
+  set receiveTimestamp($4.Timestamp v) { setField(24, v); }
   @$pb.TagNumber(24)
   $core.bool hasReceiveTimestamp() => $_has(13);
   @$pb.TagNumber(24)
@@ -263,10 +218,7 @@ class LogEntry extends $pb.GeneratedMessage {
   @$pb.TagNumber(27)
   $core.String get spanId => $_getSZ(14);
   @$pb.TagNumber(27)
-  set spanId($core.String v) {
-    $_setString(14, v);
-  }
-
+  set spanId($core.String v) { $_setString(14, v); }
   @$pb.TagNumber(27)
   $core.bool hasSpanId() => $_has(14);
   @$pb.TagNumber(27)
@@ -275,10 +227,7 @@ class LogEntry extends $pb.GeneratedMessage {
   @$pb.TagNumber(30)
   $core.bool get traceSampled => $_getBF(15);
   @$pb.TagNumber(30)
-  set traceSampled($core.bool v) {
-    $_setBool(15, v);
-  }
-
+  set traceSampled($core.bool v) { $_setBool(15, v); }
   @$pb.TagNumber(30)
   $core.bool hasTraceSampled() => $_has(15);
   @$pb.TagNumber(30)
@@ -286,70 +235,41 @@ class LogEntry extends $pb.GeneratedMessage {
 }
 
 class LogEntryOperation extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      const $core.bool.fromEnvironment('protobuf.omit_message_names')
-          ? ''
-          : 'LogEntryOperation',
-      package: const $pb.PackageName(
-          const $core.bool.fromEnvironment('protobuf.omit_message_names')
-              ? ''
-              : 'google.logging.v2'),
-      createEmptyInstance: create)
-    ..aOS(
-        1,
-        const $core.bool.fromEnvironment('protobuf.omit_field_names')
-            ? ''
-            : 'id')
-    ..aOS(
-        2,
-        const $core.bool.fromEnvironment('protobuf.omit_field_names')
-            ? ''
-            : 'producer')
-    ..aOB(
-        3,
-        const $core.bool.fromEnvironment('protobuf.omit_field_names')
-            ? ''
-            : 'first')
-    ..aOB(4,
-        const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'last')
-    ..hasRequiredFields = false;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'LogEntryOperation', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.logging.v2'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'producer')
+    ..aOB(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'first')
+    ..aOB(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'last')
+    ..hasRequiredFields = false
+  ;
 
   LogEntryOperation._() : super();
   factory LogEntryOperation() => create();
-  factory LogEntryOperation.fromBuffer($core.List<$core.int> i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(i, r);
-  factory LogEntryOperation.fromJson($core.String i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(i, r);
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-      'Will be removed in next major version')
+  factory LogEntryOperation.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory LogEntryOperation.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
   LogEntryOperation clone() => LogEntryOperation()..mergeFromMessage(this);
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-      'Will be removed in next major version')
-  LogEntryOperation copyWith(void Function(LogEntryOperation) updates) =>
-      super.copyWith((message) => updates(
-          message as LogEntryOperation)); // ignore: deprecated_member_use
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  LogEntryOperation copyWith(void Function(LogEntryOperation) updates) => super.copyWith((message) => updates(message as LogEntryOperation)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static LogEntryOperation create() => LogEntryOperation._();
   LogEntryOperation createEmptyInstance() => create();
-  static $pb.PbList<LogEntryOperation> createRepeated() =>
-      $pb.PbList<LogEntryOperation>();
+  static $pb.PbList<LogEntryOperation> createRepeated() => $pb.PbList<LogEntryOperation>();
   @$core.pragma('dart2js:noInline')
-  static LogEntryOperation getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<LogEntryOperation>(create);
+  static LogEntryOperation getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LogEntryOperation>(create);
   static LogEntryOperation _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get id => $_getSZ(0);
   @$pb.TagNumber(1)
-  set id($core.String v) {
-    $_setString(0, v);
-  }
-
+  set id($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
   $core.bool hasId() => $_has(0);
   @$pb.TagNumber(1)
@@ -358,10 +278,7 @@ class LogEntryOperation extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $core.String get producer => $_getSZ(1);
   @$pb.TagNumber(2)
-  set producer($core.String v) {
-    $_setString(1, v);
-  }
-
+  set producer($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
   $core.bool hasProducer() => $_has(1);
   @$pb.TagNumber(2)
@@ -370,10 +287,7 @@ class LogEntryOperation extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.bool get first => $_getBF(2);
   @$pb.TagNumber(3)
-  set first($core.bool v) {
-    $_setBool(2, v);
-  }
-
+  set first($core.bool v) { $_setBool(2, v); }
   @$pb.TagNumber(3)
   $core.bool hasFirst() => $_has(2);
   @$pb.TagNumber(3)
@@ -382,10 +296,7 @@ class LogEntryOperation extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   $core.bool get last => $_getBF(3);
   @$pb.TagNumber(4)
-  set last($core.bool v) {
-    $_setBool(3, v);
-  }
-
+  set last($core.bool v) { $_setBool(3, v); }
   @$pb.TagNumber(4)
   $core.bool hasLast() => $_has(3);
   @$pb.TagNumber(4)
@@ -393,70 +304,40 @@ class LogEntryOperation extends $pb.GeneratedMessage {
 }
 
 class LogEntrySourceLocation extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
-      const $core.bool.fromEnvironment('protobuf.omit_message_names')
-          ? ''
-          : 'LogEntrySourceLocation',
-      package: const $pb.PackageName(
-          const $core.bool.fromEnvironment('protobuf.omit_message_names')
-              ? ''
-              : 'google.logging.v2'),
-      createEmptyInstance: create)
-    ..aOS(
-        1,
-        const $core.bool.fromEnvironment('protobuf.omit_field_names')
-            ? ''
-            : 'file')
-    ..aInt64(
-        2,
-        const $core.bool.fromEnvironment('protobuf.omit_field_names')
-            ? ''
-            : 'line')
-    ..aOS(
-        3,
-        const $core.bool.fromEnvironment('protobuf.omit_field_names')
-            ? ''
-            : 'function')
-    ..hasRequiredFields = false;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'LogEntrySourceLocation', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.logging.v2'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'file')
+    ..aInt64(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'line')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'function')
+    ..hasRequiredFields = false
+  ;
 
   LogEntrySourceLocation._() : super();
   factory LogEntrySourceLocation() => create();
-  factory LogEntrySourceLocation.fromBuffer($core.List<$core.int> i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromBuffer(i, r);
-  factory LogEntrySourceLocation.fromJson($core.String i,
-          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
-      create()..mergeFromJson(i, r);
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
-      'Will be removed in next major version')
-  LogEntrySourceLocation clone() =>
-      LogEntrySourceLocation()..mergeFromMessage(this);
-  @$core.Deprecated('Using this can add significant overhead to your binary. '
-      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
-      'Will be removed in next major version')
-  LogEntrySourceLocation copyWith(
-          void Function(LogEntrySourceLocation) updates) =>
-      super.copyWith((message) => updates(
-          message as LogEntrySourceLocation)); // ignore: deprecated_member_use
+  factory LogEntrySourceLocation.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory LogEntrySourceLocation.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  LogEntrySourceLocation clone() => LogEntrySourceLocation()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  LogEntrySourceLocation copyWith(void Function(LogEntrySourceLocation) updates) => super.copyWith((message) => updates(message as LogEntrySourceLocation)); // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static LogEntrySourceLocation create() => LogEntrySourceLocation._();
   LogEntrySourceLocation createEmptyInstance() => create();
-  static $pb.PbList<LogEntrySourceLocation> createRepeated() =>
-      $pb.PbList<LogEntrySourceLocation>();
+  static $pb.PbList<LogEntrySourceLocation> createRepeated() => $pb.PbList<LogEntrySourceLocation>();
   @$core.pragma('dart2js:noInline')
-  static LogEntrySourceLocation getDefault() => _defaultInstance ??=
-      $pb.GeneratedMessage.$_defaultFor<LogEntrySourceLocation>(create);
+  static LogEntrySourceLocation getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LogEntrySourceLocation>(create);
   static LogEntrySourceLocation _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get file => $_getSZ(0);
   @$pb.TagNumber(1)
-  set file($core.String v) {
-    $_setString(0, v);
-  }
-
+  set file($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
   $core.bool hasFile() => $_has(0);
   @$pb.TagNumber(1)
@@ -465,10 +346,7 @@ class LogEntrySourceLocation extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   $fixnum.Int64 get line => $_getI64(1);
   @$pb.TagNumber(2)
-  set line($fixnum.Int64 v) {
-    $_setInt64(1, v);
-  }
-
+  set line($fixnum.Int64 v) { $_setInt64(1, v); }
   @$pb.TagNumber(2)
   $core.bool hasLine() => $_has(1);
   @$pb.TagNumber(2)
@@ -477,12 +355,10 @@ class LogEntrySourceLocation extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   $core.String get function => $_getSZ(2);
   @$pb.TagNumber(3)
-  set function($core.String v) {
-    $_setString(2, v);
-  }
-
+  set function($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
   $core.bool hasFunction() => $_has(2);
   @$pb.TagNumber(3)
   void clearFunction() => clearField(3);
 }
+

@@ -19,3 +19,4 @@ const LogSeverity$json = const {
     const {'1': 'EMERGENCY', '2': 800},
   ],
 };
+

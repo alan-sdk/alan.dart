@@ -8,23 +8,8 @@
 const GenesisState$json = const {
   '1': 'GenesisState',
   '2': const [
-    const {
-      '1': 'minter',
-      '3': 1,
-      '4': 1,
-      '5': 11,
-      '6': '.cosmos.mint.v1beta1.Minter',
-      '8': const {},
-      '10': 'minter'
-    },
-    const {
-      '1': 'params',
-      '3': 2,
-      '4': 1,
-      '5': 11,
-      '6': '.cosmos.mint.v1beta1.Params',
-      '8': const {},
-      '10': 'params'
-    },
+    const {'1': 'minter', '3': 1, '4': 1, '5': 11, '6': '.cosmos.mint.v1beta1.Minter', '8': const {}, '10': 'minter'},
+    const {'1': 'params', '3': 2, '4': 1, '5': 11, '6': '.cosmos.mint.v1beta1.Params', '8': const {}, '10': 'params'},
   ],
 };
+

@@ -1,4 +1,10 @@
 ///
+//  Generated code. Do not modify.
+//  source: cosmos/bank/v1beta1/bank.proto
+//
+// @dart = 2.3
+// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
+
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
@@ -437,8 +443,6 @@ class Metadata extends $pb.GeneratedMessage {
     ..aOS(
         3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'base')
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'display')
-    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'symbol')
     ..hasRequiredFields = false;
 
   Metadata._() : super();
@@ -507,28 +511,4 @@ class Metadata extends $pb.GeneratedMessage {
   $core.bool hasDisplay() => $_has(3);
   @$pb.TagNumber(4)
   void clearDisplay() => clearField(4);
-
-  @$pb.TagNumber(5)
-  $core.String get name => $_getSZ(4);
-  @$pb.TagNumber(5)
-  set name($core.String v) {
-    $_setString(4, v);
-  }
-
-  @$pb.TagNumber(5)
-  $core.bool hasName() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearName() => clearField(5);
-
-  @$pb.TagNumber(6)
-  $core.String get symbol => $_getSZ(5);
-  @$pb.TagNumber(6)
-  set symbol($core.String v) {
-    $_setString(5, v);
-  }
-
-  @$pb.TagNumber(6)
-  $core.bool hasSymbol() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearSymbol() => clearField(6);
 }

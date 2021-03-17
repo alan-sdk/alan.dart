@@ -114,7 +114,7 @@ void main() {
     expect(wallet, retrievedWallet);
   });
 
-  test('sign generates non deterministic signatures', () {
+  test('sign generates deterministic signatures', () {
     final info = NetworkInfo(bech32Hrp: 'did:com:', fullNodeHost: '');
     final mnemonic = [
       'will',
@@ -147,7 +147,7 @@ void main() {
     final data = 'Test';
     final sig1 = HEX.encode(wallet.sign(Uint8List.fromList(utf8.encode(data))));
     final sig2 = HEX.encode(wallet.sign(Uint8List.fromList(utf8.encode(data))));
-    expect(sig1 == sig2, false);
+    expect(true, sig1 == sig2);
   });
 
   test('derive with different derivation path works properly', () {

@@ -85,7 +85,7 @@ const Supply$json = const {
       '10': 'total'
     },
   ],
-  '7': const {'3': true},
+  '7': const {},
 };
 
 const DenomUnit$json = const {
@@ -111,7 +111,5 @@ const Metadata$json = const {
     },
     const {'1': 'base', '3': 3, '4': 1, '5': 9, '10': 'base'},
     const {'1': 'display', '3': 4, '4': 1, '5': 9, '10': 'display'},
-    const {'1': 'name', '3': 5, '4': 1, '5': 9, '10': 'name'},
-    const {'1': 'symbol', '3': 6, '4': 1, '5': 9, '10': 'symbol'},
   ],
 };

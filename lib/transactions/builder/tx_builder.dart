@@ -117,7 +117,7 @@ class TxBuilder {
 
   /// Sets the given [limit] as the gas limit to be used to execute
   /// the transaction.
-  void setGasLimit(int limit) {
+  void setGasLimit(fixnum.Int64 limit) {
     // Do not include default values as per ADR-027
     if (limit == null || limit == 0) {
       return;
@@ -134,7 +134,7 @@ class TxBuilder {
     }
 
     // Set the gas limit
-    _stdTx.authInfo.fee.gasLimit = fixnum.Int64(limit);
+    _stdTx.authInfo.fee.gasLimit = limit;
   }
 
   /// Sets the given [timeout] to be the number of blocks in which to

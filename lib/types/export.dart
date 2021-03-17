@@ -5,9 +5,9 @@ export 'package:alan/proto/cosmos/tx/signing/v1beta1/export.dart';
 export 'package:alan/proto/cosmos/tx/v1beta1/export.dart';
 export 'package:alan/proto/google/protobuf/export.dart';
 
-export 'cosmos_coins.dart';
-export 'cosmos_message.dart';
 export 'cosmos_signature.dart';
-export 'extensions.dart';
-export 'rest/export.dart';
-export 'transaction_result.dart';
+export 'ext_bigint.dart';
+export 'ext_coins.dart';
+export 'ext_int.dart';
+export 'ext_txresponse.dart';
+export 'utils_bytearray.dart';

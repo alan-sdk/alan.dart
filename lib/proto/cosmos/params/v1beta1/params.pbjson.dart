@@ -10,15 +10,7 @@ const ParameterChangeProposal$json = const {
   '2': const [
     const {'1': 'title', '3': 1, '4': 1, '5': 9, '10': 'title'},
     const {'1': 'description', '3': 2, '4': 1, '5': 9, '10': 'description'},
-    const {
-      '1': 'changes',
-      '3': 3,
-      '4': 3,
-      '5': 11,
-      '6': '.cosmos.params.v1beta1.ParamChange',
-      '8': const {},
-      '10': 'changes'
-    },
+    const {'1': 'changes', '3': 3, '4': 3, '5': 11, '6': '.cosmos.params.v1beta1.ParamChange', '8': const {}, '10': 'changes'},
   ],
   '7': const {},
 };
@@ -32,3 +24,4 @@ const ParamChange$json = const {
   ],
   '7': const {},
 };
+

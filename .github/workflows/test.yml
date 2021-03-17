@@ -7,7 +7,7 @@ on:
       - '!gh-pages'
 
 jobs:
-  Analyze:
+  Lint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
@@ -19,11 +19,11 @@ jobs:
           flutter-version: '1.20.0'
           channel: 'stable'
 
+      - name: Get dependencies 📥
+        run: pub get
+
       - name: Analyze 🔍
-        run: |
-          pub get
-          dartanalyzer lib
-          dartfmt --dry-run .
+        run: make lint
 
   Unit-tests:
     runs-on: ubuntu-latest
@@ -34,9 +34,11 @@ jobs:
       - name: Setup 🔨
         uses: cedx/setup-dart@v2
 
+      - name: Get dependencies 📥
+        run: pub get
+
       - name: Test 🔧
         run: |
-          pub get
           pub global activate coverage
 
           dart scripts/collect_tests.dart

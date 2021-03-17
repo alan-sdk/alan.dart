@@ -21,7 +21,6 @@ dependencies:
   meta: ^1.2.4
   pointycastle: ^1.0.2
   protobuf: ^1.1.0
-  reflectable: ^2.2.7
 
 dev_dependencies:
   build_runner: ^1.10.1

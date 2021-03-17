@@ -52,8 +52,9 @@ class NetworkInfo extends Equatable {
   String toString() {
     return '{ '
         'bech32Hrp: $bech32Hrp, '
-        'lcdUrl: $fullNodeHost, '
-        'gRPCUrl: $gRPCPort, '
+        'fullNodeHost: $fullNodeHost, '
+        'lcdPort: $lcdPort, '
+        'gRPCPort: $gRPCPort '
         '}';
   }
 }

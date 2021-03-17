@@ -3,12 +3,14 @@ include: package:pedantic/analysis_options.1.9.0.yaml
 analyzer:
   exclude:
     - build/**
-    - tool/**/*.g.dart
     - lib/**/*.g.dart
-    - lib/**/*.pb.dart
     - lib/**/*.reflectable.dart
+    - lib/proto/**
+
     - test/**/*.g.dart
     - test/**/*.reflectable.dart
+
+    - tool/**/*.g.dart
   strong-mode:
     implicit-casts: false
 

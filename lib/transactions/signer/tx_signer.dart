@@ -12,7 +12,7 @@ class TxSigner {
   final AuthQuerier _authQuerier;
   final NodeQuerier _nodeQuerier;
 
-  TxSigner._({
+  TxSigner({
     @required AuthQuerier authQuerier,
     @required NodeQuerier nodeQuerier,
   })  : _authQuerier = authQuerier,
@@ -20,7 +20,7 @@ class TxSigner {
 
   /// Builds a new [TxSigner] from a given gRPC client channel and HTTP client.
   factory TxSigner.build(ClientChannel clientChannel, http.Client httpClient) {
-    return TxSigner._(
+    return TxSigner(
       authQuerier: AuthQuerier.build(clientChannel),
       nodeQuerier: NodeQuerier.build(httpClient),
     );
@@ -41,12 +41,14 @@ class TxSigner {
     List<GeneratedMessage> msgs, {
     TxConfig config,
     String memo,
-    int gas = 200000,
-    List<Coin> feeAmt = const [],
+    Fee fee,
   }) async {
     // Set the config to the default value if not given
     config ??= DefaultTxConfig.create();
     final signMode = config.defaultSignMode();
+
+    // Set the default fees
+    fee ??= Fee()..gasLimit = 200000.toInt64();
 
     // Get the account data and node info from the network
     final account = await _authQuerier.getAccountData(wallet.bech32Address);
@@ -83,8 +85,8 @@ class TxSigner {
       ..setMsgs(msgs)
       ..setSignatures([sig])
       ..setMemo(memo)
-      ..setFeeAmount(feeAmt)
-      ..setGasLimit(gas);
+      ..setFeeAmount(fee.amount)
+      ..setGasLimit(fee.gasLimit);
 
     // Generate the bytes to be signed.
     final handler = config.signModeHandler();

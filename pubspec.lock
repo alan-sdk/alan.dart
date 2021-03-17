@@ -442,13 +442,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.3"
-  reflectable:
-    dependency: "direct main"
-    description:
-      name: reflectable
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.2.7"
   shelf:
     dependency: transitive
     description:
