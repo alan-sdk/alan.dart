@@ -12,15 +12,7 @@ const Snapshot$json = const {
     const {'1': 'format', '3': 2, '4': 1, '5': 13, '10': 'format'},
     const {'1': 'chunks', '3': 3, '4': 1, '5': 13, '10': 'chunks'},
     const {'1': 'hash', '3': 4, '4': 1, '5': 12, '10': 'hash'},
-    const {
-      '1': 'metadata',
-      '3': 5,
-      '4': 1,
-      '5': 11,
-      '6': '.cosmos.base.snapshots.v1beta1.Metadata',
-      '8': const {},
-      '10': 'metadata'
-    },
+    const {'1': 'metadata', '3': 5, '4': 1, '5': 11, '6': '.cosmos.base.snapshots.v1beta1.Metadata', '8': const {}, '10': 'metadata'},
   ],
 };
 
@@ -30,3 +22,4 @@ const Metadata$json = const {
     const {'1': 'chunk_hashes', '3': 1, '4': 3, '5': 12, '10': 'chunkHashes'},
   ],
 };
+

@@ -9,10 +9,40 @@ In order to perform a transaction, three steps must be done:
 In order to perform transactions, you need to have a wallet. If you want to learn how to get one, please refer to the [Wallet documentation](../wallet/overview.md).  
 :::
 
-## 1. Create and sign the transaction
+## 1. Get the modules to use 
+When you want to create a transaction, you are required to specify a list of messages that should be included inside such transaction. Those messages can be either default Cosmos messages (already included inside Alan.dart), or custom messages. Following you can find instructions on how to use both. 
+
+### A. Using standard Cosmos modules
+If you want to use messages included inside default Cosmos modules (eg. `x/bank`, `x/staking`, `x/slashing`, etc), you can simply use the various messages classes that are already contained inside Alan.dart.
+
+To do this, you can simply import the different already built-in modules:
+
+```dart
+import 'package:alan/proto/cosmos/auth/v1beta1/export.dart' as auth;
+import 'package:alan/proto/cosmos/bank/v1beta1/export.dart' as bank;
+import 'package:alan/proto/cosmos/slashing/v1beta1/export.dart' as slashing;
+...
+```
+
+As you can see, the pattern used to import a module is the following:
+
+```dart
+import 'package:alan/proto/cosmos/<module name>/v1beta1/export.dart' as <module name>;
+```
+
+If you want to see all the supported modules, please visit the [modules page](../modules/overview.md)
+
+### B. Using custom modules
+If you want to build a transaction that includes custom messages, then you will need to generate the messages classes starting from your custom Protobuf files. If you want to know how to do this, please reference the [custom chains](../custom-chains/overview.md) page.
+
+## 2. Create and sign the transaction
 To create and sign a transaction properly, you can use the `TxSigner` class, providing it with a list of messages and a wallet, as well as an optional memo and optional fees.
 
 You can also provide an optional `TxConfig` that will be used to serialize and sign the transaction according to custom logics.
+
+:::note Example message  
+The following example uses the `bank.MsgSend` message, but remember that you can use any kind of message that you want. Please visit the [modules page](../modules/overview.md) to see all the messages included in Alan.dart, or the [custom chain page](../custom-chains/overview.md) to know how to generate custom ones.  
+:::
 
 ```dart
 import 'package:alan/alan.dart';
@@ -27,7 +57,14 @@ final networkInfo = NetworkInfo({
 final wallet = Wallet.derive(mnemonic, networkInfo);
 
 // Create your message
-final message = Message(...);
+final message = bank.MsgSend.create()
+  ..fromAddress = wallet.bech32Address
+  ..toAddress = 'cosmos1cx7mec8x567xh8f4x7490ndx7xey8lnr9du2qy';
+message.amount.add(
+  Coin.create()
+    ..denom = 'uatom'
+    ..amount = '100',
+);
 
 // Compose the transaction fees
 final fee = Fee();
@@ -50,7 +87,7 @@ final signedTx = signer.createAndSign(
 );
 ```
 
-## 2. Send the signed transaction
+## 3. Send the signed transaction
 Once you signed the transaction, you are now ready to send it to the chain. To do this you can use the `TxSender` helper class, giving it the signed transaction and a wallet. You can also specify the send mode that you would like to use.
 
 ```dart
@@ -69,3 +106,8 @@ The following broadcast modes are available:
   Most common, returns after performing some fast checks on the transaction.
 - `BroadcastMode.BROADCAST_MODE_BLOCK`
   Slowest, returns after the block has been approved (5-6 seconds).
+  
+## Supported messages
+In order to see a list of supported messages that are built into Alan.dart, please see the [modules page](../modules/overview.md). 
+
+If you want to use a custom message type instead, visit the [custom chains page](../custom-chains/overview.md).

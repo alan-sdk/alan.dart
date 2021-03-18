@@ -8,15 +8,7 @@
 const Pairs$json = const {
   '1': 'Pairs',
   '2': const [
-    const {
-      '1': 'pairs',
-      '3': 1,
-      '4': 3,
-      '5': 11,
-      '6': '.cosmos.base.kv.v1beta1.Pair',
-      '8': const {},
-      '10': 'pairs'
-    },
+    const {'1': 'pairs', '3': 1, '4': 3, '5': 11, '6': '.cosmos.base.kv.v1beta1.Pair', '8': const {}, '10': 'pairs'},
   ],
 };
 
@@ -27,3 +19,4 @@ const Pair$json = const {
     const {'1': 'value', '3': 2, '4': 1, '5': 12, '10': 'value'},
   ],
 };
+

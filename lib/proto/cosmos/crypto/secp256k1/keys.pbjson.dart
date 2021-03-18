@@ -19,3 +19,4 @@ const PrivKey$json = const {
     const {'1': 'key', '3': 1, '4': 1, '5': 12, '10': 'key'},
   ],
 };
+

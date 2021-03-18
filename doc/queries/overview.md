@@ -20,6 +20,8 @@ As you can see, the pattern used to import a module is the following:
 import 'package:alan/proto/cosmos/<module name>/v1beta1/export.dart' as <module name>;
 ```
 
+If you want to see all the supported modules, please visit the [modules page](../modules/overview.md)
+
 ### B. Using custom modules
 If you want to use Alan.dart to work on a custom chain, then you will need to generate the gRPC clients starting from your custom Protobuf files. If you want to know how to do this, please reference the [custom chains](../custom-chains/overview.md) page.
 

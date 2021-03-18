@@ -16,15 +16,7 @@ const QueryAccountRequest$json = const {
 const QueryAccountResponse$json = const {
   '1': 'QueryAccountResponse',
   '2': const [
-    const {
-      '1': 'account',
-      '3': 1,
-      '4': 1,
-      '5': 11,
-      '6': '.google.protobuf.Any',
-      '8': const {},
-      '10': 'account'
-    },
+    const {'1': 'account', '3': 1, '4': 1, '5': 11, '6': '.google.protobuf.Any', '8': const {}, '10': 'account'},
   ],
 };
 
@@ -35,14 +27,7 @@ const QueryParamsRequest$json = const {
 const QueryParamsResponse$json = const {
   '1': 'QueryParamsResponse',
   '2': const [
-    const {
-      '1': 'params',
-      '3': 1,
-      '4': 1,
-      '5': 11,
-      '6': '.cosmos.auth.v1beta1.Params',
-      '8': const {},
-      '10': 'params'
-    },
+    const {'1': 'params', '3': 1, '4': 1, '5': 11, '6': '.cosmos.auth.v1beta1.Params', '8': const {}, '10': 'params'},
   ],
 };
+

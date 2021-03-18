@@ -13,16 +13,13 @@ Alan.dart is a pure Dart package allowing you to easily integrate your Dart-base
 You can find the documentation on the [official website](https://alan-sdk.github.io/alan.dart/). 
 
 ## Cosmos-SDK compatibility table
-Over time the Cosmos SDK has changed a lot, and many versions of it have been released. Since the development of this library started, we had to adapt to the `0.37.x` and `0.38.x` versions. 
+Over time, we developed different versions of this library to be compatible with multiple Cosmos SDK releases. Following you can find the compatibility table that indicates which version you should use: 
 
-Recently, however, the Cosmos team decided that they would focus on building a LTS (_Long Term Support_) version of the SDK. This will be the `0.39.x` version series. 
-
-For this reason, we decided that we will focus on building this SDK based on such version of the Cosmos SDK. However, we also released two versions of this library to be compatible with older Cosmos SDK versions: 
-
-- [Version 0.37.x](https://github.com/alan-sdk/alan.dart/releases/tag/v0.37.x) compatible with all the Cosmos SDK 0.37.x release series
-- [Version 0.38.x](https://github.com/alan-sdk/alan.dart/releases/tag/v0.38.x) compatible with all the Cosmos SDK 0.38.x release series 
-
-Please note that those versions of the Alan.dart library will most probably not contain all the features of recent versions. We highly suggest you to update your Cosmos SDK version to 0.39.x and use the latest version of the Alan.dart library with it.  
+| Cosmos SDK version(s) | Alan.dart branch | 
+| :-------------------: | :--------------: |
+| `v0.37.x` | `cosmos-v0.37.x` |
+| `v0.38.x` | `cosmos-v0.38.x` |
+| `v0.40.x`, `v0.41.x`, `v0.42.x` | `cosmos-v0.42.x` |
 
 ## Getting started
 To start using this library inside your project, just edit your `pubspec.yml` file adding the following lines: 

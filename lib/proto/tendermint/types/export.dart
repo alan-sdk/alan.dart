@@ -1,3 +1,9 @@
+export 'block.pb.dart';
+export 'block.pbenum.dart';
+export 'block.pbjson.dart';
+export 'evidence.pb.dart';
+export 'evidence.pbenum.dart';
+export 'evidence.pbjson.dart';
 export 'params.pb.dart';
 export 'params.pbenum.dart';
 export 'params.pbjson.dart';

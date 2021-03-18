@@ -46,6 +46,7 @@ module.exports = {
             ["wallet/overview", "Creating a wallet"],
             ["transactions/overview", "Performing a transaction"],
             ["queries/overview", "Querying the chain"],
+            ["modules/overview", "Supported Cosmos modules"],
             ["custom-chains/overview", "Working with custom chains"],
         ],
     }

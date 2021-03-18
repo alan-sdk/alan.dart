@@ -16,7 +16,7 @@ void main() async {
   // 3. Create and sign the transaction
   final message = bank.MsgSend.create()
     ..fromAddress = wallet.bech32Address
-    ..toAddress = 'did:com:1lys5uu683wrmupn4zguz7f2gqw45qae98pzn3d';
+    ..toAddress = 'cosmos1cx7mec8x567xh8f4x7490ndx7xey8lnr9du2qy';
   message.amount.add(Coin.create()
     ..denom = 'uatom'
     ..amount = '100');

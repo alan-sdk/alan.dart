@@ -12,38 +12,21 @@ const ListAllInterfacesRequest$json = const {
 const ListAllInterfacesResponse$json = const {
   '1': 'ListAllInterfacesResponse',
   '2': const [
-    const {
-      '1': 'interface_names',
-      '3': 1,
-      '4': 3,
-      '5': 9,
-      '10': 'interfaceNames'
-    },
+    const {'1': 'interface_names', '3': 1, '4': 3, '5': 9, '10': 'interfaceNames'},
   ],
 };
 
 const ListImplementationsRequest$json = const {
   '1': 'ListImplementationsRequest',
   '2': const [
-    const {
-      '1': 'interface_name',
-      '3': 1,
-      '4': 1,
-      '5': 9,
-      '10': 'interfaceName'
-    },
+    const {'1': 'interface_name', '3': 1, '4': 1, '5': 9, '10': 'interfaceName'},
   ],
 };
 
 const ListImplementationsResponse$json = const {
   '1': 'ListImplementationsResponse',
   '2': const [
-    const {
-      '1': 'implementation_message_names',
-      '3': 1,
-      '4': 3,
-      '5': 9,
-      '10': 'implementationMessageNames'
-    },
+    const {'1': 'implementation_message_names', '3': 1, '4': 3, '5': 9, '10': 'implementationMessageNames'},
   ],
 };
+
