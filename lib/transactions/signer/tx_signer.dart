@@ -5,6 +5,7 @@ import 'package:grpc/grpc.dart';
 import 'package:http/http.dart' as http;
 import 'package:meta/meta.dart';
 import 'package:protobuf/protobuf.dart';
+import 'package:alan/proto/cosmos/crypto/secp256k1/export.dart' as secp256;
 
 /// Allows to create and sign a [Tx] object so that it can later
 /// be sent to the chain.
@@ -63,6 +64,14 @@ class TxSigner {
       wallet.networkInfo.lcdEndpoint,
     );
 
+    // Get the public key from the account, or generate it if the
+    // chain does not have it yet
+    var pubKey = account.pubKey;
+    if (pubKey.value?.isNotEmpty != true) {
+      final secp256Key = secp256.PubKey.create()..key = wallet.publicKey;
+      pubKey = Codec.serialize(secp256Key);
+    }
+
     // For SIGN_MODE_DIRECT, calling SetSignatures calls setSignerInfos on
     // TxBuilder under the hood, and SignerInfos is needed to generated the
     // sign bytes. This is the reason for setting SetSignatures here, with a
@@ -75,7 +84,7 @@ class TxSigner {
 
     // Set SignatureV2 with empty signatures, to set correct signer infos.
     var sig = SignatureV2(
-      pubKey: account.pubKey,
+      pubKey: pubKey,
       data: sigData,
       sequence: account.sequence,
     );
@@ -103,7 +112,7 @@ class TxSigner {
     // Construct the SignatureV2 struct
     sigData = SingleSignatureData(signMode: signMode, signature: sigBytes);
     sig = SignatureV2(
-      pubKey: account.pubKey,
+      pubKey: pubKey,
       data: sigData,
       sequence: account.sequence,
     );

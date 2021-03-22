@@ -137,6 +137,21 @@ class Wallet extends Equatable {
     return ECPublicKey(curvePoint, ECCurve_secp256k1());
   }
 
+  /// Normalizes the given [signature] using the provided [curveParams].
+  /// This is used to create signatures that are always in the lower-S form, to
+  /// make sure that they cannot be tamped with the alternative S value.
+  /// More info can be found here: https://tinyurl.com/2yfurry7
+  ECSignature _normalizeECSignature(
+    ECSignature signature,
+    ECDomainParameters curveParams,
+  ) {
+    var normalizedS = signature.s;
+    if (normalizedS.compareTo(curveParams.n >> 1) > 0) {
+      normalizedS = curveParams.n - normalizedS;
+    }
+    return ECSignature(signature.r, normalizedS);
+  }
+
   /// Hashes the given [data] with SHA-256, and then sign the hash using the
   /// private key associated with this wallet, returning the signature
   /// encoded as a 64 bytes array.
@@ -146,8 +161,9 @@ class Wallet extends Equatable {
       ..init(true, PrivateKeyParameter(_ecPrivateKey));
 
     final ecSignature = ecdsaSigner.generateSignature(hash) as ECSignature;
-    final rBytes = ecSignature.r.toUin8List();
-    final sBytes = ecSignature.s.toUin8List();
+    final normalized = _normalizeECSignature(ecSignature, ECCurve_secp256k1());
+    final rBytes = normalized.r.toUin8List();
+    final sBytes = normalized.s.toUin8List();
 
     var sigBytes = Uint8List(64);
     copy(rBytes, 32 - rBytes.length, 32, sigBytes);

@@ -16,7 +16,7 @@ TxEncoder DefaultEncoder() {
     final authInfoBz = tx.authInfo.writeToBuffer();
 
     // Create the raw Tx
-    final txRaw = TxRaw()
+    final txRaw = TxRaw.create()
       ..authInfoBytes = authInfoBz
       ..bodyBytes = bodyBz;
     txRaw.signatures.addAll(tx.signatures);
