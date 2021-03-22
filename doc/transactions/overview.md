@@ -70,7 +70,7 @@ message.amount.add(
 final fee = Fee();
 fee.gasLimit = 200000.toInt64();
 fee.amount.add(
-  Coin()
+  Coin.create()
     ..amount = '100'
     ..denom = 'uatom',
 );

@@ -66,7 +66,7 @@ void main() {
         ..address = 'cosmos1hafptm4zxy5nw8rd2pxyg83c5ls2v62tstzuv2'
         ..sequence = fixnum.Int64(0)
         ..accountNumber = fixnum.Int64(0);
-      return Future.value(account);
+      return Future.value(BaseAccount(account));
     });
 
     when(nodeQuerier.getNodeInfo(any)).thenAnswer((_) {

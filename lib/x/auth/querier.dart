@@ -1,3 +1,4 @@
+import 'package:alan/alan.dart';
 import 'package:alan/proto/cosmos/auth/v1beta1/export.dart' as auth;
 import 'package:grpc/grpc.dart';
 import 'package:meta/meta.dart';
@@ -17,17 +18,15 @@ class AuthQuerier {
   /// having the given [address] from it.
   /// If no account with the specified [address] is found, returns `null`
   /// instead.
-  Future<auth.BaseAccount> getAccountData(String address) async {
-    final response = await _client.account(
-      auth.QueryAccountRequest.create()..address = address,
-    );
+  Future<AccountI> getAccountData(String address) async {
+    final request = auth.QueryAccountRequest.create()..address = address;
 
+    final response = await _client.account(request);
     if (!response.hasAccount()) {
       return null;
     }
 
-    // TODO: Use codec here
-    final account = auth.BaseAccount.fromBuffer(response.account.value);
+    final account = Codec.deserializeAccount(response.account);
     return account.address == address ? account : null;
   }
 }
