@@ -1,12 +1,6 @@
-## Version 0.39.3
-- Added the support for `x/gov` queries and messages
+## Version 0.42.0
+Support the Cosmos `v0.40.x`, `v0.41.x` and `v0.42.x` versions.
 
-## Version 0.39.2
-- Added the support for `x/staking` queries and messages
-
-## Version 0.39.1
-- Bug fixes
-- Incremented test coverage
-
-## Version 0.39.0
-First release of the `0.39.x` release series supporting Cosmos 0.39.x LTS versions.
+- Custom messages are now Protobuf-generated classes
+- Transactions are serialized using Protobuf and signed using the `MODE_DIRECT` mode
+- Queries are performed using the different `QueryClient` implementations

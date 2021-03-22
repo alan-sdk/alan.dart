@@ -5,6 +5,15 @@
 // @dart = 2.3
 // ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
 
+const OrderBy$json = const {
+  '1': 'OrderBy',
+  '2': const [
+    const {'1': 'ORDER_BY_UNSPECIFIED', '2': 0},
+    const {'1': 'ORDER_BY_ASC', '2': 1},
+    const {'1': 'ORDER_BY_DESC', '2': 2},
+  ],
+};
+
 const BroadcastMode$json = const {
   '1': 'BroadcastMode',
   '2': const [
@@ -20,6 +29,7 @@ const GetTxsEventRequest$json = const {
   '2': const [
     const {'1': 'events', '3': 1, '4': 3, '5': 9, '10': 'events'},
     const {'1': 'pagination', '3': 2, '4': 1, '5': 11, '6': '.cosmos.base.query.v1beta1.PageRequest', '10': 'pagination'},
+    const {'1': 'order_by', '3': 3, '4': 1, '5': 14, '6': '.cosmos.tx.v1beta1.OrderBy', '10': 'orderBy'},
   ],
 };
 

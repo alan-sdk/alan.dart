@@ -1,14 +1,20 @@
 ///
+//  Generated code. Do not modify.
+//  source: cosmos/base/tendermint/v1beta1/query.proto
+//
+// @dart = 2.3
+// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
+
 import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../../google/protobuf/any.pb.dart' as $2;
-import '../../../../tendermint/p2p/types.pb.dart' as $5;
-import '../../../../tendermint/types/block.pb.dart' as $4;
-import '../../../../tendermint/types/types.pb.dart' as $3;
 import '../../query/v1beta1/pagination.pb.dart' as $1;
+import '../../../../google/protobuf/any.pb.dart' as $2;
+import '../../../../tendermint/types/types.pb.dart' as $3;
+import '../../../../tendermint/types/block.pb.dart' as $4;
+import '../../../../tendermint/p2p/types.pb.dart' as $5;
 
 class GetValidatorSetByHeightRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetValidatorSetByHeightRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.base.tendermint.v1beta1'), createEmptyInstance: create)

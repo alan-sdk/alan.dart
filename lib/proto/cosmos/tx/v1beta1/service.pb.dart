@@ -21,6 +21,7 @@ class GetTxsEventRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetTxsEventRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.tx.v1beta1'), createEmptyInstance: create)
     ..pPS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'events')
     ..aOM<$6.PageRequest>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pagination', subBuilder: $6.PageRequest.create)
+    ..e<OrderBy>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'orderBy', $pb.PbFieldType.OE, defaultOrMaker: OrderBy.ORDER_BY_UNSPECIFIED, valueOf: OrderBy.valueOf, enumValues: OrderBy.values)
     ..hasRequiredFields = false
   ;
 
@@ -60,6 +61,15 @@ class GetTxsEventRequest extends $pb.GeneratedMessage {
   void clearPagination() => clearField(2);
   @$pb.TagNumber(2)
   $6.PageRequest ensurePagination() => $_ensure(1);
+
+  @$pb.TagNumber(3)
+  OrderBy get orderBy => $_getN(2);
+  @$pb.TagNumber(3)
+  set orderBy(OrderBy v) { setField(3, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasOrderBy() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearOrderBy() => clearField(3);
 }
 
 class GetTxsEventResponse extends $pb.GeneratedMessage {

@@ -3,9 +3,9 @@ include: package:pedantic/analysis_options.1.9.0.yaml
 analyzer:
   exclude:
     - build/**
+    - lib/proto/**
     - lib/**/*.g.dart
     - lib/**/*.reflectable.dart
-    - lib/proto/**
 
     - test/**/*.g.dart
     - test/**/*.reflectable.dart
