@@ -19,7 +19,7 @@ Over time, we developed different versions of this library to be compatible with
 | :-------------------: | :--------------: |
 | `v0.37.x` | `cosmos-v0.37.x` |
 | `v0.38.x` | `cosmos-v0.38.x` |
-| `v0.40.x`, `v0.41.x`, `v0.42.x` | `cosmos-v0.42.x` |
+| `v0.40.x`, `v0.41.x`, `v0.42.x` | `main` |
 
 ## Getting started
 To start using this library inside your project, just edit your `pubspec.yml` file adding the following lines: 
