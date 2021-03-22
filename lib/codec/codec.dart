@@ -1,8 +1,12 @@
 import 'package:alan/alan.dart';
 import 'package:protobuf/protobuf.dart';
 
+/// Represents a function that can read an [Any] as a particular
+/// [AccountI] implementation.
 typedef AccountDeserializer = AccountI Function(Any any);
 
+/// Contains the data to properly register an [AccountI] implementation
+/// so that it can be later deserialized starting from an [Any] by the [Codec].
 class AccountImpl {
   String typeUrl;
   AccountDeserializer deserializer;
@@ -56,10 +60,20 @@ class Codec {
     _initialized = true;
   }
 
+  /// Registers the given [impl] as an [AccountI] implementation.
   static void registerAccountImpl(AccountImpl impl) {
+    _ensureInit();
+
+    if (_accountImpls.any((element) => element.typeUrl == impl.typeUrl)) {
+      throw Exception(
+        '${impl.typeUrl} has an implementation already registered',
+      );
+    }
+
     _accountImpls.add(impl);
   }
 
+  /// Deserializes the provided [value] into an [AccountI] instance.
   static AccountI deserializeAccount(Any value) {
     _ensureInit();
 
