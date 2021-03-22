@@ -1,7 +1,7 @@
 # Cosmos modules
 Following you can find a list of all the modules that are included inside Alan.dart, and their associated messages and queries included. 
 
-Please note that, instead of re-writing the documentation from scratch, we will simply link the included messages and querier methods with the Proto files definitions from which they are generated. Such files contain an extended documentation that can be used to properly comprehend everything. 
+Please note that, instead of re-writing the documentation from scratch, if nothing custom has been implemented for the module we will simply link the included messages and querier methods with the Proto files definitions from which they are generated. Such files contain an extended documentation that can be used to properly comprehend everything. 
 
 ## Included modules
 ### Auth
@@ -12,6 +12,10 @@ import 'package:alan/proto/cosmos/auth/v1beta1/export.dart' as auth;
 
 Documentation:
 - [Querier](https://github.com/cosmos/cosmos-sdk/tree/v0.42.1/proto/cosmos/auth/v1beta1/query.proto) 
+
+:::tip Custom x/auth implementations  
+Alan.dart comes with a couple of custom implementations for the the `x/auth` module. Particularly, if you want to deserialize a custom account type of query the details of an account easily you should check out the [`x/auth` documentation page](x/auth.md).  
+:::
 
 ### Bank
 Import:
