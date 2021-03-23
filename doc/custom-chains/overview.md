@@ -97,7 +97,7 @@ Such errors appear if you did not include all the required `.proto` files inside
 
 To solve this problem, the easiest way is to simply download the get `.proto` file and put into the appropriate folder. In this case, we should download the `timestamp.proto` file and put inside the `third_party/proto/google/protobuf` folder:
 
-```
+```shell
 curl https://raw.githubusercontent.com/protocolbuffers/protobuf/master/src/google/protobuf/timestamp.proto > third_party/proto/google/protobuf/timestamp.proto
 ```
 
