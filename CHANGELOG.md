@@ -1,4 +1,4 @@
-## Version 0.42.0
+## Version 0.40.0+1
 Support the Cosmos `v0.40.x`, `v0.41.x` and `v0.42.x` versions.
 
 - Custom messages are now Protobuf-generated classes
