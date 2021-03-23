@@ -43,19 +43,11 @@ module.exports = {
         nav: [],
         sidebarDepth: 2,
         sidebar: [
-            ["setup/overview", "Setting up Alan.dart"],
             ["wallet/overview", "Creating a wallet"],
             ["transactions/overview", "Performing a transaction"],
             ["queries/overview", "Querying the chain"],
-            {
-                title: "Supported modules",
-                children: [
-                    ["x/auth", "Auth"],
-                    ["x/bank", "Bank"],
-                    ["x/gov", "Gov"],
-                    ["x/staking", "Staking"],
-                ]
-            }
+            ["modules/overview", "Supported Cosmos modules"],
+            ["custom-chains/overview", "Working with custom chains"],
         ],
     }
 };

@@ -1,9 +1,0 @@
-{
-  "height": "0",
-  "txhash": "72BFB1A26327BDE5F55490E64DC797F089AB78DFB74A92BB913BA479F517775D",
-  "codespace": "sdk",
-  "code": 8,
-  "raw_log": "invalid pubkey: pubKey does not match signer address desmos1tvuu7rf0zakjw79hfnhvd73v5fvznrr8szfcan with signer index: 0",
-  "gas_wanted": "200000",
-  "gas_used": "11978"
-}

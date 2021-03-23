@@ -1,72 +1,48 @@
-import 'dart:io';
-
 import 'package:alan/alan.dart';
-import 'package:http/http.dart' as http;
-import 'package:mock_web_server/mock_web_server.dart';
+import 'package:alan/proto/cosmos/bank/v1beta1/export.dart' as bank;
+import 'package:alan/proto/cosmos/tx/v1beta1/export.dart' as tx;
+import 'package:fixnum/fixnum.dart' as fixnum;
+import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
 
-import 'tx_sender_test.reflectable.dart';
+import '../../common.dart';
+
+class MockServiceClient extends Mock implements tx.ServiceClient {}
 
 void main() {
-  MockWebServer server;
+  tx.ServiceClient client;
   TxSender sender;
 
-  setUpAll(() {
-    initializeReflectable();
-    server = MockWebServer();
-    server.start();
-  });
-
   setUp(() {
-    // Clean the dispatcher to avoid cross-testing conflicts
-    server.dispatcher = null;
-    sender = TxSender.build(http.Client());
+    client = MockServiceClient();
+    sender = TxSender(client: client);
   });
 
-  final mnemonic = [
-    'sibling',
-    'auction',
-    'sibling',
-    'flavor',
-    'judge',
-    'foil',
-    'tube',
-    'dust',
-    'work',
-    'mixed',
-    'crush',
-    'action',
-    'menu',
-    'property',
-    'project',
-    'ride',
-    'crouch',
-    'hat',
-    'mom',
-    'scale',
-    'start',
-    'ill',
-    'spare',
-    'panther',
-  ];
+  test('Signed transaction is broadcast properly', () async {
+    final response = TxResponse()
+      ..height = fixnum.Int64(0)
+      ..txhash =
+          '8B95B0F8FB358833A5CC1C3251A663C121CF3F43F6AF8540DCBB32E2FC502462'
+      ..rawLog = '[]';
 
-  test('Signed StdTx is sent properly', () async {
-    final file = File('test_resources/transactions/sync_tx_successful.json');
-    server.enqueue(httpCode: 200, body: file.readAsStringSync());
+    // Mock the service
+    when(client.broadcastTx(any)).thenAnswer((_) {
+      final broadcastResponse = BroadcastTxResponse()..txResponse = response;
+      return MockResponseFuture.value(broadcastResponse);
+    });
 
-    final wallet = Wallet.derive(
-      mnemonic,
-      NetworkInfo(bech32Hrp: 'desmos', lcdUrl: server.url),
-    );
-    final stdTx = TxBuilder.buildStdTx([
-      MsgSend(
-        fromAddress: 'cosmos1huydeevpz37sd9snkgul6070mstupukw00xkw9',
-        toAddress: 'cosmos12lla7fg3hjd2zj6uvf4pqj7atx273klc487c5k',
-        amount: [StdCoin(denom: 'uatom', amount: '100')],
-      ),
-    ]);
+    // Crete the transaction and send it
+    final message = bank.MsgSend.create();
+    message.fromAddress = 'cosmos1huydeevpz37sd9snkgul6070mstupukw00xkw9';
+    message.toAddress = 'cosmos12lla7fg3hjd2zj6uvf4pqj7atx273klc487c5k';
+    message.amount.add(Coin.create()
+      ..denom = 'uatom'
+      ..amount = '100');
 
-    final result = await sender.broadcastStdTx(stdTx, wallet);
-    expect(result, isA<SyncTxResponse>());
+    final builder = TxBuilder.create();
+    builder.setMsgs([message]);
+
+    final result = await sender.broadcastTx(builder.getTx());
+    expect(result, response);
   });
 }

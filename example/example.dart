@@ -1,21 +1,11 @@
 import 'package:alan/alan.dart';
-import 'package:http/http.dart' as http;
+import 'package:alan/proto/cosmos/bank/v1beta1/export.dart' as bank;
 
 void main() async {
-  // -----------------------------------
-  // --- Registering new msg types
-  // -----------------------------------
-
-  // MsgType needs to implement StdMsg
-  // Codec.registerType('my/MsgType', MyMsgType);
-
-  // -----------------------------------
-  // --- Creating a wallet
-  // -----------------------------------
-
+  // Create a wallet
   final networkInfo = NetworkInfo(
     bech32Hrp: 'did:com:',
-    lcdUrl: 'http://localhost:1317',
+    fullNodeHost: 'localhost',
   );
 
   final mnemonicString =
@@ -23,30 +13,20 @@ void main() async {
   final mnemonic = mnemonicString.split(' ');
   final wallet = Wallet.derive(mnemonic, networkInfo);
 
-  // -----------------------------------
-  // --- Creating a transaction
-  // -----------------------------------
+  // 3. Create and sign the transaction
+  final message = bank.MsgSend.create()
+    ..fromAddress = wallet.bech32Address
+    ..toAddress = 'cosmos1cx7mec8x567xh8f4x7490ndx7xey8lnr9du2qy';
+  message.amount.add(Coin.create()
+    ..denom = 'uatom'
+    ..amount = '100');
 
-  final message = MsgSend(
-    fromAddress: wallet.bech32Address,
-    toAddress: 'did:com:1lys5uu683wrmupn4zguz7f2gqw45qae98pzn3d',
-    amount: [StdCoin(denom: 'uatom', amount: '100')],
-  );
+  final signer = TxSigner.fromNetworkInfo(networkInfo);
+  final tx = await signer.createAndSign(wallet, [message]);
 
-  final stdTx = TxBuilder.buildStdTx([message]);
-
-  // -----------------------------------
-  // --- Signing a transaction
-  // -----------------------------------
-  final httpClient = http.Client();
-  final txSigner = TxSigner.build(httpClient);
-  final signedStdTx = await txSigner.signStdTx(stdTx, wallet);
-
-  // -----------------------------------
-  // --- Sending a transaction
-  // -----------------------------------
-  final txSender = TxSender.build(httpClient);
-  final response = await txSender.broadcastStdTx(signedStdTx, wallet);
+  // 4. Broadcast the transaction
+  final txSender = TxSender.fromNetworkInfo(networkInfo);
+  final response = await txSender.broadcastTx(tx);
 
   // Check the result
   if (response.isSuccessful) {

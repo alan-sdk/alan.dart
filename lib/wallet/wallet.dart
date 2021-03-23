@@ -1,17 +1,13 @@
-import 'dart:math';
 import 'dart:typed_data';
 
 import 'package:alan/alan.dart';
 import 'package:alan/wallet/bech32_encoder.dart';
-import 'package:asn1lib/asn1lib.dart';
 import 'package:bip32/bip32.dart' as bip32;
 import 'package:bip39/bip39.dart' as bip39;
 import 'package:equatable/equatable.dart';
 import 'package:hex/hex.dart';
 import 'package:meta/meta.dart';
 import 'package:pointycastle/export.dart';
-
-import 'msg_signer.dart';
 
 /// Represents a wallet which contains the hex private key, the hex public key
 /// and the hex address.
@@ -141,37 +137,38 @@ class Wallet extends Equatable {
     return ECPublicKey(curvePoint, ECCurve_secp256k1());
   }
 
-  /// Signs the given [data] using the associated [privateKey] and encodes
-  /// the signature bytes to be included inside a transaction.
-  Uint8List signTxData(Uint8List data) {
-    final hash = SHA256Digest().process(data);
-    return MessageSigner.deriveFrom(hash, _ecPrivateKey, ecPublicKey);
+  /// Normalizes the given [signature] using the provided [curveParams].
+  /// This is used to create signatures that are always in the lower-S form, to
+  /// make sure that they cannot be tamped with the alternative S value.
+  /// More info can be found here: https://tinyurl.com/2yfurry7
+  ECSignature _normalizeECSignature(
+    ECSignature signature,
+    ECDomainParameters curveParams,
+  ) {
+    var normalizedS = signature.s;
+    if (normalizedS.compareTo(curveParams.n >> 1) > 0) {
+      normalizedS = curveParams.n - normalizedS;
+    }
+    return ECSignature(signature.r, normalizedS);
   }
 
-  /// Generates a SecureRandom
-  static SecureRandom _getSecureRandom() {
-    final secureRandom = FortunaRandom();
-    final random = Random.secure();
-    final seed = List<int>.generate(32, (_) => random.nextInt(256));
-    secureRandom.seed(KeyParameter(Uint8List.fromList(seed)));
-    return secureRandom;
-  }
-
-  /// Signs the given [data] using the private key associated with this wallet,
-  /// returning the signature bytes ASN.1 DER encoded.
+  /// Hashes the given [data] with SHA-256, and then sign the hash using the
+  /// private key associated with this wallet, returning the signature
+  /// encoded as a 64 bytes array.
   Uint8List sign(Uint8List data) {
-    final ecdsaSigner = Signer('SHA-256/ECDSA')
-      ..init(
-          true,
-          ParametersWithRandom(
-            PrivateKeyParameter(_ecPrivateKey),
-            _getSecureRandom(),
-          ));
-    var ecSignature = ecdsaSigner.generateSignature(data) as ECSignature;
-    final sequence = ASN1Sequence();
-    sequence.add(ASN1Integer(ecSignature.r));
-    sequence.add(ASN1Integer(ecSignature.s));
-    return sequence.encodedBytes;
+    final hash = SHA256Digest().process(data);
+    final ecdsaSigner = ECDSASigner(null, HMac(SHA256Digest(), 64))
+      ..init(true, PrivateKeyParameter(_ecPrivateKey));
+
+    final ecSignature = ecdsaSigner.generateSignature(hash) as ECSignature;
+    final normalized = _normalizeECSignature(ecSignature, ECCurve_secp256k1());
+    final rBytes = normalized.r.toUin8List();
+    final sBytes = normalized.s.toUin8List();
+
+    var sigBytes = Uint8List(64);
+    copy(rBytes, 32 - rBytes.length, 32, sigBytes);
+    copy(sBytes, 64 - sBytes.length, 64, sigBytes);
+    return sigBytes;
   }
 
   /// Converts the current [Wallet] instance into a JSON object.

@@ -1,50 +1,69 @@
-import 'dart:io';
-
 import 'package:alan/alan.dart';
-import 'package:http/http.dart' as http;
-import 'package:mock_web_server/mock_web_server.dart';
+import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
+import 'package:alan/proto/cosmos/auth/v1beta1/export.dart' as auth;
+
+import '../../common.dart';
+
+class MockQueryClient extends Mock implements auth.QueryClient {}
 
 void main() {
-  MockWebServer server;
-  AuthQuerier helper;
-
-  setUpAll(() {
-    server = MockWebServer();
-    server.start();
-  });
+  auth.QueryClient client;
+  AuthQuerier querier;
 
   setUp(() {
-    // Clean the dispatcher to avoid cross-testing conflicts
-    server.dispatcher = null;
-    helper = AuthQuerier(httpClient: http.Client());
+    client = MockQueryClient();
+    querier = AuthQuerier(client: client);
   });
 
   group('getAccountData', () {
-    test('returns correct data properly', () async {
-      final file = File('test_resources/x/auth/response_account.json');
-      server.enqueue(httpCode: 200, body: file.readAsStringSync());
+    test('returns null when response does not contain an account', () async {
+      when(client.account(any)).thenAnswer((_) {
+        return MockResponseFuture.value(auth.QueryAccountResponse.create());
+      });
 
-      final result = await helper.getAccountData(
-        server.url,
-        'cosmos1hafptm4zxy5nw8rd2pxyg83c5ls2v62tstzuv2',
-      );
-      expect(result.address, 'cosmos1hafptm4zxy5nw8rd2pxyg83c5ls2v62tstzuv2');
+      final account = await querier.getAccountData('test_address');
+      expect(account, isNull);
     });
 
-    test('returns null with wrong address', () async {
-      final file = File('test_resources/x/auth/response_account.json');
-      server.enqueue(httpCode: 200, body: file.readAsStringSync());
+    test('returns null when response does not have same address', () async {
+      when(client.account(any)).thenAnswer((call) {
+        final request = call.positionalArguments[0] as auth.QueryAccountRequest;
+        final account = auth.BaseAccount.create()
+          ..address = request.address + 'wrong'
+          ..sequence = 100.toInt64()
+          ..accountNumber = 101.toInt64();
 
-      final result = await helper.getAccountData(server.url, 'address');
-      expect(result, isNull);
+        final response = auth.QueryAccountResponse.create()
+          ..account = Codec.serialize(account);
+
+        return MockResponseFuture.value(response);
+      });
+
+      final account = await querier.getAccountData('address');
+      expect(account, isNull);
     });
 
-    test('returns null with wrong answer', () async {
-      server.enqueue(httpCode: 400);
+    test('returns correct account when everything is valid', () async {
+      when(client.account(any)).thenAnswer((call) {
+        final request = call.positionalArguments[0] as auth.QueryAccountRequest;
 
-      final result = await helper.getAccountData(server.url, 'address');
-      expect(result, isNull);
+        final account = auth.BaseAccount.create()
+          ..address = request.address
+          ..sequence = 100.toInt64()
+          ..accountNumber = 101.toInt64();
+
+        final response = auth.QueryAccountResponse.create()
+          ..account = Codec.serialize(account);
+
+        return MockResponseFuture.value(response);
+      });
+
+      final account = await querier.getAccountData('address');
+      expect(account, isA<BaseAccount>());
+      expect(account.address, 'address');
+      expect(account.sequence, 100.toInt64());
+      expect(account.accountNumber, 101.toInt64());
     });
   });
 }

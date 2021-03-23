@@ -1,7 +1,0 @@
-{
-  "pub_key": {
-    "type": "tendermint/PubKeySecp256k1",
-    "value": "Az44pEHl6NvZjgGjlEg7hXJ0QbNhkuGpBWQkhaElZowQ"
-  },
-  "signature": "pB/FHJ60SwtiYl9ywxIgJ+6Cd0vCdpufyIRgmZUtejZE+fTPU2KWUicDq+Ho7CrAZ8jyXTEut3eSegP7cjz8TA=="
-}

@@ -3,19 +3,41 @@ import 'package:test/test.dart';
 
 void main() {
   test('fromJson works properly', () {
-    final json = {'bech32_hrp': 'test', 'lcd_url': 'test.example.com'};
-    final expected = NetworkInfo(bech32Hrp: 'test', lcdUrl: 'test.example.com');
+    final json = {'bech32_hrp': 'test', 'full_node_host': 'test.example.com'};
+    final expected = NetworkInfo(
+      bech32Hrp: 'test',
+      fullNodeHost: 'test.example.com',
+    );
     expect(NetworkInfo.fromJson(json), expected);
   });
 
   test('toJson works properly', () {
-    final info = NetworkInfo(bech32Hrp: 'test', lcdUrl: 'test.example.com');
-    final json = {'bech32_hrp': 'test', 'lcd_url': 'test.example.com'};
+    final info = NetworkInfo(
+      bech32Hrp: 'test',
+      fullNodeHost: 'test.example.com',
+    );
+    final json = {
+      'bech32_hrp': 'test',
+      'full_node_host': 'test.example.com',
+      'lcd_port': 1317,
+      'grpc_port': 9090,
+    };
     expect(info.toJson(), json);
   });
 
   test('toString works properly', () {
-    final info = NetworkInfo(bech32Hrp: 'test', lcdUrl: 'test.example.com');
-    expect(info.toString(), '{ bech32Hrp: test, lcdUrl: test.example.com }');
+    final info = NetworkInfo(
+      bech32Hrp: 'test',
+      fullNodeHost: 'test.example.com',
+    );
+    expect(
+      info.toString(),
+      '{ '
+      'bech32Hrp: test, '
+      'fullNodeHost: test.example.com, '
+      'lcdPort: 1317, '
+      'gRPCPort: 9090 '
+      '}',
+    );
   });
 }

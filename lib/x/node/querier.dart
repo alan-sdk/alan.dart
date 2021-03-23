@@ -4,9 +4,13 @@ import 'package:meta/meta.dart';
 
 /// Allows to query a full node for its information.
 class NodeQuerier extends QueryHelper {
-  NodeQuerier({
+  NodeQuerier._({
     @required http.Client httpClient,
   }) : super(httpClient: httpClient);
+
+  factory NodeQuerier.build(http.Client httpClient) {
+    return NodeQuerier._(httpClient: httpClient);
+  }
 
   /// Queries the node info of the chain based on the given [lcdEndpoint].
   Future<NodeInfo> getNodeInfo(String lcdEndpoint) async {

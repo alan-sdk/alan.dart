@@ -8,16 +8,31 @@ part 'network_info.g.dart';
 @JsonSerializable(explicitToJson: true)
 class NetworkInfo extends Equatable {
   /// Bech32 human readable part of the addresses related to this network
-  @JsonKey(name: 'bech32_hrp')
+  @JsonKey(name: 'bech32_hrp', required: true)
   final String bech32Hrp;
 
-  /// URL of the LCD to call when wanting to query data for this network
-  @JsonKey(name: 'lcd_url')
-  final String lcdUrl;
+  /// URL of the fullnode to be used when querying data and sending transactions.
+  @JsonKey(name: 'full_node_host', required: true)
+  final String fullNodeHost;
+
+  /// Port of the LCD endpoint used to query some chaing data.
+  @JsonKey(name: 'lcd_port', defaultValue: 1317)
+  final int lcdPort;
+
+  /// Returns the full endpoint to the LCD APIs.
+  String get lcdEndpoint {
+    return '$fullNodeHost:$lcdPort';
+  }
+
+  /// Port of the gRPC endpoint used to query some chain data.
+  @JsonKey(name: 'grpc_port', defaultValue: 9090)
+  final int gRPCPort;
 
   NetworkInfo({
     @required this.bech32Hrp,
-    @required this.lcdUrl,
+    @required this.fullNodeHost,
+    this.lcdPort = 1317,
+    this.gRPCPort = 9090,
   });
 
   factory NetworkInfo.fromJson(Map<String, dynamic> json) {
@@ -30,11 +45,16 @@ class NetworkInfo extends Equatable {
 
   @override
   List<Object> get props {
-    return [bech32Hrp, lcdUrl];
+    return [bech32Hrp, fullNodeHost, lcdPort, gRPCPort];
   }
 
   @override
   String toString() {
-    return '{ bech32Hrp: $bech32Hrp, lcdUrl: $lcdUrl }';
+    return '{ '
+        'bech32Hrp: $bech32Hrp, '
+        'fullNodeHost: $fullNodeHost, '
+        'lcdPort: $lcdPort, '
+        'gRPCPort: $gRPCPort '
+        '}';
   }
 }

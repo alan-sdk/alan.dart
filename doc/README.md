@@ -18,7 +18,7 @@ Alan.dart is an evolution of [Sacco.dart](https://github.com/commercionetwork/sa
 :::
 
 ## Getting started
-1. [Setup](setup/overview.md)
-2. [Managing a wallet](wallet/overview.md)
-3. [Performing transactions](transactions/overview.md)
-4. [Querying the chain](queries/overview.md)
+1. [Managing a wallet](wallet/overview.md)
+2. [Performing transactions](transactions/overview.md)
+3. [Querying the chain](queries/overview.md)
+4. [Working with custom chains](custom-chains/overview.md)

@@ -1,39 +1,32 @@
 import 'package:alan/alan.dart';
-import 'package:http/http.dart' as http;
+import 'package:alan/proto/cosmos/auth/v1beta1/export.dart' as auth;
+import 'package:grpc/grpc.dart';
 import 'package:meta/meta.dart';
 
 /// Allows to query the x/auth module endpoints easily.
-class AuthQuerier extends QueryHelper {
-  AuthQuerier({
-    @required http.Client httpClient,
-  }) : super(httpClient: httpClient);
+class AuthQuerier {
+  final auth.QueryClient _client;
 
-  factory AuthQuerier.build(http.Client httpClient) {
-    return AuthQuerier(httpClient: httpClient);
+  AuthQuerier({@required auth.QueryClient client}) : _client = client;
+
+  /// Builds a new [AuthQuerier] given a [ClientChannel].
+  factory AuthQuerier.build(ClientChannel channel) {
+    return AuthQuerier(client: auth.QueryClient(channel));
   }
 
   /// Reads the account endpoint and retrieves the details of the account
   /// having the given [address] from it.
   /// If no account with the specified [address] is found, returns `null`
   /// instead.
-  Future<CosmosAccount> getAccountData(
-    String lcdEndpoint,
-    String address,
-  ) async {
-    final endpoint = '${lcdEndpoint}/auth/accounts/${address}';
-    final result = await queryChain(endpoint);
-    if (!result.isSuccessful) {
+  Future<AccountI> getAccountData(String address) async {
+    final request = auth.QueryAccountRequest.create()..address = address;
+
+    final response = await _client.account(request);
+    if (!response.hasAccount()) {
       return null;
     }
 
-    final lcdResponse = LcdResponse.fromJson(result.value);
-    final response = AccountResponse.fromJson(
-      lcdResponse.result as Map<String, dynamic>,
-    );
-    final account = response.accountData;
-
-    // If the account does not exist on chain, then an empty account data
-    // object might be returned instead
-    return account?.address == address ? account : null;
+    final account = Codec.deserializeAccount(response.account);
+    return account.address == address ? account : null;
   }
 }
