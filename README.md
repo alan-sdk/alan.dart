@@ -4,7 +4,7 @@
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/alan-sdk/alan.dart/Test)](https://github.com/alan-sdk/alan.dart/actions)
 [![Codecov branch](https://img.shields.io/codecov/c/github/alan-sdk/alan.dart/master)](https://codecov.io/gh/alan-sdk/alan.dart/branch/master)
 [![Pub Version](https://img.shields.io/pub/v/alan)](https://pub.dev/packages/alan)
-[![](https://img.shields.io/badge/cosmos-v0.39.x-blueviolet)](https://github.com/cosmos/cosmos-sdk/releases)
+[![](https://img.shields.io/badge/cosmos-stargate-blueviolet)](https://github.com/cosmos/cosmos-sdk/releases)
 [![](https://img.shields.io/badge/compatible-flutter-blue)](https://flutter.dev)
 [![GitHub](https://img.shields.io/github/license/alan-sdk/alan.dart)](https://github.com/alan-sdk/alan.dart/blob/master/LICENSE)
 
