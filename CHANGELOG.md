@@ -1,3 +1,6 @@
+## Version 0.40.0+2 
+Fixed incompatible dependencies versions
+
 ## Version 0.40.0+1
 Support the Cosmos `v0.40.x`, `v0.41.x` and `v0.42.x` versions.
 
