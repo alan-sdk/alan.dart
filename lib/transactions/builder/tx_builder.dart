@@ -45,7 +45,7 @@ class TxBuilder {
 
       final data = signature.data as SingleSignatureData;
       if (data.signature != null) {
-        rawSigs.add(data.signature);
+        rawSigs.add(data.signature!);
       }
 
       final single = ModeInfo_Single.create()..mode = data.signMode;
@@ -78,7 +78,7 @@ class TxBuilder {
   }
 
   /// Sets the given [memo] inside the transactions.
-  void setMemo(String memo) {
+  void setMemo(String? memo) {
     // Do not include default values as per ADR-027
     if (memo == null || memo.isEmpty) {
       return;
@@ -94,7 +94,7 @@ class TxBuilder {
   }
 
   /// Sets the given [coins] as the transaction fees.
-  void setFeeAmount(List<Coin> coins) {
+  void setFeeAmount(List<Coin>? coins) {
     // Do not include default values as per ADR-027
     if (coins == null || coins.isEmpty) {
       return;
@@ -117,7 +117,7 @@ class TxBuilder {
 
   /// Sets the given [limit] as the gas limit to be used to execute
   /// the transaction.
-  void setGasLimit(fixnum.Int64 limit) {
+  void setGasLimit(fixnum.Int64? limit) {
     // Do not include default values as per ADR-027
     if (limit == null || limit == 0) {
       return;
@@ -139,7 +139,7 @@ class TxBuilder {
 
   /// Sets the given [timeout] to be the number of blocks in which to
   /// execute the transaction.
-  void setTimeoutHeight(int timeout) {
+  void setTimeoutHeight(int? timeout) {
     // Do not include default values as per ADR-027
     if (timeout == null || timeout == 0) {
       return;

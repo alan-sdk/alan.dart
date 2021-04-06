@@ -1,10 +1,4 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/params/v1beta1/params.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
@@ -18,7 +12,23 @@ class ParameterChangeProposal extends $pb.GeneratedMessage {
   ;
 
   ParameterChangeProposal._() : super();
-  factory ParameterChangeProposal() => create();
+  factory ParameterChangeProposal({
+    $core.String? title,
+    $core.String? description,
+    $core.Iterable<ParamChange>? changes,
+  }) {
+    final _result = create();
+    if (title != null) {
+      _result.title = title;
+    }
+    if (description != null) {
+      _result.description = description;
+    }
+    if (changes != null) {
+      _result.changes.addAll(changes);
+    }
+    return _result;
+  }
   factory ParameterChangeProposal.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ParameterChangeProposal.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -30,7 +40,7 @@ class ParameterChangeProposal extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ParameterChangeProposal copyWith(void Function(ParameterChangeProposal) updates) => super.copyWith((message) => updates(message as ParameterChangeProposal)); // ignore: deprecated_member_use
+  ParameterChangeProposal copyWith(void Function(ParameterChangeProposal) updates) => super.copyWith((message) => updates(message as ParameterChangeProposal)) as ParameterChangeProposal; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static ParameterChangeProposal create() => ParameterChangeProposal._();
@@ -38,7 +48,7 @@ class ParameterChangeProposal extends $pb.GeneratedMessage {
   static $pb.PbList<ParameterChangeProposal> createRepeated() => $pb.PbList<ParameterChangeProposal>();
   @$core.pragma('dart2js:noInline')
   static ParameterChangeProposal getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ParameterChangeProposal>(create);
-  static ParameterChangeProposal _defaultInstance;
+  static ParameterChangeProposal? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get title => $_getSZ(0);
@@ -71,7 +81,23 @@ class ParamChange extends $pb.GeneratedMessage {
   ;
 
   ParamChange._() : super();
-  factory ParamChange() => create();
+  factory ParamChange({
+    $core.String? subspace,
+    $core.String? key,
+    $core.String? value,
+  }) {
+    final _result = create();
+    if (subspace != null) {
+      _result.subspace = subspace;
+    }
+    if (key != null) {
+      _result.key = key;
+    }
+    if (value != null) {
+      _result.value = value;
+    }
+    return _result;
+  }
   factory ParamChange.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ParamChange.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -83,7 +109,7 @@ class ParamChange extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ParamChange copyWith(void Function(ParamChange) updates) => super.copyWith((message) => updates(message as ParamChange)); // ignore: deprecated_member_use
+  ParamChange copyWith(void Function(ParamChange) updates) => super.copyWith((message) => updates(message as ParamChange)) as ParamChange; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static ParamChange create() => ParamChange._();
@@ -91,7 +117,7 @@ class ParamChange extends $pb.GeneratedMessage {
   static $pb.PbList<ParamChange> createRepeated() => $pb.PbList<ParamChange>();
   @$core.pragma('dart2js:noInline')
   static ParamChange getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ParamChange>(create);
-  static ParamChange _defaultInstance;
+  static ParamChange? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get subspace => $_getSZ(0);

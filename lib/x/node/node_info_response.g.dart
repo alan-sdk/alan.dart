@@ -8,15 +8,13 @@ part of 'node_info_response.dart';
 
 NodeInfoResponse _$NodeInfoResponseFromJson(Map<String, dynamic> json) {
   return NodeInfoResponse(
-    nodeInfo: json['node_info'] == null
-        ? null
-        : NodeInfo.fromJson(json['node_info'] as Map<String, dynamic>),
+    nodeInfo: NodeInfo.fromJson(json['node_info'] as Map<String, dynamic>),
   );
 }
 
 Map<String, dynamic> _$NodeInfoResponseToJson(NodeInfoResponse instance) =>
     <String, dynamic>{
-      'node_info': instance.nodeInfo?.toJson(),
+      'node_info': instance.nodeInfo.toJson(),
     };
 
 NodeInfo _$NodeInfoFromJson(Map<String, dynamic> json) {

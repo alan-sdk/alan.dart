@@ -1,10 +1,4 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/vesting/v1beta1/vesting.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
 import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
@@ -24,7 +18,31 @@ class BaseVestingAccount extends $pb.GeneratedMessage {
   ;
 
   BaseVestingAccount._() : super();
-  factory BaseVestingAccount() => create();
+  factory BaseVestingAccount({
+    $2.BaseAccount? baseAccount,
+    $core.Iterable<$1.Coin>? originalVesting,
+    $core.Iterable<$1.Coin>? delegatedFree,
+    $core.Iterable<$1.Coin>? delegatedVesting,
+    $fixnum.Int64? endTime,
+  }) {
+    final _result = create();
+    if (baseAccount != null) {
+      _result.baseAccount = baseAccount;
+    }
+    if (originalVesting != null) {
+      _result.originalVesting.addAll(originalVesting);
+    }
+    if (delegatedFree != null) {
+      _result.delegatedFree.addAll(delegatedFree);
+    }
+    if (delegatedVesting != null) {
+      _result.delegatedVesting.addAll(delegatedVesting);
+    }
+    if (endTime != null) {
+      _result.endTime = endTime;
+    }
+    return _result;
+  }
   factory BaseVestingAccount.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory BaseVestingAccount.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -36,7 +54,7 @@ class BaseVestingAccount extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  BaseVestingAccount copyWith(void Function(BaseVestingAccount) updates) => super.copyWith((message) => updates(message as BaseVestingAccount)); // ignore: deprecated_member_use
+  BaseVestingAccount copyWith(void Function(BaseVestingAccount) updates) => super.copyWith((message) => updates(message as BaseVestingAccount)) as BaseVestingAccount; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static BaseVestingAccount create() => BaseVestingAccount._();
@@ -44,7 +62,7 @@ class BaseVestingAccount extends $pb.GeneratedMessage {
   static $pb.PbList<BaseVestingAccount> createRepeated() => $pb.PbList<BaseVestingAccount>();
   @$core.pragma('dart2js:noInline')
   static BaseVestingAccount getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<BaseVestingAccount>(create);
-  static BaseVestingAccount _defaultInstance;
+  static BaseVestingAccount? _defaultInstance;
 
   @$pb.TagNumber(1)
   $2.BaseAccount get baseAccount => $_getN(0);
@@ -84,7 +102,19 @@ class ContinuousVestingAccount extends $pb.GeneratedMessage {
   ;
 
   ContinuousVestingAccount._() : super();
-  factory ContinuousVestingAccount() => create();
+  factory ContinuousVestingAccount({
+    BaseVestingAccount? baseVestingAccount,
+    $fixnum.Int64? startTime,
+  }) {
+    final _result = create();
+    if (baseVestingAccount != null) {
+      _result.baseVestingAccount = baseVestingAccount;
+    }
+    if (startTime != null) {
+      _result.startTime = startTime;
+    }
+    return _result;
+  }
   factory ContinuousVestingAccount.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ContinuousVestingAccount.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -96,7 +126,7 @@ class ContinuousVestingAccount extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ContinuousVestingAccount copyWith(void Function(ContinuousVestingAccount) updates) => super.copyWith((message) => updates(message as ContinuousVestingAccount)); // ignore: deprecated_member_use
+  ContinuousVestingAccount copyWith(void Function(ContinuousVestingAccount) updates) => super.copyWith((message) => updates(message as ContinuousVestingAccount)) as ContinuousVestingAccount; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static ContinuousVestingAccount create() => ContinuousVestingAccount._();
@@ -104,7 +134,7 @@ class ContinuousVestingAccount extends $pb.GeneratedMessage {
   static $pb.PbList<ContinuousVestingAccount> createRepeated() => $pb.PbList<ContinuousVestingAccount>();
   @$core.pragma('dart2js:noInline')
   static ContinuousVestingAccount getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ContinuousVestingAccount>(create);
-  static ContinuousVestingAccount _defaultInstance;
+  static ContinuousVestingAccount? _defaultInstance;
 
   @$pb.TagNumber(1)
   BaseVestingAccount get baseVestingAccount => $_getN(0);
@@ -134,7 +164,15 @@ class DelayedVestingAccount extends $pb.GeneratedMessage {
   ;
 
   DelayedVestingAccount._() : super();
-  factory DelayedVestingAccount() => create();
+  factory DelayedVestingAccount({
+    BaseVestingAccount? baseVestingAccount,
+  }) {
+    final _result = create();
+    if (baseVestingAccount != null) {
+      _result.baseVestingAccount = baseVestingAccount;
+    }
+    return _result;
+  }
   factory DelayedVestingAccount.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DelayedVestingAccount.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -146,7 +184,7 @@ class DelayedVestingAccount extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  DelayedVestingAccount copyWith(void Function(DelayedVestingAccount) updates) => super.copyWith((message) => updates(message as DelayedVestingAccount)); // ignore: deprecated_member_use
+  DelayedVestingAccount copyWith(void Function(DelayedVestingAccount) updates) => super.copyWith((message) => updates(message as DelayedVestingAccount)) as DelayedVestingAccount; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static DelayedVestingAccount create() => DelayedVestingAccount._();
@@ -154,7 +192,7 @@ class DelayedVestingAccount extends $pb.GeneratedMessage {
   static $pb.PbList<DelayedVestingAccount> createRepeated() => $pb.PbList<DelayedVestingAccount>();
   @$core.pragma('dart2js:noInline')
   static DelayedVestingAccount getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DelayedVestingAccount>(create);
-  static DelayedVestingAccount _defaultInstance;
+  static DelayedVestingAccount? _defaultInstance;
 
   @$pb.TagNumber(1)
   BaseVestingAccount get baseVestingAccount => $_getN(0);
@@ -176,7 +214,19 @@ class Period extends $pb.GeneratedMessage {
   ;
 
   Period._() : super();
-  factory Period() => create();
+  factory Period({
+    $fixnum.Int64? length,
+    $core.Iterable<$1.Coin>? amount,
+  }) {
+    final _result = create();
+    if (length != null) {
+      _result.length = length;
+    }
+    if (amount != null) {
+      _result.amount.addAll(amount);
+    }
+    return _result;
+  }
   factory Period.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Period.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -188,7 +238,7 @@ class Period extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Period copyWith(void Function(Period) updates) => super.copyWith((message) => updates(message as Period)); // ignore: deprecated_member_use
+  Period copyWith(void Function(Period) updates) => super.copyWith((message) => updates(message as Period)) as Period; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static Period create() => Period._();
@@ -196,7 +246,7 @@ class Period extends $pb.GeneratedMessage {
   static $pb.PbList<Period> createRepeated() => $pb.PbList<Period>();
   @$core.pragma('dart2js:noInline')
   static Period getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Period>(create);
-  static Period _defaultInstance;
+  static Period? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get length => $_getI64(0);
@@ -220,7 +270,23 @@ class PeriodicVestingAccount extends $pb.GeneratedMessage {
   ;
 
   PeriodicVestingAccount._() : super();
-  factory PeriodicVestingAccount() => create();
+  factory PeriodicVestingAccount({
+    BaseVestingAccount? baseVestingAccount,
+    $fixnum.Int64? startTime,
+    $core.Iterable<Period>? vestingPeriods,
+  }) {
+    final _result = create();
+    if (baseVestingAccount != null) {
+      _result.baseVestingAccount = baseVestingAccount;
+    }
+    if (startTime != null) {
+      _result.startTime = startTime;
+    }
+    if (vestingPeriods != null) {
+      _result.vestingPeriods.addAll(vestingPeriods);
+    }
+    return _result;
+  }
   factory PeriodicVestingAccount.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PeriodicVestingAccount.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -232,7 +298,7 @@ class PeriodicVestingAccount extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  PeriodicVestingAccount copyWith(void Function(PeriodicVestingAccount) updates) => super.copyWith((message) => updates(message as PeriodicVestingAccount)); // ignore: deprecated_member_use
+  PeriodicVestingAccount copyWith(void Function(PeriodicVestingAccount) updates) => super.copyWith((message) => updates(message as PeriodicVestingAccount)) as PeriodicVestingAccount; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static PeriodicVestingAccount create() => PeriodicVestingAccount._();
@@ -240,7 +306,7 @@ class PeriodicVestingAccount extends $pb.GeneratedMessage {
   static $pb.PbList<PeriodicVestingAccount> createRepeated() => $pb.PbList<PeriodicVestingAccount>();
   @$core.pragma('dart2js:noInline')
   static PeriodicVestingAccount getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PeriodicVestingAccount>(create);
-  static PeriodicVestingAccount _defaultInstance;
+  static PeriodicVestingAccount? _defaultInstance;
 
   @$pb.TagNumber(1)
   BaseVestingAccount get baseVestingAccount => $_getN(0);

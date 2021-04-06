@@ -77,12 +77,13 @@ class Codec {
   static AccountI deserializeAccount(Any value) {
     _ensureInit();
 
-    final impl = _accountImpls.singleWhere(
-      (element) => value.typeUrl.contains(element.typeUrl),
-      orElse: () => null,
-    );
+    AccountImpl? impl;
 
-    if (impl == null) {
+    try {
+      impl = _accountImpls.singleWhere(
+        (element) => value.typeUrl.contains(element.typeUrl),
+      );
+    } catch (e) {
       throw Exception(
         'Account of type ${value.typeUrl} cannot be deserialized properly. '
         'Please register this type using Codec.registerAccountImpl',

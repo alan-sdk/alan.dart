@@ -1,10 +1,4 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/base/snapshots/v1beta1/snapshot.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
 import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
@@ -21,7 +15,31 @@ class Snapshot extends $pb.GeneratedMessage {
   ;
 
   Snapshot._() : super();
-  factory Snapshot() => create();
+  factory Snapshot({
+    $fixnum.Int64? height,
+    $core.int? format,
+    $core.int? chunks,
+    $core.List<$core.int>? hash,
+    Metadata? metadata,
+  }) {
+    final _result = create();
+    if (height != null) {
+      _result.height = height;
+    }
+    if (format != null) {
+      _result.format = format;
+    }
+    if (chunks != null) {
+      _result.chunks = chunks;
+    }
+    if (hash != null) {
+      _result.hash = hash;
+    }
+    if (metadata != null) {
+      _result.metadata = metadata;
+    }
+    return _result;
+  }
   factory Snapshot.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Snapshot.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -33,7 +51,7 @@ class Snapshot extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Snapshot copyWith(void Function(Snapshot) updates) => super.copyWith((message) => updates(message as Snapshot)); // ignore: deprecated_member_use
+  Snapshot copyWith(void Function(Snapshot) updates) => super.copyWith((message) => updates(message as Snapshot)) as Snapshot; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static Snapshot create() => Snapshot._();
@@ -41,7 +59,7 @@ class Snapshot extends $pb.GeneratedMessage {
   static $pb.PbList<Snapshot> createRepeated() => $pb.PbList<Snapshot>();
   @$core.pragma('dart2js:noInline')
   static Snapshot getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Snapshot>(create);
-  static Snapshot _defaultInstance;
+  static Snapshot? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get height => $_getI64(0);
@@ -98,7 +116,15 @@ class Metadata extends $pb.GeneratedMessage {
   ;
 
   Metadata._() : super();
-  factory Metadata() => create();
+  factory Metadata({
+    $core.Iterable<$core.List<$core.int>>? chunkHashes,
+  }) {
+    final _result = create();
+    if (chunkHashes != null) {
+      _result.chunkHashes.addAll(chunkHashes);
+    }
+    return _result;
+  }
   factory Metadata.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Metadata.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -110,7 +136,7 @@ class Metadata extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Metadata copyWith(void Function(Metadata) updates) => super.copyWith((message) => updates(message as Metadata)); // ignore: deprecated_member_use
+  Metadata copyWith(void Function(Metadata) updates) => super.copyWith((message) => updates(message as Metadata)) as Metadata; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static Metadata create() => Metadata._();
@@ -118,7 +144,7 @@ class Metadata extends $pb.GeneratedMessage {
   static $pb.PbList<Metadata> createRepeated() => $pb.PbList<Metadata>();
   @$core.pragma('dart2js:noInline')
   static Metadata getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Metadata>(create);
-  static Metadata _defaultInstance;
+  static Metadata? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<$core.List<$core.int>> get chunkHashes => $_getList(0);

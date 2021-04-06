@@ -1,10 +1,4 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/tx/signing/v1beta1/signing.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
 import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
@@ -12,7 +6,6 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../../google/protobuf/any.pb.dart' as $0;
 import '../../../crypto/multisig/v1beta1/multisig.pb.dart' as $1;
-
 import 'signing.pbenum.dart';
 
 export 'signing.pbenum.dart';
@@ -24,7 +17,15 @@ class SignatureDescriptors extends $pb.GeneratedMessage {
   ;
 
   SignatureDescriptors._() : super();
-  factory SignatureDescriptors() => create();
+  factory SignatureDescriptors({
+    $core.Iterable<SignatureDescriptor>? signatures,
+  }) {
+    final _result = create();
+    if (signatures != null) {
+      _result.signatures.addAll(signatures);
+    }
+    return _result;
+  }
   factory SignatureDescriptors.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SignatureDescriptors.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -36,7 +37,7 @@ class SignatureDescriptors extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SignatureDescriptors copyWith(void Function(SignatureDescriptors) updates) => super.copyWith((message) => updates(message as SignatureDescriptors)); // ignore: deprecated_member_use
+  SignatureDescriptors copyWith(void Function(SignatureDescriptors) updates) => super.copyWith((message) => updates(message as SignatureDescriptors)) as SignatureDescriptors; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static SignatureDescriptors create() => SignatureDescriptors._();
@@ -44,7 +45,7 @@ class SignatureDescriptors extends $pb.GeneratedMessage {
   static $pb.PbList<SignatureDescriptors> createRepeated() => $pb.PbList<SignatureDescriptors>();
   @$core.pragma('dart2js:noInline')
   static SignatureDescriptors getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SignatureDescriptors>(create);
-  static SignatureDescriptors _defaultInstance;
+  static SignatureDescriptors? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<SignatureDescriptor> get signatures => $_getList(0);
@@ -58,7 +59,19 @@ class SignatureDescriptor_Data_Single extends $pb.GeneratedMessage {
   ;
 
   SignatureDescriptor_Data_Single._() : super();
-  factory SignatureDescriptor_Data_Single() => create();
+  factory SignatureDescriptor_Data_Single({
+    SignMode? mode,
+    $core.List<$core.int>? signature,
+  }) {
+    final _result = create();
+    if (mode != null) {
+      _result.mode = mode;
+    }
+    if (signature != null) {
+      _result.signature = signature;
+    }
+    return _result;
+  }
   factory SignatureDescriptor_Data_Single.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SignatureDescriptor_Data_Single.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -70,7 +83,7 @@ class SignatureDescriptor_Data_Single extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SignatureDescriptor_Data_Single copyWith(void Function(SignatureDescriptor_Data_Single) updates) => super.copyWith((message) => updates(message as SignatureDescriptor_Data_Single)); // ignore: deprecated_member_use
+  SignatureDescriptor_Data_Single copyWith(void Function(SignatureDescriptor_Data_Single) updates) => super.copyWith((message) => updates(message as SignatureDescriptor_Data_Single)) as SignatureDescriptor_Data_Single; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static SignatureDescriptor_Data_Single create() => SignatureDescriptor_Data_Single._();
@@ -78,7 +91,7 @@ class SignatureDescriptor_Data_Single extends $pb.GeneratedMessage {
   static $pb.PbList<SignatureDescriptor_Data_Single> createRepeated() => $pb.PbList<SignatureDescriptor_Data_Single>();
   @$core.pragma('dart2js:noInline')
   static SignatureDescriptor_Data_Single getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SignatureDescriptor_Data_Single>(create);
-  static SignatureDescriptor_Data_Single _defaultInstance;
+  static SignatureDescriptor_Data_Single? _defaultInstance;
 
   @$pb.TagNumber(1)
   SignMode get mode => $_getN(0);
@@ -107,7 +120,19 @@ class SignatureDescriptor_Data_Multi extends $pb.GeneratedMessage {
   ;
 
   SignatureDescriptor_Data_Multi._() : super();
-  factory SignatureDescriptor_Data_Multi() => create();
+  factory SignatureDescriptor_Data_Multi({
+    $1.CompactBitArray? bitarray,
+    $core.Iterable<SignatureDescriptor_Data>? signatures,
+  }) {
+    final _result = create();
+    if (bitarray != null) {
+      _result.bitarray = bitarray;
+    }
+    if (signatures != null) {
+      _result.signatures.addAll(signatures);
+    }
+    return _result;
+  }
   factory SignatureDescriptor_Data_Multi.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SignatureDescriptor_Data_Multi.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -119,7 +144,7 @@ class SignatureDescriptor_Data_Multi extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SignatureDescriptor_Data_Multi copyWith(void Function(SignatureDescriptor_Data_Multi) updates) => super.copyWith((message) => updates(message as SignatureDescriptor_Data_Multi)); // ignore: deprecated_member_use
+  SignatureDescriptor_Data_Multi copyWith(void Function(SignatureDescriptor_Data_Multi) updates) => super.copyWith((message) => updates(message as SignatureDescriptor_Data_Multi)) as SignatureDescriptor_Data_Multi; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static SignatureDescriptor_Data_Multi create() => SignatureDescriptor_Data_Multi._();
@@ -127,7 +152,7 @@ class SignatureDescriptor_Data_Multi extends $pb.GeneratedMessage {
   static $pb.PbList<SignatureDescriptor_Data_Multi> createRepeated() => $pb.PbList<SignatureDescriptor_Data_Multi>();
   @$core.pragma('dart2js:noInline')
   static SignatureDescriptor_Data_Multi getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SignatureDescriptor_Data_Multi>(create);
-  static SignatureDescriptor_Data_Multi _defaultInstance;
+  static SignatureDescriptor_Data_Multi? _defaultInstance;
 
   @$pb.TagNumber(1)
   $1.CompactBitArray get bitarray => $_getN(0);
@@ -145,8 +170,8 @@ class SignatureDescriptor_Data_Multi extends $pb.GeneratedMessage {
 }
 
 enum SignatureDescriptor_Data_Sum {
-  single, 
-  multi, 
+  single,
+  multi,
   notSet
 }
 
@@ -164,7 +189,19 @@ class SignatureDescriptor_Data extends $pb.GeneratedMessage {
   ;
 
   SignatureDescriptor_Data._() : super();
-  factory SignatureDescriptor_Data() => create();
+  factory SignatureDescriptor_Data({
+    SignatureDescriptor_Data_Single? single,
+    SignatureDescriptor_Data_Multi? multi,
+  }) {
+    final _result = create();
+    if (single != null) {
+      _result.single = single;
+    }
+    if (multi != null) {
+      _result.multi = multi;
+    }
+    return _result;
+  }
   factory SignatureDescriptor_Data.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SignatureDescriptor_Data.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -176,7 +213,7 @@ class SignatureDescriptor_Data extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SignatureDescriptor_Data copyWith(void Function(SignatureDescriptor_Data) updates) => super.copyWith((message) => updates(message as SignatureDescriptor_Data)); // ignore: deprecated_member_use
+  SignatureDescriptor_Data copyWith(void Function(SignatureDescriptor_Data) updates) => super.copyWith((message) => updates(message as SignatureDescriptor_Data)) as SignatureDescriptor_Data; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static SignatureDescriptor_Data create() => SignatureDescriptor_Data._();
@@ -184,9 +221,9 @@ class SignatureDescriptor_Data extends $pb.GeneratedMessage {
   static $pb.PbList<SignatureDescriptor_Data> createRepeated() => $pb.PbList<SignatureDescriptor_Data>();
   @$core.pragma('dart2js:noInline')
   static SignatureDescriptor_Data getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SignatureDescriptor_Data>(create);
-  static SignatureDescriptor_Data _defaultInstance;
+  static SignatureDescriptor_Data? _defaultInstance;
 
-  SignatureDescriptor_Data_Sum whichSum() => _SignatureDescriptor_Data_SumByTag[$_whichOneof(0)];
+  SignatureDescriptor_Data_Sum whichSum() => _SignatureDescriptor_Data_SumByTag[$_whichOneof(0)]!;
   void clearSum() => clearField($_whichOneof(0));
 
   @$pb.TagNumber(1)
@@ -221,7 +258,23 @@ class SignatureDescriptor extends $pb.GeneratedMessage {
   ;
 
   SignatureDescriptor._() : super();
-  factory SignatureDescriptor() => create();
+  factory SignatureDescriptor({
+    $0.Any? publicKey,
+    SignatureDescriptor_Data? data,
+    $fixnum.Int64? sequence,
+  }) {
+    final _result = create();
+    if (publicKey != null) {
+      _result.publicKey = publicKey;
+    }
+    if (data != null) {
+      _result.data = data;
+    }
+    if (sequence != null) {
+      _result.sequence = sequence;
+    }
+    return _result;
+  }
   factory SignatureDescriptor.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SignatureDescriptor.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -233,7 +286,7 @@ class SignatureDescriptor extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SignatureDescriptor copyWith(void Function(SignatureDescriptor) updates) => super.copyWith((message) => updates(message as SignatureDescriptor)); // ignore: deprecated_member_use
+  SignatureDescriptor copyWith(void Function(SignatureDescriptor) updates) => super.copyWith((message) => updates(message as SignatureDescriptor)) as SignatureDescriptor; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static SignatureDescriptor create() => SignatureDescriptor._();
@@ -241,7 +294,7 @@ class SignatureDescriptor extends $pb.GeneratedMessage {
   static $pb.PbList<SignatureDescriptor> createRepeated() => $pb.PbList<SignatureDescriptor>();
   @$core.pragma('dart2js:noInline')
   static SignatureDescriptor getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SignatureDescriptor>(create);
-  static SignatureDescriptor _defaultInstance;
+  static SignatureDescriptor? _defaultInstance;
 
   @$pb.TagNumber(1)
   $0.Any get publicKey => $_getN(0);

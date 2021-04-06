@@ -1,15 +1,16 @@
 import 'package:alan/alan.dart';
+import 'package:alan/proto/cosmos/auth/v1beta1/export.dart' as auth;
+import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
-import 'package:alan/proto/cosmos/auth/v1beta1/export.dart' as auth;
 
 import '../../common.dart';
+import 'querier_test.mocks.dart';
 
-class MockQueryClient extends Mock implements auth.QueryClient {}
-
+@GenerateMocks([auth.QueryClient])
 void main() {
-  auth.QueryClient client;
-  AuthQuerier querier;
+  late auth.QueryClient client;
+  late AuthQuerier querier;
 
   setUp(() {
     client = MockQueryClient();
@@ -18,7 +19,8 @@ void main() {
 
   group('getAccountData', () {
     test('returns null when response does not contain an account', () async {
-      when(client.account(any)).thenAnswer((_) {
+      final req = auth.QueryAccountRequest()..address = 'test_address';
+      when(client.account(req)).thenAnswer((call) {
         return MockResponseFuture.value(auth.QueryAccountResponse.create());
       });
 
@@ -27,7 +29,8 @@ void main() {
     });
 
     test('returns null when response does not have same address', () async {
-      when(client.account(any)).thenAnswer((call) {
+      final req = auth.QueryAccountRequest()..address = 'address';
+      when(client.account(req)).thenAnswer((call) {
         final request = call.positionalArguments[0] as auth.QueryAccountRequest;
         final account = auth.BaseAccount.create()
           ..address = request.address + 'wrong'
@@ -45,7 +48,8 @@ void main() {
     });
 
     test('returns correct account when everything is valid', () async {
-      when(client.account(any)).thenAnswer((call) {
+      final req = auth.QueryAccountRequest()..address = 'address';
+      when(client.account(req)).thenAnswer((call) {
         final request = call.positionalArguments[0] as auth.QueryAccountRequest;
 
         final account = auth.BaseAccount.create()
@@ -60,7 +64,8 @@ void main() {
       });
 
       final account = await querier.getAccountData('address');
-      expect(account, isA<BaseAccount>());
+      expect(account, isNotNull);
+      expect(account!, isA<BaseAccount>());
       expect(account.address, 'address');
       expect(account.sequence, 100.toInt64());
       expect(account.accountNumber, 101.toInt64());

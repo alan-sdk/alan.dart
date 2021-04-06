@@ -1,10 +1,8 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/base/store/v1beta1/snapshot.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
+import 'dart:convert' as $convert;
+import 'dart:core' as $core;
+import 'dart:typed_data' as $typed_data;
+@$core.Deprecated('Use snapshotItemDescriptor instead')
 const SnapshotItem$json = const {
   '1': 'SnapshotItem',
   '2': const [
@@ -16,6 +14,9 @@ const SnapshotItem$json = const {
   ],
 };
 
+/// Descriptor for `SnapshotItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List snapshotItemDescriptor = $convert.base64Decode('CgxTbmFwc2hvdEl0ZW0SRAoFc3RvcmUYASABKAsyLC5jb3Ntb3MuYmFzZS5zdG9yZS52MWJldGExLlNuYXBzaG90U3RvcmVJdGVtSABSBXN0b3JlEksKBGlhdmwYAiABKAsyKy5jb3Ntb3MuYmFzZS5zdG9yZS52MWJldGExLlNuYXBzaG90SUFWTEl0ZW1CCOLeHwRJQVZMSABSBGlhdmxCBgoEaXRlbQ==');
+@$core.Deprecated('Use snapshotStoreItemDescriptor instead')
 const SnapshotStoreItem$json = const {
   '1': 'SnapshotStoreItem',
   '2': const [
@@ -23,6 +24,9 @@ const SnapshotStoreItem$json = const {
   ],
 };
 
+/// Descriptor for `SnapshotStoreItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List snapshotStoreItemDescriptor = $convert.base64Decode('ChFTbmFwc2hvdFN0b3JlSXRlbRISCgRuYW1lGAEgASgJUgRuYW1l');
+@$core.Deprecated('Use snapshotIAVLItemDescriptor instead')
 const SnapshotIAVLItem$json = const {
   '1': 'SnapshotIAVLItem',
   '2': const [
@@ -33,3 +37,5 @@ const SnapshotIAVLItem$json = const {
   ],
 };
 
+/// Descriptor for `SnapshotIAVLItem`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List snapshotIAVLItemDescriptor = $convert.base64Decode('ChBTbmFwc2hvdElBVkxJdGVtEhAKA2tleRgBIAEoDFIDa2V5EhQKBXZhbHVlGAIgASgMUgV2YWx1ZRIYCgd2ZXJzaW9uGAMgASgDUgd2ZXJzaW9uEhYKBmhlaWdodBgEIAEoBVIGaGVpZ2h0');

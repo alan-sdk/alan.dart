@@ -1,20 +1,13 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/gov/v1beta1/gov.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
 import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../base/v1beta1/coin.pb.dart' as $2;
 import '../../../google/protobuf/any.pb.dart' as $3;
-import '../../../google/protobuf/timestamp.pb.dart' as $4;
 import '../../../google/protobuf/duration.pb.dart' as $5;
-
+import '../../../google/protobuf/timestamp.pb.dart' as $4;
+import '../../base/v1beta1/coin.pb.dart' as $2;
 import 'gov.pbenum.dart';
 
 export 'gov.pbenum.dart';
@@ -27,7 +20,19 @@ class TextProposal extends $pb.GeneratedMessage {
   ;
 
   TextProposal._() : super();
-  factory TextProposal() => create();
+  factory TextProposal({
+    $core.String? title,
+    $core.String? description,
+  }) {
+    final _result = create();
+    if (title != null) {
+      _result.title = title;
+    }
+    if (description != null) {
+      _result.description = description;
+    }
+    return _result;
+  }
   factory TextProposal.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TextProposal.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -39,7 +44,7 @@ class TextProposal extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  TextProposal copyWith(void Function(TextProposal) updates) => super.copyWith((message) => updates(message as TextProposal)); // ignore: deprecated_member_use
+  TextProposal copyWith(void Function(TextProposal) updates) => super.copyWith((message) => updates(message as TextProposal)) as TextProposal; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static TextProposal create() => TextProposal._();
@@ -47,7 +52,7 @@ class TextProposal extends $pb.GeneratedMessage {
   static $pb.PbList<TextProposal> createRepeated() => $pb.PbList<TextProposal>();
   @$core.pragma('dart2js:noInline')
   static TextProposal getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TextProposal>(create);
-  static TextProposal _defaultInstance;
+  static TextProposal? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get title => $_getSZ(0);
@@ -77,7 +82,23 @@ class Deposit extends $pb.GeneratedMessage {
   ;
 
   Deposit._() : super();
-  factory Deposit() => create();
+  factory Deposit({
+    $fixnum.Int64? proposalId,
+    $core.String? depositor,
+    $core.Iterable<$2.Coin>? amount,
+  }) {
+    final _result = create();
+    if (proposalId != null) {
+      _result.proposalId = proposalId;
+    }
+    if (depositor != null) {
+      _result.depositor = depositor;
+    }
+    if (amount != null) {
+      _result.amount.addAll(amount);
+    }
+    return _result;
+  }
   factory Deposit.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Deposit.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -89,7 +110,7 @@ class Deposit extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Deposit copyWith(void Function(Deposit) updates) => super.copyWith((message) => updates(message as Deposit)); // ignore: deprecated_member_use
+  Deposit copyWith(void Function(Deposit) updates) => super.copyWith((message) => updates(message as Deposit)) as Deposit; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static Deposit create() => Deposit._();
@@ -97,7 +118,7 @@ class Deposit extends $pb.GeneratedMessage {
   static $pb.PbList<Deposit> createRepeated() => $pb.PbList<Deposit>();
   @$core.pragma('dart2js:noInline')
   static Deposit getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Deposit>(create);
-  static Deposit _defaultInstance;
+  static Deposit? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get proposalId => $_getI64(0);
@@ -136,7 +157,47 @@ class Proposal extends $pb.GeneratedMessage {
   ;
 
   Proposal._() : super();
-  factory Proposal() => create();
+  factory Proposal({
+    $fixnum.Int64? proposalId,
+    $3.Any? content,
+    ProposalStatus? status,
+    TallyResult? finalTallyResult,
+    $4.Timestamp? submitTime,
+    $4.Timestamp? depositEndTime,
+    $core.Iterable<$2.Coin>? totalDeposit,
+    $4.Timestamp? votingStartTime,
+    $4.Timestamp? votingEndTime,
+  }) {
+    final _result = create();
+    if (proposalId != null) {
+      _result.proposalId = proposalId;
+    }
+    if (content != null) {
+      _result.content = content;
+    }
+    if (status != null) {
+      _result.status = status;
+    }
+    if (finalTallyResult != null) {
+      _result.finalTallyResult = finalTallyResult;
+    }
+    if (submitTime != null) {
+      _result.submitTime = submitTime;
+    }
+    if (depositEndTime != null) {
+      _result.depositEndTime = depositEndTime;
+    }
+    if (totalDeposit != null) {
+      _result.totalDeposit.addAll(totalDeposit);
+    }
+    if (votingStartTime != null) {
+      _result.votingStartTime = votingStartTime;
+    }
+    if (votingEndTime != null) {
+      _result.votingEndTime = votingEndTime;
+    }
+    return _result;
+  }
   factory Proposal.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Proposal.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -148,7 +209,7 @@ class Proposal extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Proposal copyWith(void Function(Proposal) updates) => super.copyWith((message) => updates(message as Proposal)); // ignore: deprecated_member_use
+  Proposal copyWith(void Function(Proposal) updates) => super.copyWith((message) => updates(message as Proposal)) as Proposal; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static Proposal create() => Proposal._();
@@ -156,7 +217,7 @@ class Proposal extends $pb.GeneratedMessage {
   static $pb.PbList<Proposal> createRepeated() => $pb.PbList<Proposal>();
   @$core.pragma('dart2js:noInline')
   static Proposal getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Proposal>(create);
-  static Proposal _defaultInstance;
+  static Proposal? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get proposalId => $_getI64(0);
@@ -256,7 +317,27 @@ class TallyResult extends $pb.GeneratedMessage {
   ;
 
   TallyResult._() : super();
-  factory TallyResult() => create();
+  factory TallyResult({
+    $core.String? yes,
+    $core.String? abstain,
+    $core.String? no,
+    $core.String? noWithVeto,
+  }) {
+    final _result = create();
+    if (yes != null) {
+      _result.yes = yes;
+    }
+    if (abstain != null) {
+      _result.abstain = abstain;
+    }
+    if (no != null) {
+      _result.no = no;
+    }
+    if (noWithVeto != null) {
+      _result.noWithVeto = noWithVeto;
+    }
+    return _result;
+  }
   factory TallyResult.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TallyResult.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -268,7 +349,7 @@ class TallyResult extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  TallyResult copyWith(void Function(TallyResult) updates) => super.copyWith((message) => updates(message as TallyResult)); // ignore: deprecated_member_use
+  TallyResult copyWith(void Function(TallyResult) updates) => super.copyWith((message) => updates(message as TallyResult)) as TallyResult; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static TallyResult create() => TallyResult._();
@@ -276,7 +357,7 @@ class TallyResult extends $pb.GeneratedMessage {
   static $pb.PbList<TallyResult> createRepeated() => $pb.PbList<TallyResult>();
   @$core.pragma('dart2js:noInline')
   static TallyResult getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TallyResult>(create);
-  static TallyResult _defaultInstance;
+  static TallyResult? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get yes => $_getSZ(0);
@@ -324,7 +405,23 @@ class Vote extends $pb.GeneratedMessage {
   ;
 
   Vote._() : super();
-  factory Vote() => create();
+  factory Vote({
+    $fixnum.Int64? proposalId,
+    $core.String? voter,
+    VoteOption? option,
+  }) {
+    final _result = create();
+    if (proposalId != null) {
+      _result.proposalId = proposalId;
+    }
+    if (voter != null) {
+      _result.voter = voter;
+    }
+    if (option != null) {
+      _result.option = option;
+    }
+    return _result;
+  }
   factory Vote.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Vote.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -336,7 +433,7 @@ class Vote extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Vote copyWith(void Function(Vote) updates) => super.copyWith((message) => updates(message as Vote)); // ignore: deprecated_member_use
+  Vote copyWith(void Function(Vote) updates) => super.copyWith((message) => updates(message as Vote)) as Vote; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static Vote create() => Vote._();
@@ -344,7 +441,7 @@ class Vote extends $pb.GeneratedMessage {
   static $pb.PbList<Vote> createRepeated() => $pb.PbList<Vote>();
   @$core.pragma('dart2js:noInline')
   static Vote getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Vote>(create);
-  static Vote _defaultInstance;
+  static Vote? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get proposalId => $_getI64(0);
@@ -382,7 +479,19 @@ class DepositParams extends $pb.GeneratedMessage {
   ;
 
   DepositParams._() : super();
-  factory DepositParams() => create();
+  factory DepositParams({
+    $core.Iterable<$2.Coin>? minDeposit,
+    $5.Duration? maxDepositPeriod,
+  }) {
+    final _result = create();
+    if (minDeposit != null) {
+      _result.minDeposit.addAll(minDeposit);
+    }
+    if (maxDepositPeriod != null) {
+      _result.maxDepositPeriod = maxDepositPeriod;
+    }
+    return _result;
+  }
   factory DepositParams.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DepositParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -394,7 +503,7 @@ class DepositParams extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  DepositParams copyWith(void Function(DepositParams) updates) => super.copyWith((message) => updates(message as DepositParams)); // ignore: deprecated_member_use
+  DepositParams copyWith(void Function(DepositParams) updates) => super.copyWith((message) => updates(message as DepositParams)) as DepositParams; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static DepositParams create() => DepositParams._();
@@ -402,7 +511,7 @@ class DepositParams extends $pb.GeneratedMessage {
   static $pb.PbList<DepositParams> createRepeated() => $pb.PbList<DepositParams>();
   @$core.pragma('dart2js:noInline')
   static DepositParams getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DepositParams>(create);
-  static DepositParams _defaultInstance;
+  static DepositParams? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<$2.Coin> get minDeposit => $_getList(0);
@@ -426,7 +535,15 @@ class VotingParams extends $pb.GeneratedMessage {
   ;
 
   VotingParams._() : super();
-  factory VotingParams() => create();
+  factory VotingParams({
+    $5.Duration? votingPeriod,
+  }) {
+    final _result = create();
+    if (votingPeriod != null) {
+      _result.votingPeriod = votingPeriod;
+    }
+    return _result;
+  }
   factory VotingParams.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory VotingParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -438,7 +555,7 @@ class VotingParams extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  VotingParams copyWith(void Function(VotingParams) updates) => super.copyWith((message) => updates(message as VotingParams)); // ignore: deprecated_member_use
+  VotingParams copyWith(void Function(VotingParams) updates) => super.copyWith((message) => updates(message as VotingParams)) as VotingParams; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static VotingParams create() => VotingParams._();
@@ -446,7 +563,7 @@ class VotingParams extends $pb.GeneratedMessage {
   static $pb.PbList<VotingParams> createRepeated() => $pb.PbList<VotingParams>();
   @$core.pragma('dart2js:noInline')
   static VotingParams getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<VotingParams>(create);
-  static VotingParams _defaultInstance;
+  static VotingParams? _defaultInstance;
 
   @$pb.TagNumber(1)
   $5.Duration get votingPeriod => $_getN(0);
@@ -469,7 +586,23 @@ class TallyParams extends $pb.GeneratedMessage {
   ;
 
   TallyParams._() : super();
-  factory TallyParams() => create();
+  factory TallyParams({
+    $core.List<$core.int>? quorum,
+    $core.List<$core.int>? threshold,
+    $core.List<$core.int>? vetoThreshold,
+  }) {
+    final _result = create();
+    if (quorum != null) {
+      _result.quorum = quorum;
+    }
+    if (threshold != null) {
+      _result.threshold = threshold;
+    }
+    if (vetoThreshold != null) {
+      _result.vetoThreshold = vetoThreshold;
+    }
+    return _result;
+  }
   factory TallyParams.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TallyParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -481,7 +614,7 @@ class TallyParams extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  TallyParams copyWith(void Function(TallyParams) updates) => super.copyWith((message) => updates(message as TallyParams)); // ignore: deprecated_member_use
+  TallyParams copyWith(void Function(TallyParams) updates) => super.copyWith((message) => updates(message as TallyParams)) as TallyParams; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static TallyParams create() => TallyParams._();
@@ -489,7 +622,7 @@ class TallyParams extends $pb.GeneratedMessage {
   static $pb.PbList<TallyParams> createRepeated() => $pb.PbList<TallyParams>();
   @$core.pragma('dart2js:noInline')
   static TallyParams getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TallyParams>(create);
-  static TallyParams _defaultInstance;
+  static TallyParams? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<$core.int> get quorum => $_getN(0);

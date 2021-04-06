@@ -1,10 +1,4 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/slashing/v1beta1/genesis.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
 import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
@@ -21,7 +15,23 @@ class GenesisState extends $pb.GeneratedMessage {
   ;
 
   GenesisState._() : super();
-  factory GenesisState() => create();
+  factory GenesisState({
+    $4.Params? params,
+    $core.Iterable<SigningInfo>? signingInfos,
+    $core.Iterable<ValidatorMissedBlocks>? missedBlocks,
+  }) {
+    final _result = create();
+    if (params != null) {
+      _result.params = params;
+    }
+    if (signingInfos != null) {
+      _result.signingInfos.addAll(signingInfos);
+    }
+    if (missedBlocks != null) {
+      _result.missedBlocks.addAll(missedBlocks);
+    }
+    return _result;
+  }
   factory GenesisState.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GenesisState.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -33,7 +43,7 @@ class GenesisState extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GenesisState copyWith(void Function(GenesisState) updates) => super.copyWith((message) => updates(message as GenesisState)); // ignore: deprecated_member_use
+  GenesisState copyWith(void Function(GenesisState) updates) => super.copyWith((message) => updates(message as GenesisState)) as GenesisState; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static GenesisState create() => GenesisState._();
@@ -41,7 +51,7 @@ class GenesisState extends $pb.GeneratedMessage {
   static $pb.PbList<GenesisState> createRepeated() => $pb.PbList<GenesisState>();
   @$core.pragma('dart2js:noInline')
   static GenesisState getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GenesisState>(create);
-  static GenesisState _defaultInstance;
+  static GenesisState? _defaultInstance;
 
   @$pb.TagNumber(1)
   $4.Params get params => $_getN(0);
@@ -69,7 +79,19 @@ class SigningInfo extends $pb.GeneratedMessage {
   ;
 
   SigningInfo._() : super();
-  factory SigningInfo() => create();
+  factory SigningInfo({
+    $core.String? address,
+    $4.ValidatorSigningInfo? validatorSigningInfo,
+  }) {
+    final _result = create();
+    if (address != null) {
+      _result.address = address;
+    }
+    if (validatorSigningInfo != null) {
+      _result.validatorSigningInfo = validatorSigningInfo;
+    }
+    return _result;
+  }
   factory SigningInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SigningInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -81,7 +103,7 @@ class SigningInfo extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SigningInfo copyWith(void Function(SigningInfo) updates) => super.copyWith((message) => updates(message as SigningInfo)); // ignore: deprecated_member_use
+  SigningInfo copyWith(void Function(SigningInfo) updates) => super.copyWith((message) => updates(message as SigningInfo)) as SigningInfo; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static SigningInfo create() => SigningInfo._();
@@ -89,7 +111,7 @@ class SigningInfo extends $pb.GeneratedMessage {
   static $pb.PbList<SigningInfo> createRepeated() => $pb.PbList<SigningInfo>();
   @$core.pragma('dart2js:noInline')
   static SigningInfo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SigningInfo>(create);
-  static SigningInfo _defaultInstance;
+  static SigningInfo? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get address => $_getSZ(0);
@@ -120,7 +142,19 @@ class ValidatorMissedBlocks extends $pb.GeneratedMessage {
   ;
 
   ValidatorMissedBlocks._() : super();
-  factory ValidatorMissedBlocks() => create();
+  factory ValidatorMissedBlocks({
+    $core.String? address,
+    $core.Iterable<MissedBlock>? missedBlocks,
+  }) {
+    final _result = create();
+    if (address != null) {
+      _result.address = address;
+    }
+    if (missedBlocks != null) {
+      _result.missedBlocks.addAll(missedBlocks);
+    }
+    return _result;
+  }
   factory ValidatorMissedBlocks.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ValidatorMissedBlocks.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -132,7 +166,7 @@ class ValidatorMissedBlocks extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ValidatorMissedBlocks copyWith(void Function(ValidatorMissedBlocks) updates) => super.copyWith((message) => updates(message as ValidatorMissedBlocks)); // ignore: deprecated_member_use
+  ValidatorMissedBlocks copyWith(void Function(ValidatorMissedBlocks) updates) => super.copyWith((message) => updates(message as ValidatorMissedBlocks)) as ValidatorMissedBlocks; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static ValidatorMissedBlocks create() => ValidatorMissedBlocks._();
@@ -140,7 +174,7 @@ class ValidatorMissedBlocks extends $pb.GeneratedMessage {
   static $pb.PbList<ValidatorMissedBlocks> createRepeated() => $pb.PbList<ValidatorMissedBlocks>();
   @$core.pragma('dart2js:noInline')
   static ValidatorMissedBlocks getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ValidatorMissedBlocks>(create);
-  static ValidatorMissedBlocks _defaultInstance;
+  static ValidatorMissedBlocks? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get address => $_getSZ(0);
@@ -163,7 +197,19 @@ class MissedBlock extends $pb.GeneratedMessage {
   ;
 
   MissedBlock._() : super();
-  factory MissedBlock() => create();
+  factory MissedBlock({
+    $fixnum.Int64? index,
+    $core.bool? missed,
+  }) {
+    final _result = create();
+    if (index != null) {
+      _result.index = index;
+    }
+    if (missed != null) {
+      _result.missed = missed;
+    }
+    return _result;
+  }
   factory MissedBlock.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MissedBlock.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -175,7 +221,7 @@ class MissedBlock extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  MissedBlock copyWith(void Function(MissedBlock) updates) => super.copyWith((message) => updates(message as MissedBlock)); // ignore: deprecated_member_use
+  MissedBlock copyWith(void Function(MissedBlock) updates) => super.copyWith((message) => updates(message as MissedBlock)) as MissedBlock; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static MissedBlock create() => MissedBlock._();
@@ -183,7 +229,7 @@ class MissedBlock extends $pb.GeneratedMessage {
   static $pb.PbList<MissedBlock> createRepeated() => $pb.PbList<MissedBlock>();
   @$core.pragma('dart2js:noInline')
   static MissedBlock getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MissedBlock>(create);
-  static MissedBlock _defaultInstance;
+  static MissedBlock? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get index => $_getI64(0);

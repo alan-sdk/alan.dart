@@ -1,10 +1,8 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/base/store/v1beta1/commit_info.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
+import 'dart:convert' as $convert;
+import 'dart:core' as $core;
+import 'dart:typed_data' as $typed_data;
+@$core.Deprecated('Use commitInfoDescriptor instead')
 const CommitInfo$json = const {
   '1': 'CommitInfo',
   '2': const [
@@ -13,6 +11,9 @@ const CommitInfo$json = const {
   ],
 };
 
+/// Descriptor for `CommitInfo`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List commitInfoDescriptor = $convert.base64Decode('CgpDb21taXRJbmZvEhgKB3ZlcnNpb24YASABKANSB3ZlcnNpb24SSwoLc3RvcmVfaW5mb3MYAiADKAsyJC5jb3Ntb3MuYmFzZS5zdG9yZS52MWJldGExLlN0b3JlSW5mb0IEyN4fAFIKc3RvcmVJbmZvcw==');
+@$core.Deprecated('Use storeInfoDescriptor instead')
 const StoreInfo$json = const {
   '1': 'StoreInfo',
   '2': const [
@@ -21,6 +22,9 @@ const StoreInfo$json = const {
   ],
 };
 
+/// Descriptor for `StoreInfo`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List storeInfoDescriptor = $convert.base64Decode('CglTdG9yZUluZm8SEgoEbmFtZRgBIAEoCVIEbmFtZRJGCgljb21taXRfaWQYAiABKAsyIy5jb3Ntb3MuYmFzZS5zdG9yZS52MWJldGExLkNvbW1pdElEQgTI3h8AUghjb21taXRJZA==');
+@$core.Deprecated('Use commitIDDescriptor instead')
 const CommitID$json = const {
   '1': 'CommitID',
   '2': const [
@@ -30,3 +34,5 @@ const CommitID$json = const {
   '7': const {},
 };
 
+/// Descriptor for `CommitID`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List commitIDDescriptor = $convert.base64Decode('CghDb21taXRJRBIYCgd2ZXJzaW9uGAEgASgDUgd2ZXJzaW9uEhIKBGhhc2gYAiABKAxSBGhhc2g6BJigHwA=');

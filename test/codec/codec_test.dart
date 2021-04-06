@@ -14,7 +14,7 @@ class TestAccount implements AccountI {
   String get address => 'test_address';
 
   @override
-  Any get pubKey => null;
+  Any get pubKey => Any();
 
   @override
   Int64 get sequence => 10000.toInt64();

@@ -1,10 +1,8 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/capability/v1beta1/capability.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
+import 'dart:convert' as $convert;
+import 'dart:core' as $core;
+import 'dart:typed_data' as $typed_data;
+@$core.Deprecated('Use capabilityDescriptor instead')
 const Capability$json = const {
   '1': 'Capability',
   '2': const [
@@ -13,6 +11,9 @@ const Capability$json = const {
   '7': const {},
 };
 
+/// Descriptor for `Capability`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List capabilityDescriptor = $convert.base64Decode('CgpDYXBhYmlsaXR5EiYKBWluZGV4GAEgASgEQhDy3h8MeWFtbDoiaW5kZXgiUgVpbmRleDoEmKAfAA==');
+@$core.Deprecated('Use ownerDescriptor instead')
 const Owner$json = const {
   '1': 'Owner',
   '2': const [
@@ -22,6 +23,9 @@ const Owner$json = const {
   '7': const {},
 };
 
+/// Descriptor for `Owner`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List ownerDescriptor = $convert.base64Decode('CgVPd25lchIpCgZtb2R1bGUYASABKAlCEfLeHw15YW1sOiJtb2R1bGUiUgZtb2R1bGUSIwoEbmFtZRgCIAEoCUIP8t4fC3lhbWw6Im5hbWUiUgRuYW1lOgiYoB8AiKAfAA==');
+@$core.Deprecated('Use capabilityOwnersDescriptor instead')
 const CapabilityOwners$json = const {
   '1': 'CapabilityOwners',
   '2': const [
@@ -29,3 +33,5 @@ const CapabilityOwners$json = const {
   ],
 };
 
+/// Descriptor for `CapabilityOwners`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List capabilityOwnersDescriptor = $convert.base64Decode('ChBDYXBhYmlsaXR5T3duZXJzEj4KBm93bmVycxgBIAMoCzIgLmNvc21vcy5jYXBhYmlsaXR5LnYxYmV0YTEuT3duZXJCBMjeHwBSBm93bmVycw==');

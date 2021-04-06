@@ -14,7 +14,23 @@ class HttpBody extends $pb.GeneratedMessage {
   ;
 
   HttpBody._() : super();
-  factory HttpBody() => create();
+  factory HttpBody({
+    $core.String? contentType,
+    $core.List<$core.int>? data,
+    $core.Iterable<$1.Any>? extensions,
+  }) {
+    final _result = create();
+    if (contentType != null) {
+      _result.contentType = contentType;
+    }
+    if (data != null) {
+      _result.data = data;
+    }
+    if (extensions != null) {
+      _result.extensions.addAll(extensions);
+    }
+    return _result;
+  }
   factory HttpBody.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory HttpBody.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -26,7 +42,7 @@ class HttpBody extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  HttpBody copyWith(void Function(HttpBody) updates) => super.copyWith((message) => updates(message as HttpBody)); // ignore: deprecated_member_use
+  HttpBody copyWith(void Function(HttpBody) updates) => super.copyWith((message) => updates(message as HttpBody)) as HttpBody; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static HttpBody create() => HttpBody._();
@@ -34,7 +50,7 @@ class HttpBody extends $pb.GeneratedMessage {
   static $pb.PbList<HttpBody> createRepeated() => $pb.PbList<HttpBody>();
   @$core.pragma('dart2js:noInline')
   static HttpBody getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<HttpBody>(create);
-  static HttpBody _defaultInstance;
+  static HttpBody? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get contentType => $_getSZ(0);

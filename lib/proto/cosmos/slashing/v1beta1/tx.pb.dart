@@ -1,10 +1,4 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/slashing/v1beta1/tx.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
@@ -16,7 +10,15 @@ class MsgUnjail extends $pb.GeneratedMessage {
   ;
 
   MsgUnjail._() : super();
-  factory MsgUnjail() => create();
+  factory MsgUnjail({
+    $core.String? validatorAddr,
+  }) {
+    final _result = create();
+    if (validatorAddr != null) {
+      _result.validatorAddr = validatorAddr;
+    }
+    return _result;
+  }
   factory MsgUnjail.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MsgUnjail.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -28,7 +30,7 @@ class MsgUnjail extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  MsgUnjail copyWith(void Function(MsgUnjail) updates) => super.copyWith((message) => updates(message as MsgUnjail)); // ignore: deprecated_member_use
+  MsgUnjail copyWith(void Function(MsgUnjail) updates) => super.copyWith((message) => updates(message as MsgUnjail)) as MsgUnjail; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static MsgUnjail create() => MsgUnjail._();
@@ -36,7 +38,7 @@ class MsgUnjail extends $pb.GeneratedMessage {
   static $pb.PbList<MsgUnjail> createRepeated() => $pb.PbList<MsgUnjail>();
   @$core.pragma('dart2js:noInline')
   static MsgUnjail getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MsgUnjail>(create);
-  static MsgUnjail _defaultInstance;
+  static MsgUnjail? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get validatorAddr => $_getSZ(0);
@@ -66,7 +68,7 @@ class MsgUnjailResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  MsgUnjailResponse copyWith(void Function(MsgUnjailResponse) updates) => super.copyWith((message) => updates(message as MsgUnjailResponse)); // ignore: deprecated_member_use
+  MsgUnjailResponse copyWith(void Function(MsgUnjailResponse) updates) => super.copyWith((message) => updates(message as MsgUnjailResponse)) as MsgUnjailResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static MsgUnjailResponse create() => MsgUnjailResponse._();
@@ -74,6 +76,6 @@ class MsgUnjailResponse extends $pb.GeneratedMessage {
   static $pb.PbList<MsgUnjailResponse> createRepeated() => $pb.PbList<MsgUnjailResponse>();
   @$core.pragma('dart2js:noInline')
   static MsgUnjailResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MsgUnjailResponse>(create);
-  static MsgUnjailResponse _defaultInstance;
+  static MsgUnjailResponse? _defaultInstance;
 }
 

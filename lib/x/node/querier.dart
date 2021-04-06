@@ -1,11 +1,10 @@
 import 'package:alan/alan.dart';
 import 'package:http/http.dart' as http;
-import 'package:meta/meta.dart';
 
 /// Allows to query a full node for its information.
 class NodeQuerier extends QueryHelper {
   NodeQuerier._({
-    @required http.Client httpClient,
+    required http.Client httpClient,
   }) : super(httpClient: httpClient);
 
   factory NodeQuerier.build(http.Client httpClient) {
@@ -19,6 +18,7 @@ class NodeQuerier extends QueryHelper {
       throw Exception(result.error);
     }
 
-    return NodeInfoResponse.fromJson(result.value).nodeInfo;
+    final value = result.value as Map<String, dynamic>;
+    return NodeInfoResponse.fromJson(value).nodeInfo;
   }
 }

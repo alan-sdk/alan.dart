@@ -1,10 +1,4 @@
 ///
-//  Generated code. Do not modify.
-//  source: tendermint/types/params.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
 import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
@@ -22,7 +16,27 @@ class ConsensusParams extends $pb.GeneratedMessage {
   ;
 
   ConsensusParams._() : super();
-  factory ConsensusParams() => create();
+  factory ConsensusParams({
+    BlockParams? block,
+    EvidenceParams? evidence,
+    ValidatorParams? validator,
+    VersionParams? version,
+  }) {
+    final _result = create();
+    if (block != null) {
+      _result.block = block;
+    }
+    if (evidence != null) {
+      _result.evidence = evidence;
+    }
+    if (validator != null) {
+      _result.validator = validator;
+    }
+    if (version != null) {
+      _result.version = version;
+    }
+    return _result;
+  }
   factory ConsensusParams.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ConsensusParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -34,7 +48,7 @@ class ConsensusParams extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ConsensusParams copyWith(void Function(ConsensusParams) updates) => super.copyWith((message) => updates(message as ConsensusParams)); // ignore: deprecated_member_use
+  ConsensusParams copyWith(void Function(ConsensusParams) updates) => super.copyWith((message) => updates(message as ConsensusParams)) as ConsensusParams; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static ConsensusParams create() => ConsensusParams._();
@@ -42,7 +56,7 @@ class ConsensusParams extends $pb.GeneratedMessage {
   static $pb.PbList<ConsensusParams> createRepeated() => $pb.PbList<ConsensusParams>();
   @$core.pragma('dart2js:noInline')
   static ConsensusParams getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ConsensusParams>(create);
-  static ConsensusParams _defaultInstance;
+  static ConsensusParams? _defaultInstance;
 
   @$pb.TagNumber(1)
   BlockParams get block => $_getN(0);
@@ -98,7 +112,23 @@ class BlockParams extends $pb.GeneratedMessage {
   ;
 
   BlockParams._() : super();
-  factory BlockParams() => create();
+  factory BlockParams({
+    $fixnum.Int64? maxBytes,
+    $fixnum.Int64? maxGas,
+    $fixnum.Int64? timeIotaMs,
+  }) {
+    final _result = create();
+    if (maxBytes != null) {
+      _result.maxBytes = maxBytes;
+    }
+    if (maxGas != null) {
+      _result.maxGas = maxGas;
+    }
+    if (timeIotaMs != null) {
+      _result.timeIotaMs = timeIotaMs;
+    }
+    return _result;
+  }
   factory BlockParams.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory BlockParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -110,7 +140,7 @@ class BlockParams extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  BlockParams copyWith(void Function(BlockParams) updates) => super.copyWith((message) => updates(message as BlockParams)); // ignore: deprecated_member_use
+  BlockParams copyWith(void Function(BlockParams) updates) => super.copyWith((message) => updates(message as BlockParams)) as BlockParams; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static BlockParams create() => BlockParams._();
@@ -118,7 +148,7 @@ class BlockParams extends $pb.GeneratedMessage {
   static $pb.PbList<BlockParams> createRepeated() => $pb.PbList<BlockParams>();
   @$core.pragma('dart2js:noInline')
   static BlockParams getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<BlockParams>(create);
-  static BlockParams _defaultInstance;
+  static BlockParams? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get maxBytes => $_getI64(0);
@@ -157,7 +187,23 @@ class EvidenceParams extends $pb.GeneratedMessage {
   ;
 
   EvidenceParams._() : super();
-  factory EvidenceParams() => create();
+  factory EvidenceParams({
+    $fixnum.Int64? maxAgeNumBlocks,
+    $7.Duration? maxAgeDuration,
+    $fixnum.Int64? maxBytes,
+  }) {
+    final _result = create();
+    if (maxAgeNumBlocks != null) {
+      _result.maxAgeNumBlocks = maxAgeNumBlocks;
+    }
+    if (maxAgeDuration != null) {
+      _result.maxAgeDuration = maxAgeDuration;
+    }
+    if (maxBytes != null) {
+      _result.maxBytes = maxBytes;
+    }
+    return _result;
+  }
   factory EvidenceParams.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory EvidenceParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -169,7 +215,7 @@ class EvidenceParams extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  EvidenceParams copyWith(void Function(EvidenceParams) updates) => super.copyWith((message) => updates(message as EvidenceParams)); // ignore: deprecated_member_use
+  EvidenceParams copyWith(void Function(EvidenceParams) updates) => super.copyWith((message) => updates(message as EvidenceParams)) as EvidenceParams; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static EvidenceParams create() => EvidenceParams._();
@@ -177,7 +223,7 @@ class EvidenceParams extends $pb.GeneratedMessage {
   static $pb.PbList<EvidenceParams> createRepeated() => $pb.PbList<EvidenceParams>();
   @$core.pragma('dart2js:noInline')
   static EvidenceParams getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<EvidenceParams>(create);
-  static EvidenceParams _defaultInstance;
+  static EvidenceParams? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get maxAgeNumBlocks => $_getI64(0);
@@ -216,7 +262,15 @@ class ValidatorParams extends $pb.GeneratedMessage {
   ;
 
   ValidatorParams._() : super();
-  factory ValidatorParams() => create();
+  factory ValidatorParams({
+    $core.Iterable<$core.String>? pubKeyTypes,
+  }) {
+    final _result = create();
+    if (pubKeyTypes != null) {
+      _result.pubKeyTypes.addAll(pubKeyTypes);
+    }
+    return _result;
+  }
   factory ValidatorParams.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ValidatorParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -228,7 +282,7 @@ class ValidatorParams extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ValidatorParams copyWith(void Function(ValidatorParams) updates) => super.copyWith((message) => updates(message as ValidatorParams)); // ignore: deprecated_member_use
+  ValidatorParams copyWith(void Function(ValidatorParams) updates) => super.copyWith((message) => updates(message as ValidatorParams)) as ValidatorParams; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static ValidatorParams create() => ValidatorParams._();
@@ -236,7 +290,7 @@ class ValidatorParams extends $pb.GeneratedMessage {
   static $pb.PbList<ValidatorParams> createRepeated() => $pb.PbList<ValidatorParams>();
   @$core.pragma('dart2js:noInline')
   static ValidatorParams getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ValidatorParams>(create);
-  static ValidatorParams _defaultInstance;
+  static ValidatorParams? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<$core.String> get pubKeyTypes => $_getList(0);
@@ -249,7 +303,15 @@ class VersionParams extends $pb.GeneratedMessage {
   ;
 
   VersionParams._() : super();
-  factory VersionParams() => create();
+  factory VersionParams({
+    $fixnum.Int64? appVersion,
+  }) {
+    final _result = create();
+    if (appVersion != null) {
+      _result.appVersion = appVersion;
+    }
+    return _result;
+  }
   factory VersionParams.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory VersionParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -261,7 +323,7 @@ class VersionParams extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  VersionParams copyWith(void Function(VersionParams) updates) => super.copyWith((message) => updates(message as VersionParams)); // ignore: deprecated_member_use
+  VersionParams copyWith(void Function(VersionParams) updates) => super.copyWith((message) => updates(message as VersionParams)) as VersionParams; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static VersionParams create() => VersionParams._();
@@ -269,7 +331,7 @@ class VersionParams extends $pb.GeneratedMessage {
   static $pb.PbList<VersionParams> createRepeated() => $pb.PbList<VersionParams>();
   @$core.pragma('dart2js:noInline')
   static VersionParams getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<VersionParams>(create);
-  static VersionParams _defaultInstance;
+  static VersionParams? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get appVersion => $_getI64(0);
@@ -289,7 +351,19 @@ class HashedParams extends $pb.GeneratedMessage {
   ;
 
   HashedParams._() : super();
-  factory HashedParams() => create();
+  factory HashedParams({
+    $fixnum.Int64? blockMaxBytes,
+    $fixnum.Int64? blockMaxGas,
+  }) {
+    final _result = create();
+    if (blockMaxBytes != null) {
+      _result.blockMaxBytes = blockMaxBytes;
+    }
+    if (blockMaxGas != null) {
+      _result.blockMaxGas = blockMaxGas;
+    }
+    return _result;
+  }
   factory HashedParams.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory HashedParams.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -301,7 +375,7 @@ class HashedParams extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  HashedParams copyWith(void Function(HashedParams) updates) => super.copyWith((message) => updates(message as HashedParams)); // ignore: deprecated_member_use
+  HashedParams copyWith(void Function(HashedParams) updates) => super.copyWith((message) => updates(message as HashedParams)) as HashedParams; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static HashedParams create() => HashedParams._();
@@ -309,7 +383,7 @@ class HashedParams extends $pb.GeneratedMessage {
   static $pb.PbList<HashedParams> createRepeated() => $pb.PbList<HashedParams>();
   @$core.pragma('dart2js:noInline')
   static HashedParams getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<HashedParams>(create);
-  static HashedParams _defaultInstance;
+  static HashedParams? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get blockMaxBytes => $_getI64(0);

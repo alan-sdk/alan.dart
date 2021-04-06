@@ -1,17 +1,11 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/upgrade/v1beta1/query.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
 import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'upgrade.pb.dart' as $3;
 import '../../../google/protobuf/any.pb.dart' as $2;
+import 'upgrade.pb.dart' as $3;
 
 class QueryCurrentPlanRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryCurrentPlanRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.upgrade.v1beta1'), createEmptyInstance: create)
@@ -31,7 +25,7 @@ class QueryCurrentPlanRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  QueryCurrentPlanRequest copyWith(void Function(QueryCurrentPlanRequest) updates) => super.copyWith((message) => updates(message as QueryCurrentPlanRequest)); // ignore: deprecated_member_use
+  QueryCurrentPlanRequest copyWith(void Function(QueryCurrentPlanRequest) updates) => super.copyWith((message) => updates(message as QueryCurrentPlanRequest)) as QueryCurrentPlanRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static QueryCurrentPlanRequest create() => QueryCurrentPlanRequest._();
@@ -39,7 +33,7 @@ class QueryCurrentPlanRequest extends $pb.GeneratedMessage {
   static $pb.PbList<QueryCurrentPlanRequest> createRepeated() => $pb.PbList<QueryCurrentPlanRequest>();
   @$core.pragma('dart2js:noInline')
   static QueryCurrentPlanRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QueryCurrentPlanRequest>(create);
-  static QueryCurrentPlanRequest _defaultInstance;
+  static QueryCurrentPlanRequest? _defaultInstance;
 }
 
 class QueryCurrentPlanResponse extends $pb.GeneratedMessage {
@@ -49,7 +43,15 @@ class QueryCurrentPlanResponse extends $pb.GeneratedMessage {
   ;
 
   QueryCurrentPlanResponse._() : super();
-  factory QueryCurrentPlanResponse() => create();
+  factory QueryCurrentPlanResponse({
+    $3.Plan? plan,
+  }) {
+    final _result = create();
+    if (plan != null) {
+      _result.plan = plan;
+    }
+    return _result;
+  }
   factory QueryCurrentPlanResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory QueryCurrentPlanResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -61,7 +63,7 @@ class QueryCurrentPlanResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  QueryCurrentPlanResponse copyWith(void Function(QueryCurrentPlanResponse) updates) => super.copyWith((message) => updates(message as QueryCurrentPlanResponse)); // ignore: deprecated_member_use
+  QueryCurrentPlanResponse copyWith(void Function(QueryCurrentPlanResponse) updates) => super.copyWith((message) => updates(message as QueryCurrentPlanResponse)) as QueryCurrentPlanResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static QueryCurrentPlanResponse create() => QueryCurrentPlanResponse._();
@@ -69,7 +71,7 @@ class QueryCurrentPlanResponse extends $pb.GeneratedMessage {
   static $pb.PbList<QueryCurrentPlanResponse> createRepeated() => $pb.PbList<QueryCurrentPlanResponse>();
   @$core.pragma('dart2js:noInline')
   static QueryCurrentPlanResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QueryCurrentPlanResponse>(create);
-  static QueryCurrentPlanResponse _defaultInstance;
+  static QueryCurrentPlanResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $3.Plan get plan => $_getN(0);
@@ -90,7 +92,15 @@ class QueryAppliedPlanRequest extends $pb.GeneratedMessage {
   ;
 
   QueryAppliedPlanRequest._() : super();
-  factory QueryAppliedPlanRequest() => create();
+  factory QueryAppliedPlanRequest({
+    $core.String? name,
+  }) {
+    final _result = create();
+    if (name != null) {
+      _result.name = name;
+    }
+    return _result;
+  }
   factory QueryAppliedPlanRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory QueryAppliedPlanRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -102,7 +112,7 @@ class QueryAppliedPlanRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  QueryAppliedPlanRequest copyWith(void Function(QueryAppliedPlanRequest) updates) => super.copyWith((message) => updates(message as QueryAppliedPlanRequest)); // ignore: deprecated_member_use
+  QueryAppliedPlanRequest copyWith(void Function(QueryAppliedPlanRequest) updates) => super.copyWith((message) => updates(message as QueryAppliedPlanRequest)) as QueryAppliedPlanRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static QueryAppliedPlanRequest create() => QueryAppliedPlanRequest._();
@@ -110,7 +120,7 @@ class QueryAppliedPlanRequest extends $pb.GeneratedMessage {
   static $pb.PbList<QueryAppliedPlanRequest> createRepeated() => $pb.PbList<QueryAppliedPlanRequest>();
   @$core.pragma('dart2js:noInline')
   static QueryAppliedPlanRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QueryAppliedPlanRequest>(create);
-  static QueryAppliedPlanRequest _defaultInstance;
+  static QueryAppliedPlanRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
@@ -129,7 +139,15 @@ class QueryAppliedPlanResponse extends $pb.GeneratedMessage {
   ;
 
   QueryAppliedPlanResponse._() : super();
-  factory QueryAppliedPlanResponse() => create();
+  factory QueryAppliedPlanResponse({
+    $fixnum.Int64? height,
+  }) {
+    final _result = create();
+    if (height != null) {
+      _result.height = height;
+    }
+    return _result;
+  }
   factory QueryAppliedPlanResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory QueryAppliedPlanResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -141,7 +159,7 @@ class QueryAppliedPlanResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  QueryAppliedPlanResponse copyWith(void Function(QueryAppliedPlanResponse) updates) => super.copyWith((message) => updates(message as QueryAppliedPlanResponse)); // ignore: deprecated_member_use
+  QueryAppliedPlanResponse copyWith(void Function(QueryAppliedPlanResponse) updates) => super.copyWith((message) => updates(message as QueryAppliedPlanResponse)) as QueryAppliedPlanResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static QueryAppliedPlanResponse create() => QueryAppliedPlanResponse._();
@@ -149,7 +167,7 @@ class QueryAppliedPlanResponse extends $pb.GeneratedMessage {
   static $pb.PbList<QueryAppliedPlanResponse> createRepeated() => $pb.PbList<QueryAppliedPlanResponse>();
   @$core.pragma('dart2js:noInline')
   static QueryAppliedPlanResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QueryAppliedPlanResponse>(create);
-  static QueryAppliedPlanResponse _defaultInstance;
+  static QueryAppliedPlanResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get height => $_getI64(0);
@@ -168,7 +186,15 @@ class QueryUpgradedConsensusStateRequest extends $pb.GeneratedMessage {
   ;
 
   QueryUpgradedConsensusStateRequest._() : super();
-  factory QueryUpgradedConsensusStateRequest() => create();
+  factory QueryUpgradedConsensusStateRequest({
+    $fixnum.Int64? lastHeight,
+  }) {
+    final _result = create();
+    if (lastHeight != null) {
+      _result.lastHeight = lastHeight;
+    }
+    return _result;
+  }
   factory QueryUpgradedConsensusStateRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory QueryUpgradedConsensusStateRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -180,7 +206,7 @@ class QueryUpgradedConsensusStateRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  QueryUpgradedConsensusStateRequest copyWith(void Function(QueryUpgradedConsensusStateRequest) updates) => super.copyWith((message) => updates(message as QueryUpgradedConsensusStateRequest)); // ignore: deprecated_member_use
+  QueryUpgradedConsensusStateRequest copyWith(void Function(QueryUpgradedConsensusStateRequest) updates) => super.copyWith((message) => updates(message as QueryUpgradedConsensusStateRequest)) as QueryUpgradedConsensusStateRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static QueryUpgradedConsensusStateRequest create() => QueryUpgradedConsensusStateRequest._();
@@ -188,7 +214,7 @@ class QueryUpgradedConsensusStateRequest extends $pb.GeneratedMessage {
   static $pb.PbList<QueryUpgradedConsensusStateRequest> createRepeated() => $pb.PbList<QueryUpgradedConsensusStateRequest>();
   @$core.pragma('dart2js:noInline')
   static QueryUpgradedConsensusStateRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QueryUpgradedConsensusStateRequest>(create);
-  static QueryUpgradedConsensusStateRequest _defaultInstance;
+  static QueryUpgradedConsensusStateRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get lastHeight => $_getI64(0);
@@ -207,7 +233,15 @@ class QueryUpgradedConsensusStateResponse extends $pb.GeneratedMessage {
   ;
 
   QueryUpgradedConsensusStateResponse._() : super();
-  factory QueryUpgradedConsensusStateResponse() => create();
+  factory QueryUpgradedConsensusStateResponse({
+    $2.Any? upgradedConsensusState,
+  }) {
+    final _result = create();
+    if (upgradedConsensusState != null) {
+      _result.upgradedConsensusState = upgradedConsensusState;
+    }
+    return _result;
+  }
   factory QueryUpgradedConsensusStateResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory QueryUpgradedConsensusStateResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -219,7 +253,7 @@ class QueryUpgradedConsensusStateResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  QueryUpgradedConsensusStateResponse copyWith(void Function(QueryUpgradedConsensusStateResponse) updates) => super.copyWith((message) => updates(message as QueryUpgradedConsensusStateResponse)); // ignore: deprecated_member_use
+  QueryUpgradedConsensusStateResponse copyWith(void Function(QueryUpgradedConsensusStateResponse) updates) => super.copyWith((message) => updates(message as QueryUpgradedConsensusStateResponse)) as QueryUpgradedConsensusStateResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static QueryUpgradedConsensusStateResponse create() => QueryUpgradedConsensusStateResponse._();
@@ -227,7 +261,7 @@ class QueryUpgradedConsensusStateResponse extends $pb.GeneratedMessage {
   static $pb.PbList<QueryUpgradedConsensusStateResponse> createRepeated() => $pb.PbList<QueryUpgradedConsensusStateResponse>();
   @$core.pragma('dart2js:noInline')
   static QueryUpgradedConsensusStateResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QueryUpgradedConsensusStateResponse>(create);
-  static QueryUpgradedConsensusStateResponse _defaultInstance;
+  static QueryUpgradedConsensusStateResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $2.Any get upgradedConsensusState => $_getN(0);

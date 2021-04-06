@@ -1,19 +1,12 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/tx/v1beta1/tx.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
 import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../google/protobuf/any.pb.dart' as $2;
-import '../../crypto/multisig/v1beta1/multisig.pb.dart' as $3;
 import '../../base/v1beta1/coin.pb.dart' as $4;
-
+import '../../crypto/multisig/v1beta1/multisig.pb.dart' as $3;
 import '../signing/v1beta1/signing.pbenum.dart' as $5;
 
 class Tx extends $pb.GeneratedMessage {
@@ -25,7 +18,23 @@ class Tx extends $pb.GeneratedMessage {
   ;
 
   Tx._() : super();
-  factory Tx() => create();
+  factory Tx({
+    TxBody? body,
+    AuthInfo? authInfo,
+    $core.Iterable<$core.List<$core.int>>? signatures,
+  }) {
+    final _result = create();
+    if (body != null) {
+      _result.body = body;
+    }
+    if (authInfo != null) {
+      _result.authInfo = authInfo;
+    }
+    if (signatures != null) {
+      _result.signatures.addAll(signatures);
+    }
+    return _result;
+  }
   factory Tx.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Tx.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -37,7 +46,7 @@ class Tx extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Tx copyWith(void Function(Tx) updates) => super.copyWith((message) => updates(message as Tx)); // ignore: deprecated_member_use
+  Tx copyWith(void Function(Tx) updates) => super.copyWith((message) => updates(message as Tx)) as Tx; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static Tx create() => Tx._();
@@ -45,7 +54,7 @@ class Tx extends $pb.GeneratedMessage {
   static $pb.PbList<Tx> createRepeated() => $pb.PbList<Tx>();
   @$core.pragma('dart2js:noInline')
   static Tx getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Tx>(create);
-  static Tx _defaultInstance;
+  static Tx? _defaultInstance;
 
   @$pb.TagNumber(1)
   TxBody get body => $_getN(0);
@@ -82,7 +91,23 @@ class TxRaw extends $pb.GeneratedMessage {
   ;
 
   TxRaw._() : super();
-  factory TxRaw() => create();
+  factory TxRaw({
+    $core.List<$core.int>? bodyBytes,
+    $core.List<$core.int>? authInfoBytes,
+    $core.Iterable<$core.List<$core.int>>? signatures,
+  }) {
+    final _result = create();
+    if (bodyBytes != null) {
+      _result.bodyBytes = bodyBytes;
+    }
+    if (authInfoBytes != null) {
+      _result.authInfoBytes = authInfoBytes;
+    }
+    if (signatures != null) {
+      _result.signatures.addAll(signatures);
+    }
+    return _result;
+  }
   factory TxRaw.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TxRaw.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -94,7 +119,7 @@ class TxRaw extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  TxRaw copyWith(void Function(TxRaw) updates) => super.copyWith((message) => updates(message as TxRaw)); // ignore: deprecated_member_use
+  TxRaw copyWith(void Function(TxRaw) updates) => super.copyWith((message) => updates(message as TxRaw)) as TxRaw; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static TxRaw create() => TxRaw._();
@@ -102,7 +127,7 @@ class TxRaw extends $pb.GeneratedMessage {
   static $pb.PbList<TxRaw> createRepeated() => $pb.PbList<TxRaw>();
   @$core.pragma('dart2js:noInline')
   static TxRaw getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TxRaw>(create);
-  static TxRaw _defaultInstance;
+  static TxRaw? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<$core.int> get bodyBytes => $_getN(0);
@@ -136,7 +161,27 @@ class SignDoc extends $pb.GeneratedMessage {
   ;
 
   SignDoc._() : super();
-  factory SignDoc() => create();
+  factory SignDoc({
+    $core.List<$core.int>? bodyBytes,
+    $core.List<$core.int>? authInfoBytes,
+    $core.String? chainId,
+    $fixnum.Int64? accountNumber,
+  }) {
+    final _result = create();
+    if (bodyBytes != null) {
+      _result.bodyBytes = bodyBytes;
+    }
+    if (authInfoBytes != null) {
+      _result.authInfoBytes = authInfoBytes;
+    }
+    if (chainId != null) {
+      _result.chainId = chainId;
+    }
+    if (accountNumber != null) {
+      _result.accountNumber = accountNumber;
+    }
+    return _result;
+  }
   factory SignDoc.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SignDoc.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -148,7 +193,7 @@ class SignDoc extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SignDoc copyWith(void Function(SignDoc) updates) => super.copyWith((message) => updates(message as SignDoc)); // ignore: deprecated_member_use
+  SignDoc copyWith(void Function(SignDoc) updates) => super.copyWith((message) => updates(message as SignDoc)) as SignDoc; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static SignDoc create() => SignDoc._();
@@ -156,7 +201,7 @@ class SignDoc extends $pb.GeneratedMessage {
   static $pb.PbList<SignDoc> createRepeated() => $pb.PbList<SignDoc>();
   @$core.pragma('dart2js:noInline')
   static SignDoc getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SignDoc>(create);
-  static SignDoc _defaultInstance;
+  static SignDoc? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<$core.int> get bodyBytes => $_getN(0);
@@ -206,7 +251,31 @@ class TxBody extends $pb.GeneratedMessage {
   ;
 
   TxBody._() : super();
-  factory TxBody() => create();
+  factory TxBody({
+    $core.Iterable<$2.Any>? messages,
+    $core.String? memo,
+    $fixnum.Int64? timeoutHeight,
+    $core.Iterable<$2.Any>? extensionOptions,
+    $core.Iterable<$2.Any>? nonCriticalExtensionOptions,
+  }) {
+    final _result = create();
+    if (messages != null) {
+      _result.messages.addAll(messages);
+    }
+    if (memo != null) {
+      _result.memo = memo;
+    }
+    if (timeoutHeight != null) {
+      _result.timeoutHeight = timeoutHeight;
+    }
+    if (extensionOptions != null) {
+      _result.extensionOptions.addAll(extensionOptions);
+    }
+    if (nonCriticalExtensionOptions != null) {
+      _result.nonCriticalExtensionOptions.addAll(nonCriticalExtensionOptions);
+    }
+    return _result;
+  }
   factory TxBody.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TxBody.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -218,7 +287,7 @@ class TxBody extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  TxBody copyWith(void Function(TxBody) updates) => super.copyWith((message) => updates(message as TxBody)); // ignore: deprecated_member_use
+  TxBody copyWith(void Function(TxBody) updates) => super.copyWith((message) => updates(message as TxBody)) as TxBody; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static TxBody create() => TxBody._();
@@ -226,7 +295,7 @@ class TxBody extends $pb.GeneratedMessage {
   static $pb.PbList<TxBody> createRepeated() => $pb.PbList<TxBody>();
   @$core.pragma('dart2js:noInline')
   static TxBody getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TxBody>(create);
-  static TxBody _defaultInstance;
+  static TxBody? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<$2.Any> get messages => $_getList(0);
@@ -264,7 +333,19 @@ class AuthInfo extends $pb.GeneratedMessage {
   ;
 
   AuthInfo._() : super();
-  factory AuthInfo() => create();
+  factory AuthInfo({
+    $core.Iterable<SignerInfo>? signerInfos,
+    Fee? fee,
+  }) {
+    final _result = create();
+    if (signerInfos != null) {
+      _result.signerInfos.addAll(signerInfos);
+    }
+    if (fee != null) {
+      _result.fee = fee;
+    }
+    return _result;
+  }
   factory AuthInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory AuthInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -276,7 +357,7 @@ class AuthInfo extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  AuthInfo copyWith(void Function(AuthInfo) updates) => super.copyWith((message) => updates(message as AuthInfo)); // ignore: deprecated_member_use
+  AuthInfo copyWith(void Function(AuthInfo) updates) => super.copyWith((message) => updates(message as AuthInfo)) as AuthInfo; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static AuthInfo create() => AuthInfo._();
@@ -284,7 +365,7 @@ class AuthInfo extends $pb.GeneratedMessage {
   static $pb.PbList<AuthInfo> createRepeated() => $pb.PbList<AuthInfo>();
   @$core.pragma('dart2js:noInline')
   static AuthInfo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AuthInfo>(create);
-  static AuthInfo _defaultInstance;
+  static AuthInfo? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<SignerInfo> get signerInfos => $_getList(0);
@@ -310,7 +391,23 @@ class SignerInfo extends $pb.GeneratedMessage {
   ;
 
   SignerInfo._() : super();
-  factory SignerInfo() => create();
+  factory SignerInfo({
+    $2.Any? publicKey,
+    ModeInfo? modeInfo,
+    $fixnum.Int64? sequence,
+  }) {
+    final _result = create();
+    if (publicKey != null) {
+      _result.publicKey = publicKey;
+    }
+    if (modeInfo != null) {
+      _result.modeInfo = modeInfo;
+    }
+    if (sequence != null) {
+      _result.sequence = sequence;
+    }
+    return _result;
+  }
   factory SignerInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SignerInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -322,7 +419,7 @@ class SignerInfo extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SignerInfo copyWith(void Function(SignerInfo) updates) => super.copyWith((message) => updates(message as SignerInfo)); // ignore: deprecated_member_use
+  SignerInfo copyWith(void Function(SignerInfo) updates) => super.copyWith((message) => updates(message as SignerInfo)) as SignerInfo; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static SignerInfo create() => SignerInfo._();
@@ -330,7 +427,7 @@ class SignerInfo extends $pb.GeneratedMessage {
   static $pb.PbList<SignerInfo> createRepeated() => $pb.PbList<SignerInfo>();
   @$core.pragma('dart2js:noInline')
   static SignerInfo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SignerInfo>(create);
-  static SignerInfo _defaultInstance;
+  static SignerInfo? _defaultInstance;
 
   @$pb.TagNumber(1)
   $2.Any get publicKey => $_getN(0);
@@ -371,7 +468,15 @@ class ModeInfo_Single extends $pb.GeneratedMessage {
   ;
 
   ModeInfo_Single._() : super();
-  factory ModeInfo_Single() => create();
+  factory ModeInfo_Single({
+    $5.SignMode? mode,
+  }) {
+    final _result = create();
+    if (mode != null) {
+      _result.mode = mode;
+    }
+    return _result;
+  }
   factory ModeInfo_Single.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ModeInfo_Single.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -383,7 +488,7 @@ class ModeInfo_Single extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ModeInfo_Single copyWith(void Function(ModeInfo_Single) updates) => super.copyWith((message) => updates(message as ModeInfo_Single)); // ignore: deprecated_member_use
+  ModeInfo_Single copyWith(void Function(ModeInfo_Single) updates) => super.copyWith((message) => updates(message as ModeInfo_Single)) as ModeInfo_Single; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static ModeInfo_Single create() => ModeInfo_Single._();
@@ -391,7 +496,7 @@ class ModeInfo_Single extends $pb.GeneratedMessage {
   static $pb.PbList<ModeInfo_Single> createRepeated() => $pb.PbList<ModeInfo_Single>();
   @$core.pragma('dart2js:noInline')
   static ModeInfo_Single getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ModeInfo_Single>(create);
-  static ModeInfo_Single _defaultInstance;
+  static ModeInfo_Single? _defaultInstance;
 
   @$pb.TagNumber(1)
   $5.SignMode get mode => $_getN(0);
@@ -411,7 +516,19 @@ class ModeInfo_Multi extends $pb.GeneratedMessage {
   ;
 
   ModeInfo_Multi._() : super();
-  factory ModeInfo_Multi() => create();
+  factory ModeInfo_Multi({
+    $3.CompactBitArray? bitarray,
+    $core.Iterable<ModeInfo>? modeInfos,
+  }) {
+    final _result = create();
+    if (bitarray != null) {
+      _result.bitarray = bitarray;
+    }
+    if (modeInfos != null) {
+      _result.modeInfos.addAll(modeInfos);
+    }
+    return _result;
+  }
   factory ModeInfo_Multi.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ModeInfo_Multi.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -423,7 +540,7 @@ class ModeInfo_Multi extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ModeInfo_Multi copyWith(void Function(ModeInfo_Multi) updates) => super.copyWith((message) => updates(message as ModeInfo_Multi)); // ignore: deprecated_member_use
+  ModeInfo_Multi copyWith(void Function(ModeInfo_Multi) updates) => super.copyWith((message) => updates(message as ModeInfo_Multi)) as ModeInfo_Multi; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static ModeInfo_Multi create() => ModeInfo_Multi._();
@@ -431,7 +548,7 @@ class ModeInfo_Multi extends $pb.GeneratedMessage {
   static $pb.PbList<ModeInfo_Multi> createRepeated() => $pb.PbList<ModeInfo_Multi>();
   @$core.pragma('dart2js:noInline')
   static ModeInfo_Multi getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ModeInfo_Multi>(create);
-  static ModeInfo_Multi _defaultInstance;
+  static ModeInfo_Multi? _defaultInstance;
 
   @$pb.TagNumber(1)
   $3.CompactBitArray get bitarray => $_getN(0);
@@ -449,8 +566,8 @@ class ModeInfo_Multi extends $pb.GeneratedMessage {
 }
 
 enum ModeInfo_Sum {
-  single, 
-  multi, 
+  single,
+  multi,
   notSet
 }
 
@@ -468,7 +585,19 @@ class ModeInfo extends $pb.GeneratedMessage {
   ;
 
   ModeInfo._() : super();
-  factory ModeInfo() => create();
+  factory ModeInfo({
+    ModeInfo_Single? single,
+    ModeInfo_Multi? multi,
+  }) {
+    final _result = create();
+    if (single != null) {
+      _result.single = single;
+    }
+    if (multi != null) {
+      _result.multi = multi;
+    }
+    return _result;
+  }
   factory ModeInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ModeInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -480,7 +609,7 @@ class ModeInfo extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ModeInfo copyWith(void Function(ModeInfo) updates) => super.copyWith((message) => updates(message as ModeInfo)); // ignore: deprecated_member_use
+  ModeInfo copyWith(void Function(ModeInfo) updates) => super.copyWith((message) => updates(message as ModeInfo)) as ModeInfo; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static ModeInfo create() => ModeInfo._();
@@ -488,9 +617,9 @@ class ModeInfo extends $pb.GeneratedMessage {
   static $pb.PbList<ModeInfo> createRepeated() => $pb.PbList<ModeInfo>();
   @$core.pragma('dart2js:noInline')
   static ModeInfo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ModeInfo>(create);
-  static ModeInfo _defaultInstance;
+  static ModeInfo? _defaultInstance;
 
-  ModeInfo_Sum whichSum() => _ModeInfo_SumByTag[$_whichOneof(0)];
+  ModeInfo_Sum whichSum() => _ModeInfo_SumByTag[$_whichOneof(0)]!;
   void clearSum() => clearField($_whichOneof(0));
 
   @$pb.TagNumber(1)
@@ -526,7 +655,27 @@ class Fee extends $pb.GeneratedMessage {
   ;
 
   Fee._() : super();
-  factory Fee() => create();
+  factory Fee({
+    $core.Iterable<$4.Coin>? amount,
+    $fixnum.Int64? gasLimit,
+    $core.String? payer,
+    $core.String? granter,
+  }) {
+    final _result = create();
+    if (amount != null) {
+      _result.amount.addAll(amount);
+    }
+    if (gasLimit != null) {
+      _result.gasLimit = gasLimit;
+    }
+    if (payer != null) {
+      _result.payer = payer;
+    }
+    if (granter != null) {
+      _result.granter = granter;
+    }
+    return _result;
+  }
   factory Fee.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Fee.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -538,7 +687,7 @@ class Fee extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Fee copyWith(void Function(Fee) updates) => super.copyWith((message) => updates(message as Fee)); // ignore: deprecated_member_use
+  Fee copyWith(void Function(Fee) updates) => super.copyWith((message) => updates(message as Fee)) as Fee; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static Fee create() => Fee._();
@@ -546,7 +695,7 @@ class Fee extends $pb.GeneratedMessage {
   static $pb.PbList<Fee> createRepeated() => $pb.PbList<Fee>();
   @$core.pragma('dart2js:noInline')
   static Fee getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Fee>(create);
-  static Fee _defaultInstance;
+  static Fee? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<$4.Coin> get amount => $_getList(0);

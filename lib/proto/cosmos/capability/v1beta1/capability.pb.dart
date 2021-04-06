@@ -1,10 +1,4 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/capability/v1beta1/capability.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
 import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
@@ -17,7 +11,15 @@ class Capability extends $pb.GeneratedMessage {
   ;
 
   Capability._() : super();
-  factory Capability() => create();
+  factory Capability({
+    $fixnum.Int64? index,
+  }) {
+    final _result = create();
+    if (index != null) {
+      _result.index = index;
+    }
+    return _result;
+  }
   factory Capability.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Capability.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -29,7 +31,7 @@ class Capability extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Capability copyWith(void Function(Capability) updates) => super.copyWith((message) => updates(message as Capability)); // ignore: deprecated_member_use
+  Capability copyWith(void Function(Capability) updates) => super.copyWith((message) => updates(message as Capability)) as Capability; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static Capability create() => Capability._();
@@ -37,7 +39,7 @@ class Capability extends $pb.GeneratedMessage {
   static $pb.PbList<Capability> createRepeated() => $pb.PbList<Capability>();
   @$core.pragma('dart2js:noInline')
   static Capability getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Capability>(create);
-  static Capability _defaultInstance;
+  static Capability? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get index => $_getI64(0);
@@ -57,7 +59,19 @@ class Owner extends $pb.GeneratedMessage {
   ;
 
   Owner._() : super();
-  factory Owner() => create();
+  factory Owner({
+    $core.String? module,
+    $core.String? name,
+  }) {
+    final _result = create();
+    if (module != null) {
+      _result.module = module;
+    }
+    if (name != null) {
+      _result.name = name;
+    }
+    return _result;
+  }
   factory Owner.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Owner.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -69,7 +83,7 @@ class Owner extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Owner copyWith(void Function(Owner) updates) => super.copyWith((message) => updates(message as Owner)); // ignore: deprecated_member_use
+  Owner copyWith(void Function(Owner) updates) => super.copyWith((message) => updates(message as Owner)) as Owner; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static Owner create() => Owner._();
@@ -77,7 +91,7 @@ class Owner extends $pb.GeneratedMessage {
   static $pb.PbList<Owner> createRepeated() => $pb.PbList<Owner>();
   @$core.pragma('dart2js:noInline')
   static Owner getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Owner>(create);
-  static Owner _defaultInstance;
+  static Owner? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get module => $_getSZ(0);
@@ -105,7 +119,15 @@ class CapabilityOwners extends $pb.GeneratedMessage {
   ;
 
   CapabilityOwners._() : super();
-  factory CapabilityOwners() => create();
+  factory CapabilityOwners({
+    $core.Iterable<Owner>? owners,
+  }) {
+    final _result = create();
+    if (owners != null) {
+      _result.owners.addAll(owners);
+    }
+    return _result;
+  }
   factory CapabilityOwners.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CapabilityOwners.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -117,7 +139,7 @@ class CapabilityOwners extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  CapabilityOwners copyWith(void Function(CapabilityOwners) updates) => super.copyWith((message) => updates(message as CapabilityOwners)); // ignore: deprecated_member_use
+  CapabilityOwners copyWith(void Function(CapabilityOwners) updates) => super.copyWith((message) => updates(message as CapabilityOwners)) as CapabilityOwners; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static CapabilityOwners create() => CapabilityOwners._();
@@ -125,7 +147,7 @@ class CapabilityOwners extends $pb.GeneratedMessage {
   static $pb.PbList<CapabilityOwners> createRepeated() => $pb.PbList<CapabilityOwners>();
   @$core.pragma('dart2js:noInline')
   static CapabilityOwners getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CapabilityOwners>(create);
-  static CapabilityOwners _defaultInstance;
+  static CapabilityOwners? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<Owner> get owners => $_getList(0);

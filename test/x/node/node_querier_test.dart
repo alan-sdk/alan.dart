@@ -6,8 +6,8 @@ import 'package:mock_web_server/mock_web_server.dart';
 import 'package:test/test.dart';
 
 void main() {
-  MockWebServer server;
-  NodeQuerier querier;
+  late MockWebServer server;
+  late NodeQuerier querier;
 
   setUpAll(() {
     server = MockWebServer();

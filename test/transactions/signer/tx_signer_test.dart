@@ -1,23 +1,21 @@
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:alan/alan.dart';
 import 'package:alan/proto/cosmos/auth/v1beta1/export.dart' as auth;
 import 'package:alan/proto/cosmos/bank/v1beta1/export.dart' as bank;
-import 'package:convert/convert.dart';
 import 'package:fixnum/fixnum.dart' as fixnum;
+import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
 
-class MockAuthQuerier extends Mock implements AuthQuerier {}
+import 'tx_signer_test.mocks.dart';
 
-class MockNodeQuerier extends Mock implements NodeQuerier {}
-
+@GenerateMocks([AuthQuerier, NodeQuerier])
 void main() {
-  AuthQuerier authQuerier;
-  NodeQuerier nodeQuerier;
+  late AuthQuerier authQuerier;
+  late NodeQuerier nodeQuerier;
 
-  TxSigner signer;
+  late TxSigner signer;
 
   setUp(() {
     authQuerier = MockAuthQuerier();
@@ -54,7 +52,8 @@ void main() {
   ];
 
   test('Tx with fees is created and signed correctly', () async {
-    when(authQuerier.getAccountData(any)).thenAnswer((_) {
+    final addr = 'cosmos1hafptm4zxy5nw8rd2pxyg83c5ls2v62tstzuv2';
+    when(authQuerier.getAccountData(addr)).thenAnswer((_) {
       final account = auth.BaseAccount()
         ..address = 'cosmos1hafptm4zxy5nw8rd2pxyg83c5ls2v62tstzuv2'
         ..sequence = fixnum.Int64(0)
@@ -62,7 +61,7 @@ void main() {
       return Future.value(BaseAccount(account));
     });
 
-    when(nodeQuerier.getNodeInfo(any)).thenAnswer((_) {
+    when(nodeQuerier.getNodeInfo(networkInfo.lcdEndpoint)).thenAnswer((_) {
       return Future.value(NodeInfo(network: 'cosmos-hub2'));
     });
 
@@ -103,7 +102,8 @@ void main() {
   });
 
   test('Tx is created and signed correctly with existing account', () async {
-    when(authQuerier.getAccountData(any)).thenAnswer((_) {
+    final addr = 'cosmos1hafptm4zxy5nw8rd2pxyg83c5ls2v62tstzuv2';
+    when(authQuerier.getAccountData(addr)).thenAnswer((_) {
       final account = auth.BaseAccount()
         ..address = 'cosmos1hafptm4zxy5nw8rd2pxyg83c5ls2v62tstzuv2'
         ..sequence = fixnum.Int64(1)
@@ -111,7 +111,7 @@ void main() {
       return Future.value(BaseAccount(account));
     });
 
-    when(nodeQuerier.getNodeInfo(any)).thenAnswer((_) {
+    when(nodeQuerier.getNodeInfo(networkInfo.lcdEndpoint)).thenAnswer((_) {
       return Future.value(NodeInfo(network: 'testchain'));
     });
 

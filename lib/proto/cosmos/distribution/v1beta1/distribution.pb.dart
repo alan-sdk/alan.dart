@@ -1,10 +1,4 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/distribution/v1beta1/distribution.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
 import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
@@ -22,7 +16,27 @@ class Params extends $pb.GeneratedMessage {
   ;
 
   Params._() : super();
-  factory Params() => create();
+  factory Params({
+    $core.String? communityTax,
+    $core.String? baseProposerReward,
+    $core.String? bonusProposerReward,
+    $core.bool? withdrawAddrEnabled,
+  }) {
+    final _result = create();
+    if (communityTax != null) {
+      _result.communityTax = communityTax;
+    }
+    if (baseProposerReward != null) {
+      _result.baseProposerReward = baseProposerReward;
+    }
+    if (bonusProposerReward != null) {
+      _result.bonusProposerReward = bonusProposerReward;
+    }
+    if (withdrawAddrEnabled != null) {
+      _result.withdrawAddrEnabled = withdrawAddrEnabled;
+    }
+    return _result;
+  }
   factory Params.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Params.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -34,7 +48,7 @@ class Params extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Params copyWith(void Function(Params) updates) => super.copyWith((message) => updates(message as Params)); // ignore: deprecated_member_use
+  Params copyWith(void Function(Params) updates) => super.copyWith((message) => updates(message as Params)) as Params; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static Params create() => Params._();
@@ -42,7 +56,7 @@ class Params extends $pb.GeneratedMessage {
   static $pb.PbList<Params> createRepeated() => $pb.PbList<Params>();
   @$core.pragma('dart2js:noInline')
   static Params getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Params>(create);
-  static Params _defaultInstance;
+  static Params? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get communityTax => $_getSZ(0);
@@ -89,7 +103,19 @@ class ValidatorHistoricalRewards extends $pb.GeneratedMessage {
   ;
 
   ValidatorHistoricalRewards._() : super();
-  factory ValidatorHistoricalRewards() => create();
+  factory ValidatorHistoricalRewards({
+    $core.Iterable<$2.DecCoin>? cumulativeRewardRatio,
+    $core.int? referenceCount,
+  }) {
+    final _result = create();
+    if (cumulativeRewardRatio != null) {
+      _result.cumulativeRewardRatio.addAll(cumulativeRewardRatio);
+    }
+    if (referenceCount != null) {
+      _result.referenceCount = referenceCount;
+    }
+    return _result;
+  }
   factory ValidatorHistoricalRewards.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ValidatorHistoricalRewards.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -101,7 +127,7 @@ class ValidatorHistoricalRewards extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ValidatorHistoricalRewards copyWith(void Function(ValidatorHistoricalRewards) updates) => super.copyWith((message) => updates(message as ValidatorHistoricalRewards)); // ignore: deprecated_member_use
+  ValidatorHistoricalRewards copyWith(void Function(ValidatorHistoricalRewards) updates) => super.copyWith((message) => updates(message as ValidatorHistoricalRewards)) as ValidatorHistoricalRewards; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static ValidatorHistoricalRewards create() => ValidatorHistoricalRewards._();
@@ -109,7 +135,7 @@ class ValidatorHistoricalRewards extends $pb.GeneratedMessage {
   static $pb.PbList<ValidatorHistoricalRewards> createRepeated() => $pb.PbList<ValidatorHistoricalRewards>();
   @$core.pragma('dart2js:noInline')
   static ValidatorHistoricalRewards getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ValidatorHistoricalRewards>(create);
-  static ValidatorHistoricalRewards _defaultInstance;
+  static ValidatorHistoricalRewards? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<$2.DecCoin> get cumulativeRewardRatio => $_getList(0);
@@ -132,7 +158,19 @@ class ValidatorCurrentRewards extends $pb.GeneratedMessage {
   ;
 
   ValidatorCurrentRewards._() : super();
-  factory ValidatorCurrentRewards() => create();
+  factory ValidatorCurrentRewards({
+    $core.Iterable<$2.DecCoin>? rewards,
+    $fixnum.Int64? period,
+  }) {
+    final _result = create();
+    if (rewards != null) {
+      _result.rewards.addAll(rewards);
+    }
+    if (period != null) {
+      _result.period = period;
+    }
+    return _result;
+  }
   factory ValidatorCurrentRewards.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ValidatorCurrentRewards.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -144,7 +182,7 @@ class ValidatorCurrentRewards extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ValidatorCurrentRewards copyWith(void Function(ValidatorCurrentRewards) updates) => super.copyWith((message) => updates(message as ValidatorCurrentRewards)); // ignore: deprecated_member_use
+  ValidatorCurrentRewards copyWith(void Function(ValidatorCurrentRewards) updates) => super.copyWith((message) => updates(message as ValidatorCurrentRewards)) as ValidatorCurrentRewards; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static ValidatorCurrentRewards create() => ValidatorCurrentRewards._();
@@ -152,7 +190,7 @@ class ValidatorCurrentRewards extends $pb.GeneratedMessage {
   static $pb.PbList<ValidatorCurrentRewards> createRepeated() => $pb.PbList<ValidatorCurrentRewards>();
   @$core.pragma('dart2js:noInline')
   static ValidatorCurrentRewards getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ValidatorCurrentRewards>(create);
-  static ValidatorCurrentRewards _defaultInstance;
+  static ValidatorCurrentRewards? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<$2.DecCoin> get rewards => $_getList(0);
@@ -174,7 +212,15 @@ class ValidatorAccumulatedCommission extends $pb.GeneratedMessage {
   ;
 
   ValidatorAccumulatedCommission._() : super();
-  factory ValidatorAccumulatedCommission() => create();
+  factory ValidatorAccumulatedCommission({
+    $core.Iterable<$2.DecCoin>? commission,
+  }) {
+    final _result = create();
+    if (commission != null) {
+      _result.commission.addAll(commission);
+    }
+    return _result;
+  }
   factory ValidatorAccumulatedCommission.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ValidatorAccumulatedCommission.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -186,7 +232,7 @@ class ValidatorAccumulatedCommission extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ValidatorAccumulatedCommission copyWith(void Function(ValidatorAccumulatedCommission) updates) => super.copyWith((message) => updates(message as ValidatorAccumulatedCommission)); // ignore: deprecated_member_use
+  ValidatorAccumulatedCommission copyWith(void Function(ValidatorAccumulatedCommission) updates) => super.copyWith((message) => updates(message as ValidatorAccumulatedCommission)) as ValidatorAccumulatedCommission; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static ValidatorAccumulatedCommission create() => ValidatorAccumulatedCommission._();
@@ -194,7 +240,7 @@ class ValidatorAccumulatedCommission extends $pb.GeneratedMessage {
   static $pb.PbList<ValidatorAccumulatedCommission> createRepeated() => $pb.PbList<ValidatorAccumulatedCommission>();
   @$core.pragma('dart2js:noInline')
   static ValidatorAccumulatedCommission getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ValidatorAccumulatedCommission>(create);
-  static ValidatorAccumulatedCommission _defaultInstance;
+  static ValidatorAccumulatedCommission? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<$2.DecCoin> get commission => $_getList(0);
@@ -207,7 +253,15 @@ class ValidatorOutstandingRewards extends $pb.GeneratedMessage {
   ;
 
   ValidatorOutstandingRewards._() : super();
-  factory ValidatorOutstandingRewards() => create();
+  factory ValidatorOutstandingRewards({
+    $core.Iterable<$2.DecCoin>? rewards,
+  }) {
+    final _result = create();
+    if (rewards != null) {
+      _result.rewards.addAll(rewards);
+    }
+    return _result;
+  }
   factory ValidatorOutstandingRewards.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ValidatorOutstandingRewards.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -219,7 +273,7 @@ class ValidatorOutstandingRewards extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ValidatorOutstandingRewards copyWith(void Function(ValidatorOutstandingRewards) updates) => super.copyWith((message) => updates(message as ValidatorOutstandingRewards)); // ignore: deprecated_member_use
+  ValidatorOutstandingRewards copyWith(void Function(ValidatorOutstandingRewards) updates) => super.copyWith((message) => updates(message as ValidatorOutstandingRewards)) as ValidatorOutstandingRewards; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static ValidatorOutstandingRewards create() => ValidatorOutstandingRewards._();
@@ -227,7 +281,7 @@ class ValidatorOutstandingRewards extends $pb.GeneratedMessage {
   static $pb.PbList<ValidatorOutstandingRewards> createRepeated() => $pb.PbList<ValidatorOutstandingRewards>();
   @$core.pragma('dart2js:noInline')
   static ValidatorOutstandingRewards getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ValidatorOutstandingRewards>(create);
-  static ValidatorOutstandingRewards _defaultInstance;
+  static ValidatorOutstandingRewards? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<$2.DecCoin> get rewards => $_getList(0);
@@ -241,7 +295,19 @@ class ValidatorSlashEvent extends $pb.GeneratedMessage {
   ;
 
   ValidatorSlashEvent._() : super();
-  factory ValidatorSlashEvent() => create();
+  factory ValidatorSlashEvent({
+    $fixnum.Int64? validatorPeriod,
+    $core.String? fraction,
+  }) {
+    final _result = create();
+    if (validatorPeriod != null) {
+      _result.validatorPeriod = validatorPeriod;
+    }
+    if (fraction != null) {
+      _result.fraction = fraction;
+    }
+    return _result;
+  }
   factory ValidatorSlashEvent.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ValidatorSlashEvent.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -253,7 +319,7 @@ class ValidatorSlashEvent extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ValidatorSlashEvent copyWith(void Function(ValidatorSlashEvent) updates) => super.copyWith((message) => updates(message as ValidatorSlashEvent)); // ignore: deprecated_member_use
+  ValidatorSlashEvent copyWith(void Function(ValidatorSlashEvent) updates) => super.copyWith((message) => updates(message as ValidatorSlashEvent)) as ValidatorSlashEvent; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static ValidatorSlashEvent create() => ValidatorSlashEvent._();
@@ -261,7 +327,7 @@ class ValidatorSlashEvent extends $pb.GeneratedMessage {
   static $pb.PbList<ValidatorSlashEvent> createRepeated() => $pb.PbList<ValidatorSlashEvent>();
   @$core.pragma('dart2js:noInline')
   static ValidatorSlashEvent getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ValidatorSlashEvent>(create);
-  static ValidatorSlashEvent _defaultInstance;
+  static ValidatorSlashEvent? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get validatorPeriod => $_getI64(0);
@@ -289,7 +355,15 @@ class ValidatorSlashEvents extends $pb.GeneratedMessage {
   ;
 
   ValidatorSlashEvents._() : super();
-  factory ValidatorSlashEvents() => create();
+  factory ValidatorSlashEvents({
+    $core.Iterable<ValidatorSlashEvent>? validatorSlashEvents,
+  }) {
+    final _result = create();
+    if (validatorSlashEvents != null) {
+      _result.validatorSlashEvents.addAll(validatorSlashEvents);
+    }
+    return _result;
+  }
   factory ValidatorSlashEvents.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ValidatorSlashEvents.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -301,7 +375,7 @@ class ValidatorSlashEvents extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ValidatorSlashEvents copyWith(void Function(ValidatorSlashEvents) updates) => super.copyWith((message) => updates(message as ValidatorSlashEvents)); // ignore: deprecated_member_use
+  ValidatorSlashEvents copyWith(void Function(ValidatorSlashEvents) updates) => super.copyWith((message) => updates(message as ValidatorSlashEvents)) as ValidatorSlashEvents; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static ValidatorSlashEvents create() => ValidatorSlashEvents._();
@@ -309,7 +383,7 @@ class ValidatorSlashEvents extends $pb.GeneratedMessage {
   static $pb.PbList<ValidatorSlashEvents> createRepeated() => $pb.PbList<ValidatorSlashEvents>();
   @$core.pragma('dart2js:noInline')
   static ValidatorSlashEvents getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ValidatorSlashEvents>(create);
-  static ValidatorSlashEvents _defaultInstance;
+  static ValidatorSlashEvents? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<ValidatorSlashEvent> get validatorSlashEvents => $_getList(0);
@@ -322,7 +396,15 @@ class FeePool extends $pb.GeneratedMessage {
   ;
 
   FeePool._() : super();
-  factory FeePool() => create();
+  factory FeePool({
+    $core.Iterable<$2.DecCoin>? communityPool,
+  }) {
+    final _result = create();
+    if (communityPool != null) {
+      _result.communityPool.addAll(communityPool);
+    }
+    return _result;
+  }
   factory FeePool.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory FeePool.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -334,7 +416,7 @@ class FeePool extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  FeePool copyWith(void Function(FeePool) updates) => super.copyWith((message) => updates(message as FeePool)); // ignore: deprecated_member_use
+  FeePool copyWith(void Function(FeePool) updates) => super.copyWith((message) => updates(message as FeePool)) as FeePool; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static FeePool create() => FeePool._();
@@ -342,7 +424,7 @@ class FeePool extends $pb.GeneratedMessage {
   static $pb.PbList<FeePool> createRepeated() => $pb.PbList<FeePool>();
   @$core.pragma('dart2js:noInline')
   static FeePool getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<FeePool>(create);
-  static FeePool _defaultInstance;
+  static FeePool? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<$2.DecCoin> get communityPool => $_getList(0);
@@ -358,7 +440,27 @@ class CommunityPoolSpendProposal extends $pb.GeneratedMessage {
   ;
 
   CommunityPoolSpendProposal._() : super();
-  factory CommunityPoolSpendProposal() => create();
+  factory CommunityPoolSpendProposal({
+    $core.String? title,
+    $core.String? description,
+    $core.String? recipient,
+    $core.Iterable<$2.Coin>? amount,
+  }) {
+    final _result = create();
+    if (title != null) {
+      _result.title = title;
+    }
+    if (description != null) {
+      _result.description = description;
+    }
+    if (recipient != null) {
+      _result.recipient = recipient;
+    }
+    if (amount != null) {
+      _result.amount.addAll(amount);
+    }
+    return _result;
+  }
   factory CommunityPoolSpendProposal.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CommunityPoolSpendProposal.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -370,7 +472,7 @@ class CommunityPoolSpendProposal extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  CommunityPoolSpendProposal copyWith(void Function(CommunityPoolSpendProposal) updates) => super.copyWith((message) => updates(message as CommunityPoolSpendProposal)); // ignore: deprecated_member_use
+  CommunityPoolSpendProposal copyWith(void Function(CommunityPoolSpendProposal) updates) => super.copyWith((message) => updates(message as CommunityPoolSpendProposal)) as CommunityPoolSpendProposal; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static CommunityPoolSpendProposal create() => CommunityPoolSpendProposal._();
@@ -378,7 +480,7 @@ class CommunityPoolSpendProposal extends $pb.GeneratedMessage {
   static $pb.PbList<CommunityPoolSpendProposal> createRepeated() => $pb.PbList<CommunityPoolSpendProposal>();
   @$core.pragma('dart2js:noInline')
   static CommunityPoolSpendProposal getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CommunityPoolSpendProposal>(create);
-  static CommunityPoolSpendProposal _defaultInstance;
+  static CommunityPoolSpendProposal? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get title => $_getSZ(0);
@@ -420,7 +522,23 @@ class DelegatorStartingInfo extends $pb.GeneratedMessage {
   ;
 
   DelegatorStartingInfo._() : super();
-  factory DelegatorStartingInfo() => create();
+  factory DelegatorStartingInfo({
+    $fixnum.Int64? previousPeriod,
+    $core.String? stake,
+    $fixnum.Int64? height,
+  }) {
+    final _result = create();
+    if (previousPeriod != null) {
+      _result.previousPeriod = previousPeriod;
+    }
+    if (stake != null) {
+      _result.stake = stake;
+    }
+    if (height != null) {
+      _result.height = height;
+    }
+    return _result;
+  }
   factory DelegatorStartingInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DelegatorStartingInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -432,7 +550,7 @@ class DelegatorStartingInfo extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  DelegatorStartingInfo copyWith(void Function(DelegatorStartingInfo) updates) => super.copyWith((message) => updates(message as DelegatorStartingInfo)); // ignore: deprecated_member_use
+  DelegatorStartingInfo copyWith(void Function(DelegatorStartingInfo) updates) => super.copyWith((message) => updates(message as DelegatorStartingInfo)) as DelegatorStartingInfo; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static DelegatorStartingInfo create() => DelegatorStartingInfo._();
@@ -440,7 +558,7 @@ class DelegatorStartingInfo extends $pb.GeneratedMessage {
   static $pb.PbList<DelegatorStartingInfo> createRepeated() => $pb.PbList<DelegatorStartingInfo>();
   @$core.pragma('dart2js:noInline')
   static DelegatorStartingInfo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DelegatorStartingInfo>(create);
-  static DelegatorStartingInfo _defaultInstance;
+  static DelegatorStartingInfo? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get previousPeriod => $_getI64(0);
@@ -478,7 +596,19 @@ class DelegationDelegatorReward extends $pb.GeneratedMessage {
   ;
 
   DelegationDelegatorReward._() : super();
-  factory DelegationDelegatorReward() => create();
+  factory DelegationDelegatorReward({
+    $core.String? validatorAddress,
+    $core.Iterable<$2.DecCoin>? reward,
+  }) {
+    final _result = create();
+    if (validatorAddress != null) {
+      _result.validatorAddress = validatorAddress;
+    }
+    if (reward != null) {
+      _result.reward.addAll(reward);
+    }
+    return _result;
+  }
   factory DelegationDelegatorReward.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DelegationDelegatorReward.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -490,7 +620,7 @@ class DelegationDelegatorReward extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  DelegationDelegatorReward copyWith(void Function(DelegationDelegatorReward) updates) => super.copyWith((message) => updates(message as DelegationDelegatorReward)); // ignore: deprecated_member_use
+  DelegationDelegatorReward copyWith(void Function(DelegationDelegatorReward) updates) => super.copyWith((message) => updates(message as DelegationDelegatorReward)) as DelegationDelegatorReward; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static DelegationDelegatorReward create() => DelegationDelegatorReward._();
@@ -498,7 +628,7 @@ class DelegationDelegatorReward extends $pb.GeneratedMessage {
   static $pb.PbList<DelegationDelegatorReward> createRepeated() => $pb.PbList<DelegationDelegatorReward>();
   @$core.pragma('dart2js:noInline')
   static DelegationDelegatorReward getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DelegationDelegatorReward>(create);
-  static DelegationDelegatorReward _defaultInstance;
+  static DelegationDelegatorReward? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get validatorAddress => $_getSZ(0);
@@ -524,7 +654,31 @@ class CommunityPoolSpendProposalWithDeposit extends $pb.GeneratedMessage {
   ;
 
   CommunityPoolSpendProposalWithDeposit._() : super();
-  factory CommunityPoolSpendProposalWithDeposit() => create();
+  factory CommunityPoolSpendProposalWithDeposit({
+    $core.String? title,
+    $core.String? description,
+    $core.String? recipient,
+    $core.String? amount,
+    $core.String? deposit,
+  }) {
+    final _result = create();
+    if (title != null) {
+      _result.title = title;
+    }
+    if (description != null) {
+      _result.description = description;
+    }
+    if (recipient != null) {
+      _result.recipient = recipient;
+    }
+    if (amount != null) {
+      _result.amount = amount;
+    }
+    if (deposit != null) {
+      _result.deposit = deposit;
+    }
+    return _result;
+  }
   factory CommunityPoolSpendProposalWithDeposit.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CommunityPoolSpendProposalWithDeposit.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -536,7 +690,7 @@ class CommunityPoolSpendProposalWithDeposit extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  CommunityPoolSpendProposalWithDeposit copyWith(void Function(CommunityPoolSpendProposalWithDeposit) updates) => super.copyWith((message) => updates(message as CommunityPoolSpendProposalWithDeposit)); // ignore: deprecated_member_use
+  CommunityPoolSpendProposalWithDeposit copyWith(void Function(CommunityPoolSpendProposalWithDeposit) updates) => super.copyWith((message) => updates(message as CommunityPoolSpendProposalWithDeposit)) as CommunityPoolSpendProposalWithDeposit; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static CommunityPoolSpendProposalWithDeposit create() => CommunityPoolSpendProposalWithDeposit._();
@@ -544,7 +698,7 @@ class CommunityPoolSpendProposalWithDeposit extends $pb.GeneratedMessage {
   static $pb.PbList<CommunityPoolSpendProposalWithDeposit> createRepeated() => $pb.PbList<CommunityPoolSpendProposalWithDeposit>();
   @$core.pragma('dart2js:noInline')
   static CommunityPoolSpendProposalWithDeposit getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CommunityPoolSpendProposalWithDeposit>(create);
-  static CommunityPoolSpendProposalWithDeposit _defaultInstance;
+  static CommunityPoolSpendProposalWithDeposit? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get title => $_getSZ(0);

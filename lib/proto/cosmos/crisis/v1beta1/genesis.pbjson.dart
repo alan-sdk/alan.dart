@@ -1,10 +1,8 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/crisis/v1beta1/genesis.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
+import 'dart:convert' as $convert;
+import 'dart:core' as $core;
+import 'dart:typed_data' as $typed_data;
+@$core.Deprecated('Use genesisStateDescriptor instead')
 const GenesisState$json = const {
   '1': 'GenesisState',
   '2': const [
@@ -12,3 +10,5 @@ const GenesisState$json = const {
   ],
 };
 
+/// Descriptor for `GenesisState`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List genesisStateDescriptor = $convert.base64Decode('CgxHZW5lc2lzU3RhdGUSWQoMY29uc3RhbnRfZmVlGAMgASgLMhkuY29zbW9zLmJhc2UudjFiZXRhMS5Db2luQhvI3h8A8t4fE3lhbWw6ImNvbnN0YW50X2ZlZSJSC2NvbnN0YW50RmVl');

@@ -1,10 +1,4 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/base/query/v1beta1/pagination.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
 import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
@@ -20,7 +14,27 @@ class PageRequest extends $pb.GeneratedMessage {
   ;
 
   PageRequest._() : super();
-  factory PageRequest() => create();
+  factory PageRequest({
+    $core.List<$core.int>? key,
+    $fixnum.Int64? offset,
+    $fixnum.Int64? limit,
+    $core.bool? countTotal,
+  }) {
+    final _result = create();
+    if (key != null) {
+      _result.key = key;
+    }
+    if (offset != null) {
+      _result.offset = offset;
+    }
+    if (limit != null) {
+      _result.limit = limit;
+    }
+    if (countTotal != null) {
+      _result.countTotal = countTotal;
+    }
+    return _result;
+  }
   factory PageRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PageRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -32,7 +46,7 @@ class PageRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  PageRequest copyWith(void Function(PageRequest) updates) => super.copyWith((message) => updates(message as PageRequest)); // ignore: deprecated_member_use
+  PageRequest copyWith(void Function(PageRequest) updates) => super.copyWith((message) => updates(message as PageRequest)) as PageRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static PageRequest create() => PageRequest._();
@@ -40,7 +54,7 @@ class PageRequest extends $pb.GeneratedMessage {
   static $pb.PbList<PageRequest> createRepeated() => $pb.PbList<PageRequest>();
   @$core.pragma('dart2js:noInline')
   static PageRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PageRequest>(create);
-  static PageRequest _defaultInstance;
+  static PageRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<$core.int> get key => $_getN(0);
@@ -87,7 +101,19 @@ class PageResponse extends $pb.GeneratedMessage {
   ;
 
   PageResponse._() : super();
-  factory PageResponse() => create();
+  factory PageResponse({
+    $core.List<$core.int>? nextKey,
+    $fixnum.Int64? total,
+  }) {
+    final _result = create();
+    if (nextKey != null) {
+      _result.nextKey = nextKey;
+    }
+    if (total != null) {
+      _result.total = total;
+    }
+    return _result;
+  }
   factory PageResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PageResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -99,7 +125,7 @@ class PageResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  PageResponse copyWith(void Function(PageResponse) updates) => super.copyWith((message) => updates(message as PageResponse)); // ignore: deprecated_member_use
+  PageResponse copyWith(void Function(PageResponse) updates) => super.copyWith((message) => updates(message as PageResponse)) as PageResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static PageResponse create() => PageResponse._();
@@ -107,7 +133,7 @@ class PageResponse extends $pb.GeneratedMessage {
   static $pb.PbList<PageResponse> createRepeated() => $pb.PbList<PageResponse>();
   @$core.pragma('dart2js:noInline')
   static PageResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PageResponse>(create);
-  static PageResponse _defaultInstance;
+  static PageResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<$core.int> get nextKey => $_getN(0);

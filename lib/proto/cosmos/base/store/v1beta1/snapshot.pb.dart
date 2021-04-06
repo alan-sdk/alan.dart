@@ -1,18 +1,12 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/base/store/v1beta1/snapshot.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
 import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 enum SnapshotItem_Item {
-  store, 
-  iavl, 
+  store,
+  iavl,
   notSet
 }
 
@@ -30,7 +24,19 @@ class SnapshotItem extends $pb.GeneratedMessage {
   ;
 
   SnapshotItem._() : super();
-  factory SnapshotItem() => create();
+  factory SnapshotItem({
+    SnapshotStoreItem? store,
+    SnapshotIAVLItem? iavl,
+  }) {
+    final _result = create();
+    if (store != null) {
+      _result.store = store;
+    }
+    if (iavl != null) {
+      _result.iavl = iavl;
+    }
+    return _result;
+  }
   factory SnapshotItem.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SnapshotItem.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -42,7 +48,7 @@ class SnapshotItem extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SnapshotItem copyWith(void Function(SnapshotItem) updates) => super.copyWith((message) => updates(message as SnapshotItem)); // ignore: deprecated_member_use
+  SnapshotItem copyWith(void Function(SnapshotItem) updates) => super.copyWith((message) => updates(message as SnapshotItem)) as SnapshotItem; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static SnapshotItem create() => SnapshotItem._();
@@ -50,9 +56,9 @@ class SnapshotItem extends $pb.GeneratedMessage {
   static $pb.PbList<SnapshotItem> createRepeated() => $pb.PbList<SnapshotItem>();
   @$core.pragma('dart2js:noInline')
   static SnapshotItem getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SnapshotItem>(create);
-  static SnapshotItem _defaultInstance;
+  static SnapshotItem? _defaultInstance;
 
-  SnapshotItem_Item whichItem() => _SnapshotItem_ItemByTag[$_whichOneof(0)];
+  SnapshotItem_Item whichItem() => _SnapshotItem_ItemByTag[$_whichOneof(0)]!;
   void clearItem() => clearField($_whichOneof(0));
 
   @$pb.TagNumber(1)
@@ -85,7 +91,15 @@ class SnapshotStoreItem extends $pb.GeneratedMessage {
   ;
 
   SnapshotStoreItem._() : super();
-  factory SnapshotStoreItem() => create();
+  factory SnapshotStoreItem({
+    $core.String? name,
+  }) {
+    final _result = create();
+    if (name != null) {
+      _result.name = name;
+    }
+    return _result;
+  }
   factory SnapshotStoreItem.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SnapshotStoreItem.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -97,7 +111,7 @@ class SnapshotStoreItem extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SnapshotStoreItem copyWith(void Function(SnapshotStoreItem) updates) => super.copyWith((message) => updates(message as SnapshotStoreItem)); // ignore: deprecated_member_use
+  SnapshotStoreItem copyWith(void Function(SnapshotStoreItem) updates) => super.copyWith((message) => updates(message as SnapshotStoreItem)) as SnapshotStoreItem; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static SnapshotStoreItem create() => SnapshotStoreItem._();
@@ -105,7 +119,7 @@ class SnapshotStoreItem extends $pb.GeneratedMessage {
   static $pb.PbList<SnapshotStoreItem> createRepeated() => $pb.PbList<SnapshotStoreItem>();
   @$core.pragma('dart2js:noInline')
   static SnapshotStoreItem getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SnapshotStoreItem>(create);
-  static SnapshotStoreItem _defaultInstance;
+  static SnapshotStoreItem? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
@@ -127,7 +141,27 @@ class SnapshotIAVLItem extends $pb.GeneratedMessage {
   ;
 
   SnapshotIAVLItem._() : super();
-  factory SnapshotIAVLItem() => create();
+  factory SnapshotIAVLItem({
+    $core.List<$core.int>? key,
+    $core.List<$core.int>? value,
+    $fixnum.Int64? version,
+    $core.int? height,
+  }) {
+    final _result = create();
+    if (key != null) {
+      _result.key = key;
+    }
+    if (value != null) {
+      _result.value = value;
+    }
+    if (version != null) {
+      _result.version = version;
+    }
+    if (height != null) {
+      _result.height = height;
+    }
+    return _result;
+  }
   factory SnapshotIAVLItem.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SnapshotIAVLItem.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -139,7 +173,7 @@ class SnapshotIAVLItem extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SnapshotIAVLItem copyWith(void Function(SnapshotIAVLItem) updates) => super.copyWith((message) => updates(message as SnapshotIAVLItem)); // ignore: deprecated_member_use
+  SnapshotIAVLItem copyWith(void Function(SnapshotIAVLItem) updates) => super.copyWith((message) => updates(message as SnapshotIAVLItem)) as SnapshotIAVLItem; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static SnapshotIAVLItem create() => SnapshotIAVLItem._();
@@ -147,7 +181,7 @@ class SnapshotIAVLItem extends $pb.GeneratedMessage {
   static $pb.PbList<SnapshotIAVLItem> createRepeated() => $pb.PbList<SnapshotIAVLItem>();
   @$core.pragma('dart2js:noInline')
   static SnapshotIAVLItem getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SnapshotIAVLItem>(create);
-  static SnapshotIAVLItem _defaultInstance;
+  static SnapshotIAVLItem? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<$core.int> get key => $_getN(0);

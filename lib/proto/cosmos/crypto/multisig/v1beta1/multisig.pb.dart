@@ -1,10 +1,4 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/crypto/multisig/v1beta1/multisig.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
@@ -16,7 +10,15 @@ class MultiSignature extends $pb.GeneratedMessage {
   ;
 
   MultiSignature._() : super();
-  factory MultiSignature() => create();
+  factory MultiSignature({
+    $core.Iterable<$core.List<$core.int>>? signatures,
+  }) {
+    final _result = create();
+    if (signatures != null) {
+      _result.signatures.addAll(signatures);
+    }
+    return _result;
+  }
   factory MultiSignature.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MultiSignature.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -28,7 +30,7 @@ class MultiSignature extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  MultiSignature copyWith(void Function(MultiSignature) updates) => super.copyWith((message) => updates(message as MultiSignature)); // ignore: deprecated_member_use
+  MultiSignature copyWith(void Function(MultiSignature) updates) => super.copyWith((message) => updates(message as MultiSignature)) as MultiSignature; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static MultiSignature create() => MultiSignature._();
@@ -36,7 +38,7 @@ class MultiSignature extends $pb.GeneratedMessage {
   static $pb.PbList<MultiSignature> createRepeated() => $pb.PbList<MultiSignature>();
   @$core.pragma('dart2js:noInline')
   static MultiSignature getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MultiSignature>(create);
-  static MultiSignature _defaultInstance;
+  static MultiSignature? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<$core.List<$core.int>> get signatures => $_getList(0);
@@ -50,7 +52,19 @@ class CompactBitArray extends $pb.GeneratedMessage {
   ;
 
   CompactBitArray._() : super();
-  factory CompactBitArray() => create();
+  factory CompactBitArray({
+    $core.int? extraBitsStored,
+    $core.List<$core.int>? elems,
+  }) {
+    final _result = create();
+    if (extraBitsStored != null) {
+      _result.extraBitsStored = extraBitsStored;
+    }
+    if (elems != null) {
+      _result.elems = elems;
+    }
+    return _result;
+  }
   factory CompactBitArray.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CompactBitArray.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -62,7 +76,7 @@ class CompactBitArray extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  CompactBitArray copyWith(void Function(CompactBitArray) updates) => super.copyWith((message) => updates(message as CompactBitArray)); // ignore: deprecated_member_use
+  CompactBitArray copyWith(void Function(CompactBitArray) updates) => super.copyWith((message) => updates(message as CompactBitArray)) as CompactBitArray; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static CompactBitArray create() => CompactBitArray._();
@@ -70,7 +84,7 @@ class CompactBitArray extends $pb.GeneratedMessage {
   static $pb.PbList<CompactBitArray> createRepeated() => $pb.PbList<CompactBitArray>();
   @$core.pragma('dart2js:noInline')
   static CompactBitArray getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CompactBitArray>(create);
-  static CompactBitArray _defaultInstance;
+  static CompactBitArray? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.int get extraBitsStored => $_getIZ(0);

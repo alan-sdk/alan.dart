@@ -1,10 +1,8 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/tx/v1beta1/service.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
+import 'dart:convert' as $convert;
+import 'dart:core' as $core;
+import 'dart:typed_data' as $typed_data;
+@$core.Deprecated('Use orderByDescriptor instead')
 const OrderBy$json = const {
   '1': 'OrderBy',
   '2': const [
@@ -14,6 +12,9 @@ const OrderBy$json = const {
   ],
 };
 
+/// Descriptor for `OrderBy`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List orderByDescriptor = $convert.base64Decode('CgdPcmRlckJ5EhgKFE9SREVSX0JZX1VOU1BFQ0lGSUVEEAASEAoMT1JERVJfQllfQVNDEAESEQoNT1JERVJfQllfREVTQxAC');
+@$core.Deprecated('Use broadcastModeDescriptor instead')
 const BroadcastMode$json = const {
   '1': 'BroadcastMode',
   '2': const [
@@ -24,6 +25,9 @@ const BroadcastMode$json = const {
   ],
 };
 
+/// Descriptor for `BroadcastMode`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List broadcastModeDescriptor = $convert.base64Decode('Cg1Ccm9hZGNhc3RNb2RlEh4KGkJST0FEQ0FTVF9NT0RFX1VOU1BFQ0lGSUVEEAASGAoUQlJPQURDQVNUX01PREVfQkxPQ0sQARIXChNCUk9BRENBU1RfTU9ERV9TWU5DEAISGAoUQlJPQURDQVNUX01PREVfQVNZTkMQAw==');
+@$core.Deprecated('Use getTxsEventRequestDescriptor instead')
 const GetTxsEventRequest$json = const {
   '1': 'GetTxsEventRequest',
   '2': const [
@@ -33,6 +37,9 @@ const GetTxsEventRequest$json = const {
   ],
 };
 
+/// Descriptor for `GetTxsEventRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getTxsEventRequestDescriptor = $convert.base64Decode('ChJHZXRUeHNFdmVudFJlcXVlc3QSFgoGZXZlbnRzGAEgAygJUgZldmVudHMSRgoKcGFnaW5hdGlvbhgCIAEoCzImLmNvc21vcy5iYXNlLnF1ZXJ5LnYxYmV0YTEuUGFnZVJlcXVlc3RSCnBhZ2luYXRpb24SNQoIb3JkZXJfYnkYAyABKA4yGi5jb3Ntb3MudHgudjFiZXRhMS5PcmRlckJ5UgdvcmRlckJ5');
+@$core.Deprecated('Use getTxsEventResponseDescriptor instead')
 const GetTxsEventResponse$json = const {
   '1': 'GetTxsEventResponse',
   '2': const [
@@ -42,6 +49,9 @@ const GetTxsEventResponse$json = const {
   ],
 };
 
+/// Descriptor for `GetTxsEventResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getTxsEventResponseDescriptor = $convert.base64Decode('ChNHZXRUeHNFdmVudFJlc3BvbnNlEicKA3R4cxgBIAMoCzIVLmNvc21vcy50eC52MWJldGExLlR4UgN0eHMSRwoMdHhfcmVzcG9uc2VzGAIgAygLMiQuY29zbW9zLmJhc2UuYWJjaS52MWJldGExLlR4UmVzcG9uc2VSC3R4UmVzcG9uc2VzEkcKCnBhZ2luYXRpb24YAyABKAsyJy5jb3Ntb3MuYmFzZS5xdWVyeS52MWJldGExLlBhZ2VSZXNwb25zZVIKcGFnaW5hdGlvbg==');
+@$core.Deprecated('Use broadcastTxRequestDescriptor instead')
 const BroadcastTxRequest$json = const {
   '1': 'BroadcastTxRequest',
   '2': const [
@@ -50,6 +60,9 @@ const BroadcastTxRequest$json = const {
   ],
 };
 
+/// Descriptor for `BroadcastTxRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List broadcastTxRequestDescriptor = $convert.base64Decode('ChJCcm9hZGNhc3RUeFJlcXVlc3QSGQoIdHhfYnl0ZXMYASABKAxSB3R4Qnl0ZXMSNAoEbW9kZRgCIAEoDjIgLmNvc21vcy50eC52MWJldGExLkJyb2FkY2FzdE1vZGVSBG1vZGU=');
+@$core.Deprecated('Use broadcastTxResponseDescriptor instead')
 const BroadcastTxResponse$json = const {
   '1': 'BroadcastTxResponse',
   '2': const [
@@ -57,6 +70,9 @@ const BroadcastTxResponse$json = const {
   ],
 };
 
+/// Descriptor for `BroadcastTxResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List broadcastTxResponseDescriptor = $convert.base64Decode('ChNCcm9hZGNhc3RUeFJlc3BvbnNlEkUKC3R4X3Jlc3BvbnNlGAEgASgLMiQuY29zbW9zLmJhc2UuYWJjaS52MWJldGExLlR4UmVzcG9uc2VSCnR4UmVzcG9uc2U=');
+@$core.Deprecated('Use simulateRequestDescriptor instead')
 const SimulateRequest$json = const {
   '1': 'SimulateRequest',
   '2': const [
@@ -64,6 +80,9 @@ const SimulateRequest$json = const {
   ],
 };
 
+/// Descriptor for `SimulateRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List simulateRequestDescriptor = $convert.base64Decode('Cg9TaW11bGF0ZVJlcXVlc3QSJQoCdHgYASABKAsyFS5jb3Ntb3MudHgudjFiZXRhMS5UeFICdHg=');
+@$core.Deprecated('Use simulateResponseDescriptor instead')
 const SimulateResponse$json = const {
   '1': 'SimulateResponse',
   '2': const [
@@ -72,6 +91,9 @@ const SimulateResponse$json = const {
   ],
 };
 
+/// Descriptor for `SimulateResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List simulateResponseDescriptor = $convert.base64Decode('ChBTaW11bGF0ZVJlc3BvbnNlEjwKCGdhc19pbmZvGAEgASgLMiEuY29zbW9zLmJhc2UuYWJjaS52MWJldGExLkdhc0luZm9SB2dhc0luZm8SOAoGcmVzdWx0GAIgASgLMiAuY29zbW9zLmJhc2UuYWJjaS52MWJldGExLlJlc3VsdFIGcmVzdWx0');
+@$core.Deprecated('Use getTxRequestDescriptor instead')
 const GetTxRequest$json = const {
   '1': 'GetTxRequest',
   '2': const [
@@ -79,6 +101,9 @@ const GetTxRequest$json = const {
   ],
 };
 
+/// Descriptor for `GetTxRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getTxRequestDescriptor = $convert.base64Decode('CgxHZXRUeFJlcXVlc3QSEgoEaGFzaBgBIAEoCVIEaGFzaA==');
+@$core.Deprecated('Use getTxResponseDescriptor instead')
 const GetTxResponse$json = const {
   '1': 'GetTxResponse',
   '2': const [
@@ -87,3 +112,5 @@ const GetTxResponse$json = const {
   ],
 };
 
+/// Descriptor for `GetTxResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getTxResponseDescriptor = $convert.base64Decode('Cg1HZXRUeFJlc3BvbnNlEiUKAnR4GAEgASgLMhUuY29zbW9zLnR4LnYxYmV0YTEuVHhSAnR4EkUKC3R4X3Jlc3BvbnNlGAIgASgLMiQuY29zbW9zLmJhc2UuYWJjaS52MWJldGExLlR4UmVzcG9uc2VSCnR4UmVzcG9uc2U=');
