@@ -1,10 +1,4 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/crypto/ed25519/keys.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
@@ -16,7 +10,15 @@ class PubKey extends $pb.GeneratedMessage {
   ;
 
   PubKey._() : super();
-  factory PubKey() => create();
+  factory PubKey({
+    $core.List<$core.int>? key,
+  }) {
+    final _result = create();
+    if (key != null) {
+      _result.key = key;
+    }
+    return _result;
+  }
   factory PubKey.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PubKey.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -28,7 +30,7 @@ class PubKey extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  PubKey copyWith(void Function(PubKey) updates) => super.copyWith((message) => updates(message as PubKey)); // ignore: deprecated_member_use
+  PubKey copyWith(void Function(PubKey) updates) => super.copyWith((message) => updates(message as PubKey)) as PubKey; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static PubKey create() => PubKey._();
@@ -36,7 +38,7 @@ class PubKey extends $pb.GeneratedMessage {
   static $pb.PbList<PubKey> createRepeated() => $pb.PbList<PubKey>();
   @$core.pragma('dart2js:noInline')
   static PubKey getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PubKey>(create);
-  static PubKey _defaultInstance;
+  static PubKey? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<$core.int> get key => $_getN(0);
@@ -55,7 +57,15 @@ class PrivKey extends $pb.GeneratedMessage {
   ;
 
   PrivKey._() : super();
-  factory PrivKey() => create();
+  factory PrivKey({
+    $core.List<$core.int>? key,
+  }) {
+    final _result = create();
+    if (key != null) {
+      _result.key = key;
+    }
+    return _result;
+  }
   factory PrivKey.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory PrivKey.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -67,7 +77,7 @@ class PrivKey extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  PrivKey copyWith(void Function(PrivKey) updates) => super.copyWith((message) => updates(message as PrivKey)); // ignore: deprecated_member_use
+  PrivKey copyWith(void Function(PrivKey) updates) => super.copyWith((message) => updates(message as PrivKey)) as PrivKey; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static PrivKey create() => PrivKey._();
@@ -75,7 +85,7 @@ class PrivKey extends $pb.GeneratedMessage {
   static $pb.PbList<PrivKey> createRepeated() => $pb.PbList<PrivKey>();
   @$core.pragma('dart2js:noInline')
   static PrivKey getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<PrivKey>(create);
-  static PrivKey _defaultInstance;
+  static PrivKey? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<$core.int> get key => $_getN(0);

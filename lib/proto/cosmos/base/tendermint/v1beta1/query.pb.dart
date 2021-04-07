@@ -1,20 +1,14 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/base/tendermint/v1beta1/query.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
 import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../query/v1beta1/pagination.pb.dart' as $1;
 import '../../../../google/protobuf/any.pb.dart' as $2;
-import '../../../../tendermint/types/types.pb.dart' as $3;
-import '../../../../tendermint/types/block.pb.dart' as $4;
 import '../../../../tendermint/p2p/types.pb.dart' as $5;
+import '../../../../tendermint/types/block.pb.dart' as $4;
+import '../../../../tendermint/types/types.pb.dart' as $3;
+import '../../query/v1beta1/pagination.pb.dart' as $1;
 
 class GetValidatorSetByHeightRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetValidatorSetByHeightRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.base.tendermint.v1beta1'), createEmptyInstance: create)
@@ -24,7 +18,19 @@ class GetValidatorSetByHeightRequest extends $pb.GeneratedMessage {
   ;
 
   GetValidatorSetByHeightRequest._() : super();
-  factory GetValidatorSetByHeightRequest() => create();
+  factory GetValidatorSetByHeightRequest({
+    $fixnum.Int64? height,
+    $1.PageRequest? pagination,
+  }) {
+    final _result = create();
+    if (height != null) {
+      _result.height = height;
+    }
+    if (pagination != null) {
+      _result.pagination = pagination;
+    }
+    return _result;
+  }
   factory GetValidatorSetByHeightRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetValidatorSetByHeightRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -36,7 +42,7 @@ class GetValidatorSetByHeightRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetValidatorSetByHeightRequest copyWith(void Function(GetValidatorSetByHeightRequest) updates) => super.copyWith((message) => updates(message as GetValidatorSetByHeightRequest)); // ignore: deprecated_member_use
+  GetValidatorSetByHeightRequest copyWith(void Function(GetValidatorSetByHeightRequest) updates) => super.copyWith((message) => updates(message as GetValidatorSetByHeightRequest)) as GetValidatorSetByHeightRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static GetValidatorSetByHeightRequest create() => GetValidatorSetByHeightRequest._();
@@ -44,7 +50,7 @@ class GetValidatorSetByHeightRequest extends $pb.GeneratedMessage {
   static $pb.PbList<GetValidatorSetByHeightRequest> createRepeated() => $pb.PbList<GetValidatorSetByHeightRequest>();
   @$core.pragma('dart2js:noInline')
   static GetValidatorSetByHeightRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetValidatorSetByHeightRequest>(create);
-  static GetValidatorSetByHeightRequest _defaultInstance;
+  static GetValidatorSetByHeightRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get height => $_getI64(0);
@@ -76,7 +82,23 @@ class GetValidatorSetByHeightResponse extends $pb.GeneratedMessage {
   ;
 
   GetValidatorSetByHeightResponse._() : super();
-  factory GetValidatorSetByHeightResponse() => create();
+  factory GetValidatorSetByHeightResponse({
+    $fixnum.Int64? blockHeight,
+    $core.Iterable<Validator>? validators,
+    $1.PageResponse? pagination,
+  }) {
+    final _result = create();
+    if (blockHeight != null) {
+      _result.blockHeight = blockHeight;
+    }
+    if (validators != null) {
+      _result.validators.addAll(validators);
+    }
+    if (pagination != null) {
+      _result.pagination = pagination;
+    }
+    return _result;
+  }
   factory GetValidatorSetByHeightResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetValidatorSetByHeightResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -88,7 +110,7 @@ class GetValidatorSetByHeightResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetValidatorSetByHeightResponse copyWith(void Function(GetValidatorSetByHeightResponse) updates) => super.copyWith((message) => updates(message as GetValidatorSetByHeightResponse)); // ignore: deprecated_member_use
+  GetValidatorSetByHeightResponse copyWith(void Function(GetValidatorSetByHeightResponse) updates) => super.copyWith((message) => updates(message as GetValidatorSetByHeightResponse)) as GetValidatorSetByHeightResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static GetValidatorSetByHeightResponse create() => GetValidatorSetByHeightResponse._();
@@ -96,7 +118,7 @@ class GetValidatorSetByHeightResponse extends $pb.GeneratedMessage {
   static $pb.PbList<GetValidatorSetByHeightResponse> createRepeated() => $pb.PbList<GetValidatorSetByHeightResponse>();
   @$core.pragma('dart2js:noInline')
   static GetValidatorSetByHeightResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetValidatorSetByHeightResponse>(create);
-  static GetValidatorSetByHeightResponse _defaultInstance;
+  static GetValidatorSetByHeightResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get blockHeight => $_getI64(0);
@@ -129,7 +151,15 @@ class GetLatestValidatorSetRequest extends $pb.GeneratedMessage {
   ;
 
   GetLatestValidatorSetRequest._() : super();
-  factory GetLatestValidatorSetRequest() => create();
+  factory GetLatestValidatorSetRequest({
+    $1.PageRequest? pagination,
+  }) {
+    final _result = create();
+    if (pagination != null) {
+      _result.pagination = pagination;
+    }
+    return _result;
+  }
   factory GetLatestValidatorSetRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetLatestValidatorSetRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -141,7 +171,7 @@ class GetLatestValidatorSetRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetLatestValidatorSetRequest copyWith(void Function(GetLatestValidatorSetRequest) updates) => super.copyWith((message) => updates(message as GetLatestValidatorSetRequest)); // ignore: deprecated_member_use
+  GetLatestValidatorSetRequest copyWith(void Function(GetLatestValidatorSetRequest) updates) => super.copyWith((message) => updates(message as GetLatestValidatorSetRequest)) as GetLatestValidatorSetRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static GetLatestValidatorSetRequest create() => GetLatestValidatorSetRequest._();
@@ -149,7 +179,7 @@ class GetLatestValidatorSetRequest extends $pb.GeneratedMessage {
   static $pb.PbList<GetLatestValidatorSetRequest> createRepeated() => $pb.PbList<GetLatestValidatorSetRequest>();
   @$core.pragma('dart2js:noInline')
   static GetLatestValidatorSetRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetLatestValidatorSetRequest>(create);
-  static GetLatestValidatorSetRequest _defaultInstance;
+  static GetLatestValidatorSetRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $1.PageRequest get pagination => $_getN(0);
@@ -172,7 +202,23 @@ class GetLatestValidatorSetResponse extends $pb.GeneratedMessage {
   ;
 
   GetLatestValidatorSetResponse._() : super();
-  factory GetLatestValidatorSetResponse() => create();
+  factory GetLatestValidatorSetResponse({
+    $fixnum.Int64? blockHeight,
+    $core.Iterable<Validator>? validators,
+    $1.PageResponse? pagination,
+  }) {
+    final _result = create();
+    if (blockHeight != null) {
+      _result.blockHeight = blockHeight;
+    }
+    if (validators != null) {
+      _result.validators.addAll(validators);
+    }
+    if (pagination != null) {
+      _result.pagination = pagination;
+    }
+    return _result;
+  }
   factory GetLatestValidatorSetResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetLatestValidatorSetResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -184,7 +230,7 @@ class GetLatestValidatorSetResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetLatestValidatorSetResponse copyWith(void Function(GetLatestValidatorSetResponse) updates) => super.copyWith((message) => updates(message as GetLatestValidatorSetResponse)); // ignore: deprecated_member_use
+  GetLatestValidatorSetResponse copyWith(void Function(GetLatestValidatorSetResponse) updates) => super.copyWith((message) => updates(message as GetLatestValidatorSetResponse)) as GetLatestValidatorSetResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static GetLatestValidatorSetResponse create() => GetLatestValidatorSetResponse._();
@@ -192,7 +238,7 @@ class GetLatestValidatorSetResponse extends $pb.GeneratedMessage {
   static $pb.PbList<GetLatestValidatorSetResponse> createRepeated() => $pb.PbList<GetLatestValidatorSetResponse>();
   @$core.pragma('dart2js:noInline')
   static GetLatestValidatorSetResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetLatestValidatorSetResponse>(create);
-  static GetLatestValidatorSetResponse _defaultInstance;
+  static GetLatestValidatorSetResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get blockHeight => $_getI64(0);
@@ -228,7 +274,27 @@ class Validator extends $pb.GeneratedMessage {
   ;
 
   Validator._() : super();
-  factory Validator() => create();
+  factory Validator({
+    $core.String? address,
+    $2.Any? pubKey,
+    $fixnum.Int64? votingPower,
+    $fixnum.Int64? proposerPriority,
+  }) {
+    final _result = create();
+    if (address != null) {
+      _result.address = address;
+    }
+    if (pubKey != null) {
+      _result.pubKey = pubKey;
+    }
+    if (votingPower != null) {
+      _result.votingPower = votingPower;
+    }
+    if (proposerPriority != null) {
+      _result.proposerPriority = proposerPriority;
+    }
+    return _result;
+  }
   factory Validator.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Validator.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -240,7 +306,7 @@ class Validator extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Validator copyWith(void Function(Validator) updates) => super.copyWith((message) => updates(message as Validator)); // ignore: deprecated_member_use
+  Validator copyWith(void Function(Validator) updates) => super.copyWith((message) => updates(message as Validator)) as Validator; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static Validator create() => Validator._();
@@ -248,7 +314,7 @@ class Validator extends $pb.GeneratedMessage {
   static $pb.PbList<Validator> createRepeated() => $pb.PbList<Validator>();
   @$core.pragma('dart2js:noInline')
   static Validator getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Validator>(create);
-  static Validator _defaultInstance;
+  static Validator? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get address => $_getSZ(0);
@@ -296,7 +362,15 @@ class GetBlockByHeightRequest extends $pb.GeneratedMessage {
   ;
 
   GetBlockByHeightRequest._() : super();
-  factory GetBlockByHeightRequest() => create();
+  factory GetBlockByHeightRequest({
+    $fixnum.Int64? height,
+  }) {
+    final _result = create();
+    if (height != null) {
+      _result.height = height;
+    }
+    return _result;
+  }
   factory GetBlockByHeightRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetBlockByHeightRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -308,7 +382,7 @@ class GetBlockByHeightRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetBlockByHeightRequest copyWith(void Function(GetBlockByHeightRequest) updates) => super.copyWith((message) => updates(message as GetBlockByHeightRequest)); // ignore: deprecated_member_use
+  GetBlockByHeightRequest copyWith(void Function(GetBlockByHeightRequest) updates) => super.copyWith((message) => updates(message as GetBlockByHeightRequest)) as GetBlockByHeightRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static GetBlockByHeightRequest create() => GetBlockByHeightRequest._();
@@ -316,7 +390,7 @@ class GetBlockByHeightRequest extends $pb.GeneratedMessage {
   static $pb.PbList<GetBlockByHeightRequest> createRepeated() => $pb.PbList<GetBlockByHeightRequest>();
   @$core.pragma('dart2js:noInline')
   static GetBlockByHeightRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetBlockByHeightRequest>(create);
-  static GetBlockByHeightRequest _defaultInstance;
+  static GetBlockByHeightRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get height => $_getI64(0);
@@ -336,7 +410,19 @@ class GetBlockByHeightResponse extends $pb.GeneratedMessage {
   ;
 
   GetBlockByHeightResponse._() : super();
-  factory GetBlockByHeightResponse() => create();
+  factory GetBlockByHeightResponse({
+    $3.BlockID? blockId,
+    $4.Block? block,
+  }) {
+    final _result = create();
+    if (blockId != null) {
+      _result.blockId = blockId;
+    }
+    if (block != null) {
+      _result.block = block;
+    }
+    return _result;
+  }
   factory GetBlockByHeightResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetBlockByHeightResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -348,7 +434,7 @@ class GetBlockByHeightResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetBlockByHeightResponse copyWith(void Function(GetBlockByHeightResponse) updates) => super.copyWith((message) => updates(message as GetBlockByHeightResponse)); // ignore: deprecated_member_use
+  GetBlockByHeightResponse copyWith(void Function(GetBlockByHeightResponse) updates) => super.copyWith((message) => updates(message as GetBlockByHeightResponse)) as GetBlockByHeightResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static GetBlockByHeightResponse create() => GetBlockByHeightResponse._();
@@ -356,7 +442,7 @@ class GetBlockByHeightResponse extends $pb.GeneratedMessage {
   static $pb.PbList<GetBlockByHeightResponse> createRepeated() => $pb.PbList<GetBlockByHeightResponse>();
   @$core.pragma('dart2js:noInline')
   static GetBlockByHeightResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetBlockByHeightResponse>(create);
-  static GetBlockByHeightResponse _defaultInstance;
+  static GetBlockByHeightResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $3.BlockID get blockId => $_getN(0);
@@ -399,7 +485,7 @@ class GetLatestBlockRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetLatestBlockRequest copyWith(void Function(GetLatestBlockRequest) updates) => super.copyWith((message) => updates(message as GetLatestBlockRequest)); // ignore: deprecated_member_use
+  GetLatestBlockRequest copyWith(void Function(GetLatestBlockRequest) updates) => super.copyWith((message) => updates(message as GetLatestBlockRequest)) as GetLatestBlockRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static GetLatestBlockRequest create() => GetLatestBlockRequest._();
@@ -407,7 +493,7 @@ class GetLatestBlockRequest extends $pb.GeneratedMessage {
   static $pb.PbList<GetLatestBlockRequest> createRepeated() => $pb.PbList<GetLatestBlockRequest>();
   @$core.pragma('dart2js:noInline')
   static GetLatestBlockRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetLatestBlockRequest>(create);
-  static GetLatestBlockRequest _defaultInstance;
+  static GetLatestBlockRequest? _defaultInstance;
 }
 
 class GetLatestBlockResponse extends $pb.GeneratedMessage {
@@ -418,7 +504,19 @@ class GetLatestBlockResponse extends $pb.GeneratedMessage {
   ;
 
   GetLatestBlockResponse._() : super();
-  factory GetLatestBlockResponse() => create();
+  factory GetLatestBlockResponse({
+    $3.BlockID? blockId,
+    $4.Block? block,
+  }) {
+    final _result = create();
+    if (blockId != null) {
+      _result.blockId = blockId;
+    }
+    if (block != null) {
+      _result.block = block;
+    }
+    return _result;
+  }
   factory GetLatestBlockResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetLatestBlockResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -430,7 +528,7 @@ class GetLatestBlockResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetLatestBlockResponse copyWith(void Function(GetLatestBlockResponse) updates) => super.copyWith((message) => updates(message as GetLatestBlockResponse)); // ignore: deprecated_member_use
+  GetLatestBlockResponse copyWith(void Function(GetLatestBlockResponse) updates) => super.copyWith((message) => updates(message as GetLatestBlockResponse)) as GetLatestBlockResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static GetLatestBlockResponse create() => GetLatestBlockResponse._();
@@ -438,7 +536,7 @@ class GetLatestBlockResponse extends $pb.GeneratedMessage {
   static $pb.PbList<GetLatestBlockResponse> createRepeated() => $pb.PbList<GetLatestBlockResponse>();
   @$core.pragma('dart2js:noInline')
   static GetLatestBlockResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetLatestBlockResponse>(create);
-  static GetLatestBlockResponse _defaultInstance;
+  static GetLatestBlockResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $3.BlockID get blockId => $_getN(0);
@@ -481,7 +579,7 @@ class GetSyncingRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetSyncingRequest copyWith(void Function(GetSyncingRequest) updates) => super.copyWith((message) => updates(message as GetSyncingRequest)); // ignore: deprecated_member_use
+  GetSyncingRequest copyWith(void Function(GetSyncingRequest) updates) => super.copyWith((message) => updates(message as GetSyncingRequest)) as GetSyncingRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static GetSyncingRequest create() => GetSyncingRequest._();
@@ -489,7 +587,7 @@ class GetSyncingRequest extends $pb.GeneratedMessage {
   static $pb.PbList<GetSyncingRequest> createRepeated() => $pb.PbList<GetSyncingRequest>();
   @$core.pragma('dart2js:noInline')
   static GetSyncingRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetSyncingRequest>(create);
-  static GetSyncingRequest _defaultInstance;
+  static GetSyncingRequest? _defaultInstance;
 }
 
 class GetSyncingResponse extends $pb.GeneratedMessage {
@@ -499,7 +597,15 @@ class GetSyncingResponse extends $pb.GeneratedMessage {
   ;
 
   GetSyncingResponse._() : super();
-  factory GetSyncingResponse() => create();
+  factory GetSyncingResponse({
+    $core.bool? syncing,
+  }) {
+    final _result = create();
+    if (syncing != null) {
+      _result.syncing = syncing;
+    }
+    return _result;
+  }
   factory GetSyncingResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetSyncingResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -511,7 +617,7 @@ class GetSyncingResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetSyncingResponse copyWith(void Function(GetSyncingResponse) updates) => super.copyWith((message) => updates(message as GetSyncingResponse)); // ignore: deprecated_member_use
+  GetSyncingResponse copyWith(void Function(GetSyncingResponse) updates) => super.copyWith((message) => updates(message as GetSyncingResponse)) as GetSyncingResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static GetSyncingResponse create() => GetSyncingResponse._();
@@ -519,7 +625,7 @@ class GetSyncingResponse extends $pb.GeneratedMessage {
   static $pb.PbList<GetSyncingResponse> createRepeated() => $pb.PbList<GetSyncingResponse>();
   @$core.pragma('dart2js:noInline')
   static GetSyncingResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetSyncingResponse>(create);
-  static GetSyncingResponse _defaultInstance;
+  static GetSyncingResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.bool get syncing => $_getBF(0);
@@ -549,7 +655,7 @@ class GetNodeInfoRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetNodeInfoRequest copyWith(void Function(GetNodeInfoRequest) updates) => super.copyWith((message) => updates(message as GetNodeInfoRequest)); // ignore: deprecated_member_use
+  GetNodeInfoRequest copyWith(void Function(GetNodeInfoRequest) updates) => super.copyWith((message) => updates(message as GetNodeInfoRequest)) as GetNodeInfoRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static GetNodeInfoRequest create() => GetNodeInfoRequest._();
@@ -557,7 +663,7 @@ class GetNodeInfoRequest extends $pb.GeneratedMessage {
   static $pb.PbList<GetNodeInfoRequest> createRepeated() => $pb.PbList<GetNodeInfoRequest>();
   @$core.pragma('dart2js:noInline')
   static GetNodeInfoRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetNodeInfoRequest>(create);
-  static GetNodeInfoRequest _defaultInstance;
+  static GetNodeInfoRequest? _defaultInstance;
 }
 
 class GetNodeInfoResponse extends $pb.GeneratedMessage {
@@ -568,7 +674,19 @@ class GetNodeInfoResponse extends $pb.GeneratedMessage {
   ;
 
   GetNodeInfoResponse._() : super();
-  factory GetNodeInfoResponse() => create();
+  factory GetNodeInfoResponse({
+    $5.DefaultNodeInfo? defaultNodeInfo,
+    VersionInfo? applicationVersion,
+  }) {
+    final _result = create();
+    if (defaultNodeInfo != null) {
+      _result.defaultNodeInfo = defaultNodeInfo;
+    }
+    if (applicationVersion != null) {
+      _result.applicationVersion = applicationVersion;
+    }
+    return _result;
+  }
   factory GetNodeInfoResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetNodeInfoResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -580,7 +698,7 @@ class GetNodeInfoResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetNodeInfoResponse copyWith(void Function(GetNodeInfoResponse) updates) => super.copyWith((message) => updates(message as GetNodeInfoResponse)); // ignore: deprecated_member_use
+  GetNodeInfoResponse copyWith(void Function(GetNodeInfoResponse) updates) => super.copyWith((message) => updates(message as GetNodeInfoResponse)) as GetNodeInfoResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static GetNodeInfoResponse create() => GetNodeInfoResponse._();
@@ -588,7 +706,7 @@ class GetNodeInfoResponse extends $pb.GeneratedMessage {
   static $pb.PbList<GetNodeInfoResponse> createRepeated() => $pb.PbList<GetNodeInfoResponse>();
   @$core.pragma('dart2js:noInline')
   static GetNodeInfoResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetNodeInfoResponse>(create);
-  static GetNodeInfoResponse _defaultInstance;
+  static GetNodeInfoResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $5.DefaultNodeInfo get defaultNodeInfo => $_getN(0);
@@ -626,7 +744,39 @@ class VersionInfo extends $pb.GeneratedMessage {
   ;
 
   VersionInfo._() : super();
-  factory VersionInfo() => create();
+  factory VersionInfo({
+    $core.String? name,
+    $core.String? appName,
+    $core.String? version,
+    $core.String? gitCommit,
+    $core.String? buildTags,
+    $core.String? goVersion,
+    $core.Iterable<Module>? buildDeps,
+  }) {
+    final _result = create();
+    if (name != null) {
+      _result.name = name;
+    }
+    if (appName != null) {
+      _result.appName = appName;
+    }
+    if (version != null) {
+      _result.version = version;
+    }
+    if (gitCommit != null) {
+      _result.gitCommit = gitCommit;
+    }
+    if (buildTags != null) {
+      _result.buildTags = buildTags;
+    }
+    if (goVersion != null) {
+      _result.goVersion = goVersion;
+    }
+    if (buildDeps != null) {
+      _result.buildDeps.addAll(buildDeps);
+    }
+    return _result;
+  }
   factory VersionInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory VersionInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -638,7 +788,7 @@ class VersionInfo extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  VersionInfo copyWith(void Function(VersionInfo) updates) => super.copyWith((message) => updates(message as VersionInfo)); // ignore: deprecated_member_use
+  VersionInfo copyWith(void Function(VersionInfo) updates) => super.copyWith((message) => updates(message as VersionInfo)) as VersionInfo; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static VersionInfo create() => VersionInfo._();
@@ -646,7 +796,7 @@ class VersionInfo extends $pb.GeneratedMessage {
   static $pb.PbList<VersionInfo> createRepeated() => $pb.PbList<VersionInfo>();
   @$core.pragma('dart2js:noInline')
   static VersionInfo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<VersionInfo>(create);
-  static VersionInfo _defaultInstance;
+  static VersionInfo? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
@@ -715,7 +865,23 @@ class Module extends $pb.GeneratedMessage {
   ;
 
   Module._() : super();
-  factory Module() => create();
+  factory Module({
+    $core.String? path,
+    $core.String? version,
+    $core.String? sum,
+  }) {
+    final _result = create();
+    if (path != null) {
+      _result.path = path;
+    }
+    if (version != null) {
+      _result.version = version;
+    }
+    if (sum != null) {
+      _result.sum = sum;
+    }
+    return _result;
+  }
   factory Module.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Module.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -727,7 +893,7 @@ class Module extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Module copyWith(void Function(Module) updates) => super.copyWith((message) => updates(message as Module)); // ignore: deprecated_member_use
+  Module copyWith(void Function(Module) updates) => super.copyWith((message) => updates(message as Module)) as Module; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static Module create() => Module._();
@@ -735,7 +901,7 @@ class Module extends $pb.GeneratedMessage {
   static $pb.PbList<Module> createRepeated() => $pb.PbList<Module>();
   @$core.pragma('dart2js:noInline')
   static Module getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Module>(create);
-  static Module _defaultInstance;
+  static Module? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get path => $_getSZ(0);

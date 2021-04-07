@@ -1,6 +1,5 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:meta/meta.dart';
 
 part 'network_info.g.dart';
 
@@ -29,8 +28,8 @@ class NetworkInfo extends Equatable {
   final int gRPCPort;
 
   NetworkInfo({
-    @required this.bech32Hrp,
-    @required this.fullNodeHost,
+    required this.bech32Hrp,
+    required this.fullNodeHost,
     this.lcdPort = 1317,
     this.gRPCPort = 9090,
   });

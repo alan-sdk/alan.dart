@@ -1,10 +1,4 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/evidence/v1beta1/tx.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
@@ -19,7 +13,19 @@ class MsgSubmitEvidence extends $pb.GeneratedMessage {
   ;
 
   MsgSubmitEvidence._() : super();
-  factory MsgSubmitEvidence() => create();
+  factory MsgSubmitEvidence({
+    $core.String? submitter,
+    $3.Any? evidence,
+  }) {
+    final _result = create();
+    if (submitter != null) {
+      _result.submitter = submitter;
+    }
+    if (evidence != null) {
+      _result.evidence = evidence;
+    }
+    return _result;
+  }
   factory MsgSubmitEvidence.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MsgSubmitEvidence.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -31,7 +37,7 @@ class MsgSubmitEvidence extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  MsgSubmitEvidence copyWith(void Function(MsgSubmitEvidence) updates) => super.copyWith((message) => updates(message as MsgSubmitEvidence)); // ignore: deprecated_member_use
+  MsgSubmitEvidence copyWith(void Function(MsgSubmitEvidence) updates) => super.copyWith((message) => updates(message as MsgSubmitEvidence)) as MsgSubmitEvidence; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static MsgSubmitEvidence create() => MsgSubmitEvidence._();
@@ -39,7 +45,7 @@ class MsgSubmitEvidence extends $pb.GeneratedMessage {
   static $pb.PbList<MsgSubmitEvidence> createRepeated() => $pb.PbList<MsgSubmitEvidence>();
   @$core.pragma('dart2js:noInline')
   static MsgSubmitEvidence getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MsgSubmitEvidence>(create);
-  static MsgSubmitEvidence _defaultInstance;
+  static MsgSubmitEvidence? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get submitter => $_getSZ(0);
@@ -69,7 +75,15 @@ class MsgSubmitEvidenceResponse extends $pb.GeneratedMessage {
   ;
 
   MsgSubmitEvidenceResponse._() : super();
-  factory MsgSubmitEvidenceResponse() => create();
+  factory MsgSubmitEvidenceResponse({
+    $core.List<$core.int>? hash,
+  }) {
+    final _result = create();
+    if (hash != null) {
+      _result.hash = hash;
+    }
+    return _result;
+  }
   factory MsgSubmitEvidenceResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory MsgSubmitEvidenceResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -81,7 +95,7 @@ class MsgSubmitEvidenceResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  MsgSubmitEvidenceResponse copyWith(void Function(MsgSubmitEvidenceResponse) updates) => super.copyWith((message) => updates(message as MsgSubmitEvidenceResponse)); // ignore: deprecated_member_use
+  MsgSubmitEvidenceResponse copyWith(void Function(MsgSubmitEvidenceResponse) updates) => super.copyWith((message) => updates(message as MsgSubmitEvidenceResponse)) as MsgSubmitEvidenceResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static MsgSubmitEvidenceResponse create() => MsgSubmitEvidenceResponse._();
@@ -89,7 +103,7 @@ class MsgSubmitEvidenceResponse extends $pb.GeneratedMessage {
   static $pb.PbList<MsgSubmitEvidenceResponse> createRepeated() => $pb.PbList<MsgSubmitEvidenceResponse>();
   @$core.pragma('dart2js:noInline')
   static MsgSubmitEvidenceResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<MsgSubmitEvidenceResponse>(create);
-  static MsgSubmitEvidenceResponse _defaultInstance;
+  static MsgSubmitEvidenceResponse? _defaultInstance;
 
   @$pb.TagNumber(4)
   $core.List<$core.int> get hash => $_getN(0);

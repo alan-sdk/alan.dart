@@ -1,10 +1,8 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/tx/signing/v1beta1/signing.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
+import 'dart:convert' as $convert;
+import 'dart:core' as $core;
+import 'dart:typed_data' as $typed_data;
+@$core.Deprecated('Use signModeDescriptor instead')
 const SignMode$json = const {
   '1': 'SignMode',
   '2': const [
@@ -15,6 +13,9 @@ const SignMode$json = const {
   ],
 };
 
+/// Descriptor for `SignMode`. Decode as a `google.protobuf.EnumDescriptorProto`.
+final $typed_data.Uint8List signModeDescriptor = $convert.base64Decode('CghTaWduTW9kZRIZChVTSUdOX01PREVfVU5TUEVDSUZJRUQQABIUChBTSUdOX01PREVfRElSRUNUEAESFQoRU0lHTl9NT0RFX1RFWFRVQUwQAhIfChtTSUdOX01PREVfTEVHQUNZX0FNSU5PX0pTT04Qfw==');
+@$core.Deprecated('Use signatureDescriptorsDescriptor instead')
 const SignatureDescriptors$json = const {
   '1': 'SignatureDescriptors',
   '2': const [
@@ -22,6 +23,9 @@ const SignatureDescriptors$json = const {
   ],
 };
 
+/// Descriptor for `SignatureDescriptors`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List signatureDescriptorsDescriptor = $convert.base64Decode('ChRTaWduYXR1cmVEZXNjcmlwdG9ycxJOCgpzaWduYXR1cmVzGAEgAygLMi4uY29zbW9zLnR4LnNpZ25pbmcudjFiZXRhMS5TaWduYXR1cmVEZXNjcmlwdG9yUgpzaWduYXR1cmVz');
+@$core.Deprecated('Use signatureDescriptorDescriptor instead')
 const SignatureDescriptor$json = const {
   '1': 'SignatureDescriptor',
   '2': const [
@@ -32,6 +36,7 @@ const SignatureDescriptor$json = const {
   '3': const [SignatureDescriptor_Data$json],
 };
 
+@$core.Deprecated('Use signatureDescriptorDescriptor instead')
 const SignatureDescriptor_Data$json = const {
   '1': 'Data',
   '2': const [
@@ -44,6 +49,7 @@ const SignatureDescriptor_Data$json = const {
   ],
 };
 
+@$core.Deprecated('Use signatureDescriptorDescriptor instead')
 const SignatureDescriptor_Data_Single$json = const {
   '1': 'Single',
   '2': const [
@@ -52,6 +58,7 @@ const SignatureDescriptor_Data_Single$json = const {
   ],
 };
 
+@$core.Deprecated('Use signatureDescriptorDescriptor instead')
 const SignatureDescriptor_Data_Multi$json = const {
   '1': 'Multi',
   '2': const [
@@ -60,3 +67,5 @@ const SignatureDescriptor_Data_Multi$json = const {
   ],
 };
 
+/// Descriptor for `SignatureDescriptor`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List signatureDescriptorDescriptor = $convert.base64Decode('ChNTaWduYXR1cmVEZXNjcmlwdG9yEjMKCnB1YmxpY19rZXkYASABKAsyFC5nb29nbGUucHJvdG9idWYuQW55UglwdWJsaWNLZXkSRwoEZGF0YRgCIAEoCzIzLmNvc21vcy50eC5zaWduaW5nLnYxYmV0YTEuU2lnbmF0dXJlRGVzY3JpcHRvci5EYXRhUgRkYXRhEhoKCHNlcXVlbmNlGAMgASgEUghzZXF1ZW5jZRrDAwoERGF0YRJUCgZzaW5nbGUYASABKAsyOi5jb3Ntb3MudHguc2lnbmluZy52MWJldGExLlNpZ25hdHVyZURlc2NyaXB0b3IuRGF0YS5TaW5nbGVIAFIGc2luZ2xlElEKBW11bHRpGAIgASgLMjkuY29zbW9zLnR4LnNpZ25pbmcudjFiZXRhMS5TaWduYXR1cmVEZXNjcmlwdG9yLkRhdGEuTXVsdGlIAFIFbXVsdGkaXwoGU2luZ2xlEjcKBG1vZGUYASABKA4yIy5jb3Ntb3MudHguc2lnbmluZy52MWJldGExLlNpZ25Nb2RlUgRtb2RlEhwKCXNpZ25hdHVyZRgCIAEoDFIJc2lnbmF0dXJlGqkBCgVNdWx0aRJLCghiaXRhcnJheRgBIAEoCzIvLmNvc21vcy5jcnlwdG8ubXVsdGlzaWcudjFiZXRhMS5Db21wYWN0Qml0QXJyYXlSCGJpdGFycmF5ElMKCnNpZ25hdHVyZXMYAiADKAsyMy5jb3Ntb3MudHguc2lnbmluZy52MWJldGExLlNpZ25hdHVyZURlc2NyaXB0b3IuRGF0YVIKc2lnbmF0dXJlc0IFCgNzdW0=');

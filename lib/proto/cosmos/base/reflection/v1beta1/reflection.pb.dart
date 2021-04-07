@@ -1,10 +1,4 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/base/reflection/v1beta1/reflection.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
@@ -27,7 +21,7 @@ class ListAllInterfacesRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ListAllInterfacesRequest copyWith(void Function(ListAllInterfacesRequest) updates) => super.copyWith((message) => updates(message as ListAllInterfacesRequest)); // ignore: deprecated_member_use
+  ListAllInterfacesRequest copyWith(void Function(ListAllInterfacesRequest) updates) => super.copyWith((message) => updates(message as ListAllInterfacesRequest)) as ListAllInterfacesRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static ListAllInterfacesRequest create() => ListAllInterfacesRequest._();
@@ -35,7 +29,7 @@ class ListAllInterfacesRequest extends $pb.GeneratedMessage {
   static $pb.PbList<ListAllInterfacesRequest> createRepeated() => $pb.PbList<ListAllInterfacesRequest>();
   @$core.pragma('dart2js:noInline')
   static ListAllInterfacesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListAllInterfacesRequest>(create);
-  static ListAllInterfacesRequest _defaultInstance;
+  static ListAllInterfacesRequest? _defaultInstance;
 }
 
 class ListAllInterfacesResponse extends $pb.GeneratedMessage {
@@ -45,7 +39,15 @@ class ListAllInterfacesResponse extends $pb.GeneratedMessage {
   ;
 
   ListAllInterfacesResponse._() : super();
-  factory ListAllInterfacesResponse() => create();
+  factory ListAllInterfacesResponse({
+    $core.Iterable<$core.String>? interfaceNames,
+  }) {
+    final _result = create();
+    if (interfaceNames != null) {
+      _result.interfaceNames.addAll(interfaceNames);
+    }
+    return _result;
+  }
   factory ListAllInterfacesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListAllInterfacesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -57,7 +59,7 @@ class ListAllInterfacesResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ListAllInterfacesResponse copyWith(void Function(ListAllInterfacesResponse) updates) => super.copyWith((message) => updates(message as ListAllInterfacesResponse)); // ignore: deprecated_member_use
+  ListAllInterfacesResponse copyWith(void Function(ListAllInterfacesResponse) updates) => super.copyWith((message) => updates(message as ListAllInterfacesResponse)) as ListAllInterfacesResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static ListAllInterfacesResponse create() => ListAllInterfacesResponse._();
@@ -65,7 +67,7 @@ class ListAllInterfacesResponse extends $pb.GeneratedMessage {
   static $pb.PbList<ListAllInterfacesResponse> createRepeated() => $pb.PbList<ListAllInterfacesResponse>();
   @$core.pragma('dart2js:noInline')
   static ListAllInterfacesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListAllInterfacesResponse>(create);
-  static ListAllInterfacesResponse _defaultInstance;
+  static ListAllInterfacesResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<$core.String> get interfaceNames => $_getList(0);
@@ -78,7 +80,15 @@ class ListImplementationsRequest extends $pb.GeneratedMessage {
   ;
 
   ListImplementationsRequest._() : super();
-  factory ListImplementationsRequest() => create();
+  factory ListImplementationsRequest({
+    $core.String? interfaceName,
+  }) {
+    final _result = create();
+    if (interfaceName != null) {
+      _result.interfaceName = interfaceName;
+    }
+    return _result;
+  }
   factory ListImplementationsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListImplementationsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -90,7 +100,7 @@ class ListImplementationsRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ListImplementationsRequest copyWith(void Function(ListImplementationsRequest) updates) => super.copyWith((message) => updates(message as ListImplementationsRequest)); // ignore: deprecated_member_use
+  ListImplementationsRequest copyWith(void Function(ListImplementationsRequest) updates) => super.copyWith((message) => updates(message as ListImplementationsRequest)) as ListImplementationsRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static ListImplementationsRequest create() => ListImplementationsRequest._();
@@ -98,7 +108,7 @@ class ListImplementationsRequest extends $pb.GeneratedMessage {
   static $pb.PbList<ListImplementationsRequest> createRepeated() => $pb.PbList<ListImplementationsRequest>();
   @$core.pragma('dart2js:noInline')
   static ListImplementationsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListImplementationsRequest>(create);
-  static ListImplementationsRequest _defaultInstance;
+  static ListImplementationsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get interfaceName => $_getSZ(0);
@@ -117,7 +127,15 @@ class ListImplementationsResponse extends $pb.GeneratedMessage {
   ;
 
   ListImplementationsResponse._() : super();
-  factory ListImplementationsResponse() => create();
+  factory ListImplementationsResponse({
+    $core.Iterable<$core.String>? implementationMessageNames,
+  }) {
+    final _result = create();
+    if (implementationMessageNames != null) {
+      _result.implementationMessageNames.addAll(implementationMessageNames);
+    }
+    return _result;
+  }
   factory ListImplementationsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ListImplementationsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -129,7 +147,7 @@ class ListImplementationsResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ListImplementationsResponse copyWith(void Function(ListImplementationsResponse) updates) => super.copyWith((message) => updates(message as ListImplementationsResponse)); // ignore: deprecated_member_use
+  ListImplementationsResponse copyWith(void Function(ListImplementationsResponse) updates) => super.copyWith((message) => updates(message as ListImplementationsResponse)) as ListImplementationsResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static ListImplementationsResponse create() => ListImplementationsResponse._();
@@ -137,7 +155,7 @@ class ListImplementationsResponse extends $pb.GeneratedMessage {
   static $pb.PbList<ListImplementationsResponse> createRepeated() => $pb.PbList<ListImplementationsResponse>();
   @$core.pragma('dart2js:noInline')
   static ListImplementationsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ListImplementationsResponse>(create);
-  static ListImplementationsResponse _defaultInstance;
+  static ListImplementationsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<$core.String> get implementationMessageNames => $_getList(0);

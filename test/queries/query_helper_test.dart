@@ -6,8 +6,8 @@ import 'package:mock_web_server/mock_web_server.dart';
 import 'package:test/test.dart';
 
 void main() {
-  MockWebServer server;
-  QueryHelper helper;
+  late MockWebServer server;
+  late QueryHelper helper;
 
   setUpAll(() {
     server = MockWebServer();
@@ -22,7 +22,7 @@ void main() {
 
   group('queryChain', () {
     test('returns an error if an exception is thrown', () async {
-      server.enqueue(httpCode: 500, body: null);
+      server.enqueue(httpCode: 500, body: '');
       final url = server.url;
 
       final result = await helper.queryChain(url);

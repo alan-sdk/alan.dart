@@ -1,10 +1,4 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/auth/v1beta1/auth.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
 import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
@@ -22,7 +16,27 @@ class BaseAccount extends $pb.GeneratedMessage {
   ;
 
   BaseAccount._() : super();
-  factory BaseAccount() => create();
+  factory BaseAccount({
+    $core.String? address,
+    $1.Any? pubKey,
+    $fixnum.Int64? accountNumber,
+    $fixnum.Int64? sequence,
+  }) {
+    final _result = create();
+    if (address != null) {
+      _result.address = address;
+    }
+    if (pubKey != null) {
+      _result.pubKey = pubKey;
+    }
+    if (accountNumber != null) {
+      _result.accountNumber = accountNumber;
+    }
+    if (sequence != null) {
+      _result.sequence = sequence;
+    }
+    return _result;
+  }
   factory BaseAccount.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory BaseAccount.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -34,7 +48,7 @@ class BaseAccount extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  BaseAccount copyWith(void Function(BaseAccount) updates) => super.copyWith((message) => updates(message as BaseAccount)); // ignore: deprecated_member_use
+  BaseAccount copyWith(void Function(BaseAccount) updates) => super.copyWith((message) => updates(message as BaseAccount)) as BaseAccount; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static BaseAccount create() => BaseAccount._();
@@ -42,7 +56,7 @@ class BaseAccount extends $pb.GeneratedMessage {
   static $pb.PbList<BaseAccount> createRepeated() => $pb.PbList<BaseAccount>();
   @$core.pragma('dart2js:noInline')
   static BaseAccount getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<BaseAccount>(create);
-  static BaseAccount _defaultInstance;
+  static BaseAccount? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get address => $_getSZ(0);
@@ -92,7 +106,23 @@ class ModuleAccount extends $pb.GeneratedMessage {
   ;
 
   ModuleAccount._() : super();
-  factory ModuleAccount() => create();
+  factory ModuleAccount({
+    BaseAccount? baseAccount,
+    $core.String? name,
+    $core.Iterable<$core.String>? permissions,
+  }) {
+    final _result = create();
+    if (baseAccount != null) {
+      _result.baseAccount = baseAccount;
+    }
+    if (name != null) {
+      _result.name = name;
+    }
+    if (permissions != null) {
+      _result.permissions.addAll(permissions);
+    }
+    return _result;
+  }
   factory ModuleAccount.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ModuleAccount.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -104,7 +134,7 @@ class ModuleAccount extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ModuleAccount copyWith(void Function(ModuleAccount) updates) => super.copyWith((message) => updates(message as ModuleAccount)); // ignore: deprecated_member_use
+  ModuleAccount copyWith(void Function(ModuleAccount) updates) => super.copyWith((message) => updates(message as ModuleAccount)) as ModuleAccount; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static ModuleAccount create() => ModuleAccount._();
@@ -112,7 +142,7 @@ class ModuleAccount extends $pb.GeneratedMessage {
   static $pb.PbList<ModuleAccount> createRepeated() => $pb.PbList<ModuleAccount>();
   @$core.pragma('dart2js:noInline')
   static ModuleAccount getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ModuleAccount>(create);
-  static ModuleAccount _defaultInstance;
+  static ModuleAccount? _defaultInstance;
 
   @$pb.TagNumber(1)
   BaseAccount get baseAccount => $_getN(0);
@@ -149,7 +179,31 @@ class Params extends $pb.GeneratedMessage {
   ;
 
   Params._() : super();
-  factory Params() => create();
+  factory Params({
+    $fixnum.Int64? maxMemoCharacters,
+    $fixnum.Int64? txSigLimit,
+    $fixnum.Int64? txSizeCostPerByte,
+    $fixnum.Int64? sigVerifyCostEd25519,
+    $fixnum.Int64? sigVerifyCostSecp256k1,
+  }) {
+    final _result = create();
+    if (maxMemoCharacters != null) {
+      _result.maxMemoCharacters = maxMemoCharacters;
+    }
+    if (txSigLimit != null) {
+      _result.txSigLimit = txSigLimit;
+    }
+    if (txSizeCostPerByte != null) {
+      _result.txSizeCostPerByte = txSizeCostPerByte;
+    }
+    if (sigVerifyCostEd25519 != null) {
+      _result.sigVerifyCostEd25519 = sigVerifyCostEd25519;
+    }
+    if (sigVerifyCostSecp256k1 != null) {
+      _result.sigVerifyCostSecp256k1 = sigVerifyCostSecp256k1;
+    }
+    return _result;
+  }
   factory Params.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Params.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -161,7 +215,7 @@ class Params extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Params copyWith(void Function(Params) updates) => super.copyWith((message) => updates(message as Params)); // ignore: deprecated_member_use
+  Params copyWith(void Function(Params) updates) => super.copyWith((message) => updates(message as Params)) as Params; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static Params create() => Params._();
@@ -169,7 +223,7 @@ class Params extends $pb.GeneratedMessage {
   static $pb.PbList<Params> createRepeated() => $pb.PbList<Params>();
   @$core.pragma('dart2js:noInline')
   static Params getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Params>(create);
-  static Params _defaultInstance;
+  static Params? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get maxMemoCharacters => $_getI64(0);

@@ -1,10 +1,4 @@
 ///
-//  Generated code. Do not modify.
-//  source: tendermint/version/types.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
 import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
@@ -18,7 +12,19 @@ class App extends $pb.GeneratedMessage {
   ;
 
   App._() : super();
-  factory App() => create();
+  factory App({
+    $fixnum.Int64? protocol,
+    $core.String? software,
+  }) {
+    final _result = create();
+    if (protocol != null) {
+      _result.protocol = protocol;
+    }
+    if (software != null) {
+      _result.software = software;
+    }
+    return _result;
+  }
   factory App.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory App.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -30,7 +36,7 @@ class App extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  App copyWith(void Function(App) updates) => super.copyWith((message) => updates(message as App)); // ignore: deprecated_member_use
+  App copyWith(void Function(App) updates) => super.copyWith((message) => updates(message as App)) as App; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static App create() => App._();
@@ -38,7 +44,7 @@ class App extends $pb.GeneratedMessage {
   static $pb.PbList<App> createRepeated() => $pb.PbList<App>();
   @$core.pragma('dart2js:noInline')
   static App getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<App>(create);
-  static App _defaultInstance;
+  static App? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get protocol => $_getI64(0);
@@ -67,7 +73,19 @@ class Consensus extends $pb.GeneratedMessage {
   ;
 
   Consensus._() : super();
-  factory Consensus() => create();
+  factory Consensus({
+    $fixnum.Int64? block,
+    $fixnum.Int64? app,
+  }) {
+    final _result = create();
+    if (block != null) {
+      _result.block = block;
+    }
+    if (app != null) {
+      _result.app = app;
+    }
+    return _result;
+  }
   factory Consensus.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Consensus.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -79,7 +97,7 @@ class Consensus extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Consensus copyWith(void Function(Consensus) updates) => super.copyWith((message) => updates(message as Consensus)); // ignore: deprecated_member_use
+  Consensus copyWith(void Function(Consensus) updates) => super.copyWith((message) => updates(message as Consensus)) as Consensus; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static Consensus create() => Consensus._();
@@ -87,7 +105,7 @@ class Consensus extends $pb.GeneratedMessage {
   static $pb.PbList<Consensus> createRepeated() => $pb.PbList<Consensus>();
   @$core.pragma('dart2js:noInline')
   static Consensus getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Consensus>(create);
-  static Consensus _defaultInstance;
+  static Consensus? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get block => $_getI64(0);

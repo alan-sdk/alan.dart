@@ -1,16 +1,11 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/base/tendermint/v1beta1/query.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
 import 'dart:async' as $async;
-
 import 'dart:core' as $core;
 
 import 'package:grpc/service_api.dart' as $grpc;
+
 import 'query.pb.dart' as $0;
+
 export 'query.pb.dart';
 
 class ServiceClient extends $grpc.Client {
@@ -53,43 +48,43 @@ class ServiceClient extends $grpc.Client {
           $0.GetValidatorSetByHeightResponse.fromBuffer(value));
 
   ServiceClient($grpc.ClientChannel channel,
-      {$grpc.CallOptions options,
-      $core.Iterable<$grpc.ClientInterceptor> interceptors})
+      {$grpc.CallOptions? options,
+      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
       : super(channel, options: options, interceptors: interceptors);
 
   $grpc.ResponseFuture<$0.GetNodeInfoResponse> getNodeInfo(
       $0.GetNodeInfoRequest request,
-      {$grpc.CallOptions options}) {
+      {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getNodeInfo, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.GetSyncingResponse> getSyncing(
       $0.GetSyncingRequest request,
-      {$grpc.CallOptions options}) {
+      {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getSyncing, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.GetLatestBlockResponse> getLatestBlock(
       $0.GetLatestBlockRequest request,
-      {$grpc.CallOptions options}) {
+      {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getLatestBlock, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.GetBlockByHeightResponse> getBlockByHeight(
       $0.GetBlockByHeightRequest request,
-      {$grpc.CallOptions options}) {
+      {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getBlockByHeight, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.GetLatestValidatorSetResponse> getLatestValidatorSet(
       $0.GetLatestValidatorSetRequest request,
-      {$grpc.CallOptions options}) {
+      {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getLatestValidatorSet, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.GetValidatorSetByHeightResponse>
       getValidatorSetByHeight($0.GetValidatorSetByHeightRequest request,
-          {$grpc.CallOptions options}) {
+          {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getValidatorSetByHeight, request,
         options: options);
   }

@@ -11,8 +11,8 @@ NetworkInfo _$NetworkInfoFromJson(Map<String, dynamic> json) {
   return NetworkInfo(
     bech32Hrp: json['bech32_hrp'] as String,
     fullNodeHost: json['full_node_host'] as String,
-    lcdPort: json['lcd_port'] as int ?? 1317,
-    gRPCPort: json['grpc_port'] as int ?? 9090,
+    lcdPort: json['lcd_port'] as int? ?? 1317,
+    gRPCPort: json['grpc_port'] as int? ?? 9090,
   );
 }
 

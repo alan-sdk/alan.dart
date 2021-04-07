@@ -1,10 +1,4 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/evidence/v1beta1/query.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
@@ -19,7 +13,15 @@ class QueryEvidenceRequest extends $pb.GeneratedMessage {
   ;
 
   QueryEvidenceRequest._() : super();
-  factory QueryEvidenceRequest() => create();
+  factory QueryEvidenceRequest({
+    $core.List<$core.int>? evidenceHash,
+  }) {
+    final _result = create();
+    if (evidenceHash != null) {
+      _result.evidenceHash = evidenceHash;
+    }
+    return _result;
+  }
   factory QueryEvidenceRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory QueryEvidenceRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -31,7 +33,7 @@ class QueryEvidenceRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  QueryEvidenceRequest copyWith(void Function(QueryEvidenceRequest) updates) => super.copyWith((message) => updates(message as QueryEvidenceRequest)); // ignore: deprecated_member_use
+  QueryEvidenceRequest copyWith(void Function(QueryEvidenceRequest) updates) => super.copyWith((message) => updates(message as QueryEvidenceRequest)) as QueryEvidenceRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static QueryEvidenceRequest create() => QueryEvidenceRequest._();
@@ -39,7 +41,7 @@ class QueryEvidenceRequest extends $pb.GeneratedMessage {
   static $pb.PbList<QueryEvidenceRequest> createRepeated() => $pb.PbList<QueryEvidenceRequest>();
   @$core.pragma('dart2js:noInline')
   static QueryEvidenceRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QueryEvidenceRequest>(create);
-  static QueryEvidenceRequest _defaultInstance;
+  static QueryEvidenceRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<$core.int> get evidenceHash => $_getN(0);
@@ -58,7 +60,15 @@ class QueryEvidenceResponse extends $pb.GeneratedMessage {
   ;
 
   QueryEvidenceResponse._() : super();
-  factory QueryEvidenceResponse() => create();
+  factory QueryEvidenceResponse({
+    $3.Any? evidence,
+  }) {
+    final _result = create();
+    if (evidence != null) {
+      _result.evidence = evidence;
+    }
+    return _result;
+  }
   factory QueryEvidenceResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory QueryEvidenceResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -70,7 +80,7 @@ class QueryEvidenceResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  QueryEvidenceResponse copyWith(void Function(QueryEvidenceResponse) updates) => super.copyWith((message) => updates(message as QueryEvidenceResponse)); // ignore: deprecated_member_use
+  QueryEvidenceResponse copyWith(void Function(QueryEvidenceResponse) updates) => super.copyWith((message) => updates(message as QueryEvidenceResponse)) as QueryEvidenceResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static QueryEvidenceResponse create() => QueryEvidenceResponse._();
@@ -78,7 +88,7 @@ class QueryEvidenceResponse extends $pb.GeneratedMessage {
   static $pb.PbList<QueryEvidenceResponse> createRepeated() => $pb.PbList<QueryEvidenceResponse>();
   @$core.pragma('dart2js:noInline')
   static QueryEvidenceResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QueryEvidenceResponse>(create);
-  static QueryEvidenceResponse _defaultInstance;
+  static QueryEvidenceResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $3.Any get evidence => $_getN(0);
@@ -99,7 +109,15 @@ class QueryAllEvidenceRequest extends $pb.GeneratedMessage {
   ;
 
   QueryAllEvidenceRequest._() : super();
-  factory QueryAllEvidenceRequest() => create();
+  factory QueryAllEvidenceRequest({
+    $4.PageRequest? pagination,
+  }) {
+    final _result = create();
+    if (pagination != null) {
+      _result.pagination = pagination;
+    }
+    return _result;
+  }
   factory QueryAllEvidenceRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory QueryAllEvidenceRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -111,7 +129,7 @@ class QueryAllEvidenceRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  QueryAllEvidenceRequest copyWith(void Function(QueryAllEvidenceRequest) updates) => super.copyWith((message) => updates(message as QueryAllEvidenceRequest)); // ignore: deprecated_member_use
+  QueryAllEvidenceRequest copyWith(void Function(QueryAllEvidenceRequest) updates) => super.copyWith((message) => updates(message as QueryAllEvidenceRequest)) as QueryAllEvidenceRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static QueryAllEvidenceRequest create() => QueryAllEvidenceRequest._();
@@ -119,7 +137,7 @@ class QueryAllEvidenceRequest extends $pb.GeneratedMessage {
   static $pb.PbList<QueryAllEvidenceRequest> createRepeated() => $pb.PbList<QueryAllEvidenceRequest>();
   @$core.pragma('dart2js:noInline')
   static QueryAllEvidenceRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QueryAllEvidenceRequest>(create);
-  static QueryAllEvidenceRequest _defaultInstance;
+  static QueryAllEvidenceRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $4.PageRequest get pagination => $_getN(0);
@@ -141,7 +159,19 @@ class QueryAllEvidenceResponse extends $pb.GeneratedMessage {
   ;
 
   QueryAllEvidenceResponse._() : super();
-  factory QueryAllEvidenceResponse() => create();
+  factory QueryAllEvidenceResponse({
+    $core.Iterable<$3.Any>? evidence,
+    $4.PageResponse? pagination,
+  }) {
+    final _result = create();
+    if (evidence != null) {
+      _result.evidence.addAll(evidence);
+    }
+    if (pagination != null) {
+      _result.pagination = pagination;
+    }
+    return _result;
+  }
   factory QueryAllEvidenceResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory QueryAllEvidenceResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -153,7 +183,7 @@ class QueryAllEvidenceResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  QueryAllEvidenceResponse copyWith(void Function(QueryAllEvidenceResponse) updates) => super.copyWith((message) => updates(message as QueryAllEvidenceResponse)); // ignore: deprecated_member_use
+  QueryAllEvidenceResponse copyWith(void Function(QueryAllEvidenceResponse) updates) => super.copyWith((message) => updates(message as QueryAllEvidenceResponse)) as QueryAllEvidenceResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static QueryAllEvidenceResponse create() => QueryAllEvidenceResponse._();
@@ -161,7 +191,7 @@ class QueryAllEvidenceResponse extends $pb.GeneratedMessage {
   static $pb.PbList<QueryAllEvidenceResponse> createRepeated() => $pb.PbList<QueryAllEvidenceResponse>();
   @$core.pragma('dart2js:noInline')
   static QueryAllEvidenceResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QueryAllEvidenceResponse>(create);
-  static QueryAllEvidenceResponse _defaultInstance;
+  static QueryAllEvidenceResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<$3.Any> get evidence => $_getList(0);

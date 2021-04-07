@@ -1,10 +1,4 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/params/v1beta1/query.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
@@ -19,7 +13,19 @@ class QueryParamsRequest extends $pb.GeneratedMessage {
   ;
 
   QueryParamsRequest._() : super();
-  factory QueryParamsRequest() => create();
+  factory QueryParamsRequest({
+    $core.String? subspace,
+    $core.String? key,
+  }) {
+    final _result = create();
+    if (subspace != null) {
+      _result.subspace = subspace;
+    }
+    if (key != null) {
+      _result.key = key;
+    }
+    return _result;
+  }
   factory QueryParamsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory QueryParamsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -31,7 +37,7 @@ class QueryParamsRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  QueryParamsRequest copyWith(void Function(QueryParamsRequest) updates) => super.copyWith((message) => updates(message as QueryParamsRequest)); // ignore: deprecated_member_use
+  QueryParamsRequest copyWith(void Function(QueryParamsRequest) updates) => super.copyWith((message) => updates(message as QueryParamsRequest)) as QueryParamsRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static QueryParamsRequest create() => QueryParamsRequest._();
@@ -39,7 +45,7 @@ class QueryParamsRequest extends $pb.GeneratedMessage {
   static $pb.PbList<QueryParamsRequest> createRepeated() => $pb.PbList<QueryParamsRequest>();
   @$core.pragma('dart2js:noInline')
   static QueryParamsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QueryParamsRequest>(create);
-  static QueryParamsRequest _defaultInstance;
+  static QueryParamsRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get subspace => $_getSZ(0);
@@ -67,7 +73,15 @@ class QueryParamsResponse extends $pb.GeneratedMessage {
   ;
 
   QueryParamsResponse._() : super();
-  factory QueryParamsResponse() => create();
+  factory QueryParamsResponse({
+    $1.ParamChange? param,
+  }) {
+    final _result = create();
+    if (param != null) {
+      _result.param = param;
+    }
+    return _result;
+  }
   factory QueryParamsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory QueryParamsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -79,7 +93,7 @@ class QueryParamsResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  QueryParamsResponse copyWith(void Function(QueryParamsResponse) updates) => super.copyWith((message) => updates(message as QueryParamsResponse)); // ignore: deprecated_member_use
+  QueryParamsResponse copyWith(void Function(QueryParamsResponse) updates) => super.copyWith((message) => updates(message as QueryParamsResponse)) as QueryParamsResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static QueryParamsResponse create() => QueryParamsResponse._();
@@ -87,7 +101,7 @@ class QueryParamsResponse extends $pb.GeneratedMessage {
   static $pb.PbList<QueryParamsResponse> createRepeated() => $pb.PbList<QueryParamsResponse>();
   @$core.pragma('dart2js:noInline')
   static QueryParamsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QueryParamsResponse>(create);
-  static QueryParamsResponse _defaultInstance;
+  static QueryParamsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $1.ParamChange get param => $_getN(0);

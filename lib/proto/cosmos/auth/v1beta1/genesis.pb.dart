@@ -1,16 +1,10 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/auth/v1beta1/genesis.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'auth.pb.dart' as $2;
 import '../../../google/protobuf/any.pb.dart' as $1;
+import 'auth.pb.dart' as $2;
 
 class GenesisState extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GenesisState', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.auth.v1beta1'), createEmptyInstance: create)
@@ -20,7 +14,19 @@ class GenesisState extends $pb.GeneratedMessage {
   ;
 
   GenesisState._() : super();
-  factory GenesisState() => create();
+  factory GenesisState({
+    $2.Params? params,
+    $core.Iterable<$1.Any>? accounts,
+  }) {
+    final _result = create();
+    if (params != null) {
+      _result.params = params;
+    }
+    if (accounts != null) {
+      _result.accounts.addAll(accounts);
+    }
+    return _result;
+  }
   factory GenesisState.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GenesisState.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -32,7 +38,7 @@ class GenesisState extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GenesisState copyWith(void Function(GenesisState) updates) => super.copyWith((message) => updates(message as GenesisState)); // ignore: deprecated_member_use
+  GenesisState copyWith(void Function(GenesisState) updates) => super.copyWith((message) => updates(message as GenesisState)) as GenesisState; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static GenesisState create() => GenesisState._();
@@ -40,7 +46,7 @@ class GenesisState extends $pb.GeneratedMessage {
   static $pb.PbList<GenesisState> createRepeated() => $pb.PbList<GenesisState>();
   @$core.pragma('dart2js:noInline')
   static GenesisState getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GenesisState>(create);
-  static GenesisState _defaultInstance;
+  static GenesisState? _defaultInstance;
 
   @$pb.TagNumber(1)
   $2.Params get params => $_getN(0);

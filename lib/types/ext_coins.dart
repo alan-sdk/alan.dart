@@ -3,15 +3,15 @@ import 'package:alan/alan.dart';
 /// Contains the data of a specific coin amount.
 extension CoinExt on Coin {
   bool get isPositive {
-    if (amount?.isEmpty == true) return false;
-    return double.parse(amount ?? '0') > 0;
+    if (amount.isEmpty == true) return false;
+    return double.parse(amount) > 0;
   }
 
   bool get isValid {
     return validate() == null;
   }
 
-  Exception validate() {
+  Exception? validate() {
     final regEx = RegExp(r'^[a-z][a-z0-9]{2,15}$');
 
     if (!regEx.hasMatch(denom)) {

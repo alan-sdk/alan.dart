@@ -1,16 +1,10 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/bank/v1beta1/query.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../base/v1beta1/coin.pb.dart' as $2;
 import '../../base/query/v1beta1/pagination.pb.dart' as $4;
+import '../../base/v1beta1/coin.pb.dart' as $2;
 import 'bank.pb.dart' as $3;
 
 class QueryBalanceRequest extends $pb.GeneratedMessage {
@@ -21,7 +15,19 @@ class QueryBalanceRequest extends $pb.GeneratedMessage {
   ;
 
   QueryBalanceRequest._() : super();
-  factory QueryBalanceRequest() => create();
+  factory QueryBalanceRequest({
+    $core.String? address,
+    $core.String? denom,
+  }) {
+    final _result = create();
+    if (address != null) {
+      _result.address = address;
+    }
+    if (denom != null) {
+      _result.denom = denom;
+    }
+    return _result;
+  }
   factory QueryBalanceRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory QueryBalanceRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -33,7 +39,7 @@ class QueryBalanceRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  QueryBalanceRequest copyWith(void Function(QueryBalanceRequest) updates) => super.copyWith((message) => updates(message as QueryBalanceRequest)); // ignore: deprecated_member_use
+  QueryBalanceRequest copyWith(void Function(QueryBalanceRequest) updates) => super.copyWith((message) => updates(message as QueryBalanceRequest)) as QueryBalanceRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static QueryBalanceRequest create() => QueryBalanceRequest._();
@@ -41,7 +47,7 @@ class QueryBalanceRequest extends $pb.GeneratedMessage {
   static $pb.PbList<QueryBalanceRequest> createRepeated() => $pb.PbList<QueryBalanceRequest>();
   @$core.pragma('dart2js:noInline')
   static QueryBalanceRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QueryBalanceRequest>(create);
-  static QueryBalanceRequest _defaultInstance;
+  static QueryBalanceRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get address => $_getSZ(0);
@@ -69,7 +75,15 @@ class QueryBalanceResponse extends $pb.GeneratedMessage {
   ;
 
   QueryBalanceResponse._() : super();
-  factory QueryBalanceResponse() => create();
+  factory QueryBalanceResponse({
+    $2.Coin? balance,
+  }) {
+    final _result = create();
+    if (balance != null) {
+      _result.balance = balance;
+    }
+    return _result;
+  }
   factory QueryBalanceResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory QueryBalanceResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -81,7 +95,7 @@ class QueryBalanceResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  QueryBalanceResponse copyWith(void Function(QueryBalanceResponse) updates) => super.copyWith((message) => updates(message as QueryBalanceResponse)); // ignore: deprecated_member_use
+  QueryBalanceResponse copyWith(void Function(QueryBalanceResponse) updates) => super.copyWith((message) => updates(message as QueryBalanceResponse)) as QueryBalanceResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static QueryBalanceResponse create() => QueryBalanceResponse._();
@@ -89,7 +103,7 @@ class QueryBalanceResponse extends $pb.GeneratedMessage {
   static $pb.PbList<QueryBalanceResponse> createRepeated() => $pb.PbList<QueryBalanceResponse>();
   @$core.pragma('dart2js:noInline')
   static QueryBalanceResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QueryBalanceResponse>(create);
-  static QueryBalanceResponse _defaultInstance;
+  static QueryBalanceResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $2.Coin get balance => $_getN(0);
@@ -111,7 +125,19 @@ class QueryAllBalancesRequest extends $pb.GeneratedMessage {
   ;
 
   QueryAllBalancesRequest._() : super();
-  factory QueryAllBalancesRequest() => create();
+  factory QueryAllBalancesRequest({
+    $core.String? address,
+    $4.PageRequest? pagination,
+  }) {
+    final _result = create();
+    if (address != null) {
+      _result.address = address;
+    }
+    if (pagination != null) {
+      _result.pagination = pagination;
+    }
+    return _result;
+  }
   factory QueryAllBalancesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory QueryAllBalancesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -123,7 +149,7 @@ class QueryAllBalancesRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  QueryAllBalancesRequest copyWith(void Function(QueryAllBalancesRequest) updates) => super.copyWith((message) => updates(message as QueryAllBalancesRequest)); // ignore: deprecated_member_use
+  QueryAllBalancesRequest copyWith(void Function(QueryAllBalancesRequest) updates) => super.copyWith((message) => updates(message as QueryAllBalancesRequest)) as QueryAllBalancesRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static QueryAllBalancesRequest create() => QueryAllBalancesRequest._();
@@ -131,7 +157,7 @@ class QueryAllBalancesRequest extends $pb.GeneratedMessage {
   static $pb.PbList<QueryAllBalancesRequest> createRepeated() => $pb.PbList<QueryAllBalancesRequest>();
   @$core.pragma('dart2js:noInline')
   static QueryAllBalancesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QueryAllBalancesRequest>(create);
-  static QueryAllBalancesRequest _defaultInstance;
+  static QueryAllBalancesRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get address => $_getSZ(0);
@@ -162,7 +188,19 @@ class QueryAllBalancesResponse extends $pb.GeneratedMessage {
   ;
 
   QueryAllBalancesResponse._() : super();
-  factory QueryAllBalancesResponse() => create();
+  factory QueryAllBalancesResponse({
+    $core.Iterable<$2.Coin>? balances,
+    $4.PageResponse? pagination,
+  }) {
+    final _result = create();
+    if (balances != null) {
+      _result.balances.addAll(balances);
+    }
+    if (pagination != null) {
+      _result.pagination = pagination;
+    }
+    return _result;
+  }
   factory QueryAllBalancesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory QueryAllBalancesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -174,7 +212,7 @@ class QueryAllBalancesResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  QueryAllBalancesResponse copyWith(void Function(QueryAllBalancesResponse) updates) => super.copyWith((message) => updates(message as QueryAllBalancesResponse)); // ignore: deprecated_member_use
+  QueryAllBalancesResponse copyWith(void Function(QueryAllBalancesResponse) updates) => super.copyWith((message) => updates(message as QueryAllBalancesResponse)) as QueryAllBalancesResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static QueryAllBalancesResponse create() => QueryAllBalancesResponse._();
@@ -182,7 +220,7 @@ class QueryAllBalancesResponse extends $pb.GeneratedMessage {
   static $pb.PbList<QueryAllBalancesResponse> createRepeated() => $pb.PbList<QueryAllBalancesResponse>();
   @$core.pragma('dart2js:noInline')
   static QueryAllBalancesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QueryAllBalancesResponse>(create);
-  static QueryAllBalancesResponse _defaultInstance;
+  static QueryAllBalancesResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<$2.Coin> get balances => $_getList(0);
@@ -217,7 +255,7 @@ class QueryTotalSupplyRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  QueryTotalSupplyRequest copyWith(void Function(QueryTotalSupplyRequest) updates) => super.copyWith((message) => updates(message as QueryTotalSupplyRequest)); // ignore: deprecated_member_use
+  QueryTotalSupplyRequest copyWith(void Function(QueryTotalSupplyRequest) updates) => super.copyWith((message) => updates(message as QueryTotalSupplyRequest)) as QueryTotalSupplyRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static QueryTotalSupplyRequest create() => QueryTotalSupplyRequest._();
@@ -225,7 +263,7 @@ class QueryTotalSupplyRequest extends $pb.GeneratedMessage {
   static $pb.PbList<QueryTotalSupplyRequest> createRepeated() => $pb.PbList<QueryTotalSupplyRequest>();
   @$core.pragma('dart2js:noInline')
   static QueryTotalSupplyRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QueryTotalSupplyRequest>(create);
-  static QueryTotalSupplyRequest _defaultInstance;
+  static QueryTotalSupplyRequest? _defaultInstance;
 }
 
 class QueryTotalSupplyResponse extends $pb.GeneratedMessage {
@@ -235,7 +273,15 @@ class QueryTotalSupplyResponse extends $pb.GeneratedMessage {
   ;
 
   QueryTotalSupplyResponse._() : super();
-  factory QueryTotalSupplyResponse() => create();
+  factory QueryTotalSupplyResponse({
+    $core.Iterable<$2.Coin>? supply,
+  }) {
+    final _result = create();
+    if (supply != null) {
+      _result.supply.addAll(supply);
+    }
+    return _result;
+  }
   factory QueryTotalSupplyResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory QueryTotalSupplyResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -247,7 +293,7 @@ class QueryTotalSupplyResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  QueryTotalSupplyResponse copyWith(void Function(QueryTotalSupplyResponse) updates) => super.copyWith((message) => updates(message as QueryTotalSupplyResponse)); // ignore: deprecated_member_use
+  QueryTotalSupplyResponse copyWith(void Function(QueryTotalSupplyResponse) updates) => super.copyWith((message) => updates(message as QueryTotalSupplyResponse)) as QueryTotalSupplyResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static QueryTotalSupplyResponse create() => QueryTotalSupplyResponse._();
@@ -255,7 +301,7 @@ class QueryTotalSupplyResponse extends $pb.GeneratedMessage {
   static $pb.PbList<QueryTotalSupplyResponse> createRepeated() => $pb.PbList<QueryTotalSupplyResponse>();
   @$core.pragma('dart2js:noInline')
   static QueryTotalSupplyResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QueryTotalSupplyResponse>(create);
-  static QueryTotalSupplyResponse _defaultInstance;
+  static QueryTotalSupplyResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<$2.Coin> get supply => $_getList(0);
@@ -268,7 +314,15 @@ class QuerySupplyOfRequest extends $pb.GeneratedMessage {
   ;
 
   QuerySupplyOfRequest._() : super();
-  factory QuerySupplyOfRequest() => create();
+  factory QuerySupplyOfRequest({
+    $core.String? denom,
+  }) {
+    final _result = create();
+    if (denom != null) {
+      _result.denom = denom;
+    }
+    return _result;
+  }
   factory QuerySupplyOfRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory QuerySupplyOfRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -280,7 +334,7 @@ class QuerySupplyOfRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  QuerySupplyOfRequest copyWith(void Function(QuerySupplyOfRequest) updates) => super.copyWith((message) => updates(message as QuerySupplyOfRequest)); // ignore: deprecated_member_use
+  QuerySupplyOfRequest copyWith(void Function(QuerySupplyOfRequest) updates) => super.copyWith((message) => updates(message as QuerySupplyOfRequest)) as QuerySupplyOfRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static QuerySupplyOfRequest create() => QuerySupplyOfRequest._();
@@ -288,7 +342,7 @@ class QuerySupplyOfRequest extends $pb.GeneratedMessage {
   static $pb.PbList<QuerySupplyOfRequest> createRepeated() => $pb.PbList<QuerySupplyOfRequest>();
   @$core.pragma('dart2js:noInline')
   static QuerySupplyOfRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QuerySupplyOfRequest>(create);
-  static QuerySupplyOfRequest _defaultInstance;
+  static QuerySupplyOfRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get denom => $_getSZ(0);
@@ -307,7 +361,15 @@ class QuerySupplyOfResponse extends $pb.GeneratedMessage {
   ;
 
   QuerySupplyOfResponse._() : super();
-  factory QuerySupplyOfResponse() => create();
+  factory QuerySupplyOfResponse({
+    $2.Coin? amount,
+  }) {
+    final _result = create();
+    if (amount != null) {
+      _result.amount = amount;
+    }
+    return _result;
+  }
   factory QuerySupplyOfResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory QuerySupplyOfResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -319,7 +381,7 @@ class QuerySupplyOfResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  QuerySupplyOfResponse copyWith(void Function(QuerySupplyOfResponse) updates) => super.copyWith((message) => updates(message as QuerySupplyOfResponse)); // ignore: deprecated_member_use
+  QuerySupplyOfResponse copyWith(void Function(QuerySupplyOfResponse) updates) => super.copyWith((message) => updates(message as QuerySupplyOfResponse)) as QuerySupplyOfResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static QuerySupplyOfResponse create() => QuerySupplyOfResponse._();
@@ -327,7 +389,7 @@ class QuerySupplyOfResponse extends $pb.GeneratedMessage {
   static $pb.PbList<QuerySupplyOfResponse> createRepeated() => $pb.PbList<QuerySupplyOfResponse>();
   @$core.pragma('dart2js:noInline')
   static QuerySupplyOfResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QuerySupplyOfResponse>(create);
-  static QuerySupplyOfResponse _defaultInstance;
+  static QuerySupplyOfResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $2.Coin get amount => $_getN(0);
@@ -359,7 +421,7 @@ class QueryParamsRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  QueryParamsRequest copyWith(void Function(QueryParamsRequest) updates) => super.copyWith((message) => updates(message as QueryParamsRequest)); // ignore: deprecated_member_use
+  QueryParamsRequest copyWith(void Function(QueryParamsRequest) updates) => super.copyWith((message) => updates(message as QueryParamsRequest)) as QueryParamsRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static QueryParamsRequest create() => QueryParamsRequest._();
@@ -367,7 +429,7 @@ class QueryParamsRequest extends $pb.GeneratedMessage {
   static $pb.PbList<QueryParamsRequest> createRepeated() => $pb.PbList<QueryParamsRequest>();
   @$core.pragma('dart2js:noInline')
   static QueryParamsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QueryParamsRequest>(create);
-  static QueryParamsRequest _defaultInstance;
+  static QueryParamsRequest? _defaultInstance;
 }
 
 class QueryParamsResponse extends $pb.GeneratedMessage {
@@ -377,7 +439,15 @@ class QueryParamsResponse extends $pb.GeneratedMessage {
   ;
 
   QueryParamsResponse._() : super();
-  factory QueryParamsResponse() => create();
+  factory QueryParamsResponse({
+    $3.Params? params,
+  }) {
+    final _result = create();
+    if (params != null) {
+      _result.params = params;
+    }
+    return _result;
+  }
   factory QueryParamsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory QueryParamsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -389,7 +459,7 @@ class QueryParamsResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  QueryParamsResponse copyWith(void Function(QueryParamsResponse) updates) => super.copyWith((message) => updates(message as QueryParamsResponse)); // ignore: deprecated_member_use
+  QueryParamsResponse copyWith(void Function(QueryParamsResponse) updates) => super.copyWith((message) => updates(message as QueryParamsResponse)) as QueryParamsResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static QueryParamsResponse create() => QueryParamsResponse._();
@@ -397,7 +467,7 @@ class QueryParamsResponse extends $pb.GeneratedMessage {
   static $pb.PbList<QueryParamsResponse> createRepeated() => $pb.PbList<QueryParamsResponse>();
   @$core.pragma('dart2js:noInline')
   static QueryParamsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QueryParamsResponse>(create);
-  static QueryParamsResponse _defaultInstance;
+  static QueryParamsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $3.Params get params => $_getN(0);
@@ -418,7 +488,15 @@ class QueryDenomsMetadataRequest extends $pb.GeneratedMessage {
   ;
 
   QueryDenomsMetadataRequest._() : super();
-  factory QueryDenomsMetadataRequest() => create();
+  factory QueryDenomsMetadataRequest({
+    $4.PageRequest? pagination,
+  }) {
+    final _result = create();
+    if (pagination != null) {
+      _result.pagination = pagination;
+    }
+    return _result;
+  }
   factory QueryDenomsMetadataRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory QueryDenomsMetadataRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -430,7 +508,7 @@ class QueryDenomsMetadataRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  QueryDenomsMetadataRequest copyWith(void Function(QueryDenomsMetadataRequest) updates) => super.copyWith((message) => updates(message as QueryDenomsMetadataRequest)); // ignore: deprecated_member_use
+  QueryDenomsMetadataRequest copyWith(void Function(QueryDenomsMetadataRequest) updates) => super.copyWith((message) => updates(message as QueryDenomsMetadataRequest)) as QueryDenomsMetadataRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static QueryDenomsMetadataRequest create() => QueryDenomsMetadataRequest._();
@@ -438,7 +516,7 @@ class QueryDenomsMetadataRequest extends $pb.GeneratedMessage {
   static $pb.PbList<QueryDenomsMetadataRequest> createRepeated() => $pb.PbList<QueryDenomsMetadataRequest>();
   @$core.pragma('dart2js:noInline')
   static QueryDenomsMetadataRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QueryDenomsMetadataRequest>(create);
-  static QueryDenomsMetadataRequest _defaultInstance;
+  static QueryDenomsMetadataRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $4.PageRequest get pagination => $_getN(0);
@@ -460,7 +538,19 @@ class QueryDenomsMetadataResponse extends $pb.GeneratedMessage {
   ;
 
   QueryDenomsMetadataResponse._() : super();
-  factory QueryDenomsMetadataResponse() => create();
+  factory QueryDenomsMetadataResponse({
+    $core.Iterable<$3.Metadata>? metadatas,
+    $4.PageResponse? pagination,
+  }) {
+    final _result = create();
+    if (metadatas != null) {
+      _result.metadatas.addAll(metadatas);
+    }
+    if (pagination != null) {
+      _result.pagination = pagination;
+    }
+    return _result;
+  }
   factory QueryDenomsMetadataResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory QueryDenomsMetadataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -472,7 +562,7 @@ class QueryDenomsMetadataResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  QueryDenomsMetadataResponse copyWith(void Function(QueryDenomsMetadataResponse) updates) => super.copyWith((message) => updates(message as QueryDenomsMetadataResponse)); // ignore: deprecated_member_use
+  QueryDenomsMetadataResponse copyWith(void Function(QueryDenomsMetadataResponse) updates) => super.copyWith((message) => updates(message as QueryDenomsMetadataResponse)) as QueryDenomsMetadataResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static QueryDenomsMetadataResponse create() => QueryDenomsMetadataResponse._();
@@ -480,7 +570,7 @@ class QueryDenomsMetadataResponse extends $pb.GeneratedMessage {
   static $pb.PbList<QueryDenomsMetadataResponse> createRepeated() => $pb.PbList<QueryDenomsMetadataResponse>();
   @$core.pragma('dart2js:noInline')
   static QueryDenomsMetadataResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QueryDenomsMetadataResponse>(create);
-  static QueryDenomsMetadataResponse _defaultInstance;
+  static QueryDenomsMetadataResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<$3.Metadata> get metadatas => $_getList(0);
@@ -504,7 +594,15 @@ class QueryDenomMetadataRequest extends $pb.GeneratedMessage {
   ;
 
   QueryDenomMetadataRequest._() : super();
-  factory QueryDenomMetadataRequest() => create();
+  factory QueryDenomMetadataRequest({
+    $core.String? denom,
+  }) {
+    final _result = create();
+    if (denom != null) {
+      _result.denom = denom;
+    }
+    return _result;
+  }
   factory QueryDenomMetadataRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory QueryDenomMetadataRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -516,7 +614,7 @@ class QueryDenomMetadataRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  QueryDenomMetadataRequest copyWith(void Function(QueryDenomMetadataRequest) updates) => super.copyWith((message) => updates(message as QueryDenomMetadataRequest)); // ignore: deprecated_member_use
+  QueryDenomMetadataRequest copyWith(void Function(QueryDenomMetadataRequest) updates) => super.copyWith((message) => updates(message as QueryDenomMetadataRequest)) as QueryDenomMetadataRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static QueryDenomMetadataRequest create() => QueryDenomMetadataRequest._();
@@ -524,7 +622,7 @@ class QueryDenomMetadataRequest extends $pb.GeneratedMessage {
   static $pb.PbList<QueryDenomMetadataRequest> createRepeated() => $pb.PbList<QueryDenomMetadataRequest>();
   @$core.pragma('dart2js:noInline')
   static QueryDenomMetadataRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QueryDenomMetadataRequest>(create);
-  static QueryDenomMetadataRequest _defaultInstance;
+  static QueryDenomMetadataRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get denom => $_getSZ(0);
@@ -543,7 +641,15 @@ class QueryDenomMetadataResponse extends $pb.GeneratedMessage {
   ;
 
   QueryDenomMetadataResponse._() : super();
-  factory QueryDenomMetadataResponse() => create();
+  factory QueryDenomMetadataResponse({
+    $3.Metadata? metadata,
+  }) {
+    final _result = create();
+    if (metadata != null) {
+      _result.metadata = metadata;
+    }
+    return _result;
+  }
   factory QueryDenomMetadataResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory QueryDenomMetadataResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -555,7 +661,7 @@ class QueryDenomMetadataResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  QueryDenomMetadataResponse copyWith(void Function(QueryDenomMetadataResponse) updates) => super.copyWith((message) => updates(message as QueryDenomMetadataResponse)); // ignore: deprecated_member_use
+  QueryDenomMetadataResponse copyWith(void Function(QueryDenomMetadataResponse) updates) => super.copyWith((message) => updates(message as QueryDenomMetadataResponse)) as QueryDenomMetadataResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static QueryDenomMetadataResponse create() => QueryDenomMetadataResponse._();
@@ -563,7 +669,7 @@ class QueryDenomMetadataResponse extends $pb.GeneratedMessage {
   static $pb.PbList<QueryDenomMetadataResponse> createRepeated() => $pb.PbList<QueryDenomMetadataResponse>();
   @$core.pragma('dart2js:noInline')
   static QueryDenomMetadataResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QueryDenomMetadataResponse>(create);
-  static QueryDenomMetadataResponse _defaultInstance;
+  static QueryDenomMetadataResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $3.Metadata get metadata => $_getN(0);

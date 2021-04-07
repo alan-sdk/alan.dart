@@ -1,14 +1,7 @@
 ///
-//  Generated code. Do not modify.
-//  source: google/protobuf/any.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
-
 import 'package:protobuf/src/protobuf/mixins/well_known.dart' as $mixin;
 
 class Any extends $pb.GeneratedMessage with $mixin.AnyMixin {
@@ -19,7 +12,19 @@ class Any extends $pb.GeneratedMessage with $mixin.AnyMixin {
   ;
 
   Any._() : super();
-  factory Any() => create();
+  factory Any({
+    $core.String? typeUrl,
+    $core.List<$core.int>? value,
+  }) {
+    final _result = create();
+    if (typeUrl != null) {
+      _result.typeUrl = typeUrl;
+    }
+    if (value != null) {
+      _result.value = value;
+    }
+    return _result;
+  }
   factory Any.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Any.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -31,7 +36,7 @@ class Any extends $pb.GeneratedMessage with $mixin.AnyMixin {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Any copyWith(void Function(Any) updates) => super.copyWith((message) => updates(message as Any)); // ignore: deprecated_member_use
+  Any copyWith(void Function(Any) updates) => super.copyWith((message) => updates(message as Any)) as Any; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static Any create() => Any._();
@@ -39,7 +44,7 @@ class Any extends $pb.GeneratedMessage with $mixin.AnyMixin {
   static $pb.PbList<Any> createRepeated() => $pb.PbList<Any>();
   @$core.pragma('dart2js:noInline')
   static Any getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Any>(create);
-  static Any _defaultInstance;
+  static Any? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get typeUrl => $_getSZ(0);

@@ -14,6 +14,6 @@ class MockResponseFuture<T> extends Mock implements ResponseFuture<T> {
 
   @override
   Future<S> then<S>(FutureOr<S> Function(T value) onValue,
-          {Function onError}) =>
+          {Function? onError}) =>
       future.then(onValue, onError: onError);
 }

@@ -1,10 +1,8 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/evidence/v1beta1/tx.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
+import 'dart:convert' as $convert;
+import 'dart:core' as $core;
+import 'dart:typed_data' as $typed_data;
+@$core.Deprecated('Use msgSubmitEvidenceDescriptor instead')
 const MsgSubmitEvidence$json = const {
   '1': 'MsgSubmitEvidence',
   '2': const [
@@ -14,6 +12,9 @@ const MsgSubmitEvidence$json = const {
   '7': const {},
 };
 
+/// Descriptor for `MsgSubmitEvidence`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List msgSubmitEvidenceDescriptor = $convert.base64Decode('ChFNc2dTdWJtaXRFdmlkZW5jZRIcCglzdWJtaXR0ZXIYASABKAlSCXN1Ym1pdHRlchI+CghldmlkZW5jZRgCIAEoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnlCDMq0LQhFdmlkZW5jZVIIZXZpZGVuY2U6COigHwCIoB8A');
+@$core.Deprecated('Use msgSubmitEvidenceResponseDescriptor instead')
 const MsgSubmitEvidenceResponse$json = const {
   '1': 'MsgSubmitEvidenceResponse',
   '2': const [
@@ -21,3 +22,5 @@ const MsgSubmitEvidenceResponse$json = const {
   ],
 };
 
+/// Descriptor for `MsgSubmitEvidenceResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List msgSubmitEvidenceResponseDescriptor = $convert.base64Decode('ChlNc2dTdWJtaXRFdmlkZW5jZVJlc3BvbnNlEhIKBGhhc2gYBCABKAxSBGhhc2g=');

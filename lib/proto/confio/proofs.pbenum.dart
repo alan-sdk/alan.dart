@@ -21,7 +21,7 @@ class HashOp extends $pb.ProtobufEnum {
   ];
 
   static final $core.Map<$core.int, HashOp> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static HashOp valueOf($core.int value) => _byValue[value];
+  static HashOp? valueOf($core.int value) => _byValue[value];
 
   const HashOp._($core.int v, $core.String n) : super(v, n);
 }
@@ -50,7 +50,7 @@ class LengthOp extends $pb.ProtobufEnum {
   ];
 
   static final $core.Map<$core.int, LengthOp> _byValue = $pb.ProtobufEnum.initByValue(values);
-  static LengthOp valueOf($core.int value) => _byValue[value];
+  static LengthOp? valueOf($core.int value) => _byValue[value];
 
   const LengthOp._($core.int v, $core.String n) : super(v, n);
 }

@@ -1,10 +1,8 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/base/query/v1beta1/pagination.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
+import 'dart:convert' as $convert;
+import 'dart:core' as $core;
+import 'dart:typed_data' as $typed_data;
+@$core.Deprecated('Use pageRequestDescriptor instead')
 const PageRequest$json = const {
   '1': 'PageRequest',
   '2': const [
@@ -15,6 +13,9 @@ const PageRequest$json = const {
   ],
 };
 
+/// Descriptor for `PageRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List pageRequestDescriptor = $convert.base64Decode('CgtQYWdlUmVxdWVzdBIQCgNrZXkYASABKAxSA2tleRIWCgZvZmZzZXQYAiABKARSBm9mZnNldBIUCgVsaW1pdBgDIAEoBFIFbGltaXQSHwoLY291bnRfdG90YWwYBCABKAhSCmNvdW50VG90YWw=');
+@$core.Deprecated('Use pageResponseDescriptor instead')
 const PageResponse$json = const {
   '1': 'PageResponse',
   '2': const [
@@ -23,3 +24,5 @@ const PageResponse$json = const {
   ],
 };
 
+/// Descriptor for `PageResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List pageResponseDescriptor = $convert.base64Decode('CgxQYWdlUmVzcG9uc2USGQoIbmV4dF9rZXkYASABKAxSB25leHRLZXkSFAoFdG90YWwYAiABKARSBXRvdGFs');

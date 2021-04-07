@@ -1,10 +1,8 @@
 ///
-//  Generated code. Do not modify.
-//  source: google/api/httpbody.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
+import 'dart:convert' as $convert;
+import 'dart:core' as $core;
+import 'dart:typed_data' as $typed_data;
+@$core.Deprecated('Use httpBodyDescriptor instead')
 const HttpBody$json = const {
   '1': 'HttpBody',
   '2': const [
@@ -14,3 +12,5 @@ const HttpBody$json = const {
   ],
 };
 
+/// Descriptor for `HttpBody`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List httpBodyDescriptor = $convert.base64Decode('CghIdHRwQm9keRIhCgxjb250ZW50X3R5cGUYASABKAlSC2NvbnRlbnRUeXBlEhIKBGRhdGEYAiABKAxSBGRhdGESNAoKZXh0ZW5zaW9ucxgDIAMoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnlSCmV4dGVuc2lvbnM=');

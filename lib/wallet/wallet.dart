@@ -2,11 +2,8 @@ import 'dart:typed_data';
 
 import 'package:alan/alan.dart';
 import 'package:alan/wallet/bech32_encoder.dart';
-import 'package:bip32/bip32.dart' as bip32;
-import 'package:bip39/bip39.dart' as bip39;
 import 'package:equatable/equatable.dart';
 import 'package:hex/hex.dart';
-import 'package:meta/meta.dart';
 import 'package:pointycastle/export.dart';
 
 /// Represents a wallet which contains the hex private key, the hex public key
@@ -25,10 +22,10 @@ class Wallet extends Equatable {
   final NetworkInfo networkInfo;
 
   Wallet({
-    @required this.networkInfo,
-    @required this.address,
-    @required this.privateKey,
-    @required this.publicKey,
+    required this.networkInfo,
+    required this.address,
+    required this.privateKey,
+    required this.publicKey,
   });
 
   /// Derives the private key from the given [mnemonic] using the specified
@@ -38,15 +35,14 @@ class Wallet extends Equatable {
     NetworkInfo networkInfo, {
     String derivationPath = DERIVATION_PATH,
   }) {
-    // Get the mnemonic as a string
-    final mnemonicString = mnemonic.join(' ');
-    if (!bip39.validateMnemonic(mnemonicString)) {
+    // Validate the mnemonic
+    if (!Bip39.validateMnemonic(mnemonic)) {
       throw Exception('Invalid mnemonic');
     }
 
     // Convert the mnemonic to a BIP32 instance
-    final seed = bip39.mnemonicToSeed(mnemonicString);
-    final root = bip32.BIP32.fromSeed(seed);
+    final seed = Bip39.mnemonicToSeed(mnemonic);
+    final root = Bip32.fromSeed(seed);
 
     // Get the node from the derivation path
     final derivedNode = root.derivePath(derivationPath);
@@ -56,11 +52,11 @@ class Wallet extends Equatable {
     final point = secp256k1.G;
 
     // Compute the curve point associated to the private key
-    final bigInt = BigInt.parse(HEX.encode(derivedNode.privateKey), radix: 16);
+    final bigInt = BigInt.parse(HEX.encode(derivedNode.privateKey!), radix: 16);
     final curvePoint = point * bigInt;
 
     // Get the public key
-    final publicKeyBytes = curvePoint.getEncoded();
+    final publicKeyBytes = curvePoint!.getEncoded();
 
     // Get the address
     final sha256Digest = SHA256Digest().process(publicKeyBytes);
@@ -70,7 +66,7 @@ class Wallet extends Equatable {
     return Wallet(
       address: address,
       publicKey: publicKeyBytes,
-      privateKey: derivedNode.privateKey,
+      privateKey: derivedNode.privateKey!,
       networkInfo: networkInfo,
     );
   }
@@ -81,9 +77,8 @@ class Wallet extends Equatable {
     NetworkInfo networkInfo, {
     String derivationPath = DERIVATION_PATH,
   }) {
-    final mnemonic = bip39.generateMnemonic(strength: 256);
     return Wallet.derive(
-      mnemonic.split(' '),
+      Bip39.generateMnemonic(strength: 256),
       networkInfo,
       derivationPath: derivationPath,
     );

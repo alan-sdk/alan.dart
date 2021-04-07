@@ -19,9 +19,9 @@ class SignatureV2 {
   final fixnum.Int64 sequence;
 
   SignatureV2({
-    this.pubKey,
-    this.data,
-    this.sequence,
+    required this.pubKey,
+    required this.data,
+    required this.sequence,
   });
 }
 
@@ -35,10 +35,10 @@ abstract class SignatureData {}
 /// single (non-multisig) signer
 class SingleSignatureData extends SignatureData {
   final SignMode signMode;
-  final List<int> signature;
+  final List<int>? signature;
 
   SingleSignatureData({
-    this.signMode,
+    required this.signMode,
     this.signature,
   });
 }
@@ -59,8 +59,8 @@ class SignerData {
   final fixnum.Int64 sequence;
 
   SignerData({
-    this.chainId,
-    this.accountNumber,
-    this.sequence,
+    required this.chainId,
+    required this.accountNumber,
+    required this.sequence,
   });
 }

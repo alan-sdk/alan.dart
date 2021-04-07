@@ -1,10 +1,4 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/base/store/v1beta1/commit_info.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
 import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
@@ -18,7 +12,19 @@ class CommitInfo extends $pb.GeneratedMessage {
   ;
 
   CommitInfo._() : super();
-  factory CommitInfo() => create();
+  factory CommitInfo({
+    $fixnum.Int64? version,
+    $core.Iterable<StoreInfo>? storeInfos,
+  }) {
+    final _result = create();
+    if (version != null) {
+      _result.version = version;
+    }
+    if (storeInfos != null) {
+      _result.storeInfos.addAll(storeInfos);
+    }
+    return _result;
+  }
   factory CommitInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CommitInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -30,7 +36,7 @@ class CommitInfo extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  CommitInfo copyWith(void Function(CommitInfo) updates) => super.copyWith((message) => updates(message as CommitInfo)); // ignore: deprecated_member_use
+  CommitInfo copyWith(void Function(CommitInfo) updates) => super.copyWith((message) => updates(message as CommitInfo)) as CommitInfo; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static CommitInfo create() => CommitInfo._();
@@ -38,7 +44,7 @@ class CommitInfo extends $pb.GeneratedMessage {
   static $pb.PbList<CommitInfo> createRepeated() => $pb.PbList<CommitInfo>();
   @$core.pragma('dart2js:noInline')
   static CommitInfo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CommitInfo>(create);
-  static CommitInfo _defaultInstance;
+  static CommitInfo? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get version => $_getI64(0);
@@ -61,7 +67,19 @@ class StoreInfo extends $pb.GeneratedMessage {
   ;
 
   StoreInfo._() : super();
-  factory StoreInfo() => create();
+  factory StoreInfo({
+    $core.String? name,
+    CommitID? commitId,
+  }) {
+    final _result = create();
+    if (name != null) {
+      _result.name = name;
+    }
+    if (commitId != null) {
+      _result.commitId = commitId;
+    }
+    return _result;
+  }
   factory StoreInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory StoreInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -73,7 +91,7 @@ class StoreInfo extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  StoreInfo copyWith(void Function(StoreInfo) updates) => super.copyWith((message) => updates(message as StoreInfo)); // ignore: deprecated_member_use
+  StoreInfo copyWith(void Function(StoreInfo) updates) => super.copyWith((message) => updates(message as StoreInfo)) as StoreInfo; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static StoreInfo create() => StoreInfo._();
@@ -81,7 +99,7 @@ class StoreInfo extends $pb.GeneratedMessage {
   static $pb.PbList<StoreInfo> createRepeated() => $pb.PbList<StoreInfo>();
   @$core.pragma('dart2js:noInline')
   static StoreInfo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<StoreInfo>(create);
-  static StoreInfo _defaultInstance;
+  static StoreInfo? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get name => $_getSZ(0);
@@ -112,7 +130,19 @@ class CommitID extends $pb.GeneratedMessage {
   ;
 
   CommitID._() : super();
-  factory CommitID() => create();
+  factory CommitID({
+    $fixnum.Int64? version,
+    $core.List<$core.int>? hash,
+  }) {
+    final _result = create();
+    if (version != null) {
+      _result.version = version;
+    }
+    if (hash != null) {
+      _result.hash = hash;
+    }
+    return _result;
+  }
   factory CommitID.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CommitID.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -124,7 +154,7 @@ class CommitID extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  CommitID copyWith(void Function(CommitID) updates) => super.copyWith((message) => updates(message as CommitID)); // ignore: deprecated_member_use
+  CommitID copyWith(void Function(CommitID) updates) => super.copyWith((message) => updates(message as CommitID)) as CommitID; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static CommitID create() => CommitID._();
@@ -132,7 +162,7 @@ class CommitID extends $pb.GeneratedMessage {
   static $pb.PbList<CommitID> createRepeated() => $pb.PbList<CommitID>();
   @$core.pragma('dart2js:noInline')
   static CommitID getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CommitID>(create);
-  static CommitID _defaultInstance;
+  static CommitID? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get version => $_getI64(0);

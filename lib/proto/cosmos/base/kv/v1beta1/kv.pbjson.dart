@@ -1,10 +1,8 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/base/kv/v1beta1/kv.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
+import 'dart:convert' as $convert;
+import 'dart:core' as $core;
+import 'dart:typed_data' as $typed_data;
+@$core.Deprecated('Use pairsDescriptor instead')
 const Pairs$json = const {
   '1': 'Pairs',
   '2': const [
@@ -12,6 +10,9 @@ const Pairs$json = const {
   ],
 };
 
+/// Descriptor for `Pairs`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List pairsDescriptor = $convert.base64Decode('CgVQYWlycxI4CgVwYWlycxgBIAMoCzIcLmNvc21vcy5iYXNlLmt2LnYxYmV0YTEuUGFpckIEyN4fAFIFcGFpcnM=');
+@$core.Deprecated('Use pairDescriptor instead')
 const Pair$json = const {
   '1': 'Pair',
   '2': const [
@@ -20,3 +21,5 @@ const Pair$json = const {
   ],
 };
 
+/// Descriptor for `Pair`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List pairDescriptor = $convert.base64Decode('CgRQYWlyEhAKA2tleRgBIAEoDFIDa2V5EhQKBXZhbHVlGAIgASgMUgV2YWx1ZQ==');

@@ -1,19 +1,12 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/tx/v1beta1/service.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../base/query/v1beta1/pagination.pb.dart' as $6;
-import 'tx.pb.dart' as $7;
 import '../../base/abci/v1beta1/abci.pb.dart' as $8;
-
+import '../../base/query/v1beta1/pagination.pb.dart' as $6;
 import 'service.pbenum.dart';
+import 'tx.pb.dart' as $7;
 
 export 'service.pbenum.dart';
 
@@ -26,7 +19,23 @@ class GetTxsEventRequest extends $pb.GeneratedMessage {
   ;
 
   GetTxsEventRequest._() : super();
-  factory GetTxsEventRequest() => create();
+  factory GetTxsEventRequest({
+    $core.Iterable<$core.String>? events,
+    $6.PageRequest? pagination,
+    OrderBy? orderBy,
+  }) {
+    final _result = create();
+    if (events != null) {
+      _result.events.addAll(events);
+    }
+    if (pagination != null) {
+      _result.pagination = pagination;
+    }
+    if (orderBy != null) {
+      _result.orderBy = orderBy;
+    }
+    return _result;
+  }
   factory GetTxsEventRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetTxsEventRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -38,7 +47,7 @@ class GetTxsEventRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetTxsEventRequest copyWith(void Function(GetTxsEventRequest) updates) => super.copyWith((message) => updates(message as GetTxsEventRequest)); // ignore: deprecated_member_use
+  GetTxsEventRequest copyWith(void Function(GetTxsEventRequest) updates) => super.copyWith((message) => updates(message as GetTxsEventRequest)) as GetTxsEventRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static GetTxsEventRequest create() => GetTxsEventRequest._();
@@ -46,7 +55,7 @@ class GetTxsEventRequest extends $pb.GeneratedMessage {
   static $pb.PbList<GetTxsEventRequest> createRepeated() => $pb.PbList<GetTxsEventRequest>();
   @$core.pragma('dart2js:noInline')
   static GetTxsEventRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetTxsEventRequest>(create);
-  static GetTxsEventRequest _defaultInstance;
+  static GetTxsEventRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<$core.String> get events => $_getList(0);
@@ -81,7 +90,23 @@ class GetTxsEventResponse extends $pb.GeneratedMessage {
   ;
 
   GetTxsEventResponse._() : super();
-  factory GetTxsEventResponse() => create();
+  factory GetTxsEventResponse({
+    $core.Iterable<$7.Tx>? txs,
+    $core.Iterable<$8.TxResponse>? txResponses,
+    $6.PageResponse? pagination,
+  }) {
+    final _result = create();
+    if (txs != null) {
+      _result.txs.addAll(txs);
+    }
+    if (txResponses != null) {
+      _result.txResponses.addAll(txResponses);
+    }
+    if (pagination != null) {
+      _result.pagination = pagination;
+    }
+    return _result;
+  }
   factory GetTxsEventResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetTxsEventResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -93,7 +118,7 @@ class GetTxsEventResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetTxsEventResponse copyWith(void Function(GetTxsEventResponse) updates) => super.copyWith((message) => updates(message as GetTxsEventResponse)); // ignore: deprecated_member_use
+  GetTxsEventResponse copyWith(void Function(GetTxsEventResponse) updates) => super.copyWith((message) => updates(message as GetTxsEventResponse)) as GetTxsEventResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static GetTxsEventResponse create() => GetTxsEventResponse._();
@@ -101,7 +126,7 @@ class GetTxsEventResponse extends $pb.GeneratedMessage {
   static $pb.PbList<GetTxsEventResponse> createRepeated() => $pb.PbList<GetTxsEventResponse>();
   @$core.pragma('dart2js:noInline')
   static GetTxsEventResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetTxsEventResponse>(create);
-  static GetTxsEventResponse _defaultInstance;
+  static GetTxsEventResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<$7.Tx> get txs => $_getList(0);
@@ -129,7 +154,19 @@ class BroadcastTxRequest extends $pb.GeneratedMessage {
   ;
 
   BroadcastTxRequest._() : super();
-  factory BroadcastTxRequest() => create();
+  factory BroadcastTxRequest({
+    $core.List<$core.int>? txBytes,
+    BroadcastMode? mode,
+  }) {
+    final _result = create();
+    if (txBytes != null) {
+      _result.txBytes = txBytes;
+    }
+    if (mode != null) {
+      _result.mode = mode;
+    }
+    return _result;
+  }
   factory BroadcastTxRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory BroadcastTxRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -141,7 +178,7 @@ class BroadcastTxRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  BroadcastTxRequest copyWith(void Function(BroadcastTxRequest) updates) => super.copyWith((message) => updates(message as BroadcastTxRequest)); // ignore: deprecated_member_use
+  BroadcastTxRequest copyWith(void Function(BroadcastTxRequest) updates) => super.copyWith((message) => updates(message as BroadcastTxRequest)) as BroadcastTxRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static BroadcastTxRequest create() => BroadcastTxRequest._();
@@ -149,7 +186,7 @@ class BroadcastTxRequest extends $pb.GeneratedMessage {
   static $pb.PbList<BroadcastTxRequest> createRepeated() => $pb.PbList<BroadcastTxRequest>();
   @$core.pragma('dart2js:noInline')
   static BroadcastTxRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<BroadcastTxRequest>(create);
-  static BroadcastTxRequest _defaultInstance;
+  static BroadcastTxRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<$core.int> get txBytes => $_getN(0);
@@ -177,7 +214,15 @@ class BroadcastTxResponse extends $pb.GeneratedMessage {
   ;
 
   BroadcastTxResponse._() : super();
-  factory BroadcastTxResponse() => create();
+  factory BroadcastTxResponse({
+    $8.TxResponse? txResponse,
+  }) {
+    final _result = create();
+    if (txResponse != null) {
+      _result.txResponse = txResponse;
+    }
+    return _result;
+  }
   factory BroadcastTxResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory BroadcastTxResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -189,7 +234,7 @@ class BroadcastTxResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  BroadcastTxResponse copyWith(void Function(BroadcastTxResponse) updates) => super.copyWith((message) => updates(message as BroadcastTxResponse)); // ignore: deprecated_member_use
+  BroadcastTxResponse copyWith(void Function(BroadcastTxResponse) updates) => super.copyWith((message) => updates(message as BroadcastTxResponse)) as BroadcastTxResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static BroadcastTxResponse create() => BroadcastTxResponse._();
@@ -197,7 +242,7 @@ class BroadcastTxResponse extends $pb.GeneratedMessage {
   static $pb.PbList<BroadcastTxResponse> createRepeated() => $pb.PbList<BroadcastTxResponse>();
   @$core.pragma('dart2js:noInline')
   static BroadcastTxResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<BroadcastTxResponse>(create);
-  static BroadcastTxResponse _defaultInstance;
+  static BroadcastTxResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $8.TxResponse get txResponse => $_getN(0);
@@ -218,7 +263,15 @@ class SimulateRequest extends $pb.GeneratedMessage {
   ;
 
   SimulateRequest._() : super();
-  factory SimulateRequest() => create();
+  factory SimulateRequest({
+    $7.Tx? tx,
+  }) {
+    final _result = create();
+    if (tx != null) {
+      _result.tx = tx;
+    }
+    return _result;
+  }
   factory SimulateRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SimulateRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -230,7 +283,7 @@ class SimulateRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SimulateRequest copyWith(void Function(SimulateRequest) updates) => super.copyWith((message) => updates(message as SimulateRequest)); // ignore: deprecated_member_use
+  SimulateRequest copyWith(void Function(SimulateRequest) updates) => super.copyWith((message) => updates(message as SimulateRequest)) as SimulateRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static SimulateRequest create() => SimulateRequest._();
@@ -238,7 +291,7 @@ class SimulateRequest extends $pb.GeneratedMessage {
   static $pb.PbList<SimulateRequest> createRepeated() => $pb.PbList<SimulateRequest>();
   @$core.pragma('dart2js:noInline')
   static SimulateRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SimulateRequest>(create);
-  static SimulateRequest _defaultInstance;
+  static SimulateRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $7.Tx get tx => $_getN(0);
@@ -260,7 +313,19 @@ class SimulateResponse extends $pb.GeneratedMessage {
   ;
 
   SimulateResponse._() : super();
-  factory SimulateResponse() => create();
+  factory SimulateResponse({
+    $8.GasInfo? gasInfo,
+    $8.Result? result,
+  }) {
+    final _result = create();
+    if (gasInfo != null) {
+      _result.gasInfo = gasInfo;
+    }
+    if (result != null) {
+      _result.result = result;
+    }
+    return _result;
+  }
   factory SimulateResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SimulateResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -272,7 +337,7 @@ class SimulateResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SimulateResponse copyWith(void Function(SimulateResponse) updates) => super.copyWith((message) => updates(message as SimulateResponse)); // ignore: deprecated_member_use
+  SimulateResponse copyWith(void Function(SimulateResponse) updates) => super.copyWith((message) => updates(message as SimulateResponse)) as SimulateResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static SimulateResponse create() => SimulateResponse._();
@@ -280,7 +345,7 @@ class SimulateResponse extends $pb.GeneratedMessage {
   static $pb.PbList<SimulateResponse> createRepeated() => $pb.PbList<SimulateResponse>();
   @$core.pragma('dart2js:noInline')
   static SimulateResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SimulateResponse>(create);
-  static SimulateResponse _defaultInstance;
+  static SimulateResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $8.GasInfo get gasInfo => $_getN(0);
@@ -312,7 +377,15 @@ class GetTxRequest extends $pb.GeneratedMessage {
   ;
 
   GetTxRequest._() : super();
-  factory GetTxRequest() => create();
+  factory GetTxRequest({
+    $core.String? hash,
+  }) {
+    final _result = create();
+    if (hash != null) {
+      _result.hash = hash;
+    }
+    return _result;
+  }
   factory GetTxRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetTxRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -324,7 +397,7 @@ class GetTxRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetTxRequest copyWith(void Function(GetTxRequest) updates) => super.copyWith((message) => updates(message as GetTxRequest)); // ignore: deprecated_member_use
+  GetTxRequest copyWith(void Function(GetTxRequest) updates) => super.copyWith((message) => updates(message as GetTxRequest)) as GetTxRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static GetTxRequest create() => GetTxRequest._();
@@ -332,7 +405,7 @@ class GetTxRequest extends $pb.GeneratedMessage {
   static $pb.PbList<GetTxRequest> createRepeated() => $pb.PbList<GetTxRequest>();
   @$core.pragma('dart2js:noInline')
   static GetTxRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetTxRequest>(create);
-  static GetTxRequest _defaultInstance;
+  static GetTxRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get hash => $_getSZ(0);
@@ -352,7 +425,19 @@ class GetTxResponse extends $pb.GeneratedMessage {
   ;
 
   GetTxResponse._() : super();
-  factory GetTxResponse() => create();
+  factory GetTxResponse({
+    $7.Tx? tx,
+    $8.TxResponse? txResponse,
+  }) {
+    final _result = create();
+    if (tx != null) {
+      _result.tx = tx;
+    }
+    if (txResponse != null) {
+      _result.txResponse = txResponse;
+    }
+    return _result;
+  }
   factory GetTxResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory GetTxResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -364,7 +449,7 @@ class GetTxResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  GetTxResponse copyWith(void Function(GetTxResponse) updates) => super.copyWith((message) => updates(message as GetTxResponse)); // ignore: deprecated_member_use
+  GetTxResponse copyWith(void Function(GetTxResponse) updates) => super.copyWith((message) => updates(message as GetTxResponse)) as GetTxResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static GetTxResponse create() => GetTxResponse._();
@@ -372,7 +457,7 @@ class GetTxResponse extends $pb.GeneratedMessage {
   static $pb.PbList<GetTxResponse> createRepeated() => $pb.PbList<GetTxResponse>();
   @$core.pragma('dart2js:noInline')
   static GetTxResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<GetTxResponse>(create);
-  static GetTxResponse _defaultInstance;
+  static GetTxResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $7.Tx get tx => $_getN(0);

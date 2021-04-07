@@ -1,10 +1,8 @@
 ///
-//  Generated code. Do not modify.
-//  source: tendermint/types/params.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
+import 'dart:convert' as $convert;
+import 'dart:core' as $core;
+import 'dart:typed_data' as $typed_data;
+@$core.Deprecated('Use consensusParamsDescriptor instead')
 const ConsensusParams$json = const {
   '1': 'ConsensusParams',
   '2': const [
@@ -15,6 +13,9 @@ const ConsensusParams$json = const {
   ],
 };
 
+/// Descriptor for `ConsensusParams`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List consensusParamsDescriptor = $convert.base64Decode('Cg9Db25zZW5zdXNQYXJhbXMSOQoFYmxvY2sYASABKAsyHS50ZW5kZXJtaW50LnR5cGVzLkJsb2NrUGFyYW1zQgTI3h8AUgVibG9jaxJCCghldmlkZW5jZRgCIAEoCzIgLnRlbmRlcm1pbnQudHlwZXMuRXZpZGVuY2VQYXJhbXNCBMjeHwBSCGV2aWRlbmNlEkUKCXZhbGlkYXRvchgDIAEoCzIhLnRlbmRlcm1pbnQudHlwZXMuVmFsaWRhdG9yUGFyYW1zQgTI3h8AUgl2YWxpZGF0b3ISPwoHdmVyc2lvbhgEIAEoCzIfLnRlbmRlcm1pbnQudHlwZXMuVmVyc2lvblBhcmFtc0IEyN4fAFIHdmVyc2lvbg==');
+@$core.Deprecated('Use blockParamsDescriptor instead')
 const BlockParams$json = const {
   '1': 'BlockParams',
   '2': const [
@@ -24,6 +25,9 @@ const BlockParams$json = const {
   ],
 };
 
+/// Descriptor for `BlockParams`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List blockParamsDescriptor = $convert.base64Decode('CgtCbG9ja1BhcmFtcxIbCgltYXhfYnl0ZXMYASABKANSCG1heEJ5dGVzEhcKB21heF9nYXMYAiABKANSBm1heEdhcxIgCgx0aW1lX2lvdGFfbXMYAyABKANSCnRpbWVJb3RhTXM=');
+@$core.Deprecated('Use evidenceParamsDescriptor instead')
 const EvidenceParams$json = const {
   '1': 'EvidenceParams',
   '2': const [
@@ -33,6 +37,9 @@ const EvidenceParams$json = const {
   ],
 };
 
+/// Descriptor for `EvidenceParams`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List evidenceParamsDescriptor = $convert.base64Decode('Cg5FdmlkZW5jZVBhcmFtcxIrChJtYXhfYWdlX251bV9ibG9ja3MYASABKANSD21heEFnZU51bUJsb2NrcxJNChBtYXhfYWdlX2R1cmF0aW9uGAIgASgLMhkuZ29vZ2xlLnByb3RvYnVmLkR1cmF0aW9uQgjI3h8AmN8fAVIObWF4QWdlRHVyYXRpb24SGwoJbWF4X2J5dGVzGAMgASgDUghtYXhCeXRlcw==');
+@$core.Deprecated('Use validatorParamsDescriptor instead')
 const ValidatorParams$json = const {
   '1': 'ValidatorParams',
   '2': const [
@@ -41,6 +48,9 @@ const ValidatorParams$json = const {
   '7': const {},
 };
 
+/// Descriptor for `ValidatorParams`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List validatorParamsDescriptor = $convert.base64Decode('Cg9WYWxpZGF0b3JQYXJhbXMSIgoNcHViX2tleV90eXBlcxgBIAMoCVILcHViS2V5VHlwZXM6CLigHwHooB8B');
+@$core.Deprecated('Use versionParamsDescriptor instead')
 const VersionParams$json = const {
   '1': 'VersionParams',
   '2': const [
@@ -49,6 +59,9 @@ const VersionParams$json = const {
   '7': const {},
 };
 
+/// Descriptor for `VersionParams`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List versionParamsDescriptor = $convert.base64Decode('Cg1WZXJzaW9uUGFyYW1zEh8KC2FwcF92ZXJzaW9uGAEgASgEUgphcHBWZXJzaW9uOgi4oB8B6KAfAQ==');
+@$core.Deprecated('Use hashedParamsDescriptor instead')
 const HashedParams$json = const {
   '1': 'HashedParams',
   '2': const [
@@ -57,3 +70,5 @@ const HashedParams$json = const {
   ],
 };
 
+/// Descriptor for `HashedParams`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List hashedParamsDescriptor = $convert.base64Decode('CgxIYXNoZWRQYXJhbXMSJgoPYmxvY2tfbWF4X2J5dGVzGAEgASgDUg1ibG9ja01heEJ5dGVzEiIKDWJsb2NrX21heF9nYXMYAiABKANSC2Jsb2NrTWF4R2Fz');

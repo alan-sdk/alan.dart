@@ -1,10 +1,4 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/base/kv/v1beta1/kv.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
@@ -16,7 +10,15 @@ class Pairs extends $pb.GeneratedMessage {
   ;
 
   Pairs._() : super();
-  factory Pairs() => create();
+  factory Pairs({
+    $core.Iterable<Pair>? pairs,
+  }) {
+    final _result = create();
+    if (pairs != null) {
+      _result.pairs.addAll(pairs);
+    }
+    return _result;
+  }
   factory Pairs.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Pairs.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -28,7 +30,7 @@ class Pairs extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Pairs copyWith(void Function(Pairs) updates) => super.copyWith((message) => updates(message as Pairs)); // ignore: deprecated_member_use
+  Pairs copyWith(void Function(Pairs) updates) => super.copyWith((message) => updates(message as Pairs)) as Pairs; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static Pairs create() => Pairs._();
@@ -36,7 +38,7 @@ class Pairs extends $pb.GeneratedMessage {
   static $pb.PbList<Pairs> createRepeated() => $pb.PbList<Pairs>();
   @$core.pragma('dart2js:noInline')
   static Pairs getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Pairs>(create);
-  static Pairs _defaultInstance;
+  static Pairs? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<Pair> get pairs => $_getList(0);
@@ -50,7 +52,19 @@ class Pair extends $pb.GeneratedMessage {
   ;
 
   Pair._() : super();
-  factory Pair() => create();
+  factory Pair({
+    $core.List<$core.int>? key,
+    $core.List<$core.int>? value,
+  }) {
+    final _result = create();
+    if (key != null) {
+      _result.key = key;
+    }
+    if (value != null) {
+      _result.value = value;
+    }
+    return _result;
+  }
   factory Pair.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Pair.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -62,7 +76,7 @@ class Pair extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Pair copyWith(void Function(Pair) updates) => super.copyWith((message) => updates(message as Pair)); // ignore: deprecated_member_use
+  Pair copyWith(void Function(Pair) updates) => super.copyWith((message) => updates(message as Pair)) as Pair; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static Pair create() => Pair._();
@@ -70,7 +84,7 @@ class Pair extends $pb.GeneratedMessage {
   static $pb.PbList<Pair> createRepeated() => $pb.PbList<Pair>();
   @$core.pragma('dart2js:noInline')
   static Pair getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Pair>(create);
-  static Pair _defaultInstance;
+  static Pair? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<$core.int> get key => $_getN(0);

@@ -1,6 +1,6 @@
 import 'dart:typed_data';
 
-import 'package:bip_bech32/bip_bech32.dart';
+import 'package:bech32/bech32.dart';
 
 /// Allows to easily encode into Bech32 some data using a
 /// given human readable part.
@@ -54,6 +54,6 @@ class Bech32Encoder {
   static Uint8List decode(String data) {
     final bech32Codec = Bech32Codec();
     final bech32Data = bech32Codec.decode(data);
-    return bech32Data.data;
+    return Uint8List.fromList(bech32Data.data);
   }
 }

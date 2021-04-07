@@ -1,11 +1,10 @@
 import 'dart:typed_data';
 
 import 'package:alan/alan.dart';
-import 'package:grpc/grpc.dart';
-import 'package:http/http.dart' as http;
-import 'package:meta/meta.dart';
-import 'package:protobuf/protobuf.dart';
 import 'package:alan/proto/cosmos/crypto/secp256k1/export.dart' as secp256;
+import 'package:grpc/grpc.dart' as grpc;
+import 'package:http/http.dart' as http;
+import 'package:protobuf/protobuf.dart';
 
 /// Allows to create and sign a [Tx] object so that it can later
 /// be sent to the chain.
@@ -14,13 +13,16 @@ class TxSigner {
   final NodeQuerier _nodeQuerier;
 
   TxSigner({
-    @required AuthQuerier authQuerier,
-    @required NodeQuerier nodeQuerier,
-  })  : _authQuerier = authQuerier,
+    required AuthQuerier authQuerier,
+    required NodeQuerier nodeQuerier,
+  })   : _authQuerier = authQuerier,
         _nodeQuerier = nodeQuerier;
 
   /// Builds a new [TxSigner] from a given gRPC client channel and HTTP client.
-  factory TxSigner.build(ClientChannel clientChannel, http.Client httpClient) {
+  factory TxSigner.build(
+    grpc.ClientChannel clientChannel,
+    http.Client httpClient,
+  ) {
     return TxSigner(
       authQuerier: AuthQuerier.build(clientChannel),
       nodeQuerier: NodeQuerier.build(httpClient),
@@ -29,7 +31,10 @@ class TxSigner {
 
   /// Builds a new [TxSigner] from the given [NetworkInfo].
   factory TxSigner.fromNetworkInfo(NetworkInfo info) {
-    final clientChannel = ClientChannel(info.fullNodeHost, port: info.gRPCPort);
+    final clientChannel = grpc.ClientChannel(
+      info.fullNodeHost,
+      port: info.gRPCPort,
+    );
     final httpClient = http.Client();
     return TxSigner.build(clientChannel, httpClient);
   }
@@ -40,9 +45,9 @@ class TxSigner {
   Future<Tx> createAndSign(
     Wallet wallet,
     List<GeneratedMessage> msgs, {
-    TxConfig config,
-    String memo,
-    Fee fee,
+    TxConfig? config,
+    String? memo,
+    Fee? fee,
   }) async {
     // Set the config to the default value if not given
     config ??= DefaultTxConfig.create();
@@ -67,7 +72,7 @@ class TxSigner {
     // Get the public key from the account, or generate it if the
     // chain does not have it yet
     var pubKey = account.pubKey;
-    if (pubKey.value?.isNotEmpty != true) {
+    if (pubKey.value.isNotEmpty != true) {
       final secp256Key = secp256.PubKey.create()..key = wallet.publicKey;
       pubKey = Codec.serialize(secp256Key);
     }

@@ -1,10 +1,8 @@
 ///
-//  Generated code. Do not modify.
-//  source: tendermint/types/block.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
+import 'dart:convert' as $convert;
+import 'dart:core' as $core;
+import 'dart:typed_data' as $typed_data;
+@$core.Deprecated('Use blockDescriptor instead')
 const Block$json = const {
   '1': 'Block',
   '2': const [
@@ -15,3 +13,5 @@ const Block$json = const {
   ],
 };
 
+/// Descriptor for `Block`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List blockDescriptor = $convert.base64Decode('CgVCbG9jaxI2CgZoZWFkZXIYASABKAsyGC50ZW5kZXJtaW50LnR5cGVzLkhlYWRlckIEyN4fAFIGaGVhZGVyEjAKBGRhdGEYAiABKAsyFi50ZW5kZXJtaW50LnR5cGVzLkRhdGFCBMjeHwBSBGRhdGESQAoIZXZpZGVuY2UYAyABKAsyHi50ZW5kZXJtaW50LnR5cGVzLkV2aWRlbmNlTGlzdEIEyN4fAFIIZXZpZGVuY2USOQoLbGFzdF9jb21taXQYBCABKAsyGC50ZW5kZXJtaW50LnR5cGVzLkNvbW1pdFIKbGFzdENvbW1pdA==');

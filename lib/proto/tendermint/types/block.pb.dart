@@ -16,7 +16,27 @@ class Block extends $pb.GeneratedMessage {
   ;
 
   Block._() : super();
-  factory Block() => create();
+  factory Block({
+    $5.Header? header,
+    $5.Data? data,
+    $6.EvidenceList? evidence,
+    $5.Commit? lastCommit,
+  }) {
+    final _result = create();
+    if (header != null) {
+      _result.header = header;
+    }
+    if (data != null) {
+      _result.data = data;
+    }
+    if (evidence != null) {
+      _result.evidence = evidence;
+    }
+    if (lastCommit != null) {
+      _result.lastCommit = lastCommit;
+    }
+    return _result;
+  }
   factory Block.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Block.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -28,7 +48,7 @@ class Block extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Block copyWith(void Function(Block) updates) => super.copyWith((message) => updates(message as Block)); // ignore: deprecated_member_use
+  Block copyWith(void Function(Block) updates) => super.copyWith((message) => updates(message as Block)) as Block; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static Block create() => Block._();
@@ -36,7 +56,7 @@ class Block extends $pb.GeneratedMessage {
   static $pb.PbList<Block> createRepeated() => $pb.PbList<Block>();
   @$core.pragma('dart2js:noInline')
   static Block getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Block>(create);
-  static Block _defaultInstance;
+  static Block? _defaultInstance;
 
   @$pb.TagNumber(1)
   $5.Header get header => $_getN(0);

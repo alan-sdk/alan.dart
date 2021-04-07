@@ -1,10 +1,8 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/params/v1beta1/params.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
+import 'dart:convert' as $convert;
+import 'dart:core' as $core;
+import 'dart:typed_data' as $typed_data;
+@$core.Deprecated('Use parameterChangeProposalDescriptor instead')
 const ParameterChangeProposal$json = const {
   '1': 'ParameterChangeProposal',
   '2': const [
@@ -15,6 +13,9 @@ const ParameterChangeProposal$json = const {
   '7': const {},
 };
 
+/// Descriptor for `ParameterChangeProposal`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List parameterChangeProposalDescriptor = $convert.base64Decode('ChdQYXJhbWV0ZXJDaGFuZ2VQcm9wb3NhbBIUCgV0aXRsZRgBIAEoCVIFdGl0bGUSIAoLZGVzY3JpcHRpb24YAiABKAlSC2Rlc2NyaXB0aW9uEkIKB2NoYW5nZXMYAyADKAsyIi5jb3Ntb3MucGFyYW1zLnYxYmV0YTEuUGFyYW1DaGFuZ2VCBMjeHwBSB2NoYW5nZXM6CIigHwCYoB8A');
+@$core.Deprecated('Use paramChangeDescriptor instead')
 const ParamChange$json = const {
   '1': 'ParamChange',
   '2': const [
@@ -25,3 +26,5 @@ const ParamChange$json = const {
   '7': const {},
 };
 
+/// Descriptor for `ParamChange`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List paramChangeDescriptor = $convert.base64Decode('CgtQYXJhbUNoYW5nZRIaCghzdWJzcGFjZRgBIAEoCVIIc3Vic3BhY2USEAoDa2V5GAIgASgJUgNrZXkSFAoFdmFsdWUYAyABKAlSBXZhbHVlOgSYoB8A');

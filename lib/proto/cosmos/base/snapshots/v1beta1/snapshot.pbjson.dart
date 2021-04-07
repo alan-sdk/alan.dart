@@ -1,10 +1,8 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/base/snapshots/v1beta1/snapshot.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
+import 'dart:convert' as $convert;
+import 'dart:core' as $core;
+import 'dart:typed_data' as $typed_data;
+@$core.Deprecated('Use snapshotDescriptor instead')
 const Snapshot$json = const {
   '1': 'Snapshot',
   '2': const [
@@ -16,6 +14,9 @@ const Snapshot$json = const {
   ],
 };
 
+/// Descriptor for `Snapshot`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List snapshotDescriptor = $convert.base64Decode('CghTbmFwc2hvdBIWCgZoZWlnaHQYASABKARSBmhlaWdodBIWCgZmb3JtYXQYAiABKA1SBmZvcm1hdBIWCgZjaHVua3MYAyABKA1SBmNodW5rcxISCgRoYXNoGAQgASgMUgRoYXNoEkkKCG1ldGFkYXRhGAUgASgLMicuY29zbW9zLmJhc2Uuc25hcHNob3RzLnYxYmV0YTEuTWV0YWRhdGFCBMjeHwBSCG1ldGFkYXRh');
+@$core.Deprecated('Use metadataDescriptor instead')
 const Metadata$json = const {
   '1': 'Metadata',
   '2': const [
@@ -23,3 +24,5 @@ const Metadata$json = const {
   ],
 };
 
+/// Descriptor for `Metadata`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List metadataDescriptor = $convert.base64Decode('CghNZXRhZGF0YRIhCgxjaHVua19oYXNoZXMYASADKAxSC2NodW5rSGFzaGVz');

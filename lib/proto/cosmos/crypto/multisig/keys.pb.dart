@@ -1,10 +1,4 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/crypto/multisig/keys.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
@@ -19,7 +13,19 @@ class LegacyAminoPubKey extends $pb.GeneratedMessage {
   ;
 
   LegacyAminoPubKey._() : super();
-  factory LegacyAminoPubKey() => create();
+  factory LegacyAminoPubKey({
+    $core.int? threshold,
+    $core.Iterable<$0.Any>? publicKeys,
+  }) {
+    final _result = create();
+    if (threshold != null) {
+      _result.threshold = threshold;
+    }
+    if (publicKeys != null) {
+      _result.publicKeys.addAll(publicKeys);
+    }
+    return _result;
+  }
   factory LegacyAminoPubKey.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory LegacyAminoPubKey.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -31,7 +37,7 @@ class LegacyAminoPubKey extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  LegacyAminoPubKey copyWith(void Function(LegacyAminoPubKey) updates) => super.copyWith((message) => updates(message as LegacyAminoPubKey)); // ignore: deprecated_member_use
+  LegacyAminoPubKey copyWith(void Function(LegacyAminoPubKey) updates) => super.copyWith((message) => updates(message as LegacyAminoPubKey)) as LegacyAminoPubKey; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static LegacyAminoPubKey create() => LegacyAminoPubKey._();
@@ -39,7 +45,7 @@ class LegacyAminoPubKey extends $pb.GeneratedMessage {
   static $pb.PbList<LegacyAminoPubKey> createRepeated() => $pb.PbList<LegacyAminoPubKey>();
   @$core.pragma('dart2js:noInline')
   static LegacyAminoPubKey getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LegacyAminoPubKey>(create);
-  static LegacyAminoPubKey _defaultInstance;
+  static LegacyAminoPubKey? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.int get threshold => $_getIZ(0);

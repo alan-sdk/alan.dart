@@ -17,7 +17,27 @@ class ExistenceProof extends $pb.GeneratedMessage {
   ;
 
   ExistenceProof._() : super();
-  factory ExistenceProof() => create();
+  factory ExistenceProof({
+    $core.List<$core.int>? key,
+    $core.List<$core.int>? value,
+    LeafOp? leaf,
+    $core.Iterable<InnerOp>? path,
+  }) {
+    final _result = create();
+    if (key != null) {
+      _result.key = key;
+    }
+    if (value != null) {
+      _result.value = value;
+    }
+    if (leaf != null) {
+      _result.leaf = leaf;
+    }
+    if (path != null) {
+      _result.path.addAll(path);
+    }
+    return _result;
+  }
   factory ExistenceProof.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ExistenceProof.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -29,7 +49,7 @@ class ExistenceProof extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ExistenceProof copyWith(void Function(ExistenceProof) updates) => super.copyWith((message) => updates(message as ExistenceProof)); // ignore: deprecated_member_use
+  ExistenceProof copyWith(void Function(ExistenceProof) updates) => super.copyWith((message) => updates(message as ExistenceProof)) as ExistenceProof; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static ExistenceProof create() => ExistenceProof._();
@@ -37,7 +57,7 @@ class ExistenceProof extends $pb.GeneratedMessage {
   static $pb.PbList<ExistenceProof> createRepeated() => $pb.PbList<ExistenceProof>();
   @$core.pragma('dart2js:noInline')
   static ExistenceProof getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ExistenceProof>(create);
-  static ExistenceProof _defaultInstance;
+  static ExistenceProof? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<$core.int> get key => $_getN(0);
@@ -81,7 +101,23 @@ class NonExistenceProof extends $pb.GeneratedMessage {
   ;
 
   NonExistenceProof._() : super();
-  factory NonExistenceProof() => create();
+  factory NonExistenceProof({
+    $core.List<$core.int>? key,
+    ExistenceProof? left,
+    ExistenceProof? right,
+  }) {
+    final _result = create();
+    if (key != null) {
+      _result.key = key;
+    }
+    if (left != null) {
+      _result.left = left;
+    }
+    if (right != null) {
+      _result.right = right;
+    }
+    return _result;
+  }
   factory NonExistenceProof.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory NonExistenceProof.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -93,7 +129,7 @@ class NonExistenceProof extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  NonExistenceProof copyWith(void Function(NonExistenceProof) updates) => super.copyWith((message) => updates(message as NonExistenceProof)); // ignore: deprecated_member_use
+  NonExistenceProof copyWith(void Function(NonExistenceProof) updates) => super.copyWith((message) => updates(message as NonExistenceProof)) as NonExistenceProof; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static NonExistenceProof create() => NonExistenceProof._();
@@ -101,7 +137,7 @@ class NonExistenceProof extends $pb.GeneratedMessage {
   static $pb.PbList<NonExistenceProof> createRepeated() => $pb.PbList<NonExistenceProof>();
   @$core.pragma('dart2js:noInline')
   static NonExistenceProof getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<NonExistenceProof>(create);
-  static NonExistenceProof _defaultInstance;
+  static NonExistenceProof? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<$core.int> get key => $_getN(0);
@@ -161,7 +197,27 @@ class CommitmentProof extends $pb.GeneratedMessage {
   ;
 
   CommitmentProof._() : super();
-  factory CommitmentProof() => create();
+  factory CommitmentProof({
+    ExistenceProof? exist,
+    NonExistenceProof? nonexist,
+    BatchProof? batch,
+    CompressedBatchProof? compressed,
+  }) {
+    final _result = create();
+    if (exist != null) {
+      _result.exist = exist;
+    }
+    if (nonexist != null) {
+      _result.nonexist = nonexist;
+    }
+    if (batch != null) {
+      _result.batch = batch;
+    }
+    if (compressed != null) {
+      _result.compressed = compressed;
+    }
+    return _result;
+  }
   factory CommitmentProof.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CommitmentProof.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -173,7 +229,7 @@ class CommitmentProof extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  CommitmentProof copyWith(void Function(CommitmentProof) updates) => super.copyWith((message) => updates(message as CommitmentProof)); // ignore: deprecated_member_use
+  CommitmentProof copyWith(void Function(CommitmentProof) updates) => super.copyWith((message) => updates(message as CommitmentProof)) as CommitmentProof; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static CommitmentProof create() => CommitmentProof._();
@@ -181,9 +237,9 @@ class CommitmentProof extends $pb.GeneratedMessage {
   static $pb.PbList<CommitmentProof> createRepeated() => $pb.PbList<CommitmentProof>();
   @$core.pragma('dart2js:noInline')
   static CommitmentProof getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CommitmentProof>(create);
-  static CommitmentProof _defaultInstance;
+  static CommitmentProof? _defaultInstance;
 
-  CommitmentProof_Proof whichProof() => _CommitmentProof_ProofByTag[$_whichOneof(0)];
+  CommitmentProof_Proof whichProof() => _CommitmentProof_ProofByTag[$_whichOneof(0)]!;
   void clearProof() => clearField($_whichOneof(0));
 
   @$pb.TagNumber(1)
@@ -242,7 +298,31 @@ class LeafOp extends $pb.GeneratedMessage {
   ;
 
   LeafOp._() : super();
-  factory LeafOp() => create();
+  factory LeafOp({
+    HashOp? hash,
+    HashOp? prehashKey,
+    HashOp? prehashValue,
+    LengthOp? length,
+    $core.List<$core.int>? prefix,
+  }) {
+    final _result = create();
+    if (hash != null) {
+      _result.hash = hash;
+    }
+    if (prehashKey != null) {
+      _result.prehashKey = prehashKey;
+    }
+    if (prehashValue != null) {
+      _result.prehashValue = prehashValue;
+    }
+    if (length != null) {
+      _result.length = length;
+    }
+    if (prefix != null) {
+      _result.prefix = prefix;
+    }
+    return _result;
+  }
   factory LeafOp.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory LeafOp.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -254,7 +334,7 @@ class LeafOp extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  LeafOp copyWith(void Function(LeafOp) updates) => super.copyWith((message) => updates(message as LeafOp)); // ignore: deprecated_member_use
+  LeafOp copyWith(void Function(LeafOp) updates) => super.copyWith((message) => updates(message as LeafOp)) as LeafOp; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static LeafOp create() => LeafOp._();
@@ -262,7 +342,7 @@ class LeafOp extends $pb.GeneratedMessage {
   static $pb.PbList<LeafOp> createRepeated() => $pb.PbList<LeafOp>();
   @$core.pragma('dart2js:noInline')
   static LeafOp getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<LeafOp>(create);
-  static LeafOp _defaultInstance;
+  static LeafOp? _defaultInstance;
 
   @$pb.TagNumber(1)
   HashOp get hash => $_getN(0);
@@ -319,7 +399,23 @@ class InnerOp extends $pb.GeneratedMessage {
   ;
 
   InnerOp._() : super();
-  factory InnerOp() => create();
+  factory InnerOp({
+    HashOp? hash,
+    $core.List<$core.int>? prefix,
+    $core.List<$core.int>? suffix,
+  }) {
+    final _result = create();
+    if (hash != null) {
+      _result.hash = hash;
+    }
+    if (prefix != null) {
+      _result.prefix = prefix;
+    }
+    if (suffix != null) {
+      _result.suffix = suffix;
+    }
+    return _result;
+  }
   factory InnerOp.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory InnerOp.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -331,7 +427,7 @@ class InnerOp extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  InnerOp copyWith(void Function(InnerOp) updates) => super.copyWith((message) => updates(message as InnerOp)); // ignore: deprecated_member_use
+  InnerOp copyWith(void Function(InnerOp) updates) => super.copyWith((message) => updates(message as InnerOp)) as InnerOp; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static InnerOp create() => InnerOp._();
@@ -339,7 +435,7 @@ class InnerOp extends $pb.GeneratedMessage {
   static $pb.PbList<InnerOp> createRepeated() => $pb.PbList<InnerOp>();
   @$core.pragma('dart2js:noInline')
   static InnerOp getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<InnerOp>(create);
-  static InnerOp _defaultInstance;
+  static InnerOp? _defaultInstance;
 
   @$pb.TagNumber(1)
   HashOp get hash => $_getN(0);
@@ -379,7 +475,27 @@ class ProofSpec extends $pb.GeneratedMessage {
   ;
 
   ProofSpec._() : super();
-  factory ProofSpec() => create();
+  factory ProofSpec({
+    LeafOp? leafSpec,
+    InnerSpec? innerSpec,
+    $core.int? maxDepth,
+    $core.int? minDepth,
+  }) {
+    final _result = create();
+    if (leafSpec != null) {
+      _result.leafSpec = leafSpec;
+    }
+    if (innerSpec != null) {
+      _result.innerSpec = innerSpec;
+    }
+    if (maxDepth != null) {
+      _result.maxDepth = maxDepth;
+    }
+    if (minDepth != null) {
+      _result.minDepth = minDepth;
+    }
+    return _result;
+  }
   factory ProofSpec.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ProofSpec.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -391,7 +507,7 @@ class ProofSpec extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ProofSpec copyWith(void Function(ProofSpec) updates) => super.copyWith((message) => updates(message as ProofSpec)); // ignore: deprecated_member_use
+  ProofSpec copyWith(void Function(ProofSpec) updates) => super.copyWith((message) => updates(message as ProofSpec)) as ProofSpec; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static ProofSpec create() => ProofSpec._();
@@ -399,7 +515,7 @@ class ProofSpec extends $pb.GeneratedMessage {
   static $pb.PbList<ProofSpec> createRepeated() => $pb.PbList<ProofSpec>();
   @$core.pragma('dart2js:noInline')
   static ProofSpec getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ProofSpec>(create);
-  static ProofSpec _defaultInstance;
+  static ProofSpec? _defaultInstance;
 
   @$pb.TagNumber(1)
   LeafOp get leafSpec => $_getN(0);
@@ -454,7 +570,35 @@ class InnerSpec extends $pb.GeneratedMessage {
   ;
 
   InnerSpec._() : super();
-  factory InnerSpec() => create();
+  factory InnerSpec({
+    $core.Iterable<$core.int>? childOrder,
+    $core.int? childSize,
+    $core.int? minPrefixLength,
+    $core.int? maxPrefixLength,
+    $core.List<$core.int>? emptyChild,
+    HashOp? hash,
+  }) {
+    final _result = create();
+    if (childOrder != null) {
+      _result.childOrder.addAll(childOrder);
+    }
+    if (childSize != null) {
+      _result.childSize = childSize;
+    }
+    if (minPrefixLength != null) {
+      _result.minPrefixLength = minPrefixLength;
+    }
+    if (maxPrefixLength != null) {
+      _result.maxPrefixLength = maxPrefixLength;
+    }
+    if (emptyChild != null) {
+      _result.emptyChild = emptyChild;
+    }
+    if (hash != null) {
+      _result.hash = hash;
+    }
+    return _result;
+  }
   factory InnerSpec.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory InnerSpec.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -466,7 +610,7 @@ class InnerSpec extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  InnerSpec copyWith(void Function(InnerSpec) updates) => super.copyWith((message) => updates(message as InnerSpec)); // ignore: deprecated_member_use
+  InnerSpec copyWith(void Function(InnerSpec) updates) => super.copyWith((message) => updates(message as InnerSpec)) as InnerSpec; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static InnerSpec create() => InnerSpec._();
@@ -474,7 +618,7 @@ class InnerSpec extends $pb.GeneratedMessage {
   static $pb.PbList<InnerSpec> createRepeated() => $pb.PbList<InnerSpec>();
   @$core.pragma('dart2js:noInline')
   static InnerSpec getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<InnerSpec>(create);
-  static InnerSpec _defaultInstance;
+  static InnerSpec? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<$core.int> get childOrder => $_getList(0);
@@ -532,7 +676,15 @@ class BatchProof extends $pb.GeneratedMessage {
   ;
 
   BatchProof._() : super();
-  factory BatchProof() => create();
+  factory BatchProof({
+    $core.Iterable<BatchEntry>? entries,
+  }) {
+    final _result = create();
+    if (entries != null) {
+      _result.entries.addAll(entries);
+    }
+    return _result;
+  }
   factory BatchProof.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory BatchProof.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -544,7 +696,7 @@ class BatchProof extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  BatchProof copyWith(void Function(BatchProof) updates) => super.copyWith((message) => updates(message as BatchProof)); // ignore: deprecated_member_use
+  BatchProof copyWith(void Function(BatchProof) updates) => super.copyWith((message) => updates(message as BatchProof)) as BatchProof; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static BatchProof create() => BatchProof._();
@@ -552,7 +704,7 @@ class BatchProof extends $pb.GeneratedMessage {
   static $pb.PbList<BatchProof> createRepeated() => $pb.PbList<BatchProof>();
   @$core.pragma('dart2js:noInline')
   static BatchProof getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<BatchProof>(create);
-  static BatchProof _defaultInstance;
+  static BatchProof? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<BatchEntry> get entries => $_getList(0);
@@ -578,7 +730,19 @@ class BatchEntry extends $pb.GeneratedMessage {
   ;
 
   BatchEntry._() : super();
-  factory BatchEntry() => create();
+  factory BatchEntry({
+    ExistenceProof? exist,
+    NonExistenceProof? nonexist,
+  }) {
+    final _result = create();
+    if (exist != null) {
+      _result.exist = exist;
+    }
+    if (nonexist != null) {
+      _result.nonexist = nonexist;
+    }
+    return _result;
+  }
   factory BatchEntry.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory BatchEntry.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -590,7 +754,7 @@ class BatchEntry extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  BatchEntry copyWith(void Function(BatchEntry) updates) => super.copyWith((message) => updates(message as BatchEntry)); // ignore: deprecated_member_use
+  BatchEntry copyWith(void Function(BatchEntry) updates) => super.copyWith((message) => updates(message as BatchEntry)) as BatchEntry; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static BatchEntry create() => BatchEntry._();
@@ -598,9 +762,9 @@ class BatchEntry extends $pb.GeneratedMessage {
   static $pb.PbList<BatchEntry> createRepeated() => $pb.PbList<BatchEntry>();
   @$core.pragma('dart2js:noInline')
   static BatchEntry getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<BatchEntry>(create);
-  static BatchEntry _defaultInstance;
+  static BatchEntry? _defaultInstance;
 
-  BatchEntry_Proof whichProof() => _BatchEntry_ProofByTag[$_whichOneof(0)];
+  BatchEntry_Proof whichProof() => _BatchEntry_ProofByTag[$_whichOneof(0)]!;
   void clearProof() => clearField($_whichOneof(0));
 
   @$pb.TagNumber(1)
@@ -634,7 +798,19 @@ class CompressedBatchProof extends $pb.GeneratedMessage {
   ;
 
   CompressedBatchProof._() : super();
-  factory CompressedBatchProof() => create();
+  factory CompressedBatchProof({
+    $core.Iterable<CompressedBatchEntry>? entries,
+    $core.Iterable<InnerOp>? lookupInners,
+  }) {
+    final _result = create();
+    if (entries != null) {
+      _result.entries.addAll(entries);
+    }
+    if (lookupInners != null) {
+      _result.lookupInners.addAll(lookupInners);
+    }
+    return _result;
+  }
   factory CompressedBatchProof.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CompressedBatchProof.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -646,7 +822,7 @@ class CompressedBatchProof extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  CompressedBatchProof copyWith(void Function(CompressedBatchProof) updates) => super.copyWith((message) => updates(message as CompressedBatchProof)); // ignore: deprecated_member_use
+  CompressedBatchProof copyWith(void Function(CompressedBatchProof) updates) => super.copyWith((message) => updates(message as CompressedBatchProof)) as CompressedBatchProof; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static CompressedBatchProof create() => CompressedBatchProof._();
@@ -654,7 +830,7 @@ class CompressedBatchProof extends $pb.GeneratedMessage {
   static $pb.PbList<CompressedBatchProof> createRepeated() => $pb.PbList<CompressedBatchProof>();
   @$core.pragma('dart2js:noInline')
   static CompressedBatchProof getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CompressedBatchProof>(create);
-  static CompressedBatchProof _defaultInstance;
+  static CompressedBatchProof? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<CompressedBatchEntry> get entries => $_getList(0);
@@ -683,7 +859,19 @@ class CompressedBatchEntry extends $pb.GeneratedMessage {
   ;
 
   CompressedBatchEntry._() : super();
-  factory CompressedBatchEntry() => create();
+  factory CompressedBatchEntry({
+    CompressedExistenceProof? exist,
+    CompressedNonExistenceProof? nonexist,
+  }) {
+    final _result = create();
+    if (exist != null) {
+      _result.exist = exist;
+    }
+    if (nonexist != null) {
+      _result.nonexist = nonexist;
+    }
+    return _result;
+  }
   factory CompressedBatchEntry.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CompressedBatchEntry.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -695,7 +883,7 @@ class CompressedBatchEntry extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  CompressedBatchEntry copyWith(void Function(CompressedBatchEntry) updates) => super.copyWith((message) => updates(message as CompressedBatchEntry)); // ignore: deprecated_member_use
+  CompressedBatchEntry copyWith(void Function(CompressedBatchEntry) updates) => super.copyWith((message) => updates(message as CompressedBatchEntry)) as CompressedBatchEntry; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static CompressedBatchEntry create() => CompressedBatchEntry._();
@@ -703,9 +891,9 @@ class CompressedBatchEntry extends $pb.GeneratedMessage {
   static $pb.PbList<CompressedBatchEntry> createRepeated() => $pb.PbList<CompressedBatchEntry>();
   @$core.pragma('dart2js:noInline')
   static CompressedBatchEntry getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CompressedBatchEntry>(create);
-  static CompressedBatchEntry _defaultInstance;
+  static CompressedBatchEntry? _defaultInstance;
 
-  CompressedBatchEntry_Proof whichProof() => _CompressedBatchEntry_ProofByTag[$_whichOneof(0)];
+  CompressedBatchEntry_Proof whichProof() => _CompressedBatchEntry_ProofByTag[$_whichOneof(0)]!;
   void clearProof() => clearField($_whichOneof(0));
 
   @$pb.TagNumber(1)
@@ -741,7 +929,27 @@ class CompressedExistenceProof extends $pb.GeneratedMessage {
   ;
 
   CompressedExistenceProof._() : super();
-  factory CompressedExistenceProof() => create();
+  factory CompressedExistenceProof({
+    $core.List<$core.int>? key,
+    $core.List<$core.int>? value,
+    LeafOp? leaf,
+    $core.Iterable<$core.int>? path,
+  }) {
+    final _result = create();
+    if (key != null) {
+      _result.key = key;
+    }
+    if (value != null) {
+      _result.value = value;
+    }
+    if (leaf != null) {
+      _result.leaf = leaf;
+    }
+    if (path != null) {
+      _result.path.addAll(path);
+    }
+    return _result;
+  }
   factory CompressedExistenceProof.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CompressedExistenceProof.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -753,7 +961,7 @@ class CompressedExistenceProof extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  CompressedExistenceProof copyWith(void Function(CompressedExistenceProof) updates) => super.copyWith((message) => updates(message as CompressedExistenceProof)); // ignore: deprecated_member_use
+  CompressedExistenceProof copyWith(void Function(CompressedExistenceProof) updates) => super.copyWith((message) => updates(message as CompressedExistenceProof)) as CompressedExistenceProof; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static CompressedExistenceProof create() => CompressedExistenceProof._();
@@ -761,7 +969,7 @@ class CompressedExistenceProof extends $pb.GeneratedMessage {
   static $pb.PbList<CompressedExistenceProof> createRepeated() => $pb.PbList<CompressedExistenceProof>();
   @$core.pragma('dart2js:noInline')
   static CompressedExistenceProof getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CompressedExistenceProof>(create);
-  static CompressedExistenceProof _defaultInstance;
+  static CompressedExistenceProof? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<$core.int> get key => $_getN(0);
@@ -805,7 +1013,23 @@ class CompressedNonExistenceProof extends $pb.GeneratedMessage {
   ;
 
   CompressedNonExistenceProof._() : super();
-  factory CompressedNonExistenceProof() => create();
+  factory CompressedNonExistenceProof({
+    $core.List<$core.int>? key,
+    CompressedExistenceProof? left,
+    CompressedExistenceProof? right,
+  }) {
+    final _result = create();
+    if (key != null) {
+      _result.key = key;
+    }
+    if (left != null) {
+      _result.left = left;
+    }
+    if (right != null) {
+      _result.right = right;
+    }
+    return _result;
+  }
   factory CompressedNonExistenceProof.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CompressedNonExistenceProof.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -817,7 +1041,7 @@ class CompressedNonExistenceProof extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  CompressedNonExistenceProof copyWith(void Function(CompressedNonExistenceProof) updates) => super.copyWith((message) => updates(message as CompressedNonExistenceProof)); // ignore: deprecated_member_use
+  CompressedNonExistenceProof copyWith(void Function(CompressedNonExistenceProof) updates) => super.copyWith((message) => updates(message as CompressedNonExistenceProof)) as CompressedNonExistenceProof; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static CompressedNonExistenceProof create() => CompressedNonExistenceProof._();
@@ -825,7 +1049,7 @@ class CompressedNonExistenceProof extends $pb.GeneratedMessage {
   static $pb.PbList<CompressedNonExistenceProof> createRepeated() => $pb.PbList<CompressedNonExistenceProof>();
   @$core.pragma('dart2js:noInline')
   static CompressedNonExistenceProof getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CompressedNonExistenceProof>(create);
-  static CompressedNonExistenceProof _defaultInstance;
+  static CompressedNonExistenceProof? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<$core.int> get key => $_getN(0);

@@ -1,10 +1,4 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/mint/v1beta1/mint.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
 import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
@@ -18,7 +12,19 @@ class Minter extends $pb.GeneratedMessage {
   ;
 
   Minter._() : super();
-  factory Minter() => create();
+  factory Minter({
+    $core.String? inflation,
+    $core.String? annualProvisions,
+  }) {
+    final _result = create();
+    if (inflation != null) {
+      _result.inflation = inflation;
+    }
+    if (annualProvisions != null) {
+      _result.annualProvisions = annualProvisions;
+    }
+    return _result;
+  }
   factory Minter.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Minter.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -30,7 +36,7 @@ class Minter extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Minter copyWith(void Function(Minter) updates) => super.copyWith((message) => updates(message as Minter)); // ignore: deprecated_member_use
+  Minter copyWith(void Function(Minter) updates) => super.copyWith((message) => updates(message as Minter)) as Minter; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static Minter create() => Minter._();
@@ -38,7 +44,7 @@ class Minter extends $pb.GeneratedMessage {
   static $pb.PbList<Minter> createRepeated() => $pb.PbList<Minter>();
   @$core.pragma('dart2js:noInline')
   static Minter getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Minter>(create);
-  static Minter _defaultInstance;
+  static Minter? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get inflation => $_getSZ(0);
@@ -71,7 +77,35 @@ class Params extends $pb.GeneratedMessage {
   ;
 
   Params._() : super();
-  factory Params() => create();
+  factory Params({
+    $core.String? mintDenom,
+    $core.String? inflationRateChange,
+    $core.String? inflationMax,
+    $core.String? inflationMin,
+    $core.String? goalBonded,
+    $fixnum.Int64? blocksPerYear,
+  }) {
+    final _result = create();
+    if (mintDenom != null) {
+      _result.mintDenom = mintDenom;
+    }
+    if (inflationRateChange != null) {
+      _result.inflationRateChange = inflationRateChange;
+    }
+    if (inflationMax != null) {
+      _result.inflationMax = inflationMax;
+    }
+    if (inflationMin != null) {
+      _result.inflationMin = inflationMin;
+    }
+    if (goalBonded != null) {
+      _result.goalBonded = goalBonded;
+    }
+    if (blocksPerYear != null) {
+      _result.blocksPerYear = blocksPerYear;
+    }
+    return _result;
+  }
   factory Params.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Params.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -83,7 +117,7 @@ class Params extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Params copyWith(void Function(Params) updates) => super.copyWith((message) => updates(message as Params)); // ignore: deprecated_member_use
+  Params copyWith(void Function(Params) updates) => super.copyWith((message) => updates(message as Params)) as Params; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static Params create() => Params._();
@@ -91,7 +125,7 @@ class Params extends $pb.GeneratedMessage {
   static $pb.PbList<Params> createRepeated() => $pb.PbList<Params>();
   @$core.pragma('dart2js:noInline')
   static Params getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Params>(create);
-  static Params _defaultInstance;
+  static Params? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get mintDenom => $_getSZ(0);

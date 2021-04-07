@@ -1,10 +1,8 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/capability/v1beta1/genesis.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
+import 'dart:convert' as $convert;
+import 'dart:core' as $core;
+import 'dart:typed_data' as $typed_data;
+@$core.Deprecated('Use genesisOwnersDescriptor instead')
 const GenesisOwners$json = const {
   '1': 'GenesisOwners',
   '2': const [
@@ -13,6 +11,9 @@ const GenesisOwners$json = const {
   ],
 };
 
+/// Descriptor for `GenesisOwners`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List genesisOwnersDescriptor = $convert.base64Decode('Cg1HZW5lc2lzT3duZXJzEhQKBWluZGV4GAEgASgEUgVpbmRleBJrCgxpbmRleF9vd25lcnMYAiABKAsyKy5jb3Ntb3MuY2FwYWJpbGl0eS52MWJldGExLkNhcGFiaWxpdHlPd25lcnNCG8jeHwDy3h8TeWFtbDoiaW5kZXhfb3duZXJzIlILaW5kZXhPd25lcnM=');
+@$core.Deprecated('Use genesisStateDescriptor instead')
 const GenesisState$json = const {
   '1': 'GenesisState',
   '2': const [
@@ -21,3 +22,5 @@ const GenesisState$json = const {
   ],
 };
 
+/// Descriptor for `GenesisState`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List genesisStateDescriptor = $convert.base64Decode('CgxHZW5lc2lzU3RhdGUSFAoFaW5kZXgYASABKARSBWluZGV4EkYKBm93bmVycxgCIAMoCzIoLmNvc21vcy5jYXBhYmlsaXR5LnYxYmV0YTEuR2VuZXNpc093bmVyc0IEyN4fAFIGb3duZXJz');

@@ -13,7 +13,23 @@ class NetAddress extends $pb.GeneratedMessage {
   ;
 
   NetAddress._() : super();
-  factory NetAddress() => create();
+  factory NetAddress({
+    $core.String? id,
+    $core.String? ip,
+    $core.int? port,
+  }) {
+    final _result = create();
+    if (id != null) {
+      _result.id = id;
+    }
+    if (ip != null) {
+      _result.ip = ip;
+    }
+    if (port != null) {
+      _result.port = port;
+    }
+    return _result;
+  }
   factory NetAddress.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory NetAddress.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -25,7 +41,7 @@ class NetAddress extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  NetAddress copyWith(void Function(NetAddress) updates) => super.copyWith((message) => updates(message as NetAddress)); // ignore: deprecated_member_use
+  NetAddress copyWith(void Function(NetAddress) updates) => super.copyWith((message) => updates(message as NetAddress)) as NetAddress; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static NetAddress create() => NetAddress._();
@@ -33,7 +49,7 @@ class NetAddress extends $pb.GeneratedMessage {
   static $pb.PbList<NetAddress> createRepeated() => $pb.PbList<NetAddress>();
   @$core.pragma('dart2js:noInline')
   static NetAddress getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<NetAddress>(create);
-  static NetAddress _defaultInstance;
+  static NetAddress? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get id => $_getSZ(0);
@@ -72,7 +88,23 @@ class ProtocolVersion extends $pb.GeneratedMessage {
   ;
 
   ProtocolVersion._() : super();
-  factory ProtocolVersion() => create();
+  factory ProtocolVersion({
+    $fixnum.Int64? p2p,
+    $fixnum.Int64? block,
+    $fixnum.Int64? app,
+  }) {
+    final _result = create();
+    if (p2p != null) {
+      _result.p2p = p2p;
+    }
+    if (block != null) {
+      _result.block = block;
+    }
+    if (app != null) {
+      _result.app = app;
+    }
+    return _result;
+  }
   factory ProtocolVersion.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ProtocolVersion.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -84,7 +116,7 @@ class ProtocolVersion extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ProtocolVersion copyWith(void Function(ProtocolVersion) updates) => super.copyWith((message) => updates(message as ProtocolVersion)); // ignore: deprecated_member_use
+  ProtocolVersion copyWith(void Function(ProtocolVersion) updates) => super.copyWith((message) => updates(message as ProtocolVersion)) as ProtocolVersion; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static ProtocolVersion create() => ProtocolVersion._();
@@ -92,7 +124,7 @@ class ProtocolVersion extends $pb.GeneratedMessage {
   static $pb.PbList<ProtocolVersion> createRepeated() => $pb.PbList<ProtocolVersion>();
   @$core.pragma('dart2js:noInline')
   static ProtocolVersion getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ProtocolVersion>(create);
-  static ProtocolVersion _defaultInstance;
+  static ProtocolVersion? _defaultInstance;
 
   @$pb.TagNumber(1)
   $fixnum.Int64 get p2p => $_getI64(0);
@@ -136,7 +168,43 @@ class DefaultNodeInfo extends $pb.GeneratedMessage {
   ;
 
   DefaultNodeInfo._() : super();
-  factory DefaultNodeInfo() => create();
+  factory DefaultNodeInfo({
+    ProtocolVersion? protocolVersion,
+    $core.String? defaultNodeId,
+    $core.String? listenAddr,
+    $core.String? network,
+    $core.String? version,
+    $core.List<$core.int>? channels,
+    $core.String? moniker,
+    DefaultNodeInfoOther? other,
+  }) {
+    final _result = create();
+    if (protocolVersion != null) {
+      _result.protocolVersion = protocolVersion;
+    }
+    if (defaultNodeId != null) {
+      _result.defaultNodeId = defaultNodeId;
+    }
+    if (listenAddr != null) {
+      _result.listenAddr = listenAddr;
+    }
+    if (network != null) {
+      _result.network = network;
+    }
+    if (version != null) {
+      _result.version = version;
+    }
+    if (channels != null) {
+      _result.channels = channels;
+    }
+    if (moniker != null) {
+      _result.moniker = moniker;
+    }
+    if (other != null) {
+      _result.other = other;
+    }
+    return _result;
+  }
   factory DefaultNodeInfo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DefaultNodeInfo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -148,7 +216,7 @@ class DefaultNodeInfo extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  DefaultNodeInfo copyWith(void Function(DefaultNodeInfo) updates) => super.copyWith((message) => updates(message as DefaultNodeInfo)); // ignore: deprecated_member_use
+  DefaultNodeInfo copyWith(void Function(DefaultNodeInfo) updates) => super.copyWith((message) => updates(message as DefaultNodeInfo)) as DefaultNodeInfo; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static DefaultNodeInfo create() => DefaultNodeInfo._();
@@ -156,7 +224,7 @@ class DefaultNodeInfo extends $pb.GeneratedMessage {
   static $pb.PbList<DefaultNodeInfo> createRepeated() => $pb.PbList<DefaultNodeInfo>();
   @$core.pragma('dart2js:noInline')
   static DefaultNodeInfo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DefaultNodeInfo>(create);
-  static DefaultNodeInfo _defaultInstance;
+  static DefaultNodeInfo? _defaultInstance;
 
   @$pb.TagNumber(1)
   ProtocolVersion get protocolVersion => $_getN(0);
@@ -243,7 +311,19 @@ class DefaultNodeInfoOther extends $pb.GeneratedMessage {
   ;
 
   DefaultNodeInfoOther._() : super();
-  factory DefaultNodeInfoOther() => create();
+  factory DefaultNodeInfoOther({
+    $core.String? txIndex,
+    $core.String? rpcAddress,
+  }) {
+    final _result = create();
+    if (txIndex != null) {
+      _result.txIndex = txIndex;
+    }
+    if (rpcAddress != null) {
+      _result.rpcAddress = rpcAddress;
+    }
+    return _result;
+  }
   factory DefaultNodeInfoOther.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DefaultNodeInfoOther.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -255,7 +335,7 @@ class DefaultNodeInfoOther extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  DefaultNodeInfoOther copyWith(void Function(DefaultNodeInfoOther) updates) => super.copyWith((message) => updates(message as DefaultNodeInfoOther)); // ignore: deprecated_member_use
+  DefaultNodeInfoOther copyWith(void Function(DefaultNodeInfoOther) updates) => super.copyWith((message) => updates(message as DefaultNodeInfoOther)) as DefaultNodeInfoOther; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static DefaultNodeInfoOther create() => DefaultNodeInfoOther._();
@@ -263,7 +343,7 @@ class DefaultNodeInfoOther extends $pb.GeneratedMessage {
   static $pb.PbList<DefaultNodeInfoOther> createRepeated() => $pb.PbList<DefaultNodeInfoOther>();
   @$core.pragma('dart2js:noInline')
   static DefaultNodeInfoOther getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DefaultNodeInfoOther>(create);
-  static DefaultNodeInfoOther _defaultInstance;
+  static DefaultNodeInfoOther? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get txIndex => $_getSZ(0);

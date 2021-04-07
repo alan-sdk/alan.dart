@@ -1,10 +1,8 @@
 ///
-//  Generated code. Do not modify.
-//  source: tendermint/p2p/types.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
+import 'dart:convert' as $convert;
+import 'dart:core' as $core;
+import 'dart:typed_data' as $typed_data;
+@$core.Deprecated('Use netAddressDescriptor instead')
 const NetAddress$json = const {
   '1': 'NetAddress',
   '2': const [
@@ -14,6 +12,9 @@ const NetAddress$json = const {
   ],
 };
 
+/// Descriptor for `NetAddress`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List netAddressDescriptor = $convert.base64Decode('CgpOZXRBZGRyZXNzEhYKAmlkGAEgASgJQgbi3h8CSURSAmlkEhYKAmlwGAIgASgJQgbi3h8CSVBSAmlwEhIKBHBvcnQYAyABKA1SBHBvcnQ=');
+@$core.Deprecated('Use protocolVersionDescriptor instead')
 const ProtocolVersion$json = const {
   '1': 'ProtocolVersion',
   '2': const [
@@ -23,6 +24,9 @@ const ProtocolVersion$json = const {
   ],
 };
 
+/// Descriptor for `ProtocolVersion`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List protocolVersionDescriptor = $convert.base64Decode('Cg9Qcm90b2NvbFZlcnNpb24SGQoDcDJwGAEgASgEQgfi3h8DUDJQUgNwMnASFAoFYmxvY2sYAiABKARSBWJsb2NrEhAKA2FwcBgDIAEoBFIDYXBw');
+@$core.Deprecated('Use defaultNodeInfoDescriptor instead')
 const DefaultNodeInfo$json = const {
   '1': 'DefaultNodeInfo',
   '2': const [
@@ -37,6 +41,9 @@ const DefaultNodeInfo$json = const {
   ],
 };
 
+/// Descriptor for `DefaultNodeInfo`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List defaultNodeInfoDescriptor = $convert.base64Decode('Cg9EZWZhdWx0Tm9kZUluZm8SUAoQcHJvdG9jb2xfdmVyc2lvbhgBIAEoCzIfLnRlbmRlcm1pbnQucDJwLlByb3RvY29sVmVyc2lvbkIEyN4fAFIPcHJvdG9jb2xWZXJzaW9uEjkKD2RlZmF1bHRfbm9kZV9pZBgCIAEoCUIR4t4fDURlZmF1bHROb2RlSURSDWRlZmF1bHROb2RlSWQSHwoLbGlzdGVuX2FkZHIYAyABKAlSCmxpc3RlbkFkZHISGAoHbmV0d29yaxgEIAEoCVIHbmV0d29yaxIYCgd2ZXJzaW9uGAUgASgJUgd2ZXJzaW9uEhoKCGNoYW5uZWxzGAYgASgMUghjaGFubmVscxIYCgdtb25pa2VyGAcgASgJUgdtb25pa2VyEkAKBW90aGVyGAggASgLMiQudGVuZGVybWludC5wMnAuRGVmYXVsdE5vZGVJbmZvT3RoZXJCBMjeHwBSBW90aGVy');
+@$core.Deprecated('Use defaultNodeInfoOtherDescriptor instead')
 const DefaultNodeInfoOther$json = const {
   '1': 'DefaultNodeInfoOther',
   '2': const [
@@ -45,3 +52,5 @@ const DefaultNodeInfoOther$json = const {
   ],
 };
 
+/// Descriptor for `DefaultNodeInfoOther`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List defaultNodeInfoOtherDescriptor = $convert.base64Decode('ChREZWZhdWx0Tm9kZUluZm9PdGhlchIZCgh0eF9pbmRleBgBIAEoCVIHdHhJbmRleBIvCgtycGNfYWRkcmVzcxgCIAEoCUIO4t4fClJQQ0FkZHJlc3NSCnJwY0FkZHJlc3M=');

@@ -1,16 +1,10 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/slashing/v1beta1/query.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'slashing.pb.dart' as $4;
 import '../../base/query/v1beta1/pagination.pb.dart' as $5;
+import 'slashing.pb.dart' as $4;
 
 class QueryParamsRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryParamsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.slashing.v1beta1'), createEmptyInstance: create)
@@ -30,7 +24,7 @@ class QueryParamsRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  QueryParamsRequest copyWith(void Function(QueryParamsRequest) updates) => super.copyWith((message) => updates(message as QueryParamsRequest)); // ignore: deprecated_member_use
+  QueryParamsRequest copyWith(void Function(QueryParamsRequest) updates) => super.copyWith((message) => updates(message as QueryParamsRequest)) as QueryParamsRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static QueryParamsRequest create() => QueryParamsRequest._();
@@ -38,7 +32,7 @@ class QueryParamsRequest extends $pb.GeneratedMessage {
   static $pb.PbList<QueryParamsRequest> createRepeated() => $pb.PbList<QueryParamsRequest>();
   @$core.pragma('dart2js:noInline')
   static QueryParamsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QueryParamsRequest>(create);
-  static QueryParamsRequest _defaultInstance;
+  static QueryParamsRequest? _defaultInstance;
 }
 
 class QueryParamsResponse extends $pb.GeneratedMessage {
@@ -48,7 +42,15 @@ class QueryParamsResponse extends $pb.GeneratedMessage {
   ;
 
   QueryParamsResponse._() : super();
-  factory QueryParamsResponse() => create();
+  factory QueryParamsResponse({
+    $4.Params? params,
+  }) {
+    final _result = create();
+    if (params != null) {
+      _result.params = params;
+    }
+    return _result;
+  }
   factory QueryParamsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory QueryParamsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -60,7 +62,7 @@ class QueryParamsResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  QueryParamsResponse copyWith(void Function(QueryParamsResponse) updates) => super.copyWith((message) => updates(message as QueryParamsResponse)); // ignore: deprecated_member_use
+  QueryParamsResponse copyWith(void Function(QueryParamsResponse) updates) => super.copyWith((message) => updates(message as QueryParamsResponse)) as QueryParamsResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static QueryParamsResponse create() => QueryParamsResponse._();
@@ -68,7 +70,7 @@ class QueryParamsResponse extends $pb.GeneratedMessage {
   static $pb.PbList<QueryParamsResponse> createRepeated() => $pb.PbList<QueryParamsResponse>();
   @$core.pragma('dart2js:noInline')
   static QueryParamsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QueryParamsResponse>(create);
-  static QueryParamsResponse _defaultInstance;
+  static QueryParamsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $4.Params get params => $_getN(0);
@@ -89,7 +91,15 @@ class QuerySigningInfoRequest extends $pb.GeneratedMessage {
   ;
 
   QuerySigningInfoRequest._() : super();
-  factory QuerySigningInfoRequest() => create();
+  factory QuerySigningInfoRequest({
+    $core.String? consAddress,
+  }) {
+    final _result = create();
+    if (consAddress != null) {
+      _result.consAddress = consAddress;
+    }
+    return _result;
+  }
   factory QuerySigningInfoRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory QuerySigningInfoRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -101,7 +111,7 @@ class QuerySigningInfoRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  QuerySigningInfoRequest copyWith(void Function(QuerySigningInfoRequest) updates) => super.copyWith((message) => updates(message as QuerySigningInfoRequest)); // ignore: deprecated_member_use
+  QuerySigningInfoRequest copyWith(void Function(QuerySigningInfoRequest) updates) => super.copyWith((message) => updates(message as QuerySigningInfoRequest)) as QuerySigningInfoRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static QuerySigningInfoRequest create() => QuerySigningInfoRequest._();
@@ -109,7 +119,7 @@ class QuerySigningInfoRequest extends $pb.GeneratedMessage {
   static $pb.PbList<QuerySigningInfoRequest> createRepeated() => $pb.PbList<QuerySigningInfoRequest>();
   @$core.pragma('dart2js:noInline')
   static QuerySigningInfoRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QuerySigningInfoRequest>(create);
-  static QuerySigningInfoRequest _defaultInstance;
+  static QuerySigningInfoRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.String get consAddress => $_getSZ(0);
@@ -128,7 +138,15 @@ class QuerySigningInfoResponse extends $pb.GeneratedMessage {
   ;
 
   QuerySigningInfoResponse._() : super();
-  factory QuerySigningInfoResponse() => create();
+  factory QuerySigningInfoResponse({
+    $4.ValidatorSigningInfo? valSigningInfo,
+  }) {
+    final _result = create();
+    if (valSigningInfo != null) {
+      _result.valSigningInfo = valSigningInfo;
+    }
+    return _result;
+  }
   factory QuerySigningInfoResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory QuerySigningInfoResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -140,7 +158,7 @@ class QuerySigningInfoResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  QuerySigningInfoResponse copyWith(void Function(QuerySigningInfoResponse) updates) => super.copyWith((message) => updates(message as QuerySigningInfoResponse)); // ignore: deprecated_member_use
+  QuerySigningInfoResponse copyWith(void Function(QuerySigningInfoResponse) updates) => super.copyWith((message) => updates(message as QuerySigningInfoResponse)) as QuerySigningInfoResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static QuerySigningInfoResponse create() => QuerySigningInfoResponse._();
@@ -148,7 +166,7 @@ class QuerySigningInfoResponse extends $pb.GeneratedMessage {
   static $pb.PbList<QuerySigningInfoResponse> createRepeated() => $pb.PbList<QuerySigningInfoResponse>();
   @$core.pragma('dart2js:noInline')
   static QuerySigningInfoResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QuerySigningInfoResponse>(create);
-  static QuerySigningInfoResponse _defaultInstance;
+  static QuerySigningInfoResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $4.ValidatorSigningInfo get valSigningInfo => $_getN(0);
@@ -169,7 +187,15 @@ class QuerySigningInfosRequest extends $pb.GeneratedMessage {
   ;
 
   QuerySigningInfosRequest._() : super();
-  factory QuerySigningInfosRequest() => create();
+  factory QuerySigningInfosRequest({
+    $5.PageRequest? pagination,
+  }) {
+    final _result = create();
+    if (pagination != null) {
+      _result.pagination = pagination;
+    }
+    return _result;
+  }
   factory QuerySigningInfosRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory QuerySigningInfosRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -181,7 +207,7 @@ class QuerySigningInfosRequest extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  QuerySigningInfosRequest copyWith(void Function(QuerySigningInfosRequest) updates) => super.copyWith((message) => updates(message as QuerySigningInfosRequest)); // ignore: deprecated_member_use
+  QuerySigningInfosRequest copyWith(void Function(QuerySigningInfosRequest) updates) => super.copyWith((message) => updates(message as QuerySigningInfosRequest)) as QuerySigningInfosRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static QuerySigningInfosRequest create() => QuerySigningInfosRequest._();
@@ -189,7 +215,7 @@ class QuerySigningInfosRequest extends $pb.GeneratedMessage {
   static $pb.PbList<QuerySigningInfosRequest> createRepeated() => $pb.PbList<QuerySigningInfosRequest>();
   @$core.pragma('dart2js:noInline')
   static QuerySigningInfosRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QuerySigningInfosRequest>(create);
-  static QuerySigningInfosRequest _defaultInstance;
+  static QuerySigningInfosRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
   $5.PageRequest get pagination => $_getN(0);
@@ -211,7 +237,19 @@ class QuerySigningInfosResponse extends $pb.GeneratedMessage {
   ;
 
   QuerySigningInfosResponse._() : super();
-  factory QuerySigningInfosResponse() => create();
+  factory QuerySigningInfosResponse({
+    $core.Iterable<$4.ValidatorSigningInfo>? info,
+    $5.PageResponse? pagination,
+  }) {
+    final _result = create();
+    if (info != null) {
+      _result.info.addAll(info);
+    }
+    if (pagination != null) {
+      _result.pagination = pagination;
+    }
+    return _result;
+  }
   factory QuerySigningInfosResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory QuerySigningInfosResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
@@ -223,7 +261,7 @@ class QuerySigningInfosResponse extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  QuerySigningInfosResponse copyWith(void Function(QuerySigningInfosResponse) updates) => super.copyWith((message) => updates(message as QuerySigningInfosResponse)); // ignore: deprecated_member_use
+  QuerySigningInfosResponse copyWith(void Function(QuerySigningInfosResponse) updates) => super.copyWith((message) => updates(message as QuerySigningInfosResponse)) as QuerySigningInfosResponse; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
   @$core.pragma('dart2js:noInline')
   static QuerySigningInfosResponse create() => QuerySigningInfosResponse._();
@@ -231,7 +269,7 @@ class QuerySigningInfosResponse extends $pb.GeneratedMessage {
   static $pb.PbList<QuerySigningInfosResponse> createRepeated() => $pb.PbList<QuerySigningInfosResponse>();
   @$core.pragma('dart2js:noInline')
   static QuerySigningInfosResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<QuerySigningInfosResponse>(create);
-  static QuerySigningInfosResponse _defaultInstance;
+  static QuerySigningInfosResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
   $core.List<$4.ValidatorSigningInfo> get info => $_getList(0);

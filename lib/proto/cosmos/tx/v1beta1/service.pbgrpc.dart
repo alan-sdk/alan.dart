@@ -1,16 +1,11 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/tx/v1beta1/service.proto
-//
-// @dart = 2.3
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
 import 'dart:async' as $async;
-
 import 'dart:core' as $core;
 
 import 'package:grpc/service_api.dart' as $grpc;
+
 import 'service.pb.dart' as $1;
+
 export 'service.pb.dart';
 
 class ServiceClient extends $grpc.Client {
@@ -38,29 +33,29 @@ class ServiceClient extends $grpc.Client {
               $1.GetTxsEventResponse.fromBuffer(value));
 
   ServiceClient($grpc.ClientChannel channel,
-      {$grpc.CallOptions options,
-      $core.Iterable<$grpc.ClientInterceptor> interceptors})
+      {$grpc.CallOptions? options,
+      $core.Iterable<$grpc.ClientInterceptor>? interceptors})
       : super(channel, options: options, interceptors: interceptors);
 
   $grpc.ResponseFuture<$1.SimulateResponse> simulate($1.SimulateRequest request,
-      {$grpc.CallOptions options}) {
+      {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$simulate, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.GetTxResponse> getTx($1.GetTxRequest request,
-      {$grpc.CallOptions options}) {
+      {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getTx, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.BroadcastTxResponse> broadcastTx(
       $1.BroadcastTxRequest request,
-      {$grpc.CallOptions options}) {
+      {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$broadcastTx, request, options: options);
   }
 
   $grpc.ResponseFuture<$1.GetTxsEventResponse> getTxsEvent(
       $1.GetTxsEventRequest request,
-      {$grpc.CallOptions options}) {
+      {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getTxsEvent, request, options: options);
   }
 }
