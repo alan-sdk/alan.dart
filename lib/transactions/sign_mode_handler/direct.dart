@@ -31,11 +31,11 @@ class DirectSignModeHandler extends SignModeHandler {
       signDoc.authInfoBytes = authInfoBytes;
     }
 
-    if (data.chainId != null && data.chainId.isNotEmpty) {
+    if (data.chainId.isNotEmpty) {
       signDoc.chainId = data.chainId;
     }
 
-    if (data.accountNumber != null && data.accountNumber > 0) {
+    if (data.accountNumber > 0) {
       signDoc.accountNumber = data.accountNumber;
     }
 

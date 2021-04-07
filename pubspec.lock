@@ -50,15 +50,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.2.0"
-  bip32:
-    dependency: "direct main"
-    description:
-      path: "."
-      ref: "feat/upgrade_null_safety"
-      resolved-ref: "0e0ea38e2dbba4886051ffd4ff89332a602c63a7"
-      url: "https://github.com/dart-bitcoin/bip32-dart"
-    source: git
-    version: "1.0.9"
   bip39:
     dependency: "direct main"
     description:
@@ -73,13 +64,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0"
-  bs58check:
-    dependency: transitive
-    description:
-      name: bs58check
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.2"
   build:
     dependency: transitive
     description:
@@ -172,7 +156,7 @@ packages:
     source: hosted
     version: "1.15.0"
   convert:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: convert
       url: "https://pub.dartlang.org"

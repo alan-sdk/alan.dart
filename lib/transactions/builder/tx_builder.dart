@@ -56,7 +56,7 @@ class TxBuilder {
         ..publicKey = signature.pubKey;
 
       // Do not include default values as per ADR-027
-      if (signature.sequence != null && signature.sequence > 0) {
+      if (signature.sequence > 0) {
         signerInfo.sequence = signature.sequence;
       }
 

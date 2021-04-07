@@ -36,7 +36,7 @@ void main() {
 
     final builder = TxBuilder.create();
     builder.setMsgs([message]);
-
+    builder.setGasLimit(200000.toInt64());
     final tx = builder.getTx();
 
     // Mock the service

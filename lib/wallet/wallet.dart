@@ -2,8 +2,6 @@ import 'dart:typed_data';
 
 import 'package:alan/alan.dart';
 import 'package:alan/wallet/bech32_encoder.dart';
-import 'package:bip32/bip32.dart' as bip32;
-import 'package:bip39/bip39.dart' as bip39;
 import 'package:equatable/equatable.dart';
 import 'package:hex/hex.dart';
 import 'package:pointycastle/export.dart';
@@ -37,15 +35,14 @@ class Wallet extends Equatable {
     NetworkInfo networkInfo, {
     String derivationPath = DERIVATION_PATH,
   }) {
-    // Get the mnemonic as a string
-    final mnemonicString = mnemonic.join(' ');
-    if (!bip39.validateMnemonic(mnemonicString)) {
+    // Validate the mnemonic
+    if (!Bip39.validateMnemonic(mnemonic)) {
       throw Exception('Invalid mnemonic');
     }
 
     // Convert the mnemonic to a BIP32 instance
-    final seed = bip39.mnemonicToSeed(mnemonicString);
-    final root = bip32.BIP32.fromSeed(seed);
+    final seed = Bip39.mnemonicToSeed(mnemonic);
+    final root = Bip32.fromSeed(seed);
 
     // Get the node from the derivation path
     final derivedNode = root.derivePath(derivationPath);
@@ -80,9 +77,8 @@ class Wallet extends Equatable {
     NetworkInfo networkInfo, {
     String derivationPath = DERIVATION_PATH,
   }) {
-    final mnemonic = bip39.generateMnemonic(strength: 256);
     return Wallet.derive(
-      mnemonic.split(' '),
+      Bip39.generateMnemonic(strength: 256),
       networkInfo,
       derivationPath: derivationPath,
     );

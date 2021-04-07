@@ -31,7 +31,18 @@ test/.test_coverage.dart
 .pub-cache/
 .pub/
 build/
-coverage/
 
 # VM models
 *.vm.json
+
+# Used when publishing
+#.github/
+#.img/
+#doc/
+#proto
+#scripts
+#third_party/**
+#Makefile
+#package.json
+#package-lock.json
+
