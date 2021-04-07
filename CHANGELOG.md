@@ -1,4 +1,4 @@
-## Unreleased 
+## Version 0.40.1+1
 Added support for null-safety
 
 ## Version 0.40.0+2 
