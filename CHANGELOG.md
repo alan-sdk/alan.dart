@@ -1,3 +1,6 @@
+## Unreleased 
+Added support for null-safety
+
 ## Version 0.40.0+2 
 Fixed incompatible dependencies versions
 
