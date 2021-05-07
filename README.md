@@ -19,6 +19,7 @@ Over time, we developed different versions of this library to be compatible with
 | :-------------------: | :--------------: |
 | `v0.37.x` | `cosmos-v0.37.x` |
 | `v0.38.x` | `cosmos-v0.38.x` |
+| `v0.39.x` | `cosmos-v0.39.x` |
 | `v0.40.x`, `v0.41.x`, `v0.42.x` | `main` |
 
 ## Getting started
