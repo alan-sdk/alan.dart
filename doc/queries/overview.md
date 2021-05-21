@@ -35,7 +35,7 @@ In order to create a `ClientChannel` connection, the esiest way is to use an alr
 
 ```dart
 final networkInfo = NetworkInfo(bech32Prefix: 'cosmos', fullNodeHost: 'localhost');
-final channel = ClientChannel(info.fullNodeHost, port: info.gRPCPort);
+final channel = ClientChannel(networkInfo.fullNodeHost, port: networkInfo.gRPCPort);
 ```
 
 Once you have created a `ClientChannel`, you can use it to create the `QueryClient` instances:
