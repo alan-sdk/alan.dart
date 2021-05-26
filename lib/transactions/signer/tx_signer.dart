@@ -15,7 +15,7 @@ class TxSigner {
   TxSigner({
     required AuthQuerier authQuerier,
     required NodeQuerier nodeQuerier,
-  })   : _authQuerier = authQuerier,
+  })  : _authQuerier = authQuerier,
         _nodeQuerier = nodeQuerier;
 
   /// Builds a new [TxSigner] from a given gRPC client channel and HTTP client.
@@ -31,12 +31,8 @@ class TxSigner {
 
   /// Builds a new [TxSigner] from the given [NetworkInfo].
   factory TxSigner.fromNetworkInfo(NetworkInfo info) {
-    final clientChannel = grpc.ClientChannel(
-      info.fullNodeHost,
-      port: info.gRPCPort,
-    );
     final httpClient = http.Client();
-    return TxSigner.build(clientChannel, httpClient);
+    return TxSigner.build(info.gRPCChannel, httpClient);
   }
 
   /// Creates a new [Tx] object containing the given [msgs] and signs it using
@@ -55,6 +51,9 @@ class TxSigner {
 
     // Set the default fees
     fee ??= Fee()..gasLimit = 200000.toInt64();
+    if (!fee.hasGasLimit()) {
+      throw Exception('Invalid fees: invalid gas amount specified');
+    }
 
     // Get the account data and node info from the network
     final account = await _authQuerier.getAccountData(wallet.bech32Address);
@@ -66,7 +65,7 @@ class TxSigner {
 
     // Get the node info data
     final nodeInfo = await _nodeQuerier.getNodeInfo(
-      wallet.networkInfo.lcdEndpoint,
+      wallet.networkInfo.restEndpoint,
     );
 
     // Get the public key from the account, or generate it if the

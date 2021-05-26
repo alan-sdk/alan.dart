@@ -1,3 +1,7 @@
+## Version 0.40.2+1
+- Changed how `NetworkInfo` is built.
+- Upgraded Cosmos Proto files to `v0.42.5`
+
 ## Version 0.40.1+1
 Added support for null-safety
 

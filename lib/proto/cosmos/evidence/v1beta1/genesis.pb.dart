@@ -3,17 +3,17 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/any.pb.dart' as $3;
+import '../../../google/protobuf/any.pb.dart' as $2;
 
 class GenesisState extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GenesisState', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.evidence.v1beta1'), createEmptyInstance: create)
-    ..pc<$3.Any>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'evidence', $pb.PbFieldType.PM, subBuilder: $3.Any.create)
+    ..pc<$2.Any>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'evidence', $pb.PbFieldType.PM, subBuilder: $2.Any.create)
     ..hasRequiredFields = false
   ;
 
   GenesisState._() : super();
   factory GenesisState({
-    $core.Iterable<$3.Any>? evidence,
+    $core.Iterable<$2.Any>? evidence,
   }) {
     final _result = create();
     if (evidence != null) {
@@ -43,6 +43,6 @@ class GenesisState extends $pb.GeneratedMessage {
   static GenesisState? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$3.Any> get evidence => $_getList(0);
+  $core.List<$2.Any> get evidence => $_getList(0);
 }
 

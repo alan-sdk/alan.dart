@@ -3,8 +3,8 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/any.pb.dart' as $3;
-import '../../base/query/v1beta1/pagination.pb.dart' as $4;
+import '../../../google/protobuf/any.pb.dart' as $2;
+import '../../base/query/v1beta1/pagination.pb.dart' as $3;
 
 class QueryEvidenceRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryEvidenceRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.evidence.v1beta1'), createEmptyInstance: create)
@@ -55,13 +55,13 @@ class QueryEvidenceRequest extends $pb.GeneratedMessage {
 
 class QueryEvidenceResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryEvidenceResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.evidence.v1beta1'), createEmptyInstance: create)
-    ..aOM<$3.Any>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'evidence', subBuilder: $3.Any.create)
+    ..aOM<$2.Any>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'evidence', subBuilder: $2.Any.create)
     ..hasRequiredFields = false
   ;
 
   QueryEvidenceResponse._() : super();
   factory QueryEvidenceResponse({
-    $3.Any? evidence,
+    $2.Any? evidence,
   }) {
     final _result = create();
     if (evidence != null) {
@@ -91,26 +91,26 @@ class QueryEvidenceResponse extends $pb.GeneratedMessage {
   static QueryEvidenceResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $3.Any get evidence => $_getN(0);
+  $2.Any get evidence => $_getN(0);
   @$pb.TagNumber(1)
-  set evidence($3.Any v) { setField(1, v); }
+  set evidence($2.Any v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasEvidence() => $_has(0);
   @$pb.TagNumber(1)
   void clearEvidence() => clearField(1);
   @$pb.TagNumber(1)
-  $3.Any ensureEvidence() => $_ensure(0);
+  $2.Any ensureEvidence() => $_ensure(0);
 }
 
 class QueryAllEvidenceRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryAllEvidenceRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.evidence.v1beta1'), createEmptyInstance: create)
-    ..aOM<$4.PageRequest>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pagination', subBuilder: $4.PageRequest.create)
+    ..aOM<$3.PageRequest>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pagination', subBuilder: $3.PageRequest.create)
     ..hasRequiredFields = false
   ;
 
   QueryAllEvidenceRequest._() : super();
   factory QueryAllEvidenceRequest({
-    $4.PageRequest? pagination,
+    $3.PageRequest? pagination,
   }) {
     final _result = create();
     if (pagination != null) {
@@ -140,28 +140,28 @@ class QueryAllEvidenceRequest extends $pb.GeneratedMessage {
   static QueryAllEvidenceRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $4.PageRequest get pagination => $_getN(0);
+  $3.PageRequest get pagination => $_getN(0);
   @$pb.TagNumber(1)
-  set pagination($4.PageRequest v) { setField(1, v); }
+  set pagination($3.PageRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPagination() => $_has(0);
   @$pb.TagNumber(1)
   void clearPagination() => clearField(1);
   @$pb.TagNumber(1)
-  $4.PageRequest ensurePagination() => $_ensure(0);
+  $3.PageRequest ensurePagination() => $_ensure(0);
 }
 
 class QueryAllEvidenceResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryAllEvidenceResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.evidence.v1beta1'), createEmptyInstance: create)
-    ..pc<$3.Any>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'evidence', $pb.PbFieldType.PM, subBuilder: $3.Any.create)
-    ..aOM<$4.PageResponse>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pagination', subBuilder: $4.PageResponse.create)
+    ..pc<$2.Any>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'evidence', $pb.PbFieldType.PM, subBuilder: $2.Any.create)
+    ..aOM<$3.PageResponse>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pagination', subBuilder: $3.PageResponse.create)
     ..hasRequiredFields = false
   ;
 
   QueryAllEvidenceResponse._() : super();
   factory QueryAllEvidenceResponse({
-    $core.Iterable<$3.Any>? evidence,
-    $4.PageResponse? pagination,
+    $core.Iterable<$2.Any>? evidence,
+    $3.PageResponse? pagination,
   }) {
     final _result = create();
     if (evidence != null) {
@@ -194,17 +194,17 @@ class QueryAllEvidenceResponse extends $pb.GeneratedMessage {
   static QueryAllEvidenceResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$3.Any> get evidence => $_getList(0);
+  $core.List<$2.Any> get evidence => $_getList(0);
 
   @$pb.TagNumber(2)
-  $4.PageResponse get pagination => $_getN(1);
+  $3.PageResponse get pagination => $_getN(1);
   @$pb.TagNumber(2)
-  set pagination($4.PageResponse v) { setField(2, v); }
+  set pagination($3.PageResponse v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasPagination() => $_has(1);
   @$pb.TagNumber(2)
   void clearPagination() => clearField(2);
   @$pb.TagNumber(2)
-  $4.PageResponse ensurePagination() => $_ensure(1);
+  $3.PageResponse ensurePagination() => $_ensure(1);
 }
 

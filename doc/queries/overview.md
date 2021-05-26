@@ -34,8 +34,11 @@ Once you have imported the module that you would like to use, you now need to bu
 In order to create a `ClientChannel` connection, the esiest way is to use an already existing `NetworkInfo` object:
 
 ```dart
-final networkInfo = NetworkInfo(bech32Prefix: 'cosmos', fullNodeHost: 'localhost');
-final channel = ClientChannel(networkInfo.fullNodeHost, port: networkInfo.gRPCPort);
+final networkInfo = NetworkInfo.fromSingleHost(
+    bech32Prefix: 'cosmos', 
+    host: 'localhost',
+);
+final channel = networkInfo.gRPCChannel;
 ```
 
 Once you have created a `ClientChannel`, you can use it to create the `QueryClient` instances:

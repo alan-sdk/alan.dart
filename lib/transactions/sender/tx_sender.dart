@@ -16,8 +16,7 @@ class TxSender {
 
   /// Builds a new [TxSender] from the given [NetworkInfo].
   factory TxSender.fromNetworkInfo(NetworkInfo info) {
-    final clientChannel = ClientChannel(info.fullNodeHost, port: info.gRPCPort);
-    return TxSender.build(clientChannel);
+    return TxSender.build(info.gRPCChannel);
   }
 
   /// Broadcasts the given [tx] using the info contained

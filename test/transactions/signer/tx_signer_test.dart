@@ -23,7 +23,10 @@ void main() {
     signer = TxSigner(authQuerier: authQuerier, nodeQuerier: nodeQuerier);
   });
 
-  final networkInfo = NetworkInfo(bech32Hrp: 'cosmos', fullNodeHost: 'test');
+  final networkInfo = NetworkInfo.fromSingleHost(
+    bech32Hrp: 'cosmos',
+    host: 'test',
+  );
   final mnemonic = [
     'sibling',
     'auction',
@@ -61,7 +64,7 @@ void main() {
       return Future.value(BaseAccount(account));
     });
 
-    when(nodeQuerier.getNodeInfo(networkInfo.lcdEndpoint)).thenAnswer((_) {
+    when(nodeQuerier.getNodeInfo(networkInfo.restEndpoint)).thenAnswer((_) {
       return Future.value(NodeInfo(network: 'cosmos-hub2'));
     });
 
@@ -111,7 +114,7 @@ void main() {
       return Future.value(BaseAccount(account));
     });
 
-    when(nodeQuerier.getNodeInfo(networkInfo.lcdEndpoint)).thenAnswer((_) {
+    when(nodeQuerier.getNodeInfo(networkInfo.restEndpoint)).thenAnswer((_) {
       return Future.value(NodeInfo(network: 'testchain'));
     });
 

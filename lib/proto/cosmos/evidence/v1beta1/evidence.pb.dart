@@ -4,12 +4,12 @@ import 'dart:core' as $core;
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/timestamp.pb.dart' as $2;
+import '../../../google/protobuf/timestamp.pb.dart' as $4;
 
 class Equivocation extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Equivocation', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.evidence.v1beta1'), createEmptyInstance: create)
     ..aInt64(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'height')
-    ..aOM<$2.Timestamp>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'time', subBuilder: $2.Timestamp.create)
+    ..aOM<$4.Timestamp>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'time', subBuilder: $4.Timestamp.create)
     ..aInt64(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'power')
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'consensusAddress')
     ..hasRequiredFields = false
@@ -18,7 +18,7 @@ class Equivocation extends $pb.GeneratedMessage {
   Equivocation._() : super();
   factory Equivocation({
     $fixnum.Int64? height,
-    $2.Timestamp? time,
+    $4.Timestamp? time,
     $fixnum.Int64? power,
     $core.String? consensusAddress,
   }) {
@@ -68,15 +68,15 @@ class Equivocation extends $pb.GeneratedMessage {
   void clearHeight() => clearField(1);
 
   @$pb.TagNumber(2)
-  $2.Timestamp get time => $_getN(1);
+  $4.Timestamp get time => $_getN(1);
   @$pb.TagNumber(2)
-  set time($2.Timestamp v) { setField(2, v); }
+  set time($4.Timestamp v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasTime() => $_has(1);
   @$pb.TagNumber(2)
   void clearTime() => clearField(2);
   @$pb.TagNumber(2)
-  $2.Timestamp ensureTime() => $_ensure(1);
+  $4.Timestamp ensureTime() => $_ensure(1);
 
   @$pb.TagNumber(3)
   $fixnum.Int64 get power => $_getI64(2);
