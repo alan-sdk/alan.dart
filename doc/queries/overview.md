@@ -38,7 +38,7 @@ final networkInfo = NetworkInfo.fromSingleHost(
     bech32Prefix: 'cosmos', 
     host: 'localhost',
 );
-final channel = info.gRPCChannel;
+final channel = networkInfo.gRPCChannel;
 ```
 
 Once you have created a `ClientChannel`, you can use it to create the `QueryClient` instances:
