@@ -40,7 +40,7 @@ To create and sign a transaction properly, you can use the `TxSigner` class, pro
 
 You can also provide an optional `TxConfig` that will be used to serialize and sign the transaction according to custom logics.
 
-:::note Example message  
+:::tip Example message  
 The following example uses the `bank.MsgSend` message, but remember that you can use any kind of message that you want. Please visit the [modules page](../modules/overview.md) to see all the messages included in Alan.dart, or the [custom chain page](../custom-chains/overview.md) to know how to generate custom ones.  
 :::
 
@@ -49,10 +49,10 @@ import 'package:alan/alan.dart';
 
 // Build the network info that will be used to get the 
 // account data used to sign the transaction
-final networkInfo = NetworkInfo({
-  bech32Hrp = 'cosmos',
-  fullNodeHost = 'localhost',
-});
+final networkInfo = NetworkInfo.fromSingleHost(
+  bech32Hrp: 'cosmos',
+  host: 'http://localhost',
+);
 
 final wallet = Wallet.derive(mnemonic, networkInfo);
 
@@ -86,6 +86,17 @@ final signedTx = signer.createAndSign(
   fee: fee,              // Optional (Default is 200000 gas and empty amount)
 );
 ```
+
+:::warning Host requirements  
+When creating a `NetworkInfo` you need to specify a `host` value. This must be the address of a full node that has the following requirements: 
+
+1. REST APIs enabled.  
+   These can be enabled by setting `enable = true` under the `[api]` section of the `app.toml` file.
+2. gRPC APIs enabled.  
+   These can be enabled by setting `enable = true` under the `[grpc]` section of the `app.toml` file.
+3. REST APIs and gRPC APIs ports opened to allow external connections.
+
+:::
 
 ## 3. Send the signed transaction
 Once you signed the transaction, you are now ready to send it to the chain. To do this you can use the `TxSender` helper class, giving it the signed transaction and a wallet. You can also specify the send mode that you would like to use.

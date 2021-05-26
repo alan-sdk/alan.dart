@@ -3,19 +3,19 @@ import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../google/protobuf/any.pb.dart' as $3;
+import '../../../google/protobuf/any.pb.dart' as $2;
 
 class MsgSubmitEvidence extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MsgSubmitEvidence', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.evidence.v1beta1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'submitter')
-    ..aOM<$3.Any>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'evidence', subBuilder: $3.Any.create)
+    ..aOM<$2.Any>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'evidence', subBuilder: $2.Any.create)
     ..hasRequiredFields = false
   ;
 
   MsgSubmitEvidence._() : super();
   factory MsgSubmitEvidence({
     $core.String? submitter,
-    $3.Any? evidence,
+    $2.Any? evidence,
   }) {
     final _result = create();
     if (submitter != null) {
@@ -57,15 +57,15 @@ class MsgSubmitEvidence extends $pb.GeneratedMessage {
   void clearSubmitter() => clearField(1);
 
   @$pb.TagNumber(2)
-  $3.Any get evidence => $_getN(1);
+  $2.Any get evidence => $_getN(1);
   @$pb.TagNumber(2)
-  set evidence($3.Any v) { setField(2, v); }
+  set evidence($2.Any v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasEvidence() => $_has(1);
   @$pb.TagNumber(2)
   void clearEvidence() => clearField(2);
   @$pb.TagNumber(2)
-  $3.Any ensureEvidence() => $_ensure(1);
+  $2.Any ensureEvidence() => $_ensure(1);
 }
 
 class MsgSubmitEvidenceResponse extends $pb.GeneratedMessage {

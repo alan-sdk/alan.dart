@@ -4,17 +4,17 @@ import 'package:test/test.dart';
 void main() {
   test('fromJson works properly', () {
     final json = {'bech32_hrp': 'test', 'full_node_host': 'test.example.com'};
-    final expected = NetworkInfo(
+    final expected = NetworkInfo.fromSingleHost(
       bech32Hrp: 'test',
-      fullNodeHost: 'test.example.com',
+      host: 'test.example.com',
     );
     expect(NetworkInfo.fromJson(json), expected);
   });
 
   test('toJson works properly', () {
-    final info = NetworkInfo(
+    final info = NetworkInfo.fromSingleHost(
       bech32Hrp: 'test',
-      fullNodeHost: 'test.example.com',
+      host: 'test.example.com',
     );
     final json = {
       'bech32_hrp': 'test',
@@ -26,9 +26,9 @@ void main() {
   });
 
   test('toString works properly', () {
-    final info = NetworkInfo(
+    final info = NetworkInfo.fromSingleHost(
       bech32Hrp: 'test',
-      fullNodeHost: 'test.example.com',
+      host: 'test.example.com',
     );
     expect(
       info.toString(),

@@ -3,9 +3,9 @@ import 'package:alan/proto/cosmos/bank/v1beta1/export.dart' as bank;
 
 void main() async {
   // Create a wallet
-  final networkInfo = NetworkInfo(
-    bech32Hrp: 'did:com:',
-    fullNodeHost: 'localhost',
+  final networkInfo = NetworkInfo.fromSingleHost(
+    bech32Hrp: 'desmos',
+    host: 'localhost',
   );
 
   final mnemonicString =

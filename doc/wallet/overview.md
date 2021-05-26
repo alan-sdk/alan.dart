@@ -19,9 +19,9 @@ In order to create a wallet, you are required to provide:
 ```dart
 import "package:alan/alan.dart";
 
-final networkInfo = NetworkInfo(
+final networkInfo = NetworkInfo.fromSingleHost(
   bech32Hrp: "cosmos", 
-  lcdUrl: "http://localhost:1317",
+  hosrt: "http://localhost",
 );
 
 final mnemonic = [
@@ -63,9 +63,9 @@ If you don't have any mnemonic phrase, or you want to get a fresh new wallet, yo
 ```dart
 import "package:alan/alan.dart";
 
-final networkInfo = NetworkInfo(
+final networkInfo = NetworkInfo.fromSingleHost(
   bech32Hrp: "cosmos", 
-  lcdUrl: "http://localhost:1317",
+  hosrt: "http://localhost",
 );
 
 final wallet = Wallet.random(
