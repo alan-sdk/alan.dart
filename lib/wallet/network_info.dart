@@ -70,6 +70,14 @@ class GRPCInfo extends Equatable {
       credentials.isSecure,
     ];
   }
+
+  @override
+  String toString() {
+    return 'GRPCInfo {'
+        'host: $host, '
+        'port: $port '
+        '}';
+  }
 }
 
 /// Contains the information about the LCD endpoint
@@ -105,6 +113,14 @@ class LCDInfo extends Equatable {
 
   @override
   List<Object?> get props => [host, port];
+
+  @override
+  String toString() {
+    return 'LCDInfo {'
+        'host: $host, '
+        'port: $port '
+        '}';
+  }
 }
 
 /// Contains the information of a generic Cosmos-based network.
