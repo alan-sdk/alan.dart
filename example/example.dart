@@ -8,9 +8,12 @@ void main() async {
     host: 'localhost',
   );
 
-  final mnemonicString =
-      'vivid favorite regular curve check word bubble echo disorder cute parade neck rib evidence option glimpse couple force angry section dizzy puppy express cream';
-  final mnemonic = mnemonicString.split(' ');
+  final mnemonic = [
+    'roast', 'stomach', 'welcome', 'please', 'gauge', 'funny',
+    'coconut', 'baby', 'bird', 'announce', 'bind', 'jacket',
+    'title', 'vibrant', 'tomorrow', 'indoor', 'bitter', 'initial',
+    'ill', 'analyst', 'thought', 'strike', 'answer', 'cotton',
+  ];
   final wallet = Wallet.derive(mnemonic, networkInfo);
 
   // 3. Create and sign the transaction
