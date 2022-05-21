@@ -1,21 +1,27 @@
 ///
+//  Generated code. Do not modify.
+//  source: cosmos/auth/v1beta1/genesis.proto
+//
+// @dart = 2.12
+// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
+
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+import 'auth.pb.dart' as $3;
 import '../../../google/protobuf/any.pb.dart' as $1;
-import 'auth.pb.dart' as $2;
 
 class GenesisState extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GenesisState', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.auth.v1beta1'), createEmptyInstance: create)
-    ..aOM<$2.Params>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'params', subBuilder: $2.Params.create)
+    ..aOM<$3.Params>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'params', subBuilder: $3.Params.create)
     ..pc<$1.Any>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'accounts', $pb.PbFieldType.PM, subBuilder: $1.Any.create)
     ..hasRequiredFields = false
   ;
 
   GenesisState._() : super();
   factory GenesisState({
-    $2.Params? params,
+    $3.Params? params,
     $core.Iterable<$1.Any>? accounts,
   }) {
     final _result = create();
@@ -49,15 +55,15 @@ class GenesisState extends $pb.GeneratedMessage {
   static GenesisState? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $2.Params get params => $_getN(0);
+  $3.Params get params => $_getN(0);
   @$pb.TagNumber(1)
-  set params($2.Params v) { setField(1, v); }
+  set params($3.Params v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasParams() => $_has(0);
   @$pb.TagNumber(1)
   void clearParams() => clearField(1);
   @$pb.TagNumber(1)
-  $2.Params ensureParams() => $_ensure(0);
+  $3.Params ensureParams() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.List<$1.Any> get accounts => $_getList(1);

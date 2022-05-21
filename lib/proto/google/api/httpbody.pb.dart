@@ -1,15 +1,21 @@
 ///
+//  Generated code. Do not modify.
+//  source: google/api/httpbody.proto
+//
+// @dart = 2.12
+// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
+
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../protobuf/any.pb.dart' as $0;
+import '../protobuf/any.pb.dart' as $1;
 
 class HttpBody extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'HttpBody', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'google.api'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'contentType')
     ..a<$core.List<$core.int>>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'data', $pb.PbFieldType.OY)
-    ..pc<$0.Any>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'extensions', $pb.PbFieldType.PM, subBuilder: $0.Any.create)
+    ..pc<$1.Any>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'extensions', $pb.PbFieldType.PM, subBuilder: $1.Any.create)
     ..hasRequiredFields = false
   ;
 
@@ -17,7 +23,7 @@ class HttpBody extends $pb.GeneratedMessage {
   factory HttpBody({
     $core.String? contentType,
     $core.List<$core.int>? data,
-    $core.Iterable<$0.Any>? extensions,
+    $core.Iterable<$1.Any>? extensions,
   }) {
     final _result = create();
     if (contentType != null) {
@@ -71,6 +77,6 @@ class HttpBody extends $pb.GeneratedMessage {
   void clearData() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.List<$0.Any> get extensions => $_getList(2);
+  $core.List<$1.Any> get extensions => $_getList(2);
 }
 

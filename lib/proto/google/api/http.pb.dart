@@ -1,4 +1,10 @@
 ///
+//  Generated code. Do not modify.
+//  source: google/api/http.proto
+//
+// @dart = 2.12
+// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
+
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
@@ -59,12 +65,12 @@ class Http extends $pb.GeneratedMessage {
 }
 
 enum HttpRule_Pattern {
-  get,
-  put,
-  post,
-  delete,
-  patch,
-  custom,
+  get, 
+  put, 
+  post, 
+  delete, 
+  patch, 
+  custom, 
   notSet
 }
 

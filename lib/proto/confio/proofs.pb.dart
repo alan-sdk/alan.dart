@@ -1,4 +1,10 @@
 ///
+//  Generated code. Do not modify.
+//  source: confio/proofs.proto
+//
+// @dart = 2.12
+// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
+
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
@@ -172,10 +178,10 @@ class NonExistenceProof extends $pb.GeneratedMessage {
 }
 
 enum CommitmentProof_Proof {
-  exist,
-  nonexist,
-  batch,
-  compressed,
+  exist, 
+  nonexist, 
+  batch, 
+  compressed, 
   notSet
 }
 
@@ -711,8 +717,8 @@ class BatchProof extends $pb.GeneratedMessage {
 }
 
 enum BatchEntry_Proof {
-  exist,
-  nonexist,
+  exist, 
+  nonexist, 
   notSet
 }
 
@@ -840,8 +846,8 @@ class CompressedBatchProof extends $pb.GeneratedMessage {
 }
 
 enum CompressedBatchEntry_Proof {
-  exist,
-  nonexist,
+  exist, 
+  nonexist, 
   notSet
 }
 

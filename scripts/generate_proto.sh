@@ -6,7 +6,7 @@ set -eo pipefail
 OUT=lib/proto
 PROTO=proto
 THIRD_PARTY=third_party
-COSMOS_VERSION=0.42.5
+COSMOS_VERSION=0.45.4
 
 ## Download the Protobuf files
 source scripts/get_proto.sh $PROTO $THIRD_PARTY $OUT $COSMOS_VERSION

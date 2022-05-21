@@ -93,7 +93,9 @@ void generateMainScript(Directory packageRoot, List<File> testFiles) {
     ..writeln('// Consider adding this file to your .gitignore.')
     ..writeln();
   imports.forEach(buffer.writeln);
-  buffer..writeln()..writeln('void main() {');
+  buffer
+    ..writeln()
+    ..writeln('void main() {');
   mainBody.forEach(buffer.writeln);
   buffer.writeln('}');
   File(

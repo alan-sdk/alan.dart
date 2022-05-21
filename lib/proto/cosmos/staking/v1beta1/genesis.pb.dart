@@ -1,33 +1,39 @@
 ///
+//  Generated code. Do not modify.
+//  source: cosmos/staking/v1beta1/genesis.proto
+//
+// @dart = 2.12
+// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
+
 import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'staking.pb.dart' as $7;
+import 'staking.pb.dart' as $8;
 
 class GenesisState extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GenesisState', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.staking.v1beta1'), createEmptyInstance: create)
-    ..aOM<$7.Params>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'params', subBuilder: $7.Params.create)
+    ..aOM<$8.Params>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'params', subBuilder: $8.Params.create)
     ..a<$core.List<$core.int>>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'lastTotalPower', $pb.PbFieldType.OY)
     ..pc<LastValidatorPower>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'lastValidatorPowers', $pb.PbFieldType.PM, subBuilder: LastValidatorPower.create)
-    ..pc<$7.Validator>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'validators', $pb.PbFieldType.PM, subBuilder: $7.Validator.create)
-    ..pc<$7.Delegation>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'delegations', $pb.PbFieldType.PM, subBuilder: $7.Delegation.create)
-    ..pc<$7.UnbondingDelegation>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'unbondingDelegations', $pb.PbFieldType.PM, subBuilder: $7.UnbondingDelegation.create)
-    ..pc<$7.Redelegation>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'redelegations', $pb.PbFieldType.PM, subBuilder: $7.Redelegation.create)
+    ..pc<$8.Validator>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'validators', $pb.PbFieldType.PM, subBuilder: $8.Validator.create)
+    ..pc<$8.Delegation>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'delegations', $pb.PbFieldType.PM, subBuilder: $8.Delegation.create)
+    ..pc<$8.UnbondingDelegation>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'unbondingDelegations', $pb.PbFieldType.PM, subBuilder: $8.UnbondingDelegation.create)
+    ..pc<$8.Redelegation>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'redelegations', $pb.PbFieldType.PM, subBuilder: $8.Redelegation.create)
     ..aOB(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'exported')
     ..hasRequiredFields = false
   ;
 
   GenesisState._() : super();
   factory GenesisState({
-    $7.Params? params,
+    $8.Params? params,
     $core.List<$core.int>? lastTotalPower,
     $core.Iterable<LastValidatorPower>? lastValidatorPowers,
-    $core.Iterable<$7.Validator>? validators,
-    $core.Iterable<$7.Delegation>? delegations,
-    $core.Iterable<$7.UnbondingDelegation>? unbondingDelegations,
-    $core.Iterable<$7.Redelegation>? redelegations,
+    $core.Iterable<$8.Validator>? validators,
+    $core.Iterable<$8.Delegation>? delegations,
+    $core.Iterable<$8.UnbondingDelegation>? unbondingDelegations,
+    $core.Iterable<$8.Redelegation>? redelegations,
     $core.bool? exported,
   }) {
     final _result = create();
@@ -79,15 +85,15 @@ class GenesisState extends $pb.GeneratedMessage {
   static GenesisState? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.Params get params => $_getN(0);
+  $8.Params get params => $_getN(0);
   @$pb.TagNumber(1)
-  set params($7.Params v) { setField(1, v); }
+  set params($8.Params v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasParams() => $_has(0);
   @$pb.TagNumber(1)
   void clearParams() => clearField(1);
   @$pb.TagNumber(1)
-  $7.Params ensureParams() => $_ensure(0);
+  $8.Params ensureParams() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.List<$core.int> get lastTotalPower => $_getN(1);
@@ -102,16 +108,16 @@ class GenesisState extends $pb.GeneratedMessage {
   $core.List<LastValidatorPower> get lastValidatorPowers => $_getList(2);
 
   @$pb.TagNumber(4)
-  $core.List<$7.Validator> get validators => $_getList(3);
+  $core.List<$8.Validator> get validators => $_getList(3);
 
   @$pb.TagNumber(5)
-  $core.List<$7.Delegation> get delegations => $_getList(4);
+  $core.List<$8.Delegation> get delegations => $_getList(4);
 
   @$pb.TagNumber(6)
-  $core.List<$7.UnbondingDelegation> get unbondingDelegations => $_getList(5);
+  $core.List<$8.UnbondingDelegation> get unbondingDelegations => $_getList(5);
 
   @$pb.TagNumber(7)
-  $core.List<$7.Redelegation> get redelegations => $_getList(6);
+  $core.List<$8.Redelegation> get redelegations => $_getList(6);
 
   @$pb.TagNumber(8)
   $core.bool get exported => $_getBF(7);

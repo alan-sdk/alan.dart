@@ -1,17 +1,23 @@
 ///
+//  Generated code. Do not modify.
+//  source: cosmos/staking/v1beta1/tx.proto
+//
+// @dart = 2.12
+// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
+
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
+import 'staking.pb.dart' as $8;
 import '../../../google/protobuf/any.pb.dart' as $4;
-import '../../../google/protobuf/timestamp.pb.dart' as $3;
 import '../../base/v1beta1/coin.pb.dart' as $6;
-import 'staking.pb.dart' as $7;
+import '../../../google/protobuf/timestamp.pb.dart' as $3;
 
 class MsgCreateValidator extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MsgCreateValidator', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.staking.v1beta1'), createEmptyInstance: create)
-    ..aOM<$7.Description>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'description', subBuilder: $7.Description.create)
-    ..aOM<$7.CommissionRates>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'commission', subBuilder: $7.CommissionRates.create)
+    ..aOM<$8.Description>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'description', subBuilder: $8.Description.create)
+    ..aOM<$8.CommissionRates>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'commission', subBuilder: $8.CommissionRates.create)
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'minSelfDelegation')
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'delegatorAddress')
     ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'validatorAddress')
@@ -22,8 +28,8 @@ class MsgCreateValidator extends $pb.GeneratedMessage {
 
   MsgCreateValidator._() : super();
   factory MsgCreateValidator({
-    $7.Description? description,
-    $7.CommissionRates? commission,
+    $8.Description? description,
+    $8.CommissionRates? commission,
     $core.String? minSelfDelegation,
     $core.String? delegatorAddress,
     $core.String? validatorAddress,
@@ -76,26 +82,26 @@ class MsgCreateValidator extends $pb.GeneratedMessage {
   static MsgCreateValidator? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.Description get description => $_getN(0);
+  $8.Description get description => $_getN(0);
   @$pb.TagNumber(1)
-  set description($7.Description v) { setField(1, v); }
+  set description($8.Description v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasDescription() => $_has(0);
   @$pb.TagNumber(1)
   void clearDescription() => clearField(1);
   @$pb.TagNumber(1)
-  $7.Description ensureDescription() => $_ensure(0);
+  $8.Description ensureDescription() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $7.CommissionRates get commission => $_getN(1);
+  $8.CommissionRates get commission => $_getN(1);
   @$pb.TagNumber(2)
-  set commission($7.CommissionRates v) { setField(2, v); }
+  set commission($8.CommissionRates v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasCommission() => $_has(1);
   @$pb.TagNumber(2)
   void clearCommission() => clearField(2);
   @$pb.TagNumber(2)
-  $7.CommissionRates ensureCommission() => $_ensure(1);
+  $8.CommissionRates ensureCommission() => $_ensure(1);
 
   @$pb.TagNumber(3)
   $core.String get minSelfDelegation => $_getSZ(2);
@@ -178,7 +184,7 @@ class MsgCreateValidatorResponse extends $pb.GeneratedMessage {
 
 class MsgEditValidator extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MsgEditValidator', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.staking.v1beta1'), createEmptyInstance: create)
-    ..aOM<$7.Description>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'description', subBuilder: $7.Description.create)
+    ..aOM<$8.Description>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'description', subBuilder: $8.Description.create)
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'validatorAddress')
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'commissionRate')
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'minSelfDelegation')
@@ -187,7 +193,7 @@ class MsgEditValidator extends $pb.GeneratedMessage {
 
   MsgEditValidator._() : super();
   factory MsgEditValidator({
-    $7.Description? description,
+    $8.Description? description,
     $core.String? validatorAddress,
     $core.String? commissionRate,
     $core.String? minSelfDelegation,
@@ -229,15 +235,15 @@ class MsgEditValidator extends $pb.GeneratedMessage {
   static MsgEditValidator? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $7.Description get description => $_getN(0);
+  $8.Description get description => $_getN(0);
   @$pb.TagNumber(1)
-  set description($7.Description v) { setField(1, v); }
+  set description($8.Description v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasDescription() => $_has(0);
   @$pb.TagNumber(1)
   void clearDescription() => clearField(1);
   @$pb.TagNumber(1)
-  $7.Description ensureDescription() => $_ensure(0);
+  $8.Description ensureDescription() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.String get validatorAddress => $_getSZ(1);

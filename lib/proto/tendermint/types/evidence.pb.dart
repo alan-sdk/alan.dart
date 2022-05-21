@@ -1,16 +1,22 @@
 ///
+//  Generated code. Do not modify.
+//  source: tendermint/types/evidence.proto
+//
+// @dart = 2.12
+// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
+
 import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../google/protobuf/timestamp.pb.dart' as $3;
 import 'types.pb.dart' as $5;
+import '../../google/protobuf/timestamp.pb.dart' as $3;
 import 'validator.pb.dart' as $4;
 
 enum Evidence_Sum {
-  duplicateVoteEvidence,
-  lightClientAttackEvidence,
+  duplicateVoteEvidence, 
+  lightClientAttackEvidence, 
   notSet
 }
 

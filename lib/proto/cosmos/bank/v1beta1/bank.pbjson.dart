@@ -1,6 +1,12 @@
 ///
-import 'dart:convert' as $convert;
+//  Generated code. Do not modify.
+//  source: cosmos/bank/v1beta1/bank.proto
+//
+// @dart = 2.12
+// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields,deprecated_member_use_from_same_package
+
 import 'dart:core' as $core;
+import 'dart:convert' as $convert;
 import 'dart:typed_data' as $typed_data;
 @$core.Deprecated('Use paramsDescriptor instead')
 const Params$json = const {
@@ -56,11 +62,11 @@ const Supply$json = const {
   '2': const [
     const {'1': 'total', '3': 1, '4': 3, '5': 11, '6': '.cosmos.base.v1beta1.Coin', '8': const {}, '10': 'total'},
   ],
-  '7': const {},
+  '7': const {'3': true},
 };
 
 /// Descriptor for `Supply`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List supplyDescriptor = $convert.base64Decode('CgZTdXBwbHkSYQoFdG90YWwYASADKAsyGS5jb3Ntb3MuYmFzZS52MWJldGExLkNvaW5CMMjeHwCq3x8oZ2l0aHViLmNvbS9jb3Ntb3MvY29zbW9zLXNkay90eXBlcy5Db2luc1IFdG90YWw6ReigHwGIoB8AmKAfANK0LTUqZ2l0aHViLmNvbS9jb3Ntb3MvY29zbW9zLXNkay94L2JhbmsvZXhwb3J0ZWQuU3VwcGx5SQ==');
+final $typed_data.Uint8List supplyDescriptor = $convert.base64Decode('CgZTdXBwbHkSYQoFdG90YWwYASADKAsyGS5jb3Ntb3MuYmFzZS52MWJldGExLkNvaW5CMMjeHwCq3x8oZ2l0aHViLmNvbS9jb3Ntb3MvY29zbW9zLXNkay90eXBlcy5Db2luc1IFdG90YWw6RhgB6KAfAYigHwDStC04KmdpdGh1Yi5jb20vY29zbW9zL2Nvc21vcy1zZGsveC9iYW5rL2xlZ2FjeS92MDQwLlN1cHBseUk=');
 @$core.Deprecated('Use denomUnitDescriptor instead')
 const DenomUnit$json = const {
   '1': 'DenomUnit',
@@ -81,8 +87,10 @@ const Metadata$json = const {
     const {'1': 'denom_units', '3': 2, '4': 3, '5': 11, '6': '.cosmos.bank.v1beta1.DenomUnit', '10': 'denomUnits'},
     const {'1': 'base', '3': 3, '4': 1, '5': 9, '10': 'base'},
     const {'1': 'display', '3': 4, '4': 1, '5': 9, '10': 'display'},
+    const {'1': 'name', '3': 5, '4': 1, '5': 9, '10': 'name'},
+    const {'1': 'symbol', '3': 6, '4': 1, '5': 9, '10': 'symbol'},
   ],
 };
 
 /// Descriptor for `Metadata`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List metadataDescriptor = $convert.base64Decode('CghNZXRhZGF0YRIgCgtkZXNjcmlwdGlvbhgBIAEoCVILZGVzY3JpcHRpb24SPwoLZGVub21fdW5pdHMYAiADKAsyHi5jb3Ntb3MuYmFuay52MWJldGExLkRlbm9tVW5pdFIKZGVub21Vbml0cxISCgRiYXNlGAMgASgJUgRiYXNlEhgKB2Rpc3BsYXkYBCABKAlSB2Rpc3BsYXk=');
+final $typed_data.Uint8List metadataDescriptor = $convert.base64Decode('CghNZXRhZGF0YRIgCgtkZXNjcmlwdGlvbhgBIAEoCVILZGVzY3JpcHRpb24SPwoLZGVub21fdW5pdHMYAiADKAsyHi5jb3Ntb3MuYmFuay52MWJldGExLkRlbm9tVW5pdFIKZGVub21Vbml0cxISCgRiYXNlGAMgASgJUgRiYXNlEhgKB2Rpc3BsYXkYBCABKAlSB2Rpc3BsYXkSEgoEbmFtZRgFIAEoCVIEbmFtZRIWCgZzeW1ib2wYBiABKAlSBnN5bWJvbA==');

@@ -1,6 +1,12 @@
 ///
-import 'dart:convert' as $convert;
+//  Generated code. Do not modify.
+//  source: cosmos/tx/signing/v1beta1/signing.proto
+//
+// @dart = 2.12
+// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields,deprecated_member_use_from_same_package
+
 import 'dart:core' as $core;
+import 'dart:convert' as $convert;
 import 'dart:typed_data' as $typed_data;
 @$core.Deprecated('Use signModeDescriptor instead')
 const SignMode$json = const {
@@ -10,11 +16,12 @@ const SignMode$json = const {
     const {'1': 'SIGN_MODE_DIRECT', '2': 1},
     const {'1': 'SIGN_MODE_TEXTUAL', '2': 2},
     const {'1': 'SIGN_MODE_LEGACY_AMINO_JSON', '2': 127},
+    const {'1': 'SIGN_MODE_EIP_191', '2': 191},
   ],
 };
 
 /// Descriptor for `SignMode`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List signModeDescriptor = $convert.base64Decode('CghTaWduTW9kZRIZChVTSUdOX01PREVfVU5TUEVDSUZJRUQQABIUChBTSUdOX01PREVfRElSRUNUEAESFQoRU0lHTl9NT0RFX1RFWFRVQUwQAhIfChtTSUdOX01PREVfTEVHQUNZX0FNSU5PX0pTT04Qfw==');
+final $typed_data.Uint8List signModeDescriptor = $convert.base64Decode('CghTaWduTW9kZRIZChVTSUdOX01PREVfVU5TUEVDSUZJRUQQABIUChBTSUdOX01PREVfRElSRUNUEAESFQoRU0lHTl9NT0RFX1RFWFRVQUwQAhIfChtTSUdOX01PREVfTEVHQUNZX0FNSU5PX0pTT04QfxIWChFTSUdOX01PREVfRUlQXzE5MRC/AQ==');
 @$core.Deprecated('Use signatureDescriptorsDescriptor instead')
 const SignatureDescriptors$json = const {
   '1': 'SignatureDescriptors',
