@@ -82,7 +82,7 @@ jobs:
 
       - name: Upload coverage 📤
         if: env.GIT_DIFF
-        uses: codecov/codecov-action@v1
+        uses: codecov/codecov-action@v3
         with:
           file: coverage/lcov.info
           fail_ci_if_error: true
