@@ -18,7 +18,7 @@
     "vuepress-plugin-element-tabs": "^0.2.8"
   },
   "dependencies": {
-    "axios": "^00.27.2",
+    "axios": "^0.27.2",
     "vuepress-plugin-latex": "^0.1.3"
   }
 }
