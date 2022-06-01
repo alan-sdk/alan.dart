@@ -1,25 +1,38 @@
 name: Test
 
+# Tests workflow runs unit tests and uploads a code coverage report
+# This workflow is run on pushes to main and every pull requests where a .dart, .mod, .sum have been changed
 on:
+  pull_request:
   push:
     branches:
-      - '**'
-      - '!gh-pages'
+      - main
 
 jobs:
+
   Lint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
 
+      - name: Compute diff 📜
+        uses: technote-space/get-diff-action@v6.0.1
+        with:
+          PATTERNS: |
+            **/**.dart
+            pubspec.yaml
+
       - name: Setup 🔨
-        uses: cedx/setup-dart@v2
+        if: env.GIT_DIFF
+        uses: dart-lang/setup-dart@v1.3
 
       - name: Get dependencies 📥
-        run: pub get
+        if: env.GIT_DIFF
+        run: dart pub get
 
       - name: Analyze 🔍
+        if: env.GIT_DIFF
         run: make lint
 
   Unit-tests:
@@ -29,36 +42,46 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Setup 🔨
-        uses: cedx/setup-dart@v2
+        uses: dart-lang/setup-dart@v1.3
 
       - name: Get dependencies 📥
-        run: pub get
+        run: dart pub get
+
+      - name: Compute diff 📜
+        uses: technote-space/get-diff-action@v6.0.1
+        with:
+          PATTERNS: |
+            **/**.dart
+            pubspec.yaml
 
       - name: Test 🔧
+        if: env.GIT_DIFF
         run: |
-          pub global activate coverage
+          dart pub global activate coverage
 
           dart scripts/collect_tests.dart
-          pub run test --coverage=coverage test/.test_coverage.dart
-          pub global run coverage:format_coverage --packages=.packages -i coverage/test/.test_coverage.dart.vm.json --lcov > coverage/lcov.info
+          dart test --coverage=coverage test/.test_coverage.dart
+          dart pub global run coverage:format_coverage --packages=.packages -i coverage/test/.test_coverage.dart.vm.json --lcov > coverage/lcov.info
 
       - name: Clean coverage 🧹
+        if: env.GIT_DIFF
         run: |
-          pub global activate remove_from_coverage
+          dart pub global activate remove_from_coverage
 
           # Exclude the .pub-cache
-          pub global run remove_from_coverage:remove_from_coverage -f coverage/lcov.info -r '/.pub-cache/'
+          dart pub global run remove_from_coverage:remove_from_coverage -f coverage/lcov.info -r '/.pub-cache/'
 
           # Exclude all g.dart files
-          pub global run remove_from_coverage:remove_from_coverage -f coverage/lcov.info -r '.g.dart$'
+          dart pub global run remove_from_coverage:remove_from_coverage -f coverage/lcov.info -r '.g.dart$'
 
           # Exclude the proto files
-          pub global run remove_from_coverage:remove_from_coverage -f coverage/lcov.info -r '/lib/proto/'
+          dart pub global run remove_from_coverage:remove_from_coverage -f coverage/lcov.info -r '/lib/proto/'
 
           # Exclude the test folder
-          pub global run remove_from_coverage:remove_from_coverage -f coverage/lcov.info -r '/test/'
+          dart pub global run remove_from_coverage:remove_from_coverage -f coverage/lcov.info -r '/test/'
 
       - name: Upload coverage 📤
+        if: env.GIT_DIFF
         uses: codecov/codecov-action@v1
         with:
           file: coverage/lcov.info

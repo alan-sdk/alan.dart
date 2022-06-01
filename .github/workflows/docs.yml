@@ -1,11 +1,16 @@
 name: Docs
+
+# Docs build and publishes the Vuepress documentation website.
+# This workflow is run on every pull request and push on main.
+# The deployment of the docs is made only on each push on main.
 on:
+  pull_request:
   push:
     branches:
-      - master
-  pull_request:
+      - main
 
 jobs:
+
   Markdown-Link-Check:
     runs-on: ubuntu-latest
     steps:
