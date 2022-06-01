@@ -23,7 +23,7 @@ dependencies:
   protobuf: ^2.0.0
 
 dev_dependencies:
-  build_runner: ^1.12.2
+  build_runner: ">=1.12.2 <3.0.0"
   mockito: ^5.0.3
   mock_web_server: ^5.0.0-nullsafety.1
   pedantic: ^1.11.0
