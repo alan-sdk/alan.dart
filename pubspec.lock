@@ -294,7 +294,7 @@ packages:
       name: json_annotation
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.0.1"
+    version: "4.1.0"
   json_serializable:
     dependency: "direct main"
     description:
