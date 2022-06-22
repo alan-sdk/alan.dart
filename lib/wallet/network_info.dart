@@ -24,7 +24,6 @@ ChannelCredentials channelOptionsFromJson(String value) {
 /// Contains the information about the GRPC endpoint
 @JsonSerializable(explicitToJson: true)
 class GRPCInfo extends Equatable {
-  static ClientChannel? _clientChannel;
 
   @JsonKey(name: 'host', required: true)
   final String host;
@@ -47,7 +46,7 @@ class GRPCInfo extends Equatable {
 
   /// Creates a new [ClientChannel] using the optional given options.
   ClientChannel getChannel() {
-    return _clientChannel ??= ClientChannel(
+    return ClientChannel(
       host.replaceFirst(RegExp('http(s)?:\/\/'), ''),
       port: port,
       options: ChannelOptions(credentials: credentials),
