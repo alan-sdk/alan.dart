@@ -1,3 +1,7 @@
+## Version 0.40.2+2
+- GRPC url will not be cache in the library in order to change the grpc url if needed.
+
+
 ## Version 0.40.2+1
 - Changed how `NetworkInfo` is built.
 - Upgraded Cosmos Proto files to `v0.42.5`
