@@ -24,7 +24,6 @@ ChannelCredentials channelOptionsFromJson(String value) {
 /// Contains the information about the GRPC endpoint
 @JsonSerializable(explicitToJson: true)
 class GRPCInfo extends Equatable {
-
   @JsonKey(name: 'host', required: true)
   final String host;
 
