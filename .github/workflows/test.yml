@@ -62,7 +62,6 @@ jobs:
         if: env.GIT_DIFF
         run: |
           dart pub global activate coverage
-          dart scripts/collect_tests.dart
           dart pub global run coverage:test_with_coverage
 
       - name: Clean coverage 🧹
