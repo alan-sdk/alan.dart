@@ -1,3 +1,6 @@
+## [Unreleased]
+- `GRPCInfo#getChannel` now returns a new gRPC channel each time it's called. This makes it possible to easily switch between gRPC URLs if needed
+
 ## Version 0.40.2+1
 - Changed how `NetworkInfo` is built.
 - Upgraded Cosmos Proto files to `v0.42.5`
