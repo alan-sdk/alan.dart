@@ -26,6 +26,8 @@ jobs:
       - name: Setup 🔨
         if: env.GIT_DIFF
         uses: dart-lang/setup-dart@v1.3
+        with:
+          sdk: 2.17.5
 
       - name: Get dependencies 📥
         if: env.GIT_DIFF
@@ -43,6 +45,8 @@ jobs:
 
       - name: Setup 🔨
         uses: dart-lang/setup-dart@v1.3
+        with:
+          sdk: 2.17.5
 
       - name: Get dependencies 📥
         run: dart pub get
@@ -58,10 +62,8 @@ jobs:
         if: env.GIT_DIFF
         run: |
           dart pub global activate coverage
-
           dart scripts/collect_tests.dart
-          dart test --coverage=coverage test/.test_coverage.dart
-          dart pub global run coverage:format_coverage --packages=.packages -i coverage/test/.test_coverage.dart.vm.json --lcov > coverage/lcov.info
+          dart pub global run coverage:test_with_coverage
 
       - name: Clean coverage 🧹
         if: env.GIT_DIFF
