@@ -347,6 +347,8 @@ class Metadata extends $pb.GeneratedMessage {
     ..pc<DenomUnit>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'denomUnits', $pb.PbFieldType.PM, subBuilder: DenomUnit.create)
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'base')
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'display')
+    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
+    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'symbol')
     ..hasRequiredFields = false
   ;
 
@@ -356,6 +358,8 @@ class Metadata extends $pb.GeneratedMessage {
     $core.Iterable<DenomUnit>? denomUnits,
     $core.String? base,
     $core.String? display,
+    $core.String? name,
+    $core.String? symbol,
   }) {
     final _result = create();
     if (description != null) {
@@ -369,6 +373,12 @@ class Metadata extends $pb.GeneratedMessage {
     }
     if (display != null) {
       _result.display = display;
+    }
+    if (name != null) {
+      _result.name = name;
+    }
+    if (symbol != null) {
+      _result.symbol = symbol;
     }
     return _result;
   }
@@ -422,5 +432,23 @@ class Metadata extends $pb.GeneratedMessage {
   $core.bool hasDisplay() => $_has(3);
   @$pb.TagNumber(4)
   void clearDisplay() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get name => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set name($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasName() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearName() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get symbol => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set symbol($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasSymbol() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearSymbol() => clearField(6);
 }
 

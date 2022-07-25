@@ -1,3 +1,6 @@
+export 'authz.pb.dart';
+export 'authz.pbenum.dart';
+export 'authz.pbjson.dart';
 export 'bank.pb.dart';
 export 'bank.pbenum.dart';
 export 'bank.pbjson.dart';

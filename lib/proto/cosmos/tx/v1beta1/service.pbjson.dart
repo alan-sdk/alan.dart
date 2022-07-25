@@ -1,6 +1,12 @@
 ///
-import 'dart:convert' as $convert;
+//  Generated code. Do not modify.
+//  source: cosmos/tx/v1beta1/service.proto
+//
+// @dart = 2.12
+// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,deprecated_member_use_from_same_package,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
 import 'dart:core' as $core;
+import 'dart:convert' as $convert;
 import 'dart:typed_data' as $typed_data;
 @$core.Deprecated('Use orderByDescriptor instead')
 const OrderBy$json = const {
@@ -76,12 +82,21 @@ final $typed_data.Uint8List broadcastTxResponseDescriptor = $convert.base64Decod
 const SimulateRequest$json = const {
   '1': 'SimulateRequest',
   '2': const [
-    const {'1': 'tx', '3': 1, '4': 1, '5': 11, '6': '.cosmos.tx.v1beta1.Tx', '10': 'tx'},
+    const {
+      '1': 'tx',
+      '3': 1,
+      '4': 1,
+      '5': 11,
+      '6': '.cosmos.tx.v1beta1.Tx',
+      '8': const {'3': true},
+      '10': 'tx',
+    },
+    const {'1': 'tx_bytes', '3': 2, '4': 1, '5': 12, '10': 'txBytes'},
   ],
 };
 
 /// Descriptor for `SimulateRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List simulateRequestDescriptor = $convert.base64Decode('Cg9TaW11bGF0ZVJlcXVlc3QSJQoCdHgYASABKAsyFS5jb3Ntb3MudHgudjFiZXRhMS5UeFICdHg=');
+final $typed_data.Uint8List simulateRequestDescriptor = $convert.base64Decode('Cg9TaW11bGF0ZVJlcXVlc3QSKQoCdHgYASABKAsyFS5jb3Ntb3MudHgudjFiZXRhMS5UeEICGAFSAnR4EhkKCHR4X2J5dGVzGAIgASgMUgd0eEJ5dGVz');
 @$core.Deprecated('Use simulateResponseDescriptor instead')
 const SimulateResponse$json = const {
   '1': 'SimulateResponse',
@@ -114,3 +129,27 @@ const GetTxResponse$json = const {
 
 /// Descriptor for `GetTxResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List getTxResponseDescriptor = $convert.base64Decode('Cg1HZXRUeFJlc3BvbnNlEiUKAnR4GAEgASgLMhUuY29zbW9zLnR4LnYxYmV0YTEuVHhSAnR4EkUKC3R4X3Jlc3BvbnNlGAIgASgLMiQuY29zbW9zLmJhc2UuYWJjaS52MWJldGExLlR4UmVzcG9uc2VSCnR4UmVzcG9uc2U=');
+@$core.Deprecated('Use getBlockWithTxsRequestDescriptor instead')
+const GetBlockWithTxsRequest$json = const {
+  '1': 'GetBlockWithTxsRequest',
+  '2': const [
+    const {'1': 'height', '3': 1, '4': 1, '5': 3, '10': 'height'},
+    const {'1': 'pagination', '3': 2, '4': 1, '5': 11, '6': '.cosmos.base.query.v1beta1.PageRequest', '10': 'pagination'},
+  ],
+};
+
+/// Descriptor for `GetBlockWithTxsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getBlockWithTxsRequestDescriptor = $convert.base64Decode('ChZHZXRCbG9ja1dpdGhUeHNSZXF1ZXN0EhYKBmhlaWdodBgBIAEoA1IGaGVpZ2h0EkYKCnBhZ2luYXRpb24YAiABKAsyJi5jb3Ntb3MuYmFzZS5xdWVyeS52MWJldGExLlBhZ2VSZXF1ZXN0UgpwYWdpbmF0aW9u');
+@$core.Deprecated('Use getBlockWithTxsResponseDescriptor instead')
+const GetBlockWithTxsResponse$json = const {
+  '1': 'GetBlockWithTxsResponse',
+  '2': const [
+    const {'1': 'txs', '3': 1, '4': 3, '5': 11, '6': '.cosmos.tx.v1beta1.Tx', '10': 'txs'},
+    const {'1': 'block_id', '3': 2, '4': 1, '5': 11, '6': '.tendermint.types.BlockID', '10': 'blockId'},
+    const {'1': 'block', '3': 3, '4': 1, '5': 11, '6': '.tendermint.types.Block', '10': 'block'},
+    const {'1': 'pagination', '3': 4, '4': 1, '5': 11, '6': '.cosmos.base.query.v1beta1.PageResponse', '10': 'pagination'},
+  ],
+};
+
+/// Descriptor for `GetBlockWithTxsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List getBlockWithTxsResponseDescriptor = $convert.base64Decode('ChdHZXRCbG9ja1dpdGhUeHNSZXNwb25zZRInCgN0eHMYASADKAsyFS5jb3Ntb3MudHgudjFiZXRhMS5UeFIDdHhzEjQKCGJsb2NrX2lkGAIgASgLMhkudGVuZGVybWludC50eXBlcy5CbG9ja0lEUgdibG9ja0lkEi0KBWJsb2NrGAMgASgLMhcudGVuZGVybWludC50eXBlcy5CbG9ja1IFYmxvY2sSRwoKcGFnaW5hdGlvbhgEIAEoCzInLmNvc21vcy5iYXNlLnF1ZXJ5LnYxYmV0YTEuUGFnZVJlc3BvbnNlUgpwYWdpbmF0aW9u');

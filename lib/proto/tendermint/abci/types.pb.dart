@@ -3,7 +3,7 @@
 //  source: tendermint/abci/types.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
+// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
 
 import 'dart:core' as $core;
 
@@ -2711,7 +2711,7 @@ class ResponseLoadSnapshotChunk extends $pb.GeneratedMessage {
 class ResponseApplySnapshotChunk extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ResponseApplySnapshotChunk', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'tendermint.abci'), createEmptyInstance: create)
     ..e<ResponseApplySnapshotChunk_Result>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'result', $pb.PbFieldType.OE, defaultOrMaker: ResponseApplySnapshotChunk_Result.UNKNOWN, valueOf: ResponseApplySnapshotChunk_Result.valueOf, enumValues: ResponseApplySnapshotChunk_Result.values)
-    ..p<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'refetchChunks', $pb.PbFieldType.PU3)
+    ..p<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'refetchChunks', $pb.PbFieldType.KU3)
     ..pPS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'rejectSenders')
     ..hasRequiredFields = false
   ;

@@ -1,4 +1,10 @@
 ///
+//  Generated code. Do not modify.
+//  source: confio/proofs.proto
+//
+// @dart = 2.12
+// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
@@ -172,10 +178,10 @@ class NonExistenceProof extends $pb.GeneratedMessage {
 }
 
 enum CommitmentProof_Proof {
-  exist,
-  nonexist,
-  batch,
-  compressed,
+  exist, 
+  nonexist, 
+  batch, 
+  compressed, 
   notSet
 }
 
@@ -560,7 +566,7 @@ class ProofSpec extends $pb.GeneratedMessage {
 
 class InnerSpec extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'InnerSpec', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ics23'), createEmptyInstance: create)
-    ..p<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'childOrder', $pb.PbFieldType.P3)
+    ..p<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'childOrder', $pb.PbFieldType.K3)
     ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'childSize', $pb.PbFieldType.O3)
     ..a<$core.int>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'minPrefixLength', $pb.PbFieldType.O3)
     ..a<$core.int>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'maxPrefixLength', $pb.PbFieldType.O3)
@@ -711,8 +717,8 @@ class BatchProof extends $pb.GeneratedMessage {
 }
 
 enum BatchEntry_Proof {
-  exist,
-  nonexist,
+  exist, 
+  nonexist, 
   notSet
 }
 
@@ -840,8 +846,8 @@ class CompressedBatchProof extends $pb.GeneratedMessage {
 }
 
 enum CompressedBatchEntry_Proof {
-  exist,
-  nonexist,
+  exist, 
+  nonexist, 
   notSet
 }
 
@@ -924,7 +930,7 @@ class CompressedExistenceProof extends $pb.GeneratedMessage {
     ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'key', $pb.PbFieldType.OY)
     ..a<$core.List<$core.int>>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'value', $pb.PbFieldType.OY)
     ..aOM<LeafOp>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'leaf', subBuilder: LeafOp.create)
-    ..p<$core.int>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'path', $pb.PbFieldType.P3)
+    ..p<$core.int>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'path', $pb.PbFieldType.K3)
     ..hasRequiredFields = false
   ;
 

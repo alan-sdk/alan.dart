@@ -1,6 +1,12 @@
 ///
-import 'dart:convert' as $convert;
+//  Generated code. Do not modify.
+//  source: cosmos/gov/v1beta1/gov.proto
+//
+// @dart = 2.12
+// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,deprecated_member_use_from_same_package,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
 import 'dart:core' as $core;
+import 'dart:convert' as $convert;
 import 'dart:typed_data' as $typed_data;
 @$core.Deprecated('Use voteOptionDescriptor instead')
 const VoteOption$json = const {
@@ -33,6 +39,17 @@ const ProposalStatus$json = const {
 
 /// Descriptor for `ProposalStatus`. Decode as a `google.protobuf.EnumDescriptorProto`.
 final $typed_data.Uint8List proposalStatusDescriptor = $convert.base64Decode('Cg5Qcm9wb3NhbFN0YXR1cxIuChtQUk9QT1NBTF9TVEFUVVNfVU5TUEVDSUZJRUQQABoNip0gCVN0YXR1c05pbBI7Ch5QUk9QT1NBTF9TVEFUVVNfREVQT1NJVF9QRVJJT0QQARoXip0gE1N0YXR1c0RlcG9zaXRQZXJpb2QSOQodUFJPUE9TQUxfU1RBVFVTX1ZPVElOR19QRVJJT0QQAhoWip0gElN0YXR1c1ZvdGluZ1BlcmlvZBIsChZQUk9QT1NBTF9TVEFUVVNfUEFTU0VEEAMaEIqdIAxTdGF0dXNQYXNzZWQSMAoYUFJPUE9TQUxfU1RBVFVTX1JFSkVDVEVEEAQaEoqdIA5TdGF0dXNSZWplY3RlZBIsChZQUk9QT1NBTF9TVEFUVVNfRkFJTEVEEAUaEIqdIAxTdGF0dXNGYWlsZWQaBIijHgA=');
+@$core.Deprecated('Use weightedVoteOptionDescriptor instead')
+const WeightedVoteOption$json = const {
+  '1': 'WeightedVoteOption',
+  '2': const [
+    const {'1': 'option', '3': 1, '4': 1, '5': 14, '6': '.cosmos.gov.v1beta1.VoteOption', '10': 'option'},
+    const {'1': 'weight', '3': 2, '4': 1, '5': 9, '8': const {}, '10': 'weight'},
+  ],
+};
+
+/// Descriptor for `WeightedVoteOption`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List weightedVoteOptionDescriptor = $convert.base64Decode('ChJXZWlnaHRlZFZvdGVPcHRpb24SNgoGb3B0aW9uGAEgASgOMh4uY29zbW9zLmdvdi52MWJldGExLlZvdGVPcHRpb25SBm9wdGlvbhJXCgZ3ZWlnaHQYAiABKAlCP9reHyZnaXRodWIuY29tL2Nvc21vcy9jb3Ntb3Mtc2RrL3R5cGVzLkRlY8jeHwDy3h8NeWFtbDoid2VpZ2h0IlIGd2VpZ2h0');
 @$core.Deprecated('Use textProposalDescriptor instead')
 const TextProposal$json = const {
   '1': 'TextProposal',
@@ -97,13 +114,22 @@ const Vote$json = const {
   '2': const [
     const {'1': 'proposal_id', '3': 1, '4': 1, '5': 4, '8': const {}, '10': 'proposalId'},
     const {'1': 'voter', '3': 2, '4': 1, '5': 9, '10': 'voter'},
-    const {'1': 'option', '3': 3, '4': 1, '5': 14, '6': '.cosmos.gov.v1beta1.VoteOption', '10': 'option'},
+    const {
+      '1': 'option',
+      '3': 3,
+      '4': 1,
+      '5': 14,
+      '6': '.cosmos.gov.v1beta1.VoteOption',
+      '8': const {'3': true},
+      '10': 'option',
+    },
+    const {'1': 'options', '3': 4, '4': 3, '5': 11, '6': '.cosmos.gov.v1beta1.WeightedVoteOption', '8': const {}, '10': 'options'},
   ],
   '7': const {},
 };
 
 /// Descriptor for `Vote`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List voteDescriptor = $convert.base64Decode('CgRWb3RlEjcKC3Byb3Bvc2FsX2lkGAEgASgEQhby3h8SeWFtbDoicHJvcG9zYWxfaWQiUgpwcm9wb3NhbElkEhQKBXZvdGVyGAIgASgJUgV2b3RlchI2CgZvcHRpb24YAyABKA4yHi5jb3Ntb3MuZ292LnYxYmV0YTEuVm90ZU9wdGlvblIGb3B0aW9uOgiYoB8A6KAfAA==');
+final $typed_data.Uint8List voteDescriptor = $convert.base64Decode('CgRWb3RlEjcKC3Byb3Bvc2FsX2lkGAEgASgEQhby3h8SeWFtbDoicHJvcG9zYWxfaWQiUgpwcm9wb3NhbElkEhQKBXZvdGVyGAIgASgJUgV2b3RlchI6CgZvcHRpb24YAyABKA4yHi5jb3Ntb3MuZ292LnYxYmV0YTEuVm90ZU9wdGlvbkICGAFSBm9wdGlvbhJGCgdvcHRpb25zGAQgAygLMiYuY29zbW9zLmdvdi52MWJldGExLldlaWdodGVkVm90ZU9wdGlvbkIEyN4fAFIHb3B0aW9uczoImKAfAOigHwA=');
 @$core.Deprecated('Use depositParamsDescriptor instead')
 const DepositParams$json = const {
   '1': 'DepositParams',

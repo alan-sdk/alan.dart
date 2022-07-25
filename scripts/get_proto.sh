@@ -26,9 +26,18 @@ wget -O "$COSMOS_ZIP" "https://github.com/cosmos/cosmos-sdk/archive/v$COSMOS_VER
 unzip "$COSMOS_ZIP" -d "$BUILD/" && rm "$COSMOS_ZIP"
 COSMOS="$BUILD/cosmos-sdk-$COSMOS_VERSION"
 
+WASMD_ZIP="$BUILD/wasmd.zip"
+wget -O "$WASMD_ZIP" "https://github.com/CosmWasm/wasmd/archive/refs/heads/main.zip"
+unzip "$WASMD_ZIP" -d "$BUILD/" && rm "$WASMD_ZIP"
+WASMD="$BUILD/wasmd-main"
+
 PROTO_COSMOS=$PROTO/cosmos
 mkdir -p "$PROTO_COSMOS"
 mv -f "$COSMOS/proto/cosmos"/* "$PROTO_COSMOS"
+
+PROTO_COSMWASM=$PROTO/cosmwasm
+mkdir -p "$PROTO_COSMWASM"
+mv -f "$WASMD/proto/cosmwasm"/* "$PROTO_COSMWASM"
 
 mkdir -p "$THIRD_PARTY"
 mv -f "$COSMOS/third_party"/* "$THIRD_PARTY"
