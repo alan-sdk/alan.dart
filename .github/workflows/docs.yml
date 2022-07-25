@@ -1,11 +1,16 @@
 name: Docs
+
+# Docs build and publishes the Vuepress documentation website.
+# This workflow is run on every pull request and push on main.
+# The deployment of the docs is made only on each push on main.
 on:
+  pull_request:
   push:
     branches:
-      - master
-  pull_request:
+      - main
 
 jobs:
+
   Markdown-Link-Check:
     runs-on: ubuntu-latest
     steps:
@@ -23,6 +28,11 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: Setup Node 🧰
+        uses: actions/setup-node@v3
+        with:
+          node-version: 12
+
       - name: Build 🔧
         run: |
           npm install
@@ -30,7 +40,7 @@ jobs:
           npm run docs:build
 
       - name: Deploy 🚀
-        # if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/main'
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
