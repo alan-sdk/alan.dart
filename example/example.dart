@@ -9,10 +9,30 @@ void main() async {
   );
 
   final mnemonic = [
-    'roast', 'stomach', 'welcome', 'please', 'gauge', 'funny',
-    'coconut', 'baby', 'bird', 'announce', 'bind', 'jacket',
-    'title', 'vibrant', 'tomorrow', 'indoor', 'bitter', 'initial',
-    'ill', 'analyst', 'thought', 'strike', 'answer', 'cotton',
+    'roast',
+    'stomach',
+    'welcome',
+    'please',
+    'gauge',
+    'funny',
+    'coconut',
+    'baby',
+    'bird',
+    'announce',
+    'bind',
+    'jacket',
+    'title',
+    'vibrant',
+    'tomorrow',
+    'indoor',
+    'bitter',
+    'initial',
+    'ill',
+    'analyst',
+    'thought',
+    'strike',
+    'answer',
+    'cotton',
   ];
   final wallet = Wallet.derive(mnemonic, networkInfo);
 
