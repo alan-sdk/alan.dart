@@ -3,14 +3,14 @@
 //  source: cosmos/bank/v1beta1/tx.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
+// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
 
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../base/v1beta1/coin.pb.dart' as $2;
-import 'bank.pb.dart' as $4;
+import 'bank.pb.dart' as $3;
 
 class MsgSend extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MsgSend', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.bank.v1beta1'), createEmptyInstance: create)
@@ -112,15 +112,15 @@ class MsgSendResponse extends $pb.GeneratedMessage {
 
 class MsgMultiSend extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MsgMultiSend', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.bank.v1beta1'), createEmptyInstance: create)
-    ..pc<$4.Input>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inputs', $pb.PbFieldType.PM, subBuilder: $4.Input.create)
-    ..pc<$4.Output>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'outputs', $pb.PbFieldType.PM, subBuilder: $4.Output.create)
+    ..pc<$3.Input>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inputs', $pb.PbFieldType.PM, subBuilder: $3.Input.create)
+    ..pc<$3.Output>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'outputs', $pb.PbFieldType.PM, subBuilder: $3.Output.create)
     ..hasRequiredFields = false
   ;
 
   MsgMultiSend._() : super();
   factory MsgMultiSend({
-    $core.Iterable<$4.Input>? inputs,
-    $core.Iterable<$4.Output>? outputs,
+    $core.Iterable<$3.Input>? inputs,
+    $core.Iterable<$3.Output>? outputs,
   }) {
     final _result = create();
     if (inputs != null) {
@@ -153,10 +153,10 @@ class MsgMultiSend extends $pb.GeneratedMessage {
   static MsgMultiSend? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$4.Input> get inputs => $_getList(0);
+  $core.List<$3.Input> get inputs => $_getList(0);
 
   @$pb.TagNumber(2)
-  $core.List<$4.Output> get outputs => $_getList(1);
+  $core.List<$3.Output> get outputs => $_getList(1);
 }
 
 class MsgMultiSendResponse extends $pb.GeneratedMessage {

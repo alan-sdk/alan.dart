@@ -1,32 +1,26 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/bank/v1beta1/genesis.proto
-//
-// @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'bank.pb.dart' as $4;
 import '../../base/v1beta1/coin.pb.dart' as $2;
+import 'bank.pb.dart' as $3;
 
 class GenesisState extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GenesisState', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.bank.v1beta1'), createEmptyInstance: create)
-    ..aOM<$4.Params>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'params', subBuilder: $4.Params.create)
+    ..aOM<$3.Params>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'params', subBuilder: $3.Params.create)
     ..pc<Balance>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'balances', $pb.PbFieldType.PM, subBuilder: Balance.create)
     ..pc<$2.Coin>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'supply', $pb.PbFieldType.PM, subBuilder: $2.Coin.create)
-    ..pc<$4.Metadata>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'denomMetadata', $pb.PbFieldType.PM, subBuilder: $4.Metadata.create)
+    ..pc<$3.Metadata>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'denomMetadata', $pb.PbFieldType.PM, subBuilder: $3.Metadata.create)
     ..hasRequiredFields = false
   ;
 
   GenesisState._() : super();
   factory GenesisState({
-    $4.Params? params,
+    $3.Params? params,
     $core.Iterable<Balance>? balances,
     $core.Iterable<$2.Coin>? supply,
-    $core.Iterable<$4.Metadata>? denomMetadata,
+    $core.Iterable<$3.Metadata>? denomMetadata,
   }) {
     final _result = create();
     if (params != null) {
@@ -65,15 +59,15 @@ class GenesisState extends $pb.GeneratedMessage {
   static GenesisState? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $4.Params get params => $_getN(0);
+  $3.Params get params => $_getN(0);
   @$pb.TagNumber(1)
-  set params($4.Params v) { setField(1, v); }
+  set params($3.Params v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasParams() => $_has(0);
   @$pb.TagNumber(1)
   void clearParams() => clearField(1);
   @$pb.TagNumber(1)
-  $4.Params ensureParams() => $_ensure(0);
+  $3.Params ensureParams() => $_ensure(0);
 
   @$pb.TagNumber(2)
   $core.List<Balance> get balances => $_getList(1);
@@ -82,7 +76,7 @@ class GenesisState extends $pb.GeneratedMessage {
   $core.List<$2.Coin> get supply => $_getList(2);
 
   @$pb.TagNumber(4)
-  $core.List<$4.Metadata> get denomMetadata => $_getList(3);
+  $core.List<$3.Metadata> get denomMetadata => $_getList(3);
 }
 
 class Balance extends $pb.GeneratedMessage {

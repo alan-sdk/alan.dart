@@ -3,21 +3,21 @@
 //  source: cosmos/authz/v1beta1/query.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
+// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
 
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../base/query/v1beta1/pagination.pb.dart' as $5;
-import 'authz.pb.dart' as $6;
+import '../../base/query/v1beta1/pagination.pb.dart' as $6;
+import 'authz.pb.dart' as $5;
 
 class QueryGrantsRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryGrantsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.authz.v1beta1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'granter')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'grantee')
     ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'msgTypeUrl')
-    ..aOM<$5.PageRequest>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pagination', subBuilder: $5.PageRequest.create)
+    ..aOM<$6.PageRequest>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pagination', subBuilder: $6.PageRequest.create)
     ..hasRequiredFields = false
   ;
 
@@ -26,7 +26,7 @@ class QueryGrantsRequest extends $pb.GeneratedMessage {
     $core.String? granter,
     $core.String? grantee,
     $core.String? msgTypeUrl,
-    $5.PageRequest? pagination,
+    $6.PageRequest? pagination,
   }) {
     final _result = create();
     if (granter != null) {
@@ -92,28 +92,28 @@ class QueryGrantsRequest extends $pb.GeneratedMessage {
   void clearMsgTypeUrl() => clearField(3);
 
   @$pb.TagNumber(4)
-  $5.PageRequest get pagination => $_getN(3);
+  $6.PageRequest get pagination => $_getN(3);
   @$pb.TagNumber(4)
-  set pagination($5.PageRequest v) { setField(4, v); }
+  set pagination($6.PageRequest v) { setField(4, v); }
   @$pb.TagNumber(4)
   $core.bool hasPagination() => $_has(3);
   @$pb.TagNumber(4)
   void clearPagination() => clearField(4);
   @$pb.TagNumber(4)
-  $5.PageRequest ensurePagination() => $_ensure(3);
+  $6.PageRequest ensurePagination() => $_ensure(3);
 }
 
 class QueryGrantsResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryGrantsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.authz.v1beta1'), createEmptyInstance: create)
-    ..pc<$6.Grant>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'grants', $pb.PbFieldType.PM, subBuilder: $6.Grant.create)
-    ..aOM<$5.PageResponse>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pagination', subBuilder: $5.PageResponse.create)
+    ..pc<$5.Grant>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'grants', $pb.PbFieldType.PM, subBuilder: $5.Grant.create)
+    ..aOM<$6.PageResponse>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pagination', subBuilder: $6.PageResponse.create)
     ..hasRequiredFields = false
   ;
 
   QueryGrantsResponse._() : super();
   factory QueryGrantsResponse({
-    $core.Iterable<$6.Grant>? grants,
-    $5.PageResponse? pagination,
+    $core.Iterable<$5.Grant>? grants,
+    $6.PageResponse? pagination,
   }) {
     final _result = create();
     if (grants != null) {
@@ -146,31 +146,31 @@ class QueryGrantsResponse extends $pb.GeneratedMessage {
   static QueryGrantsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$6.Grant> get grants => $_getList(0);
+  $core.List<$5.Grant> get grants => $_getList(0);
 
   @$pb.TagNumber(2)
-  $5.PageResponse get pagination => $_getN(1);
+  $6.PageResponse get pagination => $_getN(1);
   @$pb.TagNumber(2)
-  set pagination($5.PageResponse v) { setField(2, v); }
+  set pagination($6.PageResponse v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasPagination() => $_has(1);
   @$pb.TagNumber(2)
   void clearPagination() => clearField(2);
   @$pb.TagNumber(2)
-  $5.PageResponse ensurePagination() => $_ensure(1);
+  $6.PageResponse ensurePagination() => $_ensure(1);
 }
 
 class QueryGranterGrantsRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryGranterGrantsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.authz.v1beta1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'granter')
-    ..aOM<$5.PageRequest>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pagination', subBuilder: $5.PageRequest.create)
+    ..aOM<$6.PageRequest>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pagination', subBuilder: $6.PageRequest.create)
     ..hasRequiredFields = false
   ;
 
   QueryGranterGrantsRequest._() : super();
   factory QueryGranterGrantsRequest({
     $core.String? granter,
-    $5.PageRequest? pagination,
+    $6.PageRequest? pagination,
   }) {
     final _result = create();
     if (granter != null) {
@@ -212,28 +212,28 @@ class QueryGranterGrantsRequest extends $pb.GeneratedMessage {
   void clearGranter() => clearField(1);
 
   @$pb.TagNumber(2)
-  $5.PageRequest get pagination => $_getN(1);
+  $6.PageRequest get pagination => $_getN(1);
   @$pb.TagNumber(2)
-  set pagination($5.PageRequest v) { setField(2, v); }
+  set pagination($6.PageRequest v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasPagination() => $_has(1);
   @$pb.TagNumber(2)
   void clearPagination() => clearField(2);
   @$pb.TagNumber(2)
-  $5.PageRequest ensurePagination() => $_ensure(1);
+  $6.PageRequest ensurePagination() => $_ensure(1);
 }
 
 class QueryGranterGrantsResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryGranterGrantsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.authz.v1beta1'), createEmptyInstance: create)
-    ..pc<$6.GrantAuthorization>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'grants', $pb.PbFieldType.PM, subBuilder: $6.GrantAuthorization.create)
-    ..aOM<$5.PageResponse>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pagination', subBuilder: $5.PageResponse.create)
+    ..pc<$5.GrantAuthorization>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'grants', $pb.PbFieldType.PM, subBuilder: $5.GrantAuthorization.create)
+    ..aOM<$6.PageResponse>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pagination', subBuilder: $6.PageResponse.create)
     ..hasRequiredFields = false
   ;
 
   QueryGranterGrantsResponse._() : super();
   factory QueryGranterGrantsResponse({
-    $core.Iterable<$6.GrantAuthorization>? grants,
-    $5.PageResponse? pagination,
+    $core.Iterable<$5.GrantAuthorization>? grants,
+    $6.PageResponse? pagination,
   }) {
     final _result = create();
     if (grants != null) {
@@ -266,31 +266,31 @@ class QueryGranterGrantsResponse extends $pb.GeneratedMessage {
   static QueryGranterGrantsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$6.GrantAuthorization> get grants => $_getList(0);
+  $core.List<$5.GrantAuthorization> get grants => $_getList(0);
 
   @$pb.TagNumber(2)
-  $5.PageResponse get pagination => $_getN(1);
+  $6.PageResponse get pagination => $_getN(1);
   @$pb.TagNumber(2)
-  set pagination($5.PageResponse v) { setField(2, v); }
+  set pagination($6.PageResponse v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasPagination() => $_has(1);
   @$pb.TagNumber(2)
   void clearPagination() => clearField(2);
   @$pb.TagNumber(2)
-  $5.PageResponse ensurePagination() => $_ensure(1);
+  $6.PageResponse ensurePagination() => $_ensure(1);
 }
 
 class QueryGranteeGrantsRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryGranteeGrantsRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.authz.v1beta1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'grantee')
-    ..aOM<$5.PageRequest>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pagination', subBuilder: $5.PageRequest.create)
+    ..aOM<$6.PageRequest>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pagination', subBuilder: $6.PageRequest.create)
     ..hasRequiredFields = false
   ;
 
   QueryGranteeGrantsRequest._() : super();
   factory QueryGranteeGrantsRequest({
     $core.String? grantee,
-    $5.PageRequest? pagination,
+    $6.PageRequest? pagination,
   }) {
     final _result = create();
     if (grantee != null) {
@@ -332,28 +332,28 @@ class QueryGranteeGrantsRequest extends $pb.GeneratedMessage {
   void clearGrantee() => clearField(1);
 
   @$pb.TagNumber(2)
-  $5.PageRequest get pagination => $_getN(1);
+  $6.PageRequest get pagination => $_getN(1);
   @$pb.TagNumber(2)
-  set pagination($5.PageRequest v) { setField(2, v); }
+  set pagination($6.PageRequest v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasPagination() => $_has(1);
   @$pb.TagNumber(2)
   void clearPagination() => clearField(2);
   @$pb.TagNumber(2)
-  $5.PageRequest ensurePagination() => $_ensure(1);
+  $6.PageRequest ensurePagination() => $_ensure(1);
 }
 
 class QueryGranteeGrantsResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryGranteeGrantsResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.authz.v1beta1'), createEmptyInstance: create)
-    ..pc<$6.GrantAuthorization>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'grants', $pb.PbFieldType.PM, subBuilder: $6.GrantAuthorization.create)
-    ..aOM<$5.PageResponse>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pagination', subBuilder: $5.PageResponse.create)
+    ..pc<$5.GrantAuthorization>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'grants', $pb.PbFieldType.PM, subBuilder: $5.GrantAuthorization.create)
+    ..aOM<$6.PageResponse>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pagination', subBuilder: $6.PageResponse.create)
     ..hasRequiredFields = false
   ;
 
   QueryGranteeGrantsResponse._() : super();
   factory QueryGranteeGrantsResponse({
-    $core.Iterable<$6.GrantAuthorization>? grants,
-    $5.PageResponse? pagination,
+    $core.Iterable<$5.GrantAuthorization>? grants,
+    $6.PageResponse? pagination,
   }) {
     final _result = create();
     if (grants != null) {
@@ -386,17 +386,17 @@ class QueryGranteeGrantsResponse extends $pb.GeneratedMessage {
   static QueryGranteeGrantsResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$6.GrantAuthorization> get grants => $_getList(0);
+  $core.List<$5.GrantAuthorization> get grants => $_getList(0);
 
   @$pb.TagNumber(2)
-  $5.PageResponse get pagination => $_getN(1);
+  $6.PageResponse get pagination => $_getN(1);
   @$pb.TagNumber(2)
-  set pagination($5.PageResponse v) { setField(2, v); }
+  set pagination($6.PageResponse v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasPagination() => $_has(1);
   @$pb.TagNumber(2)
   void clearPagination() => clearField(2);
   @$pb.TagNumber(2)
-  $5.PageResponse ensurePagination() => $_ensure(1);
+  $6.PageResponse ensurePagination() => $_ensure(1);
 }
 

@@ -3,7 +3,7 @@
 //  source: cosmwasm/wasm/v1/tx.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
+// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
 
 import 'dart:core' as $core;
 
@@ -11,7 +11,7 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import 'types.pb.dart' as $3;
-import '../../../cosmos/base/v1beta1/coin.pb.dart' as $5;
+import '../../../cosmos/base/v1beta1/coin.pb.dart' as $4;
 
 class MsgStoreCode extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MsgStoreCode', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmwasm.wasm.v1'), createEmptyInstance: create)
@@ -144,7 +144,7 @@ class MsgInstantiateContract extends $pb.GeneratedMessage {
     ..a<$fixnum.Int64>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'codeId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
     ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'label')
     ..a<$core.List<$core.int>>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'msg', $pb.PbFieldType.OY)
-    ..pc<$5.Coin>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'funds', $pb.PbFieldType.PM, subBuilder: $5.Coin.create)
+    ..pc<$4.Coin>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'funds', $pb.PbFieldType.PM, subBuilder: $4.Coin.create)
     ..hasRequiredFields = false
   ;
 
@@ -155,7 +155,7 @@ class MsgInstantiateContract extends $pb.GeneratedMessage {
     $fixnum.Int64? codeId,
     $core.String? label,
     $core.List<$core.int>? msg,
-    $core.Iterable<$5.Coin>? funds,
+    $core.Iterable<$4.Coin>? funds,
   }) {
     final _result = create();
     if (sender != null) {
@@ -245,7 +245,7 @@ class MsgInstantiateContract extends $pb.GeneratedMessage {
   void clearMsg() => clearField(5);
 
   @$pb.TagNumber(6)
-  $core.List<$5.Coin> get funds => $_getList(5);
+  $core.List<$4.Coin> get funds => $_getList(5);
 }
 
 class MsgInstantiateContractResponse extends $pb.GeneratedMessage {
@@ -314,7 +314,7 @@ class MsgExecuteContract extends $pb.GeneratedMessage {
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sender')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'contract')
     ..a<$core.List<$core.int>>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'msg', $pb.PbFieldType.OY)
-    ..pc<$5.Coin>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'funds', $pb.PbFieldType.PM, subBuilder: $5.Coin.create)
+    ..pc<$4.Coin>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'funds', $pb.PbFieldType.PM, subBuilder: $4.Coin.create)
     ..hasRequiredFields = false
   ;
 
@@ -323,7 +323,7 @@ class MsgExecuteContract extends $pb.GeneratedMessage {
     $core.String? sender,
     $core.String? contract,
     $core.List<$core.int>? msg,
-    $core.Iterable<$5.Coin>? funds,
+    $core.Iterable<$4.Coin>? funds,
   }) {
     final _result = create();
     if (sender != null) {
@@ -389,7 +389,7 @@ class MsgExecuteContract extends $pb.GeneratedMessage {
   void clearMsg() => clearField(3);
 
   @$pb.TagNumber(5)
-  $core.List<$5.Coin> get funds => $_getList(3);
+  $core.List<$4.Coin> get funds => $_getList(3);
 }
 
 class MsgExecuteContractResponse extends $pb.GeneratedMessage {

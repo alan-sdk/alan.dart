@@ -1,25 +1,19 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmos/authz/v1beta1/genesis.proto
-//
-// @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'authz.pb.dart' as $6;
+import 'authz.pb.dart' as $5;
 
 class GenesisState extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GenesisState', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.authz.v1beta1'), createEmptyInstance: create)
-    ..pc<$6.GrantAuthorization>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authorization', $pb.PbFieldType.PM, subBuilder: $6.GrantAuthorization.create)
+    ..pc<$5.GrantAuthorization>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'authorization', $pb.PbFieldType.PM, subBuilder: $5.GrantAuthorization.create)
     ..hasRequiredFields = false
   ;
 
   GenesisState._() : super();
   factory GenesisState({
-    $core.Iterable<$6.GrantAuthorization>? authorization,
+    $core.Iterable<$5.GrantAuthorization>? authorization,
   }) {
     final _result = create();
     if (authorization != null) {
@@ -49,6 +43,6 @@ class GenesisState extends $pb.GeneratedMessage {
   static GenesisState? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.List<$6.GrantAuthorization> get authorization => $_getList(0);
+  $core.List<$5.GrantAuthorization> get authorization => $_getList(0);
 }
 

@@ -1,22 +1,16 @@
 ///
-//  Generated code. Do not modify.
-//  source: cosmwasm/wasm/v1/genesis.proto
-//
-// @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
-
 import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
+import 'tx.pb.dart' as $0;
 import 'types.pb.dart' as $3;
-import 'tx.pb.dart' as $1;
 
 enum GenesisState_GenMsgs_Sum {
-  storeCode, 
-  instantiateContract, 
-  executeContract, 
+  storeCode,
+  instantiateContract,
+  executeContract,
   notSet
 }
 
@@ -29,17 +23,17 @@ class GenesisState_GenMsgs extends $pb.GeneratedMessage {
   };
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GenesisState.GenMsgs', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmwasm.wasm.v1'), createEmptyInstance: create)
     ..oo(0, [1, 2, 3])
-    ..aOM<$1.MsgStoreCode>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'storeCode', subBuilder: $1.MsgStoreCode.create)
-    ..aOM<$1.MsgInstantiateContract>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'instantiateContract', subBuilder: $1.MsgInstantiateContract.create)
-    ..aOM<$1.MsgExecuteContract>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'executeContract', subBuilder: $1.MsgExecuteContract.create)
+    ..aOM<$0.MsgStoreCode>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'storeCode', subBuilder: $0.MsgStoreCode.create)
+    ..aOM<$0.MsgInstantiateContract>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'instantiateContract', subBuilder: $0.MsgInstantiateContract.create)
+    ..aOM<$0.MsgExecuteContract>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'executeContract', subBuilder: $0.MsgExecuteContract.create)
     ..hasRequiredFields = false
   ;
 
   GenesisState_GenMsgs._() : super();
   factory GenesisState_GenMsgs({
-    $1.MsgStoreCode? storeCode,
-    $1.MsgInstantiateContract? instantiateContract,
-    $1.MsgExecuteContract? executeContract,
+    $0.MsgStoreCode? storeCode,
+    $0.MsgInstantiateContract? instantiateContract,
+    $0.MsgExecuteContract? executeContract,
   }) {
     final _result = create();
     if (storeCode != null) {
@@ -78,37 +72,37 @@ class GenesisState_GenMsgs extends $pb.GeneratedMessage {
   void clearSum() => clearField($_whichOneof(0));
 
   @$pb.TagNumber(1)
-  $1.MsgStoreCode get storeCode => $_getN(0);
+  $0.MsgStoreCode get storeCode => $_getN(0);
   @$pb.TagNumber(1)
-  set storeCode($1.MsgStoreCode v) { setField(1, v); }
+  set storeCode($0.MsgStoreCode v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasStoreCode() => $_has(0);
   @$pb.TagNumber(1)
   void clearStoreCode() => clearField(1);
   @$pb.TagNumber(1)
-  $1.MsgStoreCode ensureStoreCode() => $_ensure(0);
+  $0.MsgStoreCode ensureStoreCode() => $_ensure(0);
 
   @$pb.TagNumber(2)
-  $1.MsgInstantiateContract get instantiateContract => $_getN(1);
+  $0.MsgInstantiateContract get instantiateContract => $_getN(1);
   @$pb.TagNumber(2)
-  set instantiateContract($1.MsgInstantiateContract v) { setField(2, v); }
+  set instantiateContract($0.MsgInstantiateContract v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasInstantiateContract() => $_has(1);
   @$pb.TagNumber(2)
   void clearInstantiateContract() => clearField(2);
   @$pb.TagNumber(2)
-  $1.MsgInstantiateContract ensureInstantiateContract() => $_ensure(1);
+  $0.MsgInstantiateContract ensureInstantiateContract() => $_ensure(1);
 
   @$pb.TagNumber(3)
-  $1.MsgExecuteContract get executeContract => $_getN(2);
+  $0.MsgExecuteContract get executeContract => $_getN(2);
   @$pb.TagNumber(3)
-  set executeContract($1.MsgExecuteContract v) { setField(3, v); }
+  set executeContract($0.MsgExecuteContract v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasExecuteContract() => $_has(2);
   @$pb.TagNumber(3)
   void clearExecuteContract() => clearField(3);
   @$pb.TagNumber(3)
-  $1.MsgExecuteContract ensureExecuteContract() => $_ensure(2);
+  $0.MsgExecuteContract ensureExecuteContract() => $_ensure(2);
 }
 
 class GenesisState extends $pb.GeneratedMessage {

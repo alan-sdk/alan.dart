@@ -3,20 +3,20 @@
 //  source: cosmos/authz/v1beta1/tx.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
+// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
 
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import 'authz.pb.dart' as $6;
+import 'authz.pb.dart' as $5;
 import '../../../google/protobuf/any.pb.dart' as $3;
 
 class MsgGrant extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'MsgGrant', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.authz.v1beta1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'granter')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'grantee')
-    ..aOM<$6.Grant>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'grant', subBuilder: $6.Grant.create)
+    ..aOM<$5.Grant>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'grant', subBuilder: $5.Grant.create)
     ..hasRequiredFields = false
   ;
 
@@ -24,7 +24,7 @@ class MsgGrant extends $pb.GeneratedMessage {
   factory MsgGrant({
     $core.String? granter,
     $core.String? grantee,
-    $6.Grant? grant,
+    $5.Grant? grant,
   }) {
     final _result = create();
     if (granter != null) {
@@ -78,15 +78,15 @@ class MsgGrant extends $pb.GeneratedMessage {
   void clearGrantee() => clearField(2);
 
   @$pb.TagNumber(3)
-  $6.Grant get grant => $_getN(2);
+  $5.Grant get grant => $_getN(2);
   @$pb.TagNumber(3)
-  set grant($6.Grant v) { setField(3, v); }
+  set grant($5.Grant v) { setField(3, v); }
   @$pb.TagNumber(3)
   $core.bool hasGrant() => $_has(2);
   @$pb.TagNumber(3)
   void clearGrant() => clearField(3);
   @$pb.TagNumber(3)
-  $6.Grant ensureGrant() => $_ensure(2);
+  $5.Grant ensureGrant() => $_ensure(2);
 }
 
 class MsgExecResponse extends $pb.GeneratedMessage {

@@ -3,7 +3,7 @@
 //  source: cosmwasm/wasm/v1/query.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,unnecessary_const,non_constant_identifier_names,library_prefixes,unused_import,unused_shown_name,return_of_invalid_type,unnecessary_this,prefer_final_fields
+// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
 
 import 'dart:core' as $core;
 
@@ -11,7 +11,7 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import 'types.pb.dart' as $3;
-import '../../../cosmos/base/query/v1beta1/pagination.pb.dart' as $4;
+import '../../../cosmos/base/query/v1beta1/pagination.pb.dart' as $5;
 
 class QueryContractInfoRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryContractInfoRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmwasm.wasm.v1'), createEmptyInstance: create)
@@ -126,14 +126,14 @@ class QueryContractInfoResponse extends $pb.GeneratedMessage {
 class QueryContractHistoryRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryContractHistoryRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmwasm.wasm.v1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'address')
-    ..aOM<$4.PageRequest>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pagination', subBuilder: $4.PageRequest.create)
+    ..aOM<$5.PageRequest>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pagination', subBuilder: $5.PageRequest.create)
     ..hasRequiredFields = false
   ;
 
   QueryContractHistoryRequest._() : super();
   factory QueryContractHistoryRequest({
     $core.String? address,
-    $4.PageRequest? pagination,
+    $5.PageRequest? pagination,
   }) {
     final _result = create();
     if (address != null) {
@@ -175,28 +175,28 @@ class QueryContractHistoryRequest extends $pb.GeneratedMessage {
   void clearAddress() => clearField(1);
 
   @$pb.TagNumber(2)
-  $4.PageRequest get pagination => $_getN(1);
+  $5.PageRequest get pagination => $_getN(1);
   @$pb.TagNumber(2)
-  set pagination($4.PageRequest v) { setField(2, v); }
+  set pagination($5.PageRequest v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasPagination() => $_has(1);
   @$pb.TagNumber(2)
   void clearPagination() => clearField(2);
   @$pb.TagNumber(2)
-  $4.PageRequest ensurePagination() => $_ensure(1);
+  $5.PageRequest ensurePagination() => $_ensure(1);
 }
 
 class QueryContractHistoryResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryContractHistoryResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmwasm.wasm.v1'), createEmptyInstance: create)
     ..pc<$3.ContractCodeHistoryEntry>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'entries', $pb.PbFieldType.PM, subBuilder: $3.ContractCodeHistoryEntry.create)
-    ..aOM<$4.PageResponse>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pagination', subBuilder: $4.PageResponse.create)
+    ..aOM<$5.PageResponse>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pagination', subBuilder: $5.PageResponse.create)
     ..hasRequiredFields = false
   ;
 
   QueryContractHistoryResponse._() : super();
   factory QueryContractHistoryResponse({
     $core.Iterable<$3.ContractCodeHistoryEntry>? entries,
-    $4.PageResponse? pagination,
+    $5.PageResponse? pagination,
   }) {
     final _result = create();
     if (entries != null) {
@@ -232,28 +232,28 @@ class QueryContractHistoryResponse extends $pb.GeneratedMessage {
   $core.List<$3.ContractCodeHistoryEntry> get entries => $_getList(0);
 
   @$pb.TagNumber(2)
-  $4.PageResponse get pagination => $_getN(1);
+  $5.PageResponse get pagination => $_getN(1);
   @$pb.TagNumber(2)
-  set pagination($4.PageResponse v) { setField(2, v); }
+  set pagination($5.PageResponse v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasPagination() => $_has(1);
   @$pb.TagNumber(2)
   void clearPagination() => clearField(2);
   @$pb.TagNumber(2)
-  $4.PageResponse ensurePagination() => $_ensure(1);
+  $5.PageResponse ensurePagination() => $_ensure(1);
 }
 
 class QueryContractsByCodeRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryContractsByCodeRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmwasm.wasm.v1'), createEmptyInstance: create)
     ..a<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'codeId', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aOM<$4.PageRequest>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pagination', subBuilder: $4.PageRequest.create)
+    ..aOM<$5.PageRequest>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pagination', subBuilder: $5.PageRequest.create)
     ..hasRequiredFields = false
   ;
 
   QueryContractsByCodeRequest._() : super();
   factory QueryContractsByCodeRequest({
     $fixnum.Int64? codeId,
-    $4.PageRequest? pagination,
+    $5.PageRequest? pagination,
   }) {
     final _result = create();
     if (codeId != null) {
@@ -295,28 +295,28 @@ class QueryContractsByCodeRequest extends $pb.GeneratedMessage {
   void clearCodeId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $4.PageRequest get pagination => $_getN(1);
+  $5.PageRequest get pagination => $_getN(1);
   @$pb.TagNumber(2)
-  set pagination($4.PageRequest v) { setField(2, v); }
+  set pagination($5.PageRequest v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasPagination() => $_has(1);
   @$pb.TagNumber(2)
   void clearPagination() => clearField(2);
   @$pb.TagNumber(2)
-  $4.PageRequest ensurePagination() => $_ensure(1);
+  $5.PageRequest ensurePagination() => $_ensure(1);
 }
 
 class QueryContractsByCodeResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryContractsByCodeResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmwasm.wasm.v1'), createEmptyInstance: create)
     ..pPS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'contracts')
-    ..aOM<$4.PageResponse>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pagination', subBuilder: $4.PageResponse.create)
+    ..aOM<$5.PageResponse>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pagination', subBuilder: $5.PageResponse.create)
     ..hasRequiredFields = false
   ;
 
   QueryContractsByCodeResponse._() : super();
   factory QueryContractsByCodeResponse({
     $core.Iterable<$core.String>? contracts,
-    $4.PageResponse? pagination,
+    $5.PageResponse? pagination,
   }) {
     final _result = create();
     if (contracts != null) {
@@ -352,28 +352,28 @@ class QueryContractsByCodeResponse extends $pb.GeneratedMessage {
   $core.List<$core.String> get contracts => $_getList(0);
 
   @$pb.TagNumber(2)
-  $4.PageResponse get pagination => $_getN(1);
+  $5.PageResponse get pagination => $_getN(1);
   @$pb.TagNumber(2)
-  set pagination($4.PageResponse v) { setField(2, v); }
+  set pagination($5.PageResponse v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasPagination() => $_has(1);
   @$pb.TagNumber(2)
   void clearPagination() => clearField(2);
   @$pb.TagNumber(2)
-  $4.PageResponse ensurePagination() => $_ensure(1);
+  $5.PageResponse ensurePagination() => $_ensure(1);
 }
 
 class QueryAllContractStateRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryAllContractStateRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmwasm.wasm.v1'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'address')
-    ..aOM<$4.PageRequest>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pagination', subBuilder: $4.PageRequest.create)
+    ..aOM<$5.PageRequest>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pagination', subBuilder: $5.PageRequest.create)
     ..hasRequiredFields = false
   ;
 
   QueryAllContractStateRequest._() : super();
   factory QueryAllContractStateRequest({
     $core.String? address,
-    $4.PageRequest? pagination,
+    $5.PageRequest? pagination,
   }) {
     final _result = create();
     if (address != null) {
@@ -415,28 +415,28 @@ class QueryAllContractStateRequest extends $pb.GeneratedMessage {
   void clearAddress() => clearField(1);
 
   @$pb.TagNumber(2)
-  $4.PageRequest get pagination => $_getN(1);
+  $5.PageRequest get pagination => $_getN(1);
   @$pb.TagNumber(2)
-  set pagination($4.PageRequest v) { setField(2, v); }
+  set pagination($5.PageRequest v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasPagination() => $_has(1);
   @$pb.TagNumber(2)
   void clearPagination() => clearField(2);
   @$pb.TagNumber(2)
-  $4.PageRequest ensurePagination() => $_ensure(1);
+  $5.PageRequest ensurePagination() => $_ensure(1);
 }
 
 class QueryAllContractStateResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryAllContractStateResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmwasm.wasm.v1'), createEmptyInstance: create)
     ..pc<$3.Model>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'models', $pb.PbFieldType.PM, subBuilder: $3.Model.create)
-    ..aOM<$4.PageResponse>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pagination', subBuilder: $4.PageResponse.create)
+    ..aOM<$5.PageResponse>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pagination', subBuilder: $5.PageResponse.create)
     ..hasRequiredFields = false
   ;
 
   QueryAllContractStateResponse._() : super();
   factory QueryAllContractStateResponse({
     $core.Iterable<$3.Model>? models,
-    $4.PageResponse? pagination,
+    $5.PageResponse? pagination,
   }) {
     final _result = create();
     if (models != null) {
@@ -472,15 +472,15 @@ class QueryAllContractStateResponse extends $pb.GeneratedMessage {
   $core.List<$3.Model> get models => $_getList(0);
 
   @$pb.TagNumber(2)
-  $4.PageResponse get pagination => $_getN(1);
+  $5.PageResponse get pagination => $_getN(1);
   @$pb.TagNumber(2)
-  set pagination($4.PageResponse v) { setField(2, v); }
+  set pagination($5.PageResponse v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasPagination() => $_has(1);
   @$pb.TagNumber(2)
   void clearPagination() => clearField(2);
   @$pb.TagNumber(2)
-  $4.PageResponse ensurePagination() => $_ensure(1);
+  $5.PageResponse ensurePagination() => $_ensure(1);
 }
 
 class QueryRawContractStateRequest extends $pb.GeneratedMessage {
@@ -902,13 +902,13 @@ class QueryCodeResponse extends $pb.GeneratedMessage {
 
 class QueryCodesRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryCodesRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmwasm.wasm.v1'), createEmptyInstance: create)
-    ..aOM<$4.PageRequest>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pagination', subBuilder: $4.PageRequest.create)
+    ..aOM<$5.PageRequest>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pagination', subBuilder: $5.PageRequest.create)
     ..hasRequiredFields = false
   ;
 
   QueryCodesRequest._() : super();
   factory QueryCodesRequest({
-    $4.PageRequest? pagination,
+    $5.PageRequest? pagination,
   }) {
     final _result = create();
     if (pagination != null) {
@@ -938,28 +938,28 @@ class QueryCodesRequest extends $pb.GeneratedMessage {
   static QueryCodesRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $4.PageRequest get pagination => $_getN(0);
+  $5.PageRequest get pagination => $_getN(0);
   @$pb.TagNumber(1)
-  set pagination($4.PageRequest v) { setField(1, v); }
+  set pagination($5.PageRequest v) { setField(1, v); }
   @$pb.TagNumber(1)
   $core.bool hasPagination() => $_has(0);
   @$pb.TagNumber(1)
   void clearPagination() => clearField(1);
   @$pb.TagNumber(1)
-  $4.PageRequest ensurePagination() => $_ensure(0);
+  $5.PageRequest ensurePagination() => $_ensure(0);
 }
 
 class QueryCodesResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryCodesResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmwasm.wasm.v1'), createEmptyInstance: create)
     ..pc<CodeInfoResponse>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'codeInfos', $pb.PbFieldType.PM, subBuilder: CodeInfoResponse.create)
-    ..aOM<$4.PageResponse>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pagination', subBuilder: $4.PageResponse.create)
+    ..aOM<$5.PageResponse>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pagination', subBuilder: $5.PageResponse.create)
     ..hasRequiredFields = false
   ;
 
   QueryCodesResponse._() : super();
   factory QueryCodesResponse({
     $core.Iterable<CodeInfoResponse>? codeInfos,
-    $4.PageResponse? pagination,
+    $5.PageResponse? pagination,
   }) {
     final _result = create();
     if (codeInfos != null) {
@@ -995,26 +995,26 @@ class QueryCodesResponse extends $pb.GeneratedMessage {
   $core.List<CodeInfoResponse> get codeInfos => $_getList(0);
 
   @$pb.TagNumber(2)
-  $4.PageResponse get pagination => $_getN(1);
+  $5.PageResponse get pagination => $_getN(1);
   @$pb.TagNumber(2)
-  set pagination($4.PageResponse v) { setField(2, v); }
+  set pagination($5.PageResponse v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasPagination() => $_has(1);
   @$pb.TagNumber(2)
   void clearPagination() => clearField(2);
   @$pb.TagNumber(2)
-  $4.PageResponse ensurePagination() => $_ensure(1);
+  $5.PageResponse ensurePagination() => $_ensure(1);
 }
 
 class QueryPinnedCodesRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryPinnedCodesRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmwasm.wasm.v1'), createEmptyInstance: create)
-    ..aOM<$4.PageRequest>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pagination', subBuilder: $4.PageRequest.create)
+    ..aOM<$5.PageRequest>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pagination', subBuilder: $5.PageRequest.create)
     ..hasRequiredFields = false
   ;
 
   QueryPinnedCodesRequest._() : super();
   factory QueryPinnedCodesRequest({
-    $4.PageRequest? pagination,
+    $5.PageRequest? pagination,
   }) {
     final _result = create();
     if (pagination != null) {
@@ -1044,28 +1044,28 @@ class QueryPinnedCodesRequest extends $pb.GeneratedMessage {
   static QueryPinnedCodesRequest? _defaultInstance;
 
   @$pb.TagNumber(2)
-  $4.PageRequest get pagination => $_getN(0);
+  $5.PageRequest get pagination => $_getN(0);
   @$pb.TagNumber(2)
-  set pagination($4.PageRequest v) { setField(2, v); }
+  set pagination($5.PageRequest v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasPagination() => $_has(0);
   @$pb.TagNumber(2)
   void clearPagination() => clearField(2);
   @$pb.TagNumber(2)
-  $4.PageRequest ensurePagination() => $_ensure(0);
+  $5.PageRequest ensurePagination() => $_ensure(0);
 }
 
 class QueryPinnedCodesResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'QueryPinnedCodesResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmwasm.wasm.v1'), createEmptyInstance: create)
-    ..p<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'codeIds', $pb.PbFieldType.PU6)
-    ..aOM<$4.PageResponse>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pagination', subBuilder: $4.PageResponse.create)
+    ..p<$fixnum.Int64>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'codeIds', $pb.PbFieldType.KU6)
+    ..aOM<$5.PageResponse>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pagination', subBuilder: $5.PageResponse.create)
     ..hasRequiredFields = false
   ;
 
   QueryPinnedCodesResponse._() : super();
   factory QueryPinnedCodesResponse({
     $core.Iterable<$fixnum.Int64>? codeIds,
-    $4.PageResponse? pagination,
+    $5.PageResponse? pagination,
   }) {
     final _result = create();
     if (codeIds != null) {
@@ -1101,14 +1101,14 @@ class QueryPinnedCodesResponse extends $pb.GeneratedMessage {
   $core.List<$fixnum.Int64> get codeIds => $_getList(0);
 
   @$pb.TagNumber(2)
-  $4.PageResponse get pagination => $_getN(1);
+  $5.PageResponse get pagination => $_getN(1);
   @$pb.TagNumber(2)
-  set pagination($4.PageResponse v) { setField(2, v); }
+  set pagination($5.PageResponse v) { setField(2, v); }
   @$pb.TagNumber(2)
   $core.bool hasPagination() => $_has(1);
   @$pb.TagNumber(2)
   void clearPagination() => clearField(2);
   @$pb.TagNumber(2)
-  $4.PageResponse ensurePagination() => $_ensure(1);
+  $5.PageResponse ensurePagination() => $_ensure(1);
 }
 
