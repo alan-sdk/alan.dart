@@ -1,6 +1,5 @@
-## Version 0.40.2+2
-- GRPC url will not be cache in the library in order to change the grpc url if needed.
-
+## [Unreleased]
+- `GRPCInfo#getChannel` now returns a new gRPC channel each time it's called. This makes it possible to easily switch between gRPC URLs if needed
 
 ## Version 0.40.2+1
 - Changed how `NetworkInfo` is built.
