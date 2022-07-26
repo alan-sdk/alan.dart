@@ -1,11 +1,16 @@
 ///
+//  Generated code. Do not modify.
+//  source: cosmos/upgrade/v1beta1/query.proto
+//
+// @dart = 2.12
+// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
 import 'dart:async' as $async;
+
 import 'dart:core' as $core;
 
 import 'package:grpc/service_api.dart' as $grpc;
-
 import 'query.pb.dart' as $0;
-
 export 'query.pb.dart';
 
 class QueryClient extends $grpc.Client {
@@ -28,6 +33,12 @@ class QueryClient extends $grpc.Client {
       ($0.QueryUpgradedConsensusStateRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) =>
           $0.QueryUpgradedConsensusStateResponse.fromBuffer(value));
+  static final _$moduleVersions = $grpc.ClientMethod<
+          $0.QueryModuleVersionsRequest, $0.QueryModuleVersionsResponse>(
+      '/cosmos.upgrade.v1beta1.Query/ModuleVersions',
+      ($0.QueryModuleVersionsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.QueryModuleVersionsResponse.fromBuffer(value));
 
   QueryClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -51,6 +62,12 @@ class QueryClient extends $grpc.Client {
           {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$upgradedConsensusState, request,
         options: options);
+  }
+
+  $grpc.ResponseFuture<$0.QueryModuleVersionsResponse> moduleVersions(
+      $0.QueryModuleVersionsRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$moduleVersions, request, options: options);
   }
 }
 
@@ -86,6 +103,15 @@ abstract class QueryServiceBase extends $grpc.Service {
             $0.QueryUpgradedConsensusStateRequest.fromBuffer(value),
         ($0.QueryUpgradedConsensusStateResponse value) =>
             value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.QueryModuleVersionsRequest,
+            $0.QueryModuleVersionsResponse>(
+        'ModuleVersions',
+        moduleVersions_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.QueryModuleVersionsRequest.fromBuffer(value),
+        ($0.QueryModuleVersionsResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.QueryCurrentPlanResponse> currentPlan_Pre(
@@ -106,10 +132,18 @@ abstract class QueryServiceBase extends $grpc.Service {
     return upgradedConsensusState(call, await request);
   }
 
+  $async.Future<$0.QueryModuleVersionsResponse> moduleVersions_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.QueryModuleVersionsRequest> request) async {
+    return moduleVersions(call, await request);
+  }
+
   $async.Future<$0.QueryCurrentPlanResponse> currentPlan(
       $grpc.ServiceCall call, $0.QueryCurrentPlanRequest request);
   $async.Future<$0.QueryAppliedPlanResponse> appliedPlan(
       $grpc.ServiceCall call, $0.QueryAppliedPlanRequest request);
   $async.Future<$0.QueryUpgradedConsensusStateResponse> upgradedConsensusState(
       $grpc.ServiceCall call, $0.QueryUpgradedConsensusStateRequest request);
+  $async.Future<$0.QueryModuleVersionsResponse> moduleVersions(
+      $grpc.ServiceCall call, $0.QueryModuleVersionsRequest request);
 }

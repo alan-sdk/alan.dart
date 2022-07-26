@@ -1,3 +1,6 @@
+export 'authz.pb.dart';
+export 'authz.pbenum.dart';
+export 'authz.pbjson.dart';
 export 'genesis.pb.dart';
 export 'genesis.pbenum.dart';
 export 'genesis.pbjson.dart';

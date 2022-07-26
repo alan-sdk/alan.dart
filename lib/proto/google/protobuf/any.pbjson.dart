@@ -13,4 +13,4 @@ const Any$json = const {
 };
 
 /// Descriptor for `Any`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List anyDescriptor = $convert.base64Decode('CgNBbnkSGQoIdHlwZV91cmwYASABKAlSB3R5cGVVcmwSFAoFdmFsdWUYAiABKAxSBXZhbHVlOgTwoR8A');
+final $typed_data.Uint8List anyDescriptor = $convert.base64Decode('CgNBbnkSGQoIdHlwZV91cmwYASABKAlSB3R5cGVVcmwSFAoFdmFsdWUYAiABKAxSBXZhbHVlOhDwoR8AmKAfALCgHwCA3CAA');

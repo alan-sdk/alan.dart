@@ -18,12 +18,13 @@ const TxResponse$json = const {
     const {'1': 'gas_used', '3': 10, '4': 1, '5': 3, '10': 'gasUsed'},
     const {'1': 'tx', '3': 11, '4': 1, '5': 11, '6': '.google.protobuf.Any', '10': 'tx'},
     const {'1': 'timestamp', '3': 12, '4': 1, '5': 9, '10': 'timestamp'},
+    const {'1': 'events', '3': 13, '4': 3, '5': 11, '6': '.tendermint.abci.Event', '8': const {}, '10': 'events'},
   ],
   '7': const {},
 };
 
 /// Descriptor for `TxResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List txResponseDescriptor = $convert.base64Decode('CgpUeFJlc3BvbnNlEhYKBmhlaWdodBgBIAEoA1IGaGVpZ2h0EiIKBnR4aGFzaBgCIAEoCUIK4t4fBlR4SGFzaFIGdHhoYXNoEhwKCWNvZGVzcGFjZRgDIAEoCVIJY29kZXNwYWNlEhIKBGNvZGUYBCABKA1SBGNvZGUSEgoEZGF0YRgFIAEoCVIEZGF0YRIXCgdyYXdfbG9nGAYgASgJUgZyYXdMb2cSVQoEbG9ncxgHIAMoCzIoLmNvc21vcy5iYXNlLmFiY2kudjFiZXRhMS5BQkNJTWVzc2FnZUxvZ0IXqt8fD0FCQ0lNZXNzYWdlTG9nc8jeHwBSBGxvZ3MSEgoEaW5mbxgIIAEoCVIEaW5mbxIdCgpnYXNfd2FudGVkGAkgASgDUglnYXNXYW50ZWQSGQoIZ2FzX3VzZWQYCiABKANSB2dhc1VzZWQSJAoCdHgYCyABKAsyFC5nb29nbGUucHJvdG9idWYuQW55UgJ0eBIcCgl0aW1lc3RhbXAYDCABKAlSCXRpbWVzdGFtcDoEiKAfAA==');
+final $typed_data.Uint8List txResponseDescriptor = $convert.base64Decode('CgpUeFJlc3BvbnNlEhYKBmhlaWdodBgBIAEoA1IGaGVpZ2h0EiIKBnR4aGFzaBgCIAEoCUIK4t4fBlR4SGFzaFIGdHhoYXNoEhwKCWNvZGVzcGFjZRgDIAEoCVIJY29kZXNwYWNlEhIKBGNvZGUYBCABKA1SBGNvZGUSEgoEZGF0YRgFIAEoCVIEZGF0YRIXCgdyYXdfbG9nGAYgASgJUgZyYXdMb2cSVQoEbG9ncxgHIAMoCzIoLmNvc21vcy5iYXNlLmFiY2kudjFiZXRhMS5BQkNJTWVzc2FnZUxvZ0IXqt8fD0FCQ0lNZXNzYWdlTG9nc8jeHwBSBGxvZ3MSEgoEaW5mbxgIIAEoCVIEaW5mbxIdCgpnYXNfd2FudGVkGAkgASgDUglnYXNXYW50ZWQSGQoIZ2FzX3VzZWQYCiABKANSB2dhc1VzZWQSJAoCdHgYCyABKAsyFC5nb29nbGUucHJvdG9idWYuQW55UgJ0eBIcCgl0aW1lc3RhbXAYDCABKAlSCXRpbWVzdGFtcBI0CgZldmVudHMYDSADKAsyFi50ZW5kZXJtaW50LmFiY2kuRXZlbnRCBMjeHwBSBmV2ZW50czoEiKAfAA==');
 @$core.Deprecated('Use aBCIMessageLogDescriptor instead')
 const ABCIMessageLog$json = const {
   '1': 'ABCIMessageLog',

@@ -1,4 +1,10 @@
 ///
+//  Generated code. Do not modify.
+//  source: cosmos/tx/signing/v1beta1/signing.proto
+//
+// @dart = 2.12
+// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
 import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
@@ -6,6 +12,7 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import '../../../../google/protobuf/any.pb.dart' as $0;
 import '../../../crypto/multisig/v1beta1/multisig.pb.dart' as $1;
+
 import 'signing.pbenum.dart';
 
 export 'signing.pbenum.dart';
@@ -170,8 +177,8 @@ class SignatureDescriptor_Data_Multi extends $pb.GeneratedMessage {
 }
 
 enum SignatureDescriptor_Data_Sum {
-  single,
-  multi,
+  single, 
+  multi, 
   notSet
 }
 

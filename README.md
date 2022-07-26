@@ -15,12 +15,10 @@ You can find the documentation on the [official website](https://alan-sdk.github
 ## Cosmos-SDK compatibility table
 Over time, we developed different versions of this library to be compatible with multiple Cosmos SDK releases. Following you can find the compatibility table that indicates which version you should use: 
 
-| Cosmos SDK version(s) | Alan.dart branch | 
-| :-------------------: | :--------------: |
-| `v0.37.x` | `cosmos-v0.37.x` |
-| `v0.38.x` | `cosmos-v0.38.x` |
-| `v0.39.x` | `cosmos-v0.39.x` |
-| `v0.40.x`, `v0.41.x`, `v0.42.x` | `main` |
+|      Cosmos SDK version(s)      | Alan.dart branch | 
+|:-------------------------------:|:----------------:|
+| `v0.40.x`, `v0.41.x`, `v0.42.x` |    `v0.40.x`     |
+|            `v0.45.x`            |    `v0.41.x`     |
 
 ## Getting started
 To start using this library inside your project, just edit your `pubspec.yml` file adding the following lines: 

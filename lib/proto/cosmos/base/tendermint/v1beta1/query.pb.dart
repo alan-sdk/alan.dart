@@ -1,14 +1,20 @@
 ///
+//  Generated code. Do not modify.
+//  source: cosmos/base/tendermint/v1beta1/query.proto
+//
+// @dart = 2.12
+// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
 import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
-import '../../../../google/protobuf/any.pb.dart' as $2;
-import '../../../../tendermint/p2p/types.pb.dart' as $5;
-import '../../../../tendermint/types/block.pb.dart' as $4;
-import '../../../../tendermint/types/types.pb.dart' as $3;
 import '../../query/v1beta1/pagination.pb.dart' as $1;
+import '../../../../google/protobuf/any.pb.dart' as $2;
+import '../../../../tendermint/types/types.pb.dart' as $3;
+import '../../../../tendermint/types/block.pb.dart' as $4;
+import '../../../../tendermint/p2p/types.pb.dart' as $5;
 
 class GetValidatorSetByHeightRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'GetValidatorSetByHeightRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'cosmos.base.tendermint.v1beta1'), createEmptyInstance: create)
@@ -740,6 +746,7 @@ class VersionInfo extends $pb.GeneratedMessage {
     ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'buildTags')
     ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'goVersion')
     ..pc<Module>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'buildDeps', $pb.PbFieldType.PM, subBuilder: Module.create)
+    ..aOS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'cosmosSdkVersion')
     ..hasRequiredFields = false
   ;
 
@@ -752,6 +759,7 @@ class VersionInfo extends $pb.GeneratedMessage {
     $core.String? buildTags,
     $core.String? goVersion,
     $core.Iterable<Module>? buildDeps,
+    $core.String? cosmosSdkVersion,
   }) {
     final _result = create();
     if (name != null) {
@@ -774,6 +782,9 @@ class VersionInfo extends $pb.GeneratedMessage {
     }
     if (buildDeps != null) {
       _result.buildDeps.addAll(buildDeps);
+    }
+    if (cosmosSdkVersion != null) {
+      _result.cosmosSdkVersion = cosmosSdkVersion;
     }
     return _result;
   }
@@ -854,6 +865,15 @@ class VersionInfo extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(7)
   $core.List<Module> get buildDeps => $_getList(6);
+
+  @$pb.TagNumber(8)
+  $core.String get cosmosSdkVersion => $_getSZ(7);
+  @$pb.TagNumber(8)
+  set cosmosSdkVersion($core.String v) { $_setString(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasCosmosSdkVersion() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearCosmosSdkVersion() => clearField(8);
 }
 
 class Module extends $pb.GeneratedMessage {
