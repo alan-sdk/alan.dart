@@ -7,11 +7,16 @@ part of 'network_info.dart';
 // **************************************************************************
 
 GRPCInfo _$GRPCInfoFromJson(Map<String, dynamic> json) {
-  $checkKeys(json, requiredKeys: const ['host']);
+  $checkKeys(
+    json,
+    requiredKeys: const ['host'],
+  );
   return GRPCInfo(
     host: json['host'] as String,
     port: json['port'] as int? ?? 9090,
-    credentials: channelOptionsFromJson(json['channel_credentials'] as String),
+    credentials: json['channel_credentials'] == null
+        ? const ChannelCredentials.insecure()
+        : channelOptionsFromJson(json['channel_credentials'] as String),
   );
 }
 
@@ -22,7 +27,10 @@ Map<String, dynamic> _$GRPCInfoToJson(GRPCInfo instance) => <String, dynamic>{
     };
 
 LCDInfo _$LCDInfoFromJson(Map<String, dynamic> json) {
-  $checkKeys(json, requiredKeys: const ['host']);
+  $checkKeys(
+    json,
+    requiredKeys: const ['host'],
+  );
   return LCDInfo(
     host: json['host'] as String,
     port: json['port'] as int? ?? 1317,
@@ -35,7 +43,10 @@ Map<String, dynamic> _$LCDInfoToJson(LCDInfo instance) => <String, dynamic>{
     };
 
 NetworkInfo _$NetworkInfoFromJson(Map<String, dynamic> json) {
-  $checkKeys(json, requiredKeys: const ['bech32_hrp']);
+  $checkKeys(
+    json,
+    requiredKeys: const ['bech32_hrp'],
+  );
   return NetworkInfo(
     bech32Hrp: json['bech32_hrp'] as String,
     lcdInfo: LCDInfo.fromJson(json['lcdInfo'] as Map<String, dynamic>),
