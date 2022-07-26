@@ -1,6 +1,5 @@
 ## [Unreleased]
-- `GRPCInfo#getChannel` now returns a new gRPC channel each time it's called. This makes it possible to easily switch between gRPC URLs if needed
-
+- Updated Dart SDK requirements to be `>=2.17.0 <3.0.0`
 
 ## Version 0.41.0+1
 - `GRPCInfo#getChannel` now returns a new gRPC channel each time it's called. This makes it possible to easily switch between gRPC URLs if needed
