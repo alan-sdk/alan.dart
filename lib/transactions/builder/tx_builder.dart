@@ -115,6 +115,48 @@ class TxBuilder {
     _stdTx.authInfo.fee.amount.addAll(coins);
   }
 
+  /// Sets the given [payer] as the transaction fee payer.
+  void setFeePayer(String? payer) {
+    // Do not include default values as per ADR-027
+    if (payer == null || payer.isEmpty) {
+      return;
+    }
+
+    // Create auth info if not existing
+    if (!_stdTx.hasAuthInfo()) {
+      _stdTx.authInfo = AuthInfo.create();
+    }
+
+    // Create fee if not existing
+    if (!_stdTx.authInfo.hasFee()) {
+      _stdTx.authInfo.fee = Fee.create();
+    }
+
+    // Set the fee amount
+    _stdTx.authInfo.fee.payer = payer;
+  }
+
+  /// Sets the given [granter] as the transaction fee granter.
+  void setFeeGranter(String? granter) {
+    // Do not include default values as per ADR-027
+    if (granter == null || granter.isEmpty) {
+      return;
+    }
+
+    // Create auth info if not existing
+    if (!_stdTx.hasAuthInfo()) {
+      _stdTx.authInfo = AuthInfo.create();
+    }
+
+    // Create fee if not existing
+    if (!_stdTx.authInfo.hasFee()) {
+      _stdTx.authInfo.fee = Fee.create();
+    }
+
+    // Set the fee amount
+    _stdTx.authInfo.fee.granter = granter;
+  }
+
   /// Sets the given [limit] as the gas limit to be used to execute
   /// the transaction.
   void setGasLimit(fixnum.Int64? limit) {
