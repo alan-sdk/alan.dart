@@ -1,4 +1,4 @@
-## [Unreleased]
+## Version 0.41.1+1
 - Added support for fee payer and granter fields
 
 ## Version 0.41.0+1
