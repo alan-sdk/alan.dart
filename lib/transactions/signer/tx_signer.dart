@@ -97,6 +97,8 @@ class TxSigner {
       ..setSignatures([sig])
       ..setMemo(memo)
       ..setFeeAmount(fee.amount)
+      ..setFeePayer(fee.payer)
+      ..setFeeGranter(fee.granter)
       ..setGasLimit(fee.gasLimit);
 
     // Generate the bytes to be signed.
