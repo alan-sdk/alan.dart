@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:alan/alan.dart';
 import 'package:alan/proto/cosmos/auth/v1beta1/export.dart' as auth;
 import 'package:alan/proto/cosmos/bank/v1beta1/export.dart' as bank;
+import 'package:alan/proto/tendermint/p2p/types.pb.dart';
 import 'package:fixnum/fixnum.dart' as fixnum;
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
@@ -64,8 +65,8 @@ void main() {
       return Future.value(BaseAccount(account));
     });
 
-    when(nodeQuerier.getNodeInfo(networkInfo.restEndpoint)).thenAnswer((_) {
-      return Future.value(NodeInfo(network: 'cosmos-hub2'));
+    when(nodeQuerier.getNodeInfo()).thenAnswer((_) {
+      return Future.value(DefaultNodeInfo(network: 'cosmos-hub2'));
     });
 
     // Build a transaction
@@ -114,8 +115,8 @@ void main() {
       return Future.value(BaseAccount(account));
     });
 
-    when(nodeQuerier.getNodeInfo(networkInfo.restEndpoint)).thenAnswer((_) {
-      return Future.value(NodeInfo(network: 'testchain'));
+    when(nodeQuerier.getNodeInfo()).thenAnswer((_) {
+      return Future.value(DefaultNodeInfo(network: 'testchain'));
     });
 
     // Build a transaction

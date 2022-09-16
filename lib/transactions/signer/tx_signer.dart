@@ -25,7 +25,7 @@ class TxSigner {
   ) {
     return TxSigner(
       authQuerier: AuthQuerier.build(clientChannel),
-      nodeQuerier: NodeQuerier.build(httpClient),
+      nodeQuerier: NodeQuerier.build(clientChannel),
     );
   }
 
@@ -64,9 +64,7 @@ class TxSigner {
     }
 
     // Get the node info data
-    final nodeInfo = await _nodeQuerier.getNodeInfo(
-      wallet.networkInfo.restEndpoint,
-    );
+    final nodeInfo = await _nodeQuerier.getNodeInfo();
 
     // Get the public key from the account, or generate it if the
     // chain does not have it yet
