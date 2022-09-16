@@ -1,0 +1,37 @@
+name: Lint
+
+# Lint workflow runs linter
+# This workflow is run on pushes to main and every pull requests where a .dart, .mod, .sum have been changed
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  Lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Compute diff 📜
+        uses: technote-space/get-diff-action@v6.1.0
+        with:
+          PATTERNS: |
+            **/**.dart
+            pubspec.yaml
+
+      - name: Setup 🔨
+        if: env.GIT_DIFF
+        uses: dart-lang/setup-dart@v1.3
+        with:
+          sdk: 2.17.5
+
+      - name: Get dependencies 📥
+        if: env.GIT_DIFF
+        run: dart pub get
+
+      - name: Analyze 🔍
+        if: env.GIT_DIFF
+        run: make lint
