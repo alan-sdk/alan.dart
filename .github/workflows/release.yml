@@ -6,7 +6,7 @@ on:
   push:
     # Sequence of patterns matched against refs/tags
     tags:
-      - "v[0-9]+.[0-9]+.[0-9]+" # Push events to matching v*, i.e. v1.0, v20.15.10
+      - "v[0-9]+.[0-9]+.[0-9]+\+*[0-9]*" # Push events to matching Dart version system (i.e. v0.12.1+1, v25.1.2, etc)
 
 jobs:
   Release:
