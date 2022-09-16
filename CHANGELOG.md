@@ -1,3 +1,6 @@
+## Version 0.41.2+1
+- Replaced legacy `/node_info` query with new gRPC client
+
 ## Version 0.41.1+1
 - Added support for fee payer and granter fields
 
