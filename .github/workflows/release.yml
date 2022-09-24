@@ -4,6 +4,8 @@ name: Release
 # This workflow is run on new tags.
 on:
   push:
+    branches:
+      - main
 
 jobs:
   Release:
