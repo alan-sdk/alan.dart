@@ -24,7 +24,7 @@ jobs:
         run: dart pub get
 
       - name: Compute diff 📜
-        uses: technote-space/get-diff-action@v6.1.1
+        uses: technote-space/get-diff-action@v6.1.2
         with:
           PATTERNS: |
             **/**.dart
