@@ -14,7 +14,7 @@
     "lodash": "^4.17.21",
     "markdown-it": "^13.0.1",
     "markdown-it-meta": "0.0.1",
-    "vuepress": "^1.9.7",
+    "vuepress": "^1.9.8",
     "vuepress-plugin-element-tabs": "^0.2.8"
   },
   "dependencies": {
