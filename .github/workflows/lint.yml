@@ -24,7 +24,7 @@ jobs:
 
       - name: Setup 🔨
         if: env.GIT_DIFF
-        uses: dart-lang/setup-dart@v1.3
+        uses: dart-lang/setup-dart@v1.4
         with:
           sdk: 2.17.5
 
