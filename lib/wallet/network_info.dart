@@ -1,5 +1,7 @@
 import 'package:equatable/equatable.dart';
-import 'package:grpc/grpc.dart';
+import 'package:grpc/src/client/options.dart';
+import 'package:grpc/grpc_or_grpcweb.dart';
+import 'package:grpc/src/client/transport/http2_credentials.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'network_info.g.dart';
@@ -44,8 +46,8 @@ class GRPCInfo extends Equatable {
   });
 
   /// Creates a new [ClientChannel] using the optional given options.
-  ClientChannel getChannel() {
-    return ClientChannel(
+  GrpcOrGrpcWebClientChannel getChannel() {
+    return GrpcOrGrpcWebClientChannel.grpc(
       host.replaceFirst(RegExp('http(s)?:\/\/'), ''),
       port: port,
       options: ChannelOptions(credentials: credentials),
@@ -163,7 +165,7 @@ class NetworkInfo extends Equatable {
 
   /// Returns the ClientChannel that should be used to connect
   /// to the gRPC endpoint.
-  ClientChannel get gRPCChannel {
+  GrpcOrGrpcWebClientChannel get gRPCChannel {
     return grpcInfo.getChannel();
   }
 
