@@ -3,27 +3,13 @@ name: Release
 # Release workflow builds and published a new version to https://pub.dev.
 # This workflow is run on new tags.
 on:
+  pull_request:
+    branches: [ main ]
+    types: [opened, synchronize, reopened, labeled, unlabeled]
   push:
-    branches:
-      - main
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+'
 
 jobs:
-  Release:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v3
-
-      - name: Setup 🔨
-        uses: dart-lang/setup-dart@v1.4
-        with:
-          sdk: 2.17.5
-
-      - name: Get dependencies 📥
-        run: dart pub get
-
-      - name: Create release 📜
-        uses: k-paxian/dart-package-publisher@master
-        with:
-          accessToken: ${{ secrets.ACCESS_TOKEN }}
-          refreshToken: ${{ secrets.REFRESH_TOKEN }}
+  Publish:
+    uses: dart-lang/ecosystem/.github/workflows/publish.yaml@main
