@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:grpc/grpc.dart';
+import 'package:grpc/grpc_or_grpcweb.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'network_info.g.dart';
@@ -26,9 +27,15 @@ ChannelCredentials channelOptionsFromJson(String value) {
 class GRPCInfo extends Equatable {
   @JsonKey(name: 'host', required: true)
   final String host;
+  final String? webHost;
+  final bool isGrpcSecure;
+  final bool isWebSecure;
 
   @JsonKey(name: 'port', defaultValue: 9090)
   final int port;
+
+  @JsonKey(name: 'webPort', defaultValue: 9090)
+  final int webPort;
 
   @JsonKey(
     name: 'channel_credentials',
@@ -39,16 +46,23 @@ class GRPCInfo extends Equatable {
 
   GRPCInfo({
     required this.host,
+    this.webHost,
     this.port = 9090,
+    this.webPort = 9090,
+    this.isGrpcSecure = false,
+    this.isWebSecure = false,
     this.credentials = const ChannelCredentials.insecure(),
   });
 
   /// Creates a new [ClientChannel] using the optional given options.
   ClientChannel getChannel() {
-    return ClientChannel(
-      host.replaceFirst(RegExp('http(s)?:\/\/'), ''),
-      port: port,
-      options: ChannelOptions(credentials: credentials),
+    return GrpcOrGrpcWebClientChannel.toSeparateEndpoints(
+      grpcHost: host,
+      grpcPort: port,
+      grpcWebHost: webHost ?? host,
+      grpcWebPort: webPort,
+      grpcTransportSecure: isGrpcSecure,
+      grpcWebTransportSecure: isWebSecure,
     );
   }
 
