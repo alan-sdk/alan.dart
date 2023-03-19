@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:grpc/src/client/options.dart';
+import 'package:grpc/src/client/http2_channel.dart';
 import 'package:grpc/grpc_or_grpcweb.dart';
 import 'package:grpc/src/client/transport/http2_credentials.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -178,7 +178,7 @@ class NetworkInfo extends Equatable {
 
   /// Returns the ClientChannel that should be used to connect
   /// to the gRPC endpoint.
-  GrpcOrGrpcWebClientChannel get gRPCChannel {
+  ClientChannel get gRPCChannel {
     return grpcInfo.getChannel();
   }
 
