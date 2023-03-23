@@ -101,6 +101,18 @@ void main() {
     expect(converted.bech32Address, desmosAddr);
   });
 
+  test('import wallet', () {
+    final privateKey =
+        'f0ca60ab2091f1a54a70f8fcf7b14af923e865e8aaaf9894a79cd7aa906d922d';
+    final trueAddress = 'cosmos19c506umkrd4ptva9r3gjy7afmjnr4mlgalfmu0';
+    final cosmosInfo =
+        NetworkInfo.fromSingleHost(bech32Hrp: 'cosmos', host: 'example.com');
+
+    final wallet =
+        Wallet.import(cosmosInfo, Uint8List.fromList(HEX.decode(privateKey)));
+    expect(wallet.bech32Address, trueAddress);
+  });
+
   test('toJson and fromJson work properly', () {
     final mnemonic =
         'final random flame cinnamon grunt hazard easily mutual resist pond solution define knife female tongue crime atom jaguar alert library best forum lesson rigid'

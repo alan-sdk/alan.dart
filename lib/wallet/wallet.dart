@@ -113,6 +113,32 @@ class Wallet extends Equatable {
     );
   }
 
+  /// Creates a new [Wallet] instance from [privateKey].
+  factory Wallet.import(
+    NetworkInfo networkInfo,
+    Uint8List privateKey,
+  ) {
+    final secp256k1 = ECCurve_secp256k1();
+    final point = secp256k1.G;
+    // Compute the curve point associated to the private key
+    final bigInt = BigInt.parse(HEX.encode(privateKey), radix: 16);
+    final curvePoint = point * bigInt;
+
+    // Get the public key
+    final publicKeyBytes = curvePoint!.getEncoded();
+
+    // Get the address
+    final sha256Digest = SHA256Digest().process(publicKeyBytes);
+    final address = RIPEMD160Digest().process(sha256Digest);
+
+    return Wallet(
+      address: address,
+      publicKey: publicKeyBytes,
+      privateKey: privateKey,
+      networkInfo: networkInfo,
+    );
+  }
+
   /// Returns the associated [address] as a Bech32 string.
   String get bech32Address {
     return Bech32Encoder.encode(networkInfo.bech32Hrp, address);
