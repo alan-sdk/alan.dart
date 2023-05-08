@@ -17,11 +17,17 @@ GRPCInfo _$GRPCInfoFromJson(Map<String, dynamic> json) {
     credentials: json['channel_credentials'] == null
         ? const ChannelCredentials.insecure()
         : channelOptionsFromJson(json['channel_credentials'] as String),
+    webHost: json['webHost'] as String?,
+    webPort: json['webPort'] as int? ?? 443,
+    webTransportSecure: json['webTransportSecure'] as bool? ?? true,
   );
 }
 
 Map<String, dynamic> _$GRPCInfoToJson(GRPCInfo instance) => <String, dynamic>{
       'host': instance.host,
+      'webHost': instance.webHost,
+      'webPort': instance.webPort,
+      'webTransportSecure': instance.webTransportSecure,
       'port': instance.port,
       'channel_credentials': channelCredentialsToJson(instance.credentials),
     };
