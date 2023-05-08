@@ -58,11 +58,12 @@ class GRPCInfo extends Equatable {
 
   /// Creates a new [ClientChannel] using the optional given options.
   GrpcOrGrpcWebClientChannel getChannel() {
+    String finaleWebHost = webHost ?? host;
     return GrpcOrGrpcWebClientChannel.toSeparateEndpoints(
-      grpcHost: host, 
+      grpcHost: host.replaceFirst(RegExp('http(s)?:\/\/'), ''), 
       grpcPort: port, 
       grpcTransportSecure: credentials == ChannelCredentials.secure(), 
-      grpcWebHost: webHost ?? host, 
+      grpcWebHost: finaleWebHost.replaceFirst(RegExp('http(s)?:\/\/'), ''), 
       grpcWebPort: webPort, 
       grpcWebTransportSecure: webTransportSecure);
   }
