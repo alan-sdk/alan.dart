@@ -3,7 +3,6 @@ import 'dart:typed_data';
 import 'package:alan/alan.dart';
 import 'package:alan/proto/cosmos/crypto/secp256k1/export.dart' as secp256;
 import 'package:grpc/grpc_or_grpcweb.dart';
-import 'package:grpc/src/client/channel.dart' as CC;
 import 'package:http/http.dart' as http;
 import 'package:protobuf/protobuf.dart';
 
@@ -24,7 +23,6 @@ class TxSigner {
     GrpcOrGrpcWebClientChannel clientChannel,
     http.Client httpClient,
   ) {
-    CC.ClientChannel cc = clientChannel as CC.ClientChannel;
     return TxSigner(
       authQuerier: AuthQuerier.build(clientChannel),
       nodeQuerier: NodeQuerier.build(clientChannel),

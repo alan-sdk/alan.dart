@@ -24,8 +24,8 @@ import 'package:mockito/mockito.dart' as _i1;
 class _FakeResponseFuture_0<R> extends _i1.Fake
     implements _i2.ResponseFuture<R> {}
 
-class _FakeClientCall_1<Q, R> extends _i1.Fake implements _i3.ClientCall<Q, R> {
-}
+class _FakeClientCall_1<Q, R> extends _i1.Fake
+    implements _i3.ClientCall<Q, R> {}
 
 class _FakeResponseStream_2<R> extends _i1.Fake
     implements _i2.ResponseStream<R> {}
