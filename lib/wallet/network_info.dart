@@ -1,8 +1,7 @@
 // ignore_for_file: implementation_imports
 import 'package:equatable/equatable.dart';
-import 'package:grpc/src/client/options.dart';
+import 'package:grpc/grpc.dart';
 import 'package:grpc/grpc_or_grpcweb.dart';
-import 'package:grpc/src/client/transport/http2_credentials.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'network_info.g.dart';
@@ -30,6 +29,15 @@ class GRPCInfo extends Equatable {
   @JsonKey(name: 'host', required: true)
   final String host;
 
+  @JsonKey(name: 'web_host', required: false)
+  final String? webHost;
+
+  @JsonKey(name: 'web_port', defaultValue: 443)
+  final int webPort;
+
+  @JsonKey(name: 'web_transport_secure', defaultValue: true)
+  final bool webTransportSecure;
+
   @JsonKey(name: 'port', defaultValue: 9090)
   final int port;
 
@@ -44,14 +52,21 @@ class GRPCInfo extends Equatable {
     required this.host,
     this.port = 9090,
     this.credentials = const ChannelCredentials.insecure(),
+    this.webHost,
+    this.webPort = 443,
+    this.webTransportSecure = true,
   });
 
   /// Creates a new [ClientChannel] using the optional given options.
   GrpcOrGrpcWebClientChannel getChannel() {
-    return GrpcOrGrpcWebClientChannel.grpc(
-      host.replaceFirst(RegExp('http(s)?://'), ''),
-      port: port,
-      options: ChannelOptions(credentials: credentials),
+    final finaleWebHost = webHost ?? host;
+    return GrpcOrGrpcWebClientChannel.toSeparateEndpoints(
+      grpcHost: host.replaceFirst(RegExp('http(s)?://'), ''),
+      grpcPort: port,
+      grpcTransportSecure: credentials == ChannelCredentials.secure(),
+      grpcWebHost: finaleWebHost.replaceFirst(RegExp('http(s)?://'), ''),
+      grpcWebPort: webPort,
+      grpcWebTransportSecure: webTransportSecure,
     );
   }
 
@@ -69,6 +84,9 @@ class GRPCInfo extends Equatable {
       host,
       port,
       credentials.isSecure,
+      webHost,
+      webPort,
+      webTransportSecure
     ];
   }
 
@@ -77,6 +95,9 @@ class GRPCInfo extends Equatable {
     return 'GRPCInfo {'
         'host: $host, '
         'port: $port '
+        'webHost: $webHost, '
+        'webPort: $webPort, '
+        'webTransportSecure: $webTransportSecure, '
         '}';
   }
 }
