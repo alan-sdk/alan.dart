@@ -9,10 +9,9 @@ analyzer:
 
     - test/**/*.g.dart
     - test/**/*.reflectable.dart
+    - test/**/*.mocks.dart
 
     - tool/**/*.g.dart
-  strong-mode:
-    implicit-casts: false
 
   # enable-experiment:
   #  - non-nullable
