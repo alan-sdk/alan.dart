@@ -25,7 +25,7 @@ class BaseVestingAccount implements AccountI {
     return account.baseAccount.sequence;
   }
 
-  BaseVestingAccount(vesting.BaseVestingAccount account) : account = account;
+  BaseVestingAccount(this.account);
 
   static BaseVestingAccount fromAny(Any any) {
     final account = vesting.BaseVestingAccount.fromBuffer(any.value);
@@ -56,8 +56,7 @@ class DelayedVestingAccount implements AccountI {
     return account.baseVestingAccount.baseAccount.sequence;
   }
 
-  DelayedVestingAccount(vesting.DelayedVestingAccount account)
-      : account = account;
+  DelayedVestingAccount(this.account);
 
   static DelayedVestingAccount fromAny(Any any) {
     final account = vesting.DelayedVestingAccount.fromBuffer(any.value);
@@ -88,8 +87,7 @@ class ContinuousVestingAccount implements AccountI {
     return account.baseVestingAccount.baseAccount.sequence;
   }
 
-  ContinuousVestingAccount(vesting.ContinuousVestingAccount account)
-      : account = account;
+  ContinuousVestingAccount(this.account);
 
   static ContinuousVestingAccount fromAny(Any any) {
     final account = vesting.ContinuousVestingAccount.fromBuffer(any.value);
@@ -120,8 +118,7 @@ class PeriodicVestingAccount implements AccountI {
     return account.baseVestingAccount.baseAccount.sequence;
   }
 
-  PeriodicVestingAccount(vesting.PeriodicVestingAccount account)
-      : account = account;
+  PeriodicVestingAccount(this.account);
 
   static PeriodicVestingAccount fromAny(Any any) {
     final account = vesting.PeriodicVestingAccount.fromBuffer(any.value);

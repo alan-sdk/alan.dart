@@ -10,7 +10,7 @@ class DefaultTxConfig extends TxConfig {
 
   @override
   TxEncoder txEncoder() {
-    return DefaultEncoder();
+    return defaultEncoder();
   }
 
   @override

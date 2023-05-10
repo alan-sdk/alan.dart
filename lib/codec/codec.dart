@@ -11,9 +11,7 @@ class AccountImpl {
   String typeUrl;
   AccountDeserializer deserializer;
 
-  AccountImpl(String typeUrl, AccountDeserializer deserializer)
-      : typeUrl = typeUrl,
-        deserializer = deserializer;
+  AccountImpl(this.typeUrl, this.deserializer);
 }
 
 /// Represents the codec that is used to serialize [StdMsg] instances

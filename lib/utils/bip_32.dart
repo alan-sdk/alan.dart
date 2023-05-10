@@ -5,13 +5,13 @@ import 'package:convert/convert.dart';
 import 'package:pointycastle/export.dart';
 
 class Bip32 {
-  static const _bitcoinNetworkType = _NetworkType(
+  static const _bitcoinNetworkType = NetworkType(
     wif: 0x80,
-    bip32: _Bip32Type(public: 0x0488b21e, private: 0x0488ade4),
+    bip32: Bip32Type(public: 0x0488b21e, private: 0x0488ade4),
   );
-  static const _UINT32_MAX = 4294967295; // 2^32 - 1
-  static const _UINT31_MAX = 2147483647; // 2^31 - 1
-  static const _HIGHEST_BIT = 0x80000000;
+  static const _uint32Max = 4294967295; // 2^32 - 1
+  static const _uint31Max = 2147483647; // 2^31 - 1
+  static const _highestBit = 0x80000000;
   static final _secp256k1 = ECCurve_secp256k1();
 
   /// Internal re-implementation of https://pub.dev/packages/bip32
@@ -29,7 +29,7 @@ class Bip32 {
   final Uint8List? privateKey;
   Uint8List? _publicKey;
   final Uint8List chainCode;
-  final _NetworkType network;
+  final NetworkType network;
   int depth;
   int index;
   int parentFingerprint;
@@ -141,11 +141,11 @@ class Bip32 {
   Bip32 derive(int index, {Bip32EccCurve? ecc}) {
     ecc ??= Bip32EccCurve();
 
-    if (index > _UINT32_MAX || index < 0) {
+    if (index > _uint32Max || index < 0) {
       throw ArgumentError('Expected UInt32');
     }
 
-    final isHardened = index >= _HIGHEST_BIT;
+    final isHardened = index >= _highestBit;
     final data = Uint8List(37);
 
     if (isHardened) {
@@ -198,11 +198,11 @@ class Bip32 {
   }
 
   Bip32 deriveHardened(int index) {
-    if (index > _UINT31_MAX || index < 0) {
+    if (index > _uint31Max || index < 0) {
       throw ArgumentError('Expected UInt31');
     }
 
-    return derive(index + _HIGHEST_BIT);
+    return derive(index + _highestBit);
   }
 
   bool isNeutered() {
@@ -210,27 +210,27 @@ class Bip32 {
   }
 }
 
-class _NetworkType {
-  const _NetworkType({required this.wif, required this.bip32});
+class NetworkType {
+  const NetworkType({required this.wif, required this.bip32});
 
   final int wif;
-  final _Bip32Type bip32;
+  final Bip32Type bip32;
 }
 
-class _Bip32Type {
-  const _Bip32Type({required this.public, required this.private});
+class Bip32Type {
+  const Bip32Type({required this.public, required this.private});
 
   final int public;
   final int private;
 }
 
 class Bip32EccCurve {
-  static final _ZERO32 = Uint8List.fromList(List.generate(32, (index) => 0));
-  static final _EC_GROUP_ORDER = Uint8List.fromList(
+  static final _zero32 = Uint8List.fromList(List.generate(32, (index) => 0));
+  static final _ecGroupOrder = Uint8List.fromList(
     hex.decode(
         'fffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd0364141'),
   );
-  final _EC_P = Uint8List.fromList(hex.decode(
+  final _ecP = Uint8List.fromList(hex.decode(
       'fffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f'));
 
   bool isPrivate(Uint8List x) {
@@ -238,8 +238,8 @@ class Bip32EccCurve {
       return false;
     }
 
-    return _compare(x, _ZERO32) > 0 && // > 0
-        _compare(x, _EC_GROUP_ORDER) < 0; // < G
+    return _compare(x, _zero32) > 0 && // > 0
+        _compare(x, _ecGroupOrder) < 0; // < G
   }
 
   bool isScalar(Uint8List x) {
@@ -297,7 +297,7 @@ class Bip32EccCurve {
 
     final pp = Bip32._secp256k1.curve.decodePoint(p);
 
-    if (_compare(tweak, _ZERO32) == 0) {
+    if (_compare(tweak, _zero32) == 0) {
       return pp!.getEncoded(true);
     }
 
@@ -320,11 +320,11 @@ class Bip32EccCurve {
     final t = p[0];
     final x = p.sublist(1, 33);
 
-    if (_compare(x, _ZERO32) == 0) {
+    if (_compare(x, _zero32) == 0) {
       return false;
     }
 
-    if (_compare(x, _EC_P) == 1) {
+    if (_compare(x, _ecP) == 1) {
       return false;
     }
 
@@ -339,11 +339,11 @@ class Bip32EccCurve {
     }
 
     final y = p.sublist(33);
-    if (_compare(y, _ZERO32) == 0) {
+    if (_compare(y, _zero32) == 0) {
       return false;
     }
 
-    if (_compare(y, _EC_P) == 1) {
+    if (_compare(y, _ecP) == 1) {
       return false;
     }
 
@@ -359,7 +359,7 @@ class Bip32EccCurve {
       return false;
     }
 
-    return _compare(x, _EC_GROUP_ORDER) < 0; // < G
+    return _compare(x, _ecGroupOrder) < 0; // < G
   }
 
   Uint8List pointFromScalar(Uint8List d) {

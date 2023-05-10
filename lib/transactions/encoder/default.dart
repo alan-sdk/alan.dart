@@ -1,7 +1,7 @@
 import 'package:alan/alan.dart';
 
 /// Returns a default protobuf TxEncoder.
-TxEncoder DefaultEncoder() {
+TxEncoder defaultEncoder() {
   return (Tx tx) {
     // Check the body
     if (!tx.hasBody()) {

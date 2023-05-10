@@ -35,7 +35,7 @@ class BaseAccount extends AccountI {
     return account.sequence;
   }
 
-  BaseAccount(auth.BaseAccount account) : account = account;
+  BaseAccount(this.account);
 
   static BaseAccount fromAny(Any any) {
     final account = auth.BaseAccount.fromBuffer(any.value);
@@ -66,7 +66,7 @@ class ModuleAccount implements AccountI {
     return account.baseAccount.sequence;
   }
 
-  ModuleAccount(auth.ModuleAccount account) : account = account;
+  ModuleAccount(this.account);
 
   static ModuleAccount fromAny(Any any) {
     final account = auth.ModuleAccount.fromBuffer(any.value);

@@ -39,7 +39,7 @@ class TxBuilder {
 
     for (var index = 0; index < signatures.length; index++) {
       final signature = signatures[index];
-      if (!(signature.data is SingleSignatureData)) {
+      if (signature.data is! SingleSignatureData) {
         throw Exception('Signature data not supported: ${signature.data}');
       }
 
