@@ -1,6 +1,6 @@
 import 'package:alan/alan.dart';
 import 'package:alan/proto/cosmos/tx/v1beta1/export.dart' as tx;
-import 'package:grpc/grpc.dart';
+import 'package:grpc/grpc_or_grpcweb.dart';
 
 /// Allows to easily send a [StdTx] using the data contained inside the
 /// specified [Wallet].
@@ -10,7 +10,7 @@ class TxSender {
   TxSender({required tx.ServiceClient client}) : _client = client;
 
   /// Builds a new [TxSender] given a [ClientChannel].
-  factory TxSender.build(ClientChannel channel) {
+  factory TxSender.build(GrpcOrGrpcWebClientChannel channel) {
     return TxSender(client: tx.ServiceClient(channel));
   }
 

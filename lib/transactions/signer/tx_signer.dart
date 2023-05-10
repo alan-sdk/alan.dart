@@ -2,7 +2,7 @@ import 'dart:typed_data';
 
 import 'package:alan/alan.dart';
 import 'package:alan/proto/cosmos/crypto/secp256k1/export.dart' as secp256;
-import 'package:grpc/grpc.dart' as grpc;
+import 'package:grpc/grpc_or_grpcweb.dart';
 import 'package:http/http.dart' as http;
 import 'package:protobuf/protobuf.dart';
 
@@ -20,7 +20,7 @@ class TxSigner {
 
   /// Builds a new [TxSigner] from a given gRPC client channel and HTTP client.
   factory TxSigner.build(
-    grpc.ClientChannel clientChannel,
+    GrpcOrGrpcWebClientChannel clientChannel,
     http.Client httpClient,
   ) {
     return TxSigner(
