@@ -1,3 +1,7 @@
+## Version 0.41.3+1
+- Added `Wallet.import` method to import an existing wallet given a private key (thanks to @wenchaosong)
+- Added support for GrpcWeb, allowing this library to be compatible with the Dart Web platform (thanks to @levischechter)
+
 ## Version 0.41.2+1
 - Replaced legacy `/node_info` query with new gRPC client
 
