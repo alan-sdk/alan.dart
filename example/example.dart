@@ -53,8 +53,8 @@ void main() async {
 
   // Check the result
   if (response.isSuccessful) {
-    print('Tx sent successfully. Response: ${response}');
+    print('Tx sent successfully. Response: $response');
   } else {
-    print('Tx errored: ${response}');
+    print('Tx errored: $response');
   }
 }

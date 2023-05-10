@@ -1,3 +1,4 @@
+// ignore_for_file: implementation_imports
 import 'package:equatable/equatable.dart';
 import 'package:grpc/src/client/options.dart';
 import 'package:grpc/grpc_or_grpcweb.dart';
@@ -6,18 +7,18 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'network_info.g.dart';
 
-const _CHANNEL_CREDENTIAL_SECURE = 'secure';
-const _CHANNEL_CREDENTIAL_INSECURE = 'insecure';
+const _channelCredentialSecure = 'secure';
+const _channelCredentialInsecure = 'insecure';
 
 Object channelCredentialsToJson(ChannelCredentials credentials) {
   if (credentials.isSecure) {
-    return _CHANNEL_CREDENTIAL_SECURE;
+    return _channelCredentialSecure;
   }
-  return _CHANNEL_CREDENTIAL_INSECURE;
+  return _channelCredentialInsecure;
 }
 
 ChannelCredentials channelOptionsFromJson(String value) {
-  if (value == _CHANNEL_CREDENTIAL_INSECURE) {
+  if (value == _channelCredentialInsecure) {
     return ChannelCredentials.insecure();
   }
   return ChannelCredentials.secure();
@@ -48,7 +49,7 @@ class GRPCInfo extends Equatable {
   /// Creates a new [ClientChannel] using the optional given options.
   GrpcOrGrpcWebClientChannel getChannel() {
     return GrpcOrGrpcWebClientChannel.grpc(
-      host.replaceFirst(RegExp('http(s)?:\/\/'), ''),
+      host.replaceFirst(RegExp('http(s)?://'), ''),
       port: port,
       options: ChannelOptions(credentials: credentials),
     );
@@ -105,7 +106,7 @@ class LCDInfo extends Equatable {
   /// Returns the full URL of the LCD endpoint
   String get fullUrl {
     var hostWithProtocol = host;
-    if (!hostWithProtocol.startsWith(RegExp('http(s)?:\/\/'))) {
+    if (!hostWithProtocol.startsWith(RegExp('http(s)?://'))) {
       hostWithProtocol = 'http://$hostWithProtocol';
     }
     return '$hostWithProtocol:$port';

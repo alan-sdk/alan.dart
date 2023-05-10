@@ -33,7 +33,7 @@ void main() {
       when(client.account(req)).thenAnswer((call) {
         final request = call.positionalArguments[0] as auth.QueryAccountRequest;
         final account = auth.BaseAccount.create()
-          ..address = request.address + 'wrong'
+          ..address = '${request.address}wrong'
           ..sequence = 100.toInt64()
           ..accountNumber = 101.toInt64();
 

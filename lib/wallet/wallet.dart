@@ -13,7 +13,7 @@ import 'package:pointycastle/export.dart';
 /// The associated [networkInfo] will be used when computing the [bech32Address]
 /// associated with the wallet.
 class Wallet extends Equatable {
-  static const DERIVATION_PATH = "m/44'/118'/0'/0/0";
+  static const derivationPath = "m/44'/118'/0'/0/0";
 
   final Uint8List address;
   final Uint8List privateKey;
@@ -33,7 +33,7 @@ class Wallet extends Equatable {
   factory Wallet.derive(
     List<String> mnemonic,
     NetworkInfo networkInfo, {
-    String derivationPath = DERIVATION_PATH,
+    String derivationPath = derivationPath,
   }) {
     // Validate the mnemonic
     if (!Bip39.validateMnemonic(mnemonic)) {
@@ -75,7 +75,7 @@ class Wallet extends Equatable {
   /// and the optional [derivationPath].
   factory Wallet.random(
     NetworkInfo networkInfo, {
-    String derivationPath = DERIVATION_PATH,
+    String derivationPath = derivationPath,
   }) {
     return Wallet.derive(
       Bip39.generateMnemonic(strength: 256),
