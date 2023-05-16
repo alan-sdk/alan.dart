@@ -1,6 +1,6 @@
 import 'package:alan/alan.dart';
 import 'package:alan/proto/cosmos/auth/v1beta1/export.dart' as auth;
-import 'package:grpc/grpc.dart' as grpc;
+import 'package:grpc/grpc_or_grpcweb.dart' as grpc;
 
 /// Allows to query the x/auth module endpoints easily.
 class AuthQuerier {
@@ -9,7 +9,7 @@ class AuthQuerier {
   AuthQuerier({required auth.QueryClient client}) : _client = client;
 
   /// Builds a new [AuthQuerier] given a [ClientChannel].
-  factory AuthQuerier.build(grpc.ClientChannel channel) {
+  factory AuthQuerier.build(grpc.GrpcOrGrpcWebClientChannel channel) {
     return AuthQuerier(client: auth.QueryClient(channel));
   }
 
