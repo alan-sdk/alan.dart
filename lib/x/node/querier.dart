@@ -10,7 +10,7 @@ class NodeQuerier {
   NodeQuerier({required tendermint.ServiceClient client}) : _client = client;
 
   /// Builds a new [NodeQuerier] given a [ClientChannel].
-  factory AuthQuerier.build(grpc.GrpcOrGrpcWebClientChannel channel) {
+  factory NodeQuerier.build(grpc.GrpcOrGrpcWebClientChannel channel) {
     return NodeQuerier(client: tendermint.ServiceClient(channel));
   }
 
