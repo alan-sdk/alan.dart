@@ -6,11 +6,16 @@ void main() {
   group('GRPCInfo', () {
     group('toJson and fromJson work properly', () {
       test('with secure credentials', () {
+        final channelCredential = ChannelCredentials.secure();
         final grpcInfo = GRPCInfo(
           host: 'localhost',
           port: 1111,
-          credentials: ChannelCredentials.secure(),
+          credentials: channelCredential,
         );
+
+        final channel = grpcInfo.getChannel();
+
+        expect(channel.options.credentials.isSecure, true);
 
         final json = grpcInfo.toJson();
         final fromJson = GRPCInfo.fromJson(json);
@@ -18,11 +23,16 @@ void main() {
       });
 
       test('with insecure credentials', () {
+        final channelCredential = ChannelCredentials.insecure();
         final grpcInfo = GRPCInfo(
           host: 'localhost',
           port: 1111,
-          credentials: ChannelCredentials.insecure(),
+          credentials: channelCredential,
         );
+
+        final channel = grpcInfo.getChannel();
+
+        expect(channel.options.credentials.isSecure, false);
 
         final json = grpcInfo.toJson();
         final fromJson = GRPCInfo.fromJson(json);
