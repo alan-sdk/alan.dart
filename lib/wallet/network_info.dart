@@ -63,7 +63,7 @@ class GRPCInfo extends Equatable {
     return GrpcOrGrpcWebClientChannel.toSeparateEndpoints(
       grpcHost: host.replaceFirst(RegExp('http(s)?://'), ''),
       grpcPort: port,
-      grpcTransportSecure: credentials == ChannelCredentials.secure(),
+      grpcTransportSecure: credentials.isSecure,
       grpcWebHost: finaleWebHost.replaceFirst(RegExp('http(s)?://'), ''),
       grpcWebPort: webPort,
       grpcWebTransportSecure: webTransportSecure,
