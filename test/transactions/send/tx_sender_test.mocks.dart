@@ -72,11 +72,13 @@ class MockServiceClient extends _i1.Mock implements _i4.ServiceClient {
   _i2.ResponseFuture<_i5.GetBlockWithTxsResponse> getBlockWithTxs(
           _i5.GetBlockWithTxsRequest? request,
           {_i2.CallOptions? options}) =>
-      (super.noSuchMethod(
-          Invocation.method(#getBlockWithTxs, [request], {#options: options}),
-          returnValue:
-              _FakeResponseFuture_0<_i5.GetBlockWithTxsResponse>()) as _i2
-          .ResponseFuture<_i5.GetBlockWithTxsResponse>);
+      (super
+              .noSuchMethod(
+                  Invocation.method(
+                      #getBlockWithTxs, [request], {#options: options}),
+                  returnValue:
+                      _FakeResponseFuture_0<_i5.GetBlockWithTxsResponse>())
+          as _i2.ResponseFuture<_i5.GetBlockWithTxsResponse>);
   @override
   _i3.ClientCall<Q, R> $createCall<Q, R>(
           _i2.ClientMethod<Q, R>? method, _i6.Stream<Q>? requests,

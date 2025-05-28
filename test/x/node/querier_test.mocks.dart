@@ -58,20 +58,24 @@ class MockServiceClient extends _i1.Mock implements _i4.ServiceClient {
   _i2.ResponseFuture<_i5.GetLatestBlockResponse> getLatestBlock(
           _i5.GetLatestBlockRequest? request,
           {_i2.CallOptions? options}) =>
-      (super.noSuchMethod(
-          Invocation.method(#getLatestBlock, [request], {#options: options}),
-          returnValue:
-              _FakeResponseFuture_0<_i5.GetLatestBlockResponse>()) as _i2
-          .ResponseFuture<_i5.GetLatestBlockResponse>);
+      (super
+              .noSuchMethod(
+                  Invocation.method(
+                      #getLatestBlock, [request], {#options: options}),
+                  returnValue:
+                      _FakeResponseFuture_0<_i5.GetLatestBlockResponse>())
+          as _i2.ResponseFuture<_i5.GetLatestBlockResponse>);
   @override
   _i2.ResponseFuture<_i5.GetBlockByHeightResponse> getBlockByHeight(
           _i5.GetBlockByHeightRequest? request,
           {_i2.CallOptions? options}) =>
-      (super.noSuchMethod(
-          Invocation.method(#getBlockByHeight, [request], {#options: options}),
-          returnValue:
-              _FakeResponseFuture_0<_i5.GetBlockByHeightResponse>()) as _i2
-          .ResponseFuture<_i5.GetBlockByHeightResponse>);
+      (super
+              .noSuchMethod(
+                  Invocation.method(
+                      #getBlockByHeight, [request], {#options: options}),
+                  returnValue:
+                      _FakeResponseFuture_0<_i5.GetBlockByHeightResponse>())
+          as _i2.ResponseFuture<_i5.GetBlockByHeightResponse>);
   @override
   _i2.ResponseFuture<_i5.GetLatestValidatorSetResponse> getLatestValidatorSet(
           _i5.GetLatestValidatorSetRequest? request,
